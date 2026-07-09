@@ -1,0 +1,54 @@
+---
+type: video
+title_uk: "Відповідаю на питання #2"
+youtube_id: gC08Vy5TWtY
+tags: [qa, livestream, career, ai, google, testing, channel-meta]
+date_ingested: 2026-07-09
+---
+# Q&A #2 — Answering Your Questions
+
+> Original: "Відповідаю на питання #2" — https://youtu.be/gC08Vy5TWtY
+
+A morning livestream where the author answers questions collected via a Google Form plus live chat. He opens by explaining the long gap between videos: a drawn-out saga with the ТЦК (military enlistment office) and reservation paperwork, during which he enrolled in a PhD program (аспірантура) in **cybersecurity** — deliberately giving up his Google-provided reservation for the extra flexibility — and started writing a dissertation (he began his career in information security, so it "finally comes together"). He plans to teach infosec courses next year and turn some of that into channel content. The rest of the stream ranges across QA/testing at Google vs. WebbyLab, the history of React state management told first-hand, his personal LLM benchmark and which models pass it, how he actually uses AI day to day, Google interviews, algorithms he has really implemented, pet-project philosophy, TDD, Go vs. Rust, and hardware. See [[career-and-growth]], [[ai-coding-agents]], [[channel-and-author]].
+
+## Key takeaways
+
+**Testing and QA**
+- **Does a team need a dedicated QA engineer?** At WebbyLab there are always testers because it is cheaper for the business; in his Google Cloud team there are *no* manual testers or automators at all — yet manual testing still happens, just distributed: (1) the developer tests their own feature, (2) the product manager clicks through it, (3) the engineer organizes a 30–40 minute "bug bash" call where the whole team hunts bugs in the new feature, (4) dogfooding inside Google, (5) trusted-tester beta launches. Because Google's monorepo keeps one version of every library, "someone updates Angular for all of Google and it wasn't you" — so your automated tests are your only guarantee, and writing them is the developer's responsibility.
+- **TDD:** he is not a TDD purist. It makes sense to him for bug fixes (write a failing test, then the fix — the red/green loop, which is what Kent Beck actually meant; he recommends the "TDD is Dead" discussion series with Kent Beck, Martin Fowler and DHH). For design work TDD forces focus on too-narrow aspects; he instead sketches usage examples of an API/abstraction, rewrites them repeatedly until a skeleton emerges, then implements modules and writes tests after the code. He cites [[a-philosophy-of-software-design]] (read a couple of months earlier) which contains "exactly the right quote" on TDD misdirecting attention — see [[software-design]].
+- **Mockist or classicist?** Classicist: he dislikes mocking and designs so he can inject an alternative implementation instead.
+
+**AI / LLMs** ([[ai-coding-agents]])
+- His personal LLM benchmark is one standard task: *binary search in a file without reading the whole file into memory*. Results: latest ChatGPT versions and **Gemini 2** solve it cleanly (Gemini 1.5 once solved it, then regressed); Grok (the Twitter one) fails — it still reads the whole file; local **DeepSeek R1** distills up to 70B parameters fail even with reasoning, while the full online ~700B DeepSeek solves it but "thinks" for a long time.
+- Daily drivers: [[gemini]] most often (including **Gemini Deep Research** for collecting material from the web into reports), then ChatGPT o3-mini-high. He barely uses Copilot-style autocomplete — though GitHub Copilot now has a free tier "and works okay" — because Google's internal autocomplete, trained on Google's own codebase, autocompletes in Google's code style and is far better. For private code he runs local models through **Ollama** so nothing leaves his machine.
+- His main LLM uses: brainstorming a problem, inventing variable names, learning a new technology, and prototyping. In ChatGPT he keeps a "project" with a standing system prompt (React + Material UI + TypeScript, components exported as regular functions, not arrow functions) so he doesn't re-explain his conventions every time.
+- At Google, AI tooling is built into the standard dev environment and integrated everywhere including code review; he can't paste Google code into external ChatGPT. He also worked alongside the Vertex AI team (his team formed inputs/outputs; another team owned AI testing — regression checks, frameworks, lots of dogfooding). He praises **Vertex AI** as the most end-to-end ML platform he knows (train, fine-tune, deploy, API access) and notes Cloud Run (his team) added **GPU support — "serverless 2.0"** for inference workloads. He also integrated and tested **Claude 3.5 Sonnet** for his dissertation work (extracting structured data) — "works decently", as do many local models; he has a whole comparison report he may publish.
+
+**Career and interviews** ([[career-and-growth]])
+- Google interview prep: he never grinded LeetCode — about two–three weeks, a couple of hours every morning, plus a few days re-reading algorithm books. Neither interview task matched anything he had practiced; what mattered was analyzing the problem aloud, spotting edge cases, testing in his head, and admitting a solution wasn't optimal. There is a real luck factor: in **2014 he failed at the fourth interview** (it was the Maidan period — he'd been on the square that morning), and Google is fine with you retrying in a year.
+- The engineer's core skill isn't the programming language but the ability to **deliver something that works and solves users' problems**. His advice for newcomers: don't just learn a language — build a small pet project end to end: frontend, backend, database, Docker, rent a cloud, buy a domain, configure DNS and mail ([[deep-learning-of-fundamentals]]).
+- The higher your level, the more your tasks are about ambiguity, decisions and understanding needs, and the less about typing code — he sometimes ships one commit in two months, sometimes 20–30 a month.
+- Burnout: he's never truly burned out — fatigue, yes, and panic attacks while building his business — but after rest he always wants to code again. Health is his current top priority: he weighed himself at 103 kg and plans to rebuild his sport habit.
+- Google's IP terms are strict ("everything is harsh"): no side commercial projects, even open-source questions go through approval; at WebbyLab he remains co-owner but only participates in strategic planning.
+- Grades at Google differ substantially from the usual junior/middle/senior ladder — he flagged this question for a dedicated future video.
+
+**Algorithms in practice** ([[algorithmic-complexity]], [[data-structures]])
+- You rarely hand-implement complex algorithms, but you must understand data structures, their properties and time/memory complexity. War story: for the Excel-in-JavaScript project he had to **rewrite topological sorting iteratively with his own stack**, because JS's ~10,000-stack-frame limit blew up on spreadsheet dependency chains longer than 10k cells. He has also implemented full-text search himself. In code reviews he routinely spots "this is O(n²), this is cubic" just by reading.
+- Book advice: a simple algorithms book that looks approachable *is* the right start — he liked [[grokking-algorithms]]; no need to overload yourself when a simple book gives you the effect. AlgoExpert also helped him.
+- Reverse engineering comes up in practice: implementing Excel's functions in JS, the documentation didn't match reality, so they constantly probed actual behavior.
+
+**Languages and pet projects**
+- He keeps wanting to learn Elixir/Clojure but writes all pet projects in **Node.js + TypeScript**: fast modern runtime with a great JIT (his JS Excel beat pure CPython by 5–10x on computation), typing when needed, and if a pet project grows into a product, hiring Elixir developers is a real problem. Market-wise, JavaScript+TypeScript is the rational choice today. He picks projects by asking "would I want this to exist?" — examples: **mytalks.net** (a Behance-like platform for speakers) and a planned contrast-detection autofocus tool for his Blackmagic camera, driven via its focus-control API.
+- Go vs. Rust for web: he'd pick Go (it has a GC), but he's not a fan — reading Go at Google regularly, he finds it lacks expressiveness and abstraction tools and has too much boilerplate ([[abstractions]]). For a complex application he'd sooner take TypeScript or C#.
+- Design patterns are not sacred knowledge: at Mail.ua his team implemented more than 10 of the 24 GoF patterns "practically by the book" *before* reading the book, because they're just the most logical solutions. When adopting an architecture pattern, watch where it stops working and extend it (e.g. adding your own controller concept on the frontend).
+- React state-management history, first-hand: he shipped React 0.4 to production two months after release; then Facebook's Flux talk (with no implementation) → Fluxxor stores → his team wrapped PubSubJS to imitate Flux → Dan Abramov's Redux talk → Redux boilerplate → metaprogramming wrapper libraries. Today his pet projects use no Redux at all: just React plus his own API-access library. There is no single "correct" architecture — decide consciously how you split rendering and state.
+- OOP on the frontend: plenty of it in his Google work — Angular components and services are classes and abstractions all the way down.
+
+**Hardware and environment**
+- He doesn't recommend MacBooks by default: his own streaming laptop is an Asus Zenbook (1.6 kg, OLED 120 Hz, ~50 GB RAM, RTX 4070, 2 TB SSD) — the union of his old heavy Eurocom and a ThinkPad Carbon X1 in one machine. On M1 Macs, 16 vs 32 GB made little practical difference in tests thanks to fast SSD swap, but *he* needs 32+ GB because he constantly runs multiple VMs.
+- Why Docker eats a Mac's memory: on Linux Docker is just an isolated process; on macOS it is a whole Linux VM with pre-allocated memory.
+- Recommended management podcast: **Manager Tools** — "I grew as a manager thanks to this podcast."
+- On Ukraine: his contract obliges relocation to Warsaw once martial law ends (family is already there), but he sees his children's future in Ukraine — "there are a lot of opportunities here." WebbyLab initially donated 100% of profit to the army, then created a volunteer fund; he asks viewers to vote for him/WebbyLab in the DOU awards.
+
+## Covered
+[[career-and-growth]], [[ai-coding-agents]], [[algorithmic-complexity]], [[data-structures]], [[software-design]], [[abstractions]], [[deep-learning-of-fundamentals]], [[channel-and-author]], [[gemini]], [[chatgpt]], [[deepseek]], [[ollama]], [[github-copilot]], [[react]], [[vertex-ai]], [[google-cloud-run]], [[grokking-algorithms]], [[a-philosophy-of-software-design]]

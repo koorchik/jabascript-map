@@ -94,7 +94,7 @@ examples/analogies).
    check `wiki/index.md` for existing slugs first.
 4. Update the relevant cluster page(s) and `wiki/overview.md` if the new
    material shifts the big picture.
-5. Update `wiki/index.md`; append to `wiki/log.md`.
+5. Regenerate the index (`python3 scripts/build_index.py`); append to `wiki/log.md`.
 
 ### Query
 
@@ -105,9 +105,10 @@ examples/analogies).
 
 ### Lint (periodic health check)
 
-Look for: orphan pages (no inbound links), broken `[[links]]`, concepts
-mentioned in ≥2 video pages but lacking their own page, contradictions
-between pages, stale claims superseded by newer videos. Report, fix, log.
+Run `python3 scripts/lint_wiki.py` (broken `[[links]]`, orphan pages, missing
+frontmatter). Then check by reading: concepts mentioned in ≥2 video pages but
+lacking their own page, contradictions between pages, stale claims superseded
+by newer videos. Report, fix, log.
 
 ## Naming discipline
 

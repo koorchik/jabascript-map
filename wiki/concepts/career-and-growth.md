@@ -1,0 +1,30 @@
+---
+type: concept
+tags: [career, google, growth, engineering-craft]
+---
+# Career and growth
+
+The channel's career material is unusually concrete because Viktor narrates his own path — infosec → Mail.ua (an IE6-era SPA frontend plus Perl backends with a custom framework, ZFS, and diskless PXE-booted frontend servers pulling a Linux image into RAM: "everything the cloud does now, we did by hand") → VoIP at Portaone → co-founding WebbyLab → 4 years at Google as a Senior SWE → independent ([[qa-and-plans-for-2024]], [[vibe-coding-part-2]]). His core career claims: the fundamental engineering skill is *delivering working software*, not language knowledge; higher levels mean more ambiguity and fewer commits ([[qa-2-answering-questions]]); at Google, level is determined by design ability, not tech stack — he'd never written Java or Angular before joining ([[qa-and-plans-for-2024]]). When you hit a ceiling, ask for more responsibility before quitting (he left both Mail.ua and Portaone over ceilings); jobs are investments in yourself — he turned down higher offers for Google, noting "Google targets ~80th percentile, so 1 in 5 offers beats it." Coding after 40 isn't harder — the duties change. For the go-independent decision he used Bezos's regret-minimization framework ([[qa-and-plans-for-2024]]).
+
+The Google specifics are the channel's most concrete comp/promo material ([[voice-5-why-i-left-google]]). Total comp = salary + 10–15% bonus + stock (~half of comp); 4-year grants fix the share count at grant price ($100k at $125/share, later $200, then $167 after the market drop); yearly refreshers are 3–4x smaller, so without promotion everyone's comp cliffs back toward entry level after 4 years — the rational trigger for leaving. Promo mechanics: staff requires a 2–3-year staff-level project, and his Application Canvas (a Cloud Run drag-and-deploy architecture tool, keynoted at Google Cloud Next, thousands of paying customers) was shut down by top management to be rebuilt Cloud-wide without his tech — a year of deprecation, then "the product's gone, do it again," resetting his L6 case. Promo committees never meet you; 7 of his 8 evaluators were backend engineers judging frontend work. He was interviewed at L6, hired Senior with "you'll get L6 quickly," and 2.5 years later was still Senior — while L4s who left were obvious seniors elsewhere ("the system isn't perfect"). Yet he praises the ownership culture (even juniors own features design-doc→launch→monitoring, no project managers, ~13 meeting-hours/week, ~6 months to onboard, bug-bash calls instead of manual QA) and still unreservedly recommends working there. Interview prep, twice over: 2014 — failed at the 4th interview during the Maidan period ("luck is real, retry in a year"); later — AlgoExpert (~$100, by an ex-Googler), 1–2 problems every morning for two weeks, and he passed with a *non-optimal* solution by finding his own bugs and naming the complexity ([[qa-2-answering-questions]], [[qa-and-plans-for-2024]]). Why he ultimately left: no time for the PhD, volunteering (the war), parents and health, plus the 4-year stock cliff ([[voice-5-why-i-left-google]], [[vibe-coding-new-project]]).
+
+Growth itself he frames through craft and character. The three skills that make a programmer better ([[3-things-that-make-a-programmer-better]]) — [[domain-knowledge]], [[deep-learning-of-fundamentals|deep understanding]], [[abstractions]] — come from 20 years of programming and interviewing: lots of people write good code, but code is only a fraction. The three things that ruin one ([[3-things-that-ruin-a-programmer]]) damage the *programmer*, not just the project: crappy code destroys senior smell-intuition; dogmatism replaces understanding; and contempt for colleagues arrives exactly when you feel like a hot-shot, while helping others multiplies your impact — "with a team you build what you never could alone," a Google value he praises. Health notes are candid: never truly burned out, but fatigue and panic attacks while building WebbyLab; health is now priority #1. Google's brutally strict IP terms ruled out side commercial work; for aspiring managers he recommends the Manager Tools podcast ([[qa-2-answering-questions]]), and among books, [[the-staff-engineers-path]] for what a staff engineer even does and [[cracking-the-coding-interview]] for his own prep ([[five-star-books]]).
+
+## Covered in
+- [[voice-5-why-i-left-google]] — the comp breakdown, 4-year stock cliff, Application Canvas promo-reset story, promo-committee mechanics, ownership culture, why he left
+- [[qa-and-plans-for-2024]] — full autobiography, Google levels/culture/onboarding, AlgoExpert prep, ceiling advice, jobs as investments, regret-minimization
+- [[qa-2-answering-questions]] — 2014 interview failure and luck, delivering software as the core skill, burnout and health, IP terms, Manager Tools
+- [[3-things-that-make-a-programmer-better]] — the three growth skills beyond writing code
+- [[3-things-that-ruin-a-programmer]] — the three vices that cap personal growth
+- [[learning-deeply-and-remembering]] — a learning *strategy* (not a study plan) answering "I forget everything in a month"
+- [[five-star-books]] — The Staff Engineer's Path, Who: The A Method for Hiring, Cracking the Coding Interview
+- [[vibe-coding-new-project]] — quitting Google for volunteering, the PhD (LLMs extracting sensitive data), and YouTube; audiobook habit
+- [[vibe-coding-part-2]] — Mail.ua war stories: the pre-cloud full-stack years
+- [[voice-1-admin-keys-for-developers]] — a founder's lesson learned, opening the war-story voice-message series
+
+## Related
+[[deep-learning-of-fundamentals]] — his theory of how engineers actually grow
+[[code-quality]] — bad code as self-inflicted career damage
+[[software-design]] — the skill that sets your level at Google
+[[channel-and-author]] — who Viktor is; the channel itself is the post-Google chapter
+[[the-staff-engineers-path]], [[cracking-the-coding-interview]], [[software-engineering-at-google]] — the career shelf

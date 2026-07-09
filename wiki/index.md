@@ -1,0 +1,191 @@
+# Index
+
+Catalog of every wiki page. Regenerate with `python3 scripts/build_index.py` after ingests.
+
+## Clusters (6)
+
+- [[ai-and-vibe-coding]] — The channel's AI arc runs from skepticism to mastery without ever dropping its standards.
+- [[channel-meta]] — The layer of jabascript that is about the channel itself rather than a technical topic.
+- [[databases-and-data-structures]] — The channel's densest and most deliberately sequenced cluster.
+- [[engineering-craft-and-career]] — The channel's opinion core: what makes a programmer great beyond writing code, how to design software, and what a career actually looks like from inside Googl
+- [[networking-and-internet]] — This cluster gathers the channel's "How the Internet works" material — a deliberate multi-part series in which Viktor rebuilds the internet's plumbing from fi
+- [[security-and-cryptography]] — Security is the channel's home turf: Viktor started his career in infosec, later enrolled in a cybersecurity PhD, and states the thesis directly in qa-and-pla
+
+## Concepts (54)
+
+- [[abstractions]] — Designing abstractions is the third of the three skills that, per the channel's first video, turn a good coder into a great programmer — with coupling and coh
+- [[ai-and-jobs]] — The channel's answer to "will AI replace us?" is a scaling analogy: AI is a junior, and it scales like juniors do.
+- [[ai-coding-agents]] — The channel's core claim about coding agents: AI turns you into a tech lead from day one.
+- [[algorithmic-complexity]] — The channel's recurring backbone: complexity is how work grows with input size, independent of language speed.
+- [[asymmetric-encryption]] — The channel's "one key-pair concept that explains half of modern security": a public/private key pair where — unlike symmetric crypto's single shared secret —
+- [[automated-testing]] — The channel's testing strategy is laid out most concretely in the AI-era context of the vibe-coding streams (vibe-coding-part-2).
+- [[awd-and-drivetrains]] — An off-topic sponsors video subject (awd-systems-compared), sparked by a real puzzle: his Subaru Outback exits a snowy yard effortlessly while his Porsche Mac
+- [[b-tree]] — Viktor's whiteboard explanation of why database indexes are not binary search trees: a BST over 100M rows is ~23 levels deep, and at ~5 ms per disk seek that
+- [[base64]] — The channel's canonical example of encoding — and of what encoding is not (protection).
+- [[bloom-filter]] — "A genius data structure": a probabilistic set membership test with no false negatives ever and a tunable false-positive rate — its size depends only on eleme
+- [[career-and-growth]] — The channel's career material is unusually concrete because Viktor narrates his own path — infosec → Mail.ua (an IE6-era SPA frontend plus Perl backends with
+- [[channel-and-author]] — jabascript is a Ukrainian-language YouTube channel about programming, databases, networking, security and engineering craft, run by Viktor — an engineer whose
+- [[code-quality]] — Viktor challenges the classic "fast / quality / cheap — pick two" triangle: maybe you can have all three, because quality code is cheaper and faster to develo
+- [[code-review]] — The channel's take is first-hand: Viktor draws on review practice at both WebbyLab and Google and insists there is no single right way — but there are moves t
+- [[cold-crypto-wallets]] — The channel's cleanest illustration of why digital-signatures matter: a cold wallet is simply a private key that never touches the internet.
+- [[data-structures]] — The channel's stance: what matters in practice is knowing each structure's properties and time/memory complexity, not memorizing implementations — though Vikt
+- [[database-indexes]] — The channel's single densest topic.
+- [[declarative-ui]] — Borrowed straight from game development: like Doom's level editor producing declarative level files, Viktor's idea is to describe UI as schemas that get compi
+- [[deep-learning-of-fundamentals]] — This is the channel's single most connective thesis — nearly every video, from DNS to AWD cars, is an application of it.
+- [[design-patterns]] — The channel's stance on patterns is deliberately deflationary: they are not sacred knowledge, just the most widespread solutions that someone classified and n
+- [[dhcp]] — The channel's angle on DHCP is "what's actually wrong with café Wi-Fi?" (dhcp-cafe-wifi).
+- [[digital-signatures]] — The second superpower of asymmetric-encryption, as the channel presents it: encrypting a document's hash with your private key is the signature.
+- [[dns]] — The channel treats DNS as the flagship of its "How the Internet works" series.
+- [[domain-knowledge]] — First of the three skills in the channel's opening video: the domain, not patterns, dictates architecture (3-things-that-make-a-programmer-better).
+- [[encoding]] — Representation, not secrecy — the most misunderstood member of the channel's deliberately-taught trio of encoding, encryption and hashing.
+- [[encryption]] — One third of the channel's deliberately-taught trio — encoding, encryption, hashing — that developers constantly confuse.
+- [[full-text-search]] — The channel treats full-text search not as "just use Elastic" but as a mechanism you can build with your own hands — Viktor did exactly that in production, ha
+- [[hashing]] — Strictly one-way: arbitrary input to fixed-size output — 1 TB or 100 TB in, 20 bytes out, and as Viktor quips, "it's not archiving": you cannot get the data b
+- [[https-tls]] — The channel keeps returning to a blunt thesis: HTTPS guarantees an encrypted channel and a URL-matching certificate, and nothing more.
+- [[index-compression]] — How Viktor shrinks an inverted index stage by stage, with the sizes on screen: raw JSON 4 GB → flattened arrays 3.4 GB → delta-encoded sorted doc ids (store `
+- [[inverted-index]] — The data structure that solves what B-tree indexes cannot: mid-string word search.
+- [[jwt]] — The channel's favorite trick-question subject: a JWT looks encrypted but is just base64url-encoded and signed — the frontend can read the whole payload withou
+- [[language-server-protocol]] — The channel introduces LSP as the architectural decision that quietly paid off later (vscode-in-the-browser).
+- [[latency-and-speed-of-light]] — The channel's most striking "how the internet works" argument: your website's speed is bounded by physics, not bandwidth (speed-of-light-website-latency).
+- [[least-privilege]] — Scope credentials to the task — the channel teaches this through one unforgettable war story from WebbyLab's early days (voice-1-admin-keys-for-developers).
+- [[map-reduce]] — Covered not as big-data buzzword but as the practical trick that let Viktor build a 16.5M-row inverted index without holding 10–15 GB in RAM.
+- [[microservices]] — Viktor opens with Simon Brown's line: "what makes you think you can build microservices if you can't build a monolith?" (microservices-main-problem).
+- [[mvcc]] — Covered as the hidden mechanism behind a real architectural difference between MySQL and Postgres.
+- [[nat-and-networking]] — This is the connective tissue of the channel's "How the Internet works" series — the plumbing that the DNS, DHCP and latency episodes all sit on top of.
+- [[one-time-passwords]] — The channel demystifies Google Authenticator in one line: TOTP is just an HMAC over a shared secret plus the current Unix-time interval (e.g.
+- [[remote-development]] — The channel's take, inspired by Google's "open a URL and you have a dev environment" setups, is that VS Code's process architecture makes remote development a
+- [[retro-gaming]] — Viktor's long-running hobby — and the subject of his first YouTube channel, a retro-gaming test channel that earned ~300 subscribers in a year of weekly strea
+- [[sandboxing-and-isolation]] — Contain the untrusted thing so that even if it's compromised, it can't reach anything that matters.
+- [[security-practices]] — The channel's security thesis, stated outright in qa-and-plans-for-2024: "almost all of information security is understanding how things work inside." Viktor
+- [[social-engineering]] — The channel's take: the weakest link is rarely the crypto — it's the human being talked into cooperating.
+- [[software-design]] — Design is the channel's central craft topic — at Google, Viktor says, your level is determined by design ability, not tech knowledge (he'd never written Java
+- [[ssh-key-authentication]] — Presented on the channel as asymmetric-encryption you use every day without noticing.
+- [[technical-debt]] — The framing that stuck with Viktor is a quote he passes on: "if you just write code, you accumulate technical debt" (code-review-how-google-does-it).
+- [[test-driven-development]] — The channel is explicitly anti-TDD-purist.
+- [[uuid-vs-auto-increment]] — One of the channel's most measured claims: random UUID primary keys are catastrophic in MySQL but largely harmless in Postgres — because in MySQL the table it
+- [[vibe-coding]] — Vibe-coding, as Viktor practices it live on the channel, is not "close your eyes and accept whatever the model outputs" — it is a disciplined, standards-drive
+- [[web-performance]] — The channel's fullest take comes from the Google I/O watch party (google-io-2023-watch-party).
+- [[webgpu]] — The channel calls WebGPU the quiet killer feature of the Google I/O showcase (google-io-2023-watch-party).
+- [[workspace-and-hardware]] — Viktor's desk setup, shown in the sponsor-video tour my-workspace-setup.
+
+## Videos (40)
+
+- [[3-books-on-software-design]] — Viewers keep asking for programming book recommendations, but "programming" is too broad — so the author narrows it to three foundational books on software-de
+- [[3-things-that-make-a-programmer-better]] — The channel's first video.
+- [[3-things-that-ruin-a-programmer]] — Companion to 3-things-that-make-a-programmer-better: three things that turn a good programmer into a worse one.
+- [[ai-and-jobs-gemini-talk-2]] — Second comedic voice conversation with Gemini, this time attacking the AI-vs-jobs anxiety head-on.
+- [[ai-replacing-us-gemini-talk-1]] — A comedic voice conversation with Gemini that doubles as a common-sense reasoning test.
+- [[asymmetric-encryption-digital-signatures]] — The author's thesis: one pair of concepts — asymmetric-encryption and digital-signatures — explains how HTTPS, SSH key login, ProtonMail/PGP, Ukraine's Diia s
+- [[awd-systems-compared]] — An off-topic sponsors video with zero IT content but the channel's core philosophy intact: "all-wheel drive" is a marketing label, and unless you dig into how
+- [[bloom-filter-and-firefox]] — A deep dive into the bloom-filter, framed by a real war story: how browsers check revoked HTTPS certificates.
+- [[code-review-how-google-does-it]] — There is no single "right" way to do code-review — so he shares first-hand experience from two places: his company webilab and Google (where he works).
+- [[database-indexes-mysql-vs-postgres]] — The "hardcore" payoff of the index series: half theory, half live experiments on a 16M-row table, all in service of the author's thesis that you must understa
+- [[dhcp-cafe-wifi]] — Another episode in the "how the internet works" series, framed around a security-flavored scenario: you sit down in a café, connect to the Wi-Fi, and your lap
+- [[dns-recursive-resolution]] — The second DNS episode answers the question left hanging from the first: does every DNS server in the world hold records for every website?
+- [[five-star-books]] — A sponsors video born from a GeekOps meetup question ("what books do you read?") that wasn't recorded: the author walks top-to-bottom through his Goodreads li
+- [[full-text-search-inverted-indexes]] — The author builds a production-grade inverted-index from scratch in JavaScript and races it against MySQL on his 16.5M-row products table — informed by a real
+- [[full-text-search-part-2-qa]] — The first video in a new format the author invented for his patrons: collect questions under an existing video and answer them in depth — here, follow-ups to
+- [[google-io-2023-watch-party]] — Joint livestream with guest Mykyta Galkin — a Google Cloud engineer (Cloud Run team) and GDG organizer — reviewing Google I/O 2023 announcements, with the aut
+- [[hashing-encoding-encryption-difference]] — Three concepts developers constantly confuse, untangled on the tablet as a small taxonomy tree.
+- [[how-base64-works]] — A hands-on follow-up to the hashing/encoding/encryption video (hashing-encoding-encryption-difference): the author demonstrates base64 in three real places yo
+- [[how-dns-works-basics]] — First of a three-video mini-series on how the internet works, this episode explains what dns is and why we need name resolution.
+- [[how-to-support-the-channel]] — A short housekeeping video walking through the channel's four YouTube sponsorship tiers.
+- [[learning-deeply-and-remembering]] — A conceptual follow-up to 3-things-that-make-a-programmer-better, triggered by two viewer comments: "I learned network protocols at university and never once
+- [[microservices-main-problem]] — A warning for anyone planning to start a new project with microservices.
+- [[my-workspace-setup]] — An off-topic tour of the author's desk for sponsors/patrons.
+- [[qa-1-will-https-protect-you]] — The channel's first Q&A episode, answering comments left under earlier videos — mainly the popular DHCP video plus questions on full-text search, database ind
+- [[qa-2-answering-questions]] — A morning livestream where the author answers questions collected via a Google Form plus live chat.
+- [[qa-and-plans-for-2024]] — A 2+ hour livestream ("I thought it would be 30–40 minutes") with three threads: results of 2023, plans for 2024, and a marathon of audience questions.
+- [[speed-of-light-website-latency]] — The opening video of the "how the internet works" series.
+- [[trees-search-algorithms-databases]] — A whiteboard "bridge" video the author made deliberately as preparation for his MySQL-vs-Postgres index deep dive: which tree data-structures databases actual
+- [[vibe-coded-mobile-app]] — Short demo of a real itch-scratching app the author vibe-coded in two evenings.
+- [[vibe-coding-new-project]] — Live stream where the author starts a brand-new pet project — a racing telemetry app — from an empty folder, using Claude Code (Opus 4.5 on the ~$100–120/mont
+- [[vibe-coding-part-2]] — Continuation of the racing-telemetry vibe-coding stream, which turns into a rich Q&A.
+- [[vm-network-isolation]] — The first of the channel's unedited, off-topic videos made specifically for paying sponsors — recorded live without montage, effectively a screen-share hack s
+- [[voice-1-admin-keys-for-developers]] — The first episode of a new sponsors-only audio-podcast format: shorter, more casual life-stories from development, recorded when the author is travelling and
+- [[voice-2-faster-ui-development]] — Second voice-message episode (he renamed the podcast from "5 minutes about programming" because he literally records these as voice messages on his iPhone).
+- [[voice-3-scary-abstractions]] — Third episode of the voice-message series, about a strange phenomenon he keeps observing (he even made a slide about it for his DOU Day talk but ran out of ti
+- [[voice-4-phone-scammers]] — Fourth episode of the audio-podcast series.
+- [[voice-5-why-i-left-google]] — A candid "voice message" episode — literally recorded in his car outside a hospital while waiting for his parents (his father had heart problems; his mother h
+- [[vscode-in-the-browser]] — When the author joined Google, what struck him was how fast you can spin up a project: open a browser, open a URL — and you have a full code editor; nothing o
+- [[why-algorithms-matter]] — Instead of dry theory, the author live-codes an everyday task — merging an array of messages with an array of users to attach a `username` to each message — a
+- [[why-database-indexes]] — A live-demo introduction to database-indexes: the author prepares two MySQL databases — one `products` table with 1K rows, one with 10 million — and measures
+
+## Tools (36)
+
+- [[chatgpt]] — OpenAI's chat assistant — Viktor's daily brainstorming and explain-anything tool since the channel's early AI coverage, and a consistent passer of his binary-
+- [[claude-code]] — Anthropic's terminal-based AI coding agent — and the main agent in Viktor's vibe-coding workflow.
+- [[cursor]] — An AI-first code editor (a VS Code fork).
+- [[deepseek]] — The Chinese open-weights LLM family, which the channel treats as a data point on the local-vs-frontier gap.
+- [[dnsmasq]] — A tiny combined caching-DNS + DHCP server.
+- [[docker]] — Docker is the standard containerization tool, and on the channel it serves as the flagship example of why deep understanding beats surface knowledge.
+- [[elasticsearch]] — Presented not as magic but as the packaged version of exactly the mechanism Viktor builds by hand: an inverted-index plus a tokenization pipeline — "it works
+- [[eslint]] — ESLint is the standard JavaScript linter.
+- [[firebase]] — Firebase is Google's backend-less application platform, covered on the channel through the I/O 2023 watch party where co-host Mykyta Galkin gives a guided tou
+- [[firefox]] — Web browser. It shows up on the channel in two roles.
+- [[flutter]] — Flutter is Google's cross-platform UI toolkit, and on the channel it is the proof that vibe-coding is past the toy stage: Viktor vibe-coded a full-featured co
+- [[gemini]] — Google's LLM assistant (formerly Bard) — the model with the longest arc on the channel, from comedy prop to daily workhorse.
+- [[github-copilot]] — GitHub's AI autocomplete assistant — and the one AI tool the channel repeatedly declined.
+- [[godot]] — Godot is a free, open-source game engine.
+- [[google-cloud-run]] — Cloud Run is Google Cloud's serverless container platform — bring any container, get scale-to-zero, metrics and CI/CD "in two clicks" — and it is literally th
+- [[google-stitch]] — Google's free AI design generator, used as the UI-design stage of Viktor's vibe-coding pipeline in vibe-coding-new-project.
+- [[livr]] — LIVR (Language Independent Validation Rules) is Viktor's own validation library — born at WebbyLab, which standardizes its stacks: they tried every validation
+- [[material-ui]] — Material UI (MUI) is the popular React component library implementing Google's Material Design.
+- [[memcached]] — Benchmarked alongside redis in the Bloom-filter shootout as a distributed in-memory hash table: comparable lookup speed to Redis (~6 s per 100,000 lookups on
+- [[mongodb]] — Appears on the channel in two roles.
+- [[mysql]] — The channel's default experiment platform: nearly every database demo runs on MySQL, using `SET profiling`, `CREATE INDEX`, and `EXPLAIN` (why-database-indexe
+- [[nextjs]] — Next.js is the React framework for server-side rendering and static generation.
+- [[nginx]] — Web server. On the channel it plays a supporting role in the latency episode: he stood up a bare nginx server in Los Angeles serving both HTTP and HTTPS as th
+- [[nodejs]] — Node.js is the server-side JavaScript runtime and the channel's default backend platform.
+- [[ollama]] — A runner for open-source LLMs on local hardware.
+- [[pfsense]] — A FreeBSD-based open-source virtual router and firewall (runs happily in ~512MB RAM with a tiny disk).
+- [[postgresql]] — On the channel, Postgres is the architectural counterpoint to mysql: no clustered indexes at all.
+- [[prettier]] — Prettier is the opinionated code formatter for JavaScript and friends.
+- [[raspberry-pi]] — The Raspberry Pi is the credit-card-sized single-board computer, and on the channel it appears in Viktor's workspace tour as the heart of his retro-gaming cor
+- [[react-admin]] — React Admin is a ready-made declarative framework for building admin panels on top of React.
+- [[react]] — React is the dominant JavaScript UI library, and the channel carries rare first-hand history with it: WebbyLab ran React 0.4 in production just two months aft
+- [[redis]] — Benchmarked on the channel as the standard caching answer — "practically an in-memory database" — in the 10M-key Bloom-filter shootout: ~6 s per 100,000 looku
+- [[terraform]] — Terraform is the standard infrastructure-as-code tool.
+- [[vertex-ai]] — Google Cloud's machine-learning platform.
+- [[virtualbox]] — Desktop hypervisor. On the channel it's the host for the VM-isolation build: he uses it to run both the guest VM and the pfSense router VM, and demonstrates i
+- [[vs-code]] — VS Code is Microsoft's code editor, and the channel treats it less as a tool tip and more as an architecture case study.
+
+## Books (37)
+
+- [[a-philosophy-of-software-design]] — John Ousterhout's thin book on deep modules, information hiding, and designing against complexity.
+- [[atomic-habits]] — James Clear's bestseller on building good habits through tiny, systematic changes.
+- [[blood-sweat-and-pixels]] — Jason Schreier's collection of game-development war stories, from one-man Stardew Valley to AAA productions.
+- [[c-programming-language]] — Kernighan and Ritchie's thin classic — a couple of evenings, in Viktor's estimate, after which you understand what actually happens beneath high-level languag
+- [[clean-architecture]] — Robert Martin's book on structuring applications into layers with dependencies pointing inward.
+- [[clean-code]] — Robert Martin's famous book on writing readable, maintainable code.
+- [[code-complete]] — Steve McConnell's encyclopedic guide to code construction — naming, structure, optimization, profiling, all covered systematically.
+- [[cracking-the-coding-interview]] — Gayle Laakmann McDowell's interview-prep bible.
+- [[design-patterns-gof]] — The Gang of Four catalog of classic object-oriented design patterns.
+- [[designing-data-intensive-applications]] — Martin Kleppmann's famous "DDIA" — the modern reference on storage engines, replication, partitioning, and distributed data systems.
+- [[docker-deep-dive]] — A book on Docker internals — subsystems, overlay networks, plenty of practice — whose title Viktor didn't state, but whose description matches Nigel Poulton's
+- [[domain-driven-design]] — Eric Evans's classic on modelling software around the business domain — bounded contexts, ubiquitous language, and taming complexity.
+- [[effortless]] — Greg McKeown's follow-up to Essentialism: once you've chosen the essential things, make doing them as easy as possible.
+- [[essentialism]] — Greg McKeown's manifesto for the disciplined pursuit of less — doing only what truly matters.
+- [[getting-things-done]] — David Allen's classic personal-productivity system: capture everything, then work from trusted lists.
+- [[good-strategy-bad-strategy]] — Richard Rumelt's book on what strategy actually is — its three building blocks (diagnosis, guiding policy, coherent action) — and, most importantly in Viktor'
+- [[grokking-algorithms]] — Aditya Bhargava's illustrated, deliberately friendly introduction to algorithms.
+- [[high-performance-browser-networking]] — Ilya Grigorik's book on how browsers really talk to the network — latency, TCP/TLS, HTTP/2, WebRTC — free to read online.
+- [[higher-order-perl]] — Mark Jason Dominus's book on functional programming techniques in Perl — closures, iterators, higher-order functions.
+- [[how-linux-works]] — Brian Ward's practical-theoretical tour of Linux: subsystems, the network stack, administration.
+- [[implementing-domain-driven-design]] — Vaughn Vernon's hands-on companion to Evans's DDD — the book that shows exactly how to structure the code.
+- [[its-not-luck]] — Goldratt's follow-up novel applying the theory of constraints to marketing, distribution, and business strategy.
+- [[karting-book]] — A karting-specific driving book whose title Viktor didn't state in the video.
+- [[making-sense-of-squiggly-lines]] — Christopher Brown's guide to reading racing telemetry — turning the squiggly speed/throttle/brake traces into driving improvements.
+- [[mythical-man-month]] — Frederick Brooks's 1975 essays on software project management.
+- [[old-linux-security-book]] — A Linux security book from 2001 whose title Viktor didn't state in the video.
+- [[patterns-of-enterprise-application-architecture]] — Martin Fowler's catalog of strategic architecture patterns — Active Record, Data Mapper, Unit of Work and friends.
+- [[sandworm]] — Andy Greenberg's investigative account of the Russian state hacking group behind NotPetya and the attacks on Ukraine's power grid.
+- [[seven-habits-of-highly-effective-people]] — Stephen Covey's foundational book on personal effectiveness — proactivity, priorities, win-win, sharpening the saw.
+- [[software-engineering-at-google]] — The "Flamingo book": the entire Google development process, A to Z, in 600 pages — code review, testing culture, tooling, deprecation.
+- [[spin-selling]] — Neil Rackham's research-based classic on big-ticket B2B sales — the rare sales book that isn't about B2C, Viktor notes.
+- [[summa-technologiae]] — Stanisław Lem's 1960s work of pure-logic, emotionless futurology, reasoning about technology roughly a thousand years out.
+- [[the-checklist-manifesto]] — Surgeon Atul Gawande's collection of stories about when and why simple checklists prevent catastrophic failures — in operating rooms, cockpits, construction.
+- [[the-goal]] — Eliyahu Goldratt's theory of constraints packaged as a novel about saving a failing factory.
+- [[the-staff-engineers-path]] — Tanya Reilly's guide to the individual-contributor track beyond senior — what a staff engineer actually does and how to become one.
+- [[ultimate-speed-secrets]] — Ross Bentley's series on race-driving technique — lines, braking, car control, and the driver's mind.
+- [[who-the-a-method-for-hiring]] — Smart and Street's playbook for building a structured recruiting process.
