@@ -1,0 +1,3276 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.790 align:start position:0%
+ 
+uh <00:00:00.231><c>Today </c><00:00:00.462><c>we </c><00:00:00.693><c>will </c><00:00:00.924><c>continue </c><00:00:01.155><c>the </c><00:00:01.386><c>topic </c><00:00:01.617><c>of</c>
+
+00:00:01.790 --> 00:00:01.800 align:start position:0%
+uh Today we will continue the topic of
+ 
+
+00:00:01.800 --> 00:00:03.590 align:start position:0%
+uh Today we will continue the topic of
+coding, <00:00:02.300><c>encryption, </c><00:00:02.800><c>caching </c><00:00:03.300><c>and</c>
+
+00:00:03.590 --> 00:00:03.600 align:start position:0%
+coding, encryption, caching and
+ 
+
+00:00:03.600 --> 00:00:06.410 align:start position:0%
+coding, encryption, caching and
+talk <00:00:04.092><c>today </c><00:00:04.584><c>about </c><00:00:05.076><c>b64 </c><00:00:05.568><c>if </c><00:00:06.060><c>they</c>
+
+00:00:06.410 --> 00:00:06.420 align:start position:0%
+talk today about b64 if they
+ 
+
+00:00:06.420 --> 00:00:08.810 align:start position:0%
+talk today about b64 if they
+watched <00:00:06.719><c>the </c><00:00:07.018><c>previous </c><00:00:07.317><c>video </c><00:00:07.616><c>where </c><00:00:07.915><c>I </c><00:00:08.214><c>analyzed </c><00:00:08.513><c>the</c>
+
+00:00:08.810 --> 00:00:08.820 align:start position:0%
+watched the previous video where I analyzed the
+ 
+
+00:00:08.820 --> 00:00:11.390 align:start position:0%
+watched the previous video where I analyzed the
+difference <00:00:09.346><c>between </c><00:00:09.872><c>coding, </c><00:00:10.398><c>encryption,</c>
+
+00:00:11.390 --> 00:00:11.400 align:start position:0%
+difference between coding, encryption,
+ 
+
+00:00:11.400 --> 00:00:13.430 align:start position:0%
+difference between coding, encryption,
+encryption, <00:00:11.736><c>here </c><00:00:12.072><c>you </c><00:00:12.408><c>go. </c><00:00:12.744><c>Watch </c><00:00:13.080><c>this</c>
+
+00:00:13.430 --> 00:00:13.440 align:start position:0%
+encryption, here you go. Watch this
+ 
+
+00:00:13.440 --> 00:00:16.070 align:start position:0%
+encryption, here you go. Watch this
+video, <00:00:13.720><c>this </c><00:00:14.000><c>will </c><00:00:14.280><c>be </c><00:00:14.560><c>an </c><00:00:14.840><c>introduction </c><00:00:15.120><c>and </c><00:00:15.400><c>our </c><00:00:15.680><c>task </c><00:00:15.960><c>is</c>
+
+00:00:16.070 --> 00:00:16.080 align:start position:0%
+video, this will be an introduction and our task is
+ 
+
+00:00:16.080 --> 00:00:19.310 align:start position:0%
+video, this will be an introduction and our task is
+to <00:00:16.432><c>figure </c><00:00:16.784><c>out </c><00:00:17.136><c>how </c><00:00:17.488><c>it </c><00:00:17.840><c>works </c><00:00:18.192><c>inside, </c><00:00:18.544><c>if </c><00:00:18.896><c>64</c>
+
+00:00:19.310 --> 00:00:19.320 align:start position:0%
+to figure out how it works inside, if 64
+ 
+
+00:00:19.320 --> 00:00:21.890 align:start position:0%
+to figure out how it works inside, if 64
+looks <00:00:19.635><c>like, </c><00:00:19.950><c>why </c><00:00:20.265><c>is </c><00:00:20.580><c>it </c><00:00:20.895><c>needed, </c><00:00:21.210><c>and </c><00:00:21.525><c>so </c><00:00:21.840><c>on,</c>
+
+00:00:21.890 --> 00:00:21.900 align:start position:0%
+looks like, why is it needed, and so on,
+ 
+
+00:00:21.900 --> 00:00:25.009 align:start position:0%
+looks like, why is it needed, and so on,
+analyze <00:00:22.252><c>real </c><00:00:22.604><c>cases </c><00:00:22.956><c>and </c><00:00:23.308><c>the </c><00:00:23.660><c>world, </c><00:00:24.012><c>we </c><00:00:24.364><c>will </c><00:00:24.716><c>divide</c>
+
+00:00:25.009 --> 00:00:25.019 align:start position:0%
+analyze real cases and the world, we will divide
+ 
+
+00:00:25.019 --> 00:00:27.170 align:start position:0%
+analyze real cases and the world, we will divide
+today's <00:00:25.229><c>video </c><00:00:25.439><c>into </c><00:00:25.649><c>three </c><00:00:25.859><c>parts, </c><00:00:26.069><c>the </c><00:00:26.279><c>first</c>
+
+00:00:27.170 --> 00:00:27.180 align:start position:0%
+today's video into three parts, the first
+ 
+
+00:00:27.180 --> 00:00:29.330 align:start position:0%
+today's video into three parts, the first
+part <00:00:27.585><c>we </c><00:00:27.990><c>will </c><00:00:28.395><c>look </c><00:00:28.800><c>directly</c>
+
+00:00:29.330 --> 00:00:29.340 align:start position:0%
+part we will look directly
+ 
+
+00:00:29.340 --> 00:00:34.010 align:start position:0%
+part we will look directly
+at <00:00:29.585><c>the </c><00:00:29.830><c>data </c><00:00:30.075><c>itself, </c><00:00:30.320><c>how </c><00:00:30.565><c>they </c><00:00:30.810><c>look, </c><00:00:31.055><c>the </c><00:00:31.300><c>second </c><00:00:31.545><c>part </c><00:00:31.790><c>will </c><00:00:32.035><c>be </c><00:00:32.280><c>a </c><00:00:32.525><c>little </c><00:00:32.770><c>bit </c><00:00:33.015><c>of</c>
+
+00:00:34.010 --> 00:00:35.229 align:start position:0%
+at the data itself, how they look, the second part will be a little bit of
+ 
+
+00:00:35.229 --> 00:00:35.239 align:start position:0%
+ 
+ 
+
+00:00:35.239 --> 00:00:38.450 align:start position:0%
+ 
+theory, <00:00:35.715><c>and </c><00:00:36.191><c>the </c><00:00:36.667><c>third </c><00:00:37.143><c>part </c><00:00:37.619><c>we </c><00:00:38.095><c>will</c>
+
+00:00:38.450 --> 00:00:38.460 align:start position:0%
+theory, and the third part we will
+ 
+
+00:00:38.460 --> 00:00:40.490 align:start position:0%
+theory, and the third part we will
+pair <00:00:39.040><c>some </c><00:00:39.620><c>practical </c><00:00:40.200><c>things</c>
+
+00:00:40.490 --> 00:00:40.500 align:start position:0%
+pair some practical things
+ 
+
+00:00:40.500 --> 00:00:41.690 align:start position:0%
+pair some practical things
+to do,
+
+00:00:41.690 --> 00:00:41.700 align:start position:0%
+to do,
+ 
+
+00:00:41.700 --> 00:00:43.490 align:start position:0%
+to do,
+let's <00:00:41.964><c>look </c><00:00:42.228><c>at </c><00:00:42.492><c>examples, </c><00:00:42.756><c>the </c><00:00:43.020><c>first</c>
+
+00:00:43.490 --> 00:00:43.500 align:start position:0%
+let's look at examples, the first
+ 
+
+00:00:43.500 --> 00:00:45.170 align:start position:0%
+let's look at examples, the first
+example <00:00:43.728><c>is </c><00:00:43.956><c>our </c><00:00:44.184><c>generation </c><00:00:44.412><c>of </c><00:00:44.640><c>jeans</c>
+
+00:00:45.170 --> 00:00:45.180 align:start position:0%
+example is our generation of jeans
+ 
+
+00:00:45.180 --> 00:00:46.850 align:start position:0%
+example is our generation of jeans
+tokens. <00:00:45.465><c>I </c><00:00:45.750><c>just </c><00:00:46.035><c>connect </c><00:00:46.320><c>the</c>
+
+00:00:46.850 --> 00:00:46.860 align:start position:0%
+tokens. I just connect the
+ 
+
+00:00:46.860 --> 00:00:49.910 align:start position:0%
+tokens. I just connect the
+gsmap <00:00:47.245><c>Token </c><00:00:47.630><c>gwt </c><00:00:48.015><c>library, </c><00:00:48.400><c>we </c><00:00:48.785><c>generate </c><00:00:49.170><c>it, </c><00:00:49.555><c>we</c>
+
+00:00:49.910 --> 00:00:49.920 align:start position:0%
+gsmap Token gwt library, we generate it, we
+ 
+
+00:00:49.920 --> 00:00:53.350 align:start position:0%
+gsmap Token gwt library, we generate it, we
+output <00:00:50.624><c>it, </c><00:00:51.328><c>let's </c><00:00:52.032><c>run </c><00:00:52.736><c>our</c>
+
+00:00:53.350 --> 00:00:53.360 align:start position:0%
+output it, let's run our
+ 
+
+00:00:53.360 --> 00:00:57.049 align:start position:0%
+output it, let's run our
+generate <00:00:53.724><c>gwt </c><00:00:54.088><c>and </c><00:00:54.452><c>here </c><00:00:54.816><c>we </c><00:00:55.180><c>get </c><00:00:55.544><c>gwt </c><00:00:55.908><c>at </c><00:00:56.272><c>the </c><00:00:56.636><c>output</c>
+
+00:00:57.049 --> 00:00:57.059 align:start position:0%
+generate gwt and here we get gwt at the output
+ 
+
+00:00:57.059 --> 00:01:00.130 align:start position:0%
+generate gwt and here we get gwt at the output
+and <00:00:57.461><c>we </c><00:00:57.863><c>see </c><00:00:58.265><c>that </c><00:00:58.667><c>it </c><00:00:59.069><c>consists </c><00:00:59.471><c>of </c><00:00:59.873><c>such</c>
+
+00:01:00.130 --> 00:01:00.140 align:start position:0%
+and we see that it consists of such
+ 
+
+00:01:00.140 --> 00:01:04.609 align:start position:0%
+and we see that it consists of such
+symbols, <00:01:00.846><c>there </c><00:01:01.552><c>are </c><00:01:02.258><c>dots </c><00:01:02.964><c>here, </c><00:01:03.670><c>and </c><00:01:04.376><c>so</c>
+
+00:01:04.609 --> 00:01:04.619 align:start position:0%
+symbols, there are dots here, and so
+ 
+
+00:01:04.619 --> 00:01:07.010 align:start position:0%
+symbols, there are dots here, and so
+on. <00:01:04.944><c>Well, </c><00:01:05.269><c>in </c><00:01:05.594><c>principle, </c><00:01:05.919><c>what </c><00:01:06.244><c>can </c><00:01:06.569><c>we </c><00:01:06.894><c>say</c>
+
+00:01:07.010 --> 00:01:07.020 align:start position:0%
+on. Well, in principle, what can we say
+ 
+
+00:01:07.020 --> 00:01:10.870 align:start position:0%
+on. Well, in principle, what can we say
+that <00:01:07.410><c>we </c><00:01:07.800><c>have </c><00:01:08.190><c>Bich </c><00:01:08.580><c>64 </c><00:01:08.970><c>blocks </c><00:01:09.360><c>and</c>
+
+00:01:10.870 --> 00:01:10.880 align:start position:0%
+that we have Bich 64 blocks and
+ 
+
+00:01:10.880 --> 00:01:13.490 align:start position:0%
+that we have Bich 64 blocks and
+we <00:01:11.380><c>have </c><00:01:11.880><c>a </c><00:01:12.380><c>question </c><00:01:12.880><c>for </c><00:01:13.380><c>you</c>
+
+00:01:13.490 --> 00:01:13.500 align:start position:0%
+we have a question for you
+ 
+
+00:01:13.500 --> 00:01:16.850 align:start position:0%
+we have a question for you
+right <00:01:13.989><c>away </c><00:01:14.478><c>If </c><00:01:14.967><c>we </c><00:01:15.456><c>live </c><00:01:15.945><c>has </c><00:01:16.434><c>this</c>
+
+00:01:16.850 --> 00:01:16.860 align:start position:0%
+right away If we live has this
+ 
+
+00:01:16.860 --> 00:01:19.310 align:start position:0%
+right away If we live has this
+secret <00:01:17.268><c>and </c><00:01:17.676><c>it </c><00:01:18.084><c>is </c><00:01:18.492><c>used </c><00:01:18.900><c>when</c>
+
+00:01:19.310 --> 00:01:19.320 align:start position:0%
+secret and it is used when
+ 
+
+00:01:19.320 --> 00:01:22.570 align:start position:0%
+secret and it is used when
+creating <00:01:19.824><c>live </c><00:01:20.328><c>Tokyo </c><00:01:20.832><c>can </c><00:01:21.336><c>the </c><00:01:21.840><c>client</c>
+
+00:01:22.570 --> 00:01:22.580 align:start position:0%
+creating live Tokyo can the client
+ 
+
+00:01:22.580 --> 00:01:25.190 align:start position:0%
+creating live Tokyo can the client
+browser <00:01:23.025><c>for </c><00:01:23.470><c>example </c><00:01:23.915><c>see </c><00:01:24.360><c>what</c>
+
+00:01:25.190 --> 00:01:25.200 align:start position:0%
+browser for example see what
+ 
+
+00:01:25.200 --> 00:01:27.230 align:start position:0%
+browser for example see what
+is <00:01:25.480><c>in </c><00:01:25.760><c>this </c><00:01:26.040><c>Tokyo </c><00:01:26.320><c>without </c><00:01:26.600><c>knowing </c><00:01:26.880><c>the</c>
+
+00:01:27.230 --> 00:01:27.240 align:start position:0%
+is in this Tokyo without knowing the
+ 
+
+00:01:27.240 --> 00:01:29.810 align:start position:0%
+is in this Tokyo without knowing the
+secret <00:01:27.480><c>So </c><00:01:27.720><c>this </c><00:01:27.960><c>is </c><00:01:28.200><c>the </c><00:01:28.440><c>first </c><00:01:28.680><c>example </c><00:01:28.920><c>let's </c><00:01:29.160><c>give </c><00:01:29.400><c>a</c>
+
+00:01:29.810 --> 00:01:29.820 align:start position:0%
+secret So this is the first example let's give a
+ 
+
+00:01:29.820 --> 00:01:33.109 align:start position:0%
+secret So this is the first example let's give a
+second <00:01:30.291><c>example </c><00:01:30.762><c>the </c><00:01:31.233><c>second </c><00:01:31.704><c>example </c><00:01:32.175><c>this </c><00:01:32.646><c>is </c><00:01:33.117><c>our</c>
+
+00:01:33.109 --> 00:01:33.119 align:start position:0%
+second example the second example this is our
+ 
+
+00:01:33.119 --> 00:01:35.569 align:start position:0%
+second example the second example this is our
+Basic <00:01:33.389><c>House </c><00:01:33.659><c>here </c><00:01:33.929><c>I </c><00:01:34.199><c>wrote </c><00:01:34.469><c>a </c><00:01:34.739><c>small</c>
+
+00:01:35.569 --> 00:01:35.579 align:start position:0%
+Basic House here I wrote a small
+ 
+
+00:01:35.579 --> 00:01:39.710 align:start position:0%
+Basic House here I wrote a small
+server <00:01:36.251><c>without </c><00:01:36.923><c>chaos </c><00:01:37.595><c>authorization </c><00:01:38.267><c>We </c><00:01:38.939><c>have</c>
+
+00:01:39.710 --> 00:01:39.720 align:start position:0%
+server without chaos authorization We have
+ 
+
+00:01:39.720 --> 00:01:41.690 align:start position:0%
+server without chaos authorization We have
+User <00:01:39.967><c>Victor </c><00:01:40.214><c>password </c><00:01:40.461><c>has </c><00:01:40.708><c>password </c><00:01:40.955><c>Let's </c><00:01:41.202><c>start </c><00:01:41.449><c>it </c><00:01:41.696><c>we</c>
+
+00:01:41.690 --> 00:01:43.630 align:start position:0%
+User Victor password has password Let's start it we
+ 
+
+00:01:43.630 --> 00:01:43.640 align:start position:0%
+ 
+ 
+
+00:01:43.640 --> 00:01:46.450 align:start position:0%
+ 
+
+
+00:01:46.450 --> 00:01:46.460 align:start position:0%
+ 
+ 
+
+00:01:46.460 --> 00:01:50.149 align:start position:0%
+ 
+open <00:01:46.793><c>the </c><00:01:47.126><c>browser </c><00:01:47.459><c>open</c>
+
+00:01:50.149 --> 00:01:50.159 align:start position:0%
+ 
+ 
+
+00:01:50.159 --> 00:01:53.530 align:start position:0%
+ 
+opened <00:01:50.789><c>and </c><00:01:51.419><c>we </c><00:01:52.049><c>enter </c><00:01:52.679><c>Victor</c>
+
+00:01:53.530 --> 00:01:53.540 align:start position:0%
+opened and we enter Victor
+ 
+
+00:01:53.540 --> 00:01:58.130 align:start position:0%
+opened and we enter Victor
+and <00:01:54.579><c>My </c><00:01:55.618><c>password</c>
+
+00:01:58.130 --> 00:01:58.140 align:start position:0%
+and My password
+ 
+
+00:01:58.140 --> 00:02:00.830 align:start position:0%
+and My password
+super <00:01:58.560><c>We </c><00:01:58.980><c>issued </c><00:01:59.400><c>Hello </c><00:01:59.820><c>world </c><00:02:00.240><c>let's</c>
+
+00:02:00.830 --> 00:02:00.840 align:start position:0%
+super We issued Hello world let's
+ 
+
+00:02:00.840 --> 00:02:03.289 align:start position:0%
+super We issued Hello world let's
+now <00:02:01.439><c>look</c>
+
+00:02:03.289 --> 00:02:03.299 align:start position:0%
+now look
+ 
+
+00:02:03.299 --> 00:02:06.709 align:start position:0%
+now look
+at <00:02:03.625><c>what </c><00:02:03.951><c>is </c><00:02:04.277><c>transmitted </c><00:02:04.603><c>over </c><00:02:04.929><c>the </c><00:02:05.255><c>network </c><00:02:05.581><c>I </c><00:02:05.907><c>refresh </c><00:02:06.233><c>the</c>
+
+00:02:06.709 --> 00:02:06.719 align:start position:0%
+at what is transmitted over the network I refresh the
+ 
+
+00:02:06.719 --> 00:02:09.410 align:start position:0%
+at what is transmitted over the network I refresh the
+page <00:02:07.214><c>I </c><00:02:07.709><c>see </c><00:02:08.204><c>our </c><00:02:08.699><c>Jason</c>
+
+00:02:09.410 --> 00:02:09.420 align:start position:0%
+page I see our Jason
+ 
+
+00:02:09.420 --> 00:02:12.410 align:start position:0%
+page I see our Jason
+response <00:02:09.666><c>is </c><00:02:09.912><c>loading </c><00:02:10.158><c>we </c><00:02:10.404><c>look </c><00:02:10.650><c>at </c><00:02:10.896><c>it </c><00:02:11.142><c>is </c><00:02:11.388><c>it </c><00:02:11.634><c>and</c>
+
+00:02:12.410 --> 00:02:12.420 align:start position:0%
+response is loading we look at it is it and
+ 
+
+00:02:12.420 --> 00:02:14.449 align:start position:0%
+response is loading we look at it is it and
+look <00:02:12.667><c>in </c><00:02:12.914><c>the </c><00:02:13.161><c>headers </c><00:02:13.408><c>in </c><00:02:13.655><c>the </c><00:02:13.902><c>headers </c><00:02:14.149><c>we </c><00:02:14.396><c>have</c>
+
+00:02:14.449 --> 00:02:14.459 align:start position:0%
+look in the headers in the headers we have
+ 
+
+00:02:14.459 --> 00:02:17.750 align:start position:0%
+look in the headers in the headers we have
+something <00:02:15.209><c>like </c><00:02:15.959><c>passorizyshn </c><00:02:16.709><c>transmitted </c><00:02:17.459><c>and</c>
+
+00:02:17.750 --> 00:02:17.760 align:start position:0%
+something like passorizyshn transmitted and
+ 
+
+00:02:17.760 --> 00:02:20.210 align:start position:0%
+something like passorizyshn transmitted and
+we <00:02:18.052><c>have </c><00:02:18.344><c>such </c><00:02:18.636><c>a </c><00:02:18.928><c>line </c><00:02:19.220><c>Basic </c><00:02:19.512><c>and </c><00:02:19.804><c>also </c><00:02:20.096><c>We</c>
+
+00:02:20.210 --> 00:02:20.220 align:start position:0%
+we have such a line Basic and also We
+ 
+
+00:02:20.220 --> 00:02:23.150 align:start position:0%
+we have such a line Basic and also We
+see <00:02:20.520><c>here </c><00:02:20.820><c>that </c><00:02:21.120><c>this </c><00:02:21.420><c>is </c><00:02:21.720><c>something </c><00:02:22.020><c>similar </c><00:02:22.320><c>to </c><00:02:22.620><c>b64 </c><00:02:22.920><c>actually</c>
+
+00:02:23.150 --> 00:02:23.160 align:start position:0%
+see here that this is something similar to b64 actually
+ 
+
+00:02:23.160 --> 00:02:27.650 align:start position:0%
+see here that this is something similar to b64 actually
+64 <00:02:23.562><c>and </c><00:02:23.964><c>also </c><00:02:24.366><c>the </c><00:02:24.768><c>question </c><00:02:25.170><c>is </c><00:02:25.572><c>whether </c><00:02:25.974><c>this </c><00:02:26.376><c>data </c><00:02:26.778><c>is </c><00:02:27.180><c>transmitted</c>
+
+00:02:27.650 --> 00:02:27.660 align:start position:0%
+64 and also the question is whether this data is transmitted
+ 
+
+00:02:27.660 --> 00:02:30.410 align:start position:0%
+64 and also the question is whether this data is transmitted
+somehow <00:02:28.152><c>hidden </c><00:02:28.644><c>Are </c><00:02:29.136><c>they </c><00:02:29.628><c>not </c><00:02:30.120><c>hidden</c>
+
+00:02:30.410 --> 00:02:30.420 align:start position:0%
+somehow hidden Are they not hidden
+ 
+
+00:02:30.420 --> 00:02:32.750 align:start position:0%
+somehow hidden Are they not hidden
+or <00:02:30.642><c>can </c><00:02:30.864><c>it </c><00:02:31.086><c>be </c><00:02:31.308><c>considered </c><00:02:31.530><c>that </c><00:02:31.752><c>this </c><00:02:31.974><c>is </c><00:02:32.196><c>the </c><00:02:32.418><c>same </c><00:02:32.640><c>as</c>
+
+00:02:32.750 --> 00:02:32.760 align:start position:0%
+or can it be considered that this is the same as
+ 
+
+00:02:32.760 --> 00:02:35.330 align:start position:0%
+or can it be considered that this is the same as
+just <00:02:33.227><c>playtext </c><00:02:33.694><c>and </c><00:02:34.161><c>the </c><00:02:34.628><c>third </c><00:02:35.095><c>example</c>
+
+00:02:35.330 --> 00:02:35.340 align:start position:0%
+just playtext and the third example
+ 
+
+00:02:35.340 --> 00:02:37.250 align:start position:0%
+just playtext and the third example
+Let's <00:02:35.650><c>I </c><00:02:35.960><c>think </c><00:02:36.270><c>you </c><00:02:36.580><c>saw </c><00:02:36.890><c>this </c><00:02:37.200><c>before</c>
+
+00:02:37.250 --> 00:02:37.260 align:start position:0%
+Let's I think you saw this before
+ 
+
+00:02:37.260 --> 00:02:41.930 align:start position:0%
+Let's I think you saw this before
+we <00:02:37.800><c>have </c><00:02:38.340><c>a </c><00:02:38.880><c>certain </c><00:02:39.420><c>page </c><00:02:39.960><c>just </c><00:02:40.500><c>HTML  </c><00:02:41.040><c>and </c><00:02:41.580><c>here</c>
+
+00:02:41.930 --> 00:02:41.940 align:start position:0%
+we have a certain page just HTML  and here
+ 
+
+00:02:41.940 --> 00:02:43.150 align:start position:0%
+we have a certain page just HTML  and here
+we <00:02:42.239><c>have</c>
+
+00:02:43.150 --> 00:02:43.160 align:start position:0%
+we have
+ 
+
+00:02:43.160 --> 00:02:47.770 align:start position:0%
+we have
+a <00:02:43.748><c>picture </c><00:02:44.336><c>that </c><00:02:44.924><c>is </c><00:02:45.512><c>embedded </c><00:02:46.100><c>directly </c><00:02:46.688><c>into </c><00:02:47.276><c>the</c>
+
+00:02:47.770 --> 00:02:47.780 align:start position:0%
+a picture that is embedded directly into the
+ 
+
+00:02:47.780 --> 00:02:52.250 align:start position:0%
+a picture that is embedded directly into the
+HTML <00:02:48.186><c>body </c><00:02:48.592><c>in </c><00:02:48.998><c>the </c><00:02:49.404><c>form </c><00:02:49.810><c>of </c><00:02:50.216><c>84 </c><00:02:50.622><c>actually </c><00:02:51.028><c>Here </c><00:02:51.434><c>is </c><00:02:51.840><c>this</c>
+
+00:02:52.250 --> 00:02:52.260 align:start position:0%
+HTML body in the form of 84 actually Here is this
+ 
+
+00:02:52.260 --> 00:02:54.850 align:start position:0%
+HTML body in the form of 84 actually Here is this
+picture <00:02:52.550><c>- </c><00:02:52.840><c>this </c><00:02:53.130><c>dot </c><00:02:53.420><c>Here </c><00:02:53.710><c>it </c><00:02:54.000><c>is</c>
+
+00:02:54.850 --> 00:02:54.860 align:start position:0%
+picture - this dot Here it is
+ 
+
+00:02:54.860 --> 00:02:58.729 align:start position:0%
+picture - this dot Here it is
+And <00:02:55.397><c>I </c><00:02:55.934><c>also </c><00:02:56.471><c>load </c><00:02:57.008><c>this </c><00:02:57.545><c>frog </c><00:02:58.082><c>that </c><00:02:58.619><c>is</c>
+
+00:02:58.729 --> 00:02:58.739 align:start position:0%
+And I also load this frog that is
+ 
+
+00:02:58.739 --> 00:03:01.130 align:start position:0%
+And I also load this frog that is
+if <00:02:58.946><c>I </c><00:02:59.153><c>comment </c><00:02:59.360><c>the </c><00:02:59.567><c>frog </c><00:02:59.774><c>I </c><00:02:59.981><c>will </c><00:03:00.188><c>reset </c><00:03:00.395><c>it </c><00:03:00.602><c>to </c><00:03:00.809><c>zero </c><00:03:01.016><c>yes</c>
+
+00:03:01.130 --> 00:03:01.140 align:start position:0%
+if I comment the frog I will reset it to zero yes
+ 
+
+00:03:01.140 --> 00:03:03.589 align:start position:0%
+if I comment the frog I will reset it to zero yes
+That <00:03:01.320><c>is, </c><00:03:01.500><c>this </c><00:03:01.680><c>is </c><00:03:01.860><c>our</c>
+
+00:03:03.589 --> 00:03:03.599 align:start position:0%
+That is, this is our
+ 
+
+00:03:03.599 --> 00:03:07.250 align:start position:0%
+That is, this is our
+thing <00:03:04.026><c>We </c><00:03:04.453><c>will </c><00:03:04.880><c>also </c><00:03:05.307><c>try </c><00:03:05.734><c>to </c><00:03:06.161><c>understand </c><00:03:06.588><c>how </c><00:03:07.015><c>it</c>
+
+00:03:07.250 --> 00:03:07.260 align:start position:0%
+thing We will also try to understand how it
+ 
+
+00:03:07.260 --> 00:03:09.530 align:start position:0%
+thing We will also try to understand how it
+works <00:03:07.423><c>but </c><00:03:07.586><c>also </c><00:03:07.749><c>at </c><00:03:07.912><c>the </c><00:03:08.075><c>end </c><00:03:08.238><c>of </c><00:03:08.401><c>the </c><00:03:08.564><c>video </c><00:03:08.727><c>that </c><00:03:08.890><c>is </c><00:03:09.053><c>in</c>
+
+00:03:09.530 --> 00:03:09.540 align:start position:0%
+works but also at the end of the video that is in
+ 
+
+00:03:09.540 --> 00:03:10.910 align:start position:0%
+works but also at the end of the video that is in
+principle <00:03:09.768><c>we </c><00:03:09.996><c>have </c><00:03:10.224><c>already </c><00:03:10.452><c>understood </c><00:03:10.680><c>what</c>
+
+00:03:10.910 --> 00:03:10.920 align:start position:0%
+principle we have already understood what
+ 
+
+00:03:10.920 --> 00:03:14.410 align:start position:0%
+principle we have already understood what
+b64 <00:03:11.174><c>looks </c><00:03:11.428><c>like </c><00:03:11.682><c>and </c><00:03:11.936><c>I </c><00:03:12.190><c>think </c><00:03:12.444><c>you </c><00:03:12.698><c>have </c><00:03:12.952><c>seen</c>
+
+00:03:14.410 --> 00:03:14.420 align:start position:0%
+b64 looks like and I think you have seen
+ 
+
+00:03:14.420 --> 00:03:17.570 align:start position:0%
+b64 looks like and I think you have seen
+such <00:03:14.777><c>a </c><00:03:15.134><c>thing </c><00:03:15.491><c>more </c><00:03:15.848><c>than </c><00:03:16.205><c>once </c><00:03:16.562><c>besides </c><00:03:16.919><c>I </c><00:03:17.276><c>think</c>
+
+00:03:17.570 --> 00:03:17.580 align:start position:0%
+such a thing more than once besides I think
+ 
+
+00:03:17.580 --> 00:03:19.610 align:start position:0%
+such a thing more than once besides I think
+that <00:03:17.812><c>in </c><00:03:18.044><c>the </c><00:03:18.276><c>next </c><00:03:18.508><c>videos </c><00:03:18.740><c>there </c><00:03:18.972><c>will </c><00:03:19.204><c>be </c><00:03:19.436><c>a</c>
+
+00:03:19.610 --> 00:03:19.620 align:start position:0%
+that in the next videos there will be a
+ 
+
+00:03:19.620 --> 00:03:22.009 align:start position:0%
+that in the next videos there will be a
+video <00:03:19.980><c>about </c><00:03:20.340><c>inverted </c><00:03:20.700><c>indices </c><00:03:21.060><c>I </c><00:03:21.420><c>will </c><00:03:21.780><c>also</c>
+
+00:03:22.009 --> 00:03:22.019 align:start position:0%
+video about inverted indices I will also
+ 
+
+00:03:22.019 --> 00:03:24.710 align:start position:0%
+video about inverted indices I will also
+use <00:03:22.305><c>above </c><00:03:22.591><c>4 </c><00:03:22.877><c>and </c><00:03:23.163><c>so </c><00:03:23.449><c>this </c><00:03:23.735><c>in </c><00:03:24.021><c>the </c><00:03:24.307><c>video </c><00:03:24.593><c>will</c>
+
+00:03:24.710 --> 00:03:24.720 align:start position:0%
+use above 4 and so this in the video will
+ 
+
+00:03:24.720 --> 00:03:26.509 align:start position:0%
+use above 4 and so this in the video will
+also <00:03:24.960><c>be </c><00:03:25.200><c>useful </c><00:03:25.440><c>for </c><00:03:25.680><c>understanding </c><00:03:25.920><c>what </c><00:03:26.160><c>will </c><00:03:26.400><c>happen</c>
+
+00:03:26.509 --> 00:03:26.519 align:start position:0%
+also be useful for understanding what will happen
+ 
+
+00:03:26.519 --> 00:03:28.910 align:start position:0%
+also be useful for understanding what will happen
+next <00:03:26.725><c>so </c><00:03:26.931><c>let's </c><00:03:27.137><c>figure </c><00:03:27.343><c>it </c><00:03:27.549><c>out </c><00:03:27.755><c>a </c><00:03:27.961><c>little </c><00:03:28.167><c>bit </c><00:03:28.373><c>draw</c>
+
+00:03:28.910 --> 00:03:28.920 align:start position:0%
+next so let's figure it out a little bit draw
+ 
+
+00:03:28.920 --> 00:03:31.430 align:start position:0%
+next so let's figure it out a little bit draw
+Now <00:03:29.292><c>we </c><00:03:29.664><c>have </c><00:03:30.036><c>seen </c><00:03:30.408><c>what </c><00:03:30.780><c>64</c>
+
+00:03:31.430 --> 00:03:31.440 align:start position:0%
+Now we have seen what 64
+ 
+
+00:03:31.440 --> 00:03:35.210 align:start position:0%
+Now we have seen what 64
+looks <00:03:31.840><c>like </c><00:03:32.240><c>And </c><00:03:32.640><c>what </c><00:03:33.040><c>64 </c><00:03:33.440><c>would </c><00:03:33.840><c>be </c><00:03:34.240><c>like </c><00:03:34.640><c>see </c><00:03:35.040><c>64</c>
+
+00:03:35.210 --> 00:03:35.220 align:start position:0%
+looks like And what 64 would be like see 64
+ 
+
+00:03:35.220 --> 00:03:37.190 align:start position:0%
+looks like And what 64 would be like see 64
+is <00:03:35.485><c>binary </c><00:03:35.750><c>data </c><00:03:36.015><c>presented </c><00:03:36.280><c>in </c><00:03:36.545><c>the </c><00:03:36.810><c>form </c><00:03:37.075><c>of</c>
+
+00:03:37.190 --> 00:03:37.200 align:start position:0%
+is binary data presented in the form of
+ 
+
+00:03:37.200 --> 00:03:40.250 align:start position:0%
+is binary data presented in the form of
+text <00:03:37.763><c>And </c><00:03:38.326><c>they </c><00:03:38.889><c>this </c><00:03:39.452><c>encoding </c><00:03:40.015><c>standard</c>
+
+00:03:40.250 --> 00:03:40.260 align:start position:0%
+text And they this encoding standard
+ 
+
+00:03:40.260 --> 00:03:42.350 align:start position:0%
+text And they this encoding standard
+appeared <00:03:40.590><c>in </c><00:03:40.920><c>order </c><00:03:41.250><c>to </c><00:03:41.580><c>transmit</c>
+
+00:03:42.350 --> 00:03:42.360 align:start position:0%
+appeared in order to transmit
+ 
+
+00:03:42.360 --> 00:03:44.710 align:start position:0%
+appeared in order to transmit
+for example
+
+00:03:44.710 --> 00:03:44.720 align:start position:0%
+for example
+ 
+
+00:03:44.720 --> 00:03:47.570 align:start position:0%
+for example
+in <00:03:45.047><c>letters </c><00:03:45.374><c>letters </c><00:03:45.701><c>were </c><00:03:46.028><c>originally </c><00:03:46.355><c>text </c><00:03:46.682><c>and </c><00:03:47.009><c>there </c><00:03:47.336><c>was</c>
+
+00:03:47.570 --> 00:03:47.580 align:start position:0%
+in letters letters were originally text and there was
+ 
+
+00:03:47.580 --> 00:03:50.770 align:start position:0%
+in letters letters were originally text and there was
+a <00:03:47.871><c>need </c><00:03:48.162><c>to </c><00:03:48.453><c>encode </c><00:03:48.744><c>touchments </c><00:03:49.035><c>and </c><00:03:49.326><c>there </c><00:03:49.617><c>were</c>
+
+00:03:50.770 --> 00:03:50.780 align:start position:0%
+a need to encode touchments and there were
+ 
+
+00:03:50.780 --> 00:03:52.729 align:start position:0%
+a need to encode touchments and there were
+several <00:03:51.273><c>options </c><00:03:51.766><c>for </c><00:03:52.259><c>encoding</c>
+
+00:03:52.729 --> 00:03:52.739 align:start position:0%
+several options for encoding
+ 
+
+00:03:52.739 --> 00:03:55.430 align:start position:0%
+several options for encoding
+binary <00:03:53.059><c>data </c><00:03:53.379><c>in </c><00:03:53.699><c>the </c><00:03:54.019><c>form </c><00:03:54.339><c>of </c><00:03:54.659><c>text</c>
+
+00:03:55.430 --> 00:03:55.440 align:start position:0%
+binary data in the form of text
+ 
+
+00:03:55.440 --> 00:03:57.110 align:start position:0%
+binary data in the form of text
+printerbel <00:03:55.597><c>rolls </c><00:03:55.754><c>b64 </c><00:03:55.911><c>here </c><00:03:56.068><c>we </c><00:03:56.225><c>are </c><00:03:56.382><c>today  </c><00:03:56.539><c>we </c><00:03:56.696><c>analyze</c>
+
+00:03:57.110 --> 00:03:57.120 align:start position:0%
+printerbel rolls b64 here we are today  we analyze
+ 
+
+00:03:57.120 --> 00:03:59.270 align:start position:0%
+printerbel rolls b64 here we are today  we analyze
+b64 <00:03:57.629><c>which </c><00:03:58.138><c>is </c><00:03:58.647><c>used </c><00:03:59.156><c>in</c>
+
+00:03:59.270 --> 00:03:59.280 align:start position:0%
+b64 which is used in
+ 
+
+00:03:59.280 --> 00:04:01.490 align:start position:0%
+b64 which is used in
+many <00:03:59.579><c>systems </c><00:03:59.878><c>and </c><00:04:00.177><c>you </c><00:04:00.476><c>see </c><00:04:00.775><c>it </c><00:04:01.074><c>very </c><00:04:01.373><c>often</c>
+
+00:04:01.490 --> 00:04:01.500 align:start position:0%
+many systems and you see it very often
+ 
+
+00:04:01.500 --> 00:04:04.809 align:start position:0%
+many systems and you see it very often
+and <00:04:02.114><c>Now </c><00:04:02.728><c>let's </c><00:04:03.342><c>look </c><00:04:03.956><c>at</c>
+
+00:04:04.809 --> 00:04:04.819 align:start position:0%
+and Now let's look at
+ 
+
+00:04:04.819 --> 00:04:07.149 align:start position:0%
+and Now let's look at
+our <00:04:05.135><c>beta </c><00:04:05.451><c>data </c><00:04:05.767><c>what </c><00:04:06.083><c>it </c><00:04:06.399><c>is </c><00:04:06.715><c>actually</c>
+
+00:04:07.149 --> 00:04:07.159 align:start position:0%
+our beta data what it is actually
+ 
+
+00:04:07.159 --> 00:04:09.589 align:start position:0%
+our beta data what it is actually
+what <00:04:07.485><c>is </c><00:04:07.811><c>binary </c><00:04:08.137><c>data </c><00:04:08.463><c>what </c><00:04:08.789><c>is </c><00:04:09.115><c>text</c>
+
+00:04:09.589 --> 00:04:09.599 align:start position:0%
+what is binary data what is text
+ 
+
+00:04:09.599 --> 00:04:11.929 align:start position:0%
+what is binary data what is text
+data <00:04:09.882><c>binary </c><00:04:10.165><c>data </c><00:04:10.448><c>- </c><00:04:10.731><c>these </c><00:04:11.014><c>are </c><00:04:11.297><c>our </c><00:04:11.580><c>ones</c>
+
+00:04:11.929 --> 00:04:11.939 align:start position:0%
+data binary data - these are our ones
+ 
+
+00:04:11.939 --> 00:04:16.490 align:start position:0%
+data binary data - these are our ones
+zeros <00:04:12.449><c>Here </c><00:04:12.959><c>they </c><00:04:13.469><c>are </c><00:04:13.979><c>each </c><00:04:14.489><c>each </c><00:04:14.999><c>as </c><00:04:15.509><c>a </c><00:04:16.019><c>unit</c>
+
+00:04:16.490 --> 00:04:16.500 align:start position:0%
+zeros Here they are each each as a unit
+ 
+
+00:04:16.500 --> 00:04:19.490 align:start position:0%
+zeros Here they are each each as a unit
+panel <00:04:16.833><c>this </c><00:04:17.166><c>is </c><00:04:17.499><c>one </c><00:04:17.832><c>bit </c><00:04:18.165><c>8 </c><00:04:18.498><c>bits </c><00:04:18.831><c>we </c><00:04:19.164><c>have </c><00:04:19.497><c>a</c>
+
+00:04:19.490 --> 00:04:19.500 align:start position:0%
+panel this is one bit 8 bits we have a
+ 
+
+00:04:19.500 --> 00:04:22.310 align:start position:0%
+panel this is one bit 8 bits we have a
+byte <00:04:19.900><c>respectively </c><00:04:20.300><c>times </c><00:04:20.700><c>two </c><00:04:21.100><c>three </c><00:04:21.500><c>four </c><00:04:21.900><c>bytes</c>
+
+00:04:22.310 --> 00:04:22.320 align:start position:0%
+byte respectively times two three four bytes
+ 
+
+00:04:22.320 --> 00:04:25.550 align:start position:0%
+byte respectively times two three four bytes
+this <00:04:22.662><c>is </c><00:04:23.004><c>our </c><00:04:23.346><c>binary </c><00:04:23.688><c>data </c><00:04:24.030><c>just </c><00:04:24.372><c>numbers </c><00:04:24.714><c>And</c>
+
+00:04:25.550 --> 00:04:25.560 align:start position:0%
+this is our binary data just numbers And
+ 
+
+00:04:25.560 --> 00:04:27.409 align:start position:0%
+this is our binary data just numbers And
+now <00:04:25.770><c>let's </c><00:04:25.980><c>take </c><00:04:26.190><c>what </c><00:04:26.400><c>is </c><00:04:26.610><c>text </c><00:04:26.820><c>data </c><00:04:27.030><c>this </c><00:04:27.240><c>is</c>
+
+00:04:27.409 --> 00:04:27.419 align:start position:0%
+now let's take what is text data this is
+ 
+
+00:04:27.419 --> 00:04:29.749 align:start position:0%
+now let's take what is text data this is
+text <00:04:27.719><c>data </c><00:04:28.019><c>this </c><00:04:28.319><c>we </c><00:04:28.619><c>take </c><00:04:28.919><c>we </c><00:04:29.219><c>encode </c><00:04:29.519><c>text</c>
+
+00:04:29.749 --> 00:04:29.759 align:start position:0%
+text data this we take we encode text
+ 
+
+00:04:29.759 --> 00:04:32.390 align:start position:0%
+text data this we take we encode text
+and <00:04:30.203><c>using </c><00:04:30.647><c>numbers </c><00:04:31.091><c>there </c><00:04:31.535><c>are </c><00:04:31.979><c>different</c>
+
+00:04:32.390 --> 00:04:32.400 align:start position:0%
+and using numbers there are different
+ 
+
+00:04:32.400 --> 00:04:33.770 align:start position:0%
+and using numbers there are different
+character <00:04:32.790><c>encodings </c><00:04:33.180><c>accordingly</c>
+
+00:04:33.770 --> 00:04:33.780 align:start position:0%
+character encodings accordingly
+ 
+
+00:04:33.780 --> 00:04:35.990 align:start position:0%
+character encodings accordingly
+different <00:04:34.042><c>numbers </c><00:04:34.304><c>are </c><00:04:34.566><c>used </c><00:04:34.828><c>for </c><00:04:35.090><c>different </c><00:04:35.352><c>symbols </c><00:04:35.614><c>we </c><00:04:35.876><c>can</c>
+
+00:04:35.990 --> 00:04:36.000 align:start position:0%
+different numbers are used for different symbols we can
+ 
+
+00:04:36.000 --> 00:04:38.830 align:start position:0%
+different numbers are used for different symbols we can
+say <00:04:36.179><c>For </c><00:04:36.358><c>example </c><00:04:36.537><c>this </c><00:04:36.716><c>is </c><00:04:36.895><c>the </c><00:04:37.074><c>symbol </c><00:04:37.253><c>hey </c><00:04:37.432><c>this </c><00:04:37.611><c>is </c><00:04:37.790><c>the </c><00:04:37.969><c>symbol</c>
+
+00:04:38.830 --> 00:04:38.840 align:start position:0%
+say For example this is the symbol hey this is the symbol
+ 
+
+00:04:38.840 --> 00:04:42.170 align:start position:0%
+say For example this is the symbol hey this is the symbol
+X <00:04:39.235><c>is </c><00:04:39.630><c>the </c><00:04:40.025><c>symbol </c><00:04:40.420><c>8 </c><00:04:40.815><c>is </c><00:04:41.210><c>the </c><00:04:41.605><c>symbol </c><00:04:42.000><c>plus</c>
+
+00:04:42.170 --> 00:04:42.180 align:start position:0%
+X is the symbol 8 is the symbol plus
+ 
+
+00:04:42.180 --> 00:04:44.930 align:start position:0%
+X is the symbol 8 is the symbol plus
+for <00:04:42.442><c>example </c><00:04:42.704><c>and </c><00:04:42.966><c>accordingly </c><00:04:43.228><c>we </c><00:04:43.490><c>have </c><00:04:43.752><c>a </c><00:04:44.014><c>kind </c><00:04:44.276><c>of</c>
+
+00:04:44.930 --> 00:04:44.940 align:start position:0%
+for example and accordingly we have a kind of
+ 
+
+00:04:44.940 --> 00:04:47.210 align:start position:0%
+for example and accordingly we have a kind of
+one <00:04:45.599><c>byte </c><00:04:46.258><c>encoding </c><00:04:46.917><c>where</c>
+
+00:04:47.210 --> 00:04:47.220 align:start position:0%
+one byte encoding where
+ 
+
+00:04:47.220 --> 00:04:49.909 align:start position:0%
+one byte encoding where
+each <00:04:47.688><c>byte </c><00:04:48.156><c>corresponds </c><00:04:48.624><c>to </c><00:04:49.092><c>some </c><00:04:49.560><c>symbol</c>
+
+00:04:49.909 --> 00:04:49.919 align:start position:0%
+each byte corresponds to some symbol
+ 
+
+00:04:49.919 --> 00:04:51.830 align:start position:0%
+each byte corresponds to some symbol
+but <00:04:50.112><c>there </c><00:04:50.305><c>is </c><00:04:50.498><c>a </c><00:04:50.691><c>certain </c><00:04:50.884><c>problem </c><00:04:51.077><c>with </c><00:04:51.270><c>this </c><00:04:51.463><c>Well </c><00:04:51.656><c>actually</c>
+
+00:04:51.830 --> 00:04:51.840 align:start position:0%
+but there is a certain problem with this Well actually
+ 
+
+00:04:51.840 --> 00:04:53.510 align:start position:0%
+but there is a certain problem with this Well actually
+there <00:04:52.092><c>are </c><00:04:52.344><c>one-byte </c><00:04:52.596><c>encodings </c><00:04:52.848><c>there </c><00:04:53.100><c>are</c>
+
+00:04:53.510 --> 00:04:53.520 align:start position:0%
+there are one-byte encodings there are
+ 
+
+00:04:53.520 --> 00:04:55.150 align:start position:0%
+there are one-byte encodings there are
+many <00:04:54.000><c>doba-byte </c><00:04:54.480><c>encodings </c><00:04:54.960><c>because</c>
+
+00:04:55.150 --> 00:04:55.160 align:start position:0%
+many doba-byte encodings because
+ 
+
+00:04:55.160 --> 00:05:00.310 align:start position:0%
+many doba-byte encodings because
+at <00:04:55.596><c>most </c><00:04:56.032><c>1 </c><00:04:56.468><c>byte </c><00:04:56.904><c>we </c><00:04:57.340><c>can </c><00:04:57.776><c>put</c>
+
+00:05:00.310 --> 00:05:00.320 align:start position:0%
+at most 1 byte we can put
+ 
+
+00:05:00.320 --> 00:05:05.330 align:start position:0%
+at most 1 byte we can put
+255 <00:05:00.837><c>well </c><00:05:01.354><c>25 </c><00:05:01.871><c>6 </c><00:05:02.388><c>and </c><00:05:02.905><c>let's </c><00:05:03.422><c>say </c><00:05:03.939><c>symbols </c><00:05:04.456><c>helped </c><00:05:04.973><c>to</c>
+
+00:05:05.330 --> 00:05:05.340 align:start position:0%
+255 well 25 6 and let's say symbols helped to
+ 
+
+00:05:05.340 --> 00:05:06.850 align:start position:0%
+255 well 25 6 and let's say symbols helped to
+put
+
+00:05:06.850 --> 00:05:06.860 align:start position:0%
+put
+ 
+
+00:05:06.860 --> 00:05:09.830 align:start position:0%
+put
+In <00:05:07.171><c>fact </c><00:05:07.482><c>all </c><00:05:07.793><c>languages ​​</c><00:05:08.104><c>will </c><00:05:08.415><c>not </c><00:05:08.726><c>fit </c><00:05:09.037><c>here </c><00:05:09.348><c>and </c><00:05:09.659><c>in</c>
+
+00:05:09.830 --> 00:05:09.840 align:start position:0%
+In fact all languages ​​will not fit here and in
+ 
+
+00:05:09.840 --> 00:05:12.890 align:start position:0%
+In fact all languages ​​will not fit here and in
+We <00:05:10.146><c>have </c><00:05:10.452><c>Unicode </c><00:05:10.758><c>for </c><00:05:11.064><c>this </c><00:05:11.370><c>and </c><00:05:11.676><c>there </c><00:05:11.982><c>is </c><00:05:12.288><c>also </c><00:05:12.594><c>a</c>
+
+00:05:12.890 --> 00:05:12.900 align:start position:0%
+We have Unicode for this and there is also a
+ 
+
+00:05:12.900 --> 00:05:14.710 align:start position:0%
+We have Unicode for this and there is also a
+certain <00:05:13.080><c>amount </c><00:05:13.260><c>of </c><00:05:13.440><c>encoding</c>
+
+00:05:14.710 --> 00:05:14.720 align:start position:0%
+certain amount of encoding
+ 
+
+00:05:14.720 --> 00:05:19.510 align:start position:0%
+certain amount of encoding
+in <00:05:15.095><c>32 </c><00:05:15.470><c>Today </c><00:05:15.845><c>we </c><00:05:16.220><c>will </c><00:05:16.595><c>not </c><00:05:16.970><c>touch </c><00:05:17.345><c>it </c><00:05:17.720><c>but</c>
+
+00:05:19.510 --> 00:05:19.520 align:start position:0%
+in 32 Today we will not touch it but
+ 
+
+00:05:19.520 --> 00:05:22.930 align:start position:0%
+in 32 Today we will not touch it but
+our <00:05:19.966><c>task </c><00:05:20.412><c>is </c><00:05:20.858><c>to </c><00:05:21.304><c>try </c><00:05:21.750><c>to </c><00:05:22.196><c>encode</c>
+
+00:05:22.930 --> 00:05:22.940 align:start position:0%
+our task is to try to encode
+ 
+
+00:05:22.940 --> 00:05:25.610 align:start position:0%
+our task is to try to encode
+binary <00:05:23.204><c>data </c><00:05:23.468><c>in </c><00:05:23.732><c>the </c><00:05:23.996><c>form </c><00:05:24.260><c>of </c><00:05:24.524><c>text </c><00:05:24.788><c>That </c><00:05:25.052><c>is, </c><00:05:25.316><c>we</c>
+
+00:05:25.610 --> 00:05:25.620 align:start position:0%
+binary data in the form of text That is, we
+ 
+
+00:05:25.620 --> 00:05:27.409 align:start position:0%
+binary data in the form of text That is, we
+could <00:05:25.807><c>say </c><00:05:25.994><c>But </c><00:05:26.181><c>what </c><00:05:26.368><c>is </c><00:05:26.555><c>there </c><00:05:26.742><c>to </c><00:05:26.929><c>feed </c><00:05:27.116><c>here</c>
+
+00:05:27.409 --> 00:05:27.419 align:start position:0%
+could say But what is there to feed here
+ 
+
+00:05:27.419 --> 00:05:29.930 align:start position:0%
+could say But what is there to feed here
+look <00:05:27.726><c>We </c><00:05:28.033><c>already </c><00:05:28.340><c>have </c><00:05:28.647><c>and </c><00:05:28.954><c>That </c><00:05:29.261><c>is, </c><00:05:29.568><c>we </c><00:05:29.875><c>can</c>
+
+00:05:29.930 --> 00:05:29.940 align:start position:0%
+look We already have and That is, we can
+ 
+
+00:05:29.940 --> 00:05:32.689 align:start position:0%
+look We already have and That is, we can
+take <00:05:30.257><c>all </c><00:05:30.574><c>these </c><00:05:30.891><c>and </c><00:05:31.208><c>we </c><00:05:31.525><c>have </c><00:05:31.842><c>one </c><00:05:32.159><c>byte</c>
+
+00:05:32.689 --> 00:05:32.699 align:start position:0%
+take all these and we have one byte
+ 
+
+00:05:32.699 --> 00:05:34.670 align:start position:0%
+take all these and we have one byte
+some <00:05:32.959><c>encoding </c><00:05:33.219><c>and </c><00:05:33.479><c>so </c><00:05:33.739><c>on </c><00:05:33.999><c>and </c><00:05:34.259><c>send</c>
+
+00:05:34.670 --> 00:05:34.680 align:start position:0%
+some encoding and so on and send
+ 
+
+00:05:34.680 --> 00:05:37.189 align:start position:0%
+some encoding and so on and send
+this <00:05:34.876><c>data </c><00:05:35.072><c>and </c><00:05:35.268><c>say </c><00:05:35.464><c>that </c><00:05:35.660><c>this </c><00:05:35.856><c>is </c><00:05:36.052><c>text </c><00:05:36.248><c>in </c><00:05:36.444><c>such </c><00:05:36.640><c>and </c><00:05:36.836><c>such</c>
+
+00:05:37.189 --> 00:05:37.199 align:start position:0%
+this data and say that this is text in such and such
+ 
+
+00:05:37.199 --> 00:05:39.070 align:start position:0%
+this data and say that this is text in such and such
+encoding <00:05:37.364><c>but </c><00:05:37.529><c>there </c><00:05:37.694><c>is </c><00:05:37.859><c>a </c><00:05:38.024><c>problem </c><00:05:38.189><c>that </c><00:05:38.354><c>in </c><00:05:38.519><c>fact</c>
+
+00:05:39.070 --> 00:05:39.080 align:start position:0%
+encoding but there is a problem that in fact
+ 
+
+00:05:39.080 --> 00:05:41.529 align:start position:0%
+encoding but there is a problem that in fact
+all <00:05:39.386><c>of </c><00:05:39.692><c>these </c><00:05:39.998><c>encodings </c><00:05:40.304><c>in </c><00:05:40.610><c>addition </c><00:05:40.916><c>to</c>
+
+00:05:41.529 --> 00:05:41.539 align:start position:0%
+all of these encodings in addition to
+ 
+
+00:05:41.539 --> 00:05:45.830 align:start position:0%
+all of these encodings in addition to
+text <00:05:42.089><c>characters </c><00:05:42.639><c>there </c><00:05:43.189><c>are </c><00:05:43.739><c>also </c><00:05:44.289><c>different </c><00:05:44.839><c>control</c>
+
+00:05:45.830 --> 00:05:45.840 align:start position:0%
+text characters there are also different control
+ 
+
+00:05:45.840 --> 00:05:48.290 align:start position:0%
+text characters there are also different control
+commands <00:05:46.284><c>and </c><00:05:46.728><c>which </c><00:05:47.172><c>we </c><00:05:47.616><c>cannot </c><00:05:48.060><c>see</c>
+
+00:05:48.290 --> 00:05:48.300 align:start position:0%
+commands and which we cannot see
+ 
+
+00:05:48.300 --> 00:05:50.510 align:start position:0%
+commands and which we cannot see
+that <00:05:48.557><c>is </c><00:05:48.814><c>things </c><00:05:49.071><c>that </c><00:05:49.328><c>we </c><00:05:49.585><c>cannot </c><00:05:49.842><c>copy </c><00:05:50.099><c>and</c>
+
+00:05:50.510 --> 00:05:50.520 align:start position:0%
+that is things that we cannot copy and
+ 
+
+00:05:50.520 --> 00:05:52.490 align:start position:0%
+that is things that we cannot copy and
+this <00:05:50.742><c>leads </c><00:05:50.964><c>to </c><00:05:51.186><c>certain </c><00:05:51.408><c>problems </c><00:05:51.630><c>besides </c><00:05:51.852><c>in </c><00:05:52.074><c>fact</c>
+
+00:05:52.490 --> 00:05:52.500 align:start position:0%
+this leads to certain problems besides in fact
+ 
+
+00:05:52.500 --> 00:05:54.950 align:start position:0%
+this leads to certain problems besides in fact
+in <00:05:53.280><c>different </c><00:05:54.060><c>encodings </c><00:05:54.840><c>we</c>
+
+00:05:54.950 --> 00:05:54.960 align:start position:0%
+in different encodings we
+ 
+
+00:05:54.960 --> 00:05:57.290 align:start position:0%
+in different encodings we
+usually <00:05:55.285><c>have </c><00:05:55.610><c>a </c><00:05:55.935><c>common </c><00:05:56.260><c>part </c><00:05:56.585><c>- </c><00:05:56.910><c>these </c><00:05:57.235><c>are</c>
+
+00:05:57.290 --> 00:05:57.300 align:start position:0%
+usually have a common part - these are
+ 
+
+00:05:57.300 --> 00:05:59.990 align:start position:0%
+usually have a common part - these are
+English <00:05:57.620><c>characters </c><00:05:57.940><c>And </c><00:05:58.260><c>there </c><00:05:58.580><c>are </c><00:05:58.900><c>for </c><00:05:59.220><c>example</c>
+
+00:05:59.990 --> 00:06:00.000 align:start position:0%
+English characters And there are for example
+ 
+
+00:06:00.000 --> 00:06:02.330 align:start position:0%
+English characters And there are for example
+Ukrainian <00:06:00.274><c>which </c><00:06:00.548><c>are </c><00:06:00.822><c>not </c><00:06:01.096><c>supported </c><00:06:01.370><c>on </c><00:06:01.644><c>every </c><00:06:01.918><c>computer</c>
+
+00:06:02.330 --> 00:06:02.340 align:start position:0%
+Ukrainian which are not supported on every computer
+ 
+
+00:06:02.340 --> 00:06:04.249 align:start position:0%
+Ukrainian which are not supported on every computer
+so <00:06:02.600><c>you </c><00:06:02.860><c>have </c><00:06:03.120><c>them </c><00:06:03.380><c>in </c><00:06:03.640><c>every </c><00:06:03.900><c>encoding</c>
+
+00:06:04.249 --> 00:06:04.259 align:start position:0%
+so you have them in every encoding
+ 
+
+00:06:04.259 --> 00:06:06.650 align:start position:0%
+so you have them in every encoding
+and <00:06:04.569><c>so </c><00:06:04.879><c>on </c><00:06:05.189><c>so </c><00:06:05.499><c>in </c><00:06:05.809><c>fact </c><00:06:06.119><c>we</c>
+
+00:06:06.650 --> 00:06:06.660 align:start position:0%
+and so on so in fact we
+ 
+
+00:06:06.660 --> 00:06:09.730 align:start position:0%
+and so on so in fact we
+can <00:06:06.907><c>We </c><00:06:07.154><c>need </c><00:06:07.401><c>a </c><00:06:07.648><c>set </c><00:06:07.895><c>of </c><00:06:08.142><c>characters </c><00:06:08.389><c>that </c><00:06:08.636><c>are</c>
+
+00:06:09.730 --> 00:06:09.740 align:start position:0%
+can We need a set of characters that are
+ 
+
+00:06:09.740 --> 00:06:13.810 align:start position:0%
+can We need a set of characters that are
+anywhere <00:06:10.316><c>let's </c><00:06:10.892><c>say </c><00:06:11.468><c>So </c><00:06:12.044><c>we </c><00:06:12.620><c>decided </c><00:06:13.196><c>another</c>
+
+00:06:13.810 --> 00:06:13.820 align:start position:0%
+anywhere let's say So we decided another
+ 
+
+00:06:13.820 --> 00:06:17.150 align:start position:0%
+anywhere let's say So we decided another
+256 <00:06:14.211><c>characters </c><00:06:14.602><c>it </c><00:06:14.993><c>is </c><00:06:15.384><c>difficult </c><00:06:15.775><c>to </c><00:06:16.166><c>find </c><00:06:16.557><c>to</c>
+
+00:06:17.150 --> 00:06:17.160 align:start position:0%
+256 characters it is difficult to find to
+ 
+
+00:06:17.160 --> 00:06:19.249 align:start position:0%
+256 characters it is difficult to find to
+encode <00:06:17.440><c>one </c><00:06:17.720><c>bike </c><00:06:18.000><c>or </c><00:06:18.280><c>can </c><00:06:18.560><c>we </c><00:06:18.840><c>take</c>
+
+00:06:19.249 --> 00:06:19.259 align:start position:0%
+encode one bike or can we take
+ 
+
+00:06:19.259 --> 00:06:24.050 align:start position:0%
+encode one bike or can we take
+for <00:06:19.659><c>example </c><00:06:20.059><c>not </c><00:06:20.459><c>8 </c><00:06:20.859><c>bits </c><00:06:21.259><c>but </c><00:06:21.659><c>7 </c><00:06:22.059><c>bits </c><00:06:22.459><c>and </c><00:06:22.859><c>then </c><00:06:23.259><c>we </c><00:06:23.659><c>have  </c><00:06:24.059><c>it</c>
+
+00:06:24.050 --> 00:06:24.060 align:start position:0%
+for example not 8 bits but 7 bits and then we have  it
+ 
+
+00:06:24.060 --> 00:06:28.550 align:start position:0%
+for example not 8 bits but 7 bits and then we have  it
+would <00:06:24.432><c>be </c><00:06:24.804><c>if </c><00:06:25.176><c>there </c><00:06:25.548><c>were </c><00:06:25.920><c>twice </c><00:06:26.292><c>as </c><00:06:26.664><c>many </c><00:06:27.036><c>characters </c><00:06:27.408><c>and </c><00:06:27.780><c>for</c>
+
+00:06:28.550 --> 00:06:28.560 align:start position:0%
+would be if there were twice as many characters and for
+ 
+
+00:06:28.560 --> 00:06:31.850 align:start position:0%
+would be if there were twice as many characters and for
+seven <00:06:28.904><c>bits </c><00:06:29.248><c>we </c><00:06:29.592><c>need </c><00:06:29.936><c>128 </c><00:06:30.280><c>characters </c><00:06:30.624><c>it </c><00:06:30.968><c>is </c><00:06:31.312><c>also</c>
+
+00:06:31.850 --> 00:06:31.860 align:start position:0%
+seven bits we need 128 characters it is also
+ 
+
+00:06:31.860 --> 00:06:34.689 align:start position:0%
+seven bits we need 128 characters it is also
+quite <00:06:32.099><c>difficult </c><00:06:32.338><c>to </c><00:06:32.577><c>find </c><00:06:32.816><c>128</c>
+
+00:06:34.689 --> 00:06:34.699 align:start position:0%
+quite difficult to find 128
+ 
+
+00:06:34.699 --> 00:06:37.670 align:start position:0%
+quite difficult to find 128
+characters <00:06:35.099><c>And </c><00:06:35.499><c>let's </c><00:06:35.899><c>say </c><00:06:36.299><c>if </c><00:06:36.699><c>we </c><00:06:37.099><c>had </c><00:06:37.499><c>a</c>
+
+00:06:37.670 --> 00:06:37.680 align:start position:0%
+characters And let's say if we had a
+ 
+
+00:06:37.680 --> 00:06:40.070 align:start position:0%
+characters And let's say if we had a
+six-bit <00:06:38.050><c>set </c><00:06:38.420><c>Yes </c><00:06:38.790><c>no </c><00:06:39.160><c>we </c><00:06:39.530><c>already </c><00:06:39.900><c>have</c>
+
+00:06:40.070 --> 00:06:40.080 align:start position:0%
+six-bit set Yes no we already have
+ 
+
+00:06:40.080 --> 00:06:42.230 align:start position:0%
+six-bit set Yes no we already have
+64 <00:06:40.410><c>characters </c><00:06:40.740><c>left </c><00:06:41.070><c>and </c><00:06:41.400><c>in </c><00:06:41.730><c>theory </c><00:06:42.060><c>we</c>
+
+00:06:42.230 --> 00:06:42.240 align:start position:0%
+64 characters left and in theory we
+ 
+
+00:06:42.240 --> 00:06:44.150 align:start position:0%
+64 characters left and in theory we
+can <00:06:42.587><c>already </c><00:06:42.934><c>find </c><00:06:43.281><c>64 </c><00:06:43.628><c>characters </c><00:06:43.975><c>actually</c>
+
+00:06:44.150 --> 00:06:44.160 align:start position:0%
+can already find 64 characters actually
+ 
+
+00:06:44.160 --> 00:06:46.189 align:start position:0%
+can already find 64 characters actually
+not <00:06:44.366><c>only </c><00:06:44.572><c>in </c><00:06:44.778><c>theory </c><00:06:44.984><c>but </c><00:06:45.190><c>also </c><00:06:45.396><c>in </c><00:06:45.602><c>practice </c><00:06:45.808><c>That </c><00:06:46.014><c>is</c>
+
+00:06:46.189 --> 00:06:46.199 align:start position:0%
+not only in theory but also in practice That is
+ 
+
+00:06:46.199 --> 00:06:49.969 align:start position:0%
+not only in theory but also in practice That is
+we <00:06:46.565><c>can </c><00:06:46.931><c>say </c><00:06:47.297><c>that </c><00:06:47.663><c>we </c><00:06:48.029><c>have </c><00:06:48.395><c>A </c><00:06:48.761><c>Z </c><00:06:49.127><c>- </c><00:06:49.493><c>this </c><00:06:49.859><c>is</c>
+
+00:06:49.969 --> 00:06:49.979 align:start position:0%
+we can say that we have A Z - this is
+ 
+
+00:06:49.979 --> 00:06:52.490 align:start position:0%
+we can say that we have A Z - this is
+we <00:06:50.271><c>already </c><00:06:50.563><c>have </c><00:06:50.855><c>26 </c><00:06:51.147><c>characters </c><00:06:51.439><c>we </c><00:06:51.731><c>can </c><00:06:52.023><c>say </c><00:06:52.315><c>that</c>
+
+00:06:52.490 --> 00:06:52.500 align:start position:0%
+we already have 26 characters we can say that
+ 
+
+00:06:52.500 --> 00:06:55.309 align:start position:0%
+we already have 26 characters we can say that
+we <00:06:52.775><c>have </c><00:06:53.050><c>a </c><00:06:53.325><c>small </c><00:06:53.600><c>Hey </c><00:06:53.875><c>small </c><00:06:54.150><c>Z </c><00:06:54.425><c>- </c><00:06:54.700><c>this </c><00:06:54.975><c>is </c><00:06:55.250><c>another</c>
+
+00:06:55.309 --> 00:06:55.319 align:start position:0%
+we have a small Hey small Z - this is another
+ 
+
+00:06:55.319 --> 00:06:59.510 align:start position:0%
+we have a small Hey small Z - this is another
+26 <00:06:55.893><c>characters </c><00:06:56.467><c>already </c><00:06:57.041><c>together </c><00:06:57.615><c>52 </c><00:06:58.189><c>We </c><00:06:58.763><c>can </c><00:06:59.337><c>also</c>
+
+00:06:59.510 --> 00:06:59.520 align:start position:0%
+26 characters already together 52 We can also
+ 
+
+00:06:59.520 --> 00:07:01.930 align:start position:0%
+26 characters already together 52 We can also
+say <00:06:59.734><c>that </c><00:06:59.948><c>we </c><00:07:00.162><c>have </c><00:07:00.376><c>from </c><00:07:00.590><c>zero </c><00:07:00.804><c>to </c><00:07:01.018><c>nine</c>
+
+00:07:01.930 --> 00:07:01.940 align:start position:0%
+say that we have from zero to nine
+ 
+
+00:07:01.940 --> 00:07:06.469 align:start position:0%
+say that we have from zero to nine
+plus <00:07:02.462><c>262 </c><00:07:02.984><c>and </c><00:07:03.506><c>we </c><00:07:04.028><c>still </c><00:07:04.550><c>need </c><00:07:05.072><c>two </c><00:07:05.594><c>characters </c><00:07:06.116><c>let's</c>
+
+00:07:06.469 --> 00:07:06.479 align:start position:0%
+plus 262 and we still need two characters let's
+ 
+
+00:07:06.479 --> 00:07:10.010 align:start position:0%
+plus 262 and we still need two characters let's
+say <00:07:06.854><c>we </c><00:07:07.229><c>take </c><00:07:07.604><c>a </c><00:07:07.979><c>plus </c><00:07:08.354><c>and </c><00:07:08.729><c>a </c><00:07:09.104><c>slash </c><00:07:09.479><c>and</c>
+
+00:07:10.010 --> 00:07:10.020 align:start position:0%
+say we take a plus and a slash and
+ 
+
+00:07:10.020 --> 00:07:13.430 align:start position:0%
+say we take a plus and a slash and
+we <00:07:10.353><c>already </c><00:07:10.686><c>have </c><00:07:11.019><c>64 </c><00:07:11.352><c>characters </c><00:07:11.685><c>that </c><00:07:12.018><c>is </c><00:07:12.351><c>in </c><00:07:12.684><c>principle </c><00:07:13.017><c>we</c>
+
+00:07:13.430 --> 00:07:13.440 align:start position:0%
+we already have 64 characters that is in principle we
+ 
+
+00:07:13.440 --> 00:07:15.730 align:start position:0%
+we already have 64 characters that is in principle we
+can <00:07:13.812><c>say </c><00:07:14.184><c>Next </c><00:07:14.556><c>What </c><00:07:14.928><c>we </c><00:07:15.300><c>can</c>
+
+00:07:15.730 --> 00:07:15.740 align:start position:0%
+can say Next What we can
+ 
+
+00:07:15.740 --> 00:07:19.850 align:start position:0%
+can say Next What we can
+take <00:07:16.260><c>6 </c><00:07:16.780><c>bits </c><00:07:17.300><c>each </c><00:07:17.820><c>combination </c><00:07:18.340><c>of </c><00:07:18.860><c>these </c><00:07:19.380><c>six</c>
+
+00:07:19.850 --> 00:07:19.860 align:start position:0%
+take 6 bits each combination of these six
+ 
+
+00:07:19.860 --> 00:07:22.129 align:start position:0%
+take 6 bits each combination of these six
+bits <00:07:20.168><c>will </c><00:07:20.476><c>correspond </c><00:07:20.784><c>to </c><00:07:21.092><c>some </c><00:07:21.400><c>character </c><00:07:21.708><c>and </c><00:07:22.016><c>then</c>
+
+00:07:22.129 --> 00:07:22.139 align:start position:0%
+bits will correspond to some character and then
+ 
+
+00:07:22.139 --> 00:07:23.990 align:start position:0%
+bits will correspond to some character and then
+what <00:07:22.336><c>we </c><00:07:22.533><c>do </c><00:07:22.730><c>we </c><00:07:22.927><c>take </c><00:07:23.124><c>let's </c><00:07:23.321><c>take </c><00:07:23.518><c>a</c>
+
+00:07:23.990 --> 00:07:24.000 align:start position:0%
+what we do we take let's take a
+ 
+
+00:07:24.000 --> 00:07:27.110 align:start position:0%
+what we do we take let's take a
+different <00:07:24.449><c>color </c><00:07:24.898><c>We </c><00:07:25.347><c>take </c><00:07:25.796><c>6 </c><00:07:26.245><c>bits </c><00:07:26.694><c>6</c>
+
+00:07:27.110 --> 00:07:27.120 align:start position:0%
+different color We take 6 bits 6
+ 
+
+00:07:27.120 --> 00:07:34.490 align:start position:0%
+different color We take 6 bits 6
+bits <00:07:27.758><c>six </c><00:07:28.396><c>bits </c><00:07:29.034><c>so </c><00:07:29.672><c>6 </c><00:07:30.310><c>bits </c><00:07:30.948><c>and </c><00:07:31.586><c>6 </c><00:07:32.224><c>bits </c><00:07:32.862><c>yes </c><00:07:33.500><c>that </c><00:07:34.138><c>is</c>
+
+00:07:34.490 --> 00:07:34.500 align:start position:0%
+bits six bits so 6 bits and 6 bits yes that is
+ 
+
+00:07:34.500 --> 00:07:37.089 align:start position:0%
+bits six bits so 6 bits and 6 bits yes that is
+what <00:07:34.817><c>we </c><00:07:35.134><c>did </c><00:07:35.451><c>we </c><00:07:35.768><c>did  </c><00:07:36.085><c>we </c><00:07:36.402><c>broke </c><00:07:36.719><c>our</c>
+
+00:07:37.089 --> 00:07:37.099 align:start position:0%
+what we did we did  we broke our
+ 
+
+00:07:37.099 --> 00:07:40.249 align:start position:0%
+what we did we did  we broke our
+three <00:07:38.099><c>bytes</c>
+
+00:07:40.249 --> 00:07:40.259 align:start position:0%
+three bytes
+ 
+
+00:07:40.259 --> 00:07:46.969 align:start position:0%
+three bytes
+times <00:07:40.974><c>two </c><00:07:41.689><c>three </c><00:07:42.404><c>bytes </c><00:07:43.119><c>we </c><00:07:43.834><c>broke </c><00:07:44.549><c>it </c><00:07:45.264><c>into </c><00:07:45.979><c>4</c>
+
+00:07:46.969 --> 00:07:46.979 align:start position:0%
+times two three bytes we broke it into 4
+ 
+
+00:07:46.979 --> 00:07:48.890 align:start position:0%
+times two three bytes we broke it into 4
+characters
+
+00:07:48.890 --> 00:07:48.900 align:start position:0%
+characters
+ 
+
+00:07:48.900 --> 00:07:53.210 align:start position:0%
+characters
+6 <00:07:49.284><c>bits </c><00:07:49.668><c>6 </c><00:07:50.052><c>bits </c><00:07:50.436><c>6 </c><00:07:50.820><c>bits </c><00:07:51.204><c>six </c><00:07:51.588><c>bits </c><00:07:51.972><c>all </c><00:07:52.356><c>And </c><00:07:52.740><c>for</c>
+
+00:07:53.210 --> 00:07:53.220 align:start position:0%
+6 bits 6 bits 6 bits six bits all And for
+ 
+
+00:07:53.220 --> 00:07:56.330 align:start position:0%
+6 bits 6 bits 6 bits six bits all And for
+example <00:07:53.446><c>this </c><00:07:53.672><c>is </c><00:07:53.898><c>a </c><00:07:54.124><c>symbol </c><00:07:54.350><c>and </c><00:07:54.576><c>this </c><00:07:54.802><c>is </c><00:07:55.028><c>a </c><00:07:55.254><c>symbol </c><00:07:55.480><c>b </c><00:07:55.706><c>this </c><00:07:55.932><c>is </c><00:07:56.158><c>a</c>
+
+00:07:56.330 --> 00:07:56.340 align:start position:0%
+example this is a symbol and this is a symbol b this is a
+ 
+
+00:07:56.340 --> 00:07:57.350 align:start position:0%
+example this is a symbol and this is a symbol b this is a
+symbol
+
+00:07:57.350 --> 00:07:57.360 align:start position:0%
+symbol
+ 
+
+00:07:57.360 --> 00:08:00.230 align:start position:0%
+symbol
+n <00:07:57.548><c>this </c><00:07:57.736><c>is </c><00:07:57.924><c>a </c><00:07:58.112><c>symbol </c><00:07:58.300><c>Hey </c><00:07:58.488><c>little </c><00:07:58.676><c>one </c><00:07:58.864><c>for </c><00:07:59.052><c>example </c><00:07:59.240><c>and</c>
+
+00:08:00.230 --> 00:08:00.240 align:start position:0%
+n this is a symbol Hey little one for example and
+ 
+
+00:08:00.240 --> 00:08:02.270 align:start position:0%
+n this is a symbol Hey little one for example and
+now <00:08:00.539><c>we </c><00:08:00.838><c>can </c><00:08:01.137><c>take </c><00:08:01.436><c>these </c><00:08:01.735><c>characters </c><00:08:02.034><c>and</c>
+
+00:08:02.270 --> 00:08:02.280 align:start position:0%
+now we can take these characters and
+ 
+
+00:08:02.280 --> 00:08:05.629 align:start position:0%
+now we can take these characters and
+just <00:08:02.647><c>transfer </c><00:08:03.014><c>them </c><00:08:03.381><c>over </c><00:08:03.748><c>the </c><00:08:04.115><c>network </c><00:08:04.482><c>or </c><00:08:04.849><c>put </c><00:08:05.216><c>a</c>
+
+00:08:05.629 --> 00:08:05.639 align:start position:0%
+just transfer them over the network or put a
+ 
+
+00:08:05.639 --> 00:08:09.409 align:start position:0%
+just transfer them over the network or put a
+file <00:08:05.963><c>and </c><00:08:06.287><c>this </c><00:08:06.611><c>will </c><00:08:06.935><c>be </c><00:08:07.259><c>our </c><00:08:07.583><c>b64 </c><00:08:07.907><c>i.e. </c><00:08:08.231><c>everything </c><00:08:08.555><c>is </c><00:08:08.879><c>simple</c>
+
+00:08:09.409 --> 00:08:09.419 align:start position:0%
+file and this will be our b64 i.e. everything is simple
+ 
+
+00:08:09.419 --> 00:08:12.710 align:start position:0%
+file and this will be our b64 i.e. everything is simple
+very <00:08:09.765><c>simple </c><00:08:10.111><c>but </c><00:08:10.457><c>there </c><00:08:10.803><c>is </c><00:08:11.149><c>one </c><00:08:11.495><c>nuance </c><00:08:11.841><c>that </c><00:08:12.187><c>when </c><00:08:12.533><c>we</c>
+
+00:08:12.710 --> 00:08:12.720 align:start position:0%
+very simple but there is one nuance that when we
+ 
+
+00:08:12.720 --> 00:08:15.170 align:start position:0%
+very simple but there is one nuance that when we
+transfer <00:08:13.419><c>these </c><00:08:14.118><c>characters </c><00:08:14.817><c>we</c>
+
+00:08:15.170 --> 00:08:15.180 align:start position:0%
+transfer these characters we
+ 
+
+00:08:15.180 --> 00:08:17.570 align:start position:0%
+transfer these characters we
+will <00:08:15.488><c>most </c><00:08:15.796><c>likely </c><00:08:16.104><c>transfer </c><00:08:16.412><c>them </c><00:08:16.720><c>Well </c><00:08:17.028><c>as </c><00:08:17.336><c>text</c>
+
+00:08:17.570 --> 00:08:17.580 align:start position:0%
+will most likely transfer them Well as text
+ 
+
+00:08:17.580 --> 00:08:19.689 align:start position:0%
+will most likely transfer them Well as text
+and <00:08:18.040><c>when </c><00:08:18.500><c>we </c><00:08:18.960><c>encode</c>
+
+00:08:19.689 --> 00:08:19.699 align:start position:0%
+and when we encode
+ 
+
+00:08:19.699 --> 00:08:24.830 align:start position:0%
+and when we encode
+our <00:08:20.196><c>text </c><00:08:20.693><c>each </c><00:08:21.190><c>character </c><00:08:21.687><c>takes </c><00:08:22.184><c>up </c><00:08:22.681><c>8 </c><00:08:23.178><c>bits </c><00:08:23.675><c>i.e. </c><00:08:24.172><c>as</c>
+
+00:08:24.830 --> 00:08:24.840 align:start position:0%
+our text each character takes up 8 bits i.e. as
+ 
+
+00:08:24.840 --> 00:08:28.969 align:start position:0%
+our text each character takes up 8 bits i.e. as
+a <00:08:25.169><c>result </c><00:08:25.498><c>we </c><00:08:25.827><c>will </c><00:08:26.156><c>transfer </c><00:08:26.485><c>this </c><00:08:26.814><c>as </c><00:08:27.143><c>8 </c><00:08:27.472><c>bits</c>
+
+00:08:28.969 --> 00:08:28.979 align:start position:0%
+a result we will transfer this as 8 bits
+ 
+
+00:08:28.979 --> 00:08:34.810 align:start position:0%
+a result we will transfer this as 8 bits
+8 <00:08:29.630><c>8 </c><00:08:30.281><c>and </c><00:08:30.932><c>accordingly </c><00:08:31.583><c>eight </c><00:08:32.234><c>and </c><00:08:32.885><c>that </c><00:08:33.536><c>our</c>
+
+00:08:34.810 --> 00:08:34.820 align:start position:0%
+8 8 and accordingly eight and that our
+ 
+
+00:08:34.820 --> 00:08:38.930 align:start position:0%
+8 8 and accordingly eight and that our
+times <00:08:35.486><c>two </c><00:08:36.152><c>three </c><00:08:36.818><c>twenty </c><00:08:37.484><c>four </c><00:08:38.150><c>bits </c><00:08:38.816><c>which</c>
+
+00:08:38.930 --> 00:08:38.940 align:start position:0%
+times two three twenty four bits which
+ 
+
+00:08:38.940 --> 00:08:41.149 align:start position:0%
+times two three twenty four bits which
+were <00:08:39.239><c>at </c><00:08:39.538><c>the </c><00:08:39.837><c>very </c><00:08:40.136><c>beginning </c><00:08:40.435><c>yes </c><00:08:40.734><c>because </c><00:08:41.033><c>we</c>
+
+00:08:41.149 --> 00:08:41.159 align:start position:0%
+were at the very beginning yes because we
+ 
+
+00:08:41.159 --> 00:08:44.570 align:start position:0%
+were at the very beginning yes because we
+had <00:08:41.587><c>three </c><00:08:42.015><c>bytes </c><00:08:42.443><c>3 </c><00:08:42.871><c>at </c><00:08:43.299><c>8:24 </c><00:08:43.727><c>became </c><00:08:44.155><c>four</c>
+
+00:08:44.570 --> 00:08:44.580 align:start position:0%
+had three bytes 3 at 8:24 became four
+ 
+
+00:08:44.580 --> 00:08:45.730 align:start position:0%
+had three bytes 3 at 8:24 became four
+characters
+
+00:08:45.730 --> 00:08:45.740 align:start position:0%
+characters
+ 
+
+00:08:45.740 --> 00:08:49.250 align:start position:0%
+characters
+and <00:08:46.186><c>each </c><00:08:46.632><c>character </c><00:08:47.078><c>we </c><00:08:47.524><c>will </c><00:08:47.970><c>send </c><00:08:48.416><c>in</c>
+
+00:08:49.250 --> 00:08:49.260 align:start position:0%
+and each character we will send in
+ 
+
+00:08:49.260 --> 00:08:51.290 align:start position:0%
+and each character we will send in
+text <00:08:49.665><c>encoding </c><00:08:50.070><c>and </c><00:08:50.475><c>accordingly </c><00:08:50.880><c>it</c>
+
+00:08:51.290 --> 00:08:51.300 align:start position:0%
+text encoding and accordingly it
+ 
+
+00:08:51.300 --> 00:08:52.150 align:start position:0%
+text encoding and accordingly it
+will
+
+00:08:52.150 --> 00:08:52.160 align:start position:0%
+will
+ 
+
+00:08:52.160 --> 00:08:55.670 align:start position:0%
+will
+already <00:08:52.488><c>take </c><00:08:52.816><c>up </c><00:08:53.144><c>8 </c><00:08:53.472><c>bits </c><00:08:53.800><c>we </c><00:08:54.128><c>will </c><00:08:54.456><c>get </c><00:08:54.784><c>32 ​​</c><00:08:55.112><c>i.e. </c><00:08:55.440><c>the</c>
+
+00:08:55.670 --> 00:08:55.680 align:start position:0%
+already take up 8 bits we will get 32 ​​i.e. the
+ 
+
+00:08:55.680 --> 00:08:58.009 align:start position:0%
+already take up 8 bits we will get 32 ​​i.e. the
+first <00:08:56.234><c>consequence </c><00:08:56.788><c>that </c><00:08:57.342><c>we </c><00:08:57.896><c>see</c>
+
+00:08:58.009 --> 00:08:58.019 align:start position:0%
+first consequence that we see
+ 
+
+00:08:58.019 --> 00:09:00.650 align:start position:0%
+first consequence that we see
+decoding <00:08:58.449><c>in </c><00:08:58.879><c>Bach </c><00:08:59.309><c>64 </c><00:08:59.739><c>is </c><00:09:00.169><c>that </c><00:09:00.599><c>our</c>
+
+00:09:00.650 --> 00:09:00.660 align:start position:0%
+decoding in Bach 64 is that our
+ 
+
+00:09:00.660 --> 00:09:03.530 align:start position:0%
+decoding in Bach 64 is that our
+data <00:09:01.140><c>volume </c><00:09:01.620><c>will </c><00:09:02.100><c>grow </c><00:09:02.580><c>Let's </c><00:09:03.060><c>count</c>
+
+00:09:03.530 --> 00:09:03.540 align:start position:0%
+data volume will grow Let's count
+ 
+
+00:09:03.540 --> 00:09:05.990 align:start position:0%
+data volume will grow Let's count
+how <00:09:03.840><c>many </c><00:09:04.140><c>times </c><00:09:04.440><c>our </c><00:09:04.740><c>data </c><00:09:05.040><c>has </c><00:09:05.340><c>become </c><00:09:05.640><c>larger</c>
+
+00:09:05.990 --> 00:09:06.000 align:start position:0%
+how many times our data has become larger
+ 
+
+00:09:06.000 --> 00:09:09.790 align:start position:0%
+how many times our data has become larger
+we <00:09:06.317><c>had </c><00:09:06.634><c>some </c><00:09:06.951><c>n  </c><00:09:07.268><c>we </c><00:09:07.585><c>divided </c><00:09:07.902><c>it </c><00:09:08.219><c>by</c>
+
+00:09:09.790 --> 00:09:09.800 align:start position:0%
+we had some n  we divided it by
+ 
+
+00:09:09.800 --> 00:09:13.370 align:start position:0%
+we had some n  we divided it by
+6 <00:09:10.152><c>and </c><00:09:10.504><c>multiplied </c><00:09:10.856><c>it </c><00:09:11.208><c>by </c><00:09:11.560><c>8 </c><00:09:11.912><c>yes </c><00:09:12.264><c>That </c><00:09:12.616><c>is, </c><00:09:12.968><c>we </c><00:09:13.320><c>can</c>
+
+00:09:13.370 --> 00:09:13.380 align:start position:0%
+6 and multiplied it by 8 yes That is, we can
+ 
+
+00:09:13.380 --> 00:09:15.530 align:start position:0%
+6 and multiplied it by 8 yes That is, we can
+say <00:09:13.605><c>in </c><00:09:13.830><c>principle </c><00:09:14.055><c>this </c><00:09:14.280><c>is </c><00:09:14.505><c>the </c><00:09:14.730><c>same </c><00:09:14.955><c>as </c><00:09:15.180><c>N</c>
+
+00:09:15.530 --> 00:09:15.540 align:start position:0%
+say in principle this is the same as N
+ 
+
+00:09:15.540 --> 00:09:18.470 align:start position:0%
+say in principle this is the same as N
+multiplied <00:09:15.900><c>by </c><00:09:16.260><c>8/6</c>
+
+00:09:18.470 --> 00:09:18.480 align:start position:0%
+multiplied by 8/6
+ 
+
+00:09:18.480 --> 00:09:21.949 align:start position:0%
+multiplied by 8/6
+That <00:09:18.893><c>is, </c><00:09:19.306><c>8/6 </c><00:09:19.719><c>is </c><00:09:20.132><c>our </c><00:09:20.545><c>coefficient </c><00:09:20.958><c>because</c>
+
+00:09:21.949 --> 00:09:21.959 align:start position:0%
+That is, 8/6 is our coefficient because
+ 
+
+00:09:21.959 --> 00:09:23.889 align:start position:0%
+That is, 8/6 is our coefficient because
+times
+
+00:09:23.889 --> 00:09:23.899 align:start position:0%
+times
+ 
+
+00:09:23.899 --> 00:09:27.590 align:start position:0%
+times
+our <00:09:24.152><c>data </c><00:09:24.405><c>volume </c><00:09:24.658><c>has </c><00:09:24.911><c>become </c><00:09:25.164><c>larger </c><00:09:25.417><c>and </c><00:09:25.670><c>it </c><00:09:25.923><c>will </c><00:09:26.176><c>be </c><00:09:26.429><c>one </c><00:09:26.682><c>point </c><00:09:26.935><c>three</c>
+
+00:09:27.590 --> 00:09:30.769 align:start position:0%
+our data volume has become larger and it will be one point three
+ 
+
+00:09:30.769 --> 00:09:34.670 align:start position:0%
+ 
+ 
+
+00:09:34.670 --> 00:09:36.370 align:start position:0%
+ 
+ 
+
+00:09:36.370 --> 00:09:39.290 align:start position:0%
+ 
+ 
+
+00:09:39.290 --> 00:09:40.850 align:start position:0%
+ 
+ 
+
+00:09:40.850 --> 00:09:43.910 align:start position:0%
+ 
+ 
+
+00:09:43.910 --> 00:09:43.920 align:start position:0%
+ 
+ 
+
+00:09:43.920 --> 00:09:46.670 align:start position:0%
+ 
+three <00:09:43.963><c>three </c><00:09:44.006><c>That </c><00:09:44.049><c>is, </c><00:09:44.092><c>we </c><00:09:44.135><c>see </c><00:09:44.178><c>that </c><00:09:44.221><c>the </c><00:09:44.264><c>volume </c><00:09:44.307><c>of </c><00:09:44.350><c>our </c><00:09:44.393><c>data </c><00:09:44.436><c>has </c><00:09:44.479><c>grown </c><00:09:44.522><c>By </c><00:09:44.565><c>a </c><00:09:44.608><c>third </c><00:09:44.651><c>by </c><00:09:44.694><c>33% </c><00:09:44.737><c>compared </c><00:09:44.780><c>to </c><00:09:44.823><c>just </c><00:09:44.866><c>binary </c><00:09:44.909><c>data </c><00:09:44.952><c>that </c><00:09:44.995><c>is, </c><00:09:45.038><c>in </c><00:09:45.081><c>principle, </c><00:09:45.124><c>we </c><00:09:45.167><c>could </c><00:09:45.210><c>say </c><00:09:45.253><c>that </c><00:09:45.296><c>everything </c><00:09:45.339><c>works </c><00:09:45.382><c>great </c><00:09:45.425><c>Let's </c><00:09:45.468><c>think </c><00:09:45.511><c>further </c><00:09:45.554><c>and </c><00:09:45.597><c>if </c><00:09:45.640><c>we </c><00:09:45.683><c>took </c><00:09:45.726><c>not </c><00:09:45.769><c>64 </c><00:09:45.812><c>symbols </c><00:09:45.855><c>but </c><00:09:45.898><c>32 </c><00:09:45.941><c>for </c><00:09:45.984><c>example </c><00:09:46.027><c>Let's </c><00:09:46.070><c>make</c>
+
+00:09:46.670 --> 00:09:46.680 align:start position:0%
+three three That is, we see that the volume of our data has grown By a third by 33% compared to just binary data that is, in principle, we could say that everything works great Let's think further and if we took not 64 symbols but 32 for example Let's make
+ 
+
+00:09:46.680 --> 00:09:50.750 align:start position:0%
+three three That is, we see that the volume of our data has grown By a third by 33% compared to just binary data that is, in principle, we could say that everything works great Let's think further and if we took not 64 symbols but 32 for example Let's make
+Bay <00:09:47.113><c>of </c><00:09:47.546><c>32 </c><00:09:47.979><c>or </c><00:09:48.412><c>even </c><00:09:48.845><c>base </c><00:09:49.278><c>16 </c><00:09:49.711><c>are </c><00:09:50.144><c>there </c><00:09:50.577><c>such</c>
+
+00:09:50.750 --> 00:09:50.760 align:start position:0%
+Bay of 32 or even base 16 are there such
+ 
+
+00:09:50.760 --> 00:09:54.050 align:start position:0%
+Bay of 32 or even base 16 are there such
+things <00:09:51.000><c>If </c><00:09:51.240><c>it </c><00:09:51.480><c>were </c><00:09:51.720><c>all </c><00:09:51.960><c>32 </c><00:09:52.200><c>and </c><00:09:52.440><c>b-16 </c><00:09:52.680><c>there </c><00:09:52.920><c>is </c><00:09:53.160><c>actually</c>
+
+00:09:54.050 --> 00:09:54.060 align:start position:0%
+things If it were all 32 and b-16 there is actually
+ 
+
+00:09:54.060 --> 00:09:56.150 align:start position:0%
+things If it were all 32 and b-16 there is actually
+no <00:09:54.510><c>problem </c><00:09:54.960><c>taking </c><00:09:55.410><c>base-32 </c><00:09:55.860><c>take</c>
+
+00:09:56.150 --> 00:09:56.160 align:start position:0%
+no problem taking base-32 take
+ 
+
+00:09:56.160 --> 00:09:59.509 align:start position:0%
+no problem taking base-32 take
+for <00:09:56.588><c>example </c><00:09:57.016><c>not </c><00:09:57.444><c>six </c><00:09:57.872><c>bits </c><00:09:58.300><c>but </c><00:09:58.728><c>5 </c><00:09:59.156><c>bits</c>
+
+00:09:59.509 --> 00:09:59.519 align:start position:0%
+for example not six bits but 5 bits
+ 
+
+00:09:59.519 --> 00:10:02.990 align:start position:0%
+for example not six bits but 5 bits
+divide <00:09:59.829><c>everything </c><00:10:00.139><c>by </c><00:10:00.449><c>5 </c><00:10:00.759><c>bits </c><00:10:01.069><c>and </c><00:10:01.379><c>encode </c><00:10:01.689><c>with </c><00:10:01.999><c>a</c>
+
+00:10:02.990 --> 00:10:03.000 align:start position:0%
+divide everything by 5 bits and encode with a
+ 
+
+00:10:03.000 --> 00:10:04.910 align:start position:0%
+divide everything by 5 bits and encode with a
+symbol <00:10:03.290><c>we </c><00:10:03.580><c>will </c><00:10:03.870><c>of </c><00:10:04.160><c>course </c><00:10:04.450><c>have </c><00:10:04.740><c>another</c>
+
+00:10:04.910 --> 00:10:04.920 align:start position:0%
+symbol we will of course have another
+ 
+
+00:10:04.920 --> 00:10:07.269 align:start position:0%
+symbol we will of course have another
+problem <00:10:05.129><c>This </c><00:10:05.338><c>will </c><00:10:05.547><c>be </c><00:10:05.756><c>already </c><00:10:05.965><c>8/5 </c><00:10:06.174><c>and </c><00:10:06.383><c>it </c><00:10:06.592><c>will </c><00:10:06.801><c>already </c><00:10:07.010><c>be</c>
+
+00:10:07.269 --> 00:10:07.279 align:start position:0%
+problem This will be already 8/5 and it will already be
+ 
+
+00:10:07.279 --> 00:10:10.509 align:start position:0%
+problem This will be already 8/5 and it will already be
+1.6 <00:10:07.992><c>that </c><00:10:08.705><c>is, </c><00:10:09.418><c>our</c>
+
+00:10:10.509 --> 00:10:10.519 align:start position:0%
+1.6 that is, our
+ 
+
+00:10:10.519 --> 00:10:14.210 align:start position:0%
+1.6 that is, our
+data <00:10:10.987><c>volume </c><00:10:11.455><c>encoded </c><00:10:11.923><c>Bay </c><00:10:12.391><c>of </c><00:10:12.859><c>32 </c><00:10:13.327><c>will </c><00:10:13.795><c>increase</c>
+
+00:10:14.210 --> 00:10:14.220 align:start position:0%
+data volume encoded Bay of 32 will increase
+ 
+
+00:10:14.220 --> 00:10:15.430 align:start position:0%
+data volume encoded Bay of 32 will increase
+by
+
+00:10:15.430 --> 00:10:15.440 align:start position:0%
+by
+ 
+
+00:10:15.440 --> 00:10:18.410 align:start position:0%
+by
+60% <00:10:16.013><c>If </c><00:10:16.586><c>we </c><00:10:17.159><c>take</c>
+
+00:10:18.410 --> 00:10:18.420 align:start position:0%
+60% If we take
+ 
+
+00:10:18.420 --> 00:10:23.889 align:start position:0%
+60% If we take
+Bay <00:10:19.019><c>16 </c><00:10:19.618><c>we  </c><00:10:20.217><c>Let's </c><00:10:20.816><c>just </c><00:10:21.415><c>take </c><00:10:22.014><c>4</c>
+
+00:10:23.889 --> 00:10:23.899 align:start position:0%
+Bay 16 we  Let's just take 4
+ 
+
+00:10:23.899 --> 00:10:26.110 align:start position:0%
+Bay 16 we  Let's just take 4
+bits <00:10:24.399><c>and </c><00:10:24.899><c>with</c>
+
+00:10:26.110 --> 00:10:26.120 align:start position:0%
+bits and with
+ 
+
+00:10:26.120 --> 00:10:28.190 align:start position:0%
+bits and with
+four <00:10:26.594><c>bits </c><00:10:27.068><c>we </c><00:10:27.542><c>can </c><00:10:28.016><c>encode</c>
+
+00:10:28.190 --> 00:10:28.200 align:start position:0%
+four bits we can encode
+ 
+
+00:10:28.200 --> 00:10:30.230 align:start position:0%
+four bits we can encode
+one <00:10:28.420><c>of </c><00:10:28.640><c>16 </c><00:10:28.860><c>characters. </c><00:10:29.080><c>We </c><00:10:29.300><c>will </c><00:10:29.520><c>encode </c><00:10:29.740><c>one </c><00:10:29.960><c>of </c><00:10:30.180><c>16</c>
+
+00:10:30.230 --> 00:10:30.240 align:start position:0%
+one of 16 characters. We will encode one of 16
+ 
+
+00:10:30.240 --> 00:10:31.790 align:start position:0%
+one of 16 characters. We will encode one of 16
+characters <00:10:30.460><c>and </c><00:10:30.680><c>then </c><00:10:30.900><c>we </c><00:10:31.120><c>will </c><00:10:31.340><c>transmit </c><00:10:31.560><c>it</c>
+
+00:10:31.790 --> 00:10:31.800 align:start position:0%
+characters and then we will transmit it
+ 
+
+00:10:31.800 --> 00:10:33.590 align:start position:0%
+characters and then we will transmit it
+in <00:10:32.010><c>the </c><00:10:32.220><c>text </c><00:10:32.430><c>and </c><00:10:32.640><c>accordingly </c><00:10:32.850><c>we </c><00:10:33.060><c>will </c><00:10:33.270><c>have </c><00:10:33.480><c>an</c>
+
+00:10:33.590 --> 00:10:33.600 align:start position:0%
+in the text and accordingly we will have an
+ 
+
+00:10:33.600 --> 00:10:36.829 align:start position:0%
+in the text and accordingly we will have an
+increase <00:10:33.926><c>in </c><00:10:34.252><c>the </c><00:10:34.578><c>data </c><00:10:34.904><c>volume </c><00:10:35.230><c>by </c><00:10:35.556><c>8/4 </c><00:10:35.882><c>times. </c><00:10:36.208><c>That </c><00:10:36.534><c>is,</c>
+
+00:10:36.829 --> 00:10:36.839 align:start position:0%
+increase in the data volume by 8/4 times. That is,
+ 
+
+00:10:36.839 --> 00:10:40.430 align:start position:0%
+increase in the data volume by 8/4 times. That is,
+it <00:10:37.187><c>will </c><00:10:37.535><c>be </c><00:10:37.883><c>two </c><00:10:38.231><c>times </c><00:10:38.579><c>twice </c><00:10:38.927><c>and </c><00:10:39.275><c>it </c><00:10:39.623><c>will </c><00:10:39.971><c>be </c><00:10:40.319><c>twice</c>
+
+00:10:40.430 --> 00:10:40.440 align:start position:0%
+it will be two times twice and it will be twice
+ 
+
+00:10:40.440 --> 00:10:44.930 align:start position:0%
+it will be two times twice and it will be twice
+and <00:10:40.731><c>in </c><00:10:41.022><c>general </c><00:10:41.313><c>is </c><00:10:41.604><c>there </c><00:10:41.895><c>any </c><00:10:42.186><c>sense </c><00:10:42.477><c>in </c><00:10:42.768><c>these </c><00:10:43.059><c>more </c><00:10:43.350><c>than </c><00:10:43.641><c>16 </c><00:10:43.932><c>bas32.</c>
+
+00:10:44.930 --> 00:10:44.940 align:start position:0%
+and in general is there any sense in these more than 16 bas32.
+ 
+
+00:10:44.940 --> 00:10:47.410 align:start position:0%
+and in general is there any sense in these more than 16 bas32.
+Well, <00:10:45.600><c>actually, </c><00:10:46.260><c>let's</c>
+
+00:10:47.410 --> 00:10:47.420 align:start position:0%
+Well, actually, let's
+ 
+
+00:10:47.420 --> 00:10:51.290 align:start position:0%
+Well, actually, let's
+see <00:10:47.740><c>what </c><00:10:48.060><c>kind </c><00:10:48.380><c>of </c><00:10:48.700><c>chip </c><00:10:49.020><c>from </c><00:10:49.340><c>Bystro </c><00:10:49.660><c>these </c><00:10:49.980><c>two </c><00:10:50.300><c>for</c>
+
+00:10:51.290 --> 00:10:51.300 align:start position:0%
+see what kind of chip from Bystro these two for
+ 
+
+00:10:51.300 --> 00:10:52.930 align:start position:0%
+see what kind of chip from Bystro these two for
+Bystrica <00:10:51.472><c>two </c><00:10:51.644><c>can </c><00:10:51.816><c>be </c><00:10:51.988><c>taken </c><00:10:52.160><c>there </c><00:10:52.332><c>would </c><00:10:52.504><c>be </c><00:10:52.676><c>different</c>
+
+00:10:52.930 --> 00:10:52.940 align:start position:0%
+Bystrica two can be taken there would be different
+ 
+
+00:10:52.940 --> 00:10:56.389 align:start position:0%
+Bystrica two can be taken there would be different
+sets <00:10:53.297><c>of </c><00:10:53.654><c>characters </c><00:10:54.011><c>and </c><00:10:54.368><c>there </c><00:10:54.725><c>are </c><00:10:55.082><c>different </c><00:10:55.439><c>encodings </c><00:10:55.796><c>Bay</c>
+
+00:10:56.389 --> 00:10:56.399 align:start position:0%
+sets of characters and there are different encodings Bay
+ 
+
+00:10:56.399 --> 00:10:58.009 align:start position:0%
+sets of characters and there are different encodings Bay
+of <00:10:56.570><c>32 </c><00:10:56.741><c>with </c><00:10:56.912><c>different </c><00:10:57.083><c>with </c><00:10:57.254><c>different </c><00:10:57.425><c>sets </c><00:10:57.596><c>of</c>
+
+00:10:58.009 --> 00:10:58.019 align:start position:0%
+of 32 with different with different sets of
+ 
+
+00:10:58.019 --> 00:11:01.310 align:start position:0%
+of 32 with different with different sets of
+characters <00:10:58.419><c>But </c><00:10:58.819><c>usually </c><00:10:59.219><c>the </c><00:10:59.619><c>following </c><00:11:00.019><c>is </c><00:11:00.419><c>used</c>
+
+00:11:01.310 --> 00:11:01.320 align:start position:0%
+characters But usually the following is used
+ 
+
+00:11:01.320 --> 00:11:02.650 align:start position:0%
+characters But usually the following is used
+
+
+00:11:02.650 --> 00:11:02.660 align:start position:0%
+ 
+ 
+
+00:11:02.660 --> 00:11:06.410 align:start position:0%
+ 
+azad <00:11:03.092><c>but </c><00:11:03.524><c>independent </c><00:11:03.956><c>of </c><00:11:04.388><c>the </c><00:11:04.820><c>case, </c><00:11:05.252><c>that </c><00:11:05.684><c>is, </c><00:11:06.116><c>we</c>
+
+00:11:06.410 --> 00:11:06.420 align:start position:0%
+azad but independent of the case, that is, we
+ 
+
+00:11:06.420 --> 00:11:08.509 align:start position:0%
+azad but independent of the case, that is, we
+can <00:11:06.690><c>take </c><00:11:06.960><c>small </c><00:11:07.230><c>and </c><00:11:07.500><c>large </c><00:11:07.770><c>without </c><00:11:08.040><c>a</c>
+
+00:11:08.509 --> 00:11:08.519 align:start position:0%
+can take small and large without a
+ 
+
+00:11:08.519 --> 00:11:10.370 align:start position:0%
+can take small and large without a
+difference <00:11:08.733><c>they </c><00:11:08.947><c>believe </c><00:11:09.161><c>that </c><00:11:09.375><c>they </c><00:11:09.589><c>are </c><00:11:09.803><c>the </c><00:11:10.017><c>same</c>
+
+00:11:10.370 --> 00:11:10.380 align:start position:0%
+difference they believe that they are the same
+ 
+
+00:11:10.380 --> 00:11:12.769 align:start position:0%
+difference they believe that they are the same
+so <00:11:10.697><c>we </c><00:11:11.014><c>have </c><00:11:11.331><c>26 </c><00:11:11.648><c>characters </c><00:11:11.965><c>and </c><00:11:12.282><c>we </c><00:11:12.599><c>still</c>
+
+00:11:12.769 --> 00:11:12.779 align:start position:0%
+so we have 26 characters and we still
+ 
+
+00:11:12.779 --> 00:11:15.290 align:start position:0%
+so we have 26 characters and we still
+lack <00:11:13.149><c>more </c><00:11:13.519><c>characters </c><00:11:13.889><c>and </c><00:11:14.259><c>we </c><00:11:14.629><c>can </c><00:11:14.999><c>take</c>
+
+00:11:15.290 --> 00:11:15.300 align:start position:0%
+lack more characters and we can take
+ 
+
+00:11:15.300 --> 00:11:17.810 align:start position:0%
+lack more characters and we can take
+there <00:11:15.690><c>0.12 </c><00:11:16.080><c>3 </c><00:11:16.470><c>4 </c><00:11:16.860><c>5</c>
+
+00:11:17.810 --> 00:11:17.820 align:start position:0%
+there 0.12 3 4 5
+ 
+
+00:11:17.820 --> 00:11:21.590 align:start position:0%
+there 0.12 3 4 5
+and <00:11:18.430><c>before </c><00:11:19.040><c>that </c><00:11:19.650><c>it </c><00:11:20.260><c>was </c><00:11:20.870><c>enough </c><00:11:21.480><c>but</c>
+
+00:11:21.590 --> 00:11:21.600 align:start position:0%
+and before that it was enough but
+ 
+
+00:11:21.600 --> 00:11:27.110 align:start position:0%
+and before that it was enough but
+usually <00:11:22.119><c>they </c><00:11:22.638><c>take </c><00:11:23.157><c>from </c><00:11:23.676><c>two </c><00:11:24.195><c>to </c><00:11:24.714><c>seven </c><00:11:25.233><c>0 </c><00:11:25.752><c>they </c><00:11:26.271><c>don't</c>
+
+00:11:27.110 --> 00:11:27.120 align:start position:0%
+usually they take from two to seven 0 they don't
+ 
+
+00:11:27.120 --> 00:11:29.090 align:start position:0%
+usually they take from two to seven 0 they don't
+take <00:11:27.351><c>one </c><00:11:27.582><c>they </c><00:11:27.813><c>don't </c><00:11:28.044><c>take </c><00:11:28.275><c>why </c><00:11:28.506><c>Because </c><00:11:28.737><c>zero</c>
+
+00:11:29.090 --> 00:11:29.100 align:start position:0%
+take one they don't take why Because zero
+ 
+
+00:11:29.100 --> 00:11:31.490 align:start position:0%
+take one they don't take why Because zero
+looks <00:11:29.353><c>like </c><00:11:29.606><c>the </c><00:11:29.859><c>letter </c><00:11:30.112><c>o </c><00:11:30.365><c>one </c><00:11:30.618><c>one </c><00:11:30.871><c>looks </c><00:11:31.124><c>like </c><00:11:31.377><c>the</c>
+
+00:11:31.490 --> 00:11:31.500 align:start position:0%
+looks like the letter o one one looks like the
+ 
+
+00:11:31.500 --> 00:11:32.150 align:start position:0%
+looks like the letter o one one looks like the
+letter
+
+00:11:32.150 --> 00:11:32.160 align:start position:0%
+letter
+ 
+
+00:11:32.160 --> 00:11:35.990 align:start position:0%
+letter
+l <00:11:32.475><c>and  </c><00:11:32.790><c>it's </c><00:11:33.105><c>better </c><00:11:33.420><c>to </c><00:11:33.735><c>take </c><00:11:34.050><c>the </c><00:11:34.365><c>taps </c><00:11:34.680><c>and </c><00:11:34.995><c>where </c><00:11:35.310><c>it </c><00:11:35.625><c>can </c><00:11:35.940><c>be</c>
+
+00:11:35.990 --> 00:11:36.000 align:start position:0%
+l and  it's better to take the taps and where it can be
+ 
+
+00:11:36.000 --> 00:11:38.030 align:start position:0%
+l and  it's better to take the taps and where it can be
+used <00:11:36.435><c>for </c><00:11:36.870><c>example </c><00:11:37.305><c>now </c><00:11:37.740><c>we</c>
+
+00:11:38.030 --> 00:11:38.040 align:start position:0%
+used for example now we
+ 
+
+00:11:38.040 --> 00:11:38.829 align:start position:0%
+used for example now we
+can
+
+00:11:38.829 --> 00:11:40.970 align:start position:0%
+can
+ 
+
+00:11:40.970 --> 00:11:40.980 align:start position:0%
+ 
+ 
+
+00:11:40.980 --> 00:11:44.569 align:start position:0%
+ 
+use <00:11:41.292><c>a </c><00:11:41.604><c>string </c><00:11:41.916><c>encoded </c><00:11:42.228><c>by </c><00:11:42.540><c>32 </c><00:11:42.852><c>for </c><00:11:43.164><c>file </c><00:11:43.476><c>names </c><00:11:43.788><c>or </c><00:11:44.100><c>in</c>
+
+00:11:44.569 --> 00:11:44.579 align:start position:0%
+use a string encoded by 32 for file names or in
+ 
+
+00:11:44.579 --> 00:11:46.190 align:start position:0%
+use a string encoded by 32 for file names or in
+directories <00:11:45.329><c>because </c><00:11:46.079><c>unlike</c>
+
+00:11:46.190 --> 00:11:46.200 align:start position:0%
+directories because unlike
+ 
+
+00:11:46.200 --> 00:11:49.490 align:start position:0%
+directories because unlike
+104 <00:11:46.566><c>we </c><00:11:46.932><c>don't </c><00:11:47.298><c>have </c><00:11:47.664><c>a </c><00:11:48.030><c>slash </c><00:11:48.396><c>super </c><00:11:48.762><c>In </c><00:11:49.128><c>addition </c><00:11:49.494><c>we</c>
+
+00:11:49.490 --> 00:11:49.500 align:start position:0%
+104 we don't have a slash super In addition we
+ 
+
+00:11:49.500 --> 00:11:52.430 align:start position:0%
+104 we don't have a slash super In addition we
+now <00:11:49.980><c>have </c><00:11:50.460><c>large </c><00:11:50.940><c>characters </c><00:11:51.420><c>it's </c><00:11:51.900><c>the </c><00:11:52.380><c>same</c>
+
+00:11:52.430 --> 00:11:52.440 align:start position:0%
+now have large characters it's the same
+ 
+
+00:11:52.440 --> 00:11:55.310 align:start position:0%
+now have large characters it's the same
+and <00:11:52.890><c>some </c><00:11:53.340><c>file </c><00:11:53.790><c>systems </c><00:11:54.240><c>don't </c><00:11:54.690><c>make </c><00:11:55.140><c>a</c>
+
+00:11:55.310 --> 00:11:55.320 align:start position:0%
+and some file systems don't make a
+ 
+
+00:11:55.320 --> 00:11:57.889 align:start position:0%
+and some file systems don't make a
+difference <00:11:55.716><c>between </c><00:11:56.112><c>upper </c><00:11:56.508><c>and </c><00:11:56.904><c>lower </c><00:11:57.300><c>case</c>
+
+00:11:57.889 --> 00:11:57.899 align:start position:0%
+difference between upper and lower case
+ 
+
+00:11:57.899 --> 00:11:58.750 align:start position:0%
+difference between upper and lower case
+Therefore
+
+00:11:58.750 --> 00:11:58.760 align:start position:0%
+Therefore
+ 
+
+00:11:58.760 --> 00:12:02.090 align:start position:0%
+Therefore
+it <00:11:59.308><c>will </c><00:11:59.856><c>work </c><00:12:00.404><c>super </c><00:12:00.952><c>class </c><00:12:01.500><c>now</c>
+
+00:12:02.090 --> 00:12:02.100 align:start position:0%
+it will work super class now
+ 
+
+00:12:02.100 --> 00:12:05.150 align:start position:0%
+it will work super class now
+Let's <00:12:02.460><c>think </c><00:12:02.820><c>And </c><00:12:03.180><c>why </c><00:12:03.540><c>more </c><00:12:03.900><c>than </c><00:12:04.260><c>16 </c><00:12:04.620><c>and </c><00:12:04.980><c>whether</c>
+
+00:12:05.150 --> 00:12:05.160 align:start position:0%
+Let's think And why more than 16 and whether
+ 
+
+00:12:05.160 --> 00:12:06.889 align:start position:0%
+Let's think And why more than 16 and whether
+10 <00:12:05.472><c>we </c><00:12:05.784><c>met </c><00:12:06.096><c>it </c><00:12:06.408><c>Let's </c><00:12:06.720><c>what</c>
+
+00:12:06.889 --> 00:12:06.899 align:start position:0%
+10 we met it Let's what
+ 
+
+00:12:06.899 --> 00:12:08.389 align:start position:0%
+10 we met it Let's what
+set <00:12:07.079><c>of </c><00:12:07.259><c>characters </c><00:12:07.439><c>you </c><00:12:07.619><c>could </c><00:12:07.799><c>take </c><00:12:07.979><c>for </c><00:12:08.159><c>b16</c>
+
+00:12:08.389 --> 00:12:08.399 align:start position:0%
+set of characters you could take for b16
+ 
+
+00:12:08.399 --> 00:12:11.990 align:start position:0%
+set of characters you could take for b16
+actually <00:12:08.870><c>it's </c><00:12:09.341><c>from </c><00:12:09.812><c>zero </c><00:12:10.283><c>to </c><00:12:10.754><c>nine </c><00:12:11.225><c>from </c><00:12:11.696><c>a</c>
+
+00:12:11.990 --> 00:12:12.000 align:start position:0%
+actually it's from zero to nine from a
+ 
+
+00:12:12.000 --> 00:12:18.069 align:start position:0%
+actually it's from zero to nine from a
+to <00:12:12.439><c>F </c><00:12:12.878><c>that </c><00:12:13.317><c>is </c><00:12:13.756><c>I </c><00:12:14.195><c>think </c><00:12:14.634><c>you </c><00:12:15.073><c>saw </c><00:12:15.512><c>for </c><00:12:15.951><c>example</c>
+
+00:12:18.069 --> 00:12:18.079 align:start position:0%
+to F that is I think you saw for example
+ 
+
+00:12:18.079 --> 00:12:22.810 align:start position:0%
+to F that is I think you saw for example
+CSS <00:12:18.919><c>color </c><00:12:19.759><c>FF </c><00:12:20.599><c>FF</c>
+
+00:12:22.810 --> 00:12:22.820 align:start position:0%
+CSS color FF FF
+ 
+
+00:12:22.820 --> 00:12:27.710 align:start position:0%
+CSS color FF FF
+and <00:12:23.425><c>FF </c><00:12:24.030><c>is </c><00:12:24.635><c>one </c><00:12:25.240><c>byte </c><00:12:25.845><c>encoded </c><00:12:26.450><c>by </c><00:12:27.055><c>two</c>
+
+00:12:27.710 --> 00:12:27.720 align:start position:0%
+and FF is one byte encoded by two
+ 
+
+00:12:27.720 --> 00:12:29.870 align:start position:0%
+and FF is one byte encoded by two
+characters <00:12:28.215><c>or </c><00:12:28.710><c>it </c><00:12:29.205><c>could </c><00:12:29.700><c>be</c>
+
+00:12:29.870 --> 00:12:29.880 align:start position:0%
+characters or it could be
+ 
+
+00:12:29.880 --> 00:12:31.910 align:start position:0%
+characters or it could be
+written <00:12:30.110><c>in </c><00:12:30.340><c>the </c><00:12:30.570><c>decimal </c><00:12:30.800><c>system </c><00:12:31.030><c>as </c><00:12:31.260><c>255</c>
+
+00:12:31.910 --> 00:12:31.920 align:start position:0%
+written in the decimal system as 255
+ 
+
+00:12:31.920 --> 00:12:35.990 align:start position:0%
+written in the decimal system as 255
+starting <00:12:32.317><c>from </c><00:12:32.714><c>zero </c><00:12:33.111><c>yes </c><00:12:33.508><c>from </c><00:12:33.905><c>zero </c><00:12:34.302><c>to </c><00:12:34.699><c>255 </c><00:12:35.096><c>and</c>
+
+00:12:35.990 --> 00:12:36.000 align:start position:0%
+starting from zero yes from zero to 255 and
+ 
+
+00:12:36.000 --> 00:12:38.750 align:start position:0%
+starting from zero yes from zero to 255 and
+Accordingly <00:12:36.399><c>we </c><00:12:36.798><c>can </c><00:12:37.197><c>say </c><00:12:37.596><c>that </c><00:12:37.995><c>Bay </c><00:12:38.394><c>16</c>
+
+00:12:38.750 --> 00:12:38.760 align:start position:0%
+Accordingly we can say that Bay 16
+ 
+
+00:12:38.760 --> 00:12:43.550 align:start position:0%
+Accordingly we can say that Bay 16
+is <00:12:39.185><c>the </c><00:12:39.610><c>same </c><00:12:40.035><c>as </c><00:12:40.460><c>their </c><00:12:40.885><c>cupcake </c><00:12:41.310><c>That </c><00:12:41.735><c>is </c><00:12:42.160><c>you </c><00:12:42.585><c>16 </c><00:12:43.010><c>is</c>
+
+00:12:43.550 --> 00:12:43.560 align:start position:0%
+is the same as their cupcake That is you 16 is
+ 
+
+00:12:43.560 --> 00:12:45.949 align:start position:0%
+is the same as their cupcake That is you 16 is
+essentially <00:12:43.620><c>a </c><00:12:43.680><c>cupcake</c>
+
+00:12:45.949 --> 00:12:45.959 align:start position:0%
+essentially a cupcake
+ 
+
+00:12:45.959 --> 00:12:48.110 align:start position:0%
+essentially a cupcake
+and <00:12:46.319><c>Now </c><00:12:46.679><c>let's </c><00:12:47.039><c>see </c><00:12:47.399><c>how </c><00:12:47.759><c>all</c>
+
+00:12:48.110 --> 00:12:48.120 align:start position:0%
+and Now let's see how all
+ 
+
+00:12:48.120 --> 00:12:50.629 align:start position:0%
+and Now let's see how all
+this <00:12:48.390><c>theory </c><00:12:48.660><c>works </c><00:12:48.930><c>in </c><00:12:49.200><c>practice</c>
+
+00:12:50.629 --> 00:12:50.639 align:start position:0%
+this theory works in practice
+ 
+
+00:12:50.639 --> 00:12:52.670 align:start position:0%
+this theory works in practice
+so <00:12:51.011><c>I </c><00:12:51.383><c>will </c><00:12:51.755><c>return </c><00:12:52.127><c>to </c><00:12:52.499><c>our</c>
+
+00:12:52.670 --> 00:12:52.680 align:start position:0%
+so I will return to our
+ 
+
+00:12:52.680 --> 00:12:55.250 align:start position:0%
+so I will return to our
+previous <00:12:53.160><c>examples</c>
+
+00:12:55.250 --> 00:12:55.260 align:start position:0%
+previous examples
+ 
+
+00:12:55.260 --> 00:12:57.430 align:start position:0%
+previous examples
+Let's <00:12:55.799><c>start </c><00:12:56.338><c>with</c>
+
+00:12:57.430 --> 00:12:57.440 align:start position:0%
+Let's start with
+ 
+
+00:12:57.440 --> 00:12:59.050 align:start position:0%
+Let's start with
+gwt
+
+00:12:59.050 --> 00:12:59.060 align:start position:0%
+gwt
+ 
+
+00:12:59.060 --> 00:13:04.370 align:start position:0%
+gwt
+remember <00:12:59.702><c>the </c><00:13:00.344><c>question </c><00:13:00.986><c>is </c><00:13:01.628><c>it </c><00:13:02.270><c>possible </c><00:13:02.912><c>let's </c><00:13:03.554><c>go </c><00:13:04.196><c>here</c>
+
+00:13:04.370 --> 00:13:04.380 align:start position:0%
+remember the question is it possible let's go here
+ 
+
+00:13:04.380 --> 00:13:07.129 align:start position:0%
+remember the question is it possible let's go here
+we <00:13:04.836><c>have </c><00:13:05.292><c>a </c><00:13:05.748><c>generated </c><00:13:06.204><c>talking </c><00:13:06.660><c>let's</c>
+
+00:13:07.129 --> 00:13:07.139 align:start position:0%
+we have a generated talking let's
+ 
+
+00:13:07.139 --> 00:13:09.470 align:start position:0%
+we have a generated talking let's
+generate <00:13:07.419><c>another </c><00:13:07.699><c>one </c><00:13:07.979><c>Tokyo</c>
+
+00:13:09.470 --> 00:13:09.480 align:start position:0%
+generate another one Tokyo
+ 
+
+00:13:09.480 --> 00:13:13.090 align:start position:0%
+generate another one Tokyo
+and <00:13:09.870><c>the </c><00:13:10.260><c>next </c><00:13:10.650><c>question </c><00:13:11.040><c>is </c><00:13:11.430><c>it </c><00:13:11.820><c>possible</c>
+
+00:13:13.090 --> 00:13:13.100 align:start position:0%
+and the next question is it possible
+ 
+
+00:13:13.100 --> 00:13:15.970 align:start position:0%
+and the next question is it possible
+to <00:13:13.480><c>look </c><00:13:13.860><c>into </c><00:13:14.240><c>this </c><00:13:14.620><c>without </c><00:13:15.000><c>knowing</c>
+
+00:13:15.970 --> 00:13:15.980 align:start position:0%
+to look into this without knowing
+ 
+
+00:13:15.980 --> 00:13:19.210 align:start position:0%
+to look into this without knowing
+the <00:13:16.384><c>secret </c><00:13:16.788><c>Let's </c><00:13:17.192><c>try </c><00:13:17.596><c>We </c><00:13:18.000><c>have</c>
+
+00:13:19.210 --> 00:13:19.220 align:start position:0%
+the secret Let's try We have
+ 
+
+00:13:19.220 --> 00:13:23.329 align:start position:0%
+the secret Let's try We have
+com <00:13:20.145><c>online </c><00:13:21.070><c>command </c><00:13:21.995><c>standard </c><00:13:22.920><c>in</c>
+
+00:13:23.329 --> 00:13:23.339 align:start position:0%
+com online command standard in
+ 
+
+00:13:23.339 --> 00:13:26.050 align:start position:0%
+com online command standard in
+linux <00:13:24.059><c>Bay </c><00:13:24.779><c>64</c>
+
+00:13:26.050 --> 00:13:26.060 align:start position:0%
+linux Bay 64
+ 
+
+00:13:26.060 --> 00:13:29.629 align:start position:0%
+linux Bay 64
+decode <00:13:26.511><c>look </c><00:13:26.962><c>and </c><00:13:27.413><c>we </c><00:13:27.864><c>see </c><00:13:28.315><c>that </c><00:13:28.766><c>the </c><00:13:29.217><c>first</c>
+
+00:13:29.629 --> 00:13:29.639 align:start position:0%
+decode look and we see that the first
+ 
+
+00:13:29.639 --> 00:13:31.970 align:start position:0%
+decode look and we see that the first
+part <00:13:29.864><c>live </c><00:13:30.089><c>- </c><00:13:30.314><c>this </c><00:13:30.539><c>is </c><00:13:30.764><c>some </c><00:13:30.989><c>kind </c><00:13:31.214><c>of </c><00:13:31.439><c>header</c>
+
+00:13:31.970 --> 00:13:31.980 align:start position:0%
+part live - this is some kind of header
+ 
+
+00:13:31.980 --> 00:13:35.329 align:start position:0%
+part live - this is some kind of header
+this <00:13:32.373><c>is </c><00:13:32.766><c>some </c><00:13:33.159><c>metadata </c><00:13:33.552><c>that </c><00:13:33.945><c>says </c><00:13:34.338><c>which</c>
+
+00:13:35.329 --> 00:13:35.339 align:start position:0%
+this is some metadata that says which
+ 
+
+00:13:35.339 --> 00:13:37.430 align:start position:0%
+this is some metadata that says which
+algorithm <00:13:35.639><c>is </c><00:13:35.939><c>used </c><00:13:36.239><c>to </c><00:13:36.539><c>sign</c>
+
+00:13:37.430 --> 00:13:37.440 align:start position:0%
+algorithm is used to sign
+ 
+
+00:13:37.440 --> 00:13:39.889 align:start position:0%
+algorithm is used to sign
+gwt <00:13:37.757><c>that </c><00:13:38.074><c>is </c><00:13:38.391><c>let's </c><00:13:38.708><c>look </c><00:13:39.025><c>now </c><00:13:39.342><c>in </c><00:13:39.659><c>the</c>
+
+00:13:39.889 --> 00:13:39.899 align:start position:0%
+gwt that is let's look now in the
+ 
+
+00:13:39.899 --> 00:13:41.990 align:start position:0%
+gwt that is let's look now in the
+second <00:13:40.079><c>block </c><00:13:40.259><c>live </c><00:13:40.439><c>here</c>
+
+00:13:41.990 --> 00:13:42.000 align:start position:0%
+second block live here
+ 
+
+00:13:42.000 --> 00:13:44.150 align:start position:0%
+second block live here
+they <00:13:42.330><c>are </c><00:13:42.660><c>separated </c><00:13:42.990><c>by </c><00:13:43.320><c>dots </c><00:13:43.650><c>remember </c><00:13:43.980><c>that</c>
+
+00:13:44.150 --> 00:13:44.160 align:start position:0%
+they are separated by dots remember that
+ 
+
+00:13:44.160 --> 00:13:45.949 align:start position:0%
+they are separated by dots remember that
+in <00:13:44.362><c>barrel </c><00:13:44.564><c>4 </c><00:13:44.766><c>actually </c><00:13:44.968><c>do </c><00:13:45.170><c>not </c><00:13:45.372><c>enter </c><00:13:45.574><c>the </c><00:13:45.776><c>dot</c>
+
+00:13:45.949 --> 00:13:45.959 align:start position:0%
+in barrel 4 actually do not enter the dot
+ 
+
+00:13:45.959 --> 00:13:48.730 align:start position:0%
+in barrel 4 actually do not enter the dot
+Therefore <00:13:46.236><c>it </c><00:13:46.513><c>is </c><00:13:46.790><c>safe </c><00:13:47.067><c>to </c><00:13:47.344><c>separate </c><00:13:47.621><c>with </c><00:13:47.898><c>a </c><00:13:48.175><c>dot</c>
+
+00:13:48.730 --> 00:13:48.740 align:start position:0%
+Therefore it is safe to separate with a dot
+ 
+
+00:13:48.740 --> 00:13:54.190 align:start position:0%
+Therefore it is safe to separate with a dot
+try <00:13:49.388><c>to </c><00:13:50.036><c>decode </c><00:13:50.684><c>and </c><00:13:51.332><c>we </c><00:13:51.980><c>see </c><00:13:52.628><c>that </c><00:13:53.276><c>what</c>
+
+00:13:54.190 --> 00:13:54.200 align:start position:0%
+try to decode and we see that what
+ 
+
+00:13:54.200 --> 00:13:57.949 align:start position:0%
+try to decode and we see that what
+we <00:13:54.915><c>had </c><00:13:55.630><c>killer </c><00:13:56.345><c>4 </c><00:13:57.060><c>usarad </c><00:13:57.775><c>Victor</c>
+
+00:13:57.949 --> 00:13:57.959 align:start position:0%
+we had killer 4 usarad Victor
+ 
+
+00:13:57.959 --> 00:14:01.129 align:start position:0%
+we had killer 4 usarad Victor
+gets <00:13:58.369><c>without </c><00:13:58.779><c>problems </c><00:13:59.189><c>because </c><00:13:59.599><c>json </c><00:14:00.009><c>it </c><00:14:00.419><c>is</c>
+
+00:14:01.129 --> 00:14:01.139 align:start position:0%
+gets without problems because json it is
+ 
+
+00:14:01.139 --> 00:14:03.769 align:start position:0%
+gets without problems because json it is
+not <00:14:01.449><c>encrypted </c><00:14:01.759><c>it </c><00:14:02.069><c>is </c><00:14:02.379><c>simply </c><00:14:02.689><c>signed </c><00:14:02.999><c>and</c>
+
+00:14:03.769 --> 00:14:03.779 align:start position:0%
+not encrypted it is simply signed and
+ 
+
+00:14:03.779 --> 00:14:06.290 align:start position:0%
+not encrypted it is simply signed and
+we <00:14:04.034><c>have </c><00:14:04.289><c>the </c><00:14:04.544><c>last </c><00:14:04.799><c>part </c><00:14:05.054><c>we </c><00:14:05.309><c>will </c><00:14:05.564><c>try </c><00:14:05.819><c>to</c>
+
+00:14:06.290 --> 00:14:06.300 align:start position:0%
+we have the last part we will try to
+ 
+
+00:14:06.300 --> 00:14:08.329 align:start position:0%
+we have the last part we will try to
+feed <00:14:06.779><c>it</c>
+
+00:14:08.329 --> 00:14:08.339 align:start position:0%
+feed it
+ 
+
+00:14:08.339 --> 00:14:10.310 align:start position:0%
+feed it
+but <00:14:08.525><c>Look </c><00:14:08.711><c>what </c><00:14:08.897><c>is </c><00:14:09.083><c>interesting </c><00:14:09.269><c>in </c><00:14:09.455><c>the </c><00:14:09.641><c>rest </c><00:14:09.827><c>of </c><00:14:10.013><c>the </c><00:14:10.199><c>part</c>
+
+00:14:10.310 --> 00:14:10.320 align:start position:0%
+but Look what is interesting in the rest of the part
+ 
+
+00:14:10.320 --> 00:14:11.990 align:start position:0%
+but Look what is interesting in the rest of the part
+if <00:14:10.570><c>you </c><00:14:10.820><c>look </c><00:14:11.070><c>at </c><00:14:11.320><c>the </c><00:14:11.570><c>last </c><00:14:11.820><c>part</c>
+
+00:14:11.990 --> 00:14:12.000 align:start position:0%
+if you look at the last part
+ 
+
+00:14:12.000 --> 00:14:14.750 align:start position:0%
+if you look at the last part
+We <00:14:12.409><c>have </c><00:14:12.818><c>an </c><00:14:13.227><c>underscore </c><00:14:13.636><c>and </c><00:14:14.045><c>if </c><00:14:14.454><c>we</c>
+
+00:14:14.750 --> 00:14:14.760 align:start position:0%
+We have an underscore and if we
+ 
+
+00:14:14.760 --> 00:14:18.050 align:start position:0%
+We have an underscore and if we
+try <00:14:15.165><c>to </c><00:14:15.570><c>decode </c><00:14:15.975><c>killer </c><00:14:16.380><c>64</c>
+
+00:14:18.050 --> 00:14:18.060 align:start position:0%
+try to decode killer 64
+ 
+
+00:14:18.060 --> 00:14:22.009 align:start position:0%
+try to decode killer 64
+then <00:14:18.429><c>we </c><00:14:18.798><c>have </c><00:14:19.167><c>it </c><00:14:19.536><c>says </c><00:14:19.905><c>that </c><00:14:20.274><c>disabled </c><00:14:20.643><c>import </c><00:14:21.012><c>and</c>
+
+00:14:22.009 --> 00:14:22.019 align:start position:0%
+then we have it says that disabled import and
+ 
+
+00:14:22.019 --> 00:14:23.470 align:start position:0%
+then we have it says that disabled import and
+in fact the
+
+00:14:23.470 --> 00:14:23.480 align:start position:0%
+in fact the
+ 
+
+00:14:23.480 --> 00:14:25.850 align:start position:0%
+in fact the
+main <00:14:23.806><c>idea </c><00:14:24.132><c>that  </c><00:14:24.458><c>you </c><00:14:24.784><c>live </c><00:14:25.110><c>is </c><00:14:25.436><c>used</c>
+
+00:14:25.850 --> 00:14:25.860 align:start position:0%
+main idea that  you live is used
+ 
+
+00:14:25.860 --> 00:14:30.170 align:start position:0%
+main idea that  you live is used
+unclean <00:14:26.302><c>without </c><00:14:26.744><c>four </c><00:14:27.186><c>or </c><00:14:27.628><c>64 </c><00:14:28.070><c>URL </c><00:14:28.512><c>it </c><00:14:28.954><c>is </c><00:14:29.396><c>the</c>
+
+00:14:30.170 --> 00:14:30.180 align:start position:0%
+unclean without four or 64 URL it is the
+ 
+
+00:14:30.180 --> 00:14:32.870 align:start position:0%
+unclean without four or 64 URL it is the
+same <00:14:30.569><c>as </c><00:14:30.958><c>64</c>
+
+00:14:32.870 --> 00:14:32.880 align:start position:0%
+same as 64
+ 
+
+00:14:32.880 --> 00:14:36.050 align:start position:0%
+same as 64
+but <00:14:33.371><c>plus </c><00:14:33.862><c>and </c><00:14:34.353><c>slash </c><00:14:34.844><c>replaced </c><00:14:35.335><c>with</c>
+
+00:14:36.050 --> 00:14:36.060 align:start position:0%
+but plus and slash replaced with
+ 
+
+00:14:36.060 --> 00:14:37.910 align:start position:0%
+but plus and slash replaced with
+underscore <00:14:36.250><c>and </c><00:14:36.440><c>hyphen </c><00:14:36.630><c>so </c><00:14:36.820><c>that </c><00:14:37.010><c>you </c><00:14:37.200><c>can</c>
+
+00:14:37.910 --> 00:14:37.920 align:start position:0%
+underscore and hyphen so that you can
+ 
+
+00:14:37.920 --> 00:14:40.490 align:start position:0%
+underscore and hyphen so that you can
+put <00:14:38.245><c>it </c><00:14:38.570><c>in </c><00:14:38.895><c>the </c><00:14:39.220><c>URL </c><00:14:39.545><c>i.e. </c><00:14:39.870><c>Now </c><00:14:40.195><c>we</c>
+
+00:14:40.490 --> 00:14:40.500 align:start position:0%
+put it in the URL i.e. Now we
+ 
+
+00:14:40.500 --> 00:14:42.110 align:start position:0%
+put it in the URL i.e. Now we
+could <00:14:40.750><c>proskva </c><00:14:41.000><c>But </c><00:14:41.250><c>it </c><00:14:41.500><c>also </c><00:14:41.750><c>is </c><00:14:42.000><c>not</c>
+
+00:14:42.110 --> 00:14:42.120 align:start position:0%
+could proskva But it also is not
+ 
+
+00:14:42.120 --> 00:14:44.930 align:start position:0%
+could proskva But it also is not
+decoded <00:14:42.635><c>because </c><00:14:43.150><c>most </c><00:14:43.665><c>of </c><00:14:44.180><c>4 </c><00:14:44.695><c>is</c>
+
+00:14:44.930 --> 00:14:44.940 align:start position:0%
+decoded because most of 4 is
+ 
+
+00:14:44.940 --> 00:14:47.629 align:start position:0%
+decoded because most of 4 is
+divisible <00:14:45.396><c>by </c><00:14:45.852><c>these </c><00:14:46.308><c>blocks </c><00:14:46.764><c>need </c><00:14:47.220><c>and</c>
+
+00:14:47.629 --> 00:14:47.639 align:start position:0%
+divisible by these blocks need and
+ 
+
+00:14:47.639 --> 00:14:50.030 align:start position:0%
+divisible by these blocks need and
+sometimes <00:14:48.224><c>not </c><00:14:48.809><c>enough </c><00:14:49.394><c>and </c><00:14:49.979><c>we</c>
+
+00:14:50.030 --> 00:14:50.040 align:start position:0%
+sometimes not enough and we
+ 
+
+00:14:50.040 --> 00:14:53.030 align:start position:0%
+sometimes not enough and we
+use <00:14:50.302><c>it </c><00:14:50.564><c>to </c><00:14:50.826><c>the </c><00:14:51.088><c>level </c><00:14:51.350><c>as </c><00:14:51.612><c>padding </c><00:14:51.874><c>Oh </c><00:14:52.136><c>And</c>
+
+00:14:53.030 --> 00:14:53.040 align:start position:0%
+use it to the level as padding Oh And
+ 
+
+00:14:53.040 --> 00:14:56.150 align:start position:0%
+use it to the level as padding Oh And
+so <00:14:53.360><c>we </c><00:14:53.680><c>output </c><00:14:54.000><c>our </c><00:14:54.320><c>binary </c><00:14:54.640><c>data </c><00:14:54.960><c>in </c><00:14:55.280><c>the </c><00:14:55.600><c>form </c><00:14:55.920><c>of</c>
+
+00:14:56.150 --> 00:14:56.160 align:start position:0%
+so we output our binary data in the form of
+ 
+
+00:14:56.160 --> 00:14:58.490 align:start position:0%
+so we output our binary data in the form of
+something <00:14:56.531><c>incomprehensible </c><00:14:56.902><c>and </c><00:14:57.273><c>essentially </c><00:14:57.644><c>the </c><00:14:58.015><c>terminal</c>
+
+00:14:58.490 --> 00:14:58.500 align:start position:0%
+something incomprehensible and essentially the terminal
+ 
+
+00:14:58.500 --> 00:15:01.129 align:start position:0%
+something incomprehensible and essentially the terminal
+tries <00:14:58.827><c>to </c><00:14:59.154><c>interpret </c><00:14:59.481><c>these </c><00:14:59.808><c>bits </c><00:15:00.135><c>bits</c>
+
+00:15:01.129 --> 00:15:01.139 align:start position:0%
+tries to interpret these bits bits
+ 
+
+00:15:01.139 --> 00:15:02.889 align:start position:0%
+tries to interpret these bits bits
+bytes <00:15:01.391><c>that </c><00:15:01.643><c>it </c><00:15:01.895><c>received </c><00:15:02.147><c>as </c><00:15:02.399><c>output</c>
+
+00:15:02.889 --> 00:15:02.899 align:start position:0%
+bytes that it received as output
+ 
+
+00:15:02.899 --> 00:15:05.930 align:start position:0%
+bytes that it received as output
+decode <00:15:03.137><c>into </c><00:15:03.375><c>text </c><00:15:03.613><c>but </c><00:15:03.851><c>it </c><00:15:04.089><c>doesn't </c><00:15:04.327><c>really </c><00:15:04.565><c>work </c><00:15:04.803><c>out </c><00:15:05.041><c>well </c><00:15:05.279><c>does </c><00:15:05.517><c>it </c><00:15:05.755><c>work</c>
+
+00:15:05.930 --> 00:15:05.940 align:start position:0%
+decode into text but it doesn't really work out well does it work
+ 
+
+00:15:05.940 --> 00:15:08.090 align:start position:0%
+decode into text but it doesn't really work out well does it work
+out <00:15:06.600><c>As </c><00:15:07.260><c>you </c><00:15:07.920><c>can</c>
+
+00:15:08.090 --> 00:15:08.100 align:start position:0%
+out As you can
+ 
+
+00:15:08.100 --> 00:15:10.370 align:start position:0%
+out As you can
+see <00:15:08.507><c>in </c><00:15:08.914><c>this </c><00:15:09.321><c>way </c><00:15:09.728><c>Now </c><00:15:10.135><c>let's</c>
+
+00:15:10.370 --> 00:15:10.380 align:start position:0%
+see in this way Now let's
+ 
+
+00:15:10.380 --> 00:15:13.910 align:start position:0%
+see in this way Now let's
+look <00:15:10.880><c>at </c><00:15:11.380><c>our </c><00:15:11.880><c>Basic </c><00:15:12.380><c>House </c><00:15:12.880><c>too </c><00:15:13.380><c>An</c>
+
+00:15:13.910 --> 00:15:13.920 align:start position:0%
+look at our Basic House too An
+ 
+
+00:15:13.920 --> 00:15:17.870 align:start position:0%
+look at our Basic House too An
+interesting <00:15:14.660><c>example </c><00:15:15.400><c>let's </c><00:15:16.140><c>run </c><00:15:16.880><c>our</c>
+
+00:15:17.870 --> 00:15:17.880 align:start position:0%
+interesting example let's run our
+ 
+
+00:15:17.880 --> 00:15:22.160 align:start position:0%
+interesting example let's run our
+Basic <00:15:18.468><c>Out </c><00:15:19.056><c>MGS </c><00:15:19.644><c>look </c><00:15:20.232><c>now </c><00:15:20.820><c>at</c>
+
+00:15:22.160 --> 00:15:22.170 align:start position:0%
+Basic Out MGS look now at
+ 
+
+00:15:22.170 --> 00:15:25.509 align:start position:0%
+Basic Out MGS look now at
+[music]
+
+00:15:25.509 --> 00:15:25.519 align:start position:0%
+[music]
+ 
+
+00:15:25.519 --> 00:15:31.370 align:start position:0%
+[music]
+enter <00:15:26.339><c>My </c><00:15:27.159><c>password </c><00:15:27.979><c>and </c><00:15:28.799><c>Look </c><00:15:29.619><c>what </c><00:15:30.439><c>we </c><00:15:31.259><c>have</c>
+
+00:15:31.370 --> 00:15:31.380 align:start position:0%
+enter My password and Look what we have
+ 
+
+00:15:31.380 --> 00:15:33.170 align:start position:0%
+enter My password and Look what we have
+here <00:15:31.440><c>here </c><00:15:31.500><c>is</c>
+
+00:15:33.170 --> 00:15:33.180 align:start position:0%
+here here is
+ 
+
+00:15:33.180 --> 00:15:37.389 align:start position:0%
+here here is
+our <00:15:33.696><c>page </c><00:15:34.212><c>We </c><00:15:34.728><c>have </c><00:15:35.244><c>this </c><00:15:35.760><c>header</c>
+
+00:15:37.389 --> 00:15:37.399 align:start position:0%
+our page We have this header
+ 
+
+00:15:37.399 --> 00:15:41.030 align:start position:0%
+our page We have this header
+Basic <00:15:37.807><c>And </c><00:15:38.215><c>here </c><00:15:38.623><c>is </c><00:15:39.031><c>some </c><00:15:39.439><c>line </c><00:15:39.847><c>84 </c><00:15:40.255><c>Let's</c>
+
+00:15:41.030 --> 00:15:41.040 align:start position:0%
+Basic And here is some line 84 Let's
+ 
+
+00:15:41.040 --> 00:15:43.189 align:start position:0%
+Basic And here is some line 84 Let's
+try <00:15:41.387><c>to </c><00:15:41.734><c>decode </c><00:15:42.081><c>and </c><00:15:42.428><c>see </c><00:15:42.775><c>and</c>
+
+00:15:43.189 --> 00:15:43.199 align:start position:0%
+try to decode and see and
+ 
+
+00:15:43.199 --> 00:15:44.629 align:start position:0%
+try to decode and see and
+in <00:15:43.341><c>fact </c><00:15:43.483><c>you </c><00:15:43.625><c>can </c><00:15:43.767><c>do </c><00:15:43.909><c>it </c><00:15:44.051><c>in </c><00:15:44.193><c>the </c><00:15:44.335><c>terminal</c>
+
+00:15:44.629 --> 00:15:44.639 align:start position:0%
+in fact you can do it in the terminal
+ 
+
+00:15:44.639 --> 00:15:46.370 align:start position:0%
+in fact you can do it in the terminal
+you <00:15:44.861><c>can </c><00:15:45.083><c>do </c><00:15:45.305><c>it </c><00:15:45.527><c>simply  </c><00:15:45.749><c>in </c><00:15:45.971><c>the </c><00:15:46.193><c>console</c>
+
+00:15:46.370 --> 00:15:46.380 align:start position:0%
+you can do it simply  in the console
+ 
+
+00:15:46.380 --> 00:15:50.470 align:start position:0%
+you can do it simply  in the console
+because <00:15:46.785><c>the </c><00:15:47.190><c>browser </c><00:15:47.595><c>has </c><00:15:48.000><c>a </c><00:15:48.405><c>built-in </c><00:15:48.810><c>function </c><00:15:49.215><c>A2</c>
+
+00:15:50.470 --> 00:15:50.480 align:start position:0%
+because the browser has a built-in function A2
+ 
+
+00:15:50.480 --> 00:15:54.710 align:start position:0%
+because the browser has a built-in function A2
+basket <00:15:50.857><c>to </c><00:15:51.234><c>binery </c><00:15:51.611><c>or </c><00:15:51.988><c>there </c><00:15:52.365><c>is </c><00:15:52.742><c>a </c><00:15:53.119><c>bit </c><00:15:53.496><c>e </c><00:15:53.873><c>binery</c>
+
+00:15:54.710 --> 00:15:54.720 align:start position:0%
+basket to binery or there is a bit e binery
+ 
+
+00:15:54.720 --> 00:15:57.650 align:start position:0%
+basket to binery or there is a bit e binery
+tuaski <00:15:54.912><c>that </c><00:15:55.104><c>is </c><00:15:55.296><c>if </c><00:15:55.488><c>I </c><00:15:55.680><c>put </c><00:15:55.872><c>this </c><00:15:56.064><c>here </c><00:15:56.256><c>I </c><00:15:56.448><c>will </c><00:15:56.640><c>click </c><00:15:56.832><c>on </c><00:15:57.024><c>the </c><00:15:57.216><c>whole </c><00:15:57.408><c>thing</c>
+
+00:15:57.650 --> 00:15:57.660 align:start position:0%
+tuaski that is if I put this here I will click on the whole thing
+ 
+
+00:15:57.660 --> 00:16:02.689 align:start position:0%
+tuaski that is if I put this here I will click on the whole thing
+I <00:15:58.150><c>see </c><00:15:58.640><c>that </c><00:15:59.130><c>this </c><00:15:59.620><c>is </c><00:16:00.110><c>just </c><00:16:00.600><c>my</c>
+
+00:16:02.689 --> 00:16:02.699 align:start position:0%
+I see that this is just my
+ 
+
+00:16:02.699 --> 00:16:04.430 align:start position:0%
+I see that this is just my
+login <00:16:02.987><c>password </c><00:16:03.275><c>which </c><00:16:03.563><c>is </c><00:16:03.851><c>transmitted </c><00:16:04.139><c>with</c>
+
+00:16:04.430 --> 00:16:04.440 align:start position:0%
+login password which is transmitted with
+ 
+
+00:16:04.440 --> 00:16:07.250 align:start position:0%
+login password which is transmitted with
+each <00:16:04.774><c>request </c><00:16:05.108><c>in </c><00:16:05.442><c>plain </c><00:16:05.776><c>text </c><00:16:06.110><c>the </c><00:16:06.444><c>only </c><00:16:06.778><c>thing</c>
+
+00:16:07.250 --> 00:16:07.260 align:start position:0%
+each request in plain text the only thing
+ 
+
+00:16:07.260 --> 00:16:09.290 align:start position:0%
+each request in plain text the only thing
+that <00:16:07.500><c>protects </c><00:16:07.740><c>me </c><00:16:07.980><c>so </c><00:16:08.220><c>that </c><00:16:08.460><c>if </c><00:16:08.700><c>it </c><00:16:08.940><c>is </c><00:16:09.180><c>not</c>
+
+00:16:09.290 --> 00:16:09.300 align:start position:0%
+that protects me so that if it is not
+ 
+
+00:16:09.300 --> 00:16:13.009 align:start position:0%
+that protects me so that if it is not
+intercepted <00:16:09.624><c>it </c><00:16:09.948><c>is </c><00:16:10.272><c>https </c><00:16:10.596><c>but </c><00:16:10.920><c>the </c><00:16:11.244><c>whole </c><00:16:11.568><c>aos </c><00:16:11.892><c>itself </c><00:16:12.216><c>does </c><00:16:12.540><c>not</c>
+
+00:16:13.009 --> 00:16:13.019 align:start position:0%
+intercepted it is https but the whole aos itself does not
+ 
+
+00:16:13.019 --> 00:16:14.870 align:start position:0%
+intercepted it is https but the whole aos itself does not
+add <00:16:13.299><c>anything </c><00:16:13.579><c>except </c><00:16:13.859><c>just </c><00:16:14.139><c>encode </c><00:16:14.419><c>it </c><00:16:14.699><c>in</c>
+
+00:16:14.870 --> 00:16:14.880 align:start position:0%
+add anything except just encode it in
+ 
+
+00:16:14.880 --> 00:16:17.509 align:start position:0%
+add anything except just encode it in
+barrel <00:16:15.146><c>4 </c><00:16:15.412><c>I </c><00:16:15.678><c>will </c><00:16:15.944><c>also </c><00:16:16.210><c>do </c><00:16:16.476><c>the </c><00:16:16.742><c>following </c><00:16:17.008><c>I </c><00:16:17.274><c>will</c>
+
+00:16:17.509 --> 00:16:17.519 align:start position:0%
+barrel 4 I will also do the following I will
+ 
+
+00:16:17.519 --> 00:16:20.230 align:start position:0%
+barrel 4 I will also do the following I will
+just <00:16:17.687><c>take </c><00:16:17.855><c>this </c><00:16:18.023><c>line </c><00:16:18.191><c>now </c><00:16:18.359><c>I</c>
+
+00:16:20.230 --> 00:16:20.240 align:start position:0%
+just take this line now I
+ 
+
+00:16:20.240 --> 00:16:25.850 align:start position:0%
+just take this line now I
+will <00:16:20.604><c>copy </c><00:16:20.968><c>it </c><00:16:21.332><c>and </c><00:16:21.696><c>in </c><00:16:22.060><c>the </c><00:16:22.424><c>terminal </c><00:16:22.788><c>let's </c><00:16:23.152><c>I </c><00:16:23.516><c>will </c><00:16:23.880><c>also</c>
+
+00:16:25.850 --> 00:16:25.860 align:start position:0%
+will copy it and in the terminal let's I will also
+ 
+
+00:16:25.860 --> 00:16:30.710 align:start position:0%
+will copy it and in the terminal let's I will also
+try <00:16:26.385><c>where </c><00:16:26.910><c>to </c><00:16:27.435><c>encode </c><00:16:27.960><c>it </c><00:16:28.485><c>You </c><00:16:29.010><c>saw </c><00:16:29.535><c>that </c><00:16:30.060><c>we</c>
+
+00:16:30.710 --> 00:16:30.720 align:start position:0%
+try where to encode it You saw that we
+ 
+
+00:16:30.720 --> 00:16:33.769 align:start position:0%
+try where to encode it You saw that we
+have <00:16:31.090><c>the </c><00:16:31.460><c>same </c><00:16:31.830><c>output </c><00:16:32.200><c>Victor </c><00:16:32.570><c>mypas </c><00:16:32.940><c>and</c>
+
+00:16:33.769 --> 00:16:33.779 align:start position:0%
+have the same output Victor mypas and
+ 
+
+00:16:33.779 --> 00:16:35.509 align:start position:0%
+have the same output Victor mypas and
+now <00:16:34.039><c>Let's </c><00:16:34.299><c>try </c><00:16:34.559><c>to </c><00:16:34.819><c>look </c><00:16:35.079><c>at </c><00:16:35.339><c>the</c>
+
+00:16:35.509 --> 00:16:35.519 align:start position:0%
+now Let's try to look at the
+ 
+
+00:16:35.519 --> 00:16:39.970 align:start position:0%
+now Let's try to look at the
+last <00:16:35.984><c>example </c><00:16:36.449><c>We </c><00:16:36.914><c>have </c><00:16:37.379><c>an</c>
+
+00:16:39.970 --> 00:16:39.980 align:start position:0%
+ 
+ 
+
+00:16:39.980 --> 00:16:43.370 align:start position:0%
+ 
+online <00:16:40.379><c>Image </c><00:16:40.778><c>our </c><00:16:41.177><c>some </c><00:16:41.576><c>kind </c><00:16:41.975><c>of </c><00:16:42.374><c>picture </c><00:16:42.773><c>in</c>
+
+00:16:43.370 --> 00:16:43.380 align:start position:0%
+online Image our some kind of picture in
+ 
+
+00:16:43.380 --> 00:16:46.670 align:start position:0%
+online Image our some kind of picture in
+the <00:16:43.669><c>example </c><00:16:43.958><c>Here </c><00:16:44.247><c>we </c><00:16:44.536><c>have </c><00:16:44.825><c>a </c><00:16:45.114><c>hip </c><00:16:45.403><c>for </c><00:16:45.692><c>a </c><00:16:45.981><c>cake </c><00:16:46.270><c>we </c><00:16:46.559><c>are</c>
+
+00:16:46.670 --> 00:16:46.680 align:start position:0%
+the example Here we have a hip for a cake we are
+ 
+
+00:16:46.680 --> 00:16:48.829 align:start position:0%
+the example Here we have a hip for a cake we are
+uploading <00:16:46.927><c>it </c><00:16:47.174><c>and </c><00:16:47.421><c>I </c><00:16:47.668><c>want </c><00:16:47.915><c>this </c><00:16:48.162><c>frog </c><00:16:48.409><c>to </c><00:16:48.656><c>be</c>
+
+00:16:48.829 --> 00:16:48.839 align:start position:0%
+uploading it and I want this frog to be
+ 
+
+00:16:48.839 --> 00:16:51.410 align:start position:0%
+uploading it and I want this frog to be
+in <00:16:49.101><c>barrel </c><00:16:49.363><c>4 </c><00:16:49.625><c>and </c><00:16:49.887><c>here </c><00:16:50.149><c>I </c><00:16:50.411><c>have </c><00:16:50.673><c>a </c><00:16:50.935><c>picture</c>
+
+00:16:51.410 --> 00:16:51.420 align:start position:0%
+in barrel 4 and here I have a picture
+ 
+
+00:16:51.420 --> 00:16:53.329 align:start position:0%
+in barrel 4 and here I have a picture
+and <00:16:51.651><c>I </c><00:16:51.882><c>can </c><00:16:52.113><c>actually </c><00:16:52.344><c>do </c><00:16:52.575><c>it </c><00:16:52.806><c>very </c><00:16:53.037><c>simply</c>
+
+00:16:53.329 --> 00:16:53.339 align:start position:0%
+and I can actually do it very simply
+ 
+
+00:16:53.339 --> 00:16:56.870 align:start position:0%
+and I can actually do it very simply
+I <00:16:53.751><c>can </c><00:16:54.163><c>tell </c><00:16:54.575><c>barrel </c><00:16:54.987><c>4 </c><00:16:55.399><c>and </c><00:16:55.811><c>then </c><00:16:56.223><c>here </c><00:16:56.635><c>and</c>
+
+00:16:56.870 --> 00:16:56.880 align:start position:0%
+I can tell barrel 4 and then here and
+ 
+
+00:16:56.880 --> 00:16:59.170 align:start position:0%
+I can tell barrel 4 and then here and
+output <00:16:57.620><c>4</c>
+
+00:16:59.170 --> 00:16:59.180 align:start position:0%
+output 4
+ 
+
+00:16:59.180 --> 00:17:01.790 align:start position:0%
+output 4
+encoded <00:16:59.993><c>picture </c><00:17:00.806><c>so </c><00:17:01.619><c>it</c>
+
+00:17:01.790 --> 00:17:01.800 align:start position:0%
+encoded picture so it
+ 
+
+00:17:01.800 --> 00:17:04.309 align:start position:0%
+encoded picture so it
+turned <00:17:01.985><c>out </c><00:17:02.170><c>quite </c><00:17:02.355><c>big </c><00:17:02.540><c>but  </c><00:17:02.725><c>to </c><00:17:02.910><c>make </c><00:17:03.095><c>it </c><00:17:03.280><c>more </c><00:17:03.465><c>convenient </c><00:17:03.650><c>for </c><00:17:03.835><c>me</c>
+
+00:17:04.309 --> 00:17:04.319 align:start position:0%
+turned out quite big but  to make it more convenient for me
+ 
+
+00:17:04.319 --> 00:17:06.049 align:start position:0%
+turned out quite big but  to make it more convenient for me
+let <00:17:04.521><c>me </c><00:17:04.723><c>do </c><00:17:04.925><c>the </c><00:17:05.127><c>next </c><00:17:05.329><c>one </c><00:17:05.531><c>i </c><00:17:05.733><c>will </c><00:17:05.935><c>make</c>
+
+00:17:06.049 --> 00:17:06.059 align:start position:0%
+let me do the next one i will make
+ 
+
+00:17:06.059 --> 00:17:09.409 align:start position:0%
+let me do the next one i will make
+it <00:17:06.539><c>one </c><00:17:07.019><c>big </c><00:17:07.499><c>line </c><00:17:07.979><c>not </c><00:17:08.459><c>to </c><00:17:08.939><c>be</c>
+
+00:17:09.409 --> 00:17:09.419 align:start position:0%
+it one big line not to be
+ 
+
+00:17:09.419 --> 00:17:13.730 align:start position:0%
+it one big line not to be
+seen <00:17:09.959><c>here </c><00:17:10.499><c>lines</c>
+
+00:17:13.730 --> 00:17:13.740 align:start position:0%
+ 
+ 
+
+00:17:13.740 --> 00:17:16.549 align:start position:0%
+ 
+and <00:17:14.100><c>let's </c><00:17:14.460><c>copy </c><00:17:14.820><c>here </c><00:17:15.180><c>quite </c><00:17:15.540><c>a </c><00:17:15.900><c>lot </c><00:17:16.260><c>of</c>
+
+00:17:16.549 --> 00:17:16.559 align:start position:0%
+and let's copy here quite a lot of
+ 
+
+00:17:16.559 --> 00:17:20.270 align:start position:0%
+and let's copy here quite a lot of
+text <00:17:17.144><c>there </c><00:17:17.729><c>is </c><00:17:18.314><c>I </c><00:17:18.899><c>copy</c>
+
+00:17:20.270 --> 00:17:20.280 align:start position:0%
+text there is I copy
+ 
+
+00:17:20.280 --> 00:17:23.470 align:start position:0%
+text there is I copy
+and <00:17:20.665><c>see </c><00:17:21.050><c>what </c><00:17:21.435><c>structure </c><00:17:21.820><c>here </c><00:17:22.205><c>We </c><00:17:22.590><c>have </c><00:17:22.975><c>here</c>
+
+00:17:23.470 --> 00:17:23.480 align:start position:0%
+and see what structure here We have here
+ 
+
+00:17:23.480 --> 00:17:26.350 align:start position:0%
+and see what structure here We have here
+first <00:17:24.250><c>We </c><00:17:25.020><c>have</c>
+
+00:17:26.350 --> 00:17:26.360 align:start position:0%
+first We have
+ 
+
+00:17:26.360 --> 00:17:30.409 align:start position:0%
+first We have
+Delta <00:17:27.064><c>then </c><00:17:27.768><c>comes </c><00:17:28.472><c>type </c><00:17:29.176><c>then </c><00:17:29.880><c>comes</c>
+
+00:17:30.409 --> 00:17:30.419 align:start position:0%
+Delta then comes type then comes
+ 
+
+00:17:30.419 --> 00:17:32.630 align:start position:0%
+Delta then comes type then comes
+encoding <00:17:30.719><c>84 </c><00:17:31.019><c>and </c><00:17:31.319><c>here </c><00:17:31.619><c>comes </c><00:17:31.919><c>our </c><00:17:32.219><c>barrel </c><00:17:32.519><c>4</c>
+
+00:17:32.630 --> 00:17:32.640 align:start position:0%
+encoding 84 and here comes our barrel 4
+ 
+
+00:17:32.640 --> 00:17:35.750 align:start position:0%
+encoding 84 and here comes our barrel 4
+Let <00:17:32.845><c>me </c><00:17:33.050><c>put </c><00:17:33.255><c>it </c><00:17:33.460><c>like </c><00:17:33.665><c>this </c><00:17:33.870><c>I </c><00:17:34.075><c>will</c>
+
+00:17:35.750 --> 00:17:35.760 align:start position:0%
+Let me put it like this I will
+ 
+
+00:17:35.760 --> 00:17:38.990 align:start position:0%
+Let me put it like this I will
+save <00:17:36.240><c>and </c><00:17:36.720><c>now </c><00:17:37.200><c>if </c><00:17:37.680><c>we </c><00:17:38.160><c>open </c><00:17:38.640><c>our</c>
+
+00:17:38.990 --> 00:17:39.000 align:start position:0%
+save and now if we open our
+ 
+
+00:17:39.000 --> 00:17:41.470 align:start position:0%
+save and now if we open our
+index <00:17:39.200><c>of </c><00:17:39.400><c>this </c><00:17:39.600><c>mile</c>
+
+00:17:41.470 --> 00:17:41.480 align:start position:0%
+index of this mile
+ 
+
+00:17:41.480 --> 00:17:43.430 align:start position:0%
+index of this mile
+try <00:17:41.836><c>to </c><00:17:42.192><c>reload </c><00:17:42.548><c>instead </c><00:17:42.904><c>of </c><00:17:43.260><c>these</c>
+
+00:17:43.430 --> 00:17:43.440 align:start position:0%
+try to reload instead of these
+ 
+
+00:17:43.440 --> 00:17:45.110 align:start position:0%
+try to reload instead of these
+dots <00:17:43.568><c>there </c><00:17:43.696><c>should </c><00:17:43.824><c>be </c><00:17:43.952><c>a </c><00:17:44.080><c>frog </c><00:17:44.208><c>we </c><00:17:44.336><c>reload</c>
+
+00:17:45.110 --> 00:17:45.120 align:start position:0%
+dots there should be a frog we reload
+ 
+
+00:17:45.120 --> 00:17:48.529 align:start position:0%
+dots there should be a frog we reload
+everything <00:17:45.565><c>we </c><00:17:46.010><c>have </c><00:17:46.455><c>two </c><00:17:46.900><c>frogs </c><00:17:47.345><c>great </c><00:17:47.790><c>and </c><00:17:48.235><c>let's</c>
+
+00:17:48.529 --> 00:17:48.539 align:start position:0%
+everything we have two frogs great and let's
+ 
+
+00:17:48.539 --> 00:17:50.990 align:start position:0%
+everything we have two frogs great and let's
+analyze <00:17:48.864><c>the </c><00:17:49.189><c>last </c><00:17:49.514><c>example </c><00:17:49.839><c>it </c><00:17:50.164><c>will </c><00:17:50.489><c>also </c><00:17:50.814><c>be</c>
+
+00:17:50.990 --> 00:17:51.000 align:start position:0%
+analyze the last example it will also be
+ 
+
+00:17:51.000 --> 00:17:53.470 align:start position:0%
+analyze the last example it will also be
+interesting <00:17:51.264><c>let's </c><00:17:51.528><c>look </c><00:17:51.792><c>at </c><00:17:52.056><c>uvid </c><00:17:52.320><c>there</c>
+
+00:17:53.470 --> 00:17:53.480 align:start position:0%
+interesting let's look at uvid there
+ 
+
+00:17:53.480 --> 00:17:57.770 align:start position:0%
+interesting let's look at uvid there
+was <00:17:54.140><c>a </c><00:17:54.800><c>previous </c><00:17:55.460><c>video </c><00:17:56.120><c>about </c><00:17:56.780><c>how</c>
+
+00:17:57.770 --> 00:17:57.780 align:start position:0%
+was a previous video about how
+ 
+
+00:17:57.780 --> 00:18:00.350 align:start position:0%
+was a previous video about how
+indexes <00:17:58.040><c>work </c><00:17:58.300><c>here </c><00:17:58.560><c>you </c><00:17:58.820><c>can </c><00:17:59.080><c>watch </c><00:17:59.340><c>and </c><00:17:59.600><c>We </c><00:17:59.860><c>were </c><00:18:00.120><c>just</c>
+
+00:18:00.350 --> 00:18:00.360 align:start position:0%
+indexes work here you can watch and We were just
+ 
+
+00:18:00.360 --> 00:18:01.490 align:start position:0%
+indexes work here you can watch and We were just
+comparing <00:18:00.900><c>If </c><00:18:01.440><c>we</c>
+
+00:18:01.490 --> 00:18:01.500 align:start position:0%
+comparing If we
+ 
+
+00:18:01.500 --> 00:18:02.390 align:start position:0%
+comparing If we
+use
+
+00:18:02.390 --> 00:18:02.400 align:start position:0%
+use
+ 
+
+00:18:02.400 --> 00:18:06.049 align:start position:0%
+use
+uad <00:18:02.970><c>against </c><00:18:03.540><c>autoincrements </c><00:18:04.110><c>and </c><00:18:04.680><c>U </c><00:18:05.250><c>ID </c><00:18:05.820><c>was</c>
+
+00:18:06.049 --> 00:18:06.059 align:start position:0%
+uad against autoincrements and U ID was
+ 
+
+00:18:06.059 --> 00:18:08.029 align:start position:0%
+uad against autoincrements and U ID was
+used <00:18:06.282><c>there </c><00:18:06.505><c>Such </c><00:18:06.728><c>a </c><00:18:06.951><c>line </c><00:18:07.174><c>the </c><00:18:07.397><c>only </c><00:18:07.620><c>thing</c>
+
+00:18:08.029 --> 00:18:08.039 align:start position:0%
+used there Such a line the only thing
+ 
+
+00:18:08.039 --> 00:18:10.970 align:start position:0%
+used there Such a line the only thing
+that <00:18:08.424><c>was </c><00:18:08.809><c>it </c><00:18:09.194><c>without </c><00:18:09.579><c>these </c><00:18:09.964><c>dashes </c><00:18:10.349><c>we </c><00:18:10.734><c>can</c>
+
+00:18:10.970 --> 00:18:10.980 align:start position:0%
+that was it without these dashes we can
+ 
+
+00:18:10.980 --> 00:18:15.130 align:start position:0%
+that was it without these dashes we can
+basically <00:18:11.610><c>clean </c><00:18:12.240><c>them </c><00:18:12.870><c>let's </c><00:18:13.500><c>delete</c>
+
+00:18:15.130 --> 00:18:15.140 align:start position:0%
+basically clean them let's delete
+ 
+
+00:18:15.140 --> 00:18:18.110 align:start position:0%
+basically clean them let's delete
+and <00:18:15.445><c>we </c><00:18:15.750><c>will </c><00:18:16.055><c>get </c><00:18:16.360><c>such </c><00:18:16.665><c>a </c><00:18:16.970><c>thing </c><00:18:17.275><c>and </c><00:18:17.580><c>let's</c>
+
+00:18:18.110 --> 00:18:18.120 align:start position:0%
+and we will get such a thing and let's
+ 
+
+00:18:18.120 --> 00:18:20.990 align:start position:0%
+and we will get such a thing and let's
+count <00:18:18.480><c>how </c><00:18:18.840><c>many </c><00:18:19.200><c>characters </c><00:18:19.560><c>we </c><00:18:19.920><c>have </c><00:18:20.280><c>here </c><00:18:20.640><c>and</c>
+
+00:18:20.990 --> 00:18:21.000 align:start position:0%
+count how many characters we have here and
+ 
+
+00:18:21.000 --> 00:18:24.529 align:start position:0%
+count how many characters we have here and
+we <00:18:21.264><c>see </c><00:18:21.528><c>that </c><00:18:21.792><c>there </c><00:18:22.056><c>are </c><00:18:22.320><c>33 </c><00:18:22.584><c>of </c><00:18:22.848><c>them </c><00:18:23.112><c>well  </c><00:18:23.376><c>33 </c><00:18:23.640><c>because </c><00:18:23.904><c>32 </c><00:18:24.168><c>because</c>
+
+00:18:24.529 --> 00:18:24.539 align:start position:0%
+we see that there are 33 of them well  33 because 32 because
+ 
+
+00:18:24.539 --> 00:18:28.850 align:start position:0%
+we see that there are 33 of them well  33 because 32 because
+we <00:18:24.992><c>output </c><00:18:25.445><c>and </c><00:18:25.898><c>then </c><00:18:26.351><c>a </c><00:18:26.804><c>new </c><00:18:27.257><c>line </c><00:18:27.710><c>33 </c><00:18:28.163><c>And </c><00:18:28.616><c>what's</c>
+
+00:18:28.850 --> 00:18:28.860 align:start position:0%
+we output and then a new line 33 And what's
+ 
+
+00:18:28.860 --> 00:18:32.330 align:start position:0%
+we output and then a new line 33 And what's
+interesting <00:18:29.213><c>here </c><00:18:29.566><c>is </c><00:18:29.919><c>that </c><00:18:30.272><c>in </c><00:18:30.625><c>fact </c><00:18:30.978><c>it's </c><00:18:31.331><c>us </c><00:18:31.684><c>well </c><00:18:32.037><c>it's</c>
+
+00:18:32.330 --> 00:18:32.340 align:start position:0%
+interesting here is that in fact it's us well it's
+ 
+
+00:18:32.340 --> 00:18:36.169 align:start position:0%
+interesting here is that in fact it's us well it's
+Hex <00:18:32.686><c>and </c><00:18:33.032><c>Hex </c><00:18:33.378><c>- </c><00:18:33.724><c>Bay </c><00:18:34.070><c>16 </c><00:18:34.416><c>and </c><00:18:34.762><c>in </c><00:18:35.108><c>fact </c><00:18:35.454><c>binary</c>
+
+00:18:36.169 --> 00:18:36.179 align:start position:0%
+Hex and Hex - Bay 16 and in fact binary
+ 
+
+00:18:36.179 --> 00:18:37.789 align:start position:0%
+Hex and Hex - Bay 16 and in fact binary
+data <00:18:36.443><c>could </c><00:18:36.707><c>take </c><00:18:36.971><c>up </c><00:18:37.235><c>half </c><00:18:37.499><c>the</c>
+
+00:18:37.789 --> 00:18:37.799 align:start position:0%
+data could take up half the
+ 
+
+00:18:37.799 --> 00:18:39.190 align:start position:0%
+data could take up half the
+space
+
+00:18:39.190 --> 00:18:39.200 align:start position:0%
+space
+ 
+
+00:18:39.200 --> 00:18:42.770 align:start position:0%
+space
+Let's <00:18:39.716><c>do </c><00:18:40.232><c>this </c><00:18:40.748><c>I'll </c><00:18:41.264><c>redirect </c><00:18:41.780><c>this</c>
+
+00:18:42.770 --> 00:18:42.780 align:start position:0%
+Let's do this I'll redirect this
+ 
+
+00:18:42.780 --> 00:18:47.529 align:start position:0%
+Let's do this I'll redirect this
+whole <00:18:43.188><c>thing </c><00:18:43.596><c>to </c><00:18:44.004><c>some </c><00:18:44.412><c>file </c><00:18:44.820><c>I'll</c>
+
+00:18:47.529 --> 00:18:47.539 align:start position:0%
+ 
+ 
+
+00:18:47.539 --> 00:18:53.750 align:start position:0%
+ 
+call <00:18:48.425><c>it </c><00:18:49.311><c>sample </c><00:18:50.197><c>here </c><00:18:51.083><c>our </c><00:18:51.969><c>ID </c><00:18:52.855><c>and</c>
+
+00:18:53.750 --> 00:18:53.760 align:start position:0%
+call it sample here our ID and
+ 
+
+00:18:53.760 --> 00:18:59.210 align:start position:0%
+call it sample here our ID and
+now <00:18:54.349><c>I'll </c><00:18:54.938><c>do </c><00:18:55.527><c>it </c><00:18:56.116><c>without </c><00:18:56.705><c>16 </c><00:18:57.294><c>decode</c>
+
+00:18:59.210 --> 00:18:59.220 align:start position:0%
+now I'll do it without 16 decode
+ 
+
+00:18:59.220 --> 00:19:03.409 align:start position:0%
+now I'll do it without 16 decode
+Here <00:18:59.722><c>we </c><00:19:00.224><c>have </c><00:19:00.726><c>it </c><00:19:01.228><c>would </c><00:19:01.730><c>be </c><00:19:02.232><c>16 </c><00:19:02.734><c>and </c><00:19:03.236><c>I'll</c>
+
+00:19:03.409 --> 00:19:03.419 align:start position:0%
+Here we have it would be 16 and I'll
+ 
+
+00:19:03.419 --> 00:19:05.830 align:start position:0%
+Here we have it would be 16 and I'll
+redirect <00:19:03.699><c>it </c><00:19:03.979><c>to </c><00:19:04.259><c>some</c>
+
+00:19:05.830 --> 00:19:05.840 align:start position:0%
+redirect it to some
+ 
+
+00:19:05.840 --> 00:19:09.250 align:start position:0%
+redirect it to some
+file <00:19:06.460><c>dot </c><00:19:07.080><c>Hex</c>
+
+00:19:09.250 --> 00:19:09.260 align:start position:0%
+file dot Hex
+ 
+
+00:19:09.260 --> 00:19:12.730 align:start position:0%
+file dot Hex
+and <00:19:09.626><c>we'll </c><00:19:09.992><c>look </c><00:19:10.358><c>at </c><00:19:10.724><c>the </c><00:19:11.090><c>file </c><00:19:11.456><c>sizes</c>
+
+00:19:12.730 --> 00:19:12.740 align:start position:0%
+and we'll look at the file sizes
+ 
+
+00:19:12.740 --> 00:19:18.430 align:start position:0%
+and we'll look at the file sizes
+Our <00:19:13.277><c>Hex </c><00:19:13.814><c>takes </c><00:19:14.351><c>16 </c><00:19:14.888><c>bytes </c><00:19:15.425><c>see </c><00:19:15.962><c>instead </c><00:19:16.499><c>of</c>
+
+00:19:18.430 --> 00:19:18.440 align:start position:0%
+Our Hex takes 16 bytes see instead of
+ 
+
+00:19:18.440 --> 00:19:23.570 align:start position:0%
+Our Hex takes 16 bytes see instead of
+32 <00:19:18.912><c>let's </c><00:19:19.384><c>say </c><00:19:19.856><c>so </c><00:19:20.328><c>it </c><00:19:20.800><c>should </c><00:19:21.272><c>be </c><00:19:21.744><c>32 </c><00:19:22.216><c>and </c><00:19:22.688><c>now </c><00:19:23.160><c>we'll</c>
+
+00:19:23.570 --> 00:19:23.580 align:start position:0%
+32 let's say so it should be 32 and now we'll
+ 
+
+00:19:23.580 --> 00:19:25.930 align:start position:0%
+32 let's say so it should be 32 and now we'll
+do <00:19:23.856><c>the </c><00:19:24.132><c>reverse </c><00:19:24.408><c>procedure </c><00:19:24.684><c>we'll </c><00:19:24.960><c>output</c>
+
+00:19:25.930 --> 00:19:25.940 align:start position:0%
+do the reverse procedure we'll output
+ 
+
+00:19:25.940 --> 00:19:30.830 align:start position:0%
+do the reverse procedure we'll output
+this <00:19:26.666><c>Hex </c><00:19:27.392><c>and </c><00:19:28.118><c>decompose </c><00:19:28.844><c>the </c><00:19:29.570><c>Hex </c><00:19:30.296><c>command</c>
+
+00:19:30.830 --> 00:19:30.840 align:start position:0%
+this Hex and decompose the Hex command
+ 
+
+00:19:30.840 --> 00:19:35.510 align:start position:0%
+this Hex and decompose the Hex command
+and <00:19:31.365><c>look </c><00:19:31.890><c>at </c><00:19:32.415><c>our.ua </c><00:19:32.940><c>and </c><00:19:33.465><c>see </c><00:19:33.990><c>that </c><00:19:34.515><c>Here</c>
+
+00:19:35.510 --> 00:19:35.520 align:start position:0%
+and look at our.ua and see that Here
+ 
+
+00:19:35.520 --> 00:19:38.690 align:start position:0%
+and look at our.ua and see that Here
+they <00:19:35.790><c>are </c><00:19:36.060><c>the </c><00:19:36.330><c>same </c><00:19:36.600><c>That </c><00:19:36.870><c>is, </c><00:19:37.140><c>now </c><00:19:37.410><c>you </c><00:19:37.680><c>know </c><00:19:37.950><c>something </c><00:19:38.220><c>about</c>
+
+00:19:38.690 --> 00:19:38.700 align:start position:0%
+they are the same That is, now you know something about
+ 
+
+00:19:38.700 --> 00:19:41.990 align:start position:0%
+they are the same That is, now you know something about
+Hex <00:19:39.420><c>is </c><00:19:40.140><c>used </c><00:19:40.860><c>everything </c><00:19:41.580><c>you</c>
+
+00:19:41.990 --> 00:19:42.000 align:start position:0%
+Hex is used everything you
+ 
+
+00:19:42.000 --> 00:19:44.330 align:start position:0%
+Hex is used everything you
+saw <00:19:42.214><c>today </c><00:19:42.428><c>and </c><00:19:42.642><c>you </c><00:19:42.856><c>can </c><00:19:43.070><c>repeat </c><00:19:43.284><c>because </c><00:19:43.498><c>in</c>
+
+00:19:44.330 --> 00:19:44.340 align:start position:0%
+saw today and you can repeat because in
+ 
+
+00:19:44.340 --> 00:19:46.850 align:start position:0%
+saw today and you can repeat because in
+the <00:19:44.525><c>description </c><00:19:44.710><c>under </c><00:19:44.895><c>the </c><00:19:45.080><c>video </c><00:19:45.265><c>there </c><00:19:45.450><c>is </c><00:19:45.635><c>a </c><00:19:45.820><c>link </c><00:19:46.005><c>to </c><00:19:46.190><c>github </c><00:19:46.375><c>with</c>
+
+00:19:46.850 --> 00:19:46.860 align:start position:0%
+the description under the video there is a link to github with
+ 
+
+00:19:46.860 --> 00:19:49.310 align:start position:0%
+the description under the video there is a link to github with
+examples <00:19:47.210><c>with </c><00:19:47.560><c>all </c><00:19:47.910><c>the </c><00:19:48.260><c>files </c><00:19:48.610><c>you </c><00:19:48.960><c>can</c>
+
+00:19:49.310 --> 00:19:49.320 align:start position:0%
+examples with all the files you can
+ 
+
+00:19:49.320 --> 00:19:51.169 align:start position:0%
+examples with all the files you can
+run <00:19:49.720><c>play </c><00:19:50.120><c>around </c><00:19:50.520><c>encode</c>
+
+00:19:51.169 --> 00:19:51.179 align:start position:0%
+run play around encode
+ 
+
+00:19:51.179 --> 00:19:54.169 align:start position:0%
+run play around encode
+decode  <00:19:51.496><c>and </c><00:19:51.813><c>if </c><00:19:52.130><c>you </c><00:19:52.447><c>liked </c><00:19:52.764><c>it, </c><00:19:53.081><c>like </c><00:19:53.398><c>it,</c>
+
+00:19:54.169 --> 00:19:54.179 align:start position:0%
+decode  and if you liked it, like it,
+ 
+
+00:19:54.179 --> 00:19:56.150 align:start position:0%
+decode  and if you liked it, like it,
+subscribe, <00:19:54.479><c>leave </c><00:19:54.779><c>a </c><00:19:55.079><c>comment </c><00:19:55.379><c>so </c><00:19:55.679><c>that </c><00:19:55.979><c>the</c>
+
+00:19:56.150 --> 00:19:56.160 align:start position:0%
+subscribe, leave a comment so that the
+ 
+
+00:19:56.160 --> 00:19:58.610 align:start position:0%
+subscribe, leave a comment so that the
+channel <00:19:56.494><c>can </c><00:19:56.828><c>be </c><00:19:57.162><c>promoted, </c><00:19:57.496><c>I </c><00:19:57.830><c>hope </c><00:19:58.164><c>this </c><00:19:58.498><c>was</c>
+
+00:19:58.610 --> 00:19:58.620 align:start position:0%
+channel can be promoted, I hope this was
+ 
+
+00:19:58.620 --> 00:20:00.919 align:start position:0%
+channel can be promoted, I hope this was
+useful
+

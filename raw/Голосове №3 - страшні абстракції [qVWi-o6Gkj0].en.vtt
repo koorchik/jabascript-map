@@ -1,0 +1,1668 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.199 --> 00:00:02.230 align:start position:0%
+ 
+Hello <00:00:00.472><c>everyone, </c><00:00:00.745><c>the </c><00:00:01.018><c>third </c><00:00:01.291><c>edition </c><00:00:01.564><c>of </c><00:00:01.837><c>voice</c>
+
+00:00:02.230 --> 00:00:02.240 align:start position:0%
+Hello everyone, the third edition of voice
+ 
+
+00:00:02.240 --> 00:00:04.430 align:start position:0%
+Hello everyone, the third edition of voice
+messages. <00:00:02.531><c>And </c><00:00:02.822><c>today </c><00:00:03.113><c>we're </c><00:00:03.404><c>going </c><00:00:03.695><c>to </c><00:00:03.986><c>talk </c><00:00:04.277><c>about</c>
+
+00:00:04.430 --> 00:00:04.440 align:start position:0%
+messages. And today we're going to talk about
+ 
+
+00:00:04.440 --> 00:00:06.470 align:start position:0%
+messages. And today we're going to talk about
+why <00:00:04.744><c>developers </c><00:00:05.048><c>are </c><00:00:05.352><c>afraid </c><00:00:05.656><c>to </c><00:00:05.960><c>create</c>
+
+00:00:06.470 --> 00:00:06.480 align:start position:0%
+why developers are afraid to create
+ 
+
+00:00:06.480 --> 00:00:08.310 align:start position:0%
+why developers are afraid to create
+new <00:00:06.746><c>files, </c><00:00:07.012><c>not </c><00:00:07.278><c>even </c><00:00:07.544><c>new </c><00:00:07.810><c>files, </c><00:00:08.076><c>new</c>
+
+00:00:08.310 --> 00:00:08.320 align:start position:0%
+new files, not even new files, new
+ 
+
+00:00:08.320 --> 00:00:10.950 align:start position:0%
+new files, not even new files, new
+abstractions, <00:00:08.639><c>and </c><00:00:08.958><c>I'll </c><00:00:09.277><c>tell </c><00:00:09.596><c>you </c><00:00:09.915><c>a </c><00:00:10.234><c>few </c><00:00:10.553><c>stories.</c>
+
+00:00:10.950 --> 00:00:10.960 align:start position:0%
+abstractions, and I'll tell you a few stories.
+ 
+
+00:00:10.960 --> 00:00:13.430 align:start position:0%
+abstractions, and I'll tell you a few stories.
+When <00:00:11.217><c>I </c><00:00:11.474><c>observed </c><00:00:11.731><c>this, </c><00:00:11.988><c>it </c><00:00:12.245><c>was </c><00:00:12.502><c>just </c><00:00:12.759><c>a</c>
+
+00:00:13.430 --> 00:00:13.440 align:start position:0%
+When I observed this, it was just a
+ 
+
+00:00:13.440 --> 00:00:16.109 align:start position:0%
+When I observed this, it was just a
+strange, <00:00:14.070><c>strange </c><00:00:14.700><c>phenomenon </c><00:00:15.330><c>that </c><00:00:15.960><c>I</c>
+
+00:00:16.109 --> 00:00:16.119 align:start position:0%
+strange, strange phenomenon that I
+ 
+
+00:00:16.119 --> 00:00:19.510 align:start position:0%
+strange, strange phenomenon that I
+saw. <00:00:16.564><c>I </c><00:00:17.009><c>even </c><00:00:17.454><c>added </c><00:00:17.899><c>a </c><00:00:18.344><c>slide </c><00:00:18.789><c>to </c><00:00:19.234><c>my</c>
+
+00:00:19.510 --> 00:00:19.520 align:start position:0%
+saw. I even added a slide to my
+ 
+
+00:00:19.520 --> 00:00:21.269 align:start position:0%
+saw. I even added a slide to my
+presentation <00:00:19.684><c>at </c><00:00:19.848><c>Dow </c><00:00:20.012><c>Day, </c><00:00:20.176><c>but </c><00:00:20.340><c>unfortunately </c><00:00:20.504><c>I </c><00:00:20.668><c>didn't </c><00:00:20.832><c>have </c><00:00:20.996><c>time </c><00:00:21.160><c>to</c>
+
+00:00:21.269 --> 00:00:21.279 align:start position:0%
+presentation at Dow Day, but unfortunately I didn't have time to
+ 
+
+00:00:21.279 --> 00:00:23.670 align:start position:0%
+presentation at Dow Day, but unfortunately I didn't have time to
+do <00:00:21.593><c>it. </c><00:00:21.907><c>Well, </c><00:00:22.221><c>I </c><00:00:22.535><c>didn't </c><00:00:22.849><c>have </c><00:00:23.163><c>enough </c><00:00:23.477><c>time</c>
+
+00:00:23.670 --> 00:00:23.680 align:start position:0%
+do it. Well, I didn't have enough time
+ 
+
+00:00:23.680 --> 00:00:27.710 align:start position:0%
+do it. Well, I didn't have enough time
+to <00:00:24.193><c>talk </c><00:00:24.706><c>about </c><00:00:25.219><c>this </c><00:00:25.732><c>phenomenon </c><00:00:26.245><c>in </c><00:00:26.758><c>detail.</c>
+
+00:00:27.710 --> 00:00:27.720 align:start position:0%
+to talk about this phenomenon in detail.
+ 
+
+00:00:27.720 --> 00:00:30.269 align:start position:0%
+to talk about this phenomenon in detail.
+So <00:00:28.215><c>let's </c><00:00:28.710><c>go </c><00:00:29.205><c>through </c><00:00:29.700><c>it </c><00:00:30.195><c>now.</c>
+
+00:00:30.269 --> 00:00:30.279 align:start position:0%
+So let's go through it now.
+ 
+
+00:00:30.279 --> 00:00:32.749 align:start position:0%
+So let's go through it now.
+Developers <00:00:30.735><c>often </c><00:00:31.191><c>work </c><00:00:31.647><c>according </c><00:00:32.103><c>to </c><00:00:32.559><c>a</c>
+
+00:00:32.749 --> 00:00:32.759 align:start position:0%
+Developers often work according to a
+ 
+
+00:00:32.759 --> 00:00:35.389 align:start position:0%
+Developers often work according to a
+template <00:00:33.016><c>and </c><00:00:33.273><c>when </c><00:00:33.530><c>there </c><00:00:33.787><c>are </c><00:00:34.044><c>certain </c><00:00:34.301><c>abstractions </c><00:00:34.558><c>in </c><00:00:34.815><c>the </c><00:00:35.072><c>project.</c>
+
+00:00:35.389 --> 00:00:35.399 align:start position:0%
+template and when there are certain abstractions in the project.
+ 
+
+00:00:35.399 --> 00:00:38.030 align:start position:0%
+template and when there are certain abstractions in the project.
+They <00:00:35.679><c>are </c><00:00:35.959><c>often </c><00:00:36.239><c>afraid </c><00:00:36.519><c>to </c><00:00:36.799><c>create </c><00:00:37.079><c>some</c>
+
+00:00:38.030 --> 00:00:38.040 align:start position:0%
+They are often afraid to create some
+ 
+
+00:00:38.040 --> 00:00:40.350 align:start position:0%
+They are often afraid to create some
+new <00:00:38.639><c>abstractions. </c><00:00:39.238><c>Experienced</c>
+
+00:00:40.350 --> 00:00:40.360 align:start position:0%
+new abstractions. Experienced
+ 
+
+00:00:40.360 --> 00:00:42.510 align:start position:0%
+new abstractions. Experienced
+developers <00:00:40.860><c>do </c><00:00:41.360><c>this, </c><00:00:41.860><c>but </c><00:00:42.360><c>developers</c>
+
+00:00:42.510 --> 00:00:42.520 align:start position:0%
+developers do this, but developers
+ 
+
+00:00:42.520 --> 00:00:44.270 align:start position:0%
+developers do this, but developers
+who <00:00:42.808><c>don't </c><00:00:43.096><c>have </c><00:00:43.384><c>enough </c><00:00:43.672><c>experience </c><00:00:43.960><c>often</c>
+
+00:00:44.270 --> 00:00:44.280 align:start position:0%
+who don't have enough experience often
+ 
+
+00:00:44.280 --> 00:00:46.549 align:start position:0%
+who don't have enough experience often
+just <00:00:44.706><c>try </c><00:00:45.132><c>to </c><00:00:45.558><c>reuse</c>
+
+00:00:46.549 --> 00:00:46.559 align:start position:0%
+just try to reuse
+ 
+
+00:00:46.559 --> 00:00:48.750 align:start position:0%
+just try to reuse
+existing <00:00:47.065><c>abstractions. </c><00:00:47.571><c>They </c><00:00:48.077><c>either</c>
+
+00:00:48.750 --> 00:00:48.760 align:start position:0%
+existing abstractions. They either
+ 
+
+00:00:48.760 --> 00:00:51.189 align:start position:0%
+existing abstractions. They either
+use <00:00:49.329><c>existing </c><00:00:49.898><c>files </c><00:00:50.467><c>and </c><00:00:51.036><c>add</c>
+
+00:00:51.189 --> 00:00:51.199 align:start position:0%
+use existing files and add
+ 
+
+00:00:51.199 --> 00:00:54.189 align:start position:0%
+use existing files and add
+content <00:00:51.492><c>to </c><00:00:51.785><c>them. </c><00:00:52.078><c>This </c><00:00:52.371><c>is </c><00:00:52.664><c>the </c><00:00:52.957><c>first </c><00:00:53.250><c>option. </c><00:00:53.543><c>The </c><00:00:53.836><c>second</c>
+
+00:00:54.189 --> 00:00:54.199 align:start position:0%
+content to them. This is the first option. The second
+ 
+
+00:00:54.199 --> 00:00:57.229 align:start position:0%
+content to them. This is the first option. The second
+option <00:00:54.616><c>is </c><00:00:55.033><c>if </c><00:00:55.450><c>they </c><00:00:55.867><c>have </c><00:00:56.284><c>some </c><00:00:56.701><c>pattern </c><00:00:57.118><c>where</c>
+
+00:00:57.229 --> 00:00:57.239 align:start position:0%
+option is if they have some pattern where
+ 
+
+00:00:57.239 --> 00:00:59.349 align:start position:0%
+option is if they have some pattern where
+they <00:00:57.519><c>need </c><00:00:57.799><c>to </c><00:00:58.079><c>copy </c><00:00:58.359><c>files </c><00:00:58.639><c>and </c><00:00:58.919><c>create </c><00:00:59.199><c>by</c>
+
+00:00:59.349 --> 00:00:59.359 align:start position:0%
+they need to copy files and create by
+ 
+
+00:00:59.359 --> 00:01:01.029 align:start position:0%
+they need to copy files and create by
+analogy, <00:00:59.564><c>then </c><00:00:59.769><c>they </c><00:00:59.974><c>don't </c><00:01:00.179><c>copy </c><00:01:00.384><c>files. </c><00:01:00.589><c>That </c><00:01:00.794><c>is,</c>
+
+00:01:01.029 --> 00:01:01.039 align:start position:0%
+analogy, then they don't copy files. That is,
+ 
+
+00:01:01.039 --> 00:01:03.670 align:start position:0%
+analogy, then they don't copy files. That is,
+developers <00:01:01.385><c>either </c><00:01:01.731><c>copy </c><00:01:02.077><c>files </c><00:01:02.423><c>with </c><00:01:02.769><c>an </c><00:01:03.115><c>existing</c>
+
+00:01:03.670 --> 00:01:03.680 align:start position:0%
+developers either copy files with an existing
+ 
+
+00:01:03.680 --> 00:01:06.510 align:start position:0%
+developers either copy files with an existing
+structure <00:01:04.560><c>or </c><00:01:05.440><c>use </c><00:01:06.320><c>files</c>
+
+00:01:06.510 --> 00:01:06.520 align:start position:0%
+structure or use files
+ 
+
+00:01:06.520 --> 00:01:08.590 align:start position:0%
+structure or use files
+that <00:01:06.777><c>already </c><00:01:07.034><c>have </c><00:01:07.291><c>a </c><00:01:07.548><c>certain </c><00:01:07.805><c>structure </c><00:01:08.062><c>and </c><00:01:08.319><c>new</c>
+
+00:01:08.590 --> 00:01:08.600 align:start position:0%
+that already have a certain structure and new
+ 
+
+00:01:08.600 --> 00:01:10.429 align:start position:0%
+that already have a certain structure and new
+abstractions <00:01:08.866><c>are </c><00:01:09.132><c>very </c><00:01:09.398><c>rarely </c><00:01:09.664><c>added. </c><00:01:09.930><c>And </c><00:01:10.196><c>now</c>
+
+00:01:10.429 --> 00:01:10.439 align:start position:0%
+abstractions are very rarely added. And now
+ 
+
+00:01:10.439 --> 00:01:12.230 align:start position:0%
+abstractions are very rarely added. And now
+I'm <00:01:10.572><c>here.  </c><00:01:10.705><c>I'll </c><00:01:10.838><c>tell </c><00:01:10.971><c>you </c><00:01:11.104><c>a </c><00:01:11.237><c>few</c>
+
+00:01:12.230 --> 00:01:12.240 align:start position:0%
+I'm here.  I'll tell you a few
+ 
+
+00:01:12.240 --> 00:01:16.190 align:start position:0%
+I'm here.  I'll tell you a few
+stories. <00:01:12.920><c>The </c><00:01:13.600><c>first </c><00:01:14.280><c>story </c><00:01:14.960><c>is </c><00:01:15.640><c>about</c>
+
+00:01:16.190 --> 00:01:16.200 align:start position:0%
+stories. The first story is about
+ 
+
+00:01:16.200 --> 00:01:18.710 align:start position:0%
+stories. The first story is about
+testing. <00:01:16.780><c>We </c><00:01:17.360><c>once </c><00:01:17.940><c>had </c><00:01:18.520><c>a</c>
+
+00:01:18.710 --> 00:01:18.720 align:start position:0%
+testing. We once had a
+ 
+
+00:01:18.720 --> 00:01:20.630 align:start position:0%
+testing. We once had a
+project <00:01:18.920><c>there. </c><00:01:19.120><c>Well, </c><00:01:19.320><c>there </c><00:01:19.520><c>are </c><00:01:19.720><c>many </c><00:01:19.920><c>projects. </c><00:01:20.120><c>We </c><00:01:20.320><c>have </c><00:01:20.520><c>a</c>
+
+00:01:20.630 --> 00:01:20.640 align:start position:0%
+project there. Well, there are many projects. We have a
+ 
+
+00:01:20.640 --> 00:01:23.469 align:start position:0%
+project there. Well, there are many projects. We have a
+standard <00:01:20.942><c>approach. </c><00:01:21.244><c>There </c><00:01:21.546><c>is </c><00:01:21.848><c>a </c><00:01:22.150><c>set </c><00:01:22.452><c>of </c><00:01:22.754><c>tests </c><00:01:23.056><c>there. </c><00:01:23.358><c>We</c>
+
+00:01:23.469 --> 00:01:23.479 align:start position:0%
+standard approach. There is a set of tests there. We
+ 
+
+00:01:23.479 --> 00:01:25.830 align:start position:0%
+standard approach. There is a set of tests there. We
+write <00:01:23.684><c>unit </c><00:01:23.889><c>tests </c><00:01:24.094><c>for </c><00:01:24.299><c>the </c><00:01:24.504><c>backend. </c><00:01:24.709><c>For </c><00:01:24.914><c>example, </c><00:01:25.119><c>there</c>
+
+00:01:25.830 --> 00:01:25.840 align:start position:0%
+write unit tests for the backend. For example, there
+ 
+
+00:01:25.840 --> 00:01:28.789 align:start position:0%
+write unit tests for the backend. For example, there
+is <00:01:26.177><c>a </c><00:01:26.514><c>test </c><00:01:26.851><c>Factory. </c><00:01:27.188><c>This </c><00:01:27.525><c>is </c><00:01:27.862><c>an </c><00:01:28.199><c>abstraction</c>
+
+00:01:28.789 --> 00:01:28.799 align:start position:0%
+is a test Factory. This is an abstraction
+ 
+
+00:01:28.799 --> 00:01:30.670 align:start position:0%
+is a test Factory. This is an abstraction
+that <00:01:28.969><c>allows </c><00:01:29.139><c>you </c><00:01:29.309><c>to </c><00:01:29.479><c>create</c>
+
+00:01:30.670 --> 00:01:30.680 align:start position:0%
+that allows you to create
+ 
+
+00:01:30.680 --> 00:01:33.310 align:start position:0%
+that allows you to create
+test <00:01:31.159><c>users </c><00:01:31.638><c>there. </c><00:01:32.117><c>I </c><00:01:32.596><c>don't </c><00:01:33.075><c>know</c>
+
+00:01:33.310 --> 00:01:33.320 align:start position:0%
+test users there. I don't know
+ 
+
+00:01:33.320 --> 00:01:36.590 align:start position:0%
+test users there. I don't know
+what <00:01:33.725><c>data </c><00:01:34.130><c>materials </c><00:01:34.535><c>there </c><00:01:34.940><c>are. </c><00:01:35.345><c>Or </c><00:01:35.750><c>something </c><00:01:36.155><c>else. </c><00:01:36.560><c>Well,</c>
+
+00:01:36.590 --> 00:01:36.600 align:start position:0%
+what data materials there are. Or something else. Well,
+ 
+
+00:01:36.600 --> 00:01:39.190 align:start position:0%
+what data materials there are. Or something else. Well,
+depending <00:01:37.013><c>on </c><00:01:37.426><c>the </c><00:01:37.839><c>system, </c><00:01:38.252><c>and </c><00:01:38.665><c>that </c><00:01:39.078><c>is,</c>
+
+00:01:39.190 --> 00:01:39.200 align:start position:0%
+depending on the system, and that is,
+ 
+
+00:01:39.200 --> 00:01:40.550 align:start position:0%
+depending on the system, and that is,
+using <00:01:39.447><c>the </c><00:01:39.694><c>test </c><00:01:39.941><c>factory, </c><00:01:40.188><c>we </c><00:01:40.435><c>can</c>
+
+00:01:40.550 --> 00:01:40.560 align:start position:0%
+using the test factory, we can
+ 
+
+00:01:40.560 --> 00:01:42.749 align:start position:0%
+using the test factory, we can
+create <00:01:40.960><c>an </c><00:01:41.360><c>environment. </c><00:01:41.760><c>We </c><00:01:42.160><c>also </c><00:01:42.560><c>have,</c>
+
+00:01:42.749 --> 00:01:42.759 align:start position:0%
+create an environment. We also have,
+ 
+
+00:01:42.759 --> 00:01:45.510 align:start position:0%
+create an environment. We also have,
+for <00:01:43.125><c>example, </c><00:01:43.491><c>we </c><00:01:43.857><c>use </c><00:01:44.223><c>tea </c><00:01:44.589><c>as </c><00:01:44.955><c>a</c>
+
+00:01:45.510 --> 00:01:45.520 align:start position:0%
+for example, we use tea as a
+ 
+
+00:01:45.520 --> 00:01:48.709 align:start position:0%
+for example, we use tea as a
+library <00:01:46.220><c>for </c><00:01:46.920><c>asters. </c><00:01:47.620><c>Here </c><00:01:48.320><c>we</c>
+
+00:01:48.709 --> 00:01:48.719 align:start position:0%
+library for asters. Here we
+ 
+
+00:01:48.719 --> 00:01:51.830 align:start position:0%
+library for asters. Here we
+need <00:01:49.143><c>to </c><00:01:49.567><c>write </c><00:01:49.991><c>our </c><00:01:50.415><c>own </c><00:01:50.839><c>art</c>
+
+00:01:51.830 --> 00:01:51.840 align:start position:0%
+need to write our own art
+ 
+
+00:01:51.840 --> 00:01:54.069 align:start position:0%
+need to write our own art
+that <00:01:52.186><c>checks </c><00:01:52.532><c>the </c><00:01:52.878><c>calendar </c><00:01:53.224><c>date. </c><00:01:53.570><c>And </c><00:01:53.916><c>this</c>
+
+00:01:54.069 --> 00:01:54.079 align:start position:0%
+that checks the calendar date. And this
+ 
+
+00:01:54.079 --> 00:01:56.950 align:start position:0%
+that checks the calendar date. And this
+assr <00:01:54.532><c>is </c><00:01:54.985><c>called </c><00:01:55.438><c>Ass </c><00:01:55.891><c>Date. </c><00:01:56.344><c>And </c><00:01:56.797><c>I</c>
+
+00:01:56.950 --> 00:01:56.960 align:start position:0%
+assr is called Ass Date. And I
+ 
+
+00:01:56.960 --> 00:01:59.310 align:start position:0%
+assr is called Ass Date. And I
+look <00:01:57.130><c>at </c><00:01:57.300><c>the </c><00:01:57.470><c>tests </c><00:01:57.640><c>and </c><00:01:57.810><c>I </c><00:01:57.980><c>see </c><00:01:58.150><c>that </c><00:01:58.320><c>it </c><00:01:58.490><c>is </c><00:01:58.660><c>written </c><00:01:58.830><c>there. </c><00:01:59.000><c>Test</c>
+
+00:01:59.310 --> 00:01:59.320 align:start position:0%
+look at the tests and I see that it is written there. Test
+ 
+
+00:01:59.320 --> 00:02:02.429 align:start position:0%
+look at the tests and I see that it is written there. Test
+Factory <00:01:59.615><c>is </c><00:01:59.910><c>a </c><00:02:00.205><c>bit </c><00:02:00.500><c>dated </c><00:02:00.795><c>and </c><00:02:01.090><c>Data </c><00:02:01.385><c>is </c><00:02:01.680><c>passed.</c>
+
+00:02:02.429 --> 00:02:02.439 align:start position:0%
+Factory is a bit dated and Data is passed.
+ 
+
+00:02:02.439 --> 00:02:04.429 align:start position:0%
+Factory is a bit dated and Data is passed.
+Because <00:02:02.649><c>we </c><00:02:02.859><c>use </c><00:02:03.069><c>Test </c><00:02:03.279><c>Factory </c><00:02:03.489><c>everywhere </c><00:02:03.699><c>in </c><00:02:03.909><c>the </c><00:02:04.119><c>tests.</c>
+
+00:02:04.429 --> 00:02:07.149 align:start position:0%
+Because we use Test Factory everywhere in the tests.
+ 
+
+00:02:07.149 --> 00:02:07.159 align:start position:0%
+ 
+ 
+
+00:02:07.159 --> 00:02:09.510 align:start position:0%
+ 
+This <00:02:07.359><c>Test </c><00:02:07.559><c>Factory </c><00:02:07.759><c>object </c><00:02:07.959><c>is </c><00:02:08.159><c>available. </c><00:02:08.359><c>And </c><00:02:08.559><c>where </c><00:02:08.759><c>can </c><00:02:08.959><c>we </c><00:02:09.159><c>add</c>
+
+00:02:09.510 --> 00:02:09.520 align:start position:0%
+This Test Factory object is available. And where can we add
+ 
+
+00:02:09.520 --> 00:02:11.949 align:start position:0%
+This Test Factory object is available. And where can we add
+this <00:02:09.755><c>asord </c><00:02:09.990><c>Date </c><00:02:10.225><c>method </c><00:02:10.460><c>if </c><00:02:10.695><c>not </c><00:02:10.930><c>in </c><00:02:11.165><c>the </c><00:02:11.400><c>existing</c>
+
+00:02:11.949 --> 00:02:11.959 align:start position:0%
+this asord Date method if not in the existing
+ 
+
+00:02:11.959 --> 00:02:14.589 align:start position:0%
+this asord Date method if not in the existing
+Test <00:02:12.187><c>Factory </c><00:02:12.415><c>class, </c><00:02:12.643><c>although </c><00:02:12.871><c>the </c><00:02:13.099><c>responsibility </c><00:02:13.327><c>of </c><00:02:13.555><c>the</c>
+
+00:02:14.589 --> 00:02:14.599 align:start position:0%
+Test Factory class, although the responsibility of the
+ 
+
+00:02:14.599 --> 00:02:17.309 align:start position:0%
+Test Factory class, although the responsibility of the
+abstraction <00:02:15.095><c>class </c><00:02:15.591><c>is </c><00:02:16.087><c>completely </c><00:02:16.583><c>different. </c><00:02:17.079><c>It</c>
+
+00:02:17.309 --> 00:02:17.319 align:start position:0%
+abstraction class is completely different. It
+ 
+
+00:02:17.319 --> 00:02:18.790 align:start position:0%
+abstraction class is completely different. It
+was <00:02:17.527><c>necessary </c><00:02:17.735><c>to </c><00:02:17.943><c>simply </c><00:02:18.151><c>create </c><00:02:18.359><c>a</c>
+
+00:02:18.790 --> 00:02:18.800 align:start position:0%
+was necessary to simply create a
+ 
+
+00:02:18.800 --> 00:02:20.949 align:start position:0%
+was necessary to simply create a
+new <00:02:19.113><c>abstraction, </c><00:02:19.426><c>a </c><00:02:19.739><c>new </c><00:02:20.052><c>module </c><00:02:20.365><c>in </c><00:02:20.678><c>which</c>
+
+00:02:20.949 --> 00:02:20.959 align:start position:0%
+new abstraction, a new module in which
+ 
+
+00:02:20.959 --> 00:02:23.470 align:start position:0%
+new abstraction, a new module in which
+to <00:02:21.332><c>place </c><00:02:21.705><c>one </c><00:02:22.078><c>method </c><00:02:22.451><c>there </c><00:02:22.824><c>or </c><00:02:23.197><c>one</c>
+
+00:02:23.470 --> 00:02:23.480 align:start position:0%
+to place one method there or one
+ 
+
+00:02:23.480 --> 00:02:27.550 align:start position:0%
+to place one method there or one
+assort <00:02:24.020><c>Date </c><00:02:24.560><c>function. </c><00:02:25.100><c>And </c><00:02:25.640><c>actually  </c><00:02:26.180><c>everything </c><00:02:26.720><c>but</c>
+
+00:02:27.550 --> 00:02:27.560 align:start position:0%
+assort Date function. And actually  everything but
+ 
+
+00:02:27.560 --> 00:02:30.430 align:start position:0%
+assort Date function. And actually  everything but
+developers <00:02:27.866><c>for </c><00:02:28.172><c>some </c><00:02:28.478><c>reason </c><00:02:28.784><c>don't </c><00:02:29.090><c>do </c><00:02:29.396><c>this</c>
+
+00:02:30.430 --> 00:02:30.440 align:start position:0%
+developers for some reason don't do this
+ 
+
+00:02:30.440 --> 00:02:32.390 align:start position:0%
+developers for some reason don't do this
+and <00:02:30.639><c>the </c><00:02:30.838><c>first </c><00:02:31.037><c>thing </c><00:02:31.236><c>that </c><00:02:31.435><c>comes </c><00:02:31.634><c>to </c><00:02:31.833><c>mind </c><00:02:32.032><c>that </c><00:02:32.231><c>they</c>
+
+00:02:32.390 --> 00:02:32.400 align:start position:0%
+and the first thing that comes to mind that they
+ 
+
+00:02:32.400 --> 00:02:33.910 align:start position:0%
+and the first thing that comes to mind that they
+don't <00:02:32.588><c>do </c><00:02:32.776><c>this </c><00:02:32.964><c>is </c><00:02:33.152><c>because </c><00:02:33.340><c>it </c><00:02:33.528><c>is </c><00:02:33.716><c>necessary</c>
+
+00:02:33.910 --> 00:02:33.920 align:start position:0%
+don't do this is because it is necessary
+ 
+
+00:02:33.920 --> 00:02:36.509 align:start position:0%
+don't do this is because it is necessary
+to <00:02:34.182><c>create </c><00:02:34.444><c>a </c><00:02:34.706><c>new </c><00:02:34.968><c>file </c><00:02:35.230><c>But </c><00:02:35.492><c>as </c><00:02:35.754><c>I </c><00:02:36.016><c>see </c><00:02:36.278><c>new</c>
+
+00:02:36.509 --> 00:02:36.519 align:start position:0%
+to create a new file But as I see new
+ 
+
+00:02:36.519 --> 00:02:38.150 align:start position:0%
+to create a new file But as I see new
+files <00:02:36.742><c>are </c><00:02:36.965><c>created </c><00:02:37.188><c>very </c><00:02:37.411><c>often </c><00:02:37.634><c>and </c><00:02:37.857><c>when </c><00:02:38.080><c>we</c>
+
+00:02:38.150 --> 00:02:38.160 align:start position:0%
+files are created very often and when we
+ 
+
+00:02:38.160 --> 00:02:40.229 align:start position:0%
+files are created very often and when we
+write <00:02:38.399><c>in </c><00:02:38.638><c>React </c><00:02:38.877><c>when </c><00:02:39.116><c>we </c><00:02:39.355><c>write </c><00:02:39.594><c>backend</c>
+
+00:02:40.229 --> 00:02:40.239 align:start position:0%
+write in React when we write backend
+ 
+
+00:02:40.239 --> 00:02:42.309 align:start position:0%
+write in React when we write backend
+We <00:02:40.496><c>create </c><00:02:40.753><c>a </c><00:02:41.010><c>lot </c><00:02:41.267><c>of </c><00:02:41.524><c>new </c><00:02:41.781><c>files </c><00:02:42.038><c>and</c>
+
+00:02:42.309 --> 00:02:42.319 align:start position:0%
+We create a lot of new files and
+ 
+
+00:02:42.319 --> 00:02:44.550 align:start position:0%
+We create a lot of new files and
+it <00:02:42.536><c>is </c><00:02:42.753><c>rather </c><00:02:42.970><c>not </c><00:02:43.187><c>a </c><00:02:43.404><c>question </c><00:02:43.621><c>of </c><00:02:43.838><c>creating </c><00:02:44.055><c>a </c><00:02:44.272><c>new</c>
+
+00:02:44.550 --> 00:02:44.560 align:start position:0%
+it is rather not a question of creating a new
+ 
+
+00:02:44.560 --> 00:02:46.390 align:start position:0%
+it is rather not a question of creating a new
+file <00:02:44.782><c>But </c><00:02:45.004><c>the </c><00:02:45.226><c>question </c><00:02:45.448><c>of </c><00:02:45.670><c>creating </c><00:02:45.892><c>a </c><00:02:46.114><c>new</c>
+
+00:02:46.390 --> 00:02:46.400 align:start position:0%
+file But the question of creating a new
+ 
+
+00:02:46.400 --> 00:02:48.309 align:start position:0%
+file But the question of creating a new
+abstraction <00:02:46.586><c>that </c><00:02:46.772><c>was </c><00:02:46.958><c>not </c><00:02:47.144><c>there </c><00:02:47.330><c>and </c><00:02:47.516><c>here </c><00:02:47.702><c>we </c><00:02:47.888><c>need </c><00:02:48.074><c>to</c>
+
+00:02:48.309 --> 00:02:48.319 align:start position:0%
+abstraction that was not there and here we need to
+ 
+
+00:02:48.319 --> 00:02:50.430 align:start position:0%
+abstraction that was not there and here we need to
+think <00:02:48.528><c>about </c><00:02:48.737><c>how </c><00:02:48.946><c>to </c><00:02:49.155><c>do </c><00:02:49.364><c>it </c><00:02:49.573><c>correctly </c><00:02:49.782><c>And </c><00:02:49.991><c>this </c><00:02:50.200><c>is</c>
+
+00:02:50.430 --> 00:02:50.440 align:start position:0%
+think about how to do it correctly And this is
+ 
+
+00:02:50.440 --> 00:02:53.070 align:start position:0%
+think about how to do it correctly And this is
+additional <00:02:50.720><c>effort </c><00:02:51.000><c>that </c><00:02:51.280><c>often </c><00:02:51.560><c>the </c><00:02:51.840><c>developer </c><00:02:52.120><c>is</c>
+
+00:02:53.070 --> 00:02:53.080 align:start position:0%
+additional effort that often the developer is
+ 
+
+00:02:53.080 --> 00:02:54.830 align:start position:0%
+additional effort that often the developer is
+not <00:02:53.410><c>always </c><00:02:53.740><c>ready </c><00:02:54.070><c>to </c><00:02:54.400><c>accept</c>
+
+00:02:54.830 --> 00:02:54.840 align:start position:0%
+not always ready to accept
+ 
+
+00:02:54.840 --> 00:02:56.910 align:start position:0%
+not always ready to accept
+In <00:02:55.160><c>addition, </c><00:02:55.480><c>a </c><00:02:55.800><c>more </c><00:02:56.120><c>experienced </c><00:02:56.440><c>developer</c>
+
+00:02:56.910 --> 00:02:56.920 align:start position:0%
+In addition, a more experienced developer
+ 
+
+00:02:56.920 --> 00:02:59.790 align:start position:0%
+In addition, a more experienced developer
+understands <00:02:57.240><c>the </c><00:02:57.560><c>consequences </c><00:02:57.880><c>of </c><00:02:58.200><c>such </c><00:02:58.520><c>a </c><00:02:58.840><c>decision</c>
+
+00:02:59.790 --> 00:02:59.800 align:start position:0%
+understands the consequences of such a decision
+ 
+
+00:02:59.800 --> 00:03:02.790 align:start position:0%
+understands the consequences of such a decision
+to <00:03:00.182><c>place </c><00:03:00.564><c>some </c><00:03:00.946><c>abstraction </c><00:03:01.328><c>there </c><00:03:01.710><c>in </c><00:03:02.092><c>the </c><00:03:02.474><c>test</c>
+
+00:03:02.790 --> 00:03:02.800 align:start position:0%
+to place some abstraction there in the test
+ 
+
+00:03:02.800 --> 00:03:04.910 align:start position:0%
+to place some abstraction there in the test
+factor <00:03:03.049><c>and </c><00:03:03.298><c>a </c><00:03:03.547><c>less </c><00:03:03.796><c>experienced </c><00:03:04.045><c>one </c><00:03:04.294><c>may </c><00:03:04.543><c>not </c><00:03:04.792><c>yet</c>
+
+00:03:04.910 --> 00:03:04.920 align:start position:0%
+factor and a less experienced one may not yet
+ 
+
+00:03:04.920 --> 00:03:07.390 align:start position:0%
+factor and a less experienced one may not yet
+understand <00:03:05.131><c>that </c><00:03:05.342><c>is </c><00:03:05.553><c>why </c><00:03:05.764><c>such </c><00:03:05.975><c>a </c><00:03:06.186><c>situation </c><00:03:06.397><c>arises</c>
+
+00:03:07.390 --> 00:03:07.400 align:start position:0%
+understand that is why such a situation arises
+ 
+
+00:03:07.400 --> 00:03:09.309 align:start position:0%
+understand that is why such a situation arises
+In <00:03:07.588><c>fact, </c><00:03:07.776><c>there </c><00:03:07.964><c>is </c><00:03:08.152><c>such </c><00:03:08.340><c>a </c><00:03:08.528><c>classic </c><00:03:08.716><c>anti-pattern</c>
+
+00:03:09.309 --> 00:03:09.319 align:start position:0%
+In fact, there is such a classic anti-pattern
+ 
+
+00:03:09.319 --> 00:03:11.949 align:start position:0%
+In fact, there is such a classic anti-pattern
+called <00:03:10.092><c>got </c><00:03:10.865><c>Object </c><00:03:11.638><c>when</c>
+
+00:03:11.949 --> 00:03:11.959 align:start position:0%
+called got Object when
+ 
+
+00:03:11.959 --> 00:03:15.390 align:start position:0%
+called got Object when
+We <00:03:12.288><c>simply </c><00:03:12.617><c>throw </c><00:03:12.946><c>too </c><00:03:13.275><c>much </c><00:03:13.604><c>responsibility </c><00:03:13.933><c>into </c><00:03:14.262><c>some </c><00:03:14.591><c>one </c><00:03:14.920><c>class,</c>
+
+00:03:15.390 --> 00:03:15.400 align:start position:0%
+We simply throw too much responsibility into some one class,
+ 
+
+00:03:15.400 --> 00:03:17.710 align:start position:0%
+We simply throw too much responsibility into some one class,
+too
+
+00:03:17.710 --> 00:03:17.720 align:start position:0%
+too
+ 
+
+00:03:17.720 --> 00:03:19.990 align:start position:0%
+too
+many <00:03:18.000><c>things </c><00:03:18.280><c>that </c><00:03:18.560><c>are </c><00:03:18.840><c>not </c><00:03:19.120><c>connected </c><00:03:19.400><c>by</c>
+
+00:03:19.990 --> 00:03:20.000 align:start position:0%
+many things that are not connected by
+ 
+
+00:03:20.000 --> 00:03:22.710 align:start position:0%
+many things that are not connected by
+some <00:03:20.424><c>idea </c><00:03:20.848><c>For </c><00:03:21.272><c>example, </c><00:03:21.696><c>I </c><00:03:22.120><c>observed</c>
+
+00:03:22.710 --> 00:03:22.720 align:start position:0%
+some idea For example, I observed
+ 
+
+00:03:22.720 --> 00:03:25.149 align:start position:0%
+some idea For example, I observed
+when <00:03:22.869><c>there </c><00:03:23.018><c>are </c><00:03:23.167><c>too </c><00:03:23.316><c>many </c><00:03:23.465><c>utilities </c><00:03:23.614><c>thrown </c><00:03:23.763><c>into </c><00:03:23.912><c>the </c><00:03:24.061><c>base </c><00:03:24.210><c>class </c><00:03:24.359><c>of </c><00:03:24.508><c>services</c>
+
+00:03:25.149 --> 00:03:25.159 align:start position:0%
+when there are too many utilities thrown into the base class of services
+ 
+
+00:03:25.159 --> 00:03:27.070 align:start position:0%
+when there are too many utilities thrown into the base class of services
+because
+
+00:03:27.070 --> 00:03:27.080 align:start position:0%
+because
+ 
+
+00:03:27.080 --> 00:03:30.070 align:start position:0%
+because
+instead <00:03:27.488><c>of </c><00:03:27.896><c>creating </c><00:03:28.304><c>date </c><00:03:28.712><c>utils </c><00:03:29.120><c>there</c>
+
+00:03:30.070 --> 00:03:30.080 align:start position:0%
+instead of creating date utils there
+ 
+
+00:03:30.080 --> 00:03:33.509 align:start position:0%
+instead of creating date utils there
+there <00:03:30.439><c>are </c><00:03:30.798><c>some </c><00:03:31.157><c>File </c><00:03:31.516><c>utils </c><00:03:31.875><c>and </c><00:03:32.234><c>so </c><00:03:32.593><c>on </c><00:03:32.952><c>Session</c>
+
+00:03:33.509 --> 00:03:33.519 align:start position:0%
+there are some File utils and so on Session
+ 
+
+00:03:33.519 --> 00:03:36.789 align:start position:0%
+there are some File utils and so on Session
+utils <00:03:33.783><c>or </c><00:03:34.047><c>there </c><00:03:34.311><c>Session </c><00:03:34.575><c>Store </c><00:03:34.839><c>all </c><00:03:35.103><c>this </c><00:03:35.367><c>is </c><00:03:35.631><c>just </c><00:03:35.895><c>so </c><00:03:36.159><c>that</c>
+
+00:03:36.789 --> 00:03:36.799 align:start position:0%
+utils or there Session Store all this is just so that
+ 
+
+00:03:36.799 --> 00:03:38.750 align:start position:0%
+utils or there Session Store all this is just so that
+it <00:03:37.063><c>is </c><00:03:37.327><c>available </c><00:03:37.591><c>to </c><00:03:37.855><c>all </c><00:03:38.119><c>children</c>
+
+00:03:38.750 --> 00:03:38.760 align:start position:0%
+it is available to all children
+ 
+
+00:03:38.760 --> 00:03:41.270 align:start position:0%
+it is available to all children
+classes <00:03:39.039><c>are </c><00:03:39.318><c>simply </c><00:03:39.597><c>thrown </c><00:03:39.876><c>into </c><00:03:40.155><c>the </c><00:03:40.434><c>main</c>
+
+00:03:41.270 --> 00:03:41.280 align:start position:0%
+classes are simply thrown into the main
+ 
+
+00:03:41.280 --> 00:03:43.630 align:start position:0%
+classes are simply thrown into the main
+base <00:03:41.613><c>class, </c><00:03:41.946><c>as </c><00:03:42.279><c>a </c><00:03:42.612><c>result, </c><00:03:42.945><c>this </c><00:03:43.278><c>base</c>
+
+00:03:43.630 --> 00:03:43.640 align:start position:0%
+base class, as a result, this base
+ 
+
+00:03:43.640 --> 00:03:45.910 align:start position:0%
+base class, as a result, this base
+class <00:03:43.891><c>is </c><00:03:44.142><c>transformed </c><00:03:44.393><c>into </c><00:03:44.644><c>such </c><00:03:44.895><c>a </c><00:03:45.146><c>got </c><00:03:45.397><c>Object,</c>
+
+00:03:45.910 --> 00:03:45.920 align:start position:0%
+class is transformed into such a got Object,
+ 
+
+00:03:45.920 --> 00:03:47.990 align:start position:0%
+class is transformed into such a got Object,
+which <00:03:46.177><c>is </c><00:03:46.434><c>an </c><00:03:46.691><c>anti-pattern, </c><00:03:46.948><c>in </c><00:03:47.205><c>principle, </c><00:03:47.462><c>the </c><00:03:47.719><c>second</c>
+
+00:03:47.990 --> 00:03:48.000 align:start position:0%
+which is an anti-pattern, in principle, the second
+ 
+
+00:03:48.000 --> 00:03:49.509 align:start position:0%
+which is an anti-pattern, in principle, the second
+story <00:03:48.164><c>is </c><00:03:48.328><c>also </c><00:03:48.492><c>with </c><00:03:48.656><c>webilab </c><00:03:48.820><c>and </c><00:03:48.984><c>we </c><00:03:49.148><c>had </c><00:03:49.312><c>to</c>
+
+00:03:49.509 --> 00:03:49.519 align:start position:0%
+story is also with webilab and we had to
+ 
+
+00:03:49.519 --> 00:03:52.030 align:start position:0%
+story is also with webilab and we had to
+develop <00:03:49.871><c>a </c><00:03:50.223><c>webab </c><00:03:50.575><c>presentation </c><00:03:50.927><c>system </c><00:03:51.279><c>like</c>
+
+00:03:52.030 --> 00:03:52.040 align:start position:0%
+develop a webab presentation system like
+ 
+
+00:03:52.040 --> 00:03:54.750 align:start position:0%
+develop a webab presentation system like
+PowerPoint, <00:03:52.519><c>that </c><00:03:52.998><c>is, </c><00:03:53.477><c>you </c><00:03:53.956><c>have </c><00:03:54.435><c>different</c>
+
+00:03:54.750 --> 00:03:54.760 align:start position:0%
+PowerPoint, that is, you have different
+ 
+
+00:03:54.760 --> 00:03:56.830 align:start position:0%
+PowerPoint, that is, you have different
+objects, <00:03:54.995><c>slides, </c><00:03:55.230><c>you </c><00:03:55.465><c>can </c><00:03:55.700><c>move </c><00:03:55.935><c>them </c><00:03:56.170><c>on </c><00:03:56.405><c>these </c><00:03:56.640><c>slides,</c>
+
+00:03:56.830 --> 00:03:56.840 align:start position:0%
+objects, slides, you can move them on these slides,
+ 
+
+00:03:56.840 --> 00:03:59.789 align:start position:0%
+objects, slides, you can move them on these slides,
+rotate <00:03:57.280><c>them, </c><00:03:57.720><c>move </c><00:03:58.160><c>them, </c><00:03:58.600><c>add </c><00:03:59.040><c>them,</c>
+
+00:03:59.789 --> 00:03:59.799 align:start position:0%
+rotate them, move them, add them,
+ 
+
+00:03:59.799 --> 00:04:01.949 align:start position:0%
+rotate them, move them, add them,
+delete <00:04:00.056><c>them. </c><00:04:00.313><c>Well, </c><00:04:00.570><c>in </c><00:04:00.827><c>fact, </c><00:04:01.084><c>to </c><00:04:01.341><c>create </c><00:04:01.598><c>slides</c>
+
+00:04:01.949 --> 00:04:01.959 align:start position:0%
+delete them. Well, in fact, to create slides
+ 
+
+00:04:01.959 --> 00:04:04.030 align:start position:0%
+delete them. Well, in fact, to create slides
+on <00:04:02.199><c>the </c><00:04:02.439><c>web, </c><00:04:02.679><c>I </c><00:04:02.919><c>created </c><00:04:03.159><c>a </c><00:04:03.399><c>basic </c><00:04:03.639><c>proof </c><00:04:03.879><c>of</c>
+
+00:04:04.030 --> 00:04:04.040 align:start position:0%
+on the web, I created a basic proof of
+ 
+
+00:04:04.040 --> 00:04:06.990 align:start position:0%
+on the web, I created a basic proof of
+concept <00:04:04.445><c>in </c><00:04:04.850><c>which </c><00:04:05.255><c>it </c><00:04:05.660><c>was </c><00:04:06.065><c>on </c><00:04:06.470><c>React, </c><00:04:06.875><c>in</c>
+
+00:04:06.990 --> 00:04:07.000 align:start position:0%
+concept in which it was on React, in
+ 
+
+00:04:07.000 --> 00:04:09.830 align:start position:0%
+concept in which it was on React, in
+which <00:04:07.453><c>I </c><00:04:07.906><c>described </c><00:04:08.359><c>what </c><00:04:08.812><c>data </c><00:04:09.265><c>structure </c><00:04:09.718><c>it</c>
+
+00:04:09.830 --> 00:04:09.840 align:start position:0%
+which I described what data structure it
+ 
+
+00:04:09.840 --> 00:04:12.910 align:start position:0%
+which I described what data structure it
+will <00:04:10.293><c>be </c><00:04:10.746><c>serialized </c><00:04:11.199><c>into, </c><00:04:11.652><c>in </c><00:04:12.105><c>fact, </c><00:04:12.558><c>the</c>
+
+00:04:12.910 --> 00:04:12.920 align:start position:0%
+will be serialized into, in fact, the
+ 
+
+00:04:12.920 --> 00:04:16.629 align:start position:0%
+will be serialized into, in fact, the
+slide <00:04:13.488><c>itself </c><00:04:14.056><c>described </c><00:04:14.624><c>some </c><00:04:15.192><c>basic </c><00:04:15.760><c>primitives,</c>
+
+00:04:16.629 --> 00:04:16.639 align:start position:0%
+slide itself described some basic primitives,
+ 
+
+00:04:16.639 --> 00:04:20.789 align:start position:0%
+slide itself described some basic primitives,
+there <00:04:17.065><c>is </c><00:04:17.491><c>a </c><00:04:17.917><c>widget </c><00:04:18.343><c>and </c><00:04:18.769><c>a </c><00:04:19.195><c>widget, </c><00:04:19.621><c>which </c><00:04:20.047><c>has </c><00:04:20.473><c>some</c>
+
+00:04:20.789 --> 00:04:20.799 align:start position:0%
+there is a widget and a widget, which has some
+ 
+
+00:04:20.799 --> 00:04:22.310 align:start position:0%
+there is a widget and a widget, which has some
+parameters, <00:04:20.993><c>where </c><00:04:21.187><c>it </c><00:04:21.381><c>is </c><00:04:21.575><c>located, </c><00:04:21.769><c>how </c><00:04:21.963><c>it </c><00:04:22.157><c>is</c>
+
+00:04:22.310 --> 00:04:22.320 align:start position:0%
+parameters, where it is located, how it is
+ 
+
+00:04:22.320 --> 00:04:25.629 align:start position:0%
+parameters, where it is located, how it is
+rotated, <00:04:22.833><c>and </c><00:04:23.346><c>so </c><00:04:23.859><c>on, </c><00:04:24.372><c>there </c><00:04:24.885><c>are </c><00:04:25.398><c>some</c>
+
+00:04:25.629 --> 00:04:25.639 align:start position:0%
+rotated, and so on, there are some
+ 
+
+00:04:25.639 --> 00:04:27.629 align:start position:0%
+rotated, and so on, there are some
+properties <00:04:25.854><c>in </c><00:04:26.069><c>it </c><00:04:26.284><c>or </c><00:04:26.499><c>a </c><00:04:26.714><c>configuration </c><00:04:26.929><c>file </c><00:04:27.144><c>for </c><00:04:27.359><c>each</c>
+
+00:04:27.629 --> 00:04:27.639 align:start position:0%
+properties in it or a configuration file for each
+ 
+
+00:04:27.639 --> 00:04:30.230 align:start position:0%
+properties in it or a configuration file for each
+widget, <00:04:28.159><c>and </c><00:04:28.679><c>I </c><00:04:29.199><c>wrote</c>
+
+00:04:30.230 --> 00:04:30.240 align:start position:0%
+widget, and I wrote
+ 
+
+00:04:30.240 --> 00:04:33.629 align:start position:0%
+widget, and I wrote
+a <00:04:30.515><c>couple </c><00:04:30.790><c>of </c><00:04:31.065><c>standard </c><00:04:31.340><c>widgets </c><00:04:31.615><c>there, </c><00:04:31.890><c>conditionally </c><00:04:32.165><c>there </c><00:04:32.440><c>is </c><00:04:32.715><c>a</c>
+
+00:04:33.629 --> 00:04:33.639 align:start position:0%
+a couple of standard widgets there, conditionally there is a
+ 
+
+00:04:33.639 --> 00:04:37.710 align:start position:0%
+a couple of standard widgets there, conditionally there is a
+circle, <00:04:34.136><c>a </c><00:04:34.633><c>square, </c><00:04:35.130><c>or </c><00:04:35.627><c>a </c><00:04:36.124><c>rectangle, </c><00:04:36.621><c>text, </c><00:04:37.118><c>and</c>
+
+00:04:37.710 --> 00:04:37.720 align:start position:0%
+circle, a square, or a rectangle, text, and
+ 
+
+00:04:37.720 --> 00:04:39.270 align:start position:0%
+circle, a square, or a rectangle, text, and
+so <00:04:37.891><c>on, </c><00:04:38.062><c>so </c><00:04:38.233><c>that </c><00:04:38.404><c>you </c><00:04:38.575><c>could </c><00:04:38.746><c>make </c><00:04:38.917><c>basic</c>
+
+00:04:39.270 --> 00:04:39.280 align:start position:0%
+so on, so that you could make basic
+ 
+
+00:04:39.280 --> 00:04:41.150 align:start position:0%
+so on, so that you could make basic
+presentations, <00:04:39.553><c>and </c><00:04:39.826><c>it </c><00:04:40.099><c>was </c><00:04:40.372><c>basically </c><00:04:40.645><c>such </c><00:04:40.918><c>a</c>
+
+00:04:41.150 --> 00:04:41.160 align:start position:0%
+presentations, and it was basically such a
+ 
+
+00:04:41.160 --> 00:04:43.070 align:start position:0%
+presentations, and it was basically such a
+small <00:04:41.379><c>file, </c><00:04:41.598><c>I </c><00:04:41.817><c>don't </c><00:04:42.036><c>remember, </c><00:04:42.255><c>there </c><00:04:42.474><c>were </c><00:04:42.693><c>maybe </c><00:04:42.912><c>a</c>
+
+00:04:43.070 --> 00:04:43.080 align:start position:0%
+small file, I don't remember, there were maybe a
+ 
+
+00:04:43.080 --> 00:04:45.990 align:start position:0%
+small file, I don't remember, there were maybe a
+hundred <00:04:43.405><c>lines </c><00:04:43.730><c>of </c><00:04:44.055><c>code </c><00:04:44.380><c>there, </c><00:04:44.705><c>and  </c><00:04:45.030><c>I </c><00:04:45.355><c>gave </c><00:04:45.680><c>the</c>
+
+00:04:45.990 --> 00:04:46.000 align:start position:0%
+hundred lines of code there, and  I gave the
+ 
+
+00:04:46.000 --> 00:04:47.469 align:start position:0%
+hundred lines of code there, and  I gave the
+developers <00:04:46.188><c>I </c><00:04:46.376><c>say </c><00:04:46.564><c>look </c><00:04:46.752><c>at </c><00:04:46.940><c>this </c><00:04:47.128><c>proof </c><00:04:47.316><c>of</c>
+
+00:04:47.469 --> 00:04:47.479 align:start position:0%
+developers I say look at this proof of
+ 
+
+00:04:47.479 --> 00:04:50.430 align:start position:0%
+developers I say look at this proof of
+concept <00:04:48.169><c>like </c><00:04:48.859><c>this </c><00:04:49.549><c>can </c><00:04:50.239><c>you</c>
+
+00:04:50.430 --> 00:04:50.440 align:start position:0%
+concept like this can you
+ 
+
+00:04:50.440 --> 00:04:52.150 align:start position:0%
+concept like this can you
+implement <00:04:50.713><c>it </c><00:04:50.986><c>That </c><00:04:51.259><c>is, </c><00:04:51.532><c>it's </c><00:04:51.805><c>not </c><00:04:52.078><c>some</c>
+
+00:04:52.150 --> 00:04:52.160 align:start position:0%
+implement it That is, it's not some
+ 
+
+00:04:52.160 --> 00:04:55.670 align:start position:0%
+implement it That is, it's not some
+super <00:04:52.453><c>super </c><00:04:52.746><c>No </c><00:04:53.039><c>well </c><00:04:53.332><c>that </c><00:04:53.625><c>is, </c><00:04:53.918><c>it's </c><00:04:54.211><c>a </c><00:04:54.504><c>task </c><00:04:54.797><c>that</c>
+
+00:04:55.670 --> 00:04:55.680 align:start position:0%
+super super No well that is, it's a task that
+ 
+
+00:04:55.680 --> 00:04:58.350 align:start position:0%
+super super No well that is, it's a task that
+will <00:04:55.950><c>require </c><00:04:56.220><c>time </c><00:04:56.490><c>but </c><00:04:56.760><c>it </c><00:04:57.030><c>can </c><00:04:57.300><c>all </c><00:04:57.570><c>be </c><00:04:57.840><c>done</c>
+
+00:04:58.350 --> 00:04:58.360 align:start position:0%
+will require time but it can all be done
+ 
+
+00:04:58.360 --> 00:05:01.310 align:start position:0%
+will require time but it can all be done
+because <00:04:58.806><c>that's </c><00:04:59.252><c>it </c><00:04:59.698><c>we </c><00:05:00.144><c>can </c><00:05:00.590><c>already </c><00:05:01.036><c>do</c>
+
+00:05:01.310 --> 00:05:01.320 align:start position:0%
+because that's it we can already do
+ 
+
+00:05:01.320 --> 00:05:04.189 align:start position:0%
+because that's it we can already do
+slides <00:05:01.662><c>now </c><00:05:02.004><c>and </c><00:05:02.346><c>we </c><00:05:02.688><c>just </c><00:05:03.030><c>need </c><00:05:03.372><c>to </c><00:05:03.714><c>finish</c>
+
+00:05:04.189 --> 00:05:04.199 align:start position:0%
+slides now and we just need to finish
+ 
+
+00:05:04.199 --> 00:05:06.310 align:start position:0%
+slides now and we just need to finish
+this <00:05:04.433><c>widget </c><00:05:04.667><c>system </c><00:05:04.901><c>and </c><00:05:05.135><c>if </c><00:05:05.369><c>we </c><00:05:05.603><c>build </c><00:05:05.837><c>an</c>
+
+00:05:06.310 --> 00:05:06.320 align:start position:0%
+this widget system and if we build an
+ 
+
+00:05:06.320 --> 00:05:08.590 align:start position:0%
+this widget system and if we build an
+infrastructure <00:05:06.680><c>around </c><00:05:07.040><c>this </c><00:05:07.400><c>that </c><00:05:07.760><c>Of </c><00:05:08.120><c>course</c>
+
+00:05:08.590 --> 00:05:08.600 align:start position:0%
+infrastructure around this that Of course
+ 
+
+00:05:08.600 --> 00:05:11.950 align:start position:0%
+infrastructure around this that Of course
+there <00:05:08.880><c>is </c><00:05:09.160><c>more </c><00:05:09.440><c>than </c><00:05:09.720><c>one </c><00:05:10.000><c>month </c><00:05:10.280><c>of </c><00:05:10.560><c>work </c><00:05:10.840><c>but </c><00:05:11.120><c>it's </c><00:05:11.400><c>real</c>
+
+00:05:11.950 --> 00:05:11.960 align:start position:0%
+there is more than one month of work but it's real
+ 
+
+00:05:11.960 --> 00:05:14.150 align:start position:0%
+there is more than one month of work but it's real
+and <00:05:12.182><c>after </c><00:05:12.404><c>six </c><00:05:12.626><c>months </c><00:05:12.848><c>I </c><00:05:13.070><c>come </c><00:05:13.292><c>to </c><00:05:13.514><c>the </c><00:05:13.736><c>project </c><00:05:13.958><c>and</c>
+
+00:05:14.150 --> 00:05:14.160 align:start position:0%
+and after six months I come to the project and
+ 
+
+00:05:14.160 --> 00:05:16.909 align:start position:0%
+and after six months I come to the project and
+look <00:05:14.679><c>at </c><00:05:15.198><c>this </c><00:05:15.717><c>widget </c><00:05:16.236><c>system </c><00:05:16.755><c>and</c>
+
+00:05:16.909 --> 00:05:16.919 align:start position:0%
+look at this widget system and
+ 
+
+00:05:16.919 --> 00:05:21.590 align:start position:0%
+look at this widget system and
+see <00:05:17.275><c>that </c><00:05:17.631><c>there </c><00:05:17.987><c>is </c><00:05:18.343><c>a </c><00:05:18.699><c>file </c><00:05:19.055><c>in </c><00:05:19.411><c>which </c><00:05:19.767><c>there </c><00:05:20.123><c>are </c><00:05:20.479><c>5,000 </c><00:05:20.835><c>lines </c><00:05:21.191><c>of</c>
+
+00:05:21.590 --> 00:05:21.600 align:start position:0%
+see that there is a file in which there are 5,000 lines of
+ 
+
+00:05:21.600 --> 00:05:26.189 align:start position:0%
+see that there is a file in which there are 5,000 lines of
+code <00:05:22.075><c>and </c><00:05:22.550><c>all </c><00:05:23.025><c>the </c><00:05:23.500><c>widgets </c><00:05:23.975><c>all </c><00:05:24.450><c>all </c><00:05:24.925><c>there </c><00:05:25.400><c>are </c><00:05:25.875><c>some</c>
+
+00:05:26.189 --> 00:05:26.199 align:start position:0%
+code and all the widgets all all there are some
+ 
+
+00:05:26.199 --> 00:05:28.230 align:start position:0%
+code and all the widgets all all there are some
+additional <00:05:26.525><c>things </c><00:05:26.851><c>related </c><00:05:27.177><c>to </c><00:05:27.503><c>from </c><00:05:27.829><c>all </c><00:05:28.155><c>in</c>
+
+00:05:28.230 --> 00:05:28.240 align:start position:0%
+additional things related to from all in
+ 
+
+00:05:28.240 --> 00:05:31.029 align:start position:0%
+additional things related to from all in
+one <00:05:28.537><c>file </c><00:05:28.834><c>I </c><00:05:29.131><c>look </c><00:05:29.428><c>at </c><00:05:29.725><c>it </c><00:05:30.022><c>like </c><00:05:30.319><c>this </c><00:05:30.616><c>and </c><00:05:30.913><c>well</c>
+
+00:05:31.029 --> 00:05:31.039 align:start position:0%
+one file I look at it like this and well
+ 
+
+00:05:31.039 --> 00:05:32.830 align:start position:0%
+one file I look at it like this and well
+I <00:05:31.225><c>understand </c><00:05:31.411><c>well </c><00:05:31.597><c>it's </c><00:05:31.783><c>impossible </c><00:05:31.969><c>to </c><00:05:32.155><c>support</c>
+
+00:05:32.830 --> 00:05:32.840 align:start position:0%
+I understand well it's impossible to support
+ 
+
+00:05:32.840 --> 00:05:35.070 align:start position:0%
+I understand well it's impossible to support
+because <00:05:33.180><c>it's </c><00:05:33.520><c>all </c><00:05:33.860><c>mixed </c><00:05:34.200><c>up </c><00:05:34.540><c>besides </c><00:05:34.880><c>these</c>
+
+00:05:35.070 --> 00:05:35.080 align:start position:0%
+because it's all mixed up besides these
+ 
+
+00:05:35.080 --> 00:05:37.029 align:start position:0%
+because it's all mixed up besides these
+eyes <00:05:35.305><c>it's </c><00:05:35.530><c>clear </c><00:05:35.755><c>that </c><00:05:35.980><c>the </c><00:05:36.205><c>widgets </c><00:05:36.430><c>have </c><00:05:36.655><c>grown </c><00:05:36.880><c>in</c>
+
+00:05:37.029 --> 00:05:37.039 align:start position:0%
+eyes it's clear that the widgets have grown in
+ 
+
+00:05:37.039 --> 00:05:38.350 align:start position:0%
+eyes it's clear that the widgets have grown in
+them <00:05:37.199><c>more </c><00:05:37.359><c>responsibility </c><00:05:37.519><c>has </c><00:05:37.679><c>been</c>
+
+00:05:38.350 --> 00:05:38.360 align:start position:0%
+them more responsibility has been
+ 
+
+00:05:38.360 --> 00:05:40.590 align:start position:0%
+them more responsibility has been
+added <00:05:38.776><c>some </c><00:05:39.192><c>additional </c><00:05:39.608><c>subsystems </c><00:05:40.024><c>on </c><00:05:40.440><c>the</c>
+
+00:05:40.590 --> 00:05:40.600 align:start position:0%
+added some additional subsystems on the
+ 
+
+00:05:40.600 --> 00:05:43.550 align:start position:0%
+added some additional subsystems on the
+slides <00:05:40.954><c>there </c><00:05:41.308><c>some </c><00:05:41.662><c>synchronization </c><00:05:42.016><c>Well </c><00:05:42.370><c>that's </c><00:05:42.724><c>all </c><00:05:43.078><c>and</c>
+
+00:05:43.550 --> 00:05:43.560 align:start position:0%
+slides there some synchronization Well that's all and
+ 
+
+00:05:43.560 --> 00:05:45.830 align:start position:0%
+slides there some synchronization Well that's all and
+I <00:05:43.830><c>say </c><00:05:44.100><c>And </c><00:05:44.370><c>what </c><00:05:44.640><c>are </c><00:05:44.910><c>you </c><00:05:45.180><c>doing </c><00:05:45.450><c>and </c><00:05:45.720><c>the</c>
+
+00:05:45.830 --> 00:05:45.840 align:start position:0%
+I say And what are you doing and the
+ 
+
+00:05:45.840 --> 00:05:48.469 align:start position:0%
+I say And what are you doing and the
+answer <00:05:46.173><c>was </c><00:05:46.506><c>Well </c><00:05:46.839><c>it's </c><00:05:47.172><c>you </c><00:05:47.505><c>it's </c><00:05:47.838><c>you</c>
+
+00:05:48.469 --> 00:05:48.479 align:start position:0%
+answer was Well it's you it's you
+ 
+
+00:05:48.479 --> 00:05:51.710 align:start position:0%
+answer was Well it's you it's you
+showed <00:05:48.825><c>us </c><00:05:49.171><c>so </c><00:05:49.517><c>did </c><00:05:49.863><c>Well </c><00:05:50.209><c>I </c><00:05:50.555><c>think </c><00:05:50.901><c>Well </c><00:05:51.247><c>I  </c><00:05:51.593><c>I</c>
+
+00:05:51.710 --> 00:05:51.720 align:start position:0%
+showed us so did Well I think Well I  I
+ 
+
+00:05:51.720 --> 00:05:54.110 align:start position:0%
+showed us so did Well I think Well I  I
+showed <00:05:51.994><c>when </c><00:05:52.268><c>there </c><00:05:52.542><c>were </c><00:05:52.816><c>100 </c><00:05:53.090><c>lines </c><00:05:53.364><c>of </c><00:05:53.638><c>code </c><00:05:53.912><c>and</c>
+
+00:05:54.110 --> 00:05:54.120 align:start position:0%
+showed when there were 100 lines of code and
+ 
+
+00:05:54.120 --> 00:05:56.350 align:start position:0%
+showed when there were 100 lines of code and
+not <00:05:54.355><c>5,000, </c><00:05:54.590><c>it </c><00:05:54.825><c>is </c><00:05:55.060><c>clear </c><00:05:55.295><c>that </c><00:05:55.530><c>when </c><00:05:55.765><c>it </c><00:05:56.000><c>grows,</c>
+
+00:05:56.350 --> 00:05:56.360 align:start position:0%
+not 5,000, it is clear that when it grows,
+ 
+
+00:05:56.360 --> 00:05:57.990 align:start position:0%
+not 5,000, it is clear that when it grows,
+new <00:05:56.550><c>responsibilities </c><00:05:56.740><c>appear </c><00:05:56.930><c>for </c><00:05:57.120><c>us.</c>
+
+00:05:57.990 --> 00:05:58.000 align:start position:0%
+new responsibilities appear for us.
+ 
+
+00:05:58.000 --> 00:06:00.110 align:start position:0%
+new responsibilities appear for us.
+Well, <00:05:58.326><c>we </c><00:05:58.652><c>see </c><00:05:58.978><c>that </c><00:05:59.304><c>we </c><00:05:59.630><c>have </c><00:05:59.956><c>to</c>
+
+00:06:00.110 --> 00:06:00.120 align:start position:0%
+Well, we see that we have to
+ 
+
+00:06:00.120 --> 00:06:03.070 align:start position:0%
+Well, we see that we have to
+allocate <00:06:00.491><c>new </c><00:06:00.862><c>abstractions. </c><00:06:01.233><c>So </c><00:06:01.604><c>this </c><00:06:01.975><c>is </c><00:06:02.346><c>a </c><00:06:02.717><c>similar</c>
+
+00:06:03.070 --> 00:06:03.080 align:start position:0%
+allocate new abstractions. So this is a similar
+ 
+
+00:06:03.080 --> 00:06:04.950 align:start position:0%
+allocate new abstractions. So this is a similar
+situation <00:06:03.469><c>when </c><00:06:03.858><c>developers </c><00:06:04.247><c>simply </c><00:06:04.636><c>see</c>
+
+00:06:04.950 --> 00:06:04.960 align:start position:0%
+situation when developers simply see
+ 
+
+00:06:04.960 --> 00:06:07.189 align:start position:0%
+situation when developers simply see
+some <00:06:05.234><c>pattern </c><00:06:05.508><c>that </c><00:06:05.782><c>it </c><00:06:06.056><c>is </c><00:06:06.330><c>structured </c><00:06:06.604><c>in </c><00:06:06.878><c>a</c>
+
+00:06:07.189 --> 00:06:07.199 align:start position:0%
+some pattern that it is structured in a
+ 
+
+00:06:07.199 --> 00:06:09.230 align:start position:0%
+some pattern that it is structured in a
+certain <00:06:07.519><c>way, </c><00:06:07.839><c>yes, </c><00:06:08.159><c>because </c><00:06:08.479><c>there</c>
+
+00:06:09.230 --> 00:06:09.240 align:start position:0%
+certain way, yes, because there
+ 
+
+00:06:09.240 --> 00:06:11.270 align:start position:0%
+certain way, yes, because there
+was <00:06:09.426><c>a </c><00:06:09.612><c>structure </c><00:06:09.798><c>and </c><00:06:09.984><c>they </c><00:06:10.170><c>start </c><00:06:10.356><c>to </c><00:06:10.542><c>simply </c><00:06:10.728><c>add, </c><00:06:10.914><c>add</c>
+
+00:06:11.270 --> 00:06:11.280 align:start position:0%
+was a structure and they start to simply add, add
+ 
+
+00:06:11.280 --> 00:06:14.029 align:start position:0%
+was a structure and they start to simply add, add
+and <00:06:11.890><c>add </c><00:06:12.500><c>something </c><00:06:13.110><c>to </c><00:06:13.720><c>the</c>
+
+00:06:14.029 --> 00:06:14.039 align:start position:0%
+and add something to the
+ 
+
+00:06:14.039 --> 00:06:16.510 align:start position:0%
+and add something to the
+existing <00:06:14.385><c>structure </c><00:06:14.731><c>and </c><00:06:15.077><c>are </c><00:06:15.423><c>afraid </c><00:06:15.769><c>to </c><00:06:16.115><c>create</c>
+
+00:06:16.510 --> 00:06:16.520 align:start position:0%
+existing structure and are afraid to create
+ 
+
+00:06:16.520 --> 00:06:18.550 align:start position:0%
+existing structure and are afraid to create
+new <00:06:16.826><c>abstractions, </c><00:06:17.132><c>and </c><00:06:17.438><c>they </c><00:06:17.744><c>suffer </c><00:06:18.050><c>from </c><00:06:18.356><c>this.</c>
+
+00:06:18.550 --> 00:06:18.560 align:start position:0%
+new abstractions, and they suffer from this.
+ 
+
+00:06:18.560 --> 00:06:20.029 align:start position:0%
+new abstractions, and they suffer from this.
+They <00:06:19.239><c>understand </c><00:06:19.918><c>how</c>
+
+00:06:20.029 --> 00:06:20.039 align:start position:0%
+They understand how
+ 
+
+00:06:20.039 --> 00:06:23.830 align:start position:0%
+They understand how
+inefficient <00:06:20.315><c>it </c><00:06:20.591><c>is, </c><00:06:20.867><c>how </c><00:06:21.143><c>inconvenient </c><00:06:21.419><c>it </c><00:06:21.695><c>is, </c><00:06:21.971><c>and </c><00:06:22.247><c>in </c><00:06:22.523><c>fact, </c><00:06:22.799><c>it </c><00:06:23.075><c>seems </c><00:06:23.351><c>to</c>
+
+00:06:23.830 --> 00:06:23.840 align:start position:0%
+inefficient it is, how inconvenient it is, and in fact, it seems to
+ 
+
+00:06:23.840 --> 00:06:25.589 align:start position:0%
+inefficient it is, how inconvenient it is, and in fact, it seems to
+me <00:06:24.239><c>that </c><00:06:24.638><c>they </c><00:06:25.037><c>even</c>
+
+00:06:25.589 --> 00:06:25.599 align:start position:0%
+me that they even
+ 
+
+00:06:25.599 --> 00:06:27.990 align:start position:0%
+me that they even
+initiated <00:06:25.907><c>this </c><00:06:26.215><c>review </c><00:06:26.523><c>themselves </c><00:06:26.831><c>because </c><00:06:27.139><c>they </c><00:06:27.447><c>say, </c><00:06:27.755><c>"</c>
+
+00:06:27.990 --> 00:06:28.000 align:start position:0%
+initiated this review themselves because they say, "
+ 
+
+00:06:28.000 --> 00:06:29.589 align:start position:0%
+initiated this review themselves because they say, "
+They <00:06:28.160><c>can't </c><00:06:28.320><c>do </c><00:06:28.480><c>something, </c><00:06:28.640><c>they </c><00:06:28.800><c>can't </c><00:06:28.960><c>take </c><00:06:29.120><c>off, </c><00:06:29.280><c>it's</c>
+
+00:06:29.589 --> 00:06:29.599 align:start position:0%
+They can't do something, they can't take off, it's
+ 
+
+00:06:29.599 --> 00:06:33.110 align:start position:0%
+They can't do something, they can't take off, it's
+already <00:06:29.904><c>difficult, </c><00:06:30.209><c>it </c><00:06:30.514><c>turns </c><00:06:30.819><c>out </c><00:06:31.124><c>interesting." </c><00:06:31.429><c>But </c><00:06:31.734><c>how </c><00:06:32.039><c>do</c>
+
+00:06:33.110 --> 00:06:33.120 align:start position:0%
+already difficult, it turns out interesting." But how do
+ 
+
+00:06:33.120 --> 00:06:35.589 align:start position:0%
+already difficult, it turns out interesting." But how do
+developers <00:06:33.512><c>follow </c><00:06:33.904><c>the </c><00:06:34.296><c>existing </c><00:06:34.688><c>structure, </c><00:06:35.080><c>it's</c>
+
+00:06:35.589 --> 00:06:35.599 align:start position:0%
+developers follow the existing structure, it's
+ 
+
+00:06:35.599 --> 00:06:39.110 align:start position:0%
+developers follow the existing structure, it's
+just <00:06:36.084><c>different? </c><00:06:36.569><c>The </c><00:06:37.054><c>third </c><00:06:37.539><c>story, </c><00:06:38.024><c>in </c><00:06:38.509><c>principle, </c><00:06:38.994><c>I</c>
+
+00:06:39.110 --> 00:06:39.120 align:start position:0%
+just different? The third story, in principle, I
+ 
+
+00:06:39.120 --> 00:06:40.870 align:start position:0%
+just different? The third story, in principle, I
+already <00:06:39.326><c>told </c><00:06:39.532><c>in </c><00:06:39.738><c>the </c><00:06:39.944><c>last </c><00:06:40.150><c>issue </c><00:06:40.356><c>of</c>
+
+00:06:40.870 --> 00:06:40.880 align:start position:0%
+already told in the last issue of
+ 
+
+00:06:40.880 --> 00:06:43.670 align:start position:0%
+already told in the last issue of
+voice <00:06:41.300><c>messages </c><00:06:41.720><c>about </c><00:06:42.140><c>builders, </c><00:06:42.560><c>that </c><00:06:42.980><c>is, </c><00:06:43.400><c>for</c>
+
+00:06:43.670 --> 00:06:43.680 align:start position:0%
+voice messages about builders, that is, for
+ 
+
+00:06:43.680 --> 00:06:46.350 align:start position:0%
+voice messages about builders, that is, for
+example, <00:06:44.239><c>if </c><00:06:44.798><c>you </c><00:06:45.357><c>have </c><00:06:45.916><c>some</c>
+
+00:06:46.350 --> 00:06:46.360 align:start position:0%
+example, if you have some
+ 
+
+00:06:46.360 --> 00:06:49.230 align:start position:0%
+example, if you have some
+low-level <00:06:46.912><c>abstraction </c><00:06:47.464><c>there, </c><00:06:48.016><c>GRD, </c><00:06:48.568><c>and </c><00:06:49.120><c>you</c>
+
+00:06:49.230 --> 00:06:49.240 align:start position:0%
+low-level abstraction there, GRD, and you
+ 
+
+00:06:49.240 --> 00:06:51.430 align:start position:0%
+low-level abstraction there, GRD, and you
+have <00:06:49.519><c>a </c><00:06:49.798><c>declarative </c><00:06:50.077><c>config </c><00:06:50.356><c>for </c><00:06:50.635><c>this </c><00:06:50.914><c>grid,</c>
+
+00:06:51.430 --> 00:06:51.440 align:start position:0%
+have a declarative config for this grid,
+ 
+
+00:06:51.440 --> 00:06:53.830 align:start position:0%
+have a declarative config for this grid,
+then <00:06:51.720><c>often </c><00:06:52.000><c>everyone </c><00:06:52.280><c>just </c><00:06:52.560><c>describes </c><00:06:52.840><c>it</c>
+
+00:06:53.830 --> 00:06:53.840 align:start position:0%
+then often everyone just describes it
+ 
+
+00:06:53.840 --> 00:06:56.589 align:start position:0%
+then often everyone just describes it
+in <00:06:54.075><c>all </c><00:06:54.310><c>places </c><00:06:54.545><c>of </c><00:06:54.780><c>the </c><00:06:55.015><c>project. </c><00:06:55.250><c>Although </c><00:06:55.485><c>it </c><00:06:55.720><c>was </c><00:06:55.955><c>possible </c><00:06:56.190><c>to</c>
+
+00:06:56.589 --> 00:06:56.599 align:start position:0%
+in all places of the project. Although it was possible to
+ 
+
+00:06:56.599 --> 00:06:59.950 align:start position:0%
+in all places of the project. Although it was possible to
+take <00:06:57.092><c>it </c><00:06:57.585><c>higher, </c><00:06:58.078><c>it </c><00:06:58.571><c>turns </c><00:06:59.064><c>out </c><00:06:59.557><c>interesting.</c>
+
+00:06:59.950 --> 00:06:59.960 align:start position:0%
+take it higher, it turns out interesting.
+ 
+
+00:06:59.960 --> 00:07:02.189 align:start position:0%
+take it higher, it turns out interesting.
+abstraction <00:07:00.343><c>or </c><00:07:00.726><c>some </c><00:07:01.109><c>facade </c><00:07:01.492><c>that </c><00:07:01.875><c>would</c>
+
+00:07:02.189 --> 00:07:02.199 align:start position:0%
+abstraction or some facade that would
+ 
+
+00:07:02.199 --> 00:07:05.390 align:start position:0%
+abstraction or some facade that would
+allow <00:07:03.212><c>more </c><00:07:04.225><c>convenient </c><00:07:05.238><c>and</c>
+
+00:07:05.390 --> 00:07:05.400 align:start position:0%
+allow more convenient and
+ 
+
+00:07:05.400 --> 00:07:07.110 align:start position:0%
+allow more convenient and
+project-specific <00:07:06.040><c>way </c><00:07:06.680><c>to</c>
+
+00:07:07.110 --> 00:07:07.120 align:start position:0%
+project-specific way to
+ 
+
+00:07:07.120 --> 00:07:10.469 align:start position:0%
+project-specific way to
+configure <00:07:07.660><c>there </c><00:07:08.200><c>to </c><00:07:08.740><c>build </c><00:07:09.280><c>this </c><00:07:09.820><c>GRD </c><00:07:10.360><c>and</c>
+
+00:07:10.469 --> 00:07:10.479 align:start position:0%
+configure there to build this GRD and
+ 
+
+00:07:10.479 --> 00:07:13.749 align:start position:0%
+configure there to build this GRD and
+accordingly <00:07:10.919><c>have </c><00:07:11.359><c>these </c><00:07:11.799><c>builders </c><00:07:12.239><c>makes </c><00:07:12.679><c>sense</c>
+
+00:07:13.749 --> 00:07:13.759 align:start position:0%
+accordingly have these builders makes sense
+ 
+
+00:07:13.759 --> 00:07:16.510 align:start position:0%
+accordingly have these builders makes sense
+this <00:07:14.025><c>too </c><00:07:14.291><c>this </c><00:07:14.557><c>is </c><00:07:14.823><c>also </c><00:07:15.089><c>similar </c><00:07:15.355><c>to </c><00:07:15.621><c>the </c><00:07:15.887><c>same </c><00:07:16.153><c>story</c>
+
+00:07:16.510 --> 00:07:16.520 align:start position:0%
+this too this is also similar to the same story
+ 
+
+00:07:16.520 --> 00:07:19.350 align:start position:0%
+this too this is also similar to the same story
+that <00:07:16.795><c>we </c><00:07:17.070><c>already </c><00:07:17.345><c>have </c><00:07:17.620><c>existing </c><00:07:17.895><c>abstractions </c><00:07:18.170><c>there </c><00:07:18.445><c>is </c><00:07:18.720><c>an</c>
+
+00:07:19.350 --> 00:07:19.360 align:start position:0%
+that we already have existing abstractions there is an
+ 
+
+00:07:19.360 --> 00:07:22.390 align:start position:0%
+that we already have existing abstractions there is an
+existing <00:07:19.904><c>structure </c><00:07:20.448><c>and </c><00:07:20.992><c>adding </c><00:07:21.536><c>some </c><00:07:22.080><c>new</c>
+
+00:07:22.390 --> 00:07:22.400 align:start position:0%
+existing structure and adding some new
+ 
+
+00:07:22.400 --> 00:07:26.589 align:start position:0%
+existing structure and adding some new
+structure <00:07:23.168><c>new </c><00:07:23.936><c>abstractions </c><00:07:24.704><c>is </c><00:07:25.472><c>something </c><00:07:26.240><c>that</c>
+
+00:07:26.589 --> 00:07:26.599 align:start position:0%
+structure new abstractions is something that
+ 
+
+00:07:26.599 --> 00:07:28.909 align:start position:0%
+structure new abstractions is something that
+is <00:07:26.825><c>difficult </c><00:07:27.051><c>and </c><00:07:27.277><c>often </c><00:07:27.503><c>do </c><00:07:27.729><c>not </c><00:07:27.955><c>want </c><00:07:28.181><c>to </c><00:07:28.407><c>do </c><00:07:28.633><c>as</c>
+
+00:07:28.909 --> 00:07:28.919 align:start position:0%
+is difficult and often do not want to do as
+ 
+
+00:07:28.919 --> 00:07:30.070 align:start position:0%
+is difficult and often do not want to do as
+a developer
+
+00:07:30.070 --> 00:07:30.080 align:start position:0%
+a developer
+ 
+
+00:07:30.080 --> 00:07:32.150 align:start position:0%
+a developer
+and <00:07:30.439><c>the </c><00:07:30.798><c>last </c><00:07:31.157><c>example </c><00:07:31.516><c>we </c><00:07:31.875><c>once</c>
+
+00:07:32.150 --> 00:07:32.160 align:start position:0%
+and the last example we once
+ 
+
+00:07:32.160 --> 00:07:34.270 align:start position:0%
+and the last example we once
+got <00:07:32.346><c>together </c><00:07:32.532><c>with </c><00:07:32.718><c>friends </c><00:07:32.904><c>and </c><00:07:33.090><c>discussed </c><00:07:33.276><c>a</c>
+
+00:07:34.270 --> 00:07:34.280 align:start position:0%
+got together with friends and discussed a
+ 
+
+00:07:34.280 --> 00:07:37.189 align:start position:0%
+got together with friends and discussed a
+project <00:07:34.605><c>on </c><00:07:34.930><c>React </c><00:07:35.255><c>how </c><00:07:35.580><c>to </c><00:07:35.905><c>develop </c><00:07:36.230><c>it </c><00:07:36.555><c>and</c>
+
+00:07:37.189 --> 00:07:37.199 align:start position:0%
+project on React how to develop it and
+ 
+
+00:07:37.199 --> 00:07:40.189 align:start position:0%
+project on React how to develop it and
+there <00:07:37.524><c>was </c><00:07:37.849><c>such </c><00:07:38.174><c>a </c><00:07:38.499><c>problem </c><00:07:38.824><c>that </c><00:07:39.149><c>we </c><00:07:39.474><c>have </c><00:07:39.799><c>conditionally</c>
+
+00:07:40.189 --> 00:07:40.199 align:start position:0%
+there was such a problem that we have conditionally
+ 
+
+00:07:40.199 --> 00:07:42.150 align:start position:0%
+there was such a problem that we have conditionally
+stupid <00:07:40.569><c>components </c><00:07:40.939><c>there </c><00:07:41.309><c>some </c><00:07:41.679><c>smart</c>
+
+00:07:42.150 --> 00:07:42.160 align:start position:0%
+stupid components there some smart
+ 
+
+00:07:42.160 --> 00:07:43.950 align:start position:0%
+stupid components there some smart
+components <00:07:42.371><c>and </c><00:07:42.582><c>there </c><00:07:42.793><c>is </c><00:07:43.004><c>not </c><00:07:43.215><c>enough </c><00:07:43.426><c>of </c><00:07:43.637><c>some</c>
+
+00:07:43.950 --> 00:07:43.960 align:start position:0%
+components and there is not enough of some
+ 
+
+00:07:43.960 --> 00:07:46.350 align:start position:0%
+components and there is not enough of some
+abstraction <00:07:44.500><c>to </c><00:07:45.040><c>coordinate </c><00:07:45.580><c>more </c><00:07:46.120><c>such</c>
+
+00:07:46.350 --> 00:07:46.360 align:start position:0%
+abstraction to coordinate more such
+ 
+
+00:07:46.360 --> 00:07:49.749 align:start position:0%
+abstraction to coordinate more such
+high-level <00:07:47.007><c>actions </c><00:07:47.654><c>and </c><00:07:48.301><c>I </c><00:07:48.948><c>say </c><00:07:49.595><c>so</c>
+
+00:07:49.749 --> 00:07:49.759 align:start position:0%
+high-level actions and I say so
+ 
+
+00:07:49.759 --> 00:07:51.869 align:start position:0%
+high-level actions and I say so
+you <00:07:49.959><c>can </c><00:07:50.159><c>do </c><00:07:50.359><c>it </c><00:07:50.559><c>just </c><00:07:50.759><c>add </c><00:07:50.959><c>a </c><00:07:51.159><c>controller</c>
+
+00:07:51.869 --> 00:07:51.879 align:start position:0%
+you can do it just add a controller
+ 
+
+00:07:51.879 --> 00:07:53.710 align:start position:0%
+you can do it just add a controller
+but <00:07:52.061><c>it </c><00:07:52.243><c>turns </c><00:07:52.425><c>out </c><00:07:52.607><c>that </c><00:07:52.789><c>because </c><00:07:52.971><c>no </c><00:07:53.153><c>one </c><00:07:53.335><c>in </c><00:07:53.517><c>that</c>
+
+00:07:53.710 --> 00:07:53.720 align:start position:0%
+but it turns out that because no one in that
+ 
+
+00:07:53.720 --> 00:07:56.589 align:start position:0%
+but it turns out that because no one in that
+project <00:07:54.360><c>did </c><00:07:55.000><c>that </c><00:07:55.640><c>it </c><00:07:56.280><c>was</c>
+
+00:07:56.589 --> 00:07:56.599 align:start position:0%
+project did that it was
+ 
+
+00:07:56.599 --> 00:07:59.670 align:start position:0%
+project did that it was
+uncomfortable <00:07:56.905><c>to </c><00:07:57.211><c>add </c><00:07:57.517><c>such </c><00:07:57.823><c>a </c><00:07:58.129><c>new </c><00:07:58.435><c>way</c>
+
+00:07:59.670 --> 00:07:59.680 align:start position:0%
+uncomfortable to add such a new way
+ 
+
+00:07:59.680 --> 00:08:01.430 align:start position:0%
+uncomfortable to add such a new way
+new <00:08:00.016><c>new </c><00:08:00.352><c>abstraction </c><00:08:00.688><c>which </c><00:08:01.024><c>did </c><00:08:01.360><c>not</c>
+
+00:08:01.430 --> 00:08:01.440 align:start position:0%
+new new abstraction which did not
+ 
+
+00:08:01.440 --> 00:08:03.909 align:start position:0%
+new new abstraction which did not
+exist <00:08:01.668><c>before </c><00:08:01.896><c>although </c><00:08:02.124><c>in </c><00:08:02.352><c>Google </c><00:08:02.580><c>Well </c><00:08:02.808><c>for </c><00:08:03.036><c>example </c><00:08:03.264><c>I </c><00:08:03.492><c>had </c><00:08:03.720><c>to</c>
+
+00:08:03.909 --> 00:08:03.919 align:start position:0%
+exist before although in Google Well for example I had to
+ 
+
+00:08:03.919 --> 00:08:06.550 align:start position:0%
+exist before although in Google Well for example I had to
+implement <00:08:04.819><c>a </c><00:08:05.719><c>certain</c>
+
+00:08:06.550 --> 00:08:06.560 align:start position:0%
+implement a certain
+ 
+
+00:08:06.560 --> 00:08:08.670 align:start position:0%
+implement a certain
+subsystem <00:08:06.845><c>there </c><00:08:07.130><c>and </c><00:08:07.415><c>I </c><00:08:07.700><c>see </c><00:08:07.985><c>that </c><00:08:08.270><c>I </c><00:08:08.555><c>simply</c>
+
+00:08:08.670 --> 00:08:08.680 align:start position:0%
+subsystem there and I see that I simply
+ 
+
+00:08:08.680 --> 00:08:10.749 align:start position:0%
+subsystem there and I see that I simply
+lack <00:08:08.891><c>a </c><00:08:09.102><c>number </c><00:08:09.313><c>of </c><00:08:09.524><c>additional </c><00:08:09.735><c>abstractions </c><00:08:09.946><c>there </c><00:08:10.157><c>on</c>
+
+00:08:10.749 --> 00:08:10.759 align:start position:0%
+lack a number of additional abstractions there on
+ 
+
+00:08:10.759 --> 00:08:13.230 align:start position:0%
+lack a number of additional abstractions there on
+top <00:08:11.016><c>of  </c><00:08:11.273><c>which </c><00:08:11.530><c>will </c><00:08:11.787><c>be </c><00:08:12.044><c>convenient </c><00:08:12.301><c>to </c><00:08:12.558><c>work </c><00:08:12.815><c>with </c><00:08:13.072><c>and</c>
+
+00:08:13.230 --> 00:08:13.240 align:start position:0%
+top of  which will be convenient to work with and
+ 
+
+00:08:13.240 --> 00:08:15.550 align:start position:0%
+top of  which will be convenient to work with and
+reuse <00:08:13.559><c>and </c><00:08:13.878><c>which </c><00:08:14.197><c>will </c><00:08:14.516><c>be </c><00:08:14.835><c>able </c><00:08:15.154><c>to</c>
+
+00:08:15.550 --> 00:08:15.560 align:start position:0%
+reuse and which will be able to
+ 
+
+00:08:15.560 --> 00:08:19.629 align:start position:0%
+reuse and which will be able to
+hide <00:08:16.100><c>all </c><00:08:16.640><c>the </c><00:08:17.180><c>configuration </c><00:08:17.720><c>details </c><00:08:18.260><c>inside </c><00:08:18.800><c>below</c>
+
+00:08:19.629 --> 00:08:19.639 align:start position:0%
+hide all the configuration details inside below
+ 
+
+00:08:19.639 --> 00:08:22.070 align:start position:0%
+hide all the configuration details inside below
+low-level <00:08:20.412><c>abstractions, </c><00:08:21.185><c>this </c><00:08:21.958><c>is</c>
+
+00:08:22.070 --> 00:08:22.080 align:start position:0%
+low-level abstractions, this is
+ 
+
+00:08:22.080 --> 00:08:24.510 align:start position:0%
+low-level abstractions, this is
+in <00:08:22.453><c>the </c><00:08:22.826><c>interface </c><00:08:23.199><c>in </c><00:08:23.572><c>ui, </c><00:08:23.945><c>I </c><00:08:24.318><c>created</c>
+
+00:08:24.510 --> 00:08:24.520 align:start position:0%
+in the interface in ui, I created
+ 
+
+00:08:24.520 --> 00:08:27.149 align:start position:0%
+in the interface in ui, I created
+controllers <00:08:25.066><c>there </c><00:08:25.612><c>that </c><00:08:26.158><c>really</c>
+
+00:08:27.149 --> 00:08:27.159 align:start position:0%
+controllers there that really
+ 
+
+00:08:27.159 --> 00:08:29.749 align:start position:0%
+controllers there that really
+helped <00:08:27.559><c>and </c><00:08:27.959><c>simplified </c><00:08:28.359><c>the </c><00:08:28.759><c>code </c><00:08:29.159><c>and </c><00:08:29.559><c>its</c>
+
+00:08:29.749 --> 00:08:29.759 align:start position:0%
+helped and simplified the code and its
+ 
+
+00:08:29.759 --> 00:08:31.869 align:start position:0%
+helped and simplified the code and its
+support, <00:08:30.209><c>these </c><00:08:30.659><c>are </c><00:08:31.109><c>stories. </c><00:08:31.559><c>That's</c>
+
+00:08:31.869 --> 00:08:31.879 align:start position:0%
+support, these are stories. That's
+ 
+
+00:08:31.879 --> 00:08:34.269 align:start position:0%
+support, these are stories. That's
+the <00:08:32.159><c>idea, </c><00:08:32.439><c>I </c><00:08:32.719><c>hope </c><00:08:32.999><c>it </c><00:08:33.279><c>was </c><00:08:33.559><c>interesting. </c><00:08:33.839><c>Write </c><00:08:34.119><c>in</c>
+
+00:08:34.269 --> 00:08:34.279 align:start position:0%
+the idea, I hope it was interesting. Write in
+ 
+
+00:08:34.279 --> 00:08:37.149 align:start position:0%
+the idea, I hope it was interesting. Write in
+the <00:08:34.705><c>comments </c><00:08:35.131><c>if </c><00:08:35.557><c>you </c><00:08:35.983><c>had </c><00:08:36.409><c>a </c><00:08:36.835><c>similar</c>
+
+00:08:37.149 --> 00:08:37.159 align:start position:0%
+the comments if you had a similar
+ 
+
+00:08:37.159 --> 00:08:38.949 align:start position:0%
+the comments if you had a similar
+feeling <00:08:37.399><c>or </c><00:08:37.639><c>if </c><00:08:37.879><c>you </c><00:08:38.119><c>have </c><00:08:38.359><c>observed </c><00:08:38.599><c>this </c><00:08:38.839><c>in</c>
+
+00:08:38.949 --> 00:08:38.959 align:start position:0%
+feeling or if you have observed this in
+ 
+
+00:08:38.959 --> 00:08:40.949 align:start position:0%
+feeling or if you have observed this in
+any <00:08:39.179><c>projects </c><00:08:39.399><c>and </c><00:08:39.619><c>thank </c><00:08:39.839><c>you </c><00:08:40.059><c>very </c><00:08:40.279><c>much </c><00:08:40.499><c>to </c><00:08:40.719><c>all</c>
+
+00:08:40.949 --> 00:08:40.959 align:start position:0%
+any projects and thank you very much to all
+ 
+
+00:08:40.959 --> 00:08:44.839 align:start position:0%
+any projects and thank you very much to all
+the <00:08:41.223><c>sponsors </c><00:08:41.487><c>for </c><00:08:41.751><c>supporting </c><00:08:42.015><c>the </c><00:08:42.279><c>channel.</c>
+
