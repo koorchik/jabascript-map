@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Практики безпеки — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/security-practices.html">
+<meta name="description" content="Безпекова теза каналу, прямо сформульована у Q&amp;A з планами на 2024: «майже вся інформаційна безпека — це розуміння того, як речі влаштовані всередині». Віктор…">
+<meta property="og:description" content="Безпекова теза каналу, прямо сформульована у Q&amp;A з планами на 2024: «майже вся інформаційна безпека — це розуміння того, як речі влаштовані всередині». Віктор…">
+<meta property="og:title" content="Практики безпеки — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/security-practices.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / security-practices</p>
   <h1>Практики безпеки</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-security">#security</a><a class="chip tag" href="../tags.html#tag-infosec">#infosec</a><a class="chip tag" href="../tags.html#tag-best-practices">#best-practices</a></div>
   <div class="topic-body"><p>Безпекова теза каналу, прямо сформульована у Q&amp;A з планами на 2024: «майже вся інформаційна безпека — це розуміння того, як речі влаштовані всередині». Віктор (який починав в інфобезпеці ще до Mail.ua, WebbyLab і Google, а пізніше вступив на PhD з кібербезпеки) трактує безпеку не як чекліст, а як наслідок знання нутрощів: якщо знаєш, як протокол чи механізм справді працює, то знаєш і його властивості, і як його зламати. Саме тому його глибокі розбори протоколів свідомо оформлені як історії про безпеку: відео про DHCP — насправді урок про man-in-the-middle у Wi-Fi в кафе, а трійця Base64/хешування/шифрування існує, щоб зруйнувати хибні уявлення на кшталт «Basic Auth зашифрований, бо це Base64». У <a href="../videos/3-things-that-make-a-programmer-better.html">відео про три речі, що роблять програміста кращим</a> він навіть радить вивчати безпеку (ін’єкції, XSS/CSRF, переповнення буфера, Heartbleed, Shellshock) як найкращий шлях до глибокого навчання загалом.</p><p>Конкретні вердикти, що повторюються від відео до відео: ставтеся до <a href="../concepts/base64.html">Base64</a> як до відкритого тексту, а не як до захисту; зберігайте паролі захешованими через scrypt/bcrypt, а не зашифрованими, щоб навіть атакувальник із повною базою і конфігами не міг їх відновити (<a href="../videos/hashing-encoding-encryption-difference.html">хешування vs кодування vs шифрування</a>); ніколи не пишіть власну криптографію (він цитує Шнаєра), ніколи не діліться приватними ключами і використовуйте <code>crypto.getRandomValues</code> замість <code>Math.random</code> — як доказ того, що слабка випадковість валить усе, він згадує інцидент із бекдором у RNG від NIST у Windows (<a href="../videos/asymmetric-encryption-digital-signatures.html">асиметричне шифрування і підписи</a>). Про мережі: сам по собі <a href="../concepts/https-tls.html">HTTPS</a> не врятує вас у ворожій мережі — через звичайний HTTP атакувальник може на льоту підмінити завантажуваний файл на малвар, а загальний захист — VPN-тунель (<a href="../videos/qa-1-will-https-protect-you.html">Q&amp;A: чи захистить вас HTTPS</a>). Людський бік теж має свої історії: адмінський API-ключ плюс скопійований приклад коду видалили акаунт співзасновника (<a href="../videos/voice-1-admin-keys-for-developers.html">войс про адмінські ключі</a> → <a href="../concepts/least-privilege.html">найменші привілеї</a>), а справжні дзвінки банківських шахраїв розібрані у <a href="../videos/voice-4-phone-scammers.html">войсі про телефонних шахраїв</a> (<a href="../concepts/social-engineering.html">соціальна інженерія</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/dhcp-cafe-wifi.html">Що не так з Інтернетом в кафе? Розбираємо DHCP</a>
@@ -49,6 +62,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

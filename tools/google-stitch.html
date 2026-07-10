@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Google Stitch — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/tools/google-stitch.html">
+<meta name="description" content="Безкоштовний AI-генератор дизайну від Google, використаний як етап UI-дизайну в пайплайні вайб-кодингу Віктора у Вайб-коджу новий крутий проєкт (стрім). Він…">
+<meta property="og:description" content="Безкоштовний AI-генератор дизайну від Google, використаний як етап UI-дизайну в пайплайні вайб-кодингу Віктора у Вайб-коджу новий крутий проєкт (стрім). Він…">
+<meta property="og:title" content="Google Stitch — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/tools/google-stitch.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html">Теми</a><a href="../tools.html" class="active">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
-  <p class="eyebrow mono"><a href="../concepts.html">інструменти</a> / google-stitch</p>
+  <p class="eyebrow mono"><a href="../tools.html">інструменти</a> / google-stitch</p>
   <h1>Google Stitch</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-ai">#ai</a><a class="chip tag" href="../tags.html#tag-design">#design</a><a class="chip tag" href="../tags.html#tag-ui-generation">#ui-generation</a><a class="chip tag" href="../tags.html#tag-google">#google</a></div>
   <div class="topic-body"><p>Безкоштовний AI-генератор дизайну від Google, використаний як етап UI-дизайну в пайплайні <a href="../concepts/vibe-coding.html">вайб-кодингу</a> Віктора у <a href="../videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>. Він віддає йому перевагу над AI-інструментами Figma — «креативніший» — хоча з України потрібен VPN. Його метод важливіший за сам інструмент: генерувати весь застосунок одразу не виходить, тож він ітерує екран за екраном, генеруючи варіації кожного екрана і відбираючи переможців. Описи екранів народжуються з брейншторму в <a href="../tools/gemini.html">Gemini</a>, а обрані дизайни разом з описами далі йдуть у репозиторій, щоб <a href="../tools/claude-code.html">Claude Code</a> їх реалізував.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

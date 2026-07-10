@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Холодні криптогаманці — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/cold-crypto-wallets.html">
+<meta name="description" content="Найчистіша на каналі ілюстрація того, навіщо потрібні цифрові підписи: холодний гаманець — це просто приватний ключ, який ніколи не торкається інтернету. У…">
+<meta property="og:description" content="Найчистіша на каналі ілюстрація того, навіщо потрібні цифрові підписи: холодний гаманець — це просто приватний ключ, який ніколи не торкається інтернету. У…">
+<meta property="og:title" content="Холодні криптогаманці — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/cold-crypto-wallets.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / cold-crypto-wallets</p>
   <h1>Холодні криптогаманці</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-security">#security</a><a class="chip tag" href="../tags.html#tag-cryptography">#cryptography</a><a class="chip tag" href="../tags.html#tag-blockchain">#blockchain</a></div>
   <div class="topic-body"><p>Найчистіша на каналі ілюстрація того, навіщо потрібні <a href="../concepts/digital-signatures.html">цифрові підписи</a>: холодний гаманець — це просто приватний ключ, який ніколи не торкається інтернету. У <a href="../videos/asymmetric-encryption-digital-signatures.html">відео про асиметричне шифрування і цифрові підписи</a> Віктор проходить увесь флоу: приватний ключ живе на офлайн-машині; там ти складаєш і <em>підписуєш</em> файл транзакції, переносиш його на флешці на онлайн-машину і вже звідти пушиш у блокчейн. Підписану транзакцію цілком безпечно показувати будь-кому — вона доводить авторизацію, не розкриваючи ключа, і ніхто не може її змінити, не зламавши підпис.</p><p>Бонусна деталь з того самого відео: біткоїн-адреса — це, по суті, <a href="../concepts/hashing.html">хеш</a> публічного ключа, тож уся система гаманців — це асиметричні ключі плюс хеші, і нічого екзотичнішого.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/asymmetric-encryption-digital-signatures.html">Що захищає твої дані й гроші від хакерів? Асиметричне шифрування та цифровий підпис</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

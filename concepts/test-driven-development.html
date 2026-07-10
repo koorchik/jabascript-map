@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Test-driven development (TDD) — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/test-driven-development.html">
+<meta name="description" content="Канал відкрито анти-TDD-пуристський. Віктор любить тести, але не любить цикл red/green Кента Бека як інструмент проєктування: для виправлення багів він…">
+<meta property="og:description" content="Канал відкрито анти-TDD-пуристський. Віктор любить тести, але не любить цикл red/green Кента Бека як інструмент проєктування: для виправлення багів він…">
+<meta property="og:title" content="Test-driven development (TDD) — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/test-driven-development.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / test-driven-development</p>
   <h1>Test-driven development (TDD)</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-engineering-craft">#engineering-craft</a><a class="chip tag" href="../tags.html#tag-testing">#testing</a><a class="chip tag" href="../tags.html#tag-tdd">#tdd</a></div>
   <div class="topic-body"><p>Канал відкрито анти-TDD-пуристський. Віктор любить тести, але не любить цикл red/green Кента Бека як інструмент проєктування: для виправлення багів він годиться, але під час проєктування звужує фокус до наступного assert замість форми API (<a href="../videos/3-things-that-make-a-programmer-better.html">3 речі, які роблять програміста кращим</a>, <a href="../videos/qa-2-answering-questions.html">Q&amp;A №2</a>). Його альтернатива — ескізування API-first: написати приклад коду використання, переписувати, доки не проявиться скелет, реалізувати — і писати тести <em>після</em> коду. Позицію він підкріплює джерелами: серія розмов &quot;Is TDD Dead?&quot; (Бек/Фаулер/DHH) і аргумент <em>A Philosophy of Software Design</em> про те, що TDD відводить увагу вбік (<a href="../videos/qa-2-answering-questions.html">Q&amp;A №2</a>).</p><p>Його улюблена ілюстрація TDD-догми — карго-культ моків: люди вирішили, що TDD = юніт-тести = мокати все, хоча в тих самих розмовах &quot;Is TDD Dead?&quot; сам Кент Бек каже, що мокає якомога менше — «люди просто вирішили, що має бути так» (<a href="../videos/3-things-that-ruin-a-programmer.html">3 речі, які псують програміста</a>). Власна лінія Віктора — класицистська: замість моків проєктувати під підмінювані (injectable) реалізації. Уся ця тема — його показовий приклад догматизму: віри в програмування замість його розуміння.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/3-things-that-ruin-a-programmer.html">3 речі, що псують програміста</a>
@@ -35,6 +48,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

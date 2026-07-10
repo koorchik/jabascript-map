@@ -4,14 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Книжкова полиця — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/books.html">
+<meta name="description" content="Усі книжки, рекомендовані на каналі, з чесними вердиктами Віктора: що читати, що погортати, а до чого й не братися.">
+<meta property="og:description" content="Усі книжки, рекомендовані на каналі, з чесними вердиктами Віктора: що читати, що погортати, а до чого й не братися.">
+<meta property="og:title" content="Книжкова полиця — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/books.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body data-root="">
 <header class="site-head">
   <a class="brand" href="index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="index.html">Треки</a><a href="concepts.html">Теми</a><a href="books.html" class="active">Книги</a></nav>
+  <nav><a href="index.html">Треки</a><a href="videos.html">Відео</a><a href="concepts.html">Теми</a><a href="tools.html">Інструменти</a><a href="books.html" class="active">Книги</a><a href="overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
@@ -22,6 +34,7 @@
   <section class="book" id="a-philosophy-of-software-design">
   <h2>A Philosophy of Software Design</h2>
   <div class="meta">John Ousterhout</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-design">#software-design</a></div>
   <p>Тонка книжка Джона Остергаута про глибокі модулі, приховування інформації та проєктування як боротьбу зі складністю. Віктор прочитав її за кілька місяців до свого Q&amp;A-стріму і дуже хвалить, окремо виділяючи цитату Остергаута про те, що TDD змушує зосереджуватися не на тому, — вона збігається з його власним підходом «спершу дизайн, тести потім».</p>
   <ul class="covered-list"><li><a href="videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>
   <span class="meta mono">1:16:50</span>
@@ -29,6 +42,7 @@
 </section><section class="book" id="atomic-habits">
   <h2>Atomic Habits</h2>
   <div class="meta">James Clear</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-productivity">#productivity</a><a class="chip tag" href="tags.html#tag-habits">#habits</a></div>
   <p>Бестселер Джеймса Кліра про те, як будувати корисні звички через маленькі системні зміни. Віктор не очікував від неї нічого нового — саме тому, що про неї говорять усі, — але все ж почав слухати аудіокнижку і виявив, що він «у захваті». Той випадок, коли хайп заслужений.</p>
   <ul class="covered-list"><li><a href="videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>
   <span class="meta mono">1:40:28</span>
@@ -36,6 +50,7 @@
 </section><section class="book" id="blood-sweat-and-pixels">
   <h2>Blood, Sweat, and Pixels</h2>
   <div class="meta">Jason Schreier</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-gamedev">#gamedev</a><a class="chip tag" href="tags.html#tag-non-fiction">#non-fiction</a></div>
   <p>Збірка Джейсона Шраєра з історій про розробку ігор — від Stardew Valley, зробленої однією людиною, до AAA-продакшенів. Вердикт Віктора: «прям топ», а його просте правило: якщо в книжці є хоч одна гра, яку ви знаєте, — купуйте і читайте всю.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -43,6 +58,7 @@
 </section><section class="book" id="clean-architecture">
   <h2>Clean Architecture</h2>
   <div class="meta">Robert Martin</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-design">#software-design</a><a class="chip tag" href="tags.html#tag-architecture">#architecture</a></div>
   <p>Книжка Роберта Мартіна про структурування застосунків у шари із залежностями, спрямованими всередину. Рекомендована Віктором <em>стартова</em> книжка з дизайну: половина — про те, як розбити бекенд на шари і навіщо, друга половина — SOLID. Базова, визнає він, але дуже корисна — і він пообіцяв окремі відео про те, як реалізовувати кожен шар на практиці.</p>
   <ul class="covered-list"><li><a href="videos/3-books-on-software-design.html">3 важливі книги про проектування програмного забезпечення</a>
   <span class="meta mono">04:05</span>
@@ -50,6 +66,7 @@
 </section><section class="book" id="clean-code">
   <h2>Clean Code</h2>
   <div class="meta">Robert Martin</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-design">#software-design</a><a class="chip tag" href="tags.html#tag-code-quality">#code-quality</a></div>
   <p>Знаменита книжка Роберта Мартіна про читабельний і підтримуваний код. Вона є у пʼятизірковому списку Віктора, але у відео він свідомо її оминув — «про неї чули всі» — тож свої зірки вона отримує й без його пітчу.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -57,6 +74,7 @@
 </section><section class="book" id="code-complete">
   <h2>Code Complete</h2>
   <div class="meta">Steve McConnell</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-design">#software-design</a><a class="chip tag" href="tags.html#tag-code-quality">#code-quality</a></div>
   <p>Енциклопедичний посібник Стіва Макконнелла з конструювання коду — іменування, структура, оптимізація, профілювання, і все це системно. Віктор наполегливо рекомендує її попри приклади коду зразка 1993 року: саме вона відповіла на його питання часів початку карʼєри — чи існує «третє рішення» без компромісів (не існує: інженерія — це і є компроміси). Єдине застереження — товщина: багато хто так і не дочитує.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -64,6 +82,7 @@
 </section><section class="book" id="cracking-the-coding-interview">
   <h2>Cracking the Coding Interview</h2>
   <div class="meta">Gayle Laakmann McDowell</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-interviews">#interviews</a><a class="chip tag" href="tags.html#tag-algorithms">#algorithms</a><a class="chip tag" href="tags.html#tag-career">#career</a></div>
   <p>Біблія підготовки до співбесід від Ґейл Лакман Макдавелл. Віктор готувався за нею до власної співбесіди в Google і розвʼязав <em>усі</em> задачі — але його неочевидна теза: недооцінене золото цієї книжки — два вступи: чого насправді від вас очікують на співбесідах і праймер з алгоритмічної складності. Самі ж задачі можна з тим самим успіхом нарішувати на LeetCode чи AlgoExpert.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -71,6 +90,7 @@
 </section><section class="book" id="design-patterns-gof">
   <h2>Design Patterns (GoF)</h2>
   <div class="meta">Gamma, Helm, Johnson, Vlissides</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-design">#software-design</a><a class="chip tag" href="tags.html#tag-design-patterns">#design-patterns</a></div>
   <p>Каталог класичних обʼєктно-орієнтованих патернів проєктування від «банди чотирьох». Теза Віктора: це <em>не</em> сакральне знання — це просто найпоширеніші рішення, які всі й так перевинаходять (сам він реалізував 8 із 24 патернів у Mail.ua ще до того, як прочитав книжку). Читати варто заради спільного словника з іншими розробниками, а не заради прихованої мудрості.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -78,6 +98,7 @@
 </section><section class="book" id="designing-data-intensive-applications">
   <h2>Designing Data-Intensive Applications</h2>
   <div class="meta">Martin Kleppmann</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-databases">#databases</a><a class="chip tag" href="tags.html#tag-distributed-systems">#distributed-systems</a></div>
   <p>Знаменита «DDIA» Мартіна Клеппмана — сучасний довідник зі storage engines, реплікації, партиціонування та розподілених систем даних. Освіжно чесний вердикт Віктора: книжка знаменита, її цитують усі, а в нього вона вже давно висить недочитаною на полиці. У списку є, але вдавати, що дочитав, він не буде.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -85,6 +106,7 @@
 </section><section class="book" id="domain-driven-design">
   <h2>Domain-Driven Design</h2>
   <div class="meta">Eric Evans</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-design">#software-design</a><a class="chip tag" href="tags.html#tag-ddd">#ddd</a></div>
   <p>Класика Еріка Еванса про моделювання софту навколо бізнес-домену — bounded contexts, ubiquitous language і приборкання складності. Для Віктора це було <strong>особисте одкровення</strong>, яке змінило його погляд на розробку: книжка пояснює, чому проєкти провалюються або вистрілюють і чому одні фічі додаються легко, а інші — болісно. Його головна рекомендація для того, щоб навчитися мислити доменами: читати її заради того, <em>чому</em> Еванс структурує код саме так, а не заради прикладів коду; він навіть переказує жаль самого Еванса, що bounded contexts опинилися наприкінці книжки, а не на початку. Декому вона здається надто абстрактною, але «навіть половина книжки змінює мислення» — насамперед для бекендерів, бо це книжка про боротьбу зі складністю.</p>
   <ul class="covered-list"><li><a href="videos/3-things-that-make-a-programmer-better.html">3 речі, які роблять програміста кращим</a>
   <span class="meta mono">20:13</span>
@@ -96,6 +118,7 @@
 </section><section class="book" id="effortless">
   <h2>Effortless</h2>
   <div class="meta">Greg McKeown</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-productivity">#productivity</a></div>
   <p>Продовження Essentialism від Ґреґа Маккеона: коли вже обрав найважливіше, зроби так, щоб робити його було якомога легше. Віктор прослухав її одразу після <a href="books.html#essentialism">Essentialism</a> і згадує поруч із нею як варту прочитання.</p>
   <ul class="covered-list"><li><a href="videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>
   <span class="meta mono">1:40:28</span>
@@ -103,6 +126,7 @@
 </section><section class="book" id="essentialism">
   <h2>Essentialism</h2>
   <div class="meta">Greg McKeown</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-productivity">#productivity</a></div>
   <p>Маніфест Ґреґа МакКеона про дисципліноване прагнення меншого — робити лише те, що справді важливо. Одна з нещодавніх нетехнічних аудіокниг, які Віктор прослухав і рекомендує; вона сподобалася йому настільки, що він одразу взявся за продовження МакКеона — <a href="books.html#effortless">Effortless</a>.</p>
   <ul class="covered-list"><li><a href="videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>
   <span class="meta mono">1:40:28</span>
@@ -110,6 +134,7 @@
 </section><section class="book" id="getting-things-done">
   <h2>Getting Things Done</h2>
   <div class="meta">David Allen</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-productivity">#productivity</a></div>
   <p>Класична система особистої продуктивності Девіда Аллена: зафіксуй усе, а далі працюй за списками, яким довіряєш. Віктор прочитав її ще в університеті й досі щодня користується ідеєю контекстних списків. Рекомендує — з чесним застереженням, що це тайм-менеджмент, а не програмування.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -117,6 +142,7 @@
 </section><section class="book" id="good-strategy-bad-strategy">
   <h2>Good Strategy Bad Strategy</h2>
   <div class="meta">Richard Rumelt</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-business">#business</a><a class="chip tag" href="tags.html#tag-strategy">#strategy</a></div>
   <p>Книга Річарда Румельта про те, чим насправді є стратегія — про її три складові (діагноз, керівний принцип, узгоджені дії) — і, що у переказі Віктора найважливіше, про те, що стратегією <em>не</em> є. Він називає її чудовою і наполегливо рекомендує всім, хто причетний до стратегічного планування.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -124,6 +150,7 @@
 </section><section class="book" id="grokking-algorithms">
   <h2>Grokking Algorithms</h2>
   <div class="meta">Aditya Bhargava</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-algorithms">#algorithms</a><a class="chip tag" href="tags.html#tag-fundamentals">#fundamentals</a></div>
   <p>Ілюстрований і навмисно дружній вступ до алгоритмів від Адітьї Бхарґави. Віктору вона сподобалася саме простотою та доступністю, і з цього він виводить загальну пораду: книга, що виглядає простою і цікавою, — це якраз правильна точка старту; не перевантажуйте себе найважчим фоліантом із самого початку.</p>
   <ul class="covered-list"><li><a href="videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>
   <span class="meta mono">1:16:50</span>
@@ -131,11 +158,13 @@
 </section><section class="book" id="high-performance-browser-networking">
   <h2>High Performance Browser Networking</h2>
   <div class="meta">Ilya Grigorik</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-networking">#networking</a><a class="chip tag" href="tags.html#tag-web-performance">#web-performance</a></div>
   <p>Книга Іллі Григорика про те, як браузери насправді спілкуються з мережею — затримки, TCP/TLS, HTTP/2, WebRTC — безкоштовно доступна онлайн. Головна рекомендація Віктора з мереж для frontend/web-інженерів: написана інженером Google (колишнім), «супер потужна», і вона покриває матеріал про швидкість світла й затримки з його власних відео — і значно більше.</p>
   <ul class="covered-list"></ul>
 </section><section class="book" id="higher-order-perl">
   <h2>Higher-Order Perl</h2>
   <div class="meta">Mark Jason Dominus</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-programming">#programming</a><a class="chip tag" href="tags.html#tag-functional-programming">#functional-programming</a><a class="chip tag" href="tags.html#tag-perl">#perl</a></div>
   <p>Книга Марка Джейсона Домінуса про техніки функційного програмування в Perl — замикання, ітератори, функції вищого порядку. Вердикт Віктора короткий і чесний: книга чудова, але якщо ви не пишете на Perl — пропускайте.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -143,6 +172,7 @@
 </section><section class="book" id="how-linux-works">
   <h2>How Linux Works</h2>
   <div class="meta">Brian Ward</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-linux">#linux</a><a class="chip tag" href="tags.html#tag-fundamentals">#fundamentals</a></div>
   <p>Практично-теоретична екскурсія Linux від Браяна Ворда: підсистеми, мережевий стек, адміністрування. Віктор оцінює її як чудову і зауважує, що прочитати можна приблизно за тиждень — тільки перед покупкою перевірте, чи не вийшло новіше видання.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -150,6 +180,7 @@
 </section><section class="book" id="implementing-domain-driven-design">
   <h2>Implementing Domain-Driven Design</h2>
   <div class="meta">Vaughn Vernon</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-design">#software-design</a><a class="chip tag" href="tags.html#tag-ddd">#ddd</a></div>
   <p>Практичний компаньйон до DDD Еванса від Вона Вернона — книга, яка показує, як саме структурувати код. Віктор рекомендує її разом з Евансом, але наполягає починати саме з Еванса: ті, хто читав лише Вернона, схильні плутати структуру коду з DDD, тоді як уся суть — у концептуальній ідеї. Більш практично орієнтована з двох книг про DDD на його полиці.</p>
   <ul class="covered-list"><li><a href="videos/3-things-that-make-a-programmer-better.html">3 речі, які роблять програміста кращим</a>
   <span class="meta mono">20:13</span>
@@ -159,6 +190,7 @@
 </section><section class="book" id="its-not-luck">
   <h2>It&#x27;s Not Luck</h2>
   <div class="meta">Eliyahu Goldratt</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-business">#business</a><a class="chip tag" href="tags.html#tag-process-optimization">#process-optimization</a></div>
   <p>Роман-продовження Ґолдратта, що застосовує теорію обмежень до маркетингу, дистрибуції та бізнес-стратегії. Порада Віктора — проста послідовність: спершу прочитайте <a href="books.html#the-goal">The Goal</a>, і лише потім вирішуйте, чи продовжувати з Ґолдраттом.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -166,6 +198,7 @@
 </section><section class="book" id="making-sense-of-squiggly-lines">
   <h2>Making Sense of Squiggly Lines</h2>
   <div class="meta">Christopher Brown</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-racing">#racing</a><a class="chip tag" href="tags.html#tag-hobby">#hobby</a><a class="chip tag" href="tags.html#tag-telemetry">#telemetry</a></div>
   <p>Посібник Крістофера Брауна з читання гоночної телеметрії — як перетворити «кривульки» графіків швидкості/газу/гальма на покращення у водінні. Віктор оцінює її як дуже добру (і зауважує її загалом високі рейтинги); книга настільки нішева, що електронної версії не існує, тож він замовив паперовий примірник зі США.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -173,6 +206,7 @@
 </section><section class="book" id="patterns-of-enterprise-application-architecture">
   <h2>Patterns of Enterprise Application Architecture</h2>
   <div class="meta">Martin Fowler</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-design">#software-design</a><a class="chip tag" href="tags.html#tag-design-patterns">#design-patterns</a><a class="chip tag" href="tags.html#tag-architecture">#architecture</a></div>
   <p>Каталог стратегічних архітектурних патернів Мартіна Фаулера — Active Record, Data Mapper, Unit of Work та компанія. Універсальна рекомендація Віктора щодо патернів: не лякайтеся слова «Enterprise». На відміну від тактичних патернів GoF, це стратегічні патерни, які ви майже ніколи не реалізовуватимете самі, але зустрінете всередині кожної ORM і кожного фреймворку — книжка вчить, як влаштовані ваші інструменти. У його трійці книжок про дизайн вона доповнює <a href="books.html#clean-architecture">Clean Architecture</a> (показує, як насправді реалізувати шари) та <a href="books.html#domain-driven-design">Domain-Driven Design</a> (value objects і решта).</p>
   <ul class="covered-list"><li><a href="videos/3-books-on-software-design.html">3 важливі книги про проектування програмного забезпечення</a>
   <span class="meta mono">04:05</span>
@@ -182,6 +216,7 @@
 </section><section class="book" id="sandworm">
   <h2>Sandworm</h2>
   <div class="meta">Andy Greenberg</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-security">#security</a><a class="chip tag" href="tags.html#tag-non-fiction">#non-fiction</a></div>
   <p>Розслідування Енді Ґрінберга про російське державне хакерське угруповання, що стоїть за NotPetya та атаками на українську енергосистему. Книжка є в п&#x27;ятизірковому списку Віктора в розділі кібербезпеки, але у відео він пройшов повз неї без вердикту — тож за неї говорять самі зірки.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -189,6 +224,7 @@
 </section><section class="book" id="software-engineering-at-google">
   <h2>Software Engineering at Google</h2>
   <div class="meta">Winters, Manshreck, Wright</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-engineering">#software-engineering</a><a class="chip tag" href="tags.html#tag-process">#process</a><a class="chip tag" href="tags.html#tag-google">#google</a></div>
   <p>«Книжка з фламінго»: увесь процес розробки в Google від А до Я на 600 сторінках — code review, культура тестування, тулінг, deprecation. На момент запису відео Віктор (сам ексгуглівець) саме читав її і практично дочитав — показово для книжки, яку, як він сам визнає, інші зазвичай кидають недочитаною. Бонус: безкоштовний PDF доступний онлайн.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -196,6 +232,7 @@
 </section><section class="book" id="ultimate-speed-secrets">
   <h2>Speed Secrets / Ultimate Speed Secrets</h2>
   <div class="meta">Ross Bentley</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-racing">#racing</a><a class="chip tag" href="tags.html#tag-hobby">#hobby</a></div>
   <p>Серія Росса Бентлі про техніку гоночного пілотування — траєкторії, гальмування, контроль авто і психологія пілота. Віктор прочитав усю серію і каже, що томи здебільшого повторюють один одного, тож читайте просто <em>Ultimate Speed Secrets</em> — зведений том. Ця серія була його стартовою точкою як гонщика-картингіста і відчутно покращила його результати на треку.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -203,6 +240,7 @@
 </section><section class="book" id="spin-selling">
   <h2>SPIN Selling</h2>
   <div class="meta">Neil Rackham</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-business">#business</a><a class="chip tag" href="tags.html#tag-sales">#sales</a></div>
   <p>Побудована на дослідженнях класика Ніла Рекгема про великі B2B-продажі — рідкісна книжка про продажі, яка не про B2C, зауважує Віктор. Варто знати кожному, хто хоч якось дотичний до бізнесу чи продажів, навіть якщо свій процес ви зрештою будуватимете не точно за її методом.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -210,6 +248,7 @@
 </section><section class="book" id="summa-technologiae">
   <h2>Summa Technologiae</h2>
   <div class="meta">Stanisław Lem</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-futurology">#futurology</a><a class="chip tag" href="tags.html#tag-non-technical">#non-technical</a></div>
   <p>Праця Станіслава Лема 1960-х років — беземоційна футурологія чистої логіки, міркування про технології приблизно на тисячу років уперед. Віктора вразило, що сюжети «Матриці» та «Тринадцятого поверху» вже були викладені в ній за десятиліття до появи фільмів. Його вердикт: комусь зайде, комусь ні — це книжка саме такого типу.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -217,6 +256,7 @@
 </section><section class="book" id="seven-habits-of-highly-effective-people">
   <h2>The 7 Habits of Highly Effective People</h2>
   <div class="meta">Stephen Covey</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-productivity">#productivity</a><a class="chip tag" href="tags.html#tag-personal-development">#personal-development</a></div>
   <p>Засаднича книжка Стівена Кові про особисту ефективність — проактивність, пріоритети, win-win, «гостріть пилку». За словами Віктора, це «класика класика» тайм-менеджменту й особистого розвитку, і він дуже її рекомендує.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -224,6 +264,7 @@
 </section><section class="book" id="c-programming-language">
   <h2>The C Programming Language</h2>
   <div class="meta">Kernighan &amp; Ritchie</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-programming">#programming</a><a class="chip tag" href="tags.html#tag-fundamentals">#fundamentals</a><a class="chip tag" href="tags.html#tag-c">#c</a></div>
   <p>Тонка класика Кернігана та Рітчі — пара вечорів, за оцінкою Віктора, після яких розумієш, що насправді відбувається під високорівневими мовами: рядки як масиви char, нульовий термінатор, памʼять як на долоні. Окремо він виділяє чудовий приклад із власноруч написаною хеш-таблицею. Фундаментальне читання незалежно від того, якою мовою ви пишете щодня.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -231,6 +272,7 @@
 </section><section class="book" id="the-checklist-manifesto">
   <h2>The Checklist Manifesto</h2>
   <div class="meta">Atul Gawande</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-productivity">#productivity</a><a class="chip tag" href="tags.html#tag-process">#process</a></div>
   <p>Збірка історій хірурга Атула Ґаванде про те, коли і чому прості чеклісти запобігають катастрофічним провалам — в операційних, кабінах пілотів, на будівництві. Вона змінила погляд Віктора на чеклісти й дає ще один інструмент покращення процесів, хоча він визнає: формат сторітелінгу може бути на любителя.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -238,6 +280,7 @@
 </section><section class="book" id="the-goal">
   <h2>The Goal</h2>
   <div class="meta">Eliyahu Goldratt</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-business">#business</a><a class="chip tag" href="tags.html#tag-process-optimization">#process-optimization</a></div>
   <p>Теорія обмежень Еліягу Ґолдратта, запакована в роман про порятунок заводу на межі краху. Класика, яка читається швидко, каже Віктор, — і must-read для всіх, кому цікавий бізнес чи оптимізація процесів. Він навіть знає людей в Україні, які побудували успішний виробничий бізнес на книжках Ґолдратта.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -245,6 +288,7 @@
 </section><section class="book" id="mythical-man-month">
   <h2>The Mythical Man-Month</h2>
   <div class="meta">Frederick Brooks</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-software-engineering">#software-engineering</a><a class="chip tag" href="tags.html#tag-project-management">#project-management</a></div>
   <p>Есеї Фредеріка Брукса 1975 року про управління програмними проєктами. Віктор рекомендує її саме для того, щоб побачити: між 1975-м (стоси паперу замість Jira) і 2024-м нічого фундаментально не змінилося в тому, як програмні проєкти йдуть не так, — а ще за введення понять essential та accidental complexity (сутнісна та випадкова складність), розрізнення, з яким стикаєшся щодня.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -252,6 +296,7 @@
 </section><section class="book" id="the-staff-engineers-path">
   <h2>The Staff Engineer&#x27;s Path</h2>
   <div class="meta">Tanya Reilly</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-career">#career</a><a class="chip tag" href="tags.html#tag-engineering-leadership">#engineering-leadership</a></div>
   <p>Путівник Тані Райлі по треку індивідуального контриб&#x27;ютора після сеньйора — що насправді робить staff engineer і як ним стати. Віктор називає її «маленькою, дуже класною книжкою» і прямо рекомендує всім, хто питає, як вирости із senior у staff; він зауважує, що сам виконує чимало роботи staff-рівня, хоч і має тайтл Senior. Чесне застереження: початок його захопив, кінець став менш цікавим, і дочитував він повільно — але загалом книжка корисна. Вона навіть продається на Rozetka (~750 грн).</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -259,6 +304,7 @@
 </section><section class="book" id="who-the-a-method-for-hiring">
   <h2>Who: The A Method for Hiring</h2>
   <div class="meta">Geoff Smart &amp; Randy Street</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-business">#business</a><a class="chip tag" href="tags.html#tag-hiring">#hiring</a></div>
   <p>Плейбук Джеффа Смарта та Ренді Стріта з побудови структурованого процесу рекрутингу. Вердикт Віктора стриманий: пристойна, з багатьма гарними ідеями для процесу наймання, але <em>не</em> те одкровення, яким її подають інші, — до багато чого можна дійти самостійно, і не обов&#x27;язково будувати свій процес точно за книжкою.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -266,6 +312,7 @@
 </section><section class="book" id="karting-book">
   <h2>Книга про картинг (назва не вказана)</h2>
   <div class="meta">unknown</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-racing">#racing</a><a class="chip tag" href="tags.html#tag-hobby">#hobby</a><a class="chip tag" href="tags.html#tag-karting">#karting</a></div>
   <p>Книга про водіння саме в картингу, назву якої Віктор у відео не озвучив. Його вердикт: приблизно 70% змісту перетинається з <a href="books.html#ultimate-speed-secrets">Ultimate Speed Secrets</a>, але решта 30% — це справді інший погляд, тож дві книги разом корисніші, ніж будь-яка з них окремо.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -273,6 +320,7 @@
 </section><section class="book" id="old-linux-security-book">
   <h2>Книжка з безпеки Linux, 2001 (назва не прозвучала)</h2>
   <div class="meta">unknown</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-linux">#linux</a><a class="chip tag" href="tags.html#tag-security">#security</a></div>
   <p>Книжка з безпеки Linux 2001 року, назву якої Віктор у відео так і не назвав. Він перечитував її кілька разів, і свого часу вона була чудовою — але теперішній вердикт однозначний: <em>не читати</em>. Вона застаріла, і він порадив би її лише за умови, що існували б новіші видання.</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -280,6 +328,7 @@
 </section><section class="book" id="docker-deep-dive">
   <h2>Книжка про нутрощі Docker (імовірно, Docker Deep Dive)</h2>
   <div class="meta">likely Nigel Poulton</div>
+  <div class="chip-row small tag-row"><a class="chip tag" href="tags.html#tag-docker">#docker</a><a class="chip tag" href="tags.html#tag-infrastructure">#infrastructure</a></div>
   <p>Книжка про внутрішню будову Docker — підсистеми, overlay-мережі, багато практики, — назву якої Віктор не озвучив, але опис збігається з <em>Docker Deep Dive</em> Найджела Полтона. Його вердикт: швидко, легко і дуже добре, з рідкісним бонусом — книжку постійно оновлюють (він посилається на видання 2023 року).</p>
   <ul class="covered-list"><li><a href="videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
   <span class="meta mono">19:58</span>
@@ -292,6 +341,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="assets/app.js"></script>
+<script src="assets/search-index.js" defer></script>
+<script src="assets/app.js" defer></script>
 </body>
 </html>

@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Проєктування програмного забезпечення — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/software-design.html">
+<meta name="description" content="Проєктування — центральна тема каналу про інженерну майстерність: у Google, каже Віктор, твій рівень визначається вмінням проєктувати, а не знанням технологій…">
+<meta property="og:description" content="Проєктування — центральна тема каналу про інженерну майстерність: у Google, каже Віктор, твій рівень визначається вмінням проєктувати, а не знанням технологій…">
+<meta property="og:title" content="Проєктування програмного забезпечення — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/software-design.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / software-design</p>
   <h1>Проєктування програмного забезпечення</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-engineering-craft">#engineering-craft</a><a class="chip tag" href="../tags.html#tag-software-design">#software-design</a><a class="chip tag" href="../tags.html#tag-architecture">#architecture</a></div>
   <div class="topic-body"><p>Проєктування — центральна тема каналу про інженерну майстерність: у Google, каже Віктор, твій рівень визначається вмінням проєктувати, а не знанням технологій (до приходу туди він жодного рядка не написав ні на Java, ні на Angular), і це вміння він напряму повʼязує з роботою з <a href="../concepts/abstractions.html">абстракціями</a> та знанням властивостей речей через їхню внутрішню будову: індекс — це відсортована структура, а отже запис чогось коштує і виграють лише певні форми запитів (Q&amp;A і плани на 2024). Його особистий метод — API-first: ніколи не починати з реалізації — спершу написати приклад коду <em>використання</em>, переписувати його, доки не проявиться скелет, і братися за реалізацію лише тоді, коли API демонструє єдину відповідальність, мінімум вхідних даних, відсутність витоку деталей реалізації та розширюваність (<a href="../videos/3-things-that-make-a-programmer-better.html">3 речі, які роблять програміста кращим</a>, <a href="../videos/qa-2-answering-questions.html">Q&amp;A №2</a>). Він відкрито анти-TDD-пурист: цикл red/green годиться для виправлення багів, але під час проєктування звужує фокус — він цитує <em>A Philosophy of Software Design</em> про те, що TDD відводить увагу вбік, пише тести після коду і тримається класицистської позиції щодо моків: замість них проєктувати під підмінювані (injectable) реалізації (<a href="../videos/qa-2-answering-questions.html">Q&amp;A №2</a>). Детальне проєктування відбувається <em>під час</em> кодування, через прослідковування сценаріїв використання від початку до кінця; не передбачити все — нормально, і саме тому він любить думку Роберта Мартіна про те, що робота архітектора — <strong>відкладати рішення</strong>: хороша архітектура максимізує кількість неприйнятих рішень, бо розуміння домену покращується щодня (<a href="../videos/microservices-main-problem.html">головна проблема мікросервісів</a>).</p><p>Стрими з вайб-кодингу показують цю доктрину в дії: чиста архітектура, продиктована Claude, — мета: тонкі контролери як клей, що його не тестують (товсті контролери й анемічна доменна модель — антипатерни), один application service на ендпоінт з єдиним <code>run()</code>, валідація всередині сервісу, ніколи не випускати доменні сутності назовні (приклад із хешем пароля), бо хешування паролів — доменна бізнес-політика; плюс його жарт про «API для терранів» проти JSON:API «для зергів» і відповіді завжди-HTTP-200-зі-статус-прапорцем, як у API Facebook (<a href="../videos/vibe-coding-new-project.html">стрим вайб-кодингу нового проєкту</a>). Проєктування також спирається на контекст, якого бракує ШІ: він <em>знає</em>, що гоночних трас буде ~100–200 (кешувати назавжди, без пагінації), а точок телеметрії — мільйони (в жодному разі не окрема сутність на кожну точку) — з доказами: Rust→WASM-оптимізація Figma з першого дня і Monaco з VS Code, який відкинув усі веб-фреймворки (тоді як Atom помер від повільності): деякі властивості мають бути закладені в дизайн від самого початку (<a href="../videos/vibe-coding-part-2.html">вайб-кодинг, частина 2</a>). Глибина — передумова проєктування: потрібно знати властивості кожної підсистеми — що станеться з БД, якщо даних стане вдвічі більше, як поводиться її ізоляція — щоб система в цілому відповідала своїм вимогам (<a href="../videos/learning-deeply-and-remembering.html">випуск про глибоке навчання і запамʼятовування</a>). Патерни й best practices не священні: патерн — це лише класифікована назва того, що спрацювало, а best practices існують, щоб запобігати жахливому коду, а не породжувати найкращий — зрозумійте причини, і зможете свідомо їх порушувати; він наводить приклад event sourcing Ґреґа Янґа, канонізованого всупереч задуму автора (<a href="../videos/3-things-that-ruin-a-programmer.html">3 речі, які псують програміста</a>). У WebbyLab ця дисципліна інституціалізована: періодичні архітектурні ревʼю з чеклістами помилок (анемічна доменна модель включно), ревʼюер, який мусить зуміти запустити проєкт однією командою, C4-діаграма контейнерів, з якої відкривається ~2-годинний дзвінок, і план дій, що повторно перевіряється за ~2 місяці (<a href="../videos/code-review-how-google-does-it.html">випуск про код-ревʼю в Google</a>). Його книжковий канон: <a href="../books.html#clean-architecture">Clean Architecture</a> про шари, <a href="../books.html#domain-driven-design">Domain-Driven Design</a> про домен, <a href="../books.html#patterns-of-enterprise-application-architecture">Patterns of Enterprise Application Architecture</a> про те, як ці шари реально реалізуються (<a href="../videos/3-books-on-software-design.html">3 книжки про проєктування ПЗ</a>, <a href="../videos/five-star-books.html">книжки на пʼять зірок</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>
@@ -53,6 +66,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

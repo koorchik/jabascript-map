@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Алгоритмічна складність — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/algorithmic-complexity.html">
+<meta name="description" content="Наскрізний хребет каналу: складність — це те, як обсяг роботи росте з розміром входу, незалежно від швидкості мови. Фірмова ілюстрація Віктора — сила log N: 50…">
+<meta property="og:description" content="Наскрізний хребет каналу: складність — це те, як обсяг роботи росте з розміром входу, незалежно від швидкості мови. Фірмова ілюстрація Віктора — сила log N: 50…">
+<meta property="og:title" content="Алгоритмічна складність — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/algorithmic-complexity.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / algorithmic-complexity</p>
   <h1>Алгоритмічна складність</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-algorithms">#algorithms</a><a class="chip tag" href="../tags.html#tag-performance">#performance</a><a class="chip tag" href="../tags.html#tag-fundamentals">#fundamentals</a></div>
   <div class="topic-body"><p>Наскрізний хребет каналу: складність — це те, як обсяг роботи росте з розміром входу, незалежно від швидкості мови. Фірмова ілюстрація Віктора — сила log N: 50 рядків лінійно — це 50 кроків, але 100 трильйонів рядків — лише ~46 кроків бінарного пошуку; «log N — це практично безплатно» (<a href="../videos/why-database-indexes.html">навіщо потрібні індекси</a>, <a href="../videos/database-indexes-mysql-vs-postgres.html">індекси в MySQL і Postgres</a>, <a href="../videos/trees-search-algorithms-databases.html">дерева й алгоритми пошуку</a>). Зворотний бік, який він завжди додає: вставка у відсортований масив — це O(N), і саме в цьому вся мотивація деревоподібних структур (<a href="../videos/trees-search-algorithms-databases.html">дерева й алгоритми пошуку</a>).</p><p>Його наочний доказ — приклад зі злиттям повідомлень: зʼєднання 2000 повідомлень зі 100 користувачами через вкладений <code>find</code> коштує ~200 000 операцій; попередня побудова хеш-мапи зрізає це до ~2100 (O(n*m) → O(n+m)). Константи теж важать: чистий JS-бінарний пошук (O(log n)) на масштабі обганяє реалізований на C++ <code>Array.includes</code> (O(n)), а розрив ~23x між <code>find</code> та <code>includes</code> показує, що константи реалізації реальні — але асимптотику вони не переможуть ніколи (<a href="../videos/why-algorithms-matter.html">навіщо алгоритми</a>). Та сама оптика проходить крізь бенчмарки фільтра Блума: повний скан проти індексу, проти памʼяті, проти фільтра — це про порядки величин, а не тюнінг конфігів: «нас цікавить порядок цифр» (<a href="../videos/bloom-filter-and-firefox.html">фільтр Блума і Firefox</a>).</p><p>Його карʼєрний висновок: алгоритми руками пишеш рідко, але аналізувати складність мусиш — на код-ревʼю він регулярно виловлює O(n²) і кубічні гарячі точки, просто читаючи код. Бойова історія: рушій «Excel на JS» довелося переписати — топологічне сортування ітеративно, із саморобним стеком, — бо ліміт JS у ~10k стекових фреймів ламався на ланцюжках залежностей, довших за 10k клітинок (<a href="../videos/qa-2-answering-questions.html">Q&amp;A №2</a>). Розділ про аналіз складності в Cracking the Coding Interview він виокремлює як одну з двох по-справжньому цінних частин цієї книжки (<a href="../videos/five-star-books.html">книжки на пʼять зірок</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/why-algorithms-matter.html">Чому алгоритми важливі — розберемо на прикладі</a>
@@ -43,6 +56,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

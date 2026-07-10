@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Асиметричне шифрування — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/asymmetric-encryption.html">
+<meta name="description" content="За словами каналу, «одна концепція пари ключів, що пояснює половину сучасної безпеки»: пара публічного/приватного ключів, де — на відміну від єдиного спільного…">
+<meta property="og:description" content="За словами каналу, «одна концепція пари ключів, що пояснює половину сучасної безпеки»: пара публічного/приватного ключів, де — на відміну від єдиного спільного…">
+<meta property="og:title" content="Асиметричне шифрування — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/asymmetric-encryption.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / asymmetric-encryption</p>
   <h1>Асиметричне шифрування</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-security">#security</a><a class="chip tag" href="../tags.html#tag-cryptography">#cryptography</a><a class="chip tag" href="../tags.html#tag-encryption">#encryption</a></div>
   <div class="topic-body"><p>За словами каналу, «одна концепція пари ключів, що пояснює половину сучасної безпеки»: пара публічного/приватного ключів, де — на відміну від єдиного спільного секрету в симетричній криптографії — приватний ключ ніколи не треба нікому передавати. У присвяченому відео (<a href="../videos/asymmetric-encryption-digital-signatures.html">асиметричне шифрування і цифрові підписи</a>) Віктор на робочих демо з Node.js <code>crypto</code> показує, як ця одна ідея лежить в основі HTTPS, SSH-ключів, PGP, підписування JWT, блокчейн-гаманців і навіть Google Authenticator. В алгебрі він точний: у RSA два ключі взаємозамінні за своїми математичними властивостями, тоді як на еліптичних кривих ролі публічного і приватного зафіксовані — EC дає обмін ключами Діффі—Геллмана і підписи, але не пряме шифрування в стилі RSA.</p><p>Ключовий практичний момент, який він наголошує: асиметрична криптографія приблизно в 100–1000 разів повільніша за симетричну, тому реальні системи використовують її лише для обміну симетричним ключем, а далі переходять на AES/ChaCha20 для самих даних — саме так працює TLS. І незмінне попередження, через цитату Брюса Шнаєра: ніколи не пишіть власну криптографію. У <a href="../videos/3-things-that-make-a-programmer-better.html">3 речах, які роблять програміста кращим</a> він доводить: навіть розуміння публічних/приватних ключів на рівні абетки — саме те, що щеплює розробників від класичних хибних уявлень «JWT зашифрований» і «Basic Auth безпечний».</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/asymmetric-encryption-digital-signatures.html">Що захищає твої дані й гроші від хакерів? Асиметричне шифрування та цифровий підпис</a>
@@ -35,6 +48,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gemini — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/tools/gemini.html">
+<meta name="description" content="LLM-асистент Google (колишній Bard) — модель із найдовшою дугою на каналі: від комедійного реквізиту до щоденної робочої конячки. Її родовід канал розбирав…">
+<meta property="og:description" content="LLM-асистент Google (колишній Bard) — модель із найдовшою дугою на каналі: від комедійного реквізиту до щоденної робочої конячки. Її родовід канал розбирав…">
+<meta property="og:title" content="Gemini — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/tools/gemini.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html">Теми</a><a href="../tools.html" class="active">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
-  <p class="eyebrow mono"><a href="../concepts.html">інструменти</a> / gemini</p>
+  <p class="eyebrow mono"><a href="../tools.html">інструменти</a> / gemini</p>
   <h1>Gemini</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-ai">#ai</a><a class="chip tag" href="../tags.html#tag-llm">#llm</a><a class="chip tag" href="../tags.html#tag-google">#google</a><a class="chip tag" href="../tags.html#tag-assistant">#assistant</a></div>
   <div class="topic-body"><p>LLM-асистент Google (колишній Bard) — модель із найдовшою дугою на каналі: від комедійного реквізиту до щоденної робочої конячки. Її родовід канал розбирав наживо на google-io-2023-watch-party: Bard починався як урізана LaMDA, чий запуск провалився, був перебудований на PaLM 2 на тлі злиття Google Brain і DeepMind під керівництвом Деміса Хассабіса, і в Україні без VPN був узагалі недоступний. Під час qa-and-plans-for-2024 продукт буквально перейменували з Bard на Gemini просто по ходу стріму; він тестував Bard Advanced і оцінив його не гіршим за GPT-4.</p><p>Два шорти-розмови з Gemini — найпам&#x27;ятніший AI-матеріал каналу: у голосовому режимі сократівський стиль Віктора «а як ти собі це уявляєш?» оголює крихку модель світу — впевнені, корисні на слух варіанти (ближча мийка, бронювання, «насолоджуйтесь прогулянкою»), при цьому забувається, що машину треба взяти з собою (<a href="../videos/ai-replacing-us-gemini-talk-1.html">На тему заміни нас ШІ — розмова з Gemini (short)</a>); і принципові відмови під співчутливим тиском — «я не можу брехати чи робити такі заяви» — з рольовою грою, допущеною лише всередині явно позначеної фікційної рамки (<a href="../videos/ai-and-jobs-gemini-talk-2.html">Чи готовий ШІ залишити нам наші робочі місця? Продовжуємо бесіди з Gemini (short)</a>).</p><p>До <a href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a> це його найуживаніша LLM для роботи й технічних задач: Gemini 2 чисто проходить його бенчмарк з бінарним пошуком у файлі (1.5 була регресувала), а Gemini Deep Research збирає матеріали з вебу в звіти. В еру вайб-кодингу вона тримає слот брейнштормінгу: ідеї застосунків і описи кожного екрана, які згодовуються <a href="../tools/google-stitch.html">Google Stitch</a> і <a href="../tools/claude-code.html">Claude Code</a> (<a href="../videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>), плюс принагідні нотатки, що Gemini CLI написаний на React і що Gemini має добре писати код під Android, бо Google тренує її на власному стеку (<a href="../videos/vibe-coding-part-2.html">Вайб-кодінг — частина 2 (стрим)</a>). Вона навіть попрацювала асистентом-дослідником для позатематичного глибокого занурення в повний привід — «я замучив цей Gemini» (<a href="../videos/awd-systems-compared.html">Яка різниця між повними приводами в авто? (Subaru vs Porsche vs Audi vs Toyota)</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/ai-replacing-us-gemini-talk-1.html">На тему заміни нас ШІ — розмова з Gemini (short)</a>
@@ -41,6 +54,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

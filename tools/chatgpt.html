@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ChatGPT — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/tools/chatgpt.html">
+<meta name="description" content="Чат-асистент від OpenAI — щоденний інструмент Віктора для брейнштормінгу та пояснення чого завгодно ще з ранніх AI-випусків каналу, і стабільний «відмінник»…">
+<meta property="og:description" content="Чат-асистент від OpenAI — щоденний інструмент Віктора для брейнштормінгу та пояснення чого завгодно ще з ранніх AI-випусків каналу, і стабільний «відмінник»…">
+<meta property="og:title" content="ChatGPT — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/tools/chatgpt.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html">Теми</a><a href="../tools.html" class="active">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
-  <p class="eyebrow mono"><a href="../concepts.html">інструменти</a> / chatgpt</p>
+  <p class="eyebrow mono"><a href="../tools.html">інструменти</a> / chatgpt</p>
   <h1>ChatGPT</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-ai">#ai</a><a class="chip tag" href="../tags.html#tag-llm">#llm</a><a class="chip tag" href="../tags.html#tag-openai">#openai</a><a class="chip tag" href="../tags.html#tag-assistant">#assistant</a></div>
   <div class="topic-body"><p>Чат-асистент від OpenAI — щоденний інструмент Віктора для брейнштормінгу та пояснення чого завгодно ще з ранніх AI-випусків каналу, і стабільний «відмінник» його бенчмарка з бінарним пошуком у файлі (GPT-4 ще у 2023 впорався із задачею на Node.js Buffer, на якій Bard безпорадно буксував). У qa-and-plans-for-2024 це асистент на щодень: брейнштормінг, генерація п&#x27;яти варіантів назви змінної, розбір бінарних форматів, пояснення команд і виводу Unix — фактично заміна man-сторінок. Саме тому він радить новачкам Node, а не Bun: ChatGPT просто краще знає стандартний стек. На той момент він ще жодного разу не пробував генерувати ним юніт-тести.</p><p>До <a href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a> використання стало структурованішим: найновіші версії проходять його бенчмарк, для брейнштормінгу він бере o3-mini-high і тримає в ChatGPT «проєкт» із постійним системним промптом (React + Material UI + TypeScript, звичайні функції замість стрілкових), щоб прототипи виходили в його власних конвенціях — легкий попередник ідеї <code>CLAUDE.md</code>, що лежить в основі його воркфлоу <a href="../concepts/vibe-coding.html">вайб-кодингу</a>.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

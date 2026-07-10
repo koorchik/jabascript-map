@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Абстракції — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/abstractions.html">
+<meta name="description" content="Проєктування абстракцій — третя з трьох навичок, які, за першим відео каналу, перетворюють хорошого кодера на видатного програміста, з двома ключовими…">
+<meta property="og:description" content="Проєктування абстракцій — третя з трьох навичок, які, за першим відео каналу, перетворюють хорошого кодера на видатного програміста, з двома ключовими…">
+<meta property="og:title" content="Абстракції — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/abstractions.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / abstractions</p>
   <h1>Абстракції</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-engineering-craft">#engineering-craft</a><a class="chip tag" href="../tags.html#tag-software-design">#software-design</a><a class="chip tag" href="../tags.html#tag-abstractions">#abstractions</a></div>
   <div class="topic-body"><p>Проєктування абстракцій — третя з трьох навичок, які, за першим відео каналу, перетворюють хорошого кодера на видатного програміста, з двома ключовими аспектами: звʼязаністю (coupling) та звʼязністю (cohesion) (<a href="../videos/3-things-that-make-a-programmer-better.html">3 речі, які роблять програміста кращим</a>); якісний код, своєю чергою, визначається як абстракції, що продовжують працювати, коли ви їх розширюєте, — код, який ніколи не доводиться викидати (<a href="../videos/3-things-that-ruin-a-programmer.html">3 речі, які псують програміста</a>). Його практичний тест для межі: бізнес-логіка не повинна знати про веб-фреймворк — якщо ті самі сервісні класи могли б працювати під CLI чи Telegram-ботом (він показує свого семирічного гольф-бота на Perl 6, збудованого саме за цим патерном), абстракція правильна (<a href="../videos/vibe-coding-new-project.html">вайб-кодинг нового проєкту</a>). Навичку проєктування він вважає по суті синонімом навички роботи з абстракціями — саме вона визначає твій рівень у Google, і саме тому він називає Go «абсолютно не окей» для систем із важкою бізнес-логікою на кшталт бухгалтерії: мові бракує конструкцій для абстракцій, вона годиться для мікросервісів, проксі та CLI-інструментів, тоді як для складних застосунків він бере TypeScript/C# (Q&amp;A і плани на 2024, <a href="../videos/qa-2-answering-questions.html">Q&amp;A №2</a>).</p><p>Його найоригінальніше спостереження — він виніс його на слайд DOU Day — у тому, що менш досвідчені розробники <em>бояться створювати нові абстракції</em>: вони перевикористовують або копіюють наявні структури і майже ніколи не виокремлюють нові. Це не страх нових файлів (файли розробники створюють постійно), а додаткове мислення, якого вимагає нова абстракція, плюс ще невміння бачити наслідки (<a href="../videos/voice-3-scary-abstractions.html">страшні абстракції</a>). Бойові історії: <code>assertDate</code>, приліплений до TestFactory у WebbyLab, бо фабрика «вже всюди»; базові сервісні класи, що обростають утилітами для дат/файлів/сесій до стану God Object; його PoC-віджет на ~100 рядків, що виріс в один файл на 5000 рядків («так ВИ ж нам показали»); React-команда, якій було некомфортно додати поняття контролера, бо ніхто там такого не робив, — тоді як у Google його UI-контролери над низькорівневими шматками «чудово» спростили код. Існує і зворотний провал: ШІ перемудровує, вигадуючи ієрархії класів brand-manager із <code>registerNewBrand()</code> там, де вистачило б JSON-файлу з марками авто, — він постійно командує «видали цю абстракцію» (<a href="../videos/vibe-coding-part-2.html">вайб-кодинг, частина 2</a>). І конструктивний напрямок: специфічні для проєкту декларативні білдери (grid, form, PageBuilder) як свідомі додаткові шари, що кардинально здешевлюють роботу над UI (<a href="../videos/voice-2-faster-ui-development.html">швидша розробка UI</a>, див. <a href="../concepts/declarative-ui.html">декларативний UI</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/voice-3-scary-abstractions.html">Голосове №3 — страшні абстракції</a>
@@ -45,6 +58,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

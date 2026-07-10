@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UUID проти auto-increment у первинних ключах — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/uuid-vs-auto-increment.html">
+<meta name="description" content="Одне з найкраще виміряних тверджень каналу: випадкові UUID як первинні ключі катастрофічні в MySQL, але майже нешкідливі в Postgres — бо в MySQL сама таблиця є…">
+<meta property="og:description" content="Одне з найкраще виміряних тверджень каналу: випадкові UUID як первинні ключі катастрофічні в MySQL, але майже нешкідливі в Postgres — бо в MySQL сама таблиця є…">
+<meta property="og:title" content="UUID проти auto-increment у первинних ключах — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/uuid-vs-auto-increment.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / uuid-vs-auto-increment</p>
   <h1>UUID проти auto-increment у первинних ключах</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-databases">#databases</a><a class="chip tag" href="../tags.html#tag-mysql">#mysql</a><a class="chip tag" href="../tags.html#tag-postgresql">#postgresql</a><a class="chip tag" href="../tags.html#tag-primary-keys">#primary-keys</a><a class="chip tag" href="../tags.html#tag-performance">#performance</a></div>
   <div class="topic-body"><p>Одне з найкраще виміряних тверджень каналу: випадкові UUID як первинні ключі катастрофічні в MySQL, але майже нешкідливі в Postgres — бо в MySQL сама таблиця є кластеризованим <a href="../concepts/b-tree.html">B+-деревом</a>, відсортованим за PK, і кожен вторинний індекс містить PK усередині. Його цифри на 16 млн рядків: перехід на UUID PK роздуває таблицю з 4.3 GB до 7.8 GB, а вторинні індекси — з 2 GB до 5.5 GB (~70% байтів індексів — це просто первинний ключ); вставки сповільнюються з 4 с до 5.5 с на 1000 рядків на найшвидшому SSD і у 2.5–3 рази на повільніших дисках, бо випадкові UUID вбивають кешування вузлів B+-дерева, тоді як послідовні ID торкаються лише закешованих крайніх правих вузлів. Postgres, з heap-таблицями та фізичними покажчиками на рядки, майже невразливий. Бонусна дрібниця: якщо не вказати PK, MySQL все одно мовчки додасть прихований 6-байтовий (<a href="../videos/database-indexes-mysql-vs-postgres.html">індекси: MySQL проти Postgres</a>).</p><p>Його контрінтуїтивний рецепт: не обирати — лишити auto-increment PK для рушія, а UUID зберігати додатковою колонкою для зовнішнього світу; це менше і швидше за будь-який із «чистих» варіантів. Зберігання UUID як BINARY(16) замість 32-символьного тексту допомагає лише помірно (частка первинного ключа в індексах падає з ~70% до ~55%) і робить їх незручними для читання й відображення, тож він усе одно обрав би окрему колонку (<a href="../videos/qa-1-will-https-protect-you.html">Q&amp;A №1</a>). Та сама проблема виринає в повнотекстовому пошуку: UUID як ідентифікатори документів повністю вбивають стиснення posting-списків, тож їх мапують на цілі числа — саме це MySQL/InnoDB FULLTEXT і робить усередині зі своєю прихованою auto-increment колонкою FTS_DOC_ID (<a href="../videos/full-text-search-part-2-qa.html">повнотекстовий пошук, частина 2</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/database-indexes-mysql-vs-postgres.html">Як працюють індекси в базах на прикладі: MySQL vs Postgres, UUID vs Auto Increment</a>
@@ -37,6 +50,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

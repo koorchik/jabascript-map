@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Структури даних — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/data-structures.html">
+<meta name="description" content="Позиція каналу: на практиці важливо знати властивості кожної структури та її складність за часом і памʼяттю, а не завчати реалізації — хоча Віктор і сам…">
+<meta property="og:description" content="Позиція каналу: на практиці важливо знати властивості кожної структури та її складність за часом і памʼяттю, а не завчати реалізації — хоча Віктор і сам…">
+<meta property="og:title" content="Структури даних — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/data-structures.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / data-structures</p>
   <h1>Структури даних</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-data-structures">#data-structures</a><a class="chip tag" href="../tags.html#tag-algorithms">#algorithms</a><a class="chip tag" href="../tags.html#tag-fundamentals">#fundamentals</a></div>
   <div class="topic-body"><p>Позиція каналу: на практиці важливо знати властивості кожної структури та її складність за часом і памʼяттю, а не завчати реалізації — хоча Віктор і сам реалізовував топологічне сортування та повнотекстовий пошук, коли цього вимагала задача (<a href="../videos/qa-2-answering-questions.html">друге Q&amp;A</a>). Сімейство дерев дістає практичний розбір: бінарні дерева пошуку («менше — ліворуч, більше — праворуч»), їхній вироджений випадок (вставте 1..5 по порядку — і дерево схлопується у звʼязний список з пошуком за O(N)), самобалансувальні повороти в стилі AVL, що тримають різницю висот піддерев у межах 1, і стрибок до дискодружніх <a href="../concepts/b-tree.html">B-дерев</a> — з ремаркою, що файлова система ext4 використовує H-tree, спрощений аналог B-дерева (<a href="../videos/trees-search-algorithms-databases.html">дерева, алгоритми пошуку і бази даних</a>).</p><p>Поза деревами: хеш-мапа як ліки від злиття вкладеними циклами (один раз будуєш мапу з ключем user id, далі — лукапи за O(1)), у контрасті з відсортованими масивами — по них працює бінарний пошук, але сортування дороге, тож воно виправдане, лише якщо сортуєш один раз, а шукаєш сотню разів (<a href="../videos/why-algorithms-matter.html">навіщо потрібні алгоритми</a>). І ймовірнісна гілка: <a href="../concepts/bloom-filter.html">фільтри Блума</a>, реалізовані як бітовий масив, запакований в Uint32Array з адресацією бітів через ділення/остачу на 32. Його аргумент, що все це не теорія: Firefox з 2025 року возить каскад фільтрів Блума в продакшені, «Сільпо» ганяє фільтр у своїй CRM, а npm-бібліотеки для каскадного варіанта взагалі не існує — інколи структуру доводиться будувати самому (<a href="../videos/bloom-filter-and-firefox.html">фільтр Блума і Firefox</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/trees-search-algorithms-databases.html">Дерева. Пошук. Алгоритми. Бази даних</a>
@@ -37,6 +50,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

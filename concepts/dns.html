@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DNS (Domain Name System) — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/dns.html">
+<meta name="description" content="Канал подає DNS як флагман своєї серії «Як працює інтернет». До появи DNS (1985 рік) відповідність імен IP-адресам жила у hosts.txt, який поширювали вручну…">
+<meta property="og:description" content="Канал подає DNS як флагман своєї серії «Як працює інтернет». До появи DNS (1985 рік) відповідність імен IP-адресам жила у hosts.txt, який поширювали вручну…">
+<meta property="og:title" content="DNS (Domain Name System) — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/dns.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / dns</p>
   <h1>DNS (Domain Name System)</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-networking">#networking</a><a class="chip tag" href="../tags.html#tag-dns">#dns</a><a class="chip tag" href="../tags.html#tag-internet">#internet</a></div>
   <div class="topic-body"><p>Канал подає DNS як флагман своєї серії «Як працює інтернет». До появи DNS (1985 рік) відповідність імен IP-адресам жила у hosts.txt, який поширювали вручну; його слід зберігся у вигляді <code>/etc/hosts</code>, який автор редагує наживо, підмінюючи rozetka на IP Google, — і показує і власний DNS-кеш браузера, і те, що <em>сервер</em> теж перевіряє домен у HTTP-запиті, тож самого лише збігу IP замало (<a href="../videos/how-dns-works-basics.html">основи DNS</a>). Він проходить поширені типи записів (A/AAAA/MX/TXT/SPF/NS), подає DNS round-robin (кілька IP для одного імені) як найпростіше балансування навантаження і failover та розповідає про DNS-over-HTTPS (DoH) — браузери забирають резолвінг з операційної системи. Улюблена пастка: DNS працює поверх UDP на порту 53, але переходить на TCP, щойно відповідь перевищує ~512 байтів (прапорець truncated/TC стає 1), — продемонстровано на великому TXT-записі; лише 17% із 215 учасників опитування знали про це. Він також наголошує, що резолвінг виконує glibc/libc, а не браузер чи ядро, і що systemd тримає кешувальний резолвер на 127.0.0.53.</p><p>Другий випуск відповідає на питання «чи кожен DNS-сервер зберігає всі домени?» — ні (<a href="../videos/dns-recursive-resolution.html">рекурсивний резолвінг DNS</a>). На наскрізному прикладі щойно купленого itquiz.com і хмарного сервера він проходить ієрархію: кореневі сервери (зона <code>.</code>) → сервери TLD (<code>.com</code>) → авторитетний сервер (Cloudflare), який зберігає A-запис; на кожному кроці повертаються NS-записи, а резолвер стартує з ~13 root hints. Кожен крок він доводить руками через <code>dig +norecurse</code> (секція additional несе glue-IP, щоб заощадити зайві звернення) і автоматизує весь ланцюжок через <code>dig +trace</code>. TTL пояснено чітко: в itquiz.com було 300 с, типові — 24 год; низький TTL для IP, що часто змінюються, високий — для стабільних, і саме тому зміна IP розповзається нерівномірно, поки спливають кеші.</p><p>DNS — це ще й поверхня атаки у випуску про DHCP: підставний DNS-сервер, виданий через DHCP, отруює резолвінг імен, і автор перенаправляє itquiz.com на IP Google через <a href="../tools/dnsmasq.html">dnsmasq</a>, отримуючи помилку невідповідності сертифіката на планшеті жертви (<a href="../videos/dhcp-cafe-wifi.html">DHCP у кафе</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/how-dns-works-basics.html">Як працює Інтернет: основи DNS</a>
@@ -41,6 +54,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

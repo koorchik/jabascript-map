@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Соціальна інженерія — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/social-engineering.html">
+<meta name="description" content="Позиція каналу: найслабша ланка — це рідко криптографія, це людина, яку вмовили співпрацювати. Головний розбір теми — випуск про телефонних шахраїв, де Віктор…">
+<meta property="og:description" content="Позиція каналу: найслабша ланка — це рідко криптографія, це людина, яку вмовили співпрацювати. Головний розбір теми — випуск про телефонних шахраїв, де Віктор…">
+<meta property="og:title" content="Соціальна інженерія — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/social-engineering.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / social-engineering</p>
   <h1>Соціальна інженерія</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-security">#security</a><a class="chip tag" href="../tags.html#tag-social-engineering">#social-engineering</a><a class="chip tag" href="../tags.html#tag-scams">#scams</a></div>
   <div class="topic-body"><p>Позиція каналу: найслабша ланка — це рідко криптографія, це людина, яку вмовили співпрацювати. Головний розбір теми — <a href="../videos/voice-4-phone-scammers.html">випуск про телефонних шахраїв</a>, де Віктор програє справжній запис дзвінка шахраїв йому самому і розбирає їхній сценарій. Усе починається з роботизованого повідомлення «записано за розпорядженням Національного банку України, вашу картку заблоковано» — трюк із подачею, через який вхідний дзвінок сприймається як щось офіційне, що жертва нібито ініціювала сама, тож вона забуває, що це <em>їй</em> подзвонили. Далі жива «операторка» на імʼя Світлана нарощує довіру. Він проходить по ознаках обману: назва банку непомітно зʼїжджає з Національного банку на Ощадбанк, вони згадують ПриватБанк, якого він не називав, а просте запитання «яка мета дзвінка?» розвалює весь сценарій. Захист, який він повторює (відео він записав, щоб попередити батьків не менше, ніж підписників): справжні банки ніколи не просять промовляти вголос конфіденційні ідентифікатори — PIN, паспортні дані, кодове слово. Тверезна деталь: шахраї вже знали його імʼя та номер, а отже його контактні дані витекли до шахрайської бази.</p><p>Та сама схема маніпуляції зʼявляється і в технічних атаках: у <a href="../videos/qa-1-will-https-protect-you.html">випуску про те, чи захистить вас HTTPS</a> атака з підробленим сертифікатом працює лише тому, що жертву переконують двічі клацнути й встановити сертифікат «щоб запрацював інтернет у кафе» — криптографія надійна, експлойтом є людина. А <a href="../videos/voice-1-admin-keys-for-developers.html">голосове про адмінські ключі для розробників</a> показує суміжний сценарій провалу: взагалі без атакувальника — лише довіра та зручність, які ведуть до надто широкого доступу і реальної шкоди.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/voice-4-phone-scammers.html">Голосове №4 — як мені дзвонили шахраї</a>
@@ -35,6 +48,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

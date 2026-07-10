@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Google Cloud Run — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/tools/google-cloud-run.html">
+<meta name="description" content="Cloud Run — serverless-платформа для контейнерів у Google Cloud: приносиш будь-який контейнер і отримуєш scale-to-zero, метрики та CI/CD «у два кліки» — і це…">
+<meta property="og:description" content="Cloud Run — serverless-платформа для контейнерів у Google Cloud: приносиш будь-який контейнер і отримуєш scale-to-zero, метрики та CI/CD «у два кліки» — і це…">
+<meta property="og:title" content="Google Cloud Run — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/tools/google-cloud-run.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html">Теми</a><a href="../tools.html" class="active">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
-  <p class="eyebrow mono"><a href="../concepts.html">інструменти</a> / google-cloud-run</p>
+  <p class="eyebrow mono"><a href="../tools.html">інструменти</a> / google-cloud-run</p>
   <h1>Google Cloud Run</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-cloud">#cloud</a><a class="chip tag" href="../tags.html#tag-serverless">#serverless</a><a class="chip tag" href="../tags.html#tag-containers">#containers</a><a class="chip tag" href="../tags.html#tag-google">#google</a></div>
   <div class="topic-body"><p>Cloud Run — serverless-платформа для контейнерів у Google Cloud: приносиш будь-який контейнер і отримуєш scale-to-zero, метрики та CI/CD «у два кліки» — і це буквально продукт, який будувала команда Віктора в Google (<a href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>). Він говорить про нього і як інсайдер, і як задоволений клієнт: переніс усі свої pet-проєкти з DigitalOcean на Cloud Run і виявив, що це «значно дешевше» (пара доларів за маленький сервіс), а ще розкриває, що Cloud Functions v2 під капотом — це буквально контейнер Cloud Run (qa-and-plans-for-2024). Його порада щодо витрат: не вірте калькулятору запитів — просимулюйте день реального трафіку і помножте на 30. На watch party з I/O 2023 співведучий Микита (теж із команди Cloud Run) додає деталей до пітчу: перевірка підпису образів на етапі деплою, кастомні домени, нарешті інтегровані через Firebase Hosting, і його mytalks.tech, що працює на Cloud Run приблизно втричі дешевше, ніж на DigitalOcean (google-io-2023-watch-party). У <a href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a> Віктор анонсує підтримку GPU — «serverless 2.0» — націлену на inference-навантаження.</p><p>Cloud Run — це ще й сцена його найособистішої історії з Google (<a href="../videos/voice-5-why-i-left-google.html">Голосове №5 — чому я звільнився з Google</a>): його проєкт Application Canvas дозволяв перетягувати сервіси Cloud Run і бази даних на канву, деплоїти цілі застосунки та зливати архітектури. Спершу він вийшов як «Cloud Run integrations», його показували на кіноутах Google Cloud Next і хвалило топменеджмент — а потім проєкт скасували й видалили, що обнулило його трек на підвищення до L6 і стало однією з причин піти з Google.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>
@@ -33,6 +46,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>
