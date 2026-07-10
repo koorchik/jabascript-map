@@ -16,6 +16,11 @@ sources and asks questions. The user browses the wiki in Obsidian.
 | Wiki | `wiki/` | LLM-owned markdown. All knowledge lives here. |
 | Website | `website/` | Fully generated static learning-navigator site (Ukrainian). NEVER edit by hand — regenerate with `python3 scripts/build_website.py` after wiki changes. Track order/names/taglines and the excluded stale streams live in the script's `TRACKS`/`EXCLUDED` constants. |
 
+**The website must never lag the wiki.** Every ingest of new video data (and
+any other change under `wiki/`) ends with `python3 scripts/build_website.py`
+in the same session, fixing any warnings it prints. A wiki change without a
+site rebuild is an incomplete task.
+
 ## Wiki structure
 
 - `wiki/index.md` — catalog of every page by category, one line each. Update on every ingest.
