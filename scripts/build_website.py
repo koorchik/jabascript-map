@@ -18,7 +18,7 @@ WIKI = ROOT / "wiki"
 TIMED = ROOT / "transcripts" / "timed"
 OUT = ROOT / "website"
 
-SITE_NAME = "jabascript · навігатор"
+SITE_NAME = "Віктор Турський про програмування · навігатор"
 CHANNEL_URL = "https://www.youtube.com/@AboutProgramming"
 
 # Streams whose content is time-bound and stale — kept in the wiki, hidden on the site.
@@ -469,7 +469,7 @@ def page_shell(*, title, body, depth, hue=None, active=""):
 </head>
 <body{accent}>
 <header class="site-head">
-  <a class="brand" href="{prefix}index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <a class="brand" href="{prefix}index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
   <nav>{nav_html}</nav>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
@@ -477,7 +477,7 @@ def page_shell(*, title, body, depth, hue=None, active=""):
 {body}
 </main>
 <footer class="site-foot">
-  <p>Неофіційна навчальна мапа YouTube-каналу <a href="{CHANNEL_URL}">jabascript</a>.
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="{CHANNEL_URL}">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
 <script src="{prefix}assets/app.js"></script>
@@ -542,7 +542,7 @@ def render_index(videos, tracks, pages):
     body = f"""<section class="hero">
   <p class="eyebrow mono">{len(videos)} відео · один канал · одна мапа</p>
   <h1>Компʼютерні науки —<br>у правильному порядку.</h1>
-  <p class="lede">jabascript — україномовний канал Віктора про те, як усе працює насправді:
+  <p class="lede">Віктор Турський про програмування — україномовний канал про те, як усе працює насправді:
   бази даних, мережі, криптографія, ШІ та інженерна майстерність.
   Цей навігатор вибудовує {len(videos)} відео у шість навчальних треків,
   веде до потрібної хвилини кожного відео на YouTube — а ще збирає полицю
