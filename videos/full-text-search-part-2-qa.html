@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body style="--h:38">
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html" class="active">Треки</a><a href="../concepts.html">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="video-page">
+  <p class="eyebrow mono"><a href="../tracks/databases-and-data-structures.html">Бази даних і структури даних</a> / крок 06</p>
+  <div class="video-head">
+    <h1>Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації</h1>
+    <div class="video-meta mono"><span class="badge badge-advanced">просунутий</span> <span>14:34</span>
+      <a href="https://youtu.be/LaXU5tlY3ZM" target="_blank" rel="noopener">дивитися на YouTube ↗</a>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="full-text-search-part-2-qa"> переглянуто</label>
+    </div>
+  </div>
+  <div class="player-grid">
+    <div class="player-frame">
+      <iframe id="player" data-embed="https://www.youtube-nocookie.com/embed/LaXU5tlY3ZM"
+        src="https://www.youtube-nocookie.com/embed/LaXU5tlY3ZM?rel=0"
+        title="Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="chapter-pane">
+      <h2 class="pane-title mono">Розділи</h2>
+      <ol class="chapters"><li>
+  <button type="button" class="chapter" data-t="0">
+    <span class="tc mono">00:00</span>
+    <span class="ch-label">Новий формат: Q&amp;A від патронів на теми, вже розібрані на каналі</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/LaXU5tlY3ZM?t=0" target="_blank" rel="noopener" aria-label="Відкрити 00:00 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="66">
+    <span class="tc mono">01:06</span>
+    <span class="ch-label">Ідея глядача: розділити <a href="../concepts/inverted-index.html">інвертований індекс</a>, щоб позбутися <a href="../concepts/base64.html">Base64</a></span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/LaXU5tlY3ZM?t=66" target="_blank" rel="noopener" aria-label="Відкрити 01:06 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="174">
+    <span class="tc mono">02:54</span>
+    <span class="ch-label">скрипт split-index: крихітний файл токенів зі зсувами + сирий бінарний файл entries</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/LaXU5tlY3ZM?t=174" target="_blank" rel="noopener" aria-label="Відкрити 02:54 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="218">
+    <span class="tc mono">03:38</span>
+    <span class="ch-label">Результат: 1.3 ГБ стає 938 МБ + 2 МБ; словник токенів влазить у пам’ять, entries може жити на S3 з Range-читаннями</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/LaXU5tlY3ZM?t=218" target="_blank" rel="noopener" aria-label="Відкрити 03:38 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="327">
+    <span class="tc mono">05:27</span>
+    <span class="ch-label">Бенчмарк: 15 мс на старому індексі проти ~5 мс на розділеному</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/LaXU5tlY3ZM?t=327" target="_blank" rel="noopener" aria-label="Відкрити 05:27 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="476">
+    <span class="tc mono">07:56</span>
+    <span class="ch-label">Q1: збіг фрагмента всередині слова — треба індексувати по-іншому, з n-грамами</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/LaXU5tlY3ZM?t=476" target="_blank" rel="noopener" aria-label="Відкрити 07:56 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="583">
+    <span class="tc mono">09:43</span>
+    <span class="ch-label">Довідник токенайзерів Elasticsearch; n-грами роздувають індекс у 2–3 рази</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/LaXU5tlY3ZM?t=583" target="_blank" rel="noopener" aria-label="Відкрити 09:43 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="667">
+    <span class="tc mono">11:07</span>
+    <span class="ch-label">Q2: UUID як id документів перемагають стиснення постингів — зіставте їх із цілими числами (прихований FTS_DOC_ID у MySQL)</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/LaXU5tlY3ZM?t=667" target="_blank" rel="noopener" aria-label="Відкрити 11:07 на YouTube">↗</a>
+</li></ol>
+    </div>
+  </div>
+  <section class="video-about">
+    <h2>Про що це відео</h2>
+    <p>Перше відео в новому форматі, який автор придумав для своїх патронів: збирати питання під наявним відео і відповідати на них ґрунтовно — тут це продовження до його власноруч побудованого <a href="../concepts/inverted-index.html">інвертованого індексу</a> (<a href="../videos/full-text-search-inverted-indexes.html">повнотекстовий пошук</a>). Головне покращення прийшло від пропозиції глядача і вбиває накладні витрати <a href="../concepts/base64.html">Base64</a> з частини 1: замість одного текстового файлу з бінарником, загорнутим у base64, розділити індекс на <strong>два файли</strong> — крихітний файл <code>tokens</code> (відсортовані токени + байтовий зсув/довжина блока постингів кожного) і сирий бінарний файл <code>entries</code>. Результат: 1.3 ГБ стискається до 938 МБ + 2 МБ файл токенів; латентність пошуку падає з 15 мс до ~5 мс, бо файл токенів на 2 МБ (зазвичай 200–300 тис. токенів навіть на масштабі, ~6 МБ) просто читається в пам’ять і бінарно шукається там, а потім рівно одне діапазонне читання дістає потрібні постинги. Його улюблений наслідок: великий файл entries може лежати на S3/хмарному сховищі й запитуватися через HTTP Range-запити — робочий повнотекстовий пошук по величезних даних «без жодного сервера, що тримає щось у пам’яті». Q1: як шукати за <em>фрагментом</em> слова (наприклад, «cks» усередині «socks»)? Відповідь: шукати по-іншому не можна, треба по-іншому <em>індексувати</em> — токенайзер вирішує, що можна знайти: n-gram токенайзери (він малює триграми, що ковзають по «family»), edge n-gram, letter/whitespace/keyword/pattern токенайзери, розбиття URL, навіть власні токенайзери, що витягують хештеги чи IP — проходить по довіднику токенайзерів <a href="../tools/elasticsearch.html">Elasticsearch</a> — ціною у 2–3 рази більшого індексу. Q2: як стискати індекс, коли id документів — це UUID? Відповідь: по суті ніяк — кожна серйозна схема стиснення списків постингів (він показує оглядову статтю про них) припускає відсортовані <em>цілі числа</em>; тож зіставте UUID з int’ами (додаткова int-колонка чи окремий маппінг UUID↔int), що саме й робить <a href="../tools/mysql.html">MySQL</a>/InnoDB усередині своєю прихованою auto-increment колонкою <code>FTS_DOC_ID</code> (<a href="../concepts/index-compression.html">стиснення індексу</a>, <a href="../concepts/uuid-vs-auto-increment.html">UUID проти auto-increment у первинних ключах</a>).</p>
+  </section>
+  <section class="video-takeaways">
+    <h2>Головне</h2>
+    <ul><li>Розділення індексу на малий файл токенів (токен + байтовий зсув/довжина) і сирий бінарний файл entries усуває +33% накладних витрат base64: 1.3 ГБ → 938 МБ + 2 МБ, а пошук пришвидшився з 15 мс до ~5 мс (<a href="../concepts/inverted-index.html">Інвертований індекс</a>, <a href="../concepts/base64.html">Base64</a>).</li><li>Словник токенів крихітний (88 тис. токенів ≈ 2 МБ; рідко понад 200–300 тис. ≈ 6 МБ), тож він може повністю жити в пам’яті й бінарно шукатися за ~0.2 мс — жодного ризикованого бінарного пошуку по величезному файлу, де можна приземлитися посеред рядка.</li><li>Ідея serverless-пошуку, яку він виділяє: залишити файл entries на S3/CDN і діставати постинги через HTTP Range-запити — повнотекстовий пошук по величезних даних без stateful-сервера пошуку.</li><li>«Якщо хочеш шукати по-іншому — індексуй по-іншому»: пошук підрядка в слові потребує n-gram (або іншого власного) токенайзера, а не хитрішого запиту — показано на триграмах по «family» і довіднику токенайзерів Elasticsearch (n-gram, edge n-gram, letter, keyword, pattern, URL, власні витягувачі хештегів/IP) (<a href="../concepts/full-text-search.html">Повнотекстовий пошук</a>).</li><li>N-gram-індексація множить розмір індексу в 2–3 рази: ті самі документи, але кожен id документа тепер з’являється проти кожної n-грами замість одного слова — «тут особливо нічого не вдієш».</li><li>Алгоритми <a href="../concepts/index-compression.html">стиснення</a> списків постингів (delta, varbyte, багато варіантів з оглядової статті, яку він показує) усі передбачають відсортовані цілі числа; найкращого немає — різні дані вимагають різних схем, а varbyte працює пристойно всюди.</li><li>UUID як id документів перемагають ці компресори; стандартне рішення — маппінг UUID→ціле число — саме це й робить FULLTEXT у MySQL через приховану 8-байтну auto-increment колонку <code>FTS_DOC_ID</code> (можна оголосити її самому, щоб уникнути прихованої колонки) (<a href="../concepts/uuid-vs-auto-increment.html">UUID проти auto-increment у первинних ключах</a>, <a href="../tools/mysql.html">MySQL</a>).</li><li>На повільнішому залізі розрив жорстокий: звичайний <code>LIKE</code>-пошук по тих самих даних на HDD просто впав по таймауту за хвилини, тоді як інвертований індекс на розділених файлах працював нормально.</li></ul>
+  </section>
+  <section class="video-covered">
+    <h2>Теми відео</h2>
+    <div class="chip-row"><a class="chip" href="../concepts/full-text-search.html">Повнотекстовий пошук</a><a class="chip" href="../concepts/inverted-index.html">Інвертований індекс</a><a class="chip" href="../concepts/index-compression.html">Стиснення індексу</a><a class="chip" href="../concepts/base64.html">Base64</a><a class="chip" href="../concepts/uuid-vs-auto-increment.html">UUID проти auto-increment у первинних ключах</a><a class="chip" href="../tools/elasticsearch.html">Elasticsearch</a><a class="chip" href="../tools/mysql.html">MySQL</a></div>
+  </section>
+  <section class="video-paths">
+    <h2>Частина цих треків</h2>
+    <div class="path-slot" style="--h:38">
+  <div class="path-name mono"><a href="../tracks/databases-and-data-structures.html">Бази даних і структури даних</a> · крок 06/09</div>
+  <div class="pn-row"><a class="pn prev" href="full-text-search-inverted-indexes.html">← Як працює повнотекстовий пошук: будуємо інвертований індекс на практиці</a><a class="pn next" href="bloom-filter-and-firefox.html">Геніальна структура даних й як її покращив Firefox →</a></div>
+</div>
+  </section>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

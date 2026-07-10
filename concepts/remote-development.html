@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Віддалена розробка — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / remote-development</p>
+  <h1>Віддалена розробка</h1>
+  <div class="topic-body"><p>Позиція каналу, натхнена гугловими сетапами «відкрив URL — і маєш середовище розробки»: процесна архітектура VS Code робить віддалену розробку майже безкоштовною (<a href="../videos/vscode-in-the-browser.html">VS Code у браузері</a>). Він доводить, що Remote-SSH потайки встановлює <code>vscode-server</code> на цільову машину (порівнюючи список процесів до і після), що розширення діляться на локальну і віддалену половини (Prettier ставиться на <em>сервер</em>), що порти прокидаються автоматично (віддалений <code>:3000</code> з’являється локально на <code>127.0.0.1:3000</code>) і що дебагер працює точно так, ніби все локально. Суто браузерний варіант — це <code>vscode.dev</code> плюс окремий CLI <code>code tunnel</code> з device-автентифікацією через GitHub: повноцінна розробка, розширення, прокидання портів і дебагер — з голої вкладки браузера. Він також окреслює ширший простір опцій: WSL, Codespaces (той самий механізм, на його думку) і dev-контейнери як «сетап у нуль кліків». Причина, чому все це працює через NAT і фаєрволи: і браузер, і dev-сервер з’єднуються <em>назовні</em> з проксі, який зшиває їх докупи, — саме тому тунелі вимагають входу через GitHub.</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/vscode-in-the-browser.html">Як налаштувати повноцінну розробку в Visual Studio Code в браузері</a>
+  <span class="meta mono">13:13</span>
+  <p class="step-note">прихований vscode-server у Remote-SSH, поділ розширень на локальні/віддалені, автопрокидання портів, тунелі vscode.dev, WSL/Codespaces/dev-контейнери</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/language-server-protocol.html">Language Server Protocol (LSP)</a> — дизайн «окремий процес на кожну мову», який зробив віддалених агентів дешевими <a href="../concepts/nat-and-networking.html">NAT і основи мереж</a> — тунелі через вихідне проксі, що обходять NAT/фаєрволи <a href="../tools/vs-code.html">VS Code</a> — редактор, чия архітектура все це уможливлює <a href="../concepts/ssh-key-authentication.html">Автентифікація за SSH-ключами</a> — як автентифікується з’єднання Remote-SSH <a href="../concepts/sandboxing-and-isolation.html">Пісочниці та ізоляція</a> — dev-контейнери як ізольовані середовища</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Інвертований індекс — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / inverted-index</p>
+  <h1>Інвертований індекс</h1>
+  <div class="topic-body"><p>Структура даних, що розв&#x27;язує те, чого не вміють B-tree-індекси: пошук слова всередині рядка. Сама структура — слово → список пар (id документа, позиція); позиції відкривають пошук точних фраз і запити за близькістю слів. Підсумок Віктора: «концептуально це все — решта інженерія» (<a href="../videos/full-text-search-inverted-indexes.html">інвертовані індекси</a>). І саме в інженерії живе його бойова історія: він власноруч написав інвертований індекс над 300 TB даних у продакшені — незмінні поденні індекси, геоатрибути, власна мова запитів із парсером на PEG-граматиці, зберігання в <a href="../tools/mongodb.html">MongoDB</a> і паралельні запити по днях — і виступив про це на KyivJS.</p><p>Q&amp;A-продовження несе запропоновану глядачем оптимізацію, яка йому дуже сподобалася: розділити індекс на крихітний файл токенів (токен + байтовий offset/довжина, ~2 MB на 88K токенів — реальні словники рідко перевищують 200–300K токенів, тож він цілком уміщається в пам&#x27;яті для бінарного пошуку) плюс сирий бінарний файл постингів, що прибирає накладні витрати base64: 1.3 GB → 938 MB, затримка пошуку 15 мс → 5 мс. Його улюблений наслідок: файл постингів може жити на S3 чи CDN і опитуватися через HTTP Range-запити — serverless-повнотекстовий пошук (<a href="../videos/full-text-search-part-2-qa.html">Q&amp;A до другої частини</a>). Q&amp;A-випуск додає рамку: інвертований індекс і Є тією ефективною структурою — оптимізації міняють серіалізацію (дельта-стиснення, VByte), а не замінюють її (<a href="../videos/qa-1-will-https-protect-you.html">Q&amp;A №1</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/why-database-indexes.html">Навіщо потрібні індекси в базі даних — розберемо на прикладі</a>
+  <span class="meta mono">19:22</span>
+  <p class="step-note">представлений як механізм (він же повнотекстовий індекс) для пошуку всередині рядка; анонсований як майбутнє практичне відео</p></li><li><a href="../videos/full-text-search-inverted-indexes.html">Як працює повнотекстовий пошук: будуємо інвертований індекс на практиці</a>
+  <span class="meta mono">48:15</span>
+  <p class="step-note">збудований наживо на JavaScript: слово → (id документа, позиція), фразові запити і запити за близькістю, бойова історія про 300 TB у продакшені</p></li><li><a href="../videos/full-text-search-part-2-qa.html">Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації</a>
+  <span class="meta mono">14:34</span>
+  <p class="step-note">розділення на файл токенів + бінарні постинги (1.3 GB → 938 MB, 15 мс → 5 мс) і serverless-пошук через S3 Range-запити</p></li><li><a href="../videos/qa-1-will-https-protect-you.html">Питання та відповіді №1: чи захистить HTTPS?</a>
+  <span class="meta mono">17:50</span>
+  <p class="step-note">міняєш серіалізацію, а не структуру; дельта-стиснення дає більшим індексам поміститися в RAM</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/full-text-search.html">Повнотекстовий пошук</a> — конвеєр довкола структури <a href="../concepts/index-compression.html">Стиснення індексу</a> — дельта-кодування і varbyte над posting-списками <a href="../concepts/map-reduce.html">Map-reduce</a> — як він збудував це без 10–15 GB RAM <a href="../concepts/database-indexes.html">Індекси баз даних</a> — B-tree-побратим, який він доповнює <a href="../concepts/base64.html">Base64</a> — накладні витрати серіалізації, які прибрала оптимізація з частини 2</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

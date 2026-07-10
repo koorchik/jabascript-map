@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Декларативний UI (білдери на схемах) — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / declarative-ui</p>
+  <h1>Декларативний UI (білдери на схемах)</h1>
+  <div class="topic-body"><p>Ідея, позичена прямо з геймдеву: як редактор рівнів Doom видає декларативні файли рівнів, так і Віктор пропонує описувати UI схемами, які компілюються в компоненти (<a href="../videos/voice-2-faster-ui-development.html">швидша розробка UI</a>). Інструменти на кшталт <a href="../tools/react-admin.html">React Admin</a> уже роблять це крос-проєктно, але вони стандартизовані під найменший спільний знаменник; його сильніша теза — що <em>проєктно-специфічний</em> білдер варто будувати навіть усередині ОДНОГО проєкту: це значно дешевше за крос-проєктний фреймворк, а всі ці екрани ти все одно писав би. Оскільки білдер специфічний для проєкту, коли приходить запит на фічу, він розширює схему того ж дня — і кожен екран застосунку підхоплює поведінку консистентно.</p><p>Його власний шаруватий стек: грід-білдер, чия схема розгортає ~2 його параметри в ~5 низькорівневих параметрів гріда <a href="../tools/material-ui.html">Material</a>, кодуючи консистентну поведінку, збереження налаштувань, сумісність з API, дії для рядків, підтвердження видалення і навігацію; білдер форм; і PageBuilder, що видає цілі CRUD-сторінки — завжди з можливістю спуститися на рівень нижче для по-справжньому кастомних сторінок (<a href="../videos/voice-2-faster-ui-development.html">швидша розробка UI</a>). Його дивує, що підхід непопулярний: люди використовують бібліотеки форм «сирими» на кожному екрані, хоча в кожному проєкті є кастомізації (скажімо, специфічні для API формати помилок, привʼязані до полів), які ще один декларативний шар закодував би рівно один раз. Подано з його явним застереженням: це обмін ідеями — «можливо, на вашому проєкті це не полетить».</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/voice-2-faster-ui-development.html">Голосове №2 — як швидше розробляти інтерфейс</a>
+  <span class="meta mono">07:35</span>
+  <p class="step-note">уся концепція: аналогія з редактором рівнів, шари грід/форми/PageBuilder, розширення схеми того ж дня, чому проєктно-специфічне бʼє фреймворк</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/abstractions.html">Абстракції</a> — білдер — це свідомо доданий шар абстракції із запасним виходом <a href="../concepts/software-design.html">Проєктування програмного забезпечення</a> — закодуй конвенції проєкту один раз замість кожного екрана <a href="../tools/react-admin.html">React Admin</a> — крос-проєктна версія тієї ж ідеї <a href="../tools/material-ui.html">Material UI</a> — низькорівневий шар, у який компілюються його білдери <a href="../tools/react.html">React</a> — екосистема, де він бачить команди, що бояться додавати такі шари</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ollama — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">інструменти</a> / ollama</p>
+  <h1>Ollama</h1>
+  <div class="topic-body"><p>Інструмент для запуску open-source LLM на власному залізі. Для Віктора головне — приватність, а не економія: він ганяє локальні моделі через Ollama з плагіном для редактора саме для того, щоб приватний код ніколи не потрапляв на публічні сервери (<a href="../videos/qa-2-answering-questions.html">Q&amp;A №2</a>) — його десктоп із 3090 (<a href="../videos/my-workspace-setup.html">огляд робочого місця</a>) робить це цілком практичним. У нього є повний порівняльний звіт про локальні моделі, який він, можливо, опублікує; спойлери поки невтішні — локальні дистиляти <a href="../tools/deepseek.html">DeepSeek</a> R1 аж до 70B провалюють його бенчмарк із бінарним пошуком у файлі, а малі моделі (≤14B), запущені як агенти через Cline, показали себе «трешово» (<a href="../videos/vibe-coding-part-2.html">вайб-кодинг, частина 2</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>
+  <span class="meta mono">1:16:50</span>
+  <p class="step-note">локальні моделі через Ollama, щоб приватний код лишався локальним; неопублікований порівняльний звіт.</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/ai-coding-agents.html">ШІ-агенти для кодування</a>, <a href="../tools/deepseek.html">DeepSeek</a>, <a href="../tools/claude-code.html">Claude Code</a>, <a href="../concepts/workspace-and-hardware.html">Робоче місце і залізо</a></p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

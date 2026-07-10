@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Як працює Base64 і навіщо він потрібен — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body style="--h:2">
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html" class="active">Треки</a><a href="../concepts.html">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="video-page">
+  <p class="eyebrow mono"><a href="../tracks/security-and-cryptography.html">Безпека і криптографія</a> / крок 02</p>
+  <div class="video-head">
+    <h1>Як працює Base64 і навіщо він потрібен</h1>
+    <div class="video-meta mono"><span class="badge badge-beginner">початковий</span> <span>20:00</span>
+      <a href="https://youtu.be/QCL0EOKDqKY" target="_blank" rel="noopener">дивитися на YouTube ↗</a>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="how-base64-works"> переглянуто</label>
+    </div>
+  </div>
+  <div class="player-grid">
+    <div class="player-frame">
+      <iframe id="player" data-embed="https://www.youtube-nocookie.com/embed/QCL0EOKDqKY"
+        src="https://www.youtube-nocookie.com/embed/QCL0EOKDqKY?rel=0"
+        title="Як працює Base64 і навіщо він потрібен" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="chapter-pane">
+      <h2 class="pane-title mono">Розділи</h2>
+      <ol class="chapters"><li>
+  <button type="button" class="chapter" data-t="0">
+    <span class="tc mono">00:00</span>
+    <span class="ch-label">Вступ: план — приклади, теорія, потім практика</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=0" target="_blank" rel="noopener" aria-label="Відкрити 00:00 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="43">
+    <span class="tc mono">00:43</span>
+    <span class="ch-label">Приклад 1: генеруємо <a href="../concepts/jwt.html">JWT</a> — чи може клієнт прочитати його без секрету?</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=43" target="_blank" rel="noopener" aria-label="Відкрити 00:43 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="85">
+    <span class="tc mono">01:25</span>
+    <span class="ch-label">Приклад 2: Basic Auth — що в заголовку Authorization на дроті</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=85" target="_blank" rel="noopener" aria-label="Відкрити 01:25 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="150">
+    <span class="tc mono">02:30</span>
+    <span class="ch-label">Приклад 3: зображення, вбудоване в HTML як <a href="../concepts/base64.html">Base64</a></span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=150" target="_blank" rel="noopener" aria-label="Відкрити 02:30 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="215">
+    <span class="tc mono">03:35</span>
+    <span class="ch-label">Що таке Base64: бінарник як текст, придуманий для вкладень email</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=215" target="_blank" rel="noopener" aria-label="Відкрити 03:35 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="235">
+    <span class="tc mono">03:55</span>
+    <span class="ch-label">Бінарні дані проти текстових; чому сирі байти не можна просто надіслати як текст</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=235" target="_blank" rel="noopener" aria-label="Відкрити 03:55 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="366">
+    <span class="tc mono">06:06</span>
+    <span class="ch-label">Пошук алфавіту, що працює всюди: 256? 128? 64 працює</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=366" target="_blank" rel="noopener" aria-label="Відкрити 06:06 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="430">
+    <span class="tc mono">07:10</span>
+    <span class="ch-label">Конструкція: A–Z, a–z, 0–9, +, / — 3 байти стають 4 шестибітними символами</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=430" target="_blank" rel="noopener" aria-label="Відкрити 07:10 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="541">
+    <span class="tc mono">09:01</span>
+    <span class="ch-label">Ціна: 8/6 означає, що дані ростуть на 33%</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=541" target="_blank" rel="noopener" aria-label="Відкрити 09:01 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="584">
+    <span class="tc mono">09:44</span>
+    <span class="ch-label">Base32: 5 бітів на символ, +60%, нечутливий до регістру і безпечний для імен файлів</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=584" target="_blank" rel="noopener" aria-label="Відкрити 09:44 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="709">
+    <span class="tc mono">11:49</span>
+    <span class="ch-label">Base16 — це просто hex: CSS #FFFFFF — це байти, по два символи кожен</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=709" target="_blank" rel="noopener" aria-label="Відкрити 11:49 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="773">
+    <span class="tc mono">12:53</span>
+    <span class="ch-label">Декодуємо JWT у терміналі: підписаний, не зашифрований; base64url і padding</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=773" target="_blank" rel="noopener" aria-label="Відкрити 12:53 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="903">
+    <span class="tc mono">15:03</span>
+    <span class="ch-label">Декодуємо Basic Auth через <code>atob</code>: login:password фактично plaintext</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=903" target="_blank" rel="noopener" aria-label="Відкрити 15:03 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="994">
+    <span class="tc mono">16:34</span>
+    <span class="ch-label">Вбудовуємо жабку: будуємо <code>data:...;base64,</code> URI руками</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=994" target="_blank" rel="noopener" aria-label="Відкрити 16:34 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="1062">
+    <span class="tc mono">17:42</span>
+    <span class="ch-label">UUID — це Base16: 32 hex-символи декодуються в 16 сирих байтів на диску</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/QCL0EOKDqKY?t=1062" target="_blank" rel="noopener" aria-label="Відкрити 17:42 на YouTube">↗</a>
+</li></ol>
+    </div>
+  </div>
+  <section class="video-about">
+    <h2>Про що це відео</h2>
+    <p>Практичне продовження відео про хешування/кодування/шифрування (<a href="../videos/hashing-encoding-encryption-difference.html">у чому різниця</a>): автор демонструє <a href="../concepts/base64.html">Base64</a> у трьох реальних місцях, де ви щодня його зустрічаєте — токен <a href="../concepts/jwt.html">JWT</a>, заголовок HTTP Basic Auth і зображення, вбудоване в HTML як data URI — а тоді виводить кодування з перших принципів на планшеті й наживо декодує все в терміналі через <code>base64 --decode</code>. Його рамка: Base64 — це просто бінарні дані, подані як текст, придумані, щоб email (спершу лише текстовий) міг нести вкладення; за тією самою логікою отримуєте Base32 і Base16 (який і є просто hex). Усі приклади лежать у GitHub-репозиторії, посилання в описі, і він зазначає, що Base64 знову з’явиться у майбутніх відео про інвертований індекс.</p>
+  </section>
+  <section class="video-takeaways">
+    <h2>Головне</h2>
+    <ul><li>Основна конструкція: не можна знайти 256 (чи навіть 128) символів, які переживуть будь-яке <a href="../concepts/encoding.html">кодування</a> і будь-яку систему, а 64 — можна: <code>A–Z</code>, <code>a–z</code>, <code>0–9</code>, <code>+</code>, <code>/</code>. Тож беремо бінарний потік по 6 бітів за раз: 3 байти (24 біти) стають 4 символами. Оскільки кожен символ потім передається як 8-бітний байт, дані ростуть на 8/6 ≈ 33%.</li><li>Демо 1, <a href="../concepts/jwt.html">JWT</a>: він генерує токен і показує, що клієнт абсолютно ТАКИ може прочитати його без секрету — заголовок (метадані алгоритму підпису) і payload (<code>user: Viktor</code>) — це звичайний JSON, який декодується з Base64. JWT підписаний, а не зашифрований. Насправді він використовує <strong>base64url</strong>: <code>+</code> і <code>/</code> замінені на <code>-</code> і <code>_</code>, щоб токени влазили в URL, <code>=</code> — це padding, а <code>.</code> — безпечний роздільник, бо його немає в алфавіті.</li><li>Демо 2, HTTP Basic Auth: заголовок <code>Authorization: Basic …</code> — це просто <code>login:password</code> у Base64 — декодується навіть вбудованими в браузер <code>atob</code>/<code>btoa</code>. Це фактично plaintext, надісланий із кожним запитом; «єдине, що мене захищає — це <a href="../concepts/https-tls.html">HTTPS</a> — сам Basic Auth не додає нічого».</li><li>Демо 3, data URI: зображення, вбудоване прямо в HTML як <code>data:&lt;mime-type&gt;;base64,…</code> — він кодує в base64 картинку жабки й підставляє її, лишаючи HTML-файл суто текстовим.</li><li>Base32 (5 бітів/символ, +60% розміру) має реальну нішу: його звичайний алфавіт нечутливий до регістру і без слешів, тож він безпечний для імен файлів і директорій навіть на регістронечутливих файлових системах; <code>0</code> і <code>1</code> виключено, бо вони схожі на <code>O</code> і <code>l</code>.</li><li>Base16 — ЦЕ hex: 4 біти на символ, 2× розмір. Ви завжди бачили його в CSS-кольорах — <code>#FFFFFF</code> — це байти, закодовані по два символи кожен.</li><li>Практичний висновок, що повертає до відео про <a href="../concepts/database-indexes.html">індекси</a> (UUID проти auto-increment): 32-символьний hex UUID — це Base16 — декодуй його, і те саме значення — це 16 сирих байтів, удвічі менше, що він доводить файлами на диску.</li></ul>
+  </section>
+  <section class="video-covered">
+    <h2>Теми відео</h2>
+    <div class="chip-row"><a class="chip" href="../concepts/base64.html">Base64</a><a class="chip" href="../concepts/encoding.html">Кодування</a><a class="chip" href="../concepts/jwt.html">JWT</a><a class="chip" href="../concepts/https-tls.html">HTTPS і TLS</a><a class="chip" href="../concepts/security-practices.html">Практики безпеки</a><a class="chip" href="../concepts/database-indexes.html">Індекси баз даних</a></div>
+  </section>
+  <section class="video-paths">
+    <h2>Частина цих треків</h2>
+    <div class="path-slot" style="--h:2">
+  <div class="path-name mono"><a href="../tracks/security-and-cryptography.html">Безпека і криптографія</a> · крок 02/10</div>
+  <div class="pn-row"><a class="pn prev" href="hashing-encoding-encryption-difference.html">← Хешування, кодування, шифрування — у чому різниця?</a><a class="pn next" href="asymmetric-encryption-digital-signatures.html">Що захищає твої дані й гроші від хакерів? Асиметричне шифрування та цифровий підпис →</a></div>
+</div>
+  </section>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

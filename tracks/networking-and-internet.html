@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мережі та інтернет — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body style="--h:190">
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html" class="active">Треки</a><a href="../concepts.html">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="track-page">
+  <p class="eyebrow mono"><a href="../index.html#tracks">треки</a> / 02</p>
+  <h1>Мережі та інтернет</h1>
+  <div class="meta mono">8 відео · 3 год 10 хв</div>
+  <div class="progress big" data-slugs="speed-of-light-website-latency,how-dns-works-basics,dns-recursive-resolution,dhcp-cafe-wifi,qa-1-will-https-protect-you,bloom-filter-and-firefox,vm-network-isolation,vscode-in-the-browser"><span></span></div>
+  <div class="track-intro"><p>Цей кластер збирає матеріал каналу «Як працює інтернет» — свідомо багатосерійний цикл, у якому Віктор відбудовує сантехніку інтернету з перших принципів і, як завжди, доводить кожне твердження наживо — з <code>dig</code>, Wireshark, справжніми хмарними серверами й маленькими тулзами. Наскрізна думка: абстракції, які ми сприймаємо як даність (URL, що резолвиться; сторінка, що вантажиться «швидко»; замочок, що означає «безпечно»), ховають шари раунд-тріпів, ієрархій і припущень про довіру, які здебільшого тримаються — доки хтось у кавʼярняному Wi-Fi не вирішить інакше. Цикл охоплює резолвінг імен (<a href="../concepts/dns.html">DNS</a>), приєднання пристрою до мережі (<a href="../concepts/dhcp.html">DHCP</a>), транспортний рівень і трансляцію адрес (<a href="../concepts/nat-and-networking.html">NAT і мережі</a>), фізику, що обмежує швидкість (<a href="../concepts/latency-and-speed-of-light.html">затримки і швидкість світла</a>), і шар довіри поверх усього (<a href="../concepts/https-tls.html">HTTPS/TLS</a>) — з відгалуженнями у віддалену розробку й можливості браузера.</p></div>
+  <h2>Порядок перегляду</h2>
+  <ol class="stepper">
+  <li class="step">
+  <div class="node mono" data-watch-node="speed-of-light-website-latency">1</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/speed-of-light-website-latency.html">Як швидкість світла обмежує швидкість твого веб-сайту</a>
+      <span class="badge badge-beginner">початковий</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="speed-of-light-website-latency"> переглянуто</label>
+    </div>
+    <p class="step-note">спершу фізична межа: як швидкість світла і хендшейки TCP/TLS роздувають бекенд на 20 мс до ~420 мс</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/latency-and-speed-of-light.html">Затримка і швидкість світла</a><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a><a class="chip" href="../concepts/dns.html">DNS (Domain Name System)</a><a class="chip" href="../concepts/https-tls.html">HTTPS і TLS</a><a class="chip" href="../concepts/deep-learning-of-fundamentals.html">Глибоке вивчення фундаментальних речей</a></div>
+    <div class="meta mono">13:01 · 8 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="how-dns-works-basics">2</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/how-dns-works-basics.html">Як працює Інтернет: основи DNS</a>
+      <span class="badge badge-beginner">початковий</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="how-dns-works-basics"> переглянуто</label>
+    </div>
+    <p class="step-note">DNS, частина 1: hosts.txt, типи записів, DoH, підступ переходу з UDP на TCP на 512 байтах</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/dns.html">DNS (Domain Name System)</a><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a><a class="chip" href="../concepts/dhcp.html">DHCP (Dynamic Host Configuration Protocol)</a><a class="chip" href="../concepts/latency-and-speed-of-light.html">Затримка і швидкість світла</a><a class="chip" href="../concepts/deep-learning-of-fundamentals.html">Глибоке вивчення фундаментальних речей</a><a class="chip" href="../tools/firefox.html">Firefox</a></div>
+    <div class="meta mono">22:58 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="dns-recursive-resolution">3</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/dns-recursive-resolution.html">Як працює Інтернет: рекурсивний пошук у DNS</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="dns-recursive-resolution"> переглянуто</label>
+    </div>
+    <p class="step-note">DNS, частина 2: root→TLD→authoritative, доведено вручну через dig</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/dns.html">DNS (Domain Name System)</a><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a><a class="chip" href="../concepts/latency-and-speed-of-light.html">Затримка і швидкість світла</a><a class="chip" href="../concepts/deep-learning-of-fundamentals.html">Глибоке вивчення фундаментальних речей</a></div>
+    <div class="meta mono">13:56 · 12 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="dhcp-cafe-wifi">4</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/dhcp-cafe-wifi.html">Що не так з Інтернетом в кафе? Розбираємо DHCP</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="dhcp-cafe-wifi"> переглянуто</label>
+    </div>
+    <p class="step-note">як пристрій узагалі потрапляє в мережу: DHCP через атаку rogue-сервером у кавʼярняному Wi-Fi, зібрану наживо на dnsmasq</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/dhcp.html">DHCP (Dynamic Host Configuration Protocol)</a><a class="chip" href="../concepts/dns.html">DNS (Domain Name System)</a><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a><a class="chip" href="../concepts/security-practices.html">Практики безпеки</a><a class="chip" href="../concepts/https-tls.html">HTTPS і TLS</a></div>
+    <div class="meta mono">21:27 · 20 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="qa-1-will-https-protect-you">5</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/qa-1-will-https-protect-you.html">Питання та відповіді №1: чи захистить HTTPS?</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="qa-1-will-https-protect-you"> переглянуто</label>
+    </div>
+    <p class="step-note">шар довіри поверх: у які саме способи HTTPS підводить у ворожій мережі</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/https-tls.html">HTTPS і TLS</a><a class="chip" href="../concepts/dhcp.html">DHCP (Dynamic Host Configuration Protocol)</a><a class="chip" href="../concepts/dns.html">DNS (Domain Name System)</a><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a><a class="chip" href="../concepts/security-practices.html">Практики безпеки</a><a class="chip" href="../concepts/social-engineering.html">Соціальна інженерія</a></div>
+    <div class="meta mono">17:50 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="bloom-filter-and-firefox">6</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/bloom-filter-and-firefox.html">Геніальна структура даних й як її покращив Firefox</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="bloom-filter-and-firefox"> переглянуто</label>
+    </div>
+    <p class="step-note">глибше в той самий шар довіри: відкликання сертифікатів і каскад CRLite у Firefox</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/bloom-filter.html">Фільтр Блума</a><a class="chip" href="../concepts/data-structures.html">Структури даних</a><a class="chip" href="../concepts/hashing.html">Хешування</a><a class="chip" href="../concepts/https-tls.html">HTTPS і TLS</a><a class="chip" href="../concepts/database-indexes.html">Індекси баз даних</a><a class="chip" href="../concepts/algorithmic-complexity.html">Алгоритмічна складність</a></div>
+    <div class="meta mono">51:02 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="vm-network-isolation">7</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/vm-network-isolation.html">Як не дати віртуальній машині лазити по вашій домашній мережі (офтоп для спонсорів)</a>
+      <span class="badge badge-advanced">просунутий</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="vm-network-isolation"> переглянуто</label>
+    </div>
+    <p class="step-note">сантехніка в дії: підмережі, маршрутизація і фаєрвол для ізоляції VirtualBox-VM через роутер pfSense</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a><a class="chip" href="../concepts/dhcp.html">DHCP (Dynamic Host Configuration Protocol)</a><a class="chip" href="../concepts/dns.html">DNS (Domain Name System)</a><a class="chip" href="../concepts/security-practices.html">Практики безпеки</a><a class="chip" href="../concepts/sandboxing-and-isolation.html">Пісочниці та ізоляція</a></div>
+    <div class="meta mono">36:08 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="vscode-in-the-browser">8</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/vscode-in-the-browser.html">Як налаштувати повноцінну розробку в Visual Studio Code в браузері</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="vscode-in-the-browser"> переглянуто</label>
+    </div>
+    <p class="step-note">відгалуження у віддалену розробку через SSH і тунелі vscode.dev</p>
+    <div class="chip-row small"><a class="chip" href="../tools/vs-code.html">VS Code</a><a class="chip" href="../concepts/remote-development.html">Віддалена розробка</a><a class="chip" href="../concepts/language-server-protocol.html">Language Server Protocol (LSP)</a><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a></div>
+    <div class="meta mono">13:13 · 8 розділів</div>
+  </div>
+</li>
+  </ol>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Хешування — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / hashing</p>
+  <h1>Хешування</h1>
+  <div class="topic-body"><p>Строго в один бік: довільний вхід — вихід фіксованого розміру; 1 TB чи 100 TB на вході, 20 байтів на виході, і, як жартує Віктор, «це не архівація»: дані назад не дістанеш. Відео-таксономія (<a href="../videos/hashing-encoding-encryption-difference.html">різниця між хешуванням, кодуванням і шифруванням</a>) розкладає хеш-функції на його три родини за призначенням: <strong>контрольні суми</strong> (MD5, SHA-1 — git використовує SHA-1), <strong>криптографічне хешування паролів</strong> (scrypt/bcrypt — саме так паролі насправді й зберігають, тож навіть атакувальник із повною базою та конфігами не зможе їх відновити) та <strong>хеші для хеш-таблиць</strong> (MurmurHash), створені заради швидкості й розподілу, а не безпеки. Ця односторонність — його відповідь на ще одне питання з підступом: паролі в базі не «зашифровані», а захешовані — там нема чого розшифровувати.</p><p>Канал подає хешування як міст між безпекою і структурами даних. У <a href="../videos/why-algorithms-matter.html">відео про те, навіщо алгоритми</a> JS-івські Map-и та об&#x27;єкти виявляються хеш-таблицями з пошуком за O(1) у середньому — саме це перетворює злиття за O(n·m) на O(n+m). У <a href="../videos/bloom-filter-and-firefox.html">випуску про фільтр Блума і Firefox</a> він занурюється в серйозні деталі реалізації: фільтру Блума потрібні швидкі та <em>рівномірно розподілені</em> хеші (наївна сума кодів символів ніколи не дотягнеться до дальнього кінця масиву з 10 млн бітів), тож він бере xxHash і перевірений трюк подвійного хешування — порахувати один 64-бітний хеш, розділити його на h1/h2 і вивести k хешів як h1 + i·h2; згадує і ланцюжки колізій у хеш-таблицях, і стару вразливість Python з атакою через хеш-колізії. З криптографічного боку підписи обчислюються над хешем документа (<a href="../videos/asymmetric-encryption-digital-signatures.html">цифрові підписи</a>), а IV у шифруванні порівняно із сіллю пароля, що ламає райдужні таблиці.</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/hashing-encoding-encryption-difference.html">Хешування, кодування, шифрування — у чому різниця?</a>
+  <span class="meta mono">08:41</span>
+  <p class="step-note">визначення (односторонність, фіксований вихід) і таксономія з трьох родин за призначенням: контрольні суми, хешування паролів, хеші для хеш-таблиць; обіцянка окремого відео про зберігання паролів</p></li><li><a href="../videos/bloom-filter-and-firefox.html">Геніальна структура даних й як її покращив Firefox</a>
+  <span class="meta mono">51:02</span>
+  <p class="step-note">якість хешів у бойових умовах: рівномірний розподіл, xxHash, трюк подвійного хешування h1 + i·h2, ланцюжки колізій, історія про атаку колізіями в Python</p></li><li><a href="../videos/why-algorithms-matter.html">Чому алгоритми важливі — розберемо на прикладі</a>
+  <span class="meta mono">23:44</span>
+  <p class="step-note">JS-івські Map-и/об&#x27;єкти — це хеш-таблиці; середнє O(1) на пошук — саме те, що згортає O(n·m) до O(n+m)</p></li><li><a href="../videos/asymmetric-encryption-digital-signatures.html">Що захищає твої дані й гроші від хакерів? Асиметричне шифрування та цифровий підпис</a>
+  <span class="meta mono">37:32</span>
+  <p class="step-note">підписується хеш/контрольна сума, а не сам документ; зміна документа міняє контрольну суму; IV порівняно із сіллю пароля</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/encoding.html">Кодування</a> і <a href="../concepts/encryption.html">Шифрування</a> — дві інші третини трійці, яку постійно плутають: кодування зворотне для будь-кого, шифрування — для власника ключа, хешування — ні для кого. <a href="../concepts/digital-signatures.html">Цифрові підписи</a> — побудовані поверх хешів. <a href="../concepts/bloom-filter.html">Фільтр Блума</a> — структура даних, що складається лише з хешів і бітів. <a href="../concepts/data-structures.html">Структури даних</a>, <a href="../concepts/algorithmic-complexity.html">Алгоритмічна складність</a> — хеш-таблиці як робоча конячка O(1).</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

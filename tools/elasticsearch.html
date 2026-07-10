@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elasticsearch — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">інструменти</a> / elasticsearch</p>
+  <h1>Elasticsearch</h1>
+  <div class="topic-body"><p>Подається не як магія, а як упакована версія саме того механізму, який Віктор будує руками: <a href="../concepts/inverted-index.html">інвертований індекс</a> плюс конвеєр токенізації — «воно працює так само». Він протиставляє його Sphinx — занепалому попереднику, який спочатку вмів лише перебудовувати індекс із нуля по cron (<a href="../videos/full-text-search-inverted-indexes.html">Як працює повнотекстовий пошук: будуємо інвертований індекс на практиці</a>). Його незмінна порада: у реальних проєктах беріть Elasticsearch (або вбудований FULLTEXT), але розумійте, що він робить під капотом.</p><p>У Q&amp;A-продовженні він використовує офіційний довідник токенізаторів Elasticsearch як каталог стратегій індексації — n-gram, edge n-gram, letter, whitespace, keyword, pattern, URL, кастомні екстрактори хештегів/IP — щоб відповісти на питання про пошук за підрядком, утілюючи свою максиму «хочеш шукати інакше — мусиш інакше індексувати» (із застереженням, що n-грами роздувають індекс у 2–3 рази) (<a href="../videos/full-text-search-part-2-qa.html">Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/full-text-search-inverted-indexes.html">Як працює повнотекстовий пошук: будуємо інвертований індекс на практиці</a>
+  <span class="meta mono">48:15</span>
+  <p class="step-note">названий продуктизованим інвертованим індексом; Sphinx як повчальний попередник</p></li><li><a href="../videos/full-text-search-part-2-qa.html">Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації</a>
+  <span class="meta mono">14:34</span>
+  <p class="step-note">зоопарк токенізаторів як меню стратегій індексації</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/full-text-search.html">повнотекстовий пошук</a>, <a href="../concepts/inverted-index.html">інвертований індекс</a>, <a href="../concepts/index-compression.html">стиснення індексів</a>, <a href="../tools/mysql.html">MySQL</a></p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

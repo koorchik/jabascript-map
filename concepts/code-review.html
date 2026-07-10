@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Код-ревʼю — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / code-review</p>
+  <h1>Код-ревʼю</h1>
+  <div class="topic-body"><p>Погляд каналу — з перших рук: Віктор спирається на практику ревʼю і у WebbyLab, і в Google та наполягає, що єдиного правильного способу не існує — але є прийоми, які роблять кращим будь-яке ревʼю (<a href="../videos/code-review-how-google-does-it.html">як код-ревʼю робить Google</a>). Стандартизуйте гайдлайни (коли обидва підходи однаково прийнятні — просто оберіть один, щоб на ревʼю перестали пересперечуватися про смак) і повністю автоматизуйте стиль, щоб час сеньйорів ніколи не витрачався на коментарі про форматування. Систему Google він описує зсередини: пір-ревʼю, де джуніор може ревʼюїти сеньйора, плюс окрема сертифікація «readability» для кожної мови (~6 місяців на TypeScript, роки на C++) — код не може змерджитися без апруву власника readability, тож у його команді джуніор з readability апрувив його код, тоді як його власного апруву було недостатньо. Сторона автора важить не менше: один концерн на MR, справжні описи, скриншоти і скрінкасти «до/після» — зробіть ревʼю максимально легким для ревʼюера.</p><p>Найгостріша його теза — що самого лише ревʼю на рівні PR ніколи не досить: кожен дифф може виглядати чудово, поки архітектура тихо перестає працювати, — саме тому Google додатково проводить post-launch-ревʼю, де автор фічі проводить команду по вже змердженому коду, а WebbyLab — періодичні архітектурні ревʼю (див. <a href="../concepts/technical-debt.html">технічний борг</a> і <a href="../concepts/software-design.html">проєктування ПЗ</a>). В епоху AI практика поширюється і на машинний код: написаний AI код треба читати рядок за рядком, як людський PR, — він дивиться, як правки Claude стрімляться в терміналі, і тисне Escape, щойно щось іде не так, або ревʼюїть повний дифф для великих one-shot змін — і зауважує, що AI вже ревʼюїть більше PR-ів, ніж пише, а решту все одно ревʼюїть людина (<a href="../videos/vibe-coding-part-2.html">вайб-кодинг, частина 2</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/code-review-how-google-does-it.html">Як покращити Code Review? Як це робить Google?</a>
+  <span class="meta mono">15:16</span>
+  <p class="step-note">базове відео: автоматизуйте стиль, стандартизуйте гайдлайни, пір-ревʼю Google + сертифікація readability, етикет автора, post-launch-ревʼю</p></li><li><a href="../videos/vibe-coding-part-2.html">Вайб-кодінг — частина 2 (стрим)</a>
+  <span class="meta mono">1:48:25</span>
+  <p class="step-note">ревʼю AI-коду як людського PR: нагляд за стрімом діффів, втручання клавішею Escape, AI в ролі ревʼюера</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/technical-debt.html">Технічний борг</a> — режим відмови, якого не бачить ревʼю окремих PR: кожен дифф виглядає добре, а архітектура гниє <a href="../concepts/code-quality.html">Якість коду</a> — те, що ревʼю зрештою захищає <a href="../concepts/software-design.html">Проєктування програмного забезпечення</a> — періодичне архітектурне ревʼю у WebbyLab доповнює ревʼю окремих PR <a href="../concepts/vibe-coding.html">Вайб-кодинг</a> — нагляд за AI-згенерованим кодом — це теж робота ревʼюера <a href="../books.html#software-engineering-at-google">Software Engineering at Google</a> — книжка, що стоїть за значною частиною процесів Google</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

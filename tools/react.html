@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>React — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">інструменти</a> / react</p>
+  <h1>React</h1>
+  <div class="topic-body"><p>React — домінантна JavaScript-бібліотека для UI, і канал несе рідкісну історію з перших рук: WebbyLab запустив React 0.4 у продакшн лише через два місяці після релізу (<a href="../videos/qa-2-answering-questions.html">Q&amp;A №2</a>, Q&amp;A та плани на 2024). Віктор пережив усю сагу зі стейт-менеджментом зсередини — Flux, який Facebook анонсував без реалізації, ком&#x27;юнітівський Fluxxor, його команда, що обгортала PubSubJS, аби зімітувати Flux, потім Redux зі своїм boilerplate, а тоді метапрограмні обгортки, щоб його приборкати. Його висновок після цього туру: єдиної «правильної» фронтенд-архітектури не існує — сьогодні в його pet-проєктах немає жодного Redux, лише React плюс власна бібліотека для доступу до API.</p><p>Розділ про SSR — це воєнна історія з трофеєм: його стаття про продакшн-рівень server-side rendering (що виросла з доповіді на KharkivJS) виграла всесвітній конкурс найкращої статті від react.js Newsletter, принісши йому квиток на ReactConf і афтепаті з командою React, включно з vjeux (Q&amp;A та плани на 2024). React також лежить в основі його дефолтного продуктового стеку — бекенд на Node, фронтенд на JS, мобайл на React Native — щоб одна команда працювала однією мовою.</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>
+  <span class="meta mono">1:16:50</span>
+  <p class="step-note">історія стейт-менеджменту з перших рук: React 0.4 у продакшні, Flux → Fluxxor → обгортка над PubSubJS → Redux → метапрограмування; сьогодні в його pet-проєктах Redux немає.</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../tools/nextjs.html">Next.js</a> — React-фреймворк для SSR, яким він тепер користується замість ручного SSR. <a href="../tools/nodejs.html">Node.js</a> — бекендна половина одномовного стеку. <a href="../tools/material-ui.html">Material UI</a> — бібліотека React-компонентів під його grid-конструкторами. <a href="../tools/react-admin.html">React Admin</a> — декларативна побудова адмінок в екосистемі React. <a href="../concepts/declarative-ui.html">Декларативний UI (білдери на схемах)</a> — парадигма, яку React зробив мейнстримом.</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

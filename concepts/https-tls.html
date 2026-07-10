@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTTPS і TLS — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / https-tls</p>
+  <h1>HTTPS і TLS</h1>
+  <div class="topic-body"><p>Канал раз у раз повертається до прямолінійної тези: HTTPS гарантує зашифрований канал і сертифікат, що відповідає URL, — і <em>нічого більше</em>. У watch party по Google I/O він пояснює, чому Chrome замінив замочок нейтральною іконкою-«тюнером»: замочок «нічого не каже про надійність вмісту», а фішингові сайти отримують точнісінько такий самий замочок, який користувачі помилково читають як знак довіри (watch party Google I/O 2023). Q&amp;A добиває тему: у мережі під контролем атакувальника HTTPS ламається кількома способами — даунгрейд до HTTP з фальшивою сторінкою, редирект на схожий домен із <em>власним</em> валідним HTTPS, що проксіює ваші запити, підсунута установка підставного сертифіката CA («для інтернету в кафе потрібен цей сертифікат») для MITM усього HTTPS, або браузерні 0-day на кшталт Spectre/Meltdown із JS. HSTS блокує даунгрейд і редирект, але великі сайти на кшталт Rozetka його не виставляють; VPN закриває весь цей клас атак (<a href="../videos/qa-1-will-https-protect-you.html">чи захистить вас HTTPS</a>).</p><p>З механіки: випуск про затримки показує, що TLS-handshake (Hello, сертифікат, обмін ключами в кожен бік) додає ~200 мс, тож реальний HTTPS-запит виміряно на ~800 мс проти ~400 мс за звичайний HTTP (<a href="../videos/speed-of-light-website-latency.html">швидкість світла і затримка сайтів</a>). Випуск про криптографію пояснює гібридний дизайн — симетричний шифр для даних, асиметрія для обміну ключем — і зазначає, що сучасний HTTPS перейшов з RSA-обміну ключами на Diffie-Hellman заради Perfect Forward Secrecy, підсвічуючи досі не розв&#x27;язаного «слона в кімнаті» — як безпечно роздати публічний ключ, для чого й існують сертифікати та ієрархія CA (<a href="../videos/asymmetric-encryption-digital-signatures.html">асиметричне шифрування і цифрові підписи</a>). Випуск про глибоке навчання бере TLS як приклад забування: глядач прочитав цілу книжку про TLS і за два місяці забув деталі протоколу, але <em>гілка</em> лишилася — ланцюжки сертифікатів, симетричний сесійний ключ, forward secrecy гарантована лише з Diffie-Hellman (<a href="../videos/learning-deeply-and-remembering.html">вчитися глибоко і пам&#x27;ятати</a>).</p><p>Ще два ракурси: <em>відкликання</em> сертифікатів — бойова історія за випуском про фільтр Блума: OCSP додавав окремий запит на кожен сайт, тож браузери від нього відмовилися, натомість скоротили строк життя сертифікатів (Let&#x27;s Encrypt: 3 місяці); Chrome возить лише топ ~1% відкликань (600 KB), лишаючи малі сайти беззахисними, а CRLite у Firefox покриває всі (<a href="../videos/bloom-filter-and-firefox.html">фільтр Блума у Firefox</a>). І про Basic Auth: облікові дані летять у Base64 (читабельно) з кожним запитом — «єдине, що мене захищає, — це HTTPS; сам Basic Auth не додає нічого» (<a href="../videos/how-base64-works.html">як працює Base64</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/qa-1-will-https-protect-you.html">Питання та відповіді №1: чи захистить HTTPS?</a>
+  <span class="meta mono">17:50</span>
+  <p class="step-note">способи, якими HTTPS ламається у ворожій мережі; HSTS, підставний CA, VPN як ліки</p></li><li><a href="../videos/speed-of-light-website-latency.html">Як швидкість світла обмежує швидкість твого веб-сайту</a>
+  <span class="meta mono">13:01</span>
+  <p class="step-note">~200 мс на TLS-handshake, виміряні 800 мс проти 400 мс</p></li><li><a href="../videos/asymmetric-encryption-digital-signatures.html">Що захищає твої дані й гроші від хакерів? Асиметричне шифрування та цифровий підпис</a>
+  <span class="meta mono">37:32</span>
+  <p class="step-note">гібрид симетричного та асиметричного, RSA→Diffie-Hellman, проблема роздачі ключів і CA</p></li><li><a href="../videos/learning-deeply-and-remembering.html">Навіщо глибоко розбиратися в речах й як менше забувати вивчене</a>
+  <span class="meta mono">07:28</span>
+  <p class="step-note">TLS як приклад «пам&#x27;ятай гілку, а не листя»</p></li><li><a href="../videos/bloom-filter-and-firefox.html">Геніальна структура даних й як її покращив Firefox</a>
+  <span class="meta mono">51:02</span>
+  <p class="step-note">відкликання сертифікатів, OCSP, CRLite</p></li><li><a href="../videos/how-base64-works.html">Як працює Base64 і навіщо він потрібен</a>
+  <span class="meta mono">20:00</span>
+  <p class="step-note">Basic Auth безпечний лише завдяки HTTPS</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../videos/asymmetric-encryption-digital-signatures.html">Що захищає твої дані й гроші від хакерів? Асиметричне шифрування та цифровий підпис</a> — машинерія обміну ключами під капотом TLS <a href="../concepts/encryption.html">Шифрування</a> — симетричне vs асиметричне, деталі, які TLS поєднує <a href="../concepts/bloom-filter.html">Фільтр Блума</a> — структура, якою Firefox перевіряє відкликання <a href="../concepts/dns.html">DNS (Domain Name System)</a> — підмінений DNS ловиться перевіркою сертифіката <a href="../concepts/dhcp.html">DHCP (Dynamic Host Configuration Protocol)</a> — атаки у ворожій мережі, які TLS переживає або ні <a href="../concepts/latency-and-speed-of-light.html">Затримка і швидкість світла</a> — handshake як велика складова затримки <a href="../concepts/security-practices.html">Практики безпеки</a> — модель загроз «чи захистить вас HTTPS»</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

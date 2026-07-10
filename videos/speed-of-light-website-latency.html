@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Як швидкість світла обмежує швидкість твого веб-сайту — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body style="--h:190">
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html" class="active">Треки</a><a href="../concepts.html">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="video-page">
+  <p class="eyebrow mono"><a href="../tracks/networking-and-internet.html">Мережі та інтернет</a> / крок 01</p>
+  <div class="video-head">
+    <h1>Як швидкість світла обмежує швидкість твого веб-сайту</h1>
+    <div class="video-meta mono"><span class="badge badge-beginner">початковий</span> <span>13:01</span>
+      <a href="https://youtu.be/dRnAeHeLRS8" target="_blank" rel="noopener">дивитися на YouTube ↗</a>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="speed-of-light-website-latency"> переглянуто</label>
+    </div>
+  </div>
+  <div class="player-grid">
+    <div class="player-frame">
+      <iframe id="player" data-embed="https://www.youtube-nocookie.com/embed/dRnAeHeLRS8"
+        src="https://www.youtube-nocookie.com/embed/dRnAeHeLRS8?rel=0"
+        title="Як швидкість світла обмежує швидкість твого веб-сайту" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="chapter-pane">
+      <h2 class="pane-title mono">Розділи</h2>
+      <ol class="chapters"><li>
+  <button type="button" class="chapter" data-t="0">
+    <span class="tc mono">00:00</span>
+    <span class="ch-label">Вступ: обмежувач веб-продуктивності, про який ніхто не говорить, — швидкість світла</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/dRnAeHeLRS8?t=0" target="_blank" rel="noopener" aria-label="Відкрити 00:00 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="22">
+    <span class="tc mono">00:22</span>
+    <span class="ch-label">Уявний експеримент: бекенд 20 мс у Лос-Анджелесі, клієнт у Києві, одне пряме оптоволокно на 10 000 км</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/dRnAeHeLRS8?t=22" target="_blank" rel="noopener" aria-label="Відкрити 00:22 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="130">
+    <span class="tc mono">02:10</span>
+    <span class="ch-label">Математика: світло в оптоволокні дає підлогу пінга 100 мс; перша діаграма — 120 мс проти бекенда на 20 мс</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/dRnAeHeLRS8?t=130" target="_blank" rel="noopener" aria-label="Відкрити 02:10 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="222">
+    <span class="tc mono">03:42</span>
+    <span class="ch-label">Додаємо TCP handshake (SYN / SYN-ACK / ACK): 220 мс, 11x часу бекенда</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/dRnAeHeLRS8?t=222" target="_blank" rel="noopener" aria-label="Відкрити 03:42 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="313">
+    <span class="tc mono">05:13</span>
+    <span class="ch-label">Додаємо TLS handshake: ~420 мс, 21x — а DNS і TCP slow start ще проігноровані</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/dRnAeHeLRS8?t=313" target="_blank" rel="noopener" aria-label="Відкрити 05:13 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="421">
+    <span class="tc mono">07:01</span>
+    <span class="ch-label">Навіщо існують CDN: справа в затримці, а не в пропускній здатності</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/dRnAeHeLRS8?t=421" target="_blank" rel="noopener" aria-label="Відкрити 07:01 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="443">
+    <span class="tc mono">07:23</span>
+    <span class="ch-label">Практика: nginx-сервер у Лос-Анджелесі, Wireshark-дамп звичайного HTTP-запиту (~400 мс)</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/dRnAeHeLRS8?t=443" target="_blank" rel="noopener" aria-label="Відкрити 07:23 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="572">
+    <span class="tc mono">09:32</span>
+    <span class="ch-label">Дамп HTTPS: ~800 мс реально проти 420 мс у теорії — і звичайний ping підтверджує 192 мс туди-назад</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/dRnAeHeLRS8?t=572" target="_blank" rel="noopener" aria-label="Відкрити 09:32 на YouTube">↗</a>
+</li></ol>
+    </div>
+  </div>
+  <section class="video-about">
+    <h2>Про що це відео</h2>
+    <p>Перше відео серії «як працює інтернет». Теза: коли говорять про веб-продуктивність, фокусуються на фронтенді, бекенді, First Meaningful Paint — але є величезний обмежувач, який ігнорують, і це <strong>швидкість світла</strong> (точніше, затримка). Автор крок за кроком будує розрахунок «на серветці», а потім перевіряє його на реальному сервері, показуючи, що запит із бекендом на 20 мс на практиці легко займає 400–800 мс — і майже все це round-trip-и.</p>
+  </section>
+  <section class="video-takeaways">
+    <h2>Головне</h2>
+    <ul><li><strong>Умови задачі:</strong> бекенд у Лос-Анджелесі/Сан-Франциско обробляє запит за 20 мс, клієнт у Києві, між ними ~10 000 км. Навіть за абсурдно оптимістичних припущень — один прямий оптоволоконний кабель, без Wi-Fi, без маршрутизації, без провайдерів — фізика задає нижню межу.</li><li><strong>Математика:</strong> світло у вакуумі — 300 000 км/с, а в оптоволокні ~200 000 км/с (на третину повільніше). 10 000 км в один бік = 50 мс, тож ping туди-назад = 100 мс <em>у найкращому разі</em>. Його конкретний висновок: з Києва ви ніколи не гратимете в CS:GO на американських серверах із пінгом менше 100 мс — швидкість світла не дозволить.</li><li><strong>Складаємо round-trip-и:</strong> запит (50 мс) + бекенд (20 мс) + відповідь (50 мс) = 120 мс, уже 6× часу бекенда. Додаємо <strong>TCP handshake</strong> (SYN / SYN-ACK / ACK) — ACK може нести дані запиту, тож це ~один додатковий round-trip → 220 мс (11× бекенда). Додаємо <strong>TLS handshake</strong> (Hello, сертифікат, обмін ключами, в обидва боки) → ~420 мс, 21× від 20 мс реальної роботи. І він зауважує, що це ще без DNS-запиту й TCP slow start (не можна одразу вистрелити 50 KB на повній швидкості).</li><li>Саме <em>тому</em> важливі CDN — не через «сиру» швидкість, а через зменшення затримки: статичні файли/зображення розміщуються ближче до користувача.</li><li><strong>Перевірка на практиці:</strong> він підняв nginx-сервер у Лос-Анджелесі, зробив субдомен і зняв у Wireshark звичайний HTTP- та HTTPS-запити. Сам TCP handshake показав ~190–192 мс на round-trip; запит/відповідь по звичайному HTTP — ~400 мс; повний HTTPS-запит вийшов ~800 мс — приблизно 2× від його теоретичних 420 мс. Звичайний <code>ping</code> підтвердив ~192 мс туди-назад — гірше за ідеал через реальний Wi-Fi, провайдерів і непрямі маршрути.</li><li>Він звертає увагу на ACK-и, що повторюються по всьому дампу: TCP мусить підтверджувати отримані дані (UDP — ні), і це базовий компроміс надійності та частина ціни.</li></ul>
+  </section>
+  <section class="video-covered">
+    <h2>Теми відео</h2>
+    <div class="chip-row"><a class="chip" href="../concepts/latency-and-speed-of-light.html">Затримка і швидкість світла</a><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a><a class="chip" href="../concepts/dns.html">DNS (Domain Name System)</a><a class="chip" href="../concepts/https-tls.html">HTTPS і TLS</a><a class="chip" href="../concepts/deep-learning-of-fundamentals.html">Глибоке вивчення фундаментальних речей</a></div>
+  </section>
+  <section class="video-paths">
+    <h2>Частина цих треків</h2>
+    <div class="path-slot" style="--h:190">
+  <div class="path-name mono"><a href="../tracks/networking-and-internet.html">Мережі та інтернет</a> · крок 01/08</div>
+  <div class="pn-row"><span class="pn dim">← початок треку</span><a class="pn next" href="how-dns-works-basics.html">Як працює Інтернет: основи DNS →</a></div>
+</div>
+  </section>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

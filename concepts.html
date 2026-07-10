@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бібліотека тем — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="index.html">Треки</a><a href="concepts.html" class="active">Теми</a><a href="books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="library-page">
+  <h1>Бібліотека тем</h1>
+  <p class="lede">Усе, що канал пояснював, у вигляді зворотного індексу:
+  оберіть тему — і побачите, які саме відео (і хвилини) її розкривають.</p>
+  <h2>Концепції</h2><ul class="library"><li>
+  <a href="concepts/b-tree.html">B-tree / B+ tree</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">Пояснення Віктора «біля дошки», чому індекси баз даних — не бінарні дерева пошуку: BST над 100 млн рядків має глибину ~23 рівні, і при ~5 мс на дисковий seek така глибина фатальна.</p>
+</li><li>
+  <a href="concepts/base64.html">Base64</a>
+  <span class="meta mono">6 відео</span>
+  <p class="step-note">Канонічний приклад <a href="concepts/encoding.html">кодування</a> на каналі — і того, чим кодування <em>не є</em> (захистом).</p>
+</li><li>
+  <a href="concepts/dhcp.html">DHCP (Dynamic Host Configuration Protocol)</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">Кут, під яким канал заходить у DHCP: «що насправді не так з Wi-Fi у кавʼярні?» (<a href="videos/dhcp-cafe-wifi.html">DHCP і Wi-Fi в кавʼярні</a>).</p>
+</li><li>
+  <a href="concepts/dns.html">DNS (Domain Name System)</a>
+  <span class="meta mono">6 відео</span>
+  <p class="step-note">Канал подає DNS як флагман своєї серії «Як працює інтернет».</p>
+</li><li>
+  <a href="concepts/https-tls.html">HTTPS і TLS</a>
+  <span class="meta mono">7 відео</span>
+  <p class="step-note">Канал раз у раз повертається до прямолінійної тези: HTTPS гарантує зашифрований канал і сертифікат, що відповідає URL, — і <em>нічого більше</em>.</p>
+</li><li>
+  <a href="concepts/jwt.html">JWT</a>
+  <span class="meta mono">5 відео</span>
+  <p class="step-note">Улюблена тема каналу для питань із підступом: JWT <em>виглядає</em> зашифрованим, але це просто base64url-кодування плюс <strong>підпис</strong> — фронтенд може прочитати весь payload без жодного ключа (<a href="videos/hashing-encoding-encryption-difference.html">різниця між хешуванням, кодуванням і шифруванням</a>).</p>
+</li><li>
+  <a href="concepts/language-server-protocol.html">Language Server Protocol (LSP)</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Канал представляє LSP як архітектурне рішення, що тихо окупилося пізніше (<a href="videos/vscode-in-the-browser.html">VS Code у браузері</a>).</p>
+</li><li>
+  <a href="concepts/map-reduce.html">Map-reduce</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Розглядається не як біг-дата-баззворд, а як практичний трюк, що дозволив Вікторові побудувати інвертований індекс на 16,5 млн рядків, не тримаючи 10–15 ГБ у RAM.</p>
+</li><li>
+  <a href="concepts/mvcc.html">MVCC (багатоверсійне керування конкурентним доступом)</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Розглядається як прихований механізм за реальною архітектурною відмінністю між MySQL і Postgres.</p>
+</li><li>
+  <a href="concepts/nat-and-networking.html">NAT і основи мереж</a>
+  <span class="meta mono">6 відео</span>
+  <p class="step-note">Це сполучна тканина серії каналу «Як працює інтернет» — та «сантехніка», поверх якої стоять випуски про DNS, DHCP і затримки.</p>
+</li><li>
+  <a href="concepts/test-driven-development.html">Test-driven development (TDD)</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Канал відкрито анти-TDD-пуристський.</p>
+</li><li>
+  <a href="concepts/uuid-vs-auto-increment.html">UUID проти auto-increment у первинних ключах</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">Одне з найкраще виміряних тверджень каналу: випадкові UUID як первинні ключі катастрофічні в MySQL, але майже нешкідливі в Postgres — бо в MySQL сама таблиця є кластеризованим <a href="concepts/b-tree.html">B+-деревом</a>, відсортованим за PK, і кожен вторинний індекс містить PK усередині.</p>
+</li><li>
+  <a href="concepts/webgpu.html">WebGPU</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Канал називає WebGPU тихою кілер-фічею показу на Google I/O (стрим Google I/O 2023).</p>
+</li><li>
+  <a href="concepts/abstractions.html">Абстракції</a>
+  <span class="meta mono">9 відео</span>
+  <p class="step-note">Проєктування абстракцій — третя з трьох навичок, які, за першим відео каналу, перетворюють хорошого кодера на видатного програміста, з двома ключовими аспектами: звʼязаністю (coupling) та звʼязністю (cohesion) (<a href="videos/3-things-that-make-a-programmer-better.html">3 речі, які роблять програміста кращим</a>); якісний код, своєю чергою, визначається як абстракції, що продовжують працювати, коли ви їх розширюєте, — код, який ніколи не доводиться викидати (<a href="videos/3-things-that-ruin-a-programmer.html">3 речі, які псують програміста</a>).</p>
+</li><li>
+  <a href="concepts/ssh-key-authentication.html">Автентифікація за SSH-ключами</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">На каналі це подано як <a href="concepts/asymmetric-encryption.html">асиметричне шифрування</a>, яким ви користуєтеся щодня, не помічаючи цього.</p>
+</li><li>
+  <a href="concepts/automated-testing.html">Автоматизоване тестування</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Стратегію тестування каналу найконкретніше викладено в ШІ-контексті стримів про вайб-кодинг (<a href="videos/vibe-coding-part-2.html">вайб-кодинг, частина 2</a>).</p>
+</li><li>
+  <a href="concepts/algorithmic-complexity.html">Алгоритмічна складність</a>
+  <span class="meta mono">7 відео</span>
+  <p class="step-note">Наскрізний хребет каналу: складність — це те, як обсяг роботи росте з розміром входу, незалежно від швидкості мови.</p>
+</li><li>
+  <a href="concepts/asymmetric-encryption.html">Асиметричне шифрування</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">За словами каналу, «одна концепція пари ключів, що пояснює половину сучасної безпеки»: пара публічного/приватного ключів, де — на відміну від єдиного спільного секрету в симетричній криптографії — приватний ключ ніколи не треба нікому передавати.</p>
+</li><li>
+  <a href="concepts/vibe-coding.html">Вайб-кодинг</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Вайб-кодинг у тому вигляді, як Віктор практикує його наживо на каналі, — це не «заплющ очі й приймай усе, що видасть модель», а дисциплінований, керований стандартами робочий процес, де людина залишається архітектором, а ШІ друкує.</p>
+</li><li>
+  <a href="concepts/web-performance.html">Вебперформанс (Core Web Vitals)</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Найповніший розбір на каналі — зі стриму-перегляду Google I/O (стрим Google I/O 2023).</p>
+</li><li>
+  <a href="concepts/remote-development.html">Віддалена розробка</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Позиція каналу, натхнена гугловими сетапами «відкрив URL — і маєш середовище розробки»: процесна архітектура VS Code робить віддалену розробку майже безкоштовною (<a href="videos/vscode-in-the-browser.html">VS Code у браузері</a>).</p>
+</li><li>
+  <a href="concepts/deep-learning-of-fundamentals.html">Глибоке вивчення фундаментальних речей</a>
+  <span class="meta mono">12 відео</span>
+  <p class="step-note">Це найзвʼязніша теза каналу — майже кожне відео, від DNS до повнопривідних авто, є її застосуванням.</p>
+</li><li>
+  <a href="concepts/declarative-ui.html">Декларативний UI (білдери на схемах)</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Ідея, позичена прямо з геймдеву: як редактор рівнів Doom видає декларативні файли рівнів, так і Віктор пропонує описувати UI схемами, які компілюються в компоненти (<a href="videos/voice-2-faster-ui-development.html">швидша розробка UI</a>).</p>
+</li><li>
+  <a href="concepts/latency-and-speed-of-light.html">Затримка і швидкість світла</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">Найефектніший аргумент каналу на тему «як працює інтернет»: швидкість вашого сайту обмежена фізикою, а не пропускною здатністю (<a href="videos/speed-of-light-website-latency.html">швидкість світла і затримки сайтів</a>).</p>
+</li><li>
+  <a href="concepts/domain-knowledge.html">Знання предметної області</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">Перша з трьох навичок у стартовому відео каналу: архітектуру диктує предметна область, а не патерни (<a href="videos/3-things-that-make-a-programmer-better.html">3 речі, що роблять програміста кращим</a>).</p>
+</li><li>
+  <a href="concepts/channel-and-author.html">Канал і його автор</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note"><strong>jabascript</strong> — україномовний YouTube-канал про програмування, бази даних, мережі, безпеку та інженерну майстерність, який веде <strong>Віктор</strong> — інженер, чий шлях пролягає від диплома економіста до Senior SWE у Google.</p>
+</li><li>
+  <a href="concepts/career-and-growth.html">Карʼєра і зростання</a>
+  <span class="meta mono">10 відео</span>
+  <p class="step-note">Карʼєрний матеріал каналу незвично конкретний, бо Віктор розповідає власний шлях — інфобезпека → Mail.ua (SPA-фронтенд епохи IE6 плюс Perl-бекенди з власним фреймворком, ZFS і бездискові фронтенд-сервери, що бутяться по PXE і тягнуть Linux-образ у RAM: «усе, що зараз робить хмара, ми робили руками») → VoIP у Portaone → співзаснування WebbyLab → 4 роки в Google як Senior SWE → незалежність (Q&amp;A і плани на 2024, <a href="videos/vibe-coding-part-2.html">вайб-кодинг, частина 2</a>).</p>
+</li><li>
+  <a href="concepts/code-review.html">Код-ревʼю</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">Погляд каналу — з перших рук: Віктор спирається на практику ревʼю і у WebbyLab, і в Google та наполягає, що єдиного правильного способу не існує — але є прийоми, які роблять кращим будь-яке ревʼю (<a href="videos/code-review-how-google-does-it.html">як код-ревʼю робить Google</a>).</p>
+</li><li>
+  <a href="concepts/encoding.html">Кодування</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Представлення, а не секретність — найбільш недозрозумілий член трійці, яку канал свідомо викладає разом: <a href="concepts/encoding.html">кодування</a>, <a href="concepts/encryption.html">шифрування</a> і <a href="concepts/hashing.html">хешування</a>.</p>
+</li><li>
+  <a href="concepts/microservices.html">Мікросервіси</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Віктор починає з фрази Саймона Брауна: <em>«чому ви вважаєте, що зможете побудувати мікросервіси, якщо не можете побудувати моноліт?»</em> (<a href="videos/microservices-main-problem.html">головна проблема мікросервісів</a>).</p>
+</li><li>
+  <a href="concepts/one-time-passwords.html">Одноразові паролі (TOTP)</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Канал демістифікує Google Authenticator одним рядком: TOTP — це просто HMAC від спільного секрету та поточного інтервалу Unix-часу (наприклад, 30-секундні вікна).</p>
+</li><li>
+  <a href="concepts/design-patterns.html">Патерни проєктування</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Позиція каналу щодо патернів свідомо дефляційна: це не сакральне знання, а просто найпоширеніші рішення, які хтось класифікував і назвав.</p>
+</li><li>
+  <a href="concepts/awd-and-drivetrains.html">Повний привід і трансмісії</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Тема з офтопного відео для спонсорів (<a href="videos/awd-systems-compared.html">порівняння систем повного приводу</a>), народжена з реальної загадки: його Subaru Outback без зусиль виїжджає із засніженого двору, а його Porsche Macan буксує на ідентичних шинах.</p>
+</li><li>
+  <a href="concepts/full-text-search.html">Повнотекстовий пошук</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">Канал подає повнотекстовий пошук не як «просто візьми Elastic», а як механізм, який можна зібрати власноруч — Віктор саме так і зробив у продакшені, власноруч побудувавши повнотекстовий індекс на 300 TB.</p>
+</li><li>
+  <a href="concepts/security-practices.html">Практики безпеки</a>
+  <span class="meta mono">12 відео</span>
+  <p class="step-note">Безпекова теза каналу, прямо сформульована у Q&amp;A з планами на 2024: «майже вся інформаційна безпека — це розуміння того, як речі влаштовані всередині».</p>
+</li><li>
+  <a href="concepts/least-privilege.html">Принцип найменших привілеїв</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Обмежуйте права доступу рамками конкретної задачі — канал пояснює це через одну незабутню історію з ранніх часів WebbyLab (<a href="videos/voice-1-admin-keys-for-developers.html">войс про адмінські ключі</a>).</p>
+</li><li>
+  <a href="concepts/software-design.html">Проєктування програмного забезпечення</a>
+  <span class="meta mono">13 відео</span>
+  <p class="step-note">Проєктування — центральна тема каналу про інженерну майстерність: у Google, каже Віктор, твій рівень визначається вмінням проєктувати, а не знанням технологій (до приходу туди він жодного рядка не написав ні на Java, ні на Angular), і це вміння він напряму повʼязує з роботою з <a href="concepts/abstractions.html">абстракціями</a> та знанням властивостей речей через їхню внутрішню будову: індекс — це відсортована структура, а отже запис чогось коштує і виграють лише певні форми запитів (Q&amp;A і плани на 2024).</p>
+</li><li>
+  <a href="concepts/sandboxing-and-isolation.html">Пісочниці та ізоляція</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Ізолюй ненадійне так, щоб навіть у разі компрометації воно не дотяглося ні до чого важливого.</p>
+</li><li>
+  <a href="concepts/retro-gaming.html">Ретрогеймінг</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Давнє хобі Віктора — і тема його <em>першого</em> YouTube-каналу, тестового ретрогеймінгового, який за рік щотижневих стримів зібрав ~300 підписників, але послужив лабораторією для OBS та обладнання перед jabascript (Q&amp;A і плани на 2024).</p>
+</li><li>
+  <a href="concepts/workspace-and-hardware.html">Робоче місце і залізо</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Сетап Вікторового стола, показаний у спонсорському відео-турі <a href="videos/my-workspace-setup.html">«моє робоче місце»</a>.</p>
+</li><li>
+  <a href="concepts/social-engineering.html">Соціальна інженерія</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Позиція каналу: найслабша ланка — це рідко криптографія, це людина, яку вмовили співпрацювати.</p>
+</li><li>
+  <a href="concepts/index-compression.html">Стиснення індексу</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Як Віктор стискає інвертований індекс крок за кроком, із розмірами на екрані: сирий JSON 4 GB → сплощені масиви 3.4 GB → дельта-кодування відсортованих doc id (зберігати <code>100, 3, 5</code> замість <code>100, 103, 108</code>) 2.3 GB → varbyte-кодування (7 бітів даних + 1 біт продовження на байт), загорнуте в base64, → 1.3 GB — менше за власний FULLTEXT-індекс MySQL з його 1.7 GB (<a href="videos/full-text-search-inverted-indexes.html">інвертовані індекси</a>).</p>
+</li><li>
+  <a href="concepts/data-structures.html">Структури даних</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">Позиція каналу: на практиці важливо знати властивості кожної структури та її складність за часом і памʼяттю, а не завчати реалізації — хоча Віктор і сам реалізовував топологічне сортування та повнотекстовий пошук, коли цього вимагала задача (<a href="videos/qa-2-answering-questions.html">друге Q&amp;A</a>).</p>
+</li><li>
+  <a href="concepts/technical-debt.html">Технічний борг</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Формулювання, що запало Віктору, — цитата, яку він переказує далі: <strong>«якщо ти просто пишеш код — ти накопичуєш технічний борг»</strong> (<a href="videos/code-review-how-google-does-it.html">випуск про код-ревʼю в Google</a>).</p>
+</li><li>
+  <a href="concepts/bloom-filter.html">Фільтр Блума</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">«Геніальна структура даних»: імовірнісний тест належності до множини, що ніколи не дає false negatives і має настроювану частку false positives, — її розмір залежить лише від кількості елементів і цільового FPR, а не від розміру ключів.</p>
+</li><li>
+  <a href="concepts/hashing.html">Хешування</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">Строго в один бік: довільний вхід — вихід фіксованого розміру; 1 TB чи 100 TB на вході, 20 байтів на виході, і, як жартує Віктор, «це не архівація»: дані назад не дістанеш.</p>
+</li><li>
+  <a href="concepts/cold-crypto-wallets.html">Холодні криптогаманці</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Найчистіша на каналі ілюстрація того, навіщо потрібні <a href="concepts/digital-signatures.html">цифрові підписи</a>: холодний гаманець — це просто приватний ключ, який ніколи не торкається інтернету.</p>
+</li><li>
+  <a href="concepts/digital-signatures.html">Цифрові підписи</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Друга суперсила <a href="concepts/asymmetric-encryption.html">асиметричного шифрування</a>, як її подає канал: зашифрувати хеш документа своїм <em>приватним</em> ключем — це <strong>і є</strong> підпис.</p>
+</li><li>
+  <a href="concepts/encryption.html">Шифрування</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Одна третина трійці, яку канал свідомо викладає разом — <a href="concepts/encoding.html">кодування</a>, <a href="concepts/encryption.html">шифрування</a>, <a href="concepts/hashing.html">хешування</a> — і яку розробники постійно плутають.</p>
+</li><li>
+  <a href="concepts/ai-and-jobs.html">ШІ та робочі місця</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">Відповідь каналу на «чи замінить нас ШІ» — аналогія з масштабуванням: <strong>ШІ — це джун, і масштабується він так само, як джуни</strong>.</p>
+</li><li>
+  <a href="concepts/ai-coding-agents.html">ШІ-агенти для кодування</a>
+  <span class="meta mono">6 відео</span>
+  <p class="step-note">Головна теза каналу про кодинг-агентів: <strong>ШІ робить тебе техлідом із першого дня</strong>.</p>
+</li><li>
+  <a href="concepts/code-quality.html">Якість коду</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">Віктор ставить під сумнів класичний трикутник «швидко / якісно / дешево — обери два»: можливо, можна мати всі три, бо якісний код <em>дешевший і швидший</em> у розробці, а не розкіш, за яку платиш швидкістю (<a href="videos/3-things-that-ruin-a-programmer.html">3 речі, що псують програміста</a>).</p>
+</li><li>
+  <a href="concepts/inverted-index.html">Інвертований індекс</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">Структура даних, що розв&#x27;язує те, чого не вміють B-tree-індекси: пошук слова всередині рядка.</p>
+</li><li>
+  <a href="concepts/database-indexes.html">Індекси баз даних</a>
+  <span class="meta mono">9 відео</span>
+  <p class="step-note">Найщільніша тема каналу.</p>
+</li></ul><h2>Інструменти й технології</h2><ul class="library"><li>
+  <a href="tools/chatgpt.html">ChatGPT</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">Чат-асистент від OpenAI — щоденний інструмент Віктора для брейнштормінгу та пояснення чого завгодно ще з ранніх AI-випусків каналу, і стабільний «відмінник» його бенчмарка з бінарним пошуком у файлі (GPT-4 ще у 2023 впорався із задачею на Node.js Buffer, на якій Bard безпорадно буксував).</p>
+</li><li>
+  <a href="tools/claude-code.html">Claude Code</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Термінальний AI-агент для кодингу від Anthropic — і головний агент у воркфлоу <a href="concepts/vibe-coding.html">вайб-кодингу</a> Віктора.</p>
+</li><li>
+  <a href="tools/cursor.html">Cursor</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">AI-first редактор коду (форк VS Code).</p>
+</li><li>
+  <a href="tools/deepseek.html">DeepSeek</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Китайська родина LLM із відкритими вагами, яку канал розглядає як показник розриву між локальними та frontier-моделями.</p>
+</li><li>
+  <a href="tools/dnsmasq.html">dnsmasq</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Крихітний комбінований сервер: кешувальний DNS + DHCP.</p>
+</li><li>
+  <a href="tools/docker.html">Docker</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Docker — стандартний інструмент контейнеризації, а на каналі він слугує головним прикладом того, чому глибоке розуміння б&#x27;є поверхневі знання.</p>
+</li><li>
+  <a href="tools/elasticsearch.html">Elasticsearch</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">Подається не як магія, а як упакована версія саме того механізму, який Віктор будує руками: <a href="concepts/inverted-index.html">інвертований індекс</a> плюс конвеєр токенізації — «воно працює так само».</p>
+</li><li>
+  <a href="tools/eslint.html">ESLint</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">ESLint — стандартний лінтер для JavaScript.</p>
+</li><li>
+  <a href="tools/firebase.html">Firebase</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Firebase — платформа Google для застосунків без власного бекенда; на каналі вона розкрита через watch party по I/O 2023, де співведучий Микита Галкін проводить екскурсію (google-io-2023-watch-party).</p>
+</li><li>
+  <a href="tools/firefox.html">Firefox</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">Веб-браузер.</p>
+</li><li>
+  <a href="tools/flutter.html">Flutter</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">Flutter — кросплатформний UI-тулкіт від Google, і на каналі він є доказом того, що вайб-кодинг переріс стадію іграшки: Віктор за два вечори навайбкодив повноцінний застосунок-контролер для своєї безекранної камери Blackmagic поверх її REST API (<a href="videos/vibe-coded-mobile-app.html">Навайбкодив мобільний додаток за два вечори (short)</a>) — одна кодова база, що працює на Linux, Android «і на чому завгодно», адаптивна від великого монітора до телефона, з tap-to-focus, доданим, щоб компенсувати відсутність у камери безперервного автофокуса.</p>
+</li><li>
+  <a href="tools/gemini.html">Gemini</a>
+  <span class="meta mono">8 відео</span>
+  <p class="step-note">LLM-асистент Google (колишній Bard) — модель із найдовшою дугою на каналі: від комедійного реквізиту до щоденної робочої конячки.</p>
+</li><li>
+  <a href="tools/github-copilot.html">GitHub Copilot</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">AI-асистент автодоповнення від GitHub — і єдиний AI-інструмент, від якого канал послідовно відмовляється.</p>
+</li><li>
+  <a href="tools/godot.html">Godot</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Godot — безкоштовний опенсорсний ігровий рушій.</p>
+</li><li>
+  <a href="tools/google-cloud-run.html">Google Cloud Run</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">Cloud Run — serverless-платформа для контейнерів у Google Cloud: приносиш будь-який контейнер і отримуєш scale-to-zero, метрики та CI/CD «у два кліки» — і це буквально продукт, який будувала команда Віктора в Google (<a href="videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>).</p>
+</li><li>
+  <a href="tools/google-stitch.html">Google Stitch</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Безкоштовний AI-генератор дизайну від Google, використаний як етап UI-дизайну в пайплайні <a href="concepts/vibe-coding.html">вайб-кодингу</a> Віктора у <a href="videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>.</p>
+</li><li>
+  <a href="tools/livr.html">LIVR</a>
+  <span class="meta mono">3 відео</span>
+  <p class="step-note">LIVR (Language Independent Validation Rules) — власна бібліотека валідації Віктора, народжена у WebbyLab, який стандартизує свої стеки: вони перепробували всі бібліотеки валідації, спершу написали специфікацію і лише потім реалізації, тож той самий формат правил тепер існує в JS, PHP, Perl, Go, Swift та Erlang (google-io-2023-watch-party).</p>
+</li><li>
+  <a href="tools/material-ui.html">Material UI</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Material UI (MUI) — популярна бібліотека React-компонентів, що реалізує Material Design від Google.</p>
+</li><li>
+  <a href="tools/memcached.html">Memcached</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Бенчмаркався поруч із <a href="tools/redis.html">Redis</a> у порівняльному забігу з Bloom-фільтром як розподілена in-memory хеш-таблиця: швидкість пошуку порівнянна з Redis (~6 с на 100 000 пошуків по 10 млн ключів), хоча, як не дивно, наповнювався найповільніше з усіх.</p>
+</li><li>
+  <a href="tools/mongodb.html">MongoDB</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">Зʼявляється на каналі у двох ролях.</p>
+</li><li>
+  <a href="tools/mysql.html">MySQL</a>
+  <span class="meta mono">8 відео</span>
+  <p class="step-note">Стандартний експериментальний полігон каналу: майже всі демо з базами даних крутяться на MySQL — через <code>SET profiling</code>, <code>CREATE INDEX</code> та <code>EXPLAIN</code> (<a href="videos/why-database-indexes.html">Навіщо потрібні індекси в базі даних — розберемо на прикладі</a>).</p>
+</li><li>
+  <a href="tools/nextjs.html">Next.js</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Next.js — React-фреймворк для серверного рендерингу та статичної генерації.</p>
+</li><li>
+  <a href="tools/nginx.html">nginx</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Вебсервер.</p>
+</li><li>
+  <a href="tools/nodejs.html">Node.js</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">Node.js — серверний JavaScript-рантайм і стандартна бекенд-платформа каналу.</p>
+</li><li>
+  <a href="tools/ollama.html">Ollama</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Інструмент для запуску open-source LLM на власному залізі.</p>
+</li><li>
+  <a href="tools/pfsense.html">pfSense</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Open-source віртуальний роутер і фаєрвол на базі FreeBSD (спокійно працює на ~512 МБ RAM із крихітним диском).</p>
+</li><li>
+  <a href="tools/postgresql.html">PostgreSQL</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">На каналі Postgres — архітектурна протилежність <a href="tools/mysql.html">MySQL</a>: кластерних індексів немає взагалі.</p>
+</li><li>
+  <a href="tools/prettier.html">Prettier</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Prettier — це opinionated-форматер коду для JavaScript і компанії.</p>
+</li><li>
+  <a href="tools/raspberry-pi.html">Raspberry Pi</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Raspberry Pi — одноплатний компʼютер розміром із кредитну картку, і на каналі він зʼявляється в турі робочим місцем Віктора як серце його ретроігрового куточка (<a href="videos/my-workspace-setup.html">огляд робочого місця</a>): Pi, розширений ентузіастськими платами, які виводять аналоговий RGB-сигнал прямо на професійний CRT-монітор — саме це він називає ключем до автентичної ретрокартинки, на відміну від емуляції на сучасній плоскій панелі.</p>
+</li><li>
+  <a href="tools/react.html">React</a>
+  <span class="meta mono">2 відео</span>
+  <p class="step-note">React — домінантна JavaScript-бібліотека для UI, і канал несе рідкісну історію з перших рук: WebbyLab запустив React 0.4 у продакшн лише через два місяці після релізу (<a href="videos/qa-2-answering-questions.html">Q&amp;A №2</a>, Q&amp;A та плани на 2024).</p>
+</li><li>
+  <a href="tools/react-admin.html">React Admin</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">React Admin — готовий декларативний фреймворк для побудови адмінок поверх React.</p>
+</li><li>
+  <a href="tools/redis.html">Redis</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Забенчмаркований на каналі як стандартна відповідь для кешування — «практично in-memory база даних» — у змаганні з Bloom-фільтром на 10 млн ключів: ~6 с на 100 000 пошуків, приблизно втричі швидше за проіндексований <a href="tools/mysql.html">MySQL</a> із його ~17 с.</p>
+</li><li>
+  <a href="tools/terraform.html">Terraform</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Terraform — стандартний інструмент infrastructure-as-code.</p>
+</li><li>
+  <a href="tools/vertex-ai.html">Vertex AI</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Платформа машинного навчання від Google Cloud.</p>
+</li><li>
+  <a href="tools/virtualbox.html">VirtualBox</a>
+  <span class="meta mono">1 відео</span>
+  <p class="step-note">Десктопний гіпервізор.</p>
+</li><li>
+  <a href="tools/vs-code.html">VS Code</a>
+  <span class="meta mono">4 відео</span>
+  <p class="step-note">VS Code — редактор коду від Microsoft, і канал розглядає його не так як пораду про інструмент, а як кейс з архітектури.</p>
+</li></ul>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

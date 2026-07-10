@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UUID проти auto-increment у первинних ключах — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / uuid-vs-auto-increment</p>
+  <h1>UUID проти auto-increment у первинних ключах</h1>
+  <div class="topic-body"><p>Одне з найкраще виміряних тверджень каналу: випадкові UUID як первинні ключі катастрофічні в MySQL, але майже нешкідливі в Postgres — бо в MySQL сама таблиця є кластеризованим <a href="../concepts/b-tree.html">B+-деревом</a>, відсортованим за PK, і кожен вторинний індекс містить PK усередині. Його цифри на 16 млн рядків: перехід на UUID PK роздуває таблицю з 4.3 GB до 7.8 GB, а вторинні індекси — з 2 GB до 5.5 GB (~70% байтів індексів — це просто первинний ключ); вставки сповільнюються з 4 с до 5.5 с на 1000 рядків на найшвидшому SSD і у 2.5–3 рази на повільніших дисках, бо випадкові UUID вбивають кешування вузлів B+-дерева, тоді як послідовні ID торкаються лише закешованих крайніх правих вузлів. Postgres, з heap-таблицями та фізичними покажчиками на рядки, майже невразливий. Бонусна дрібниця: якщо не вказати PK, MySQL все одно мовчки додасть прихований 6-байтовий (<a href="../videos/database-indexes-mysql-vs-postgres.html">індекси: MySQL проти Postgres</a>).</p><p>Його контрінтуїтивний рецепт: не обирати — лишити auto-increment PK для рушія, а UUID зберігати додатковою колонкою для зовнішнього світу; це менше і швидше за будь-який із «чистих» варіантів. Зберігання UUID як BINARY(16) замість 32-символьного тексту допомагає лише помірно (частка первинного ключа в індексах падає з ~70% до ~55%) і робить їх незручними для читання й відображення, тож він усе одно обрав би окрему колонку (<a href="../videos/qa-1-will-https-protect-you.html">Q&amp;A №1</a>). Та сама проблема виринає в повнотекстовому пошуку: UUID як ідентифікатори документів повністю вбивають стиснення posting-списків, тож їх мапують на цілі числа — саме це MySQL/InnoDB FULLTEXT і робить усередині зі своєю прихованою auto-increment колонкою FTS_DOC_ID (<a href="../videos/full-text-search-part-2-qa.html">повнотекстовий пошук, частина 2</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/database-indexes-mysql-vs-postgres.html">Як працюють індекси в базах на прикладі: MySQL vs Postgres, UUID vs Auto Increment</a>
+  <span class="meta mono">37:42</span>
+  <p class="step-note">вичерпний бенчмарк: цифри роздування таблиці й індексів, сповільнення вставок, чому Postgres байдуже, і рецепт «auto-increment плюс окрема колонка з UUID»</p></li><li><a href="../videos/qa-1-will-https-protect-you.html">Питання та відповіді №1: чи захистить HTTPS?</a>
+  <span class="meta mono">17:50</span>
+  <p class="step-note">продовження про зберігання в BINARY(16): помірна економія, гірша ергономіка</p></li><li><a href="../videos/full-text-search-part-2-qa.html">Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації</a>
+  <span class="meta mono">14:34</span>
+  <p class="step-note">UUID як ідентифікатори документів не піддаються дельта-стисненню; прихований FTS_DOC_ID в InnoDB — той самий трюк із мапінгом на цілі числа</p></li><li><a href="../videos/how-base64-works.html">Як працює Base64 і навіщо він потрібен</a>
+  <span class="meta mono">20:00</span>
+  <p class="step-note">побічна демонстрація: hex-закодовані UUID, збережені як сирі байти, зменшуються вдвічі</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/database-indexes.html">Індекси баз даних</a> — вибір PK відлунює в кожному індексі таблиці <a href="../concepts/b-tree.html">B-tree / B+ tree</a> — порядок вставки проти кешування вузлів — механізм цього сповільнення <a href="../concepts/index-compression.html">Стиснення індексу</a> — відсортовані цілі числа стискаються; випадкові UUID — ні <a href="../concepts/mvcc.html">MVCC (багатоверсійне керування конкурентним доступом)</a> — друга велика відмінність у внутрішній будові MySQL і Postgres з того самого відео</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

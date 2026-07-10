@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Base64 — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / base64</p>
+  <h1>Base64</h1>
+  <div class="topic-body"><p>Канонічний приклад <a href="../concepts/encoding.html">кодування</a> на каналі — і того, чим кодування <em>не є</em> (захистом). Головне відео (<a href="../videos/how-base64-works.html">як працює Base64</a>) виводить його з першопринципів: народжений з потреби суто текстової пошти передавати бінарні вкладення, він відображає дані на 64 універсально безпечні символи (A-Z, a-z, 0-9, +, /), 6 біт на символ, тож 3 байти стають 4 символами — податок +33% до розміру. Далі — екскурсія родиною: <strong>base64url</strong>, як у JWT (+ і / замінені на - та _, padding =, завдяки чому «.» безпечна як роздільник), <strong>Base32</strong> (нечутливий до регістру і без слешів — добрий для імен файлів; викидає 0/1 як двійники O/l; +60%) і <strong>Base16 = hex</strong> (CSS <code>#FFFFFF</code>, 2x розміру). Гарне демо: 32 hex-символи UUID декодуються в 16 сирих байтів — удвічі менше місця.</p><p>Потім він наживо декодує Base64 у трьох реальних місцях: токени <a href="../concepts/jwt.html">JWT</a> (header і payload може прочитати будь-хто), заголовки HTTP Basic Auth (значення <code>Authorization: Basic</code> декодується в <code>login:password</code> браузерним же <code>atob</code>) і зображення, вбудовані як data URI. Це демо з Basic Auth живить два його питання-пастки з <a href="../videos/hashing-encoding-encryption-difference.html">хешування/кодування/шифрування</a> — Base64-кодовані креденшали та JWT-payload — це «те саме, що відкритий текст» — і бойову історію з <a href="../videos/3-things-that-make-a-programmer-better.html">3 речей, які роблять програміста кращим</a> про інженера, який стверджував, що Basic Auth «зашифрований, бо це Base64». У <a href="../videos/qa-1-will-https-protect-you.html">Q&amp;A про те, чи захистить вас HTTPS</a> він обґрунтовує, коли +33% варто платити: будь-яка бінарщина всередині текстового формату — значення HTTP-заголовків (переноси рядків заборонені), логи, які можна відкрити текстовим редактором, JSON/XML-пейлоади, CSV без екранування, SMTP-вкладення, PEM-файли SSH-ключів. Серія про повнотекстовий пошук показує цей компроміс наживо: постинги загортаються в base64, щоб пережити рядково-орієнтований текстовий файл (<a href="../videos/full-text-search-inverted-indexes.html">повнотекстовий пошук</a>), а в частині 2 індекс переструктуровано на два файли саме заради того, щоб скинути штраф +33% (<a href="../videos/full-text-search-part-2-qa.html">повнотекстовий пошук, частина 2</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/how-base64-works.html">Як працює Base64 і навіщо він потрібен</a>
+  <span class="meta mono">20:00</span>
+  <p class="step-note">вичерпний розбір: 6 біт на символ, +33%, base64url/Base32/Base16 і живе декодування JWT, Basic Auth і data URI</p></li><li><a href="../videos/hashing-encoding-encryption-difference.html">Хешування, кодування, шифрування — у чому різниця?</a>
+  <span class="meta mono">08:41</span>
+  <p class="step-note">канонічний приклад кодування; панчлайн питань-пасток про JWT і Basic Auth: «те саме, що відкритий текст»</p></li><li><a href="../videos/qa-1-will-https-protect-you.html">Питання та відповіді №1: чи захистить HTTPS?</a>
+  <span class="meta mono">17:50</span>
+  <p class="step-note">коли +33% виправдані: бінарні дані всередині текстових форматів, від HTTP-заголовків до PEM-ключів</p></li><li><a href="../videos/full-text-search-inverted-indexes.html">Як працює повнотекстовий пошук: будуємо інвертований індекс на практиці</a>
+  <span class="meta mono">48:15</span>
+  <p class="step-note">застосування: загортання бінарних varbyte-постингів у base64 заради безпеки в рядково-орієнтованому файлі — все одно чистий виграш</p></li><li><a href="../videos/full-text-search-part-2-qa.html">Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації</a>
+  <span class="meta mono">14:34</span>
+  <p class="step-note">розбиття індексу на два файли існує саме щоб позбутися +33% від base64, коли вже ніщо не парсить файл рядок за рядком</p></li><li><a href="../videos/3-things-that-make-a-programmer-better.html">3 речі, які роблять програміста кращим</a>
+  <span class="meta mono">20:13</span>
+  <p class="step-note">бойова історія «Basic Auth зашифрований, бо це Base64»</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/encoding.html">Кодування</a> — концепція, яку Base64 уособлює; ніколи не плутати з <a href="../concepts/encryption.html">шифруванням</a>. <a href="../concepts/jwt.html">JWT</a> — base64url у кожному токені, який ви коли-небудь вставляли в дебагер. <a href="../concepts/hashing.html">Хешування</a> — третя нога трійці кодування/шифрування/хешування. <a href="../concepts/index-compression.html">Стиснення індексу</a>, <a href="../concepts/inverted-index.html">Інвертований індекс</a> — де накладні +33% стають вимірним інженерним компромісом.</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

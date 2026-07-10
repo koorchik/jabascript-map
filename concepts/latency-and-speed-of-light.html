@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Затримка і швидкість світла — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / latency-and-speed-of-light</p>
+  <h1>Затримка і швидкість світла</h1>
+  <div class="topic-body"><p>Найефектніший аргумент каналу на тему «як працює інтернет»: швидкість вашого сайту обмежена фізикою, а не пропускною здатністю (<a href="../videos/speed-of-light-website-latency.html">швидкість світла і затримки сайтів</a>). Від Києва до Лос-Анджелеса ~10 000 км; світло в оптоволокні рухається зі швидкістю ~200 000 км/с (проти 300 000 у вакуумі), тобто 50 мс в один бік і найкращий можливий ping — 100 мс. Його фраза, що запам’ятовується: ping менше 100 мс у CS:GO до американських серверів ви не отримаєте ніколи. Далі він складає round-trip’и: запит + бекенд + відповідь — це вже 120 мс, ушестеро більше за 20-мілісекундний бекенд; TCP handshake піднімає це до 220 мс; TLS handshake — до ~420 мс (у 21 раз більше за бекенд) — і це ще без DNS-запиту та TCP slow-start. Висновок: CDN важливі тому, що зменшують саме <em>затримку</em>, а не «швидкість». Суміжна теза із серії про DNS: кожен DNS-запит — це сам по собі багато обмінів через інтернет, саме тому й існує DNS-кешування (<a href="../videos/dns-recursive-resolution.html">рекурсивний резолвінг DNS</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/speed-of-light-website-latency.html">Як швидкість світла обмежує швидкість твого веб-сайту</a>
+  <span class="meta mono">13:01</span>
+  <p class="step-note">базовий розрахунок: швидкість світла в оптоволокні, нижня межа ping у 100 мс, накопичення round-trip’ів TCP/TLS, що перетворюють 20 мс бекенду на ~420 мс, і чому допомагають CDN</p></li><li><a href="../videos/dns-recursive-resolution.html">Як працює Інтернет: рекурсивний пошук у DNS</a>
+  <span class="meta mono">13:56</span>
+  <p class="step-note">кожен DNS-запит — це багато round-trip’ів, звідси потреба в кешуванні</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/nat-and-networking.html">NAT і основи мереж</a> — ті самі TCP handshake’и, що тут накопичуються <a href="../concepts/https-tls.html">HTTPS і TLS</a> — TLS handshake додає найбільший окремий шматок <a href="../concepts/dns.html">DNS (Domain Name System)</a> — ще один неврахований запит поверх основного <a href="../concepts/web-performance.html">Вебперформанс (Core Web Vitals)</a> — затримка — один важіль; Core Web Vitals — інший бік <a href="../tools/nginx.html">nginx</a> — тестовий сервер у Лос-Анджелесі, на якому вимірювалися реальні round-trip’и</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Стиснення індексу — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / index-compression</p>
+  <h1>Стиснення індексу</h1>
+  <div class="topic-body"><p>Як Віктор стискає інвертований індекс крок за кроком, із розмірами на екрані: сирий JSON 4 GB → сплощені масиви 3.4 GB → дельта-кодування відсортованих doc id (зберігати <code>100, 3, 5</code> замість <code>100, 103, 108</code>) 2.3 GB → varbyte-кодування (7 бітів даних + 1 біт продовження на байт), загорнуте в base64, → 1.3 GB — менше за власний FULLTEXT-індекс MySQL з його 1.7 GB (<a href="../videos/full-text-search-inverted-indexes.html">інвертовані індекси</a>). Дельта-стиснення — те, що все уможливлює: воно перетворює великі id на маленькі цілі числа, які VByte (зі статті, на яку він посилається) пакує щільно; це ще й пришвидшує читання з файлової системи та дозволяє більшому індексу поміститися в RAM (<a href="../videos/qa-1-will-https-protect-you.html">Q&amp;A №1</a>).</p><p>У Q&amp;A-продовженні він показує оглядову статтю про алгоритми стиснення posting-списків і робить чесні висновки: усі вони передбачають відсортовані цілі числа, універсального переможця немає, а varbyte пристойний скрізь. Наслідок кусається на практиці: UUID як doc id ламають їх усі — спершу треба відобразити UUID у цілі числа, саме це й робить прихована колонка FTS_DOC_ID в InnoDB (<a href="../videos/full-text-search-part-2-qa.html">Q&amp;A до другої частини</a>, <a href="../concepts/uuid-vs-auto-increment.html">UUID проти auto-increment</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/full-text-search-inverted-indexes.html">Як працює повнотекстовий пошук: будуємо інвертований індекс на практиці</a>
+  <span class="meta mono">48:15</span>
+  <p class="step-note">повна драбина стиснення з розмірами на екрані: 4 GB → 1.3 GB, перемога над 1.7 GB FULLTEXT-індексу MySQL</p></li><li><a href="../videos/full-text-search-part-2-qa.html">Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації</a>
+  <span class="meta mono">14:34</span>
+  <p class="step-note">оглядова стаття: всі алгоритми розраховують на відсортовані цілі числа, універсального переможця немає, UUID ламають усе</p></li><li><a href="../videos/qa-1-will-https-protect-you.html">Питання та відповіді №1: чи захистить HTTPS?</a>
+  <span class="meta mono">17:50</span>
+  <p class="step-note">дельта-стиснення як передумова VByte, швидшого читання та індексів у RAM</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/inverted-index.html">Інвертований індекс</a> — структура, яку стискаємо <a href="../concepts/uuid-vs-auto-increment.html">UUID проти auto-increment у первинних ключах</a> — чому вибір doc id вирішує долю стиснення <a href="../concepts/base64.html">Base64</a> — +33% накладних витрат на серіалізацію, прибраних у частині 2 <a href="../concepts/encoding.html">Кодування</a> — varbyte як схема кодування</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Якість коду — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / code-quality</p>
+  <h1>Якість коду</h1>
+  <div class="topic-body"><p>Віктор ставить під сумнів класичний трикутник «швидко / якісно / дешево — обери два»: можливо, можна мати всі три, бо якісний код <em>дешевший і швидший</em> у розробці, а не розкіш, за яку платиш швидкістю (<a href="../videos/3-things-that-ruin-a-programmer.html">3 речі, що псують програміста</a>). Його визначення підкреслено неперфекціоністське: якість — це код, який не заважає себе розширювати; абстракції, що продовжують працювати, коли система росте; код, який ніколи не доводиться викидати. А найособистіший його аргумент — що поганий код шкодить <em>тобі</em>, а не лише проєкту: звичка писати халтурний код руйнує ту інтуїцію на «запах коду», завдяки якій сеньйори бачать проблеми ще до того, як прочитали код. Ця звичка ставить стелю твоєму власному росту.</p><p>Підступний ворог — консистентність зі структурою, що вже віджила своє: кодова база гниє навіть тоді, коли кожна окрема зміна виглядає ідеально консистентною з навколишнім кодом — саме так виростають God Object-и та файли на 5000 рядків (<a href="../videos/voice-3-scary-abstractions.html">страшні абстракції</a>). Тож якість, як її подає канал, — це не так про вилизування рядків, як про вміння помітити, що сама структура вже прострочена, — і це повʼязує її з <a href="../concepts/technical-debt.html">технічним боргом</a> та форматами ревʼю, які дивляться далі за дифф (<a href="../concepts/code-review.html">код-ревʼю</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/3-things-that-ruin-a-programmer.html">3 речі, що псують програміста</a>
+  <span class="meta mono">10:55</span>
+  <p class="step-note">виклик трикутнику швидко/якісно/дешево, якість як розширюваність, поганий код руйнує інтуїцію на «запахи»</p></li><li><a href="../videos/voice-3-scary-abstractions.html">Голосове №3 — страшні абстракції</a>
+  <span class="meta mono">08:44</span>
+  <p class="step-note">гниття через консистентність: кожна зміна виглядає нормально, а файл сягає 5000 рядків</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/abstractions.html">Абстракції</a> — якість = абстракції, що переживають розширення <a href="../concepts/technical-debt.html">Технічний борг</a> — те, що накопичується, коли якість оцінюють лише по діффу <a href="../concepts/code-review.html">Код-ревʼю</a> — автоматизація стилю, виявлення того, чого не покажуть діффи <a href="../concepts/career-and-growth.html">Карʼєра і зростання</a> — халтурний код шкодить програмісту, а не лише кодовій базі <a href="../books.html#clean-code">Clean Code</a>, <a href="../books.html#code-complete">Code Complete</a> — книжкова полиця майстерності</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>
