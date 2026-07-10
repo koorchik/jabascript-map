@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Інвертований індекс — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/inverted-index.html">
+<meta name="description" content="Структура даних, що розв&#x27;язує те, чого не вміють B-tree-індекси: пошук слова всередині рядка. Сама структура — слово → список пар (id документа, позиція)…">
+<meta property="og:description" content="Структура даних, що розв&#x27;язує те, чого не вміють B-tree-індекси: пошук слова всередині рядка. Сама структура — слово → список пар (id документа, позиція)…">
+<meta property="og:title" content="Інвертований індекс — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/inverted-index.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / inverted-index</p>
   <h1>Інвертований індекс</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-databases">#databases</a><a class="chip tag" href="../tags.html#tag-search">#search</a><a class="chip tag" href="../tags.html#tag-data-structures">#data-structures</a><a class="chip tag" href="../tags.html#tag-indexes">#indexes</a></div>
   <div class="topic-body"><p>Структура даних, що розв&#x27;язує те, чого не вміють B-tree-індекси: пошук слова всередині рядка. Сама структура — слово → список пар (id документа, позиція); позиції відкривають пошук точних фраз і запити за близькістю слів. Підсумок Віктора: «концептуально це все — решта інженерія» (<a href="../videos/full-text-search-inverted-indexes.html">інвертовані індекси</a>). І саме в інженерії живе його бойова історія: він власноруч написав інвертований індекс над 300 TB даних у продакшені — незмінні поденні індекси, геоатрибути, власна мова запитів із парсером на PEG-граматиці, зберігання в <a href="../tools/mongodb.html">MongoDB</a> і паралельні запити по днях — і виступив про це на KyivJS.</p><p>Q&amp;A-продовження несе запропоновану глядачем оптимізацію, яка йому дуже сподобалася: розділити індекс на крихітний файл токенів (токен + байтовий offset/довжина, ~2 MB на 88K токенів — реальні словники рідко перевищують 200–300K токенів, тож він цілком уміщається в пам&#x27;яті для бінарного пошуку) плюс сирий бінарний файл постингів, що прибирає накладні витрати base64: 1.3 GB → 938 MB, затримка пошуку 15 мс → 5 мс. Його улюблений наслідок: файл постингів може жити на S3 чи CDN і опитуватися через HTTP Range-запити — serverless-повнотекстовий пошук (<a href="../videos/full-text-search-part-2-qa.html">Q&amp;A до другої частини</a>). Q&amp;A-випуск додає рамку: інвертований індекс і Є тією ефективною структурою — оптимізації міняють серіалізацію (дельта-стиснення, VByte), а не замінюють її (<a href="../videos/qa-1-will-https-protect-you.html">Q&amp;A №1</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/why-database-indexes.html">Навіщо потрібні індекси в базі даних — розберемо на прикладі</a>
@@ -37,6 +50,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

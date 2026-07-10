@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Принцип найменших привілеїв — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/least-privilege.html">
+<meta name="description" content="Обмежуйте права доступу рамками конкретної задачі — канал пояснює це через одну незабутню історію з ранніх часів WebbyLab (войс про адмінські ключі). Команді…">
+<meta property="og:description" content="Обмежуйте права доступу рамками конкретної задачі — канал пояснює це через одну незабутню історію з ранніх часів WebbyLab (войс про адмінські ключі). Команді…">
+<meta property="og:title" content="Принцип найменших привілеїв — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/least-privilege.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / least-privilege</p>
   <h1>Принцип найменших привілеїв</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-security">#security</a><a class="chip tag" href="../tags.html#tag-access-control">#access-control</a><a class="chip tag" href="../tags.html#tag-best-practices">#best-practices</a></div>
   <div class="topic-body"><p>Обмежуйте права доступу рамками конкретної задачі — канал пояснює це через одну незабутню історію з ранніх часів WebbyLab (<a href="../videos/voice-1-admin-keys-for-developers.html">войс про адмінські ключі</a>). Команді знадобився API-ключ Redmine для скрипта звітності, і виникла дискусія: адмінський ключ чи звичайний? Обрали адмінський — «нічого поганого не станеться». Згодом один із розробників скопіював приклад коду з README GitHub-бібліотеки, який, як на зло, демонстрував API так: видалити користувача №2, перейменувати користувача №5 і так далі. Результат: акаунт співзасновника Антона Морозова було видалено, а українського клієнта на ім’я Олександр перейменовано на «Рауль». Наслідки проявлялися поступово, впродовж днів — зниклі логіни, загадково перейменовані записи клієнтів.</p><p>Мораль, яку виводить Віктор: щоб підвищені права нашкодили, зловмисник не потрібен. Навіть чесний, беззлобний, скопійований код небезпечний, коли виконується з більшими правами, ніж потрібно для задачі. Ключ лише для читання зробив би весь цей інцидент неможливим.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/voice-1-admin-keys-for-developers.html">Голосове №1 — чому не можна давати розробникам адмінські ключі</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

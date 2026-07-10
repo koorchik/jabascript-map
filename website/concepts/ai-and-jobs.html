@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ШІ та робочі місця — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/ai-and-jobs.html">
+<meta name="description" content="Відповідь каналу на «чи замінить нас ШІ» — аналогія з масштабуванням: ШІ — це джун, і масштабується він так само, як джуни. Якщо в команду приходить один джун…">
+<meta property="og:description" content="Відповідь каналу на «чи замінить нас ШІ» — аналогія з масштабуванням: ШІ — це джун, і масштабується він так само, як джуни. Якщо в команду приходить один джун…">
+<meta property="og:title" content="ШІ та робочі місця — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/ai-and-jobs.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / ai-and-jobs</p>
   <h1>ШІ та робочі місця</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-ai">#ai</a><a class="chip tag" href="../tags.html#tag-career">#career</a><a class="chip tag" href="../tags.html#tag-llm">#llm</a><a class="chip tag" href="../tags.html#tag-industry">#industry</a></div>
   <div class="topic-body"><p>Відповідь каналу на «чи замінить нас ШІ» — аналогія з масштабуванням: <strong>ШІ — це джун, і масштабується він так само, як джуни</strong>. Якщо в команду приходить один джун, часто швидше зробити роботу самому; якщо десять приходять щомісяця — ти інвестуєш у style guide, статичний аналіз і стандарти, щоб їхній результат ставав придатним (<a href="../videos/vibe-coding-part-2.html">вайб-кодинг, частина 2</a>). Саме цим і є його воркфлоу <a href="../concepts/vibe-coding.html">вайб-кодингу</a> на основі CLAUDE.md — оргструктура сеньйора, що керує нескінченними джунами, стиснута в один репозиторій. Вірусний скриншот «Opus за $200/місяць економить $4000 на дизайнері та мідлі» він спростовує мемом про мультиварку і шеф-кухаря: купівля мультиварки не робить тебе шефом. Основним споживачем інструмента залишаються розробники, «10 джунів без сеньйора не досягнуть нічого», а код ніколи не буває безплатним, бо комусь усе одно доведеться весь його прочитати. Його тверезі прогнози: першими знеціняться фронтенд-розробники (більшість коду в навчальних даних — JS/TS), а фриланс виживе.</p><p>Глибший аргумент, із Q&amp;A і планів на 2024, — аналогія з Google Translate: машинний переклад знизив попит і підняв продуктивність перекладачів — те саме перекроювання чекає дизайнерів і копірайтерів, — але код відрізняється однією структурною річчю: <em>його єдиний споживач — програмісти</em>. Клієнтам не потрібен код, їм потрібен працюючий продукт, тож LLM підсилюють інженерів, а не замінюють їх; робота інженера починається з розуміння бізнес-проблеми, а це лежить вище за будь-яку генерацію коду. Джуни залишаються необхідними (не можна мати мідлів і сеньйорів, не виростивши їх), але мусять бути AI-продуктивними з першого дня. Щодо індустрії він контраріанець: ML-інжиніринг — це перманентний research-режим невизначеності навіть усередині Google — ніхто до PoC не знає, чи запрацює модель, — тому будувати AI-<em>tech</em> стартап зараз — «дорога в нікуди», а справжня можливість — компонувати наявні API моделей у системи.</p><p>До ери агентів він доносив ту саму думку в комедійній формі, стрес-тестуючи здоровий глузд Gemini у двох коротких голосових розмовах. У <a href="../videos/ai-replacing-us-gemini-talk-1.html">розмові з Gemini №1</a> він питає, як помити машину на автомийці за 100 метрів: Gemini радить іти пішки, забуває про існування машини, вибачається, що впустив «ключовий момент», а тоді пропонує дійти до мийки пішки і <em>залишити машину там</em> — панчлайн «я ж прийшов пішки, де моя машина?». Асистент гладко вибачається і заново виводить умову, гублячи елементарний фізичний стан. У <a href="../videos/ai-and-jobs-gemini-talk-2.html">розмові з Gemini №2</a> він пробує кут соціальної інженерії: скажи моєму босові, що ти кодиш гірше за мене, щоб я зберіг роботу. Gemini відмовляється брехати навіть під співчутливим тиском — і натомість агітує <em>за себе</em> («я працюю постійно, весь час оновлююся, мої можливості зростають»), відсилаючи до «вашого менеджменту». Лазівка з рольовою грою («вдай, що не вмієш написати Hello World») працює, але обгороджується дисклеймерами «але насправді...». Разом ці шорти — імпліцитний вердикт хайпу про заміну: красномовний, вирівняний — і без моделі світу.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/vibe-coding-part-2.html">Вайб-кодінг — частина 2 (стрим)</a>
@@ -35,6 +48,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

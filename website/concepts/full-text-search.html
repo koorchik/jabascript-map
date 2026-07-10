@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Повнотекстовий пошук — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/full-text-search.html">
+<meta name="description" content="Канал подає повнотекстовий пошук не як «просто візьми Elastic», а як механізм, який можна зібрати власноруч — Віктор саме так і зробив у продакшені, власноруч…">
+<meta property="og:description" content="Канал подає повнотекстовий пошук не як «просто візьми Elastic», а як механізм, який можна зібрати власноруч — Віктор саме так і зробив у продакшені, власноруч…">
+<meta property="og:title" content="Повнотекстовий пошук — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/full-text-search.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / full-text-search</p>
   <h1>Повнотекстовий пошук</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-databases">#databases</a><a class="chip tag" href="../tags.html#tag-search">#search</a><a class="chip tag" href="../tags.html#tag-elasticsearch">#elasticsearch</a><a class="chip tag" href="../tags.html#tag-indexes">#indexes</a></div>
   <div class="topic-body"><p>Канал подає повнотекстовий пошук не як «просто візьми Elastic», а як механізм, який можна зібрати власноруч — Віктор саме так і зробив у продакшені, власноруч побудувавши повнотекстовий індекс на 300 TB. Мотивуюча невдача: B-tree-індекс робить <code>LIKE &#x27;prefix%&#x27;</code> миттєвим, але <code>LIKE &#x27;%word%&#x27;</code> займає ~40 с (або ~7 с у ранішому демо), бо жоден порядок сортування не допоможе знайти слово всередині значення (<a href="../videos/why-database-indexes.html">навіщо потрібні індекси в базах даних</a>, <a href="../videos/full-text-search-inverted-indexes.html">повнотекстовий пошук та інвертовані індекси</a>). Відповідь — <a href="../concepts/inverted-index.html">інвертований індекс</a>, а довкола нього конвеєр, який він будує наживо: токенізація (розбиття, фільтрація стоп-слів і закоротких токенів, зведення до нижнього регістру) та стемінг проти лематизації — з його українським контрприкладом: стемінг &#x27;німці&#x27; → &#x27;німц&#x27; не ловить &#x27;німець&#x27;, тому в його проєкті на 300 TB використовувався лематизатор (<a href="../videos/full-text-search-inverted-indexes.html">там само</a>). Критично важливо: той самий конвеєр треба застосовувати й до запитів.</p><p>Його ключова максима з Q&amp;A-продовження: «хочеш шукати інакше — мусиш індексувати інакше». Пошук підрядка всередині слова — це не хитріший запит, а n-грамний токенізатор (він малює триграми над словом &#x27;family&#x27;) ціною роздування індексу у 2–3 рази. Каталог токенізаторів Elasticsearch (edge n-gram, letter, keyword, pattern, кастомні витягувачі хештегів/IP) — це насправді меню стратегій індексації (<a href="../videos/full-text-search-part-2-qa.html">Q&amp;A до другої частини</a>). Його прагматичний вердикт: у реальному житті беріть вбудований FULLTEXT або <a href="../tools/elasticsearch.html">Elasticsearch</a> — але тепер ви знаєте, що вони насправді роблять; а його саморобний індекс обійшов MySQL <code>LIKE</code> (40 с → 21 мс на 16.5 млн рядків) і вийшов меншим за власний FULLTEXT-індекс MySQL.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/why-database-indexes.html">Навіщо потрібні індекси в базі даних — розберемо на прикладі</a>
@@ -37,6 +50,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

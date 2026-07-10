@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JWT — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/jwt.html">
+<meta name="description" content="Улюблена тема каналу для питань із підступом: JWT виглядає зашифрованим, але це просто base64url-кодування плюс підпис — фронтенд може прочитати весь payload…">
+<meta property="og:description" content="Улюблена тема каналу для питань із підступом: JWT виглядає зашифрованим, але це просто base64url-кодування плюс підпис — фронтенд може прочитати весь payload…">
+<meta property="og:title" content="JWT — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/jwt.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / jwt</p>
   <h1>JWT</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-security">#security</a><a class="chip tag" href="../tags.html#tag-authentication">#authentication</a><a class="chip tag" href="../tags.html#tag-web">#web</a><a class="chip tag" href="../tags.html#tag-tokens">#tokens</a></div>
   <div class="topic-body"><p>Улюблена тема каналу для питань із підступом: JWT <em>виглядає</em> зашифрованим, але це просто base64url-кодування плюс <strong>підпис</strong> — фронтенд може прочитати весь payload без жодного ключа (<a href="../videos/hashing-encoding-encryption-difference.html">різниця між хешуванням, кодуванням і шифруванням</a>). У <a href="../videos/how-base64-works.html">відео про Base64</a> Віктор доводить це наживо: header (метадані про алгоритм) і payload розкодовуються звичайним <code>base64 --decode</code>; секрет потрібен лише для перевірки підпису. Віра в те, що JWT шифрує свій payload, і використання його як прихованого сховища сесії — його дефолтний приклад пастки поверхневих знань (<a href="../videos/3-things-that-make-a-programmer-better.html">3 речі, що роблять програміста кращим</a>); ліки — розуміти, що таке <a href="../concepts/digital-signatures.html">підпис</a> насправді.</p><p>Утім, при правильному використанні JWT потужний: токен несе всю підписану сесію, тож він stateless і його <em>не потрібно</em> зберігати в базі — у цьому й сенс (<a href="../videos/qa-1-will-https-protect-you.html">Q&amp;A №1</a>). Підпис може бути симетричним (HMAC на спільному секреті, де емітент = перевіряльник) або асиметричним — і асиметричний варіант сяє в мікросервісах: сервіс авторизації підписує своїм приватним ключем, а всі інші сервіси перевіряють лише публічним, тож секрет ніколи не покидає емітента (<a href="../videos/asymmetric-encryption-digital-signatures.html">асиметричне шифрування і цифрові підписи</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/hashing-encoding-encryption-difference.html">Хешування, кодування, шифрування — у чому різниця?</a>
@@ -39,6 +52,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

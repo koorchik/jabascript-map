@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Фільтр Блума — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/bloom-filter.html">
+<meta name="description" content="«Геніальна структура даних»: імовірнісний тест належності до множини, що ніколи не дає false negatives і має настроювану частку false positives, — її розмір…">
+<meta property="og:description" content="«Геніальна структура даних»: імовірнісний тест належності до множини, що ніколи не дає false negatives і має настроювану частку false positives, — її розмір…">
+<meta property="og:title" content="Фільтр Блума — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/bloom-filter.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / bloom-filter</p>
   <h1>Фільтр Блума</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-data-structures">#data-structures</a><a class="chip tag" href="../tags.html#tag-probabilistic">#probabilistic</a><a class="chip tag" href="../tags.html#tag-performance">#performance</a><a class="chip tag" href="../tags.html#tag-security">#security</a></div>
   <div class="topic-body"><p>«Геніальна структура даних»: імовірнісний тест належності до множини, що ніколи не дає false negatives і має настроювану частку false positives, — її розмір залежить лише від кількості елементів і цільового FPR, а не від розміру ключів. Віктор реалізує фільтр руками на JavaScript і бенчмаркає проти всього підряд: 10 млн ключів вміщаються у фільтр на 11 МБ при 1% FPR і відповідають на 100 000 пошуків за ~55 мс — проти ~800 МБ для JS Map, ~17 с на 100k для <a href="../tools/mysql.html">MySQL</a> з індексом і ~6 с на 100k для <a href="../tools/redis.html">Redis</a>/<a href="../tools/memcached.html">Memcached</a>. Математика тюнінгу драматична: подвоєння розміру фільтра купує 100x точності, а заниження розміру вдвічі деградує 1% FPR до ~15%. Його аналогія для колізій: фейсконтрольник у клубі, що памʼятає відвідувачів лише за одягом — того, кого бачив, він не пропустить ніколи, але двоє людей в однаковій куртці для нього ідентичні (<a href="../videos/bloom-filter-and-firefox.html">фільтр Блума і Firefox</a>).</p><p>Кульмінація — CRLite у Firefox: каскад із ~13 рівнів фільтрів Блума, кожен з яких тримає false positives попереднього рівня, — і це перетворює імовірнісний фільтр на детермінований бінарний класифікатор, доставляючи всі ~4 млн відкликаних TLS-сертифікатів кожному браузеру в ~300 КБ щоденних оновлень; у продакшені з 2025 року (а npm-бібліотеки для каскадного варіанта не існує). Реальні впровадження, які він наводить: CRM «Сільпо» на 25 млн клієнтів, де фільтр дає 0.1 мс замість 50 мс при 1000 RPS, Cassandra, списки Google Safe Browsing, RTB-системи реклами і класифікація преміум-користувачів. Анонсовані продовження: Counting Bloom Filter, Count-Min Sketch, HyperLogLog (<a href="../videos/bloom-filter-and-firefox.html">фільтр Блума і Firefox</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/bloom-filter-and-firefox.html">Геніальна структура даних й як її покращив Firefox</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

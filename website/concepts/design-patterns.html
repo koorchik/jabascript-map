@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Патерни проєктування — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/design-patterns.html">
+<meta name="description" content="Позиція каналу щодо патернів свідомо дефляційна: це не сакральне знання, а просто найпоширеніші рішення, які хтось класифікував і назвав. Доказ Віктора з…">
+<meta property="og:description" content="Позиція каналу щодо патернів свідомо дефляційна: це не сакральне знання, а просто найпоширеніші рішення, які хтось класифікував і назвав. Доказ Віктора з…">
+<meta property="og:title" content="Патерни проєктування — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/design-patterns.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / design-patterns</p>
   <h1>Патерни проєктування</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-engineering-craft">#engineering-craft</a><a class="chip tag" href="../tags.html#tag-software-design">#software-design</a><a class="chip tag" href="../tags.html#tag-patterns">#patterns</a></div>
   <div class="topic-body"><p>Позиція каналу щодо патернів свідомо дефляційна: це не сакральне знання, а просто найпоширеніші рішення, які хтось класифікував і назвав. Доказ Віктора з власної карʼєри: у Mail.ua його команда самостійно реалізувала 8 із 24 патернів GoF ще до того, як він прочитав книжку (<a href="../videos/five-star-books.html">книжки на пʼять зірок</a>), — якщо достатньо довго розвʼязуєш реальні задачі, ти їх перевинаходиш. Справжня цінність каталогу, стверджує він, — <em>спільний словник</em>: сказавши іншому розробнику «фасад», «стратегія» чи «адаптер», ти передаєш цілий дизайн одним словом.</p><p>Наслідок — розвинутий у <a href="../videos/3-things-that-ruin-a-programmer.html">3 речах, що псують програміста</a> та у Q&amp;A — у тому, що ставитися до патернів (GoF чи Фаулера) як до євангелія — це догматизм: патерн — це назва для того, що спрацювало, і суть у <em>проблемі, яку він розвʼязує</em>, а не в церемонії. У книжкових рекомендаціях він навіть ставить фаулерівську <a href="../books.html#patterns-of-enterprise-application-architecture">Patterns of Enterprise Application Architecture</a> вище за <a href="../books.html#design-patterns-gof">Design Patterns (GoF)</a>: на ~70% її патернів ти спираєшся, ніколи не реалізовуючи їх власноруч (<a href="../videos/five-star-books.html">книжки на пʼять зірок</a>, <a href="../videos/3-books-on-software-design.html">3 книжки про проєктування ПЗ</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/five-star-books.html">Книги, які я прочитав і поставив п&#x27;ять зірок</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

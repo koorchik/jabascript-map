@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Мікросервіси — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/microservices.html">
+<meta name="description" content="Віктор починає з фрази Саймона Брауна: «чому ви вважаєте, що зможете побудувати мікросервіси, якщо не можете побудувати моноліт?» (головна проблема…">
+<meta property="og:description" content="Віктор починає з фрази Саймона Брауна: «чому ви вважаєте, що зможете побудувати мікросервіси, якщо не можете побудувати моноліт?» (головна проблема…">
+<meta property="og:title" content="Мікросервіси — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/microservices.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / microservices</p>
   <h1>Мікросервіси</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-architecture">#architecture</a><a class="chip tag" href="../tags.html#tag-microservices">#microservices</a><a class="chip tag" href="../tags.html#tag-distributed-systems">#distributed-systems</a></div>
   <div class="topic-body"><p>Віктор починає з фрази Саймона Брауна: <em>«чому ви вважаєте, що зможете побудувати мікросервіси, якщо не можете побудувати моноліт?»</em> (<a href="../videos/microservices-main-problem.html">головна проблема мікросервісів</a>). Він проходить по відомих витратах, які люди принаймні обговорюють: потрібна платформа оркестрації; rollback’и вимагають гарантій сумісності версій між сервісами; окрема база даних на кожен сервіс убиває транзакційність («розподілені транзакції — просто забудьте», з ілюстрацією на прикладі бухгалтерії); мережеві виклики падають так, як in-memory виклики в моноліті не падають ніколи; аргумент про поліглотність має сумнівну економіку; наймати людей стає складніше.</p><p>Але недооцінений вбивця, на його думку, — це <a href="../concepts/domain-knowledge.html">знання домену</a>: у перший день ви майже ніколи не розумієте домен достатньо добре, щоб правильно провести межі сервісів, — і, на відміну від моноліту, дешево перекроїти цей поділ уже не вийде. Неправильні абстракції трапляються і в монолітах, але виправити їх в одній кодовій базі легко; а між мікросервісами, написаними різними мовами й закріпленими за різними командами, — неймовірно важко. Спрощення кожного окремого сервісу теж не прибирає складність — вона мігрує на рівень комунікації і «перетворюється на кашу». Він пов’язує це з улюбленою ідеєю Роберта Мартіна: робота архітектора — <em>відкладати</em> рішення, бо розуміння домену покращується щодня, тож пізніші рішення кращі (<a href="../videos/microservices-main-problem.html">те саме відео</a>). Вердикт: у ~90% випадків починайте з модульного моноліту і розділяйте пізніше — як доказ він наводить статтю Medium про їхню міграцію.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/microservices-main-problem.html">Головна проблема мікросервісів, яку часто недооцінюють</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DHCP (Dynamic Host Configuration Protocol) — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/dhcp.html">
+<meta name="description" content="Кут, під яким канал заходить у DHCP: «що насправді не так з Wi-Fi у кавʼярні?» (DHCP і Wi-Fi в кавʼярні). Пристрій, який щойно приєднався до мережі, не має…">
+<meta property="og:description" content="Кут, під яким канал заходить у DHCP: «що насправді не так з Wi-Fi у кавʼярні?» (DHCP і Wi-Fi в кавʼярні). Пристрій, який щойно приєднався до мережі, не має…">
+<meta property="og:title" content="DHCP (Dynamic Host Configuration Protocol) — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/dhcp.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / dhcp</p>
   <h1>DHCP (Dynamic Host Configuration Protocol)</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-networking">#networking</a><a class="chip tag" href="../tags.html#tag-dhcp">#dhcp</a><a class="chip tag" href="../tags.html#tag-internet">#internet</a><a class="chip tag" href="../tags.html#tag-security">#security</a></div>
   <div class="topic-body"><p>Кут, під яким канал заходить у DHCP: «що насправді не так з Wi-Fi у кавʼярні?» (<a href="../videos/dhcp-cafe-wifi.html">DHCP і Wi-Fi в кавʼярні</a>). Пристрій, який щойно приєднався до мережі, не має жодних налаштувань, тож не може адресувати запит комусь конкретному — він робить UDP-<em>broadcast</em> (IP 255.255.255.255, MAC FF:FF:FF:FF:FF:FF) із проханням про конфігурацію, і ці broadcast-и не перетинають роутер. Сервер слухає UDP-порт 67, клієнт — 68. Віктор проходить обмін DORA (Discover / Offer / Request / Ack), часи оренди (lease) і таймери поновлення T1 (~50%) та T2 (~87.5%), які походять з RFC, але конфігуруються. Безпековий висновок: оскільки відповісти може <em>будь-яка</em> машина в LAN, шахрайський DHCP-сервер може роздати шкідливий DNS-сервер або шлюз за замовчуванням. Атакувальник виграє перегони, вичерпавши пул адрес легітимного сервера — ~10 Discover-запитів з фейковими MAC, поки справжньому клієнту не скажуть «адрес більше немає».</p><p>Він будує це наживо з <a href="../tools/dnsmasq.html">dnsmasq</a> і Wireshark та повертається до теми у Q&amp;A: DHCP starvation тривіальна (цикл на ~100 рядків з DHCP-запитами з випадковими MAC зливає 100–10 000 адрес), і вручну виставлений DNS 8.8.8.8 тебе не рятує — атакувальник просто видає тобі шкідливий <em>шлюз за замовчуванням</em> і пропускає весь твій трафік через себе (<a href="../videos/qa-1-will-https-protect-you.html">перше Q&amp;A</a>). У білді з ізоляцією VM DHCP зʼявляється в мирній ролі: pfSense тримає DHCP-сервер у внутрішній LAN, видаючи гостьовій машині IP (10.10.10.50–100), шлюз 10.10.10.1 і DNS, а WAN-інтерфейс отримує власну адресу від DHCP домашнього роутера (<a href="../videos/vm-network-isolation.html">мережева ізоляція VM</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/dhcp-cafe-wifi.html">Що не так з Інтернетом в кафе? Розбираємо DHCP</a>
@@ -37,6 +50,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

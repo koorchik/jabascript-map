@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nginx — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/tools/nginx.html">
+<meta name="description" content="Вебсервер. На каналі грає допоміжну роль в епізоді про затримки: він підняв голий nginx-сервер у Лос-Анджелесі, що віддавав і HTTP, і HTTPS, як реальну тестову…">
+<meta property="og:description" content="Вебсервер. На каналі грає допоміжну роль в епізоді про затримки: він підняв голий nginx-сервер у Лос-Анджелесі, що віддавав і HTTP, і HTTPS, як реальну тестову…">
+<meta property="og:title" content="nginx — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/tools/nginx.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html">Теми</a><a href="../tools.html" class="active">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
-  <p class="eyebrow mono"><a href="../concepts.html">інструменти</a> / nginx</p>
+  <p class="eyebrow mono"><a href="../tools.html">інструменти</a> / nginx</p>
   <h1>nginx</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-networking">#networking</a><a class="chip tag" href="../tags.html#tag-web-server">#web-server</a><a class="chip tag" href="../tags.html#tag-tooling">#tooling</a></div>
   <div class="topic-body"><p>Вебсервер. На каналі грає допоміжну роль в епізоді про затримки: він підняв голий nginx-сервер у Лос-Анджелесі, що віддавав і HTTP, і HTTPS, як реальну тестову мішень, а ping підтвердив round-trip ~192 мс — конкретна кінцева точка, на якій вимірювалося, як TCP- і TLS-хендшейки накладаються на межу швидкості світла (<a href="../videos/speed-of-light-website-latency.html">Як швидкість світла обмежує швидкість твого веб-сайту</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/speed-of-light-website-latency.html">Як швидкість світла обмежує швидкість твого веб-сайту</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

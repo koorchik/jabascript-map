@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Пісочниці та ізоляція — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/sandboxing-and-isolation.html">
+<meta name="description" content="Ізолюй ненадійне так, щоб навіть у разі компрометації воно не дотяглося ні до чого важливого. Практичний розбір на каналі — мережева ізоляція VM, незмонтований…">
+<meta property="og:description" content="Ізолюй ненадійне так, щоб навіть у разі компрометації воно не дотяглося ні до чого важливого. Практичний розбір на каналі — мережева ізоляція VM, незмонтований…">
+<meta property="og:title" content="Пісочниці та ізоляція — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/sandboxing-and-isolation.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / sandboxing-and-isolation</p>
   <h1>Пісочниці та ізоляція</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-security">#security</a><a class="chip tag" href="../tags.html#tag-virtualization">#virtualization</a><a class="chip tag" href="../tags.html#tag-networking">#networking</a></div>
   <div class="topic-body"><p>Ізолюй ненадійне так, щоб навіть у разі компрометації воно не дотяглося ні до чого важливого. Практичний розбір на каналі — <a href="../videos/vm-network-isolation.html">мережева ізоляція VM</a>, незмонтований скрінкаст, спричинений реальним занепокоєнням: дефолтний bridged-режим VirtualBox садить VM просто в домашню підмережу (192.168.50.x), з доступом до кожного пристрою в домі — а це небезпечно, коли VM виконує ненадійний код чи AI-агентів. Рішення Віктора — мережева пісочниця, побудована з іще однієї VM: віртуальний роутер pfSense з двома адаптерами — bridged-адаптер для WAN і адаптер внутрішньої мережі для LAN, — а цільова Ubuntu VM під’єднана лише до внутрішньої мережі (як альтернативи він згадує MikroTik CHR і OpenWRT/DD-WRT).</p><p>Набір правил фаєрвола — це урок <a href="../concepts/least-privilege.html">найменших привілеїв</a> у застосуванні до пакетів: залишити правило anti-lockout, випустити гостя в інтернет, заблокувати гостю домашню LAN-підмережу і заблокувати доступ до самої адмінки pfSense. Кінцевий стан: гість дістає google.com, але не може пропінгувати домашні пристрої, домашній роутер чи його адмін-сторінку. Уся вправа подається як глибокоешелонований захист (<a href="../concepts/security-practices.html">практики безпеки</a>): виходь із того, що вміст пісочниці ворожий, і зроби радіус ураження нульовим.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/vm-network-isolation.html">Як не дати віртуальній машині лазити по вашій домашній мережі (офтоп для спонсорів)</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

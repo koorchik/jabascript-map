@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Код-ревʼю — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/code-review.html">
+<meta name="description" content="Погляд каналу — з перших рук: Віктор спирається на практику ревʼю і у WebbyLab, і в Google та наполягає, що єдиного правильного способу не існує — але є…">
+<meta property="og:description" content="Погляд каналу — з перших рук: Віктор спирається на практику ревʼю і у WebbyLab, і в Google та наполягає, що єдиного правильного способу не існує — але є…">
+<meta property="og:title" content="Код-ревʼю — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/code-review.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / code-review</p>
   <h1>Код-ревʼю</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-engineering-craft">#engineering-craft</a><a class="chip tag" href="../tags.html#tag-code-review">#code-review</a><a class="chip tag" href="../tags.html#tag-process">#process</a><a class="chip tag" href="../tags.html#tag-google">#google</a></div>
   <div class="topic-body"><p>Погляд каналу — з перших рук: Віктор спирається на практику ревʼю і у WebbyLab, і в Google та наполягає, що єдиного правильного способу не існує — але є прийоми, які роблять кращим будь-яке ревʼю (<a href="../videos/code-review-how-google-does-it.html">як код-ревʼю робить Google</a>). Стандартизуйте гайдлайни (коли обидва підходи однаково прийнятні — просто оберіть один, щоб на ревʼю перестали пересперечуватися про смак) і повністю автоматизуйте стиль, щоб час сеньйорів ніколи не витрачався на коментарі про форматування. Систему Google він описує зсередини: пір-ревʼю, де джуніор може ревʼюїти сеньйора, плюс окрема сертифікація «readability» для кожної мови (~6 місяців на TypeScript, роки на C++) — код не може змерджитися без апруву власника readability, тож у його команді джуніор з readability апрувив його код, тоді як його власного апруву було недостатньо. Сторона автора важить не менше: один концерн на MR, справжні описи, скриншоти і скрінкасти «до/після» — зробіть ревʼю максимально легким для ревʼюера.</p><p>Найгостріша його теза — що самого лише ревʼю на рівні PR ніколи не досить: кожен дифф може виглядати чудово, поки архітектура тихо перестає працювати, — саме тому Google додатково проводить post-launch-ревʼю, де автор фічі проводить команду по вже змердженому коду, а WebbyLab — періодичні архітектурні ревʼю (див. <a href="../concepts/technical-debt.html">технічний борг</a> і <a href="../concepts/software-design.html">проєктування ПЗ</a>). В епоху AI практика поширюється і на машинний код: написаний AI код треба читати рядок за рядком, як людський PR, — він дивиться, як правки Claude стрімляться в терміналі, і тисне Escape, щойно щось іде не так, або ревʼюїть повний дифф для великих one-shot змін — і зауважує, що AI вже ревʼюїть більше PR-ів, ніж пише, а решту все одно ревʼюїть людина (<a href="../videos/vibe-coding-part-2.html">вайб-кодинг, частина 2</a>).</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/code-review-how-google-does-it.html">Як покращити Code Review? Як це робить Google?</a>
@@ -33,6 +46,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>

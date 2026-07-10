@@ -7,6 +7,7 @@ Reads wiki/ (videos, clusters, concepts, tools, books) and transcripts/timed/
 Usage: python3 scripts/build_website.py
 """
 import html
+import json
 import math
 import re
 import shutil
@@ -20,6 +21,7 @@ OUT = ROOT / "website"
 
 SITE_NAME = "Віктор Турський про програмування · навігатор"
 CHANNEL_URL = "https://www.youtube.com/@AboutProgramming"
+SITE_URL = "https://koorchik.github.io/jabascript-map/"
 
 # Streams whose content is time-bound and stale — kept in the wiki, hidden on the site.
 EXCLUDED = {"google-io-2023-watch-party", "qa-and-plans-for-2024"}
@@ -189,6 +191,9 @@ def load_durations():
 def build_model(pages, durations):
     videos, tracks = {}, {}
     for p in pages.values():
+        if p["kind"] != "clusters" and not p["fm"].get("tags"):
+            warn(f"{p['slug']}: no tags")
+    for p in pages.values():
         if p["kind"] != "videos":
             continue
         vid = p["fm"].get("youtube_id", "")
@@ -293,7 +298,9 @@ def layout_map(nodes, edges, sizes):
                 f = k * k / d
                 disp[a][0] += dx / d * f; disp[a][1] += dy / d * f
                 disp[b][0] -= dx / d * f; disp[b][1] -= dy / d * f
-        for a, b in edges:
+        # sorted: float accumulation order must be deterministic (edges is a set,
+        # and set iteration order varies with hash randomization between runs)
+        for a, b in sorted(edges):
             dx = pos[a][0] - pos[b][0]
             dy = pos[a][1] - pos[b][1]
             d = math.sqrt(dx * dx + dy * dy) or 0.001
@@ -430,6 +437,108 @@ def md_inline(text, pages, depth, source=""):
     return s
 
 
+def meta_description(text, pages, limit=160):
+    """Plain-text page description: wikilinks → display text, markdown stripped."""
+    def link_text(m):
+        slug, disp = m.group(1).strip(), m.group(2)
+        if disp:
+            return disp
+        p = pages.get(slug)
+        return p["title"] if p else slug
+    s = WIKILINK_RE.sub(link_text, text)
+    s = re.sub(r"\*\*(.+?)\*\*", r"\1", s)
+    s = re.sub(r"(?<![\w*])\*([^*]+)\*(?![\w*])", r"\1", s)
+    s = " ".join(s.replace("`", "").split())
+    if len(s) > limit:
+        s = s[:limit].rsplit(" ", 1)[0].rstrip(" ,;:—–-") + "…"
+    return s
+
+
+def md_blocks(text, pages, depth, source=""):
+    """Block-level markdown subset: H2/H3, bullet lists (with indented
+    continuation lines), pipe tables, blockquotes, paragraphs."""
+    out, para, items, rows = [], [], [], []
+
+    def inline(s):
+        return md_inline(s, pages, depth, source)
+
+    def flush_para():
+        if para:
+            out.append(f"<p>{inline(' '.join(para))}</p>")
+            para.clear()
+
+    def flush_list():
+        if items:
+            lis = "".join(f"<li>{inline(' '.join(i.split()))}</li>" for i in items)
+            out.append(f"<ul>{lis}</ul>")
+            items.clear()
+
+    def flush_table():
+        if rows:
+            head, *body_rows = rows
+            th = "".join(f"<th>{inline(c)}</th>" for c in head)
+            trs = "".join(
+                "<tr>" + "".join(f"<td>{inline(c)}</td>" for c in r) + "</tr>"
+                for r in body_rows)
+            out.append(f'<div class="table-scroll"><table>'
+                       f"<thead><tr>{th}</tr></thead><tbody>{trs}</tbody>"
+                       f"</table></div>")
+            rows.clear()
+
+    def flush():
+        flush_para(); flush_list(); flush_table()
+
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped:
+            flush()
+        elif stripped.startswith("### "):
+            flush(); out.append(f"<h3>{inline(stripped[4:])}</h3>")
+        elif stripped.startswith("## "):
+            flush(); out.append(f"<h2>{inline(stripped[3:])}</h2>")
+        elif stripped.startswith("# "):
+            flush()  # the page renders its own <h1>
+        elif stripped.startswith("- "):
+            flush_para(); flush_table()
+            items.append(stripped[2:])
+        elif items and line.startswith(("  ", "\t")):
+            items[-1] += " " + stripped
+        elif stripped.startswith("|"):
+            flush_para(); flush_list()
+            # mask pipes inside [[slug|display]] so they don't split cells
+            masked = WIKILINK_RE.sub(lambda m: m.group(0).replace("|", "\x00"),
+                                     stripped.strip("|"))
+            cells = [c.strip().replace("\x00", "|") for c in masked.split("|")]
+            if not all(re.fullmatch(r":?-{2,}:?", c) for c in cells):
+                rows.append(cells)
+        elif stripped.startswith("> "):
+            flush(); out.append(f"<blockquote><p>{inline(stripped[2:])}</p></blockquote>")
+        else:
+            para.append(stripped)
+    flush()
+    return "\n".join(out)
+
+
+def primary_track(slug, tracks):
+    """(track, order_no, step_no) for the first TRACKS entry containing slug."""
+    for i, (tslug, *_rest) in enumerate(TRACKS, 1):
+        t = tracks.get(tslug)
+        if not t:
+            continue
+        path_slugs = [s for s, _ in t["path"]]
+        if slug in path_slugs:
+            return t, i, path_slugs.index(slug) + 1
+    return None, None, None
+
+
+def tag_chips(tags, depth):
+    prefix = "../" * depth
+    chips = "".join(
+        f'<a class="chip tag" href="{prefix}tags.html#tag-{html.escape(t)}">#{html.escape(t)}</a>'
+        for t in tags)
+    return f'<div class="chip-row small tag-row">{chips}</div>' if chips else ""
+
+
 def level_badge(level):
     if not level:
         return ""
@@ -449,11 +558,28 @@ def chip_row(slugs, pages, depth, small=False, limit=None):
     return f'<div class="chip-row{" small" if small else ""}">{"".join(chips)}</div>'
 
 
-def page_shell(*, title, body, depth, hue=None, active=""):
+def page_shell(*, title, body, depth, path, description="", hue=None, active="",
+               og_type="website", og_image=None):
     prefix = "../" * depth
     accent = f' style="--h:{hue}"' if hue is not None else ""
-    nav = [("index.html", "Треки", "tracks"), ("concepts.html", "Теми", "concepts"),
-           ("books.html", "Книги", "books")]
+    canonical = SITE_URL + path
+    esc_title = html.escape(title)
+    meta = [f'<link rel="canonical" href="{canonical}">']
+    if description:
+        esc_desc = html.escape(description)
+        meta.append(f'<meta name="description" content="{esc_desc}">')
+        meta.append(f'<meta property="og:description" content="{esc_desc}">')
+    meta.append(f'<meta property="og:title" content="{esc_title}">')
+    meta.append(f'<meta property="og:type" content="{og_type}">')
+    meta.append(f'<meta property="og:url" content="{canonical}">')
+    meta.append('<meta property="og:locale" content="uk_UA">')
+    if og_image:
+        meta.append(f'<meta property="og:image" content="{og_image}">')
+    meta.append(f'<meta name="twitter:card" content="{"summary_large_image" if og_image else "summary"}">')
+    meta_html = "\n".join(meta)
+    nav = [("index.html", "Треки", "tracks"), ("videos.html", "Відео", "videos"),
+           ("concepts.html", "Теми", "concepts"), ("tools.html", "Інструменти", "tools"),
+           ("books.html", "Книги", "books"), ("overview.html", "Огляд", "overview")]
     nav_html = "".join(
         f'<a href="{prefix}{href}"{" class=\"active\"" if key == active else ""}>{label}</a>'
         for href, label, key in nav)
@@ -462,15 +588,20 @@ def page_shell(*, title, body, depth, hue=None, active=""):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(title)}</title>
+<title>{esc_title}</title>
+{meta_html}
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){{var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;}})();</script>
 <link rel="stylesheet" href="{prefix}assets/style.css">
 </head>
-<body{accent}>
+<body{accent} data-root="{prefix}">
 <header class="site-head">
   <a class="brand" href="{prefix}index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
   <nav>{nav_html}</nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
@@ -480,7 +611,8 @@ def page_shell(*, title, body, depth, hue=None, active=""):
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="{CHANNEL_URL}">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="{prefix}assets/app.js"></script>
+<script src="{prefix}assets/search-index.js" defer></script>
+<script src="{prefix}assets/app.js" defer></script>
 </body>
 </html>
 """
@@ -575,7 +707,10 @@ def render_index(videos, tracks, pages):
 {render_concept_map(pages, videos, tracks)}
 """
     return page_shell(title=f"{SITE_NAME} — компʼютерні науки у правильному порядку",
-                      body=body, depth=0, active="tracks")
+                      body=body, depth=0, path="", active="tracks",
+                      description=f"Навчальна мапа україномовного YouTube-каналу про програмування: "
+                                  f"{len(videos)} відео у шести треках — бази даних, мережі, "
+                                  f"криптографія, ШІ та інженерна майстерність.")
 
 
 def render_track(track, order_no, videos, pages):
@@ -613,7 +748,8 @@ def render_track(track, order_no, videos, pages):
 </article>
 """
     return page_shell(title=f"{track['name']} — {SITE_NAME}", body=body,
-                      depth=1, hue=track["hue"], active="tracks")
+                      depth=1, path=f"tracks/{track['slug']}.html",
+                      description=track["tagline"], hue=track["hue"], active="tracks")
 
 
 def render_video(slug, v, videos, tracks, pages):
@@ -696,6 +832,7 @@ def render_video(slug, v, videos, tracks, pages):
   <section class="video-covered">
     <h2>Теми відео</h2>
     {chips or '<p class="meta">Тем поки немає.</p>'}
+    {tag_chips(v["fm"].get("tags", []), 1)}
   </section>
   <section class="video-paths">
     <h2>Частина цих треків</h2>
@@ -704,6 +841,10 @@ def render_video(slug, v, videos, tracks, pages):
 </article>
 """
     return page_shell(title=f"{v['title']} — {SITE_NAME}", body=body, depth=1,
+                      path=f"videos/{slug}.html",
+                      description=meta_description(v["summary"], pages),
+                      og_type="video.other",
+                      og_image=f"https://img.youtube.com/vi/{vid}/hqdefault.jpg",
                       hue=hue, active="tracks")
 
 
@@ -727,10 +868,14 @@ def render_topic(page, pages, videos):
     covered = covered_in_list(page, pages, 1, videos)
     related_src = sect(page, "related").strip()
     related = f"<p>{md_inline(' '.join(related_src.split()), pages, 1, page['slug'])}</p>" if related_src else ""
-    kind_label = "концепції" if page["kind"] == "concepts" else "інструменти"
+    if page["kind"] == "concepts":
+        kind_label, index_page = "концепції", "concepts.html"
+    else:
+        kind_label, index_page = "інструменти", "tools.html"
     body = f"""<article class="topic-page">
-  <p class="eyebrow mono"><a href="../concepts.html">{kind_label}</a> / {html.escape(page["slug"])}</p>
+  <p class="eyebrow mono"><a href="../{index_page}">{kind_label}</a> / {html.escape(page["slug"])}</p>
   <h1>{html.escape(page["title"])}</h1>
+  {tag_chips(page["fm"].get("tags", []), 1)}
   <div class="topic-body">{paras}</div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list">{covered or "<li class='meta'>Поки жодне відео сюди не посилається.</li>"}</ul>
@@ -738,33 +883,32 @@ def render_topic(page, pages, videos):
 </article>
 """
     return page_shell(title=f"{page['title']} — {SITE_NAME}", body=body, depth=1,
-                      active="concepts")
+                      path=f"{page['kind']}/{page['slug']}.html",
+                      description=meta_description(first_paragraph(page["preamble"]), pages),
+                      active=page["kind"])
 
 
-def render_concept_library(pages, videos):
-    groups = []
-    for kind, label in (("concepts", "Концепції"), ("tools", "Інструменти й технології")):
-        items = []
-        for p in sorted((p for p in pages.values() if p["kind"] == kind),
-                        key=lambda p: p["title"].lower()):
-            first = first_paragraph(p["preamble"])
-            first_sentence = re.split(r"(?<=[.!?]) ", first)[0] if first else ""
-            n = len(BULLET_LINK_RE.findall(sect(p, "covered_in")))
-            items.append(f"""<li>
+def render_library(pages, videos, *, kind, heading, lede, path, active):
+    """Index page listing every concept or tool."""
+    items = []
+    for p in sorted((p for p in pages.values() if p["kind"] == kind),
+                    key=lambda p: p["title"].lower()):
+        first = first_paragraph(p["preamble"])
+        first_sentence = re.split(r"(?<=[.!?]) ", first)[0] if first else ""
+        n = len(BULLET_LINK_RE.findall(sect(p, "covered_in")))
+        items.append(f"""<li>
   <a href="{kind}/{p["slug"]}.html">{html.escape(p["title"])}</a>
   <span class="meta mono">{n} відео</span>
   <p class="step-note">{md_inline(first_sentence, pages, 0, p["slug"])}</p>
 </li>""")
-        groups.append(f'<h2>{label}</h2><ul class="library">{"".join(items)}</ul>')
     body = f"""<article class="library-page">
-  <h1>Бібліотека тем</h1>
-  <p class="lede">Усе, що канал пояснював, у вигляді зворотного індексу:
-  оберіть тему — і побачите, які саме відео (і хвилини) її розкривають.</p>
-  {"".join(groups)}
+  <h1>{html.escape(heading)}</h1>
+  <p class="lede">{lede}</p>
+  <ul class="library">{"".join(items)}</ul>
 </article>
 """
-    return page_shell(title=f"Бібліотека тем — {SITE_NAME}", body=body, depth=0,
-                      active="concepts")
+    return page_shell(title=f"{heading} — {SITE_NAME}", body=body, depth=0,
+                      path=path, description=lede, active=active)
 
 
 def render_books(pages, videos):
@@ -778,6 +922,7 @@ def render_books(pages, videos):
         entries.append(f"""<section class="book" id="{p["slug"]}">
   <h2>{html.escape(p["title"])}</h2>
   <div class="meta">{html.escape(author)}</div>
+  {tag_chips([t for t in p["fm"].get("tags", []) if t != "book"], 0)}
   {paras}
   <ul class="covered-list">{covered}</ul>
 </section>""")
@@ -792,7 +937,189 @@ def render_books(pages, videos):
   {"".join(entries)}
 </article>
 """
-    return page_shell(title=f"Книжкова полиця — {SITE_NAME}", body=body, depth=0, active="books")
+    return page_shell(title=f"Книжкова полиця — {SITE_NAME}", body=body, depth=0,
+                      path="books.html", active="books",
+                      description="Усі книжки, рекомендовані на каналі, з чесними вердиктами "
+                                  "Віктора: що читати, що погортати, а до чого й не братися.")
+
+
+def render_overview(pages, videos):
+    _fm, body_md = parse_frontmatter((WIKI / "overview.md").read_text(encoding="utf-8"))
+    preamble, sections = split_sections(body_md)
+    m = re.search(r"^# +(.+?)\s*$", preamble, re.M)
+    title = m.group(1) if m else "Мапа знань"
+    parts = [md_blocks(preamble, pages, 0, "overview")]
+    for heading, content in sections:
+        if heading == "Як користуватися цією вікі":
+            continue  # wiki-internal workflow section — meaningless on the website
+        parts.append(f"<h2>{md_inline(heading, pages, 0, 'overview')}</h2>")
+        parts.append(md_blocks(content, pages, 0, "overview"))
+    body = f"""<article class="topic-page overview-page">
+  <p class="eyebrow mono">огляд</p>
+  <h1>{html.escape(title)}</h1>
+  <div class="topic-body">{"".join(parts)}</div>
+</article>
+"""
+    return page_shell(title=f"Огляд каналу — {SITE_NAME}", body=body, depth=0,
+                      path="overview.html", active="overview",
+                      description="Мапа знань каналу: одна теза, шість територій "
+                                  "і фірмовий матеріал, який дає лише цей канал.")
+
+
+def render_video_catalog(videos, tracks, pages):
+    ordered, seen = [], set()
+    for tslug, *_rest in TRACKS:
+        t = tracks.get(tslug)
+        if not t:
+            continue
+        for vslug, _note in t["path"]:
+            if vslug not in seen:
+                seen.add(vslug)
+                ordered.append(vslug)
+    ordered += [v for v in videos if v not in seen]
+
+    cards = []
+    for vslug in ordered:
+        v = videos[vslug]
+        t, _no, _step = primary_track(vslug, tracks)
+        track_chip = (f'<a class="chip track-chip" style="--h:{t["hue"]}" '
+                      f'href="tracks/{t["slug"]}.html">{html.escape(t["name"])}</a>' if t else "")
+        first = re.split(r"(?<=[.!?]) ", v["summary"])[0] if v["summary"] else ""
+        dur = fmt_ts(v["duration"]) if v["duration"] else ""
+        cards.append(f"""<li class="cat-card" data-level="{html.escape(v["level"])}" data-track="{t["slug"] if t else ""}">
+  <div class="cat-top">
+    <a class="step-title" href="videos/{vslug}.html">{html.escape(v["title"])}</a>
+    {level_badge(v["level"])}
+    <span class="meta mono">{dur}</span>
+  </div>
+  <p class="step-note">{md_inline(first, pages, 0, vslug)}</p>
+  <div class="cat-foot">{track_chip}{tag_chips(v["fm"].get("tags", []), 0)}</div>
+</li>""")
+
+    level_buttons = "".join(
+        f'<button type="button" class="fbtn" data-value="{lv}">{LEVEL_UK[lv]}</button>'
+        for lv in ("beginner", "intermediate", "advanced"))
+    track_buttons = "".join(
+        f'<button type="button" class="fbtn" data-value="{tslug}" style="--h:{hue}">{html.escape(name)}</button>'
+        for tslug, name, _tag, hue in TRACKS if tslug in tracks)
+    body = f"""<article class="catalog-page">
+  <h1>Усі відео</h1>
+  <p class="lede">Повний каталог каналу в порядку треків: кожне відео на своєму
+  місці у навчальному шляху. Фільтруйте за рівнем чи треком.</p>
+  <div class="filter-bar" id="video-filters">
+    <div class="filter-group" data-filter="level">
+      <button type="button" class="fbtn on" data-value="">усі рівні</button>
+      {level_buttons}
+    </div>
+    <div class="filter-group" data-filter="track">
+      <button type="button" class="fbtn on" data-value="">усі треки</button>
+      {track_buttons}
+    </div>
+    <div class="meta mono" id="filter-count"></div>
+  </div>
+  <ol class="cat-list">
+  {"".join(cards)}
+  </ol>
+</article>
+"""
+    return page_shell(title=f"Усі відео — {SITE_NAME}", body=body, depth=0,
+                      path="videos.html", active="videos",
+                      description=f"Каталог усіх {len(videos)} відео каналу з фільтрами "
+                                  f"за рівнем складності й треком.")
+
+
+def render_tags(pages, videos):
+    kind_labels = (("videos", "відео"), ("concepts", "концепції"),
+                   ("tools", "інструменти"), ("books", "книги"))
+    kinds = dict(kind_labels)
+    tag_map = {}
+    for p in pages.values():
+        if p["kind"] not in kinds:
+            continue
+        for t in p["fm"].get("tags", []):
+            if t == "book":  # on every book page — pure noise as a tag
+                continue
+            tag_map.setdefault(t, []).append(p)
+    by_count = sorted(tag_map, key=lambda t: (-len(tag_map[t]), t))
+
+    cloud = "".join(
+        f'<a class="chip tag" href="#tag-{html.escape(t)}">#{html.escape(t)}'
+        f' <span class="tag-n">{len(tag_map[t])}</span></a>'
+        for t in by_count)
+    sections = []
+    for t in by_count:
+        groups = []
+        for kind, label in kind_labels:
+            ps = sorted((p for p in tag_map[t] if p["kind"] == kind),
+                        key=lambda p: p["title"].lower())
+            if not ps:
+                continue
+            chips = "".join(
+                f'<a class="chip" href="{url_for(p["slug"], pages)}">{html.escape(p["title"])}</a>'
+                for p in ps)
+            groups.append(f'<div class="tag-group"><span class="meta mono">{label}</span>'
+                          f'<div class="chip-row">{chips}</div></div>')
+        sections.append(f"""<section class="tag-section" id="tag-{html.escape(t)}">
+  <h2 class="mono">#{html.escape(t)} <span class="tag-n">{len(tag_map[t])}</span></h2>
+  {"".join(groups)}
+</section>""")
+    body = f"""<article class="tags-page">
+  <h1>Теги</h1>
+  <p class="lede">Усі сторінки навігатора — відео, концепції, інструменти
+  й книги — згруповані за тегами.</p>
+  <div class="tag-cloud">{cloud}</div>
+  {"".join(sections)}
+</article>
+"""
+    return page_shell(title=f"Теги — {SITE_NAME}", body=body, depth=0,
+                      path="tags.html",
+                      description="Відео, концепції, інструменти й книги каналу, "
+                                  "згруповані за тегами.")
+
+
+def build_search_index(pages, videos, tracks):
+    """Emit assets/search-index.js: window.SEARCH_INDEX for the client-side search.
+    A .js assignment (not fetched JSON) so search also works from file://."""
+    def norm(s):
+        return re.sub(r"[ʼ'’`]", "", s.lower())
+
+    items = []
+    for slug, v in videos.items():
+        items.append((v["title"], "video", f"videos/{slug}.html",
+                      meta_description(v["summary"], pages, 110), v["fm"].get("tags", []), slug))
+    for p in pages.values():
+        if p["kind"] in ("concepts", "tools", "books"):
+            kind = {"concepts": "concept", "tools": "tool", "books": "book"}[p["kind"]]
+            snip = meta_description(first_paragraph(p["preamble"]), pages, 110)
+            extra = [p["fm"].get("author", "")] if p["kind"] == "books" else []
+            items.append((p["title"], kind, url_for(p["slug"], pages), snip,
+                          p["fm"].get("tags", []) + extra, p["slug"]))
+    for tslug, name, tagline, _hue in TRACKS:
+        if tslug in tracks:
+            items.append((name, "track", f"tracks/{tslug}.html",
+                          meta_description(tagline, pages, 110), [], tslug))
+
+    index = [{"t": title, "k": kind, "u": url, "d": snip,
+              "s": norm(" ".join([title, slug.replace("-", " "), *tags, snip]))}
+             for title, kind, url, snip, tags, slug in sorted(items, key=lambda i: (i[1], i[2]))]
+    return ("window.SEARCH_INDEX="
+            + json.dumps(index, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+            + ";\n")
+
+
+def write_sitemap():
+    urls = []
+    for f in sorted(OUT.rglob("*.html")):
+        rel = f.relative_to(OUT).as_posix()
+        loc = SITE_URL if rel == "index.html" else SITE_URL + rel
+        urls.append(f"  <url><loc>{loc}</loc></url>")
+    (OUT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(urls) + "\n</urlset>\n", encoding="utf-8")
+    (OUT / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}sitemap.xml\n", encoding="utf-8")
+    return len(urls)
 
 
 # ---------------------------------------------------------------- assets
@@ -1014,6 +1341,67 @@ main { max-width: 1060px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
 .pn { font-size: .92rem; }
 .pn.dim { color: var(--muted); }
 
+/* search */
+.search { position: relative; }
+#search-input {
+  width: 11rem; padding: .35rem .8rem; border-radius: 99px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  font: inherit; font-size: .88rem;
+}
+#search-input::placeholder { color: var(--muted); }
+#search-input:focus { outline: none; border-color: var(--accent); }
+#search-results {
+  position: absolute; top: calc(100% + .45rem); right: 0; z-index: 30;
+  width: min(26rem, calc(100vw - 2.5rem)); max-height: 24rem; overflow-y: auto;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 10px 34px rgb(0 0 0 / .35);
+}
+.sr-item { display: block; padding: .55rem .85rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.sr-item:last-child { border-bottom: 0; }
+.sr-item:hover, .sr-item.sel { background: var(--accent-bg); text-decoration: none; }
+.sr-kind { color: var(--accent); font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; margin-right: .55em; }
+.sr-title { font-weight: 550; }
+.sr-snippet { display: block; color: var(--muted); font-size: .8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sr-empty { padding: .7rem .9rem; color: var(--muted); font-size: .88rem; }
+
+/* videos catalog */
+.catalog-page h1, .tags-page h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+.filter-bar { display: flex; flex-direction: column; gap: .55rem; margin: 1.5rem 0 1.1rem; }
+.filter-group { display: flex; flex-wrap: wrap; gap: .4rem; }
+.fbtn {
+  font-family: var(--mono); font-size: .78rem; cursor: pointer;
+  padding: .28em .85em; border-radius: 99px;
+  background: var(--surface); border: 1px solid var(--border); color: var(--muted);
+}
+.fbtn:hover { color: var(--text); border-color: var(--muted); }
+.fbtn.on { color: var(--text); border-color: var(--accent); background: var(--accent-bg); }
+.cat-list { list-style: none; padding: 0; margin: 0; }
+.cat-card { padding: .95rem 0; border-bottom: 1px solid var(--border); }
+.cat-top { display: flex; align-items: baseline; gap: .7rem; flex-wrap: wrap; }
+.cat-card .step-note { margin: .35rem 0 .45rem; }
+.cat-foot { display: flex; flex-wrap: wrap; gap: .3rem .45rem; align-items: center; }
+.chip.track-chip { font-size: .74rem; color: var(--accent); border-color: var(--accent-dim); background: var(--accent-bg); }
+
+/* tags */
+.chip.tag { font-family: var(--mono); font-size: .74rem; color: var(--muted); background: transparent; }
+.chip.tag:hover { color: var(--text); }
+.tag-row { margin-top: .5rem; }
+.tag-n { color: var(--muted); font-size: .9em; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.4rem 0 1.6rem; }
+.tag-section { padding: .95rem 0; border-bottom: 1px solid var(--border); }
+.tag-section h2 { margin: 0 0 .55rem; font-size: 1rem; }
+.tag-group { display: flex; gap: .9rem; align-items: baseline; margin: .4rem 0; }
+.tag-group > .meta { flex: none; width: 6.5rem; }
+
+/* block markdown (overview) */
+.table-scroll { overflow-x: auto; margin: 1.1rem 0; }
+.topic-body table { border-collapse: collapse; font-size: .93rem; min-width: 34rem; }
+.topic-body th, .topic-body td { border: 1px solid var(--border); padding: .5em .8em; text-align: left; vertical-align: top; }
+.topic-body th { background: var(--surface); }
+.topic-body blockquote { margin: 1rem 0; padding: .3rem 1.1rem; border-left: 3px solid var(--accent-dim); color: var(--muted); }
+.overview-page .topic-body ul { padding-left: 1.2rem; }
+.overview-page .topic-body li { margin: .4rem 0; }
+
 /* topic / library / books */
 .topic-page h1, .library-page h1, .books-page h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
 .topic-body { max-width: 50rem; }
@@ -1034,6 +1422,10 @@ main { max-width: 1060px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
   .site-head { flex-wrap: wrap; gap: .6rem 1rem; }
   .site-head nav { margin-left: 0; }
   .watched-box { margin-left: 0; }
+  .search { flex: 1 1 12rem; }
+  #search-input { width: 100%; }
+  .tag-group { flex-direction: column; gap: .25rem; }
+  .tag-group > .meta { width: auto; }
 }
 """
 
@@ -1089,6 +1481,86 @@ APP_JS = """// jabascript навігатор — згенеровано scripts/
     });
   });
   refresh();
+
+  // video catalog filters (videos.html)
+  var filters = document.getElementById("video-filters");
+  if (filters) {
+    var fstate = { level: "", track: "" };
+    var cards = document.querySelectorAll(".cat-card");
+    var counter = document.getElementById("filter-count");
+    var applyFilters = function () {
+      var n = 0;
+      cards.forEach(function (card) {
+        var show = (!fstate.level || card.dataset.level === fstate.level) &&
+                   (!fstate.track || card.dataset.track === fstate.track);
+        card.hidden = !show;
+        if (show) n++;
+      });
+      if (counter) counter.textContent = n + " відео";
+    };
+    filters.querySelectorAll(".filter-group").forEach(function (group) {
+      group.addEventListener("click", function (e) {
+        var btn = e.target.closest(".fbtn");
+        if (!btn) return;
+        fstate[group.dataset.filter] = btn.dataset.value;
+        group.querySelectorAll(".fbtn").forEach(function (b) { b.classList.toggle("on", b === btn); });
+        applyFilters();
+      });
+    });
+    applyFilters();
+  }
+
+  // site search (index shipped as assets/search-index.js)
+  var input = document.getElementById("search-input");
+  var results = document.getElementById("search-results");
+  if (input && results && window.SEARCH_INDEX) {
+    var KINDS = { video: "відео", concept: "тема", tool: "інструмент", book: "книга", track: "трек" };
+    var root = document.body.dataset.root || "";
+    var sel = -1;
+    var normQ = function (s) { return s.toLowerCase().replace(/[ʼ'’`]/g, ""); };
+    var escQ = function (s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
+    var hide = function () { results.hidden = true; sel = -1; };
+    var show = function () {
+      var q = normQ(input.value.trim());
+      if (q.length < 2) { hide(); return; }
+      var found = [];
+      window.SEARCH_INDEX.forEach(function (it) {
+        var t = normQ(it.t);
+        var rank = t.indexOf(q) === 0 ? 0 : t.indexOf(q) > -1 ? 1 : it.s.indexOf(q) > -1 ? 2 : -1;
+        if (rank >= 0) found.push([rank, it]);
+      });
+      found.sort(function (a, b) { return a[0] - b[0]; });
+      var top = found.slice(0, 8);
+      results.innerHTML = top.length ? top.map(function (r) {
+        var it = r[1];
+        return '<a class="sr-item" href="' + root + it.u + '">' +
+               '<span class="sr-kind mono">' + (KINDS[it.k] || it.k) + '</span>' +
+               '<span class="sr-title">' + escQ(it.t) + '</span>' +
+               '<span class="sr-snippet">' + escQ(it.d) + '</span></a>';
+      }).join("") : '<div class="sr-empty">Нічого не знайдено</div>';
+      results.hidden = false;
+      sel = -1;
+    };
+    input.addEventListener("input", show);
+    input.addEventListener("focus", function () { if (input.value.trim().length >= 2) show(); });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { hide(); input.blur(); return; }
+      var items = results.querySelectorAll(".sr-item");
+      if (results.hidden || !items.length) return;
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        sel = e.key === "ArrowDown" ? Math.min(sel + 1, items.length - 1) : Math.max(sel - 1, 0);
+        items.forEach(function (el, i) { el.classList.toggle("sel", i === sel); });
+        items[sel].scrollIntoView({ block: "nearest" });
+      } else if (e.key === "Enter" && sel >= 0) {
+        e.preventDefault();
+        location.href = items[sel].href;
+      }
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".search")) hide();
+    });
+  }
 })();
 """
 
@@ -1118,14 +1590,29 @@ def main():
         if p["kind"] in ("concepts", "tools"):
             (OUT / p["kind"] / f"{p['slug']}.html").write_text(
                 render_topic(p, pages, videos), encoding="utf-8")
-    (OUT / "concepts.html").write_text(render_concept_library(pages, videos), encoding="utf-8")
+    (OUT / "concepts.html").write_text(render_library(
+        pages, videos, kind="concepts", heading="Бібліотека тем",
+        lede="Усе, що канал пояснював, у вигляді зворотного індексу: "
+             "оберіть тему — і побачите, які саме відео (і хвилини) її розкривають.",
+        path="concepts.html", active="concepts"), encoding="utf-8")
+    (OUT / "tools.html").write_text(render_library(
+        pages, videos, kind="tools", heading="Інструменти й технології",
+        lede="Технології та продукти, які канал розбирає на практиці — "
+             "від PostgreSQL до Claude Code.",
+        path="tools.html", active="tools"), encoding="utf-8")
     (OUT / "books.html").write_text(render_books(pages, videos), encoding="utf-8")
+    (OUT / "videos.html").write_text(render_video_catalog(videos, tracks, pages), encoding="utf-8")
+    (OUT / "tags.html").write_text(render_tags(pages, videos), encoding="utf-8")
+    (OUT / "overview.html").write_text(render_overview(pages, videos), encoding="utf-8")
     (OUT / "assets" / "style.css").write_text(STYLE, encoding="utf-8")
     (OUT / "assets" / "app.js").write_text(APP_JS, encoding="utf-8")
+    (OUT / "assets" / "search-index.js").write_text(
+        build_search_index(pages, videos, tracks), encoding="utf-8")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
+    n_sitemap = write_sitemap()
 
     n_pages = sum(1 for _ in OUT.rglob("*.html"))
-    print(f"built {n_pages} pages -> {OUT}")
+    print(f"built {n_pages} pages ({n_sitemap} in sitemap) -> {OUT}")
     if WARNINGS:
         print(f"\n{len(WARNINGS)} warnings:")
         for w in sorted(set(WARNINGS)):

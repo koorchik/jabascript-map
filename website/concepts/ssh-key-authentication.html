@@ -4,20 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Автентифікація за SSH-ключами — Віктор Турський про програмування · навігатор</title>
+<link rel="canonical" href="https://koorchik.github.io/jabascript-map/concepts/ssh-key-authentication.html">
+<meta name="description" content="На каналі це подано як асиметричне шифрування, яким ви користуєтеся щодня, не помічаючи цього. У випуску про асиметричне шифрування і цифрові підписи Віктор…">
+<meta property="og:description" content="На каналі це подано як асиметричне шифрування, яким ви користуєтеся щодня, не помічаючи цього. У випуску про асиметричне шифрування і цифрові підписи Віктор…">
+<meta property="og:title" content="Автентифікація за SSH-ключами — Віктор Турський про програмування · навігатор">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koorchik.github.io/jabascript-map/concepts/ssh-key-authentication.html">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
 <script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body data-root="../">
 <header class="site-head">
   <a class="brand" href="../index.html"><span class="brand-mark">▶</span> Віктор Турський про програмування <span class="brand-dim">/ навігатор</span></a>
-  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <nav><a href="../index.html">Треки</a><a href="../videos.html">Відео</a><a href="../concepts.html" class="active">Теми</a><a href="../tools.html">Інструменти</a><a href="../books.html">Книги</a><a href="../overview.html">Огляд</a></nav>
+  <div class="search">
+    <input id="search-input" type="search" placeholder="Пошук…" autocomplete="off" aria-label="Пошук по сайту">
+    <div id="search-results" hidden></div>
+  </div>
   <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
 </header>
 <main>
 <article class="topic-page">
   <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / ssh-key-authentication</p>
   <h1>Автентифікація за SSH-ключами</h1>
+  <div class="chip-row small tag-row"><a class="chip tag" href="../tags.html#tag-security">#security</a><a class="chip tag" href="../tags.html#tag-authentication">#authentication</a><a class="chip tag" href="../tags.html#tag-ssh">#ssh</a><a class="chip tag" href="../tags.html#tag-cryptography">#cryptography</a></div>
   <div class="topic-body"><p>На каналі це подано як <a href="../concepts/asymmetric-encryption.html">асиметричне шифрування</a>, яким ви користуєтеся щодня, не помічаючи цього. У <a href="../videos/asymmetric-encryption-digital-signatures.html">випуску про асиметричне шифрування і цифрові підписи</a> Віктор робить живе демо на DigitalOcean: <code>ssh -v</code> показує, як клієнт пропонує ключі один за одним, публічний ключ лягає в <code>authorized_keys</code>, а сама автентифікація — це челендж: сервер надсилає випадковий рядок, клієнт криптографічно доводить володіння приватним ключем, а сервер перевіряє це, маючи лише публічний ключ. Без пароля — і нічого секретного не проходить через мережу.</p><p>Історія з практики, яка все це закріплює: коли він попросив розробників надіслати йому «свій ключ» для доступу до сервера, не один надіслав <em>приватний</em> ключ. Його правило: ніколи — приватний ключ еквівалентний вашому паролю; ділитися можна лише публічним.</p></div>
   <h2>Розібрано у відео</h2>
   <ul class="covered-list"><li><a href="../videos/asymmetric-encryption-digital-signatures.html">Що захищає твої дані й гроші від хакерів? Асиметричне шифрування та цифровий підпис</a>
@@ -31,6 +44,7 @@
   <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@AboutProgramming">Віктор Турський про програмування</a>.
   Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
 </footer>
-<script src="../assets/app.js"></script>
+<script src="../assets/search-index.js" defer></script>
+<script src="../assets/app.js" defer></script>
 </body>
 </html>
