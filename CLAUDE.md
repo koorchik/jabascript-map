@@ -21,6 +21,22 @@ any other change under `wiki/`) ends with `python3 scripts/build_website.py`
 in the same session, fixing any warnings it prints. A wiki change without a
 site rebuild is an incomplete task.
 
+### Deploy
+
+The site is published to GitHub Pages from the `gh-pages` branch via the
+[`gh-pages`](https://www.npmjs.com/package/gh-pages) npm package.
+
+- `npm install` — one-time, installs `gh-pages` (dev dependency; `node_modules/` is git-ignored).
+- `npm run build` — regenerates `website/` (alias for `python3 scripts/build_website.py`).
+- `npm run deploy` — rebuilds (via `predeploy`), then pushes `website/` to the
+  `gh-pages` branch of `origin` with dotfiles included (so `.nojekyll` ships,
+  keeping GitHub Pages from running Jekyll). The branch is created automatically
+  on first run.
+
+One-time GitHub setup: repo Settings → Pages → source = `gh-pages` branch, root.
+The site is served under the project subpath (`/jabascript-map/`); all generated
+links are relative, so no base-path config is needed.
+
 ## Wiki structure
 
 - `wiki/index.md` — catalog of every page by category, one line each. Update on every ingest.

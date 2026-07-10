@@ -1,0 +1,14 @@
+{
+  "name": "jabascript-map",
+  "version": "1.0.0",
+  "private": true,
+  "description": "jabascript Knowledge Navigator — static learning-navigator site generated from the wiki",
+  "scripts": {
+    "build": "python3 scripts/build_website.py",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d website -t -b gh-pages -m \"Deploy website\""
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
