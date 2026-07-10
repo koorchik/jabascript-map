@@ -2,16 +2,16 @@
 type: concept
 tags: [databases, postgresql, mysql, internals, transactions]
 ---
-# MVCC (Multi-Version Concurrency Control)
+# MVCC (багатоверсійне керування конкурентним доступом)
 
-Covered as the hidden mechanism behind a real architectural difference between MySQL and Postgres. Both databases copy rows per transaction, but in Postgres the copies land at new physical addresses — and since Postgres secondary indexes point at physical row locations, updating even one indexed column forces a rebuild of ALL indexes on the table. The HOT (heap-only tuple) optimization only helps when the new version fits within the same 8 KB block. MySQL, by contrast, updates only the index actually affected by the change ([[database-indexes-mysql-vs-postgres]]).
+Розглядається як прихований механізм за реальною архітектурною відмінністю між MySQL і Postgres. Обидві бази копіюють рядки в межах транзакцій, але в Postgres копії лягають за новими фізичними адресами — а оскільки вторинні індекси Postgres вказують на фізичне розташування рядків, оновлення навіть однієї індексованої колонки змушує перебудувати ВСІ індекси таблиці. Оптимізація HOT (heap-only tuple) допомагає лише тоді, коли нова версія вміщується в той самий блок на 8 КБ. MySQL натомість оновлює лише той індекс, якого зміна справді стосується ([[database-indexes-mysql-vs-postgres|відео про індекси в MySQL і Postgres]]).
 
-Viktor grounds this in industry fallout: Uber's famous Postgres → MySQL → Postgres migration saga was driven by exactly these internals — a reminder that "which database is better" depends on whether your workload is update-heavy on indexed tables, not on hype.
+Віктор підкріплює це наслідками в індустрії: знаменита сага міграцій Uber Postgres → MySQL → Postgres була спричинена саме цими нутрощами — нагадування, що відповідь на питання «яка база краща» залежить від того, чи багато у вашому навантаженні оновлень індексованих таблиць, а не від хайпу.
 
-## Covered in
-- [[database-indexes-mysql-vs-postgres]] — the full explanation: per-transaction row copies, Postgres all-index rebuilds vs MySQL's targeted updates, HOT limits, and the Uber migration story
+## Де розглядається
+- [[database-indexes-mysql-vs-postgres]] — повне пояснення: копії рядків на транзакцію, перебудова всіх індексів у Postgres проти точкових оновлень у MySQL, обмеження HOT та історія міграції Uber
 
-## Related
-[[database-indexes]] — MVCC determines what an UPDATE costs your indexes
-[[b-tree]] — the structures being rebuilt
-[[deep-learning-of-fundamentals]] — his broader point: internals like this are what let you predict behavior at scale
+## Повʼязане
+[[database-indexes]] — MVCC визначає, скільки UPDATE коштує вашим індексам
+[[b-tree]] — структури, які перебудовуються
+[[deep-learning-of-fundamentals]] — його ширша теза: саме такі нутрощі дозволяють передбачати поведінку на масштабі

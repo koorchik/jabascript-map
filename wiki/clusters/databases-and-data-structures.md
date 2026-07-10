@@ -2,46 +2,46 @@
 type: cluster
 tags: [moc, databases, data-structures, algorithms, search]
 ---
-# Databases & Data Structures
+# Бази даних і структури даних
 
-The channel's densest and most deliberately sequenced cluster. Viktor builds a learning path where each video creates the problem the next one solves: first the raw shock of *why indexes* (the same query, 60,000x faster), then *trees* to explain what an index physically is and why disks demand shallow B+ trees, then *index internals* (MySQL vs Postgres, clustered vs heap, UUID vs auto-increment — with 16M-row experiments), then the place where B-trees fail — mid-string search — which opens *full-text search and inverted indexes* (hand-built, compressed, and benchmarked against MySQL's own FULLTEXT), and finally *Bloom filters* as the probabilistic capstone that outruns every database and cache in the ladder. Everything is measured live, everything is grounded in his war stories — above all the 300 TB full-text search system he hand-built in production — and the recurring moral is the channel's thesis: know your tools' properties and internals, not the hype.
+Найщільніший і найретельніше вибудуваний кластер каналу. Віктор будує навчальний шлях, де кожне відео створює проблему, яку розвʼязує наступне: спершу сирий шок від *навіщо взагалі індекси* (той самий запит, у 60 000 разів швидше), потім *дерева*, щоб пояснити, чим індекс є фізично і чому диски вимагають неглибоких B+ дерев, далі *нутрощі індексів* (MySQL проти Postgres, кластерний проти heap, UUID проти автоінкременту — з експериментами на 16 млн рядків), потім місце, де B-дерева пасують, — пошук усередині рядка — яке відкриває *повнотекстовий пошук та інвертовані індекси* (побудовані вручну, стиснені й забенчмарчені проти рідного FULLTEXT у MySQL), і нарешті *фільтри Блума* як імовірнісний фінал, що обганяє кожну базу даних і кеш у цій драбині. Усе вимірюється наживо, все спирається на його історії з практики — насамперед на систему повнотекстового пошуку на 300 ТБ, яку він власноруч побудував у продакшені, — а повторюваний висновок і є тезою каналу: знай властивості й нутрощі своїх інструментів, а не хайп.
 
-## Concepts
+## Концепції
 
-- [[database-indexes]] — the hub: what an index is, when it saves you 60,000x, and when it betrays you
-- [[algorithmic-complexity]] — O(N) vs O(log N); 100 trillion rows in ~46 steps; "log N is practically free"
-- [[data-structures]] — BSTs, AVL rotations, hash maps, sorted arrays: properties over implementations
-- [[b-tree]] — why databases use shallow, block-sized B+ trees instead of binary trees
-- [[mvcc]] — row versioning, and why a Postgres UPDATE can rebuild every index on the table
-- [[uuid-vs-auto-increment]] — measured verdict: catastrophic in MySQL, fine in Postgres; keep both columns
-- [[full-text-search]] — tokenization, stemming vs lemmatization, "search differently ⇒ index differently"
-- [[inverted-index]] — word → (doc, position); his 300 TB production war story; serverless search via S3 Range requests
-- [[index-compression]] — delta encoding + varbyte: 4 GB → 1.3 GB, smaller than MySQL FULLTEXT
-- [[map-reduce]] — building the index without RAM: Node.js map, Unix sort as shuffle, Hadoop streaming
-- [[bloom-filter]] — no false negatives, tunable false positives, and Firefox's CRLite cascade
+- [[database-indexes]] — хаб: що таке індекс, коли він рятує вас у 60 000 разів і коли зраджує
+- [[algorithmic-complexity]] — O(N) проти O(log N); 100 трильйонів рядків за ~46 кроків; «log N — практично безкоштовний»
+- [[data-structures]] — BST, повороти AVL, хеш-мапи, відсортовані масиви: властивості понад реалізаціями
+- [[b-tree]] — чому бази даних використовують неглибокі B+ дерева розміром із дисковий блок, а не бінарні дерева
+- [[mvcc]] — версіонування рядків, і чому UPDATE у Postgres може перебудувати кожен індекс таблиці
+- [[uuid-vs-auto-increment]] — виміряний вердикт: катастрофа в MySQL, нормально в Postgres; тримайте обидві колонки
+- [[full-text-search]] — токенізація, стемінг проти лематизації, «шукаєш інакше ⇒ індексуй інакше»
+- [[inverted-index]] — слово → (документ, позиція); його продакшен-історія на 300 ТБ; serverless-пошук через S3 Range-запити
+- [[index-compression]] — дельта-кодування + varbyte: 4 ГБ → 1.3 ГБ, менше за MySQL FULLTEXT
+- [[map-reduce]] — побудова індексу без RAM: map на Node.js, Unix sort як shuffle, Hadoop streaming
+- [[bloom-filter]] — без хибнонегативних спрацювань, з налаштовуваними хибнопозитивними, і каскад CRLite у Firefox
 
-## Videos (the learning path)
+## Відео (порядок перегляду)
 
-1. [[why-database-indexes]] — live MySQL demo: 3.3 s → 0.05 ms on 10M rows, plus where indexes break down
-2. [[why-algorithms-matter]] — O(n*m) vs O(n+m) live-coded in JS, mapped onto database indexes
-3. [[trees-search-algorithms-databases]] — whiteboard bridge: binary search → BSTs → AVL → shallow disk-block B+ trees
-4. [[database-indexes-mysql-vs-postgres]] — hardcore internals with 16M-row experiments: clustered vs heap, MVCC, UUID penalties
-5. [[full-text-search-inverted-indexes]] — hand-builds a production-grade inverted index via map-reduce; beats MySQL LIKE 40 s → 21 ms
-6. [[full-text-search-part-2-qa]] — tokens-file + binary-postings split, n-gram tokenizers, S3 Range-request search
-7. [[bloom-filter-and-firefox]] — Bloom filters vs Map/MySQL/Redis/Memcached on 10M keys, and Firefox's CRLite cascade
-8. [[qa-1-will-https-protect-you]] — Q&A follow-ups on UUID keys and inverted-index compression
-9. [[qa-and-plans-for-2024]] — live whiteboard of composite and covering indexes and selectivity
-10. [[qa-2-answering-questions]] — real-world algorithms: complexity analysis in review, the topological-sort stack war story
+1. [[why-database-indexes]] — жива демонстрація в MySQL: 3.3 с → 0.05 мс на 10 млн рядків, плюс де індекси ламаються
+2. [[why-algorithms-matter]] — O(n*m) проти O(n+m), закодоване наживо на JS і спроєктоване на індекси баз даних
+3. [[trees-search-algorithms-databases]] — місток на дошці: бінарний пошук → BST → AVL → неглибокі дискові B+ дерева
+4. [[database-indexes-mysql-vs-postgres]] — хардкорні нутрощі з експериментами на 16 млн рядків: кластерний проти heap, MVCC, штрафи за UUID
+5. [[full-text-search-inverted-indexes]] — вручну будує інвертований індекс продакшен-рівня через map-reduce; бʼє MySQL LIKE: 40 с → 21 мс
+6. [[full-text-search-part-2-qa]] — розділення на файл токенів + бінарні postings, n-грамні токенізатори, пошук через S3 Range-запити
+7. [[bloom-filter-and-firefox]] — фільтри Блума проти Map/MySQL/Redis/Memcached на 10 млн ключів, і каскад CRLite у Firefox
+8. [[qa-1-will-https-protect-you]] — Q&A-продовження про UUID-ключі та стиснення інвертованого індексу
+9. [[qa-and-plans-for-2024]] — жива дошка про композитні й покривні індекси та селективність
+10. [[qa-2-answering-questions]] — алгоритми в реальному житті: аналіз складності на ревʼю, історія з практики про топологічне сортування стека
 
-## Tools
+## Інструменти
 
-- [[mysql]] — the default lab bench: clustered indexes, FULLTEXT, Handler Socket, all the benchmarks
-- [[postgresql]] — the architectural counterpoint: heap tables, ctid pointers, MVCC index rebuilds
-- [[elasticsearch]] — the packaged inverted index; its tokenizer zoo as a menu of indexing strategies
-- [[mongodb]] — stored his 300 TB production inverted index; also the "web scale" hype punchline
-- [[redis]] — the caching baseline a Bloom filter beats by ~100x
-- [[memcached]] — Redis's benchmark twin; oddly slowest to populate
+- [[mysql]] — стандартний лабораторний стенд: кластерні індекси, FULLTEXT, Handler Socket, усі бенчмарки
+- [[postgresql]] — архітектурний контрапункт: heap-таблиці, ctid-вказівники, перебудови індексів через MVCC
+- [[elasticsearch]] — інвертований індекс «у коробці»; його зоопарк токенізаторів як меню стратегій індексування
+- [[mongodb]] — зберігала його продакшен-індекс на 300 ТБ; а ще панчлайн про хайп «web scale»
+- [[redis]] — кешовий бейзлайн, який фільтр Блума обганяє приблизно в 100 разів
+- [[memcached]] — бенчмарк-близнюк Redis; дивним чином найповільніше наповнюється
 
-## Related clusters & concepts
+## Повʼязані кластери та концепції
 
-[[deep-learning-of-fundamentals]] — this cluster is the channel's proof that internals knowledge pays; [[hashing]] — underlies both hash indexes and Bloom filters; [[base64]] — the serialization overhead in the index-compression story; [[web-performance]] — where slow queries end up hurting.
+[[deep-learning-of-fundamentals|Глибоке вивчення основ]] — цей кластер є доказом тези каналу, що знання нутрощів окупається; [[hashing|хешування]] — лежить в основі і хеш-індексів, і фільтрів Блума; [[base64|Base64]] — накладні витрати серіалізації в історії про стиснення індексу; [[web-performance|вебперформанс]] — місце, де повільні запити врешті болять.

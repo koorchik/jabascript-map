@@ -4,17 +4,17 @@ tags: [validation, javascript, webbylab, open-source]
 ---
 # LIVR
 
-LIVR (Language Independent Validation Rules) is Viktor's own validation library — born at WebbyLab, which standardizes its stacks: they tried every validation library, wrote a specification first, and only then implementations, so the same rule format now exists in JS, PHP, Perl, Go, Swift and Erlang ([[google-io-2023-watch-party]]). The design pitch, laid out in a LIVR-vs-Zod deep dive from his design doc ([[vibe-coding-part-2]]): rules are pure data — serializable, so LIVR rules could be compiled to Zod but not vice versa — with DDD-style rule aliasing (a `valid_price` rule with custom error codes) and a deliberate no-code-generation stance as a security position. On performance, warm-path numbers are comparable (Zod ~4M ops/s vs LIVR ~3.4M), but Zod is ~94x slower when rules are constructed dynamically.
+LIVR (Language Independent Validation Rules) — власна бібліотека валідації Віктора, народжена у WebbyLab, який стандартизує свої стеки: вони перепробували всі бібліотеки валідації, спершу написали специфікацію і лише потім реалізації, тож той самий формат правил тепер існує в JS, PHP, Perl, Go, Swift та Erlang ([[google-io-2023-watch-party]]). Дизайнерський пітч, викладений у глибокому порівнянні LIVR і Zod з його design doc ([[vibe-coding-part-2]]): правила — це чисті дані, серіалізовні, тож правила LIVR можна було б скомпілювати в Zod, але не навпаки; є аліаси правил у дусі DDD (правило `valid_price` з власними кодами помилок) і свідома відмова від кодогенерації як позиція з безпеки. Щодо продуктивності: на «прогрітому» шляху цифри порівнянні (Zod ~4M ops/s проти ~3.4M у LIVR), але коли правила конструюються динамічно, Zod повільніший приблизно в 94 рази.
 
-In the vibe-coding streams LIVR is also a lens on working with AI: he wants validation rules to drive TypeScript type inference — runtime and static validation from one schema in the same module — but Claude kept duplicating types instead, a correction he had to explicitly teach ([[vibe-coding-new-project]]).
+У стримах про вайб-кодинг LIVR — це ще й лінза на роботу з AI: він хоче, щоб правила валідації керували виведенням типів TypeScript — runtime- і статична валідація з однієї схеми в одному модулі — але Claude вперто дублював типи, і цю поправку довелося окремо йому пояснювати ([[vibe-coding-new-project]]).
 
-## Covered in
-- [[vibe-coding-part-2]] — the LIVR-vs-Zod deep dive: rules as pure data, rule aliasing, no codegen, and the dynamic-rules benchmark (~94x gap).
-- [[vibe-coding-new-project]] — validation-driven TypeScript inference as a design goal Claude had to be taught.
-- [[google-io-2023-watch-party]] — origin story: spec-first library design at WebbyLab, one rule format across six languages, contrasted with Google's monorepo where no library choice exists.
+## Де розглядається
+- [[vibe-coding-part-2]] — глибоке порівняння LIVR і Zod: правила як чисті дані, аліаси правил, без кодогенерації, бенчмарк динамічних правил (розрив ~94x).
+- [[vibe-coding-new-project]] — виведення типів TypeScript з правил валідації як дизайн-ціль, якої довелося вчити Claude.
+- [[google-io-2023-watch-party]] — історія походження: spec-first дизайн бібліотеки у WebbyLab, один формат правил у шести мовах, на контрасті з монорепою Google, де вибору бібліотеки не існує.
 
-## Related
-[[software-design]] — spec-first, data-as-rules design philosophy.
-[[abstractions]] — rule aliasing as a domain-level abstraction over raw validators.
-[[vibe-coding]] — the streams where LIVR meets AI-generated code.
-[[security-practices]] — refusing code generation as a security stance.
+## Повʼязане
+[[software-design]] — філософія дизайну: спершу специфікація, правила як дані.
+[[abstractions]] — аліаси правил як доменна абстракція над сирими валідаторами.
+[[vibe-coding]] — стрими, де LIVR зустрічається з кодом, згенерованим AI.
+[[security-practices]] — відмова від кодогенерації як позиція з безпеки.

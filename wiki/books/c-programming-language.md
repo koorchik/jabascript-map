@@ -5,10 +5,10 @@ tags: [book, programming, fundamentals, c]
 ---
 # The C Programming Language
 
-Kernighan and Ritchie's thin classic — a couple of evenings, in Viktor's estimate, after which you understand what actually happens beneath high-level languages: strings as char arrays, null termination, memory laid bare. He also singles out its great self-written hash-table example. Foundational reading regardless of your daily language.
+Тонка класика Кернігана та Рітчі — пара вечорів, за оцінкою Віктора, після яких розумієш, що насправді відбувається під високорівневими мовами: рядки як масиви char, нульовий термінатор, памʼять як на долоні. Окремо він виділяє чудовий приклад із власноруч написаною хеш-таблицею. Фундаментальне читання незалежно від того, якою мовою ви пишете щодня.
 
-## Covered in
-- [[five-star-books]] — a couple of evenings that demystify what's under high-level languages
+## Де розглядається
+- [[five-star-books]] — пара вечорів, які демістифікують те, що ховається під високорівневими мовами
 
-## Related
-[[deep-learning-of-fundamentals]], [[data-structures]] (the hash-table example), [[abstractions]] — this book shows what's under them. Shelf-mates: [[how-linux-works]], [[higher-order-perl]].
+## Повʼязане
+[[deep-learning-of-fundamentals|Глибоке вивчення основ]], [[data-structures|структури даних]] (приклад із хеш-таблицею), [[abstractions|абстракції]] — ця книжка показує, що під ними. Сусіди по поличці: [[how-linux-works|How Linux Works]], [[higher-order-perl|Higher-Order Perl]].

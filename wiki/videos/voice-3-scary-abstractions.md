@@ -2,22 +2,33 @@
 type: video
 title_uk: "Голосове №3 - страшні абстракції"
 youtube_id: qVWi-o6Gkj0
+level: intermediate
 tags: [abstractions, software-design, voice-message, war-stories]
 date_ingested: 2026-07-09
 ---
-# Voice Message #3 — Scary Abstractions
+# Голосове №3 — страшні абстракції
 
-> Original: "Голосове №3 - страшні абстракції" — https://youtu.be/qVWi-o6Gkj0
+> Оригінал: "Голосове №3 - страшні абстракції" — https://youtu.be/qVWi-o6Gkj0
 
-Third episode of the voice-message series, about a strange phenomenon he keeps observing (he even made a slide about it for his DOU Day talk but ran out of time): **developers are afraid to create new [[abstractions]]**. Less-experienced developers work by template — they either stuff new content into existing files/classes or copy files with an existing structure; genuinely *new* abstractions appear very rarely. He argues it isn't really about creating a new file (devs create files constantly in React/backend work) — it's that inventing a new abstraction requires thinking about how to do it right, extra effort that many aren't ready to invest, plus juniors don't yet see the consequences of *not* doing it ([[software-design]]).
+Третій випуск серії «голосових» — про дивний феномен, який він постійно спостерігає (навіть зробив про це слайд для доповіді на DOU Day, але не встиг розповісти): **розробники бояться створювати нові [[abstractions|абстракції]]**. Менш досвідчені розробники працюють за шаблоном — або допихають новий вміст в існуючі файли/класи, або копіюють файли з готовою структурою; по-справжньому *нові* абстракції зʼявляються дуже рідко. Він доводить, що річ насправді не у створенні нового файлу (файли розробники створюють постійно і в React, і на бекенді) — а в тому, що вигадування нової абстракції вимагає подумати, як зробити її правильно: додаткове зусилля, у яке багато хто не готовий інвестувати, плюс джуни ще не бачать наслідків того, що абстракцію *не* створили ([[software-design]]).
 
-## Key takeaways
-- **Story 1 — `assertDate` in TestFactory (webilab):** their backend test suites have a `TestFactory` abstraction (creates test users/data/warehouses to set up the environment) and chai for assertions. Someone needed a custom assert for calendar dates — and it ended up as `TestFactory.assertDate`, purely because `TestFactory` was the object already available in every test, even though its responsibility is completely different. The right move was trivially small: a new module holding one function.
-- That pattern generalizes to the classic **God Object antipattern**: he's watched base service classes accumulate date utils, file utils, session utils — everything dumped into the parent "so all child classes can reach it" instead of creating `DateUtils`, `FileUtils`, etc., until the base class is an unconnected pile of responsibilities.
-- **Story 2 — the 100-line proof of concept that became a 5000-line file:** for a webilab PowerPoint-like web presentation system he wrote a small PoC (~100 lines): a serializable slide data structure, a widget primitive with position/rotation/config, and a couple of standard widgets (circle, rectangle, text). Six months later: one file, 5000 lines, every widget plus synchronization subsystems all mixed together, unsupportable. When he asked why, the answer was **"well, that's how *you* showed us."** His point: when it was 100 lines, that structure was right; as responsibilities grow you must extract new abstractions — but developers follow the existing pattern and just keep adding. Notably, the team *felt* the pain (things "wouldn't take off") and had themselves initiated the review.
-- **Story 3 — builders (recap of [[voice-2-faster-ui-development|voice message #2]]):** given a low-level grid with a declarative config, everyone copies that raw config into every screen instead of writing a higher-level, project-specific builder/facade that hides the low-level configuration — same fear of adding a structure that doesn't exist yet.
-- **Story 4 — the missing controller:** discussing a friends' React project with dumb and smart components, the missing piece was a coordination abstraction for high-level actions. His suggestion — just add a controller — felt uncomfortable to the team *because nobody on that project had ever done it*. Meanwhile at Google, when a UI subsystem lacked abstractions, he added controllers over the low-level pieces that hid configuration details, could be reused, and "wonderfully" simplified the code and its maintenance.
-- The meta-lesson: experienced developers create new abstractions when responsibilities emerge; the reluctance to do so — reusing whatever structure already exists — is what slowly rots a codebase even while every individual change looks consistent with the surrounding code.
+## Головне
+- **Історія 1 — `assertDate` у TestFactory (webilab):** у їхніх бекендних тестах є абстракція `TestFactory` (створює тестових користувачів/дані/склади для підготовки середовища) і chai для assert-ів. Комусь знадобився кастомний assert для календарних дат — і він опинився в `TestFactory.assertDate` лише тому, що `TestFactory` — це обʼєкт, уже доступний у кожному тесті, хоча його відповідальність зовсім інша. Правильний хід був сміховинно малий: новий модуль з однією функцією.
+- Цей патерн узагальнюється до класичного антипатерну **God Object**: він бачив, як базові класи сервісів накопичують утиліти для дат, файлів, сесій — усе звалюють у батьківський клас, «щоб усі нащадки могли дотягнутися», замість створити `DateUtils`, `FileUtils` тощо, аж поки базовий клас не стає незвʼязною купою відповідальностей.
+- **Історія 2 — proof of concept на 100 рядків, що став файлом на 5000:** для вебсистеми презентацій у стилі PowerPoint (webilab) він написав маленький PoC (~100 рядків): серіалізовну структуру даних слайда, примітив віджета з позицією/поворотом/конфігом і пару стандартних віджетів (коло, прямокутник, текст). Через пів року: один файл, 5000 рядків, усі віджети плюс підсистеми синхронізації впереміш, підтримувати неможливо. Коли він спитав чому, відповідь була: **«ну, ви ж так показали»**. Його думка: коли було 100 рядків, та структура була правильною; коли відповідальності ростуть, треба виділяти нові абстракції — а розробники йдуть за наявним патерном і просто докладають. Показово, що команда сама *відчувала* біль (усе «не летіло») і сама ініціювала той review.
+- **Історія 3 — білдери (перегук із [[voice-2-faster-ui-development|голосовим №2]]):** маючи низькорівневий ґрід із декларативним конфігом, усі копіюють цей сирий конфіг на кожен екран замість написати вищерівневий, проєктно-специфічний білдер/фасад, який ховає низькорівневу конфігурацію, — той самий страх додати структуру, якої ще не існує.
+- **Історія 4 — контролер, якого бракувало:** обговорюючи React-проєкт знайомих із dumb- і smart-компонентами, він побачив, що бракує координаційної абстракції для високорівневих дій. Його пропозиція — просто додати контролер — була команді некомфортна, *бо ніхто на тому проєкті так ніколи не робив*. Тим часом у Google, коли UI-підсистемі бракувало абстракцій, він додав контролери над низькорівневими частинами, які ховали деталі конфігурації, перевикористовувалися і «чудово» спростили код та його підтримку.
+- Мета-урок: досвідчені розробники створюють нові абстракції, коли зʼявляються нові відповідальності; небажання це робити — перевикористання будь-якої вже наявної структури — і є те, що повільно гноїть кодову базу, навіть коли кожна окрема зміна виглядає консистентною з навколишнім кодом.
 
-## Covered
+## Розділи
+- 00:00 — Феномен: розробники бояться створювати нові [[abstractions|абстракції]]
+- 01:04 — Історія 1: assertDate осідає в TestFactory — єдиному обʼєкті, що є в кожному тесті
+- 02:28 — Річ не в новому файлі, а в зусиллі спроєктувати нову абстракцію
+- 03:09 — Антипатерн God Object: базові класи, напхані утилітами дат/файлів/сесій
+- 03:52 — Історія 2: PoC віджетів на ~100 рядків для вебсистеми презентацій у стилі PowerPoint
+- 05:17 — Пів року по тому: один файл на 5000 рядків — «ви ж так показали»
+- 06:39 — Історія 3: сирі конфіги ґріда, скопійовані всюди, замість білдера/фасада
+- 07:22 — Історія 4: контролер, який ніхто не наважився додати, — і як контролери окупилися в Google
+
+## Теми
 [[abstractions]], [[software-design]], [[code-quality]]

@@ -5,10 +5,10 @@ tags: [book, software-design, code-quality]
 ---
 # Clean Code
 
-Robert Martin's famous book on writing readable, maintainable code. It sits on Viktor's five-star list, but in the video he skipped over it deliberately — "everyone has heard of it" — so it earns its stars without needing his pitch.
+Знаменита книжка Роберта Мартіна про читабельний і підтримуваний код. Вона є у пʼятизірковому списку Віктора, але у відео він свідомо її оминув — «про неї чули всі» — тож свої зірки вона отримує й без його пітчу.
 
-## Covered in
-- [[five-star-books]] — on the five-star list, skipped in the video because everyone already knows it
+## Де розглядається
+- [[five-star-books]] — у пʼятизірковому списку; у відео пропущена, бо всі й так її знають
 
-## Related
-Same author as [[clean-architecture]]. Canon: [[code-complete]], [[a-philosophy-of-software-design]], [[domain-driven-design]], [[implementing-domain-driven-design]], [[patterns-of-enterprise-application-architecture]], [[design-patterns-gof]]. Concepts: [[software-design]], [[code-quality]].
+## Повʼязане
+Той самий автор, що й у [[clean-architecture|Clean Architecture]]. Канон: [[code-complete|Code Complete]], [[a-philosophy-of-software-design|A Philosophy of Software Design]], [[domain-driven-design|Domain-Driven Design]], [[implementing-domain-driven-design|Implementing Domain-Driven Design]], [[patterns-of-enterprise-application-architecture|Patterns of Enterprise Application Architecture]], [[design-patterns-gof|Design Patterns (GoF)]]. Концепції: [[software-design|дизайн ПЗ]], [[code-quality|якість коду]].

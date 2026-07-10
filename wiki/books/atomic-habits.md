@@ -5,10 +5,10 @@ tags: [book, productivity, habits]
 ---
 # Atomic Habits
 
-James Clear's bestseller on building good habits through tiny, systematic changes. Viktor expected nothing new from it — precisely because everyone talks about it — but started listening to the audiobook anyway and found himself "in delight". A case where the hype is deserved.
+Бестселер Джеймса Кліра про те, як будувати корисні звички через маленькі системні зміни. Віктор не очікував від неї нічого нового — саме тому, що про неї говорять усі, — але все ж почав слухати аудіокнижку і виявив, що він «у захваті». Той випадок, коли хайп заслужений.
 
-## Covered in
-- [[vibe-coding-new-project]] — expected nothing new, started listening, is "in delight"
+## Де розглядається
+- [[vibe-coding-new-project]] — не очікував нічого нового, почав слухати — і «в захваті»
 
-## Related
-Productivity shelf: [[essentialism]], [[effortless]], [[getting-things-done]], [[seven-habits-of-highly-effective-people]], [[the-checklist-manifesto]].
+## Повʼязане
+Поличка продуктивності: [[essentialism|Essentialism]], [[effortless|Effortless]], [[getting-things-done|Getting Things Done]], [[seven-habits-of-highly-effective-people|The 7 Habits of Highly Effective People]], [[the-checklist-manifesto|The Checklist Manifesto]].

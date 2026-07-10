@@ -2,19 +2,19 @@
 type: concept
 tags: [engineering-craft, testing, tdd]
 ---
-# Test-driven development
+# Test-driven development (TDD)
 
-The channel is explicitly anti-TDD-purist. Viktor likes tests but dislikes Kent Beck's red/green loop as a design tool: it suits bug fixes, but for design it narrows your focus onto the next assertion instead of the shape of the API ([[3-things-that-make-a-programmer-better]], [[qa-2-answering-questions]]). His alternative is API-first sketching — write example usage code, rewrite until a skeleton emerges, implement, and write the tests *after* the code. He backs the position with sources: the "Is TDD Dead?" conversation series (Beck/Fowler/DHH) and *A Philosophy of Software Design*'s argument that TDD misdirects attention ([[qa-2-answering-questions]]).
+Канал відкрито анти-TDD-пуристський. Віктор любить тести, але не любить цикл red/green Кента Бека як інструмент проєктування: для виправлення багів він годиться, але під час проєктування звужує фокус до наступного assert замість форми API ([[3-things-that-make-a-programmer-better|3 речі, які роблять програміста кращим]], [[qa-2-answering-questions|Q&A №2]]). Його альтернатива — ескізування API-first: написати приклад коду використання, переписувати, доки не проявиться скелет, реалізувати — і писати тести *після* коду. Позицію він підкріплює джерелами: серія розмов "Is TDD Dead?" (Бек/Фаулер/DHH) і аргумент *A Philosophy of Software Design* про те, що TDD відводить увагу вбік ([[qa-2-answering-questions|Q&A №2]]).
 
-His favorite illustration of TDD dogma is the mocking cargo cult: people decided that TDD = unit tests = mock everything, yet in those same "Is TDD Dead?" talks Kent Beck himself says he mocks as little as possible — "people just decided it must be that way" ([[3-things-that-ruin-a-programmer]]). Viktor's own line is classicist: instead of mocking, design for injectable implementations. The whole topic is his case study of dogmatism — believing in programming instead of understanding it.
+Його улюблена ілюстрація TDD-догми — карго-культ моків: люди вирішили, що TDD = юніт-тести = мокати все, хоча в тих самих розмовах "Is TDD Dead?" сам Кент Бек каже, що мокає якомога менше — «люди просто вирішили, що має бути так» ([[3-things-that-ruin-a-programmer|3 речі, які псують програміста]]). Власна лінія Віктора — класицистська: замість моків проєктувати під підмінювані (injectable) реалізації. Уся ця тема — його показовий приклад догматизму: віри в програмування замість його розуміння.
 
-## Covered in
-- [[3-things-that-ruin-a-programmer]] — the mock-everything dogma vs what Beck actually says
-- [[3-things-that-make-a-programmer-better]] — likes tests, dislikes the red/green loop; API-first instead
-- [[qa-2-answering-questions]] — the full position: "Is TDD Dead?" series, *A Philosophy of Software Design* quote, tests after code, classicist mocks
+## Де розглядається
+- [[3-things-that-ruin-a-programmer]] — догма «мокати все» проти того, що Бек каже насправді
+- [[3-things-that-make-a-programmer-better]] — любить тести, не любить цикл red/green; замість нього — API-first
+- [[qa-2-answering-questions]] — позиція повністю: серія "Is TDD Dead?", цитата з *A Philosophy of Software Design*, тести після коду, класицистські моки
 
-## Related
-[[automated-testing]] — he's pro-tests, anti-ritual
-[[software-design]] — the API-first method TDD is rejected in favor of
-[[deep-learning-of-fundamentals]] — understand practices' reasons instead of believing them
-[[a-philosophy-of-software-design]] — his cited authority against TDD-as-design
+## Повʼязане
+[[automated-testing]] — він за тести, проти ритуалу
+[[software-design]] — метод API-first, на користь якого TDD відкинуто
+[[deep-learning-of-fundamentals]] — розуміти причини практик замість вірити в них
+[[a-philosophy-of-software-design]] — авторитет, якого він цитує проти TDD-як-проєктування

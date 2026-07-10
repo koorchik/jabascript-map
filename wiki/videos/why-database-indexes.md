@@ -2,24 +2,42 @@
 type: video
 title_uk: "Навіщо потрібні індекси в базі даних？ Розберемо на прикладі"
 youtube_id: YF8xDeYlG9w
+level: intermediate
 tags: [databases, indexes, algorithms, performance]
 date_ingested: 2026-07-09
 ---
-# Why Do Databases Need Indexes? A Hands-On Example
+# Навіщо потрібні індекси в базі даних — розберемо на прикладі
 
-> Original: "Навіщо потрібні індекси в базі даних？ Розберемо на прикладі" — https://youtu.be/YF8xDeYlG9w
+> Оригінал: "Навіщо потрібні індекси в базі даних？ Розберемо на прикладі" — https://youtu.be/YF8xDeYlG9w
 
-A live-demo introduction to [[database-indexes]]: the author prepares two [[mysql|MySQL]] databases — one `products` table with 1K rows, one with 10 million — and measures the same `SELECT` with SQL profiling enabled. On the small table the query takes ~0.3 ms; on the 10M-row table the identical query takes 3.3 seconds, which he calls a catastrophe for a web app: requests arriving faster than they complete will pile up and take the whole database down. Adding an index on `name` makes the same query run in ~0.05 ms — he does the division on screen: roughly **60,000× faster**. The reason is [[algorithmic-complexity]]: an index is a *separate sorted structure* living next to the table, so lookups become binary search — O(log N) instead of O(N) full scans. His signature illustration: with 50 rows a linear scan does 50 steps, but with 100 trillion rows a binary search needs only ~46 steps — "log N is practically free". He then shows where indexes break: `LIKE 'prefix%'` is instant (sorted data supports prefix search), but `LIKE '%substring%'` takes ~7 seconds, because no sort order helps you find a phrase *in the middle* of a value — that job needs an inverted / full-text index ("everyone says 'use Elastic', but what is Elastic actually doing?"), which he promises to build by hand in a later video, mentioning he once implemented a custom [[full-text-search]] index over 300 TB of data in production. He closes with `EXPLAIN` to check index usage, a peek at how the index stores the indexed column plus a row pointer, and a caveat: every write must rebuild indexes, so write-heavy tables should not index every column.
+Живе демо-знайомство з [[database-indexes|індексами баз даних]]: автор готує дві бази [[mysql|MySQL]] — одну з таблицею `products` на 1 тис. рядків, другу на 10 мільйонів — і вимірює той самий `SELECT` з увімкненим SQL-профілюванням. На маленькій таблиці запит займає ~0,3 мс; на таблиці з 10 млн рядків ідентичний запит — 3,3 секунди, що він називає катастрофою для вебзастосунку: запити, які надходять швидше, ніж завершуються, накопичуються і кладуть усю базу. Індекс на `name` змушує той самий запит виконуватися за ~0,05 мс — він ділить прямо на екрані: приблизно **у 60 000 разів швидше**. Причина — [[algorithmic-complexity|алгоритмічна складність]]: індекс — це *окрема відсортована структура*, що живе поруч із таблицею, тож пошук стає бінарним — O(log N) замість повних сканів O(N). Його фірмова ілюстрація: на 50 рядках лінійний перебір робить 50 кроків, а на 100 трильйонах рядків бінарному пошуку треба лише ~46 кроків — «log N — це практично безкоштовно». Далі він показує, де індекси ламаються: `LIKE 'prefix%'` — миттєвий (відсортовані дані підтримують пошук за префіксом), але `LIKE '%substring%'` займає ~7 секунд, бо жодний порядок сортування не допоможе знайти фразу *всередині* значення — для цього потрібен інвертований / повнотекстовий індекс («усі кажуть "візьми Elastic", а що той Elastic насправді робить?»), який він обіцяє побудувати руками в наступному відео, згадуючи, що колись реалізував кастомний індекс [[full-text-search|повнотекстового пошуку]] по 300 ТБ даних у продакшені. Наприкінці — `EXPLAIN` для перевірки використання індексу, погляд на те, як індекс зберігає проіндексовану колонку плюс вказівник на рядок, і застереження: кожен запис перебудовує індекси, тож у таблицях із інтенсивним записом не варто індексувати кожну колонку.
 
-## Key takeaways
-- Real measurement, same query: 1K rows ≈ 0.3 ms, 10M rows ≈ 3.3 s without an index; with an index on `name` ≈ 0.05 ms — about 60,000× faster ([[database-indexes]]).
-- A 3-second query is not just slow — under web load requests accumulate faster than they finish and the database collapses.
-- An index is a sorted data structure stored *beside* the table (in practice a [[b-tree|B+ tree]]; hash indexes also exist); sorted data enables binary search, and O(log N) means ~46 steps even for 100 trillion rows ([[algorithmic-complexity]]).
-- Indexes work for exact matches and `LIKE 'prefix%'`, and even suffix search if you build the index the other way — but never for `LIKE '%word%'`: "sort it or not, nothing helps you find a phrase inside" — that requires an [[inverted-index]] ([[full-text-search]]).
-- Use `EXPLAIN` (MySQL and [[postgresql|Postgres]] alike) to verify whether a query actually uses an index.
-- The index stores the indexed column plus a pointer to the row; fetching other columns (e.g. `description`) requires a second lookup into the table — and MySQL and Postgres organize tables completely differently (clustered index vs heap; MySQL effectively cannot exist without a primary key).
-- Indexes are not free: every INSERT/UPDATE rebuilds every index on the table, so with heavy write traffic, fewer indexes may be better.
-- War story: he once built a hand-rolled full-text (inverted) index searching 300 TB of data, including a custom index-packing mechanism.
+## Головне
+- Реальний вимір, той самий запит: 1 тис. рядків ≈ 0,3 мс, 10 млн рядків ≈ 3,3 с без індексу; з індексом на `name` ≈ 0,05 мс — приблизно у 60 000 разів швидше ([[database-indexes|індекси]]).
+- Запит на 3 секунди — це не просто повільно: під вебнавантаженням запити накопичуються швидше, ніж завершуються, і база валиться.
+- Індекс — це відсортована структура даних, що зберігається *поруч* із таблицею (на практиці [[b-tree|B+ дерево]]; існують і хеш-індекси); відсортовані дані уможливлюють бінарний пошук, а O(log N) — це ~46 кроків навіть для 100 трильйонів рядків ([[algorithmic-complexity|алгоритмічна складність]]).
+- Індекси працюють для точних збігів і `LIKE 'prefix%'`, і навіть для пошуку за суфіксом, якщо побудувати індекс «у зворотний бік», — але ніколи для `LIKE '%word%'`: «сортуй чи не сортуй — нічого не допоможе знайти фразу всередині» — для цього потрібен [[inverted-index|інвертований індекс]] ([[full-text-search|повнотекстовий пошук]]).
+- Використовуйте `EXPLAIN` (однаково в MySQL і [[postgresql|Postgres]]), щоб перевірити, чи запит справді використовує індекс.
+- Індекс зберігає проіндексовану колонку плюс вказівник на рядок; щоб дістати інші колонки (наприклад, `description`), потрібен другий похід у таблицю — а MySQL і Postgres організовують таблиці зовсім по-різному (кластерний індекс проти heap; MySQL фактично не може існувати без первинного ключа).
+- Індекси не безкоштовні: кожен INSERT/UPDATE перебудовує кожен індекс таблиці, тож при інтенсивному записі менше індексів може бути краще.
+- Байка з практики: він колись побудував саморобний повнотекстовий (інвертований) індекс із пошуком по 300 ТБ даних, включно з кастомним механізмом пакування індексу.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: чому ваша база інколи повзе — алгоритми на реальному прикладі
+- 00:22 — Сетап: дві бази [[mysql|MySQL]], таблиця `products` на 1 тис. проти 10 млн рядків
+- 01:29 — Профілюємо перший SELECT: ~0,3 мс на маленькій таблиці
+- 02:31 — Той самий запит на 10 млн рядків: 3,3 секунди — катастрофа для вебзастосунку
+- 03:36 — Що таке індекс: відсортована структура, що живе поруч із таблицею
+- 04:18 — Розбір бінарного пошуку: 100 трильйонів рядків за ~46 кроків — «log N — практично безкоштовно»
+- 06:02 — Створюємо індекс на `name`
+- 07:27 — Повторний запит: 0,05 мс — у 60 000 разів швидше
+- 08:08 — Пошук за префіксом `LIKE 'handmade…%'` усе ще миттєвий
+- 08:51 — Форма пошуку на сайті з `LIKE '%substring%'`: 7 секунд
+- 09:55 — Чому жодне сортування не знайде фразу всередині значення
+- 11:49 — Розвʼязок: [[inverted-index|інвертований індекс]] / [[full-text-search|повнотекстовий індекс]]; байка про 300 ТБ
+- 12:52 — `EXPLAIN`: перевіряємо, чи запит справді використовує індекс
+- 13:56 — Що зберігає індекс: проіндексовану колонку плюс вказівник на рядок; другий похід у таблицю
+- 15:44 — Індекси не безкоштовні на записі; плани: B+ дерева, кластерні індекси, UUID проти auto-increment
+
+## Теми
 [[database-indexes]], [[algorithmic-complexity]], [[b-tree]], [[full-text-search]], [[inverted-index]], [[mysql]], [[postgresql]]

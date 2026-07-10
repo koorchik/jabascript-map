@@ -4,14 +4,14 @@ tags: [ai, coding-agent, cli, anthropic]
 ---
 # Claude Code
 
-Anthropic's terminal-based AI coding agent — and the main agent in Viktor's [[vibe-coding]] workflow. In [[vibe-coding-new-project]] he runs Opus 4.5 on the ~$100–120/month Max plan and calls it "dramatically better at design, less token-hungry" than before (enough that he stopped bothering with "ultrathink"). His setup is deliberately vanilla: the plain CLI plus a constantly updated `CLAUDE.md`, no plugins and no skills except for genuinely reusable procedures. Workflow staples: `/init` on a new repo, plan mode with every plan read and corrected before execution, multiple parallel instances launched from a Quake-style drop-down terminal inside dev containers, commit first and review diffs after non-stop runs.
+Термінальний AI-агент для кодингу від Anthropic — і головний агент у воркфлоу [[vibe-coding|вайб-кодингу]] Віктора. У [[vibe-coding-new-project]] він працює з Opus 4.5 на плані Max за ~$100–120/місяць і каже, що модель стала «драматично кращою в дизайні й менш ненажерливою до токенів», ніж раніше (настільки, що він перестав морочитися з "ultrathink"). Його сетап навмисно ванільний: звичайний CLI плюс постійно оновлюваний `CLAUDE.md`, без плагінів і без skills — хіба що для справді перевикористовуваних процедур. Основа воркфлоу: `/init` на новому репозиторії, plan mode із читанням і правкою кожного плану перед виконанням, кілька паралельних інстансів, запущених із випадного термінала в стилі Quake всередині dev-контейнерів, спершу commit — а потім перегляд diff-ів після безперервних прогонів.
 
-He explicitly prefers the CLI over any IDE plugin ([[vibe-coding-part-2]]): it launches anywhere, runs many instances in parallel (isolated via git worktrees, per Anthropic's own docs), and the VS Code plugin just talks to the CLI anyway — the same reason he rejected [[cursor|Cursor]] and Google's Antigravity. He hit rate limits many times on the $100 plan, but they reset within hours — "good enough". Trivia he enjoys: Claude Code, Gemini CLI and Codex are all written in [[react|React]]. Before the agent, he had already tested Claude 3.5 Sonnet for extracting data for his dissertation ([[qa-2-answering-questions]]).
+Він явно віддає перевагу CLI перед будь-яким плагіном для IDE ([[vibe-coding-part-2]]): CLI запускається де завгодно, дозволяє багато паралельних інстансів (ізольованих через git worktrees, як радить документація самої Anthropic), а плагін для VS Code все одно просто спілкується з CLI — з тієї ж причини він відкинув [[cursor|Cursor]] і Antigravity від Google. На плані за $100 він багато разів упирався в rate limits, але вони скидаються за кілька годин — «цілком терпимо». Цікавинка, яка його тішить: Claude Code, Gemini CLI і Codex — усі написані на [[react|React]]. Ще до появи агента він тестував Claude 3.5 Sonnet для витягування даних для своєї дисертації ([[qa-2-answering-questions]]).
 
-## Covered in
-- [[vibe-coding-new-project]] — full live setup: Opus 4.5 on Max, /init, plan mode, parallel instances, CLAUDE.md as the standards store.
-- [[vibe-coding-part-2]] — CLI-over-IDE argument, git worktrees for parallelism, /clear per task, rate-limit experience.
-- [[qa-2-answering-questions]] — earlier Claude 3.5 Sonnet use for dissertation data extraction.
+## Де розглядається
+- [[vibe-coding-new-project]] — повний сетап наживо: Opus 4.5 на Max, /init, plan mode, паралельні інстанси, CLAUDE.md як сховище стандартів.
+- [[vibe-coding-part-2]] — аргументація «CLI замість IDE», git worktrees для паралелізму, /clear на кожну задачу, досвід із rate limits.
+- [[qa-2-answering-questions]] — раніше: Claude 3.5 Sonnet для витягування даних для дисертації.
 
-## Related
-[[vibe-coding]], [[ai-coding-agents]], [[gemini]], [[cursor]], [[remote-development]]
+## Повʼязане
+[[vibe-coding|вайб-кодинг]], [[ai-coding-agents|AI-агенти для кодингу]], [[gemini|Gemini]], [[cursor|Cursor]], [[remote-development|віддалена розробка]]

@@ -2,25 +2,43 @@
 type: video
 title_uk: "Як працюють індекси в базах на прикладі. MySQL vs Postgres. UUID vs Auto Increment."
 youtube_id: Ot7b03Fj_mo
+level: advanced
 tags: [databases, indexes, mysql, postgresql, performance]
 date_ingested: 2026-07-09
 ---
-# How Indexes Really Work: MySQL vs Postgres, UUID vs Auto Increment
+# Як працюють індекси в базах на прикладі: MySQL vs Postgres, UUID vs Auto Increment
 
-> Original: "Як працюють індекси в базах на прикладі. MySQL vs Postgres. UUID vs Auto Increment." — https://youtu.be/Ot7b03Fj_mo
+> Оригінал: "Як працюють індекси в базах на прикладі. MySQL vs Postgres. UUID vs Auto Increment." — https://youtu.be/Ot7b03Fj_mo
 
-The "hardcore" payoff of the index series: half theory, half live experiments on a 16M-row table, all in service of the author's thesis that you must understand internals to predict a technology's properties ([[deep-learning-of-fundamentals]]). Core internals: in [[mysql|MySQL]] the table *itself* is a [[b-tree|B+ tree]] sorted by primary key (clustered index), so every secondary-index lookup is a **double search** — first the secondary index (which stores the primary key as row pointer), then the clustered index; [[postgresql|Postgres]] has no clustered index — secondary indexes store the row's physical file location. He then explains [[mvcc|MVCC]]: both databases copy rows per transaction, and because Postgres row copies land at new physical addresses, updating *one* indexed column forces Postgres to rebuild **all** indexes on the table (the HOT — heap-only tuple — optimization only helps if the copy fits the same block and no indexed column changed); MySQL updates only the affected index. He nods to Uber's famous Postgres→MySQL→Postgres migrations as consequences of exactly these nuances. The practical centerpiece is [[uuid-vs-auto-increment]]: because MySQL duplicates the primary key in every secondary index, a UUID primary key is "catastrophic" there — his measured tables: auto-increment 4.3 GB, auto-increment + separate UUID column 4.9 GB, UUID-as-PK 7.8 GB; secondary indexes ballooned from 2 GB to 5.5 GB, meaning ~70% of index bytes were just the UUID PK. Random UUID inserts also wreck B+ tree node caching — inserts went from ~4 s to ~5.5 s per 1000 rows even on his top-of-the-line SSD (he saw 2.5–3× on slower disks). Further experiments: covering indexes (add a column you never filter by — e.g. `(year, name)` — so the query never touches the main table; `EXPLAIN` shows "covering index"), the hidden cost of `OFFSET 1000000` pagination even with an index (~10 s, because the leaf chain must be scanned a million entries deep), and dropping indexes cutting insert time from 5.5 s to ~1.2 s.
+«Хардкорна» кульмінація серії про індекси: наполовину теорія, наполовину живі експерименти на таблиці з 16 млн рядків — усе на підтримку тези автора, що треба розуміти нутрощі, аби передбачати властивості технології ([[deep-learning-of-fundamentals|глибоке вивчення основ]]). Ключові нутрощі: у [[mysql|MySQL]] сама таблиця — це [[b-tree|B+ дерево]], відсортоване за первинним ключем (кластерний індекс), тож кожен пошук через вторинний індекс — це **подвійний пошук**: спершу вторинний індекс (який зберігає первинний ключ як вказівник на рядок), потім кластерний; у [[postgresql|Postgres]] кластерного індексу немає — вторинні індекси зберігають фізичне розташування рядка у файлі. Далі він пояснює [[mvcc|MVCC]]: обидві бази копіюють рядки на кожну транзакцію, і оскільки копії рядків у Postgres лягають на нові фізичні адреси, оновлення *однієї* індексованої колонки змушує Postgres перебудувати **всі** індекси таблиці (оптимізація HOT — heap-only tuple — допомагає, лише якщо копія вмістилася в той самий блок і жодна індексована колонка не змінилася); MySQL оновлює лише зачеплений індекс. Він киває на знамениті міграції Uber Postgres→MySQL→Postgres як наслідок саме цих нюансів. Практичний центр — [[uuid-vs-auto-increment|UUID проти auto increment]]: оскільки MySQL дублює первинний ключ у кожному вторинному індексі, UUID як первинний ключ там «катастрофічний» — його заміряні таблиці: auto-increment 4.3 ГБ, auto-increment + окрема колонка UUID 4.9 ГБ, UUID як PK 7.8 ГБ; вторинні індекси роздулися з 2 ГБ до 5.5 ГБ, тобто ~70% байтів індексів — це просто UUID-PK. Випадкові UUID-вставки також трощать кешування вузлів B+ дерева — вставки пішли з ~4 с до ~5.5 с на 1000 рядків навіть на його топовому SSD (на повільніших дисках він бачив 2.5–3×). Подальші експерименти: покривні індекси (додай до індексу колонку, за якою ніколи не фільтруєш, — наприклад `(year, name)` — і запит взагалі не торкається основної таблиці; `EXPLAIN` показує "covering index"), прихована ціна пагінації з `OFFSET 1000000` навіть з індексом (~10 с, бо ланцюжок листків доводиться гортати на мільйон записів углиб) і видалення індексів, що зрізає час вставки з 5.5 с до ~1.2 с.
 
-## Key takeaways
-- MySQL's table is itself a B+ tree ordered by primary key (clustered index); secondary indexes store the PK, so non-PK lookups search twice. Postgres tables are unordered heaps; indexes point to physical row locations ([[database-indexes]], [[b-tree]]).
-- Under [[mvcc]], a Postgres update moves the row physically, so it must update *every* index on the table — even if you changed a non-indexed column (HOT optimization helps only within one 8 KB block); MySQL, referencing rows by PK, touches only the changed index. He cites Uber's back-and-forth database migrations as fallout from these internals.
-- [[uuid-vs-auto-increment]] in MySQL: UUID as primary key inflated his table from 4.3 GB to 7.8 GB and secondary indexes from 2 GB to 5.5 GB (~70% of index space was the PK itself, nearly 3× more index RAM needed); the counterintuitive fix — keep an auto-increment PK and store UUID as an extra column — is *smaller* and faster despite "adding" a column. Postgres is largely immune since it never embeds the PK in other indexes.
-- Random (UUID) inserts break B+ tree node caching: sequential inserts touch only the rightmost cached nodes, random ones thrash the cache — 1000-row inserts went 4 s → 5.5 s on the fastest consumer SSD, 2.5–3× worse on slower storage.
-- MySQL cannot have a table without a primary key — if you omit it, it silently adds a hidden 6-byte auto-increment; declaring your own 4-byte one saves 2 bytes × every row × every index (gigabytes of RAM at 100M rows, and indexes should live in RAM).
-- Covering indexes: appending a display-only column to an index (e.g. `(year, name)`) lets the whole query be answered from the index — he demos a query dropping from ~10 s to instant — at the cost of extra copies on disk.
-- Even with an index, `ORDER BY ... OFFSET 1000000 LIMIT 1` is slow: the sorted leaf chain must still be walked a million entries — so "last page" pagination hurts at scale.
-- Indexes tax writes: dropping his secondary indexes cut insert time ~4× (5.5 s → 1.2 s per batch); don't index everything by default.
-- Closing frame: of three programmers — one unaware indexes exist, one who knows "indexes make it faster", one who understands their internals — only the third can actually design for and predict the database's behavior ([[deep-learning-of-fundamentals]]).
+## Головне
+- Таблиця MySQL — сама по собі B+ дерево, впорядковане за первинним ключем (кластерний індекс); вторинні індекси зберігають PK, тож пошук не за PK шукає двічі. Таблиці Postgres — невпорядковані «купи» (heap); індекси вказують на фізичні розташування рядків ([[database-indexes]], [[b-tree]]).
+- За [[mvcc|MVCC]] оновлення в Postgres фізично переміщує рядок, тож доводиться оновити *кожен* індекс таблиці — навіть якщо ви змінили неіндексовану колонку (оптимізація HOT допомагає лише в межах одного блоку 8 КБ); MySQL, що посилається на рядки через PK, торкається лише зміненого індексу. Міграції Uber туди-сюди він наводить як наслідок цих нутрощів.
+- [[uuid-vs-auto-increment|UUID проти auto-increment]] у MySQL: UUID як первинний ключ роздув його таблицю з 4.3 ГБ до 7.8 ГБ, а вторинні індекси — з 2 ГБ до 5.5 ГБ (~70% простору індексів — сам PK, майже втричі більше RAM під індекси); контрінтуїтивне рішення — залишити auto-increment PK і зберігати UUID окремою колонкою — виходить *меншим* і швидшим попри «додану» колонку. Postgres до цього здебільшого нечутливий, бо ніколи не вбудовує PK в інші індекси.
+- Випадкові (UUID) вставки ламають кешування вузлів B+ дерева: послідовні вставки торкаються лише крайніх правих закешованих вузлів, випадкові — трощать кеш: вставки по 1000 рядків пішли 4 с → 5.5 с на найшвидшому споживчому SSD, у 2.5–3 рази гірше на повільніших сховищах.
+- У MySQL не буває таблиці без первинного ключа — якщо його не вказати, він мовчки додає прихований 6-байтовий auto-increment; оголошення власного 4-байтового заощаджує 2 байти × кожен рядок × кожен індекс (гігабайти RAM на 100 млн рядків, а індекси мають жити в RAM).
+- Покривні індекси: додавання суто «відображуваної» колонки до індексу (наприклад `(year, name)`) дозволяє відповісти на весь запит з самого індексу — він демонструє, як запит падає з ~10 с до миттєвого — ціною додаткових копій на диску.
+- Навіть з індексом `ORDER BY ... OFFSET 1000000 LIMIT 1` повільний: відсортований ланцюжок листків усе одно доводиться пройти на мільйон записів углиб — тож пагінація «остання сторінка» болить на масштабі.
+- Індекси — податок на запис: видалення вторинних індексів зрізало час вставки ~вчетверо (5.5 с → 1.2 с на батч); не індексуйте все підряд за замовчуванням.
+- Фінальна рамка: з трьох програмістів — того, хто не знає про існування індексів; того, хто знає, що «індекси прискорюють»; і того, хто розуміє їхні нутрощі, — лише третій може реально проектувати під поведінку бази й передбачати її ([[deep-learning-of-fundamentals|глибоке вивчення основ]]).
 
-## Covered
+## Розділи
+- 00:00 — Вступ: чому треба знати, як індекси працюють усередині
+- 01:04 — Основи на дошці: відсортовані дані, O(log n), індекс як відсортована копія колонки
+- 02:52 — Кластерний індекс MySQL: таблиця сама є [[b-tree|B+ деревом]], тож вторинні пошуки шукають двічі
+- 04:43 — У Postgres немає кластерного індексу: індекси вказують на фізичні розташування рядків
+- 06:08 — Питання: [[uuid-vs-auto-increment|UUID чи auto-increment]] як первинний ключ
+- 07:14 — Копії рядків у [[mvcc|MVCC]]: чому один UPDATE у Postgres перебудовує всі індекси (нюанс HOT, Uber)
+- 10:27 — Практичні висновки: ціна запису і PK, продубльований у кожному індексі MySQL
+- 11:51 — Прихований 6-байтовий первинний ключ MySQL; ідея покривного індексу на дошці
+- 15:02 — Експеримент: три розкладки таблиці — 4.3 ГБ vs 4.9 ГБ vs 7.8 ГБ
+- 17:54 — Перегони COUNT(*) і базові запити без індексів
+- 20:24 — Додаємо індекси: вторинні індекси роздуваються з 2 ГБ до 5.5 ГБ (~70% — UUID-PK)
+- 23:43 — Миттєві пошуки проти LIKE '%word%': де B-дерева здаються
+- 25:31 — OFFSET 1,000,000 повільний навіть з індексом — лікується покривним індексом
+- 30:56 — Швидкість вставки: випадкові UUID-вставки трощать кеш вузлів; видалення індексів зрізає 5.5 с до 1.2 с
+- 34:05 — Підсумок практичних висновків і фінал про трьох програмістів
+
+## Теми
 [[database-indexes]], [[b-tree]], [[mvcc]], [[uuid-vs-auto-increment]], [[algorithmic-complexity]], [[deep-learning-of-fundamentals]], [[mysql]], [[postgresql]], [[full-text-search]]

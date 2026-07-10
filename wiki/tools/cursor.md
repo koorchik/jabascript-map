@@ -4,10 +4,10 @@ tags: [ai, editor, coding-agent]
 ---
 # Cursor
 
-An AI-first code editor (a VS Code fork). The channel's verdict is short and negative: Viktor tried it and it "didn't do what I needed by quality", and he disliked having to install a separate editor at all — the same objection he raises against Google's Antigravity ([[vibe-coding-part-2]]). It illustrates his general tooling stance: the agent should come to your terminal, not drag you into a new IDE — which is exactly why [[claude-code|Claude Code]]'s plain CLI won.
+AI-first редактор коду (форк VS Code). Вердикт каналу короткий і негативний: Віктор спробував його, і він «за якістю не робив того, що мені треба», а сама необхідність ставити окремий редактор йому не сподобалася — те саме заперечення він висуває і проти Antigravity від Google ([[vibe-coding-part-2]]). Це ілюструє його загальну позицію щодо інструментів: агент має приходити у твій термінал, а не затягувати тебе в нову IDE — саме тому переміг звичайний CLI [[claude-code|Claude Code]].
 
-## Covered in
-- [[vibe-coding-part-2]] — tried and rejected on quality; separate-editor objection.
+## Де розглядається
+- [[vibe-coding-part-2]] — спробував і відкинув через якість; заперечення проти окремого редактора.
 
-## Related
-[[claude-code]], [[ai-coding-agents]], [[vs-code]], [[vibe-coding]]
+## Повʼязане
+[[claude-code|Claude Code]], [[ai-coding-agents|AI-агенти для кодингу]], [[vs-code|VS Code]], [[vibe-coding|вайб-кодинг]]

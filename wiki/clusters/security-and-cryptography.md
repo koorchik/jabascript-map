@@ -2,62 +2,62 @@
 type: cluster
 tags: [security, cryptography, moc]
 ---
-# Security & Cryptography
+# Безпека і криптографія
 
-Security is the channel's home turf: Viktor started his career in infosec, later enrolled in a cybersecurity PhD, and states the thesis directly in [[qa-and-plans-for-2024]] — "almost all of information security is understanding how things work inside." Accordingly, the channel almost never teaches security as a checklist. It teaches internals — how DHCP hands out settings, what a JWT is made of, what a key pair can and cannot do — and lets the security conclusions fall out, sharpened by trick questions ("is a JWT encrypted?"), live attacks (a rogue DHCP server built at a café table), and WebbyLab war stories (an admin key that renamed a client to "Raul"). The deliberate centerpiece is the [[encoding]] / [[encryption]] / [[hashing]] trio, taught as a set precisely because confusing them is the root of most developer security mistakes.
+Безпека — рідна територія каналу: Віктор починав карʼєру в інфобезпеці, згодом вступив на PhD із кібербезпеки, а тезу формулює прямо в [[qa-and-plans-for-2024]] — «майже вся інформаційна безпека — це розуміння того, як речі працюють усередині». Тож канал майже ніколи не викладає безпеку як чекліст. Він викладає нутрощі — як DHCP роздає налаштування, з чого зроблений JWT, що пара ключів може і чого не може — і дає висновкам про безпеку випливати самим, загострюючи їх питаннями з підступом («а JWT зашифрований?»), живими атаками (rogue DHCP-сервер, зібраний за столиком у кавʼярні) та історіями з WebbyLab (адмінський ключ, який перейменував клієнта на «Рауль»). Свідомо центральний елемент — трійця [[encoding|кодування]] / [[encryption|шифрування]] / [[hashing|хешування]], яку канал викладає саме як набір, бо плутанина між ними — корінь більшості помилок безпеки в розробників.
 
-## Core concepts
+## Основні концепції
 
-### The confused trio
-- [[encoding]] — representation, not secrecy; anyone can reverse it
-- [[encryption]] — no key, no understanding; symmetric vs asymmetric
-- [[hashing]] — one-way, fixed output; his three families: checksums, password hashing, hash-table hashes
-- [[base64]] — the canonical encoding, decoded live in JWTs, Basic Auth and data URIs
+### Трійця, яку всі плутають
+- [[encoding]] — представлення, а не секретність; будь-хто може розвернути назад
+- [[encryption]] — нема ключа — нема розуміння; симетричне проти асиметричного
+- [[hashing]] — односторонність, фіксований вихід; його три родини: контрольні суми, хешування паролів, хеші для хеш-таблиць
+- [[base64]] — канонічне кодування, розкодоване наживо в JWT, Basic Auth і data URI
 
-### Cryptography in practice
-- [[asymmetric-encryption]] — the one key-pair concept behind HTTPS, SSH, PGP, JWT and blockchain
-- [[digital-signatures]] — private key signs a hash; anyone verifies; integrity without secrecy
-- [[jwt]] — signed, not encrypted; stateless sessions; asymmetric signing for microservices
-- [[ssh-key-authentication]] — challenge-response with the key pair; never send the private key
-- [[one-time-passwords]] — TOTP demystified: HMAC over a shared secret and the clock
-- [[cold-crypto-wallets]] — sign offline, broadcast online; the signature is safe to expose
-- [[https-tls]] — what TLS protects, and what it doesn't on a hostile network
+### Криптографія на практиці
+- [[asymmetric-encryption]] — одна концепція пари ключів за HTTPS, SSH, PGP, JWT і блокчейном
+- [[digital-signatures]] — приватний ключ підписує хеш; перевірити може будь-хто; цілісність без секретності
+- [[jwt]] — підписаний, а не зашифрований; stateless-сесії; асиметричний підпис для мікросервісів
+- [[ssh-key-authentication]] — challenge-response з парою ключів; приватний ключ ніколи не надсилається
+- [[one-time-passwords]] — TOTP без магії: HMAC від спільного секрету й годинника
+- [[cold-crypto-wallets]] — підписуй офлайн, транслюй онлайн; підпис безпечно показувати
+- [[https-tls]] — що TLS захищає і чого не захищає у ворожій мережі
 
-### Defense and the human factor
-- [[security-practices]] — the hub: hash passwords, never roll your own crypto, treat Base64 as plaintext, supply-chain defenses
-- [[least-privilege]] — scope credentials to the task; the admin-key "Raul" incident
-- [[social-engineering]] — manufactured trust, dissected on a real scam call
-- [[sandboxing-and-isolation]] — contain untrusted VMs/code so compromise has zero blast radius
+### Захист і людський фактор
+- [[security-practices]] — хаб: хешуйте паролі, ніколи не пишіть власну криптографію, ставтеся до Base64 як до відкритого тексту, захист supply chain
+- [[least-privilege]] — обмежуйте креденшели рамками задачі; інцидент з адмін-ключем і «Раулем»
+- [[social-engineering]] — сфабрикована довіра, розібрана на реальному шахрайському дзвінку
+- [[sandboxing-and-isolation]] — ізолюйте недовірені VM/код, щоб компрометація мала нульовий радіус ураження
 
-### Neighboring concepts
-- [[dhcp]] and [[dns]] — the protocols behind the café-Wi-Fi attack
-- [[nat-and-networking]] — subnets and routing that isolation is built from
-- [[bloom-filter]] — Firefox's CRLite: probabilistic structures checking revoked certificates
-- [[deep-learning-of-fundamentals]] — why studying security is the best vehicle for learning internals
+### Суміжні концепції
+- [[dhcp]] і [[dns]] — протоколи, на яких стоїть кавʼярняна Wi-Fi-атака
+- [[nat-and-networking]] — підмережі й маршрутизація, з яких будується ізоляція
+- [[bloom-filter]] — CRLite у Firefox: імовірнісні структури перевіряють відкликані сертифікати
+- [[deep-learning-of-fundamentals]] — чому вивчення безпеки — найкращий шлях до розуміння нутрощів
 
-## Videos
+## Відео (порядок перегляду)
 
-- [[hashing-encoding-encryption-difference]] — the trio untangled via trick questions: JWTs are signed, DB passwords are hashed, Basic Auth is plaintext
-- [[asymmetric-encryption-digital-signatures]] — one key-pair concept explains HTTPS, SSH, PGP, JWT, wallets and Authenticator, with runnable Node.js demos
-- [[how-base64-works]] — Base64 from first principles, live-decoded in JWTs, Basic Auth headers and data URIs
-- [[qa-1-will-https-protect-you]] — HTTPS won't save you on a hostile network; plus Base64, JWT and UUID follow-ups
-- [[dhcp-cafe-wifi]] — the café-Wi-Fi rogue-DHCP attack, built live with dnsmasq and Wireshark
-- [[vm-network-isolation]] — sandboxing a VM behind a pfSense virtual router so it can't roam the home LAN
-- [[voice-1-admin-keys-for-developers]] — why developers shouldn't get admin keys: the deleted co-founder and client "Raul"
-- [[voice-4-phone-scammers]] — a real scam call recorded and dissected until the script collapses
-- [[bloom-filter-and-firefox]] — Bloom filters and Firefox's CRLite cascade for revoked-certificate checking
-- [[google-io-2023-watch-party]] — supply-chain security: reproducible builds, image signing, Assured OSS, npm provenance
-- [[3-things-that-make-a-programmer-better]] — security study as the best route to deep understanding; the Base64 war story
-- [[qa-and-plans-for-2024]] — the infosec origin story and the "understanding internals" thesis
+1. [[hashing-encoding-encryption-difference]] — почніть із трійці, яку всі плутають, розплутаної питаннями з підступом: JWT підписані, паролі в БД хешовані, Basic Auth — відкритий текст
+2. [[how-base64-works]] — канонічне кодування з перших принципів, розкодоване наживо в JWT, заголовках Basic Auth і data URI
+3. [[asymmetric-encryption-digital-signatures]] — одна концепція пари ключів пояснює HTTPS, SSH, PGP, JWT, гаманці й Authenticator, із робочими демо на Node.js
+4. [[qa-1-will-https-protect-you]] — криптографія в застосуванні до мережі: HTTPS не врятує вас у ворожій мережі, плюс продовження про Base64, JWT і UUID
+5. [[dhcp-cafe-wifi]] — та сама ворожа мережа, зібрана насправді: rogue-DHCP-атака в кавʼярняному Wi-Fi, наживо з dnsmasq і Wireshark
+6. [[bloom-filter-and-firefox]] — сантехніка шару довіри: каскад CRLite у Firefox для перевірки відкликаних сертифікатів
+7. [[vm-network-isolation]] — захист через ізоляцію: VM у пісочниці за віртуальним роутером pfSense, щоб не гуляла домашньою LAN
+8. [[google-io-2023-watch-party]] — захист вище по supply chain: відтворювані збірки, підписування образів, Assured OSS, npm provenance
+9. [[voice-1-admin-keys-for-developers]] — людський фактор, частина 1: чому розробникам не можна давати адмінські ключі — видалений співзасновник і клієнт «Рауль»
+10. [[voice-4-phone-scammers]] — людський фактор, частина 2: реальний шахрайський дзвінок, записаний і розібраний до розвалу сценарію
+11. [[3-things-that-make-a-programmer-better]] — ширший план: вивчення безпеки як найкращий маршрут до глибокого розуміння; історія з Base64
+12. [[qa-and-plans-for-2024]] — фінальна теза: історія старту в інфобезпеці та «майже вся інфобезпека — це розуміння нутрощів»
 
-## Tools seen in this cluster
+## Інструменти цього кластера
 
-- [[pfsense]] — the virtual router doing the isolating
-- [[virtualbox]] — where the sandboxed VMs live
-- [[dnsmasq]] — the rogue DHCP/DNS server in the café attack
-- [[nodejs]] — the `crypto` module powering the encryption/signature demos
-- [[firefox]] — home of the CRLite certificate-revocation cascade
+- [[pfsense]] — віртуальний роутер, який усе ізолює
+- [[virtualbox]] — де живуть VM у пісочниці
+- [[dnsmasq]] — rogue DHCP/DNS-сервер у кавʼярняній атаці
+- [[nodejs]] — модуль `crypto`, на якому працюють демо шифрування й підписів
+- [[firefox]] — дім каскаду CRLite для відкликання сертифікатів
 
-## Related clusters
+## Повʼязані кластери
 
-The networking side of these attacks lives in the networking cluster ([[dns]], [[dhcp]], [[https-tls]], [[nat-and-networking]]); the craft argument for learning security deeply lives with [[deep-learning-of-fundamentals]] and [[domain-knowledge]].
+Мережевий бік цих атак живе в мережевому кластері ([[dns|DNS]], [[dhcp|DHCP]], [[https-tls|HTTPS/TLS]], [[nat-and-networking|NAT і мережі]]); аргумент майстерності на користь глибокого вивчення безпеки — поруч із [[deep-learning-of-fundamentals|глибоким вивченням основ]] і [[domain-knowledge|знанням домену]].

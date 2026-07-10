@@ -5,10 +5,10 @@ tags: [book, productivity]
 ---
 # Effortless
 
-Greg McKeown's follow-up to Essentialism: once you've chosen the essential things, make doing them as easy as possible. Viktor listened to it right after [[essentialism]] and mentions it in the same breath as worth reading.
+Продовження Essentialism від Ґреґа Маккеона: коли вже обрав найважливіше, зроби так, щоб робити його було якомога легше. Віктор прослухав її одразу після [[essentialism|Essentialism]] і згадує поруч із нею як варту прочитання.
 
-## Covered in
-- [[vibe-coding-new-project]] — listened right after Essentialism; worth reading
+## Де розглядається
+- [[vibe-coding-new-project]] — прослухав одразу після Essentialism; варта прочитання
 
-## Related
-Prequel: [[essentialism]]. Productivity shelf: [[atomic-habits]], [[getting-things-done]], [[seven-habits-of-highly-effective-people]], [[the-checklist-manifesto]].
+## Повʼязане
+Приквел: [[essentialism|Essentialism]]. Поличка продуктивності: [[atomic-habits|Atomic Habits]], [[getting-things-done|Getting Things Done]], [[seven-habits-of-highly-effective-people|The 7 Habits of Highly Effective People]], [[the-checklist-manifesto|The Checklist Manifesto]].

@@ -2,17 +2,17 @@
 type: concept
 tags: [networking, performance, latency, internet]
 ---
-# Latency and the Speed of Light
+# Затримка і швидкість світла
 
-The channel's most striking "how the internet works" argument: your website's speed is bounded by physics, not bandwidth ([[speed-of-light-website-latency]]). Kyiv → LA is ~10,000 km; light in fiber travels ~200,000 km/s (versus 300,000 in vacuum), giving 50ms one way and a 100ms best-case ping — his memorable line is that you'll never get sub-100ms CS:GO ping to US servers. He then stacks the round-trips: request + backend + response already costs 120ms, six times a 20ms backend; adding the TCP handshake pushes it to 220ms; adding the TLS handshake takes it to ~420ms (21x the backend) — and that still ignores DNS lookup and TCP slow-start. The conclusion is that CDNs matter because they cut *latency*, not raw speed. A companion point in the DNS series: each lookup is itself many internet round-trips, which is exactly why DNS caching exists ([[dns-recursive-resolution]]).
+Найефектніший аргумент каналу на тему «як працює інтернет»: швидкість вашого сайту обмежена фізикою, а не пропускною здатністю ([[speed-of-light-website-latency|швидкість світла і затримки сайтів]]). Від Києва до Лос-Анджелеса ~10 000 км; світло в оптоволокні рухається зі швидкістю ~200 000 км/с (проти 300 000 у вакуумі), тобто 50 мс в один бік і найкращий можливий ping — 100 мс. Його фраза, що запам’ятовується: ping менше 100 мс у CS:GO до американських серверів ви не отримаєте ніколи. Далі він складає round-trip’и: запит + бекенд + відповідь — це вже 120 мс, ушестеро більше за 20-мілісекундний бекенд; TCP handshake піднімає це до 220 мс; TLS handshake — до ~420 мс (у 21 раз більше за бекенд) — і це ще без DNS-запиту та TCP slow-start. Висновок: CDN важливі тому, що зменшують саме *затримку*, а не «швидкість». Суміжна теза із серії про DNS: кожен DNS-запит — це сам по собі багато обмінів через інтернет, саме тому й існує DNS-кешування ([[dns-recursive-resolution|рекурсивний резолвінг DNS]]).
 
-## Covered in
-- [[speed-of-light-website-latency]] — the core derivation: fiber speed, 100ms ping floor, stacked TCP/TLS round-trips turning a 20ms backend into ~420ms, why CDNs help
-- [[dns-recursive-resolution]] — each DNS lookup is many round-trips, motivating caching
+## Де розглядається
+- [[speed-of-light-website-latency]] — базовий розрахунок: швидкість світла в оптоволокні, нижня межа ping у 100 мс, накопичення round-trip’ів TCP/TLS, що перетворюють 20 мс бекенду на ~420 мс, і чому допомагають CDN
+- [[dns-recursive-resolution]] — кожен DNS-запит — це багато round-trip’ів, звідси потреба в кешуванні
 
-## Related
-[[nat-and-networking]] — the TCP handshakes that stack up here
-[[https-tls]] — the TLS handshake adds the biggest single chunk
-[[dns]] — an extra, uncounted lookup on top of the request
-[[web-performance]] — latency is one lever; Core Web Vitals is the other side
-[[nginx]] — the LA test server used to measure real round-trips
+## Повʼязане
+[[nat-and-networking]] — ті самі TCP handshake’и, що тут накопичуються
+[[https-tls]] — TLS handshake додає найбільший окремий шматок
+[[dns]] — ще один неврахований запит поверх основного
+[[web-performance]] — затримка — один важіль; Core Web Vitals — інший бік
+[[nginx]] — тестовий сервер у Лос-Анджелесі, на якому вимірювалися реальні round-trip’и

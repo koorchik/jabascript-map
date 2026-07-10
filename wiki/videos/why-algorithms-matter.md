@@ -2,23 +2,41 @@
 type: video
 title_uk: "Чому алгоритми важливі？ Розберемо на прикладі"
 youtube_id: 9Gtwj0Eo8IY
+level: intermediate
 tags: [algorithms, complexity, javascript, databases, performance]
 date_ingested: 2026-07-09
 ---
-# Why Algorithms Matter — Shown on a Real Example
+# Чому алгоритми важливі — розберемо на прикладі
 
-> Original: "Чому алгоритми важливі？ Розберемо на прикладі" — https://youtu.be/9Gtwj0Eo8IY
+> Оригінал: "Чому алгоритми важливі？ Розберемо на прикладі" — https://youtu.be/9Gtwj0Eo8IY
 
-Instead of dry theory, the author live-codes an everyday task — merging an array of messages with an array of users to attach a `username` to each message — and analyzes it through the lens of [[algorithmic-complexity]]. The naive version calls `users.find()` inside a loop over messages, which is O(M × U); the optimized version first builds a hash map keyed by user id, dropping the whole thing to O(M + U). He then benchmarks search over a 100,000-element array (code is on his GitHub, linked in the description): `Array.find` vs `Array.includes` vs a binary search he wrote in plain JavaScript — and the pure-JS binary search beats even `includes`, which is implemented in C++, because O(log n) always wins over O(n) once data grows. He closes by mapping this straight onto [[database-indexes]]: a query without an index is the same linear scan, while an index gives you binary-search-like behaviour over a sorted structure (in practice a balanced [[b-tree]] / B+ tree, not a sorted array).
+Замість сухої теорії автор наживо кодить буденну задачу — злиття масиву повідомлень із масивом користувачів, щоб додати кожному повідомленню `username`, — і аналізує її крізь призму [[algorithmic-complexity|алгоритмічної складності]]. Наївна версія викликає `users.find()` усередині циклу по повідомленнях, тобто O(M × U); оптимізована спершу будує хеш-мапу за id користувача і зводить усе до O(M + U). Далі він бенчмаркає пошук по масиву на 100 000 елементів (код на його GitHub, посилання в описі): `Array.find` проти `Array.includes` проти бінарного пошуку, написаного ним на чистому JavaScript, — і бінарний пошук на чистому JS обганяє навіть `includes`, реалізований на C++, бо O(log n) завжди перемагає O(n), щойно дані виростають. Наприкінці він проєктує це прямо на [[database-indexes|індекси в базах даних]]: запит без індексу — це той самий лінійний перебір, а індекс дає поведінку на кшталт бінарного пошуку по відсортованій структурі (на практиці — збалансоване [[b-tree|B-дерево]] / B+ дерево, а не відсортований масив).
 
-## Key takeaways
-- Algorithmic complexity is about how work grows with input size, not raw language speed: an O(n²) function stays quadratic whether it's JavaScript or C++ — with 10× more data you get ~100× more operations "and it's not obvious from the code why everything got slow".
-- The merge example in numbers: 2,000 messages × 100 users ≈ 200,000 operations for the nested `find` version vs ~2,100 for the hash-map version (build the map in O(U), then O(1) lookups per message thanks to [[hashing]]-based maps). The fix added only ~6 lines of code.
-- Benchmark surprise #1: `includes` (native C++ loop) is ~23× faster than `find` (which calls a JS callback per element) — constant factors matter too.
-- Benchmark surprise #2: binary search written in plain JS beats the C++ `includes`, because it is O(log n). At 100 million elements the linear scans crawl while binary search answers in fractions of a millisecond — "at ~100 billion elements a linear scan needs ~100 billion operations; binary search needs about one more step when data doubles".
-- Binary search requires a sorted array and sorting is expensive — but if you sort once and search 100 times, it pays off massively.
-- This is exactly what a database does: without an index MySQL/PostgreSQL linearly scan all rows; an index is a sorted structure the engine can binary-search. Real databases use a balanced [[b-tree]] (B+ tree, because it also supports range scans), which keeps O(log n) lookups — 1,000 rows or 10 million rows, the query stays around a millisecond.
-- Final merge benchmark with 1,000 users × 1,000 messages showed roughly a 60× difference — and this matters even on the frontend; in Python without a JIT the slow version would hurt ~10× more.
+## Головне
+- Алгоритмічна складність — про те, як обсяг роботи росте з розміром вхідних даних, а не про «сиру» швидкість мови: функція O(n²) залишається квадратичною і на JavaScript, і на C++ — при 10× більших даних отримуєш ~100× більше операцій, «і з коду не очевидно, чому все стало повільним».
+- Приклад злиття в цифрах: 2 000 повідомлень × 100 користувачів ≈ 200 000 операцій для версії з вкладеним `find` проти ~2 100 для версії з хеш-мапою (побудова мапи за O(U), потім O(1) на кожне повідомлення завдяки мапам на основі [[hashing|хешування]]). Виправлення додало лише ~6 рядків коду.
+- Бенчмарк-сюрприз №1: `includes` (нативний цикл на C++) швидший за `find` (який викликає JS-колбек на кожен елемент) приблизно у 23 рази — константи теж мають значення.
+- Бенчмарк-сюрприз №2: бінарний пошук на чистому JS обганяє C++-ний `includes`, бо він O(log n). На 100 мільйонах елементів лінійні перебори повзуть, а бінарний пошук відповідає за частки мілісекунди — «на ~100 мільярдах елементів лінійному перебору треба ~100 мільярдів операцій; бінарному пошуку — приблизно один додатковий крок на кожне подвоєння даних».
+- Бінарний пошук вимагає відсортованого масиву, а сортування дороге — але якщо відсортувати один раз і шукати 100 разів, це окупається з лишком.
+- Саме це робить база даних: без індексу MySQL/PostgreSQL лінійно сканують усі рядки; індекс — це відсортована структура, по якій рушій може шукати бінарно. Реальні бази використовують збалансоване [[b-tree|B-дерево]] (B+ дерево, бо воно ще й підтримує range-сканування), яке зберігає O(log n) на пошук — 1 000 рядків чи 10 мільйонів, запит тримається близько мілісекунди.
+- Фінальний бенчмарк злиття на 1 000 користувачів × 1 000 повідомлень показав приблизно 60× різниці — і це важливо навіть на фронтенді; у Python без JIT повільна версія боліла б ще ~у 10 разів сильніше.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: чому алгоритми важливі, без сухої теорії
+- 01:04 — Задача: злиття масиву повідомлень із масивом користувачів у памʼяті
+- 01:46 — Кодимо наївну версію наживо: `users.find()` усередині циклу по повідомленнях
+- 03:15 — Оптимізована версія: спершу будуємо хеш-мапу користувачів за id
+- 05:25 — Що вимірює [[algorithmic-complexity|алгоритмічна складність]]: ріст із розміром даних, а не швидкість мови
+- 07:33 — Аналіз обох версій: O(M×U) проти O(M+U) з O(1)-пошуком у [[hashing|хеш-мапі]]
+- 10:02 — Підставляємо цифри: ~200 000 операцій проти ~2 100
+- 10:45 — Сетап бенчмарка: пошук у масиві на 100 000 елементів через `find`, `includes` і бінарний пошук
+- 12:55 — Прогін перший: C++-ний `includes` обганяє `find` у 23 рази
+- 14:21 — Прогін другий: бінарний пошук на чистому JS обганяє C++-ний `includes`
+- 16:10 — Масштабуємо до 100 мільйонів елементів: лінійні перебори повзуть, O(log n) майже не помічає
+- 18:00 — «Але ж сортування дороге»: відсортуй раз, шукай 100 разів; як бінарний пошук ділить діапазон навпіл
+- 19:29 — Бази даних роблять те саме: без індексу запит — лінійний перебір усіх рядків
+- 19:51 — Чому реальні [[database-indexes|індекси]] використовують збалансоване [[b-tree|B/B+ дерево]], а не відсортований масив
+- 21:42 — Фінальний бенчмарк злиття: ~60× на 1 000×1 000 — і чому Python без JIT болить сильніше
+
+## Теми
 [[algorithmic-complexity]], [[data-structures]], [[hashing]], [[database-indexes]], [[b-tree]]

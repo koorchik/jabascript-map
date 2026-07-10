@@ -4,13 +4,13 @@ tags: [databases, search, full-text-search]
 ---
 # Elasticsearch
 
-Presented not as magic but as the packaged version of exactly the mechanism Viktor builds by hand: an [[inverted-index]] plus a tokenization pipeline — "it works the same way." He contrasts it with Sphinx, a fallen predecessor that originally could only rebuild its index from scratch on cron ([[full-text-search-inverted-indexes]]). His standing advice: use Elasticsearch (or built-in FULLTEXT) in real projects, but understand what it's doing underneath.
+Подається не як магія, а як упакована версія саме того механізму, який Віктор будує руками: [[inverted-index|інвертований індекс]] плюс конвеєр токенізації — «воно працює так само». Він протиставляє його Sphinx — занепалому попереднику, який спочатку вмів лише перебудовувати індекс із нуля по cron ([[full-text-search-inverted-indexes]]). Його незмінна порада: у реальних проєктах беріть Elasticsearch (або вбудований FULLTEXT), але розумійте, що він робить під капотом.
 
-In the Q&A follow-up he uses Elasticsearch's official tokenizer reference as a catalog of indexing strategies — n-gram, edge n-gram, letter, whitespace, keyword, pattern, URL, custom hashtag/IP extractors — to answer the substring-search question, embodying his maxim that "if you want to search differently, you must index differently" (with the warning that n-grams inflate the index 2–3x) ([[full-text-search-part-2-qa]]).
+У Q&A-продовженні він використовує офіційний довідник токенізаторів Elasticsearch як каталог стратегій індексації — n-gram, edge n-gram, letter, whitespace, keyword, pattern, URL, кастомні екстрактори хештегів/IP — щоб відповісти на питання про пошук за підрядком, утілюючи свою максиму «хочеш шукати інакше — мусиш інакше індексувати» (із застереженням, що n-грами роздувають індекс у 2–3 рази) ([[full-text-search-part-2-qa]]).
 
-## Covered in
-- [[full-text-search-inverted-indexes]] — named as the productized inverted index; Sphinx as the cautionary predecessor
-- [[full-text-search-part-2-qa]] — the tokenizer zoo as a menu of indexing strategies
+## Де розглядається
+- [[full-text-search-inverted-indexes]] — названий продуктизованим інвертованим індексом; Sphinx як повчальний попередник
+- [[full-text-search-part-2-qa]] — зоопарк токенізаторів як меню стратегій індексації
 
-## Related
-[[full-text-search]], [[inverted-index]], [[index-compression]], [[mysql]]
+## Повʼязане
+[[full-text-search|повнотекстовий пошук]], [[inverted-index|інвертований індекс]], [[index-compression|стиснення індексів]], [[mysql|MySQL]]

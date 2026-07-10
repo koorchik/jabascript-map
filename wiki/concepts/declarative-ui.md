@@ -2,18 +2,18 @@
 type: concept
 tags: [engineering-craft, frontend, declarative-ui, abstractions]
 ---
-# Declarative UI (schema-driven builders)
+# Декларативний UI (білдери на схемах)
 
-Borrowed straight from game development: like Doom's level editor producing declarative level files, Viktor's idea is to describe UI as schemas that get compiled into components ([[voice-2-faster-ui-development]]). Tools like [[react-admin]] already do this cross-project, but they're standardized to a lowest common denominator; his stronger claim is that a *project-specific* builder is worth building even inside ONE project — it's far cheaper than a cross-project framework, and you'd be writing all those screens anyway. Because it's project-specific, when a feature request arrives he extends the schema the same day, and every screen in the app picks up the behavior consistently.
+Ідея, позичена прямо з геймдеву: як редактор рівнів Doom видає декларативні файли рівнів, так і Віктор пропонує описувати UI схемами, які компілюються в компоненти ([[voice-2-faster-ui-development|швидша розробка UI]]). Інструменти на кшталт [[react-admin]] уже роблять це крос-проєктно, але вони стандартизовані під найменший спільний знаменник; його сильніша теза — що *проєктно-специфічний* білдер варто будувати навіть усередині ОДНОГО проєкту: це значно дешевше за крос-проєктний фреймворк, а всі ці екрани ти все одно писав би. Оскільки білдер специфічний для проєкту, коли приходить запит на фічу, він розширює схему того ж дня — і кожен екран застосунку підхоплює поведінку консистентно.
 
-His own layered stack: a grid builder whose schema turns ~2 of his parameters into ~5 low-level [[material-ui|Material]] grid params, encoding consistent behavior, settings persistence, API compatibility, per-row actions, delete confirmations and navigation; a form builder; and a PageBuilder producing whole CRUD pages — always with the option to drop down a layer for genuinely custom pages ([[voice-2-faster-ui-development]]). He's puzzled the approach isn't popular: people use forms libraries raw on every screen even though every project has customizations (API-specific error formats bound to fields, say) that one more declarative layer would encode exactly once. Offered with his explicit caveat: it's idea-sharing — "maybe it won't fly on your project."
+Його власний шаруватий стек: грід-білдер, чия схема розгортає ~2 його параметри в ~5 низькорівневих параметрів гріда [[material-ui|Material]], кодуючи консистентну поведінку, збереження налаштувань, сумісність з API, дії для рядків, підтвердження видалення і навігацію; білдер форм; і PageBuilder, що видає цілі CRUD-сторінки — завжди з можливістю спуститися на рівень нижче для по-справжньому кастомних сторінок ([[voice-2-faster-ui-development|швидша розробка UI]]). Його дивує, що підхід непопулярний: люди використовують бібліотеки форм «сирими» на кожному екрані, хоча в кожному проєкті є кастомізації (скажімо, специфічні для API формати помилок, привʼязані до полів), які ще один декларативний шар закодував би рівно один раз. Подано з його явним застереженням: це обмін ідеями — «можливо, на вашому проєкті це не полетить».
 
-## Covered in
-- [[voice-2-faster-ui-development]] — the whole concept: level-editor analogy, grid/form/PageBuilder layers, same-day schema extension, why project-specific beats framework
+## Де розглядається
+- [[voice-2-faster-ui-development]] — уся концепція: аналогія з редактором рівнів, шари грід/форми/PageBuilder, розширення схеми того ж дня, чому проєктно-специфічне бʼє фреймворк
 
-## Related
-[[abstractions]] — the builder is a deliberately added abstraction layer with an escape hatch
-[[software-design]] — encode project conventions once instead of per-screen
-[[react-admin]] — the cross-project version of the same idea
-[[material-ui]] — the low-level layer his builders compile to
-[[react]] — the ecosystem where he sees teams afraid to add such layers
+## Повʼязане
+[[abstractions]] — білдер — це свідомо доданий шар абстракції із запасним виходом
+[[software-design]] — закодуй конвенції проєкту один раз замість кожного екрана
+[[react-admin]] — крос-проєктна версія тієї ж ідеї
+[[material-ui]] — низькорівневий шар, у який компілюються його білдери
+[[react]] — екосистема, де він бачить команди, що бояться додавати такі шари

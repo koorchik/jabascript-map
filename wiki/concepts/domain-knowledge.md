@@ -2,18 +2,18 @@
 type: concept
 tags: [engineering-craft, domain, architecture]
 ---
-# Domain knowledge
+# Знання предметної області
 
-First of the three skills in the channel's opening video: the domain, not patterns, dictates architecture ([[3-things-that-make-a-programmer-better]]). His chat example makes it concrete — the same "typing indicator" UI may need long-polling (comments under orders), plain 100-req/s polling (a 100-user corporate chat), or WebSockets, and only domain understanding tells you which. Domain knowledge also drives motivation: friends of his loved building the e-commerce parts of a project and lost all motivation on the logistics module — until they learned the business behind it and the work became interesting again.
+Перша з трьох навичок у стартовому відео каналу: архітектуру диктує предметна область, а не патерни ([[3-things-that-make-a-programmer-better|3 речі, що роблять програміста кращим]]). Його приклад із чатом робить це відчутним: той самий індикатор «користувач друкує» може вимагати long-polling (коментарі під замовленнями), звичайного polling на 100 запитів/с (корпоративний чат на 100 користувачів) або WebSockets — і лише розуміння домену підказує, що саме. Знання домену живить і мотивацію: його друзі із задоволенням будували e-commerce-частини проєкту й повністю втратили мотивацію на модулі логістики — доки не розібралися в бізнесі за ним, і робота знову стала цікавою.
 
-The concept carries his central architectural warning: architecture quality depends on domain understanding, and at project start you almost never know the domain well enough — which is precisely why cutting microservice boundaries on day one is the underestimated killer of that architecture ([[microservices-main-problem]]), and why he loves the principle that good architecture *defers* decisions until you understand the domain better.
+На цьому концепті тримається його центральне архітектурне попередження: якість архітектури залежить від розуміння домену, а на старті проєкту ви майже ніколи не знаєте домен достатньо добре — саме тому нарізання меж мікросервісів у перший же день і є недооціненим вбивцею цієї архітектури ([[microservices-main-problem|головна проблема мікросервісів]]), і саме тому він любить принцип, що хороша архітектура *відкладає* рішення, доки ви не зрозумієте домен краще.
 
-## Covered in
-- [[3-things-that-make-a-programmer-better]] — domain dictates architecture (the typing-indicator example) and fuels motivation (the logistics story)
-- [[microservices-main-problem]] — you never know the domain well enough on day one to slice service boundaries right
+## Де розглядається
+- [[3-things-that-make-a-programmer-better]] — домен диктує архітектуру (приклад з індикатором набору тексту) і живить мотивацію (історія з логістикою)
+- [[microservices-main-problem]] — у перший день ніколи не знаєш домен достатньо добре, щоб правильно нарізати межі сервісів
 
-## Related
-[[software-design]] — the domain is the primary design input
-[[microservices]] — the architecture most punished by shallow domain understanding
-[[abstractions]] — good boundaries are domain boundaries
-[[domain-driven-design]], [[implementing-domain-driven-design]] — the books he recommends for exactly this
+## Повʼязане
+[[software-design]] — домен як головний вхідний параметр проєктування
+[[microservices]] — архітектура, яку поверхневе розуміння домену карає найсильніше
+[[abstractions]] — хороші межі — це межі домену
+[[domain-driven-design]], [[implementing-domain-driven-design]] — книги, які він радить саме для цього

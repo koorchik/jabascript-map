@@ -4,21 +4,21 @@ tags: [ai, llm, google, assistant]
 ---
 # Gemini
 
-Google's LLM assistant (formerly Bard) — the model with the longest arc on the channel, from comedy prop to daily workhorse. The channel covered its lineage live at [[google-io-2023-watch-party]]: Bard began as a cut-down LaMDA whose launch flopped, was rebuilt on PaLM 2 amid the Google Brain + DeepMind merger under Demis Hassabis, and wasn't even available in Ukraine without a VPN. During [[qa-and-plans-for-2024]] the product was literally renamed from Bard to Gemini mid-stream; he had tested Bard Advanced and judged it no worse than GPT-4.
+LLM-асистент Google (колишній Bard) — модель із найдовшою дугою на каналі: від комедійного реквізиту до щоденної робочої конячки. Її родовід канал розбирав наживо на [[google-io-2023-watch-party]]: Bard починався як урізана LaMDA, чий запуск провалився, був перебудований на PaLM 2 на тлі злиття Google Brain і DeepMind під керівництвом Деміса Хассабіса, і в Україні без VPN був узагалі недоступний. Під час [[qa-and-plans-for-2024]] продукт буквально перейменували з Bard на Gemini просто по ходу стріму; він тестував Bard Advanced і оцінив його не гіршим за GPT-4.
 
-The two Gemini-talk shorts are the channel's most memorable AI material: in voice mode, Viktor's Socratic "and how do you picture that?" style exposes a brittle world model — confident helpful-sounding options (a closer car wash, booking, "enjoy the walk") while forgetting the car must come along ([[ai-replacing-us-gemini-talk-1]]); and principled refusal behavior under sympathetic pressure — "I can't lie or make such claims" — with role-play conceded only inside a labeled fiction frame ([[ai-and-jobs-gemini-talk-2]]).
+Два шорти-розмови з Gemini — найпам'ятніший AI-матеріал каналу: у голосовому режимі сократівський стиль Віктора «а як ти собі це уявляєш?» оголює крихку модель світу — впевнені, корисні на слух варіанти (ближча мийка, бронювання, «насолоджуйтесь прогулянкою»), при цьому забувається, що машину треба взяти з собою ([[ai-replacing-us-gemini-talk-1]]); і принципові відмови під співчутливим тиском — «я не можу брехати чи робити такі заяви» — з рольовою грою, допущеною лише всередині явно позначеної фікційної рамки ([[ai-and-jobs-gemini-talk-2]]).
 
-By [[qa-2-answering-questions]] it's his most-used LLM for work and technical tasks: Gemini 2 cleanly passes his binary-search-in-file benchmark (1.5 had regressed), and Gemini Deep Research gathers web material into reports. In the vibe-coding era it holds the brainstorm slot: app ideas and per-screen descriptions that feed [[google-stitch|Google Stitch]] and [[claude-code|Claude Code]] ([[vibe-coding-new-project]]), plus side notes that Gemini CLI is written in React and that Gemini should write Android code well since Google trains it on their own stack ([[vibe-coding-part-2]]). It even served as research assistant for the off-topic AWD deep dive — "я замучив цей Gemini" (I wore Gemini out) ([[awd-systems-compared]]).
+До [[qa-2-answering-questions]] це його найуживаніша LLM для роботи й технічних задач: Gemini 2 чисто проходить його бенчмарк з бінарним пошуком у файлі (1.5 була регресувала), а Gemini Deep Research збирає матеріали з вебу в звіти. В еру вайб-кодингу вона тримає слот брейнштормінгу: ідеї застосунків і описи кожного екрана, які згодовуються [[google-stitch|Google Stitch]] і [[claude-code|Claude Code]] ([[vibe-coding-new-project]]), плюс принагідні нотатки, що Gemini CLI написаний на React і що Gemini має добре писати код під Android, бо Google тренує її на власному стеку ([[vibe-coding-part-2]]). Вона навіть попрацювала асистентом-дослідником для позатематичного глибокого занурення в повний привід — «я замучив цей Gemini» ([[awd-systems-compared]]).
 
-## Covered in
-- [[ai-replacing-us-gemini-talk-1]] — the car-wash common-sense stress test in voice mode.
-- [[ai-and-jobs-gemini-talk-2]] — refusal to lie, arguing for itself, labeled-fiction role-play.
-- [[google-io-2023-watch-party]] — Bard's lineage, the DeepMind merger, Bard-vs-ChatGPT testing.
-- [[qa-and-plans-for-2024]] — Bard Advanced ≈ GPT-4 verdict; renamed to Gemini mid-stream.
-- [[qa-2-answering-questions]] — most-used work LLM; Gemini 2 passes his benchmark; Deep Research.
-- [[vibe-coding-new-project]] — brainstorming the app and writing per-screen descriptions.
-- [[vibe-coding-part-2]] — Gemini CLI in React; Android-code expectations.
-- [[awd-systems-compared]] — research assistant for the drivetrain deep dive.
+## Де розглядається
+- [[ai-replacing-us-gemini-talk-1]] — стрес-тест здорового глузду про автомийку в голосовому режимі.
+- [[ai-and-jobs-gemini-talk-2]] — відмова брехати, аргументи на власний захист, рольова гра в позначеній фікції.
+- [[google-io-2023-watch-party]] — родовід Bard, злиття з DeepMind, тестування Bard проти ChatGPT.
+- [[qa-and-plans-for-2024]] — вердикт «Bard Advanced ≈ GPT-4»; перейменування на Gemini по ходу стріму.
+- [[qa-2-answering-questions]] — найуживаніша робоча LLM; Gemini 2 проходить бенчмарк; Deep Research.
+- [[vibe-coding-new-project]] — брейнштормінг застосунку і написання описів для кожного екрана.
+- [[vibe-coding-part-2]] — Gemini CLI на React; очікування щодо Android-коду.
+- [[awd-systems-compared]] — асистент-дослідник для глибокого занурення в трансмісії.
 
-## Related
-[[ai-coding-agents]], [[ai-and-jobs]], [[vibe-coding]], [[chatgpt]], [[claude-code]], [[google-stitch]]
+## Повʼязане
+[[ai-coding-agents|AI-агенти для кодингу]], [[ai-and-jobs|AI і робочі місця]], [[vibe-coding|вайб-кодинг]], [[chatgpt|ChatGPT]], [[claude-code|Claude Code]], [[google-stitch|Google Stitch]]

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ШІ-агенти для кодування — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / ai-coding-agents</p>
+  <h1>ШІ-агенти для кодування</h1>
+  <div class="topic-body"><p>Головна теза каналу про кодинг-агентів: <strong>ШІ робить тебе техлідом із першого дня</strong>. LLM пише код і тести; ти аналізуєш вимоги, проєктуєш тести, відповідаєш за архітектуру — а звільнений час слід реінвестувати в якість проєкту і стандарти (<a href="../videos/vibe-coding-new-project.html">вайб-кодинг нового проєкту</a>). Агенти систематично перестараються, тож необхідна навичка — вміти їх <em>виправляти</em>, а це передбачає, що ти розумієш, як виглядає правильно, — давній аргумент каналу про <a href="../concepts/deep-learning-of-fundamentals.html">глибоке вивчення фундаментальних речей</a>, тепер з економічним двигуном позаду. Його практичний плейбук із <a href="../videos/vibe-coding-part-2.html">вайб-кодингу, частини 2</a>: <code>/clear</code> перед кожною задачею (він користується «clear context and accept edits», щоб затверджений план ставав свіжим промптом), паралельні інстанси Claude, ізольовані через git worktrees (як радить документація Anthropic), і згодовування документації напряму або через context7, коли знання моделі застаріли. Принагідні цікавинки: <a href="../tools/claude-code.html">Claude Code</a>, Gemini CLI і Codex — усі написані на <a href="../tools/react.html">React</a>; а українські промпти працюють добре — чому саме, він пояснює через word2vec/embeddings і спільний мультимовний семантичний простір.</p><p>Кожну модель Віктор оцінює одним особистим бенчмарком: <strong>напиши бінарний пошук у файлі, не завантажуючи його в памʼять</strong>. Задача маленька, але безжальна — арифметика Buffer, seek-офсети, крайові випадки. Станом на <a href="../videos/qa-2-answering-questions.html">Q&amp;A №2</a>: найновіші <a href="../tools/chatgpt.html">ChatGPT</a> і Gemini 2 проходять; Grok і локальні дистиляти <a href="../tools/deepseek.html">DeepSeek</a> R1 до 70B провалюються навіть із reasoning; повний ~700B DeepSeek проходить, але думає довго. Бенчмарк старший за еру агентів — ще на Google I/O 2023 він ганяв тест того самого стилю (задача на читання файлів у Node.js з бінарними операціями над Buffer і мішаниною sync/async коду) на Bard проти ChatGPT-4: GPT-4 впорався блискуче, виправивши те, що 3.5 зробив неправильно, а Bard борсався «як джун, що побіг би питати поради в ChatGPT», — хоча він і віддав Bard належне за чесне зізнання, до яких даних той має доступ (стрим Google I/O 2023). Локальні моделі він запускає через <a href="../tools/ollama.html">Ollama</a> (щоб приватний код не потрапляв на публічні сервери), а зв&#x27;язку з Cline на ≤14B прямо оцінив як «сміття».</p><p>Його повсякденний стек навмисно множинний: <a href="../tools/gemini.html">Gemini</a> (включно з Deep Research) як найуживаніша робоча LLM, o3-mini-high для брейнштормінгу, постійний проєкт у ChatGPT із системним промптом, що кодує його React/TypeScript-конвенції, аби прототипи виходили в його стилі, і Claude Code як основний агент. Автокомпліт-асистенти на кшталт <a href="../tools/github-copilot.html">GitHub Copilot</a> він оминає — єдиний, що його переконав, був внутрішній аналог Google, натренований на кодовій базі самого Google, тож і доповнення виходили в стилі Google. Його позиція щодо адопції категорична: інженери, які не беруть ШІ на озброєння, втрачають конкурентність, а початківцю варто зареєструвати акаунт ChatGPT/Bard ще <em>до</em> встановлення редактора (Q&amp;A і плани на 2024). Його щоденні застосування читаються як заміна man-сторінок: назвати змінні (пʼять варіантів, вибери один), розібрати бінарні формати, пояснити вивід Unix-команд, трюк із палітрою ffmpeg, що стиснув GIF у ~100 разів, приєднання WebSocket-сервера до наявного Express-сервера через HTTP upgrade.</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>
+  <span class="meta mono">1:40:28</span>
+  <p class="step-note">фреймінг «техлід із першого дня»: LLM пише тести, ти їх проєктуєш і відповідаєш за архітектуру; агенти перестараються, тож мусиш виправляти.</p></li><li><a href="../videos/vibe-coding-part-2.html">Вайб-кодінг — частина 2 (стрим)</a>
+  <span class="meta mono">1:48:25</span>
+  <p class="step-note">практичний плейбук: /clear на кожну задачу, паралельні Claude через git worktrees, згодовування свіжої документації, чому працюють українські промпти, вердикти локальним моделям.</p></li><li><a href="../videos/vibe-coded-mobile-app.html">Навайбкодив мобільний додаток за два вечори (short)</a>
+  <span class="meta mono">01:50</span>
+  <p class="step-note">два вечори роботи агента покривають цілий набір фіч камери: «що мені сподобалось — я це навайбкодив».</p></li><li><a href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>
+  <span class="meta mono">1:16:50</span>
+  <p class="step-note">табло бенчмарку «бінарний пошук у файлі» та його повний щоденний LLM-стек, включно з Ollama для приватного коду.</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/vibe-coding.html">Вайб-кодинг</a> — воркфлоу, який ці агенти рухають. <a href="../concepts/ai-and-jobs.html">ШІ та робочі місця</a> — що агенти означають для того, кого наймають. <a href="../concepts/deep-learning-of-fundamentals.html">Глибоке вивчення фундаментальних речей</a> — чому виправлення агента вимагає знань рівня стовбура. <a href="../concepts/remote-development.html">Віддалена розробка</a> — dev-контейнери й термінали, де працюють його агенти. <a href="../concepts/test-driven-development.html">Test-driven development (TDD)</a> — проєктувати тести, поки агент їх пише.</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -5,10 +5,10 @@ tags: [book, business, strategy]
 ---
 # Good Strategy Bad Strategy
 
-Richard Rumelt's book on what strategy actually is — its three building blocks (diagnosis, guiding policy, coherent action) — and, most importantly in Viktor's telling, what is *not* a strategy. He calls it great and strongly recommends it to anyone involved in strategic planning.
+Книга Річарда Румельта про те, чим насправді є стратегія — про її три складові (діагноз, керівний принцип, узгоджені дії) — і, що у переказі Віктора найважливіше, про те, що стратегією *не* є. Він називає її чудовою і наполегливо рекомендує всім, хто причетний до стратегічного планування.
 
-## Covered in
-- [[five-star-books]] — great; strongly recommended for anyone doing strategic planning
+## Де розглядається
+- [[five-star-books]] — чудова; наполегливо рекомендує всім, хто займається стратегічним плануванням
 
-## Related
-Business shelf: [[the-goal]], [[its-not-luck]], [[spin-selling]], [[who-the-a-method-for-hiring]].
+## Повʼязане
+Бізнес-полиця: [[the-goal|The Goal]], [[its-not-luck|It's Not Luck]], [[spin-selling|SPIN Selling]], [[who-the-a-method-for-hiring|Who: The A Method for Hiring]].

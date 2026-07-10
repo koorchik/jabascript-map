@@ -2,20 +2,20 @@
 type: concept
 tags: [databases, mysql, postgresql, primary-keys, performance]
 ---
-# UUID vs auto-increment primary keys
+# UUID проти auto-increment у первинних ключах
 
-One of the channel's most measured claims: random UUID primary keys are catastrophic in MySQL but largely harmless in Postgres — because in MySQL the table itself is a clustered [[b-tree|B+ tree]] sorted by PK, and every secondary index embeds the PK. His 16M-row numbers: switching to a UUID PK inflates a 4.3 GB table to 7.8 GB and the secondary indexes from 2 GB to 5.5 GB (~70% of index bytes end up being just the primary key); inserts slow from 4 s to 5.5 s per 1000 rows on the fastest SSD, and 2.5–3x on slower disks, because random UUIDs thrash B+ tree node caching while sequential IDs only touch the cached rightmost nodes. Postgres, with heap tables and physical row pointers, is largely immune. Bonus trivia: if you omit a PK, MySQL silently adds a hidden 6-byte one anyway ([[database-indexes-mysql-vs-postgres]]).
+Одне з найкраще виміряних тверджень каналу: випадкові UUID як первинні ключі катастрофічні в MySQL, але майже нешкідливі в Postgres — бо в MySQL сама таблиця є кластеризованим [[b-tree|B+-деревом]], відсортованим за PK, і кожен вторинний індекс містить PK усередині. Його цифри на 16 млн рядків: перехід на UUID PK роздуває таблицю з 4.3 GB до 7.8 GB, а вторинні індекси — з 2 GB до 5.5 GB (~70% байтів індексів — це просто первинний ключ); вставки сповільнюються з 4 с до 5.5 с на 1000 рядків на найшвидшому SSD і у 2.5–3 рази на повільніших дисках, бо випадкові UUID вбивають кешування вузлів B+-дерева, тоді як послідовні ID торкаються лише закешованих крайніх правих вузлів. Postgres, з heap-таблицями та фізичними покажчиками на рядки, майже невразливий. Бонусна дрібниця: якщо не вказати PK, MySQL все одно мовчки додасть прихований 6-байтовий ([[database-indexes-mysql-vs-postgres|індекси: MySQL проти Postgres]]).
 
-His counterintuitive fix: don't choose — keep the auto-increment PK for the engine and store the UUID as an extra column for the outside world; it's smaller and faster than either pure option. Storing UUIDs as BINARY(16) instead of 32-char text helps only modestly (index share drops from ~70% to ~55%) and makes them harder to read and display, so he'd still prefer the separate column ([[qa-1-will-https-protect-you]]). The same problem resurfaces in full-text search: UUID document ids defeat posting-list compression entirely, so you map them to integers — which is exactly what MySQL/InnoDB FULLTEXT does internally with its hidden auto-increment FTS_DOC_ID column ([[full-text-search-part-2-qa]]).
+Його контрінтуїтивний рецепт: не обирати — лишити auto-increment PK для рушія, а UUID зберігати додатковою колонкою для зовнішнього світу; це менше і швидше за будь-який із «чистих» варіантів. Зберігання UUID як BINARY(16) замість 32-символьного тексту допомагає лише помірно (частка первинного ключа в індексах падає з ~70% до ~55%) і робить їх незручними для читання й відображення, тож він усе одно обрав би окрему колонку ([[qa-1-will-https-protect-you|Q&A №1]]). Та сама проблема виринає в повнотекстовому пошуку: UUID як ідентифікатори документів повністю вбивають стиснення posting-списків, тож їх мапують на цілі числа — саме це MySQL/InnoDB FULLTEXT і робить усередині зі своєю прихованою auto-increment колонкою FTS_DOC_ID ([[full-text-search-part-2-qa|повнотекстовий пошук, частина 2]]).
 
-## Covered in
-- [[database-indexes-mysql-vs-postgres]] — the definitive benchmark: table/index bloat numbers, insert slowdowns, why Postgres doesn't care, and the auto-increment-plus-UUID-column fix
-- [[qa-1-will-https-protect-you]] — follow-up on BINARY(16) storage: modest savings, worse ergonomics
-- [[full-text-search-part-2-qa]] — UUIDs as doc ids can't be delta-compressed; InnoDB's hidden FTS_DOC_ID is the same integer-mapping trick
-- [[how-base64-works]] — side demonstration that hex-encoded UUIDs stored as raw binary halve in size
+## Де розглядається
+- [[database-indexes-mysql-vs-postgres]] — вичерпний бенчмарк: цифри роздування таблиці й індексів, сповільнення вставок, чому Postgres байдуже, і рецепт «auto-increment плюс окрема колонка з UUID»
+- [[qa-1-will-https-protect-you]] — продовження про зберігання в BINARY(16): помірна економія, гірша ергономіка
+- [[full-text-search-part-2-qa]] — UUID як ідентифікатори документів не піддаються дельта-стисненню; прихований FTS_DOC_ID в InnoDB — той самий трюк із мапінгом на цілі числа
+- [[how-base64-works]] — побічна демонстрація: hex-закодовані UUID, збережені як сирі байти, зменшуються вдвічі
 
-## Related
-[[database-indexes]] — the PK choice ripples into every index on the table
-[[b-tree]] — insert order vs node caching is the mechanism behind the slowdown
-[[index-compression]] — sorted integers compress; random UUIDs don't
-[[mvcc]] — the other big MySQL-vs-Postgres internals difference from the same video
+## Повʼязане
+[[database-indexes]] — вибір PK відлунює в кожному індексі таблиці
+[[b-tree]] — порядок вставки проти кешування вузлів — механізм цього сповільнення
+[[index-compression]] — відсортовані цілі числа стискаються; випадкові UUID — ні
+[[mvcc]] — друга велика відмінність у внутрішній будові MySQL і Postgres з того самого відео

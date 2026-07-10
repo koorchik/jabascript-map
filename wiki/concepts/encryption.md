@@ -2,20 +2,20 @@
 type: concept
 tags: [security, cryptography]
 ---
-# Encryption
+# Шифрування
 
-One third of the channel's deliberately-taught trio — [[encoding]], [[encryption]], [[hashing]] — that developers constantly confuse. The defining property, per [[hashing-encoding-encryption-difference]]: without the key, others cannot understand the data. Symmetric encryption uses one key both ways (AES, ChaCha20); asymmetric uses a public/private pair. Viktor even frames encryption as technically a kind of encoding *plus* a security property — which is exactly why the distinction matters. His key message: most things developers casually call "encrypted" — JWTs, Base64 — aren't encrypted at all.
+Одна третина трійці, яку канал свідомо викладає разом — [[encoding|кодування]], [[encryption|шифрування]], [[hashing|хешування]] — і яку розробники постійно плутають. Визначальна властивість, за [[hashing-encoding-encryption-difference|відео про різницю між хешуванням, кодуванням і шифруванням]]: без ключа інші не можуть зрозуміти дані. Симетричне шифрування використовує один ключ в обидва боки (AES, ChaCha20); асиметричне — пару публічний/приватний. Віктор навіть формулює шифрування як, технічно, різновид кодування *плюс* властивість безпеки — саме тому ця різниця й важлива. Його ключовий меседж: більшість того, що розробники недбало називають «зашифрованим» — JWT, Base64 — не зашифровано взагалі.
 
-The hands-on video ([[asymmetric-encryption-digital-signatures]]) goes deep on the symmetric side: an AES-256-CBC demo with an initialization vector, the famous ECB-penguin image showing why identical input blocks producing identical output leaks the structure of the data, CBC's XOR chaining as the fix, and stream ciphers like Google's ChaCha20 explained as XOR against a long pseudo-random keystream. Because symmetric is fast and asymmetric is 100-1000x slower, real protocols encrypt data symmetrically and use [[asymmetric-encryption]] only to agree on the key.
+Практичне відео ([[asymmetric-encryption-digital-signatures|асиметричне шифрування і цифрові підписи]]) глибоко занурюється в симетричний бік: демо AES-256-CBC з вектором ініціалізації, знаменита картинка з ECB-пінгвіном, яка показує, чому однакові вхідні блоки з однаковим виходом зливають структуру даних, XOR-зчеплення блоків у CBC як ліки, і потокові шифри на кшталт гуглівського ChaCha20, пояснені як XOR із довгим псевдовипадковим потоком ключа. Оскільки симетричне шифрування швидке, а асиметричне у 100–1000 разів повільніше, реальні протоколи шифрують дані симетрично, а [[asymmetric-encryption|асиметричне шифрування]] використовують лише щоб домовитися про ключ.
 
-## Covered in
-- [[hashing-encoding-encryption-difference]] — the defining property (no key, no understanding), symmetric (AES, ChaCha20) vs asymmetric, and why JWTs and Base64 are not encryption
-- [[asymmetric-encryption-digital-signatures]] — symmetric vs asymmetric in depth: AES-256-CBC with IV, the ECB penguin, CBC chaining, ChaCha20 as a keystream XOR
-- [[3-things-that-make-a-programmer-better]] — contrasted with encoding via the Base64/Basic-Auth war story; understanding symmetric vs asymmetric leads to better decisions
+## Де розглядається
+- [[hashing-encoding-encryption-difference]] — визначальна властивість (немає ключа — немає розуміння), симетричне (AES, ChaCha20) vs асиметричне, і чому JWT та Base64 — не шифрування
+- [[asymmetric-encryption-digital-signatures]] — симетричне vs асиметричне вглиб: AES-256-CBC з IV, ECB-пінгвін, зчеплення CBC, ChaCha20 як XOR із потоком ключа
+- [[3-things-that-make-a-programmer-better]] — протиставлення кодуванню через бойову історію з Base64/Basic Auth; розуміння симетричного vs асиметричного веде до кращих рішень
 
-## Related
-[[encoding]] — representation, not secrecy; the thing encryption is most often confused with.
-[[hashing]] — one-way, no key, no decryption — the third member of the trio.
-[[asymmetric-encryption]] — the two-key scheme and why it only bootstraps symmetric encryption.
-[[https-tls]] — encryption in transit, and its limits on a hostile network.
-[[base64]] — looks scrambled, is plaintext.
+## Повʼязане
+[[encoding]] — представлення, а не секретність; те, з чим шифрування плутають найчастіше.
+[[hashing]] — одностороннє, без ключа, без розшифрування — третій член трійці.
+[[asymmetric-encryption]] — схема з двома ключами і чому вона лише запускає симетричне шифрування.
+[[https-tls]] — шифрування в дорозі та його межі у ворожій мережі.
+[[base64]] — виглядає як шифр, а насправді відкритий текст.

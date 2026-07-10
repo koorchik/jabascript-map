@@ -5,10 +5,10 @@ tags: [book, business, sales]
 ---
 # SPIN Selling
 
-Neil Rackham's research-based classic on big-ticket B2B sales — the rare sales book that isn't about B2C, Viktor notes. Worth knowing if you touch business or sales at all, even if you don't end up building your process exactly by its method.
+Побудована на дослідженнях класика Ніла Рекгема про великі B2B-продажі — рідкісна книжка про продажі, яка не про B2C, зауважує Віктор. Варто знати кожному, хто хоч якось дотичний до бізнесу чи продажів, навіть якщо свій процес ви зрештою будуватимете не точно за її методом.
 
-## Covered in
-- [[five-star-books]] — the rare B2B sales classic; worth knowing if you touch business
+## Де розглядається
+- [[five-star-books]] — рідкісна класика B2B-продажів; варто знати кожному, хто дотичний до бізнесу
 
-## Related
-Business shelf: [[the-goal]], [[its-not-luck]], [[good-strategy-bad-strategy]], [[who-the-a-method-for-hiring]].
+## Повʼязане
+Бізнес-полиця: [[the-goal|The Goal]], [[its-not-luck|It's Not Luck]], [[good-strategy-bad-strategy|Good Strategy Bad Strategy]], [[who-the-a-method-for-hiring|Who: The A Method for Hiring]].

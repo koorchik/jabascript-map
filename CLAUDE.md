@@ -12,7 +12,9 @@ sources and asks questions. The user browses the wiki in Obsidian.
 |---|---|---|
 | Raw sources | `raw/` | Immutable `.vtt` subtitle files. NEVER modify. `uk` = original speech (authoritative), `en` = auto-translation (ignore unless uk missing). |
 | Transcripts | `transcripts/` | Derived clean text, one `.txt` per video. Regenerate with `python3 scripts/clean_vtt.py raw/*.uk.vtt`. Read these, not the VTTs. |
+| Timed transcripts | `transcripts/timed/` | Derived text with `[m:ss]` markers every ~20s, one `<youtube_id>.uk.txt` per video; header line 3 carries `# duration:`. Regenerate with `python3 scripts/vtt_to_timed.py raw/*.uk.vtt`. The ONLY legitimate source for chapter timestamps. |
 | Wiki | `wiki/` | LLM-owned markdown. All knowledge lives here. |
+| Website | `website/` | Fully generated static learning-navigator site (Ukrainian). NEVER edit by hand — regenerate with `python3 scripts/build_website.py` after wiki changes. Track order/names/taglines and the excluded stale streams live in the script's `TRACKS`/`EXCLUDED` constants. |
 
 ## Wiki structure
 
@@ -29,12 +31,15 @@ sources and asks questions. The user browses the wiki in Obsidian.
 
 ## Page conventions
 
-- **Language:** English prose. Keep original Ukrainian video titles, and
-  Ukrainian terms in parentheses where the author's phrasing matters.
-- **File names:** kebab-case English slugs. Links: Obsidian `[[slug]]` or `[[slug|display text]]`.
-  Links never include the folder path — Obsidian resolves by filename.
+- **Language:** Ukrainian prose — natural, живою мовою (the channel's own language).
+  Established dev terms that Ukrainian developers don't translate stay in Latin
+  (commit, pull request, B-tree…). Book titles stay in English.
+- **File names:** kebab-case English slugs, never translated (Obsidian resolves links
+  by filename). Links: `[[slug]]` or `[[slug|український текст]]`; inline links in
+  prose should carry Ukrainian display text. Links never include the folder path.
 - **Frontmatter (YAML):** every page has `type` (video|concept|tool|book|cluster)
-  and `tags`. Video pages also: `youtube_id`, `title_uk`, `date_ingested`.
+  and `tags` (English identifiers, untranslated). Video pages also: `youtube_id`,
+  `title_uk`, `level` (beginner|intermediate|advanced), `date_ingested`.
 - **Voice:** concept pages describe ideas *as presented on the channel* —
   the author's examples, analogies, and opinions — not generic textbook
   content. Attribute claims to the video: `([[video-slug]])`.
@@ -48,21 +53,32 @@ sources and asks questions. The user browses the wiki in Obsidian.
 type: video
 title_uk: "<original title>"
 youtube_id: <id>
+level: beginner|intermediate|advanced
 tags: [...]
 date_ingested: YYYY-MM-DD
 ---
-# <English title>
+# <Українська назва (з title_uk, без хештегів)>
 
-> Original: "<title_uk>" — https://youtu.be/<id>
+> Оригінал: "<title_uk>" — https://youtu.be/<id>
 
-**One-paragraph summary.**
+**Абзац-підсумок.**
 
-## Key takeaways
+## Головне
 - ...
 
-## Covered
+## Розділи
+- 00:00 — Вступ: про що це відео
+- 02:15 — <тема розділу>
+
+## Теми
 [[concept-a]], [[concept-b]], [[tool-x]]
 ```
+
+Chapter rules: format `- MM:SS — тема` (or `H:MM:SS`); first chapter always
+`00:00`; times strictly increasing and below the video duration; **every time
+must be copied from a `[m:ss]` marker in `transcripts/timed/<youtube_id>.uk.txt`**
+where that topic starts — never invented. Granularity: 5–8 chapters (<15 min),
+8–15 (15–60 min), up to ~25 for multi-hour streams.
 
 ### Concept page template
 
@@ -71,30 +87,41 @@ date_ingested: YYYY-MM-DD
 type: concept
 tags: [...]
 ---
-# <Concept name>
+# <Назва концепції>
 
-What it is and the channel's take on it (1-3 paragraphs, with the author's
-examples/analogies).
+Що це таке і як це подано на каналі (1–3 абзаци, з прикладами й аналогіями
+автора).
 
-## Covered in
-- [[video-slug]] — what that video adds
+## Де розглядається
+- [[video-slug]] — що додає це відео
 
-## Related
-[[other-concept]] — how they relate
+## Повʼязане
+[[other-concept]] — як повʼязані
 ```
+
+### Cluster page learning paths
+
+Every cluster page has a `## Відео (порядок перегляду)` section: a numbered
+list `N. [[video-slug]] — чому саме тут`, the curated watch order the website
+turns into a track.
 
 ## Workflows
 
 ### Ingest (new video)
 
-1. Drop `.vtt` into `raw/`, run `python3 scripts/clean_vtt.py raw/<file>.uk.vtt`.
-2. Read the transcript; write/update the video page in `wiki/videos/`.
+1. Drop `.vtt` into `raw/`, run `python3 scripts/clean_vtt.py raw/<file>.uk.vtt`
+   and `python3 scripts/vtt_to_timed.py raw/<file>.uk.vtt`.
+2. Read the transcript; write/update the video page in `wiki/videos/`
+   (Ukrainian, with `level` and a `## Розділи` chapter list timed from the
+   timed transcript).
 3. Create or update every concept/tool/book page the video touches.
    Prefer updating an existing page over creating a near-duplicate —
    check `wiki/index.md` for existing slugs first.
-4. Update the relevant cluster page(s) and `wiki/overview.md` if the new
+4. Update the relevant cluster page(s) — including the video's place in
+   `## Відео (порядок перегляду)` — and `wiki/overview.md` if the new
    material shifts the big picture.
 5. Regenerate the index (`python3 scripts/build_index.py`); append to `wiki/log.md`.
+6. Rebuild the site: `python3 scripts/build_website.py` (fix any warnings it prints).
 
 ### Query
 

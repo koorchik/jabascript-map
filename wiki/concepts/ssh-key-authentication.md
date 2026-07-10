@@ -2,17 +2,17 @@
 type: concept
 tags: [security, authentication, ssh, cryptography]
 ---
-# SSH key authentication
+# Автентифікація за SSH-ключами
 
-Presented on the channel as [[asymmetric-encryption]] you use every day without noticing. In [[asymmetric-encryption-digital-signatures]] Viktor does a live DigitalOcean demo: `ssh -v` shows the client offering keys one by one, the public key goes into `authorized_keys`, and the actual authentication is a challenge: the server sends a random string, the client proves possession of the private key cryptographically, and the server verifies using only the public key. No password, and nothing secret ever crosses the wire.
+На каналі це подано як [[asymmetric-encryption|асиметричне шифрування]], яким ви користуєтеся щодня, не помічаючи цього. У [[asymmetric-encryption-digital-signatures|випуску про асиметричне шифрування і цифрові підписи]] Віктор робить живе демо на DigitalOcean: `ssh -v` показує, як клієнт пропонує ключі один за одним, публічний ключ лягає в `authorized_keys`, а сама автентифікація — це челендж: сервер надсилає випадковий рядок, клієнт криптографічно доводить володіння приватним ключем, а сервер перевіряє це, маючи лише публічний ключ. Без пароля — і нічого секретного не проходить через мережу.
 
-The war story that anchors it: when he asked developers to send him "their key" for server access, more than one sent the *private* key. His rule: never — the private key is equivalent to your password; only the public key is ever shared.
+Історія з практики, яка все це закріплює: коли він попросив розробників надіслати йому «свій ключ» для доступу до сервера, не один надіслав *приватний* ключ. Його правило: ніколи — приватний ключ еквівалентний вашому паролю; ділитися можна лише публічним.
 
-## Covered in
-- [[asymmetric-encryption-digital-signatures]] — live `ssh -v` DigitalOcean demo, `authorized_keys`, the challenge-response flow, and the developers-emailing-private-keys war story
+## Де розглядається
+- [[asymmetric-encryption-digital-signatures]] — живе демо `ssh -v` на DigitalOcean, `authorized_keys`, потік challenge-response і історія про розробників, що надсилали приватні ключі поштою
 
-## Related
-[[asymmetric-encryption]] — the mechanism underneath.
-[[digital-signatures]] — proving key possession is a signature-style operation.
-[[security-practices]] — never share private keys, ever.
-[[remote-development]] — SSH as the transport for VS Code remote workflows.
+## Повʼязане
+[[asymmetric-encryption]] — механізм, що лежить в основі.
+[[digital-signatures]] — доведення володіння ключем — операція в стилі підпису.
+[[security-practices]] — ніколи не діліться приватними ключами, ні за яких обставин.
+[[remote-development]] — SSH як транспорт для віддаленої роботи у VS Code.

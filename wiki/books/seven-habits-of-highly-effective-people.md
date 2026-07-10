@@ -5,10 +5,10 @@ tags: [book, productivity, personal-development]
 ---
 # The 7 Habits of Highly Effective People
 
-Stephen Covey's foundational book on personal effectiveness — proactivity, priorities, win-win, sharpening the saw. In Viktor's words it's the "класика класика" (classic of classics) of time management and personal development, and very recommended.
+Засаднича книжка Стівена Кові про особисту ефективність — проактивність, пріоритети, win-win, «гостріть пилку». За словами Віктора, це «класика класика» тайм-менеджменту й особистого розвитку, і він дуже її рекомендує.
 
-## Covered in
-- [[five-star-books]] — "класика класика" of time management; very recommended
+## Де розглядається
+- [[five-star-books]] — «класика класика» тайм-менеджменту; дуже рекомендує
 
-## Related
-Productivity shelf: [[getting-things-done]], [[atomic-habits]], [[essentialism]], [[effortless]], [[the-checklist-manifesto]].
+## Повʼязане
+Полиця продуктивності: [[getting-things-done|Getting Things Done]], [[atomic-habits|Atomic Habits]], [[essentialism|Essentialism]], [[effortless|Effortless]], [[the-checklist-manifesto|The Checklist Manifesto]].

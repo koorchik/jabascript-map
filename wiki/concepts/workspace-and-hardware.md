@@ -2,17 +2,17 @@
 type: concept
 tags: [channel-meta, hardware, workspace, productivity]
 ---
-# Workspace and Hardware
+# Робоче місце і залізо
 
-Viktor's desk setup, shown in the sponsor-video tour [[my-workspace-setup]]. The centerpiece trick: **three computers on one 32-inch Lenovo monitor** that doubles as a KVM. The monitor's inputs are split by machine — DisplayPort for the desktop, USB-C/Thunderbolt for a laptop, HDMI for a Nintendo Switch — and its switchable USB upstream means the camera, keyboard and mouse follow whichever machine is active, no separate KVM box needed.
+Сетап Вікторового стола, показаний у спонсорському відео-турі [[my-workspace-setup|«моє робоче місце»]]. Центральний трюк: **три компʼютери на одному 32-дюймовому моніторі Lenovo**, який заодно працює як KVM. Входи монітора розподілені між машинами — DisplayPort для десктопа, USB-C/Thunderbolt для ноутбука, HDMI для Nintendo Switch — а перемикуваний USB-аплінк означає, що камера, клавіатура й миша йдуть за тією машиною, яка зараз активна, без окремої KVM-коробки.
 
-The desktop is a serious workstation: RTX 3090, 128 GB RAM, Ryzen 5950X, plus a dedicated 2 TB SSD just for video-editing proxies. The standing desk gets lowered to eye level for recording, and a small fan fixes his Fujifilm X-E4's overheating when shooting 4K ([[my-workspace-setup]]).
+Десктоп — серйозна робоча станція: RTX 3090, 128 GB RAM, Ryzen 5950X, плюс окремий SSD на 2 TB лише під проксі для відеомонтажу. Стіл-стендер опускається на рівень очей для запису, а маленький вентилятор лікує перегрів його Fujifilm X-E4 під час зйомки в 4K ([[my-workspace-setup|«моє робоче місце»]]).
 
-## Covered in
+## Де розглядається
 
-- [[my-workspace-setup]] — the full desk tour: monitor-as-KVM, desktop specs, recording rig, standing desk, and the CRT retro corner.
+- [[my-workspace-setup]] — повний тур столом: монітор-як-KVM, характеристики десктопа, знімальний риг, стіл-стендер і ретрокуток із CRT.
 
-## Related
+## Повʼязане
 
-- [[retro-gaming]] — the JVC CRT + Raspberry Pi corner of the same room.
-- [[channel-and-author]] — the recording gear behind the channel (iPhone 13 Pro Max era → Fujifilm X-E4).
+- [[retro-gaming]] — куток тієї самої кімнати з CRT від JVC і Raspberry Pi.
+- [[channel-and-author]] — знімальне залізо каналу (епоха iPhone 13 Pro Max → Fujifilm X-E4).

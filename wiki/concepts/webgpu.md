@@ -4,11 +4,11 @@ tags: [web, gpu, browser, machine-learning]
 ---
 # WebGPU
 
-The channel calls WebGPU the quiet killer feature of the Google I/O showcase ([[google-io-2023-watch-party]]). WebGL descends from cut-down 90s OpenGL, and doing machine learning in the browser used to mean *abusing* shaders — encoding your data as pixel colors and praying anti-aliasing didn't corrupt a value along the way. WebGPU instead exposes direct GPU compute, which he cites as roughly a 3x speedup for TensorFlow.js-style workloads like background removal — and jokes that it's also "one more way to mine Bitcoin in visitors' browsers."
+Канал називає WebGPU тихою кілер-фічею показу на Google I/O ([[google-io-2023-watch-party|стрим Google I/O 2023]]). WebGL походить від урізаного OpenGL з 90-х, і машинне навчання в браузері раніше означало *знущання* з шейдерів — кодуєш дані кольорами пікселів і молишся, щоб anti-aliasing дорогою не зіпсував якесь значення. WebGPU натомість відкриває прямі GPU-обчислення, що, за його словами, дає приблизно 3-кратне прискорення для навантажень у стилі TensorFlow.js на кшталт видалення фону — і жартує, що це також «ще один спосіб майнити Bitcoin у браузерах відвідувачів».
 
-## Covered in
-- [[google-io-2023-watch-party]] — WebGPU vs the shader-abuse era of browser ML, ~3x for TensorFlow.js, the Bitcoin-mining quip
+## Де розглядається
+- [[google-io-2023-watch-party]] — WebGPU проти епохи знущання з шейдерів у браузерному ML, ~3x для TensorFlow.js, жарт про майнінг Bitcoin
 
-## Related
-[[web-performance]] — the other browser-capability thread from the same I/O stream
-[[deep-learning-of-fundamentals]] — GPU compute as an enabler for in-browser ML
+## Повʼязане
+[[web-performance]] — друга тема про можливості браузера з того самого стриму про I/O
+[[deep-learning-of-fundamentals]] — GPU-обчислення як те, що уможливлює ML у браузері

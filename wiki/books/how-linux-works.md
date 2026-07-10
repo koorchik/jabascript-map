@@ -5,10 +5,10 @@ tags: [book, linux, fundamentals]
 ---
 # How Linux Works
 
-Brian Ward's practical-theoretical tour of Linux: subsystems, the network stack, administration. Viktor rates it great and points out you can read it in about a week — just check for a newer edition before buying.
+Практично-теоретична екскурсія Linux від Браяна Ворда: підсистеми, мережевий стек, адміністрування. Віктор оцінює її як чудову і зауважує, що прочитати можна приблизно за тиждень — тільки перед покупкою перевірте, чи не вийшло новіше видання.
 
-## Covered in
-- [[five-star-books]] — great week-long tour of Linux internals; check for newer editions
+## Де розглядається
+- [[five-star-books]] — чудова тижнева екскурсія нутрощами Linux; перевіряйте наявність новіших видань
 
-## Related
-[[deep-learning-of-fundamentals]], [[nat-and-networking]]. Neighbours on the systems shelf: [[docker-deep-dive]] (builds on these Linux primitives), [[c-programming-language]], [[old-linux-security-book]] (the outdated predecessor on his list).
+## Повʼязане
+[[deep-learning-of-fundamentals|Глибоке вивчення основ]], [[nat-and-networking|NAT і мережі]]. Сусіди на системній полиці: [[docker-deep-dive|Docker Deep Dive]] (будується на цих примітивах Linux), [[c-programming-language|The C Programming Language]], [[old-linux-security-book|стара книга з безпеки Linux]] (застарілий попередник у його списку).

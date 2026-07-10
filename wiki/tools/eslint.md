@@ -4,12 +4,12 @@ tags: [javascript, linting, code-quality, tooling]
 ---
 # ESLint
 
-ESLint is the standard JavaScript linter. The channel's advice, drawn from review practice at both WebbyLab and Google ([[code-review-how-google-does-it]]): use ESLint with every plugin available, each rule tuned to your style guide, so that machines catch what machines can catch and human review time goes to design and correctness. WebbyLab took this to its logical end — they published their own `eslint-plugin-more` on npm and kept adding rules for problems that showed up repeatedly in code reviews, turning recurring review comments into automated checks.
+ESLint — стандартний лінтер для JavaScript. Порада каналу, винесена з практики код-рев'ю і у WebbyLab, і в Google ([[code-review-how-google-does-it]]): використовуйте ESLint з усіма доступними плагінами, з кожним правилом, налаштованим під ваш style guide, — щоб машини ловили те, що можуть ловити машини, а час людини на рев'ю йшов на дизайн і коректність. WebbyLab довів цю ідею до логічного кінця: вони опублікували в npm власний `eslint-plugin-more` і додавали правила для проблем, які раз у раз спливали на код-рев'ю, перетворюючи повторювані коментарі рецензентів на автоматичні перевірки.
 
-## Covered in
-- [[code-review-how-google-does-it]] — max out ESLint plugins tuned to your style guide; WebbyLab's eslint-plugin-more grew from recurring review findings.
+## Де розглядається
+- [[code-review-how-google-does-it]] — вичавлюйте максимум із плагінів ESLint, налаштованих під ваш style guide; eslint-plugin-more від WebbyLab виріс із повторюваних знахідок на рев'ю.
 
-## Related
-[[prettier]] — the formatting half of "automate style away".
-[[code-review]] — linting exists to free human reviewers for real issues.
-[[code-quality]] — encoded standards instead of tribal knowledge.
+## Повʼязане
+[[prettier|Prettier]] — форматувальна половина принципу «автоматизуй стиль геть».
+[[code-review|код-рев'ю]] — лінтинг існує, щоб звільнити людей-рецензентів для справжніх проблем.
+[[code-quality|якість коду]] — закодовані стандарти замість племінного знання.

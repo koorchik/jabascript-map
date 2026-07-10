@@ -4,12 +4,12 @@ tags: [tooling, development, vscode, architecture]
 ---
 # Language Server Protocol (LSP)
 
-The channel introduces LSP as the architectural decision that quietly paid off later ([[vscode-in-the-browser]]). VS Code runs language servers as separate, per-language processes that speak JSON-RPC (the Language Server Protocol) rather than baking every language's intelligence into the editor. Combined with the separate extension-host process, this decoupling is what made remote agents — over SSH, WSL, or the browser — "almost free architecturally": because the smarts already lived in detachable processes talking over a protocol, moving them to another machine was a matter of where you run the process, not a rewrite.
+Канал представляє LSP як архітектурне рішення, що тихо окупилося пізніше ([[vscode-in-the-browser|VS Code у браузері]]). VS Code запускає мовні сервери окремими процесами — по одному на мову, — які спілкуються через JSON-RPC (це і є Language Server Protocol), замість вшивати інтелект кожної мови в сам редактор. Разом з окремим процесом extension host це розділення й зробило віддалені агенти — через SSH, WSL чи браузер — «майже безкоштовними архітектурно»: оскільки вся розумна частина вже жила у відокремлюваних процесах, що спілкуються протоколом, перенести їх на іншу машину — питання того, де запустити процес, а не переписування.
 
-## Covered in
-- [[vscode-in-the-browser]] — LSP + the separate extension-host process as the design that made remote development cheap
+## Де розглядається
+- [[vscode-in-the-browser]] — LSP + окремий процес extension host як дизайн, що зробив віддалену розробку дешевою
 
-## Related
-[[remote-development]] — the payoff this architecture enables
-[[vs-code]] — the editor that popularized LSP
-[[abstractions]] — a clean protocol boundary that keeps its promise
+## Повʼязане
+[[remote-development]] — виграш, який ця архітектура уможливлює
+[[vs-code]] — редактор, що популяризував LSP
+[[abstractions]] — чиста межа-протокол, яка дотримує своїх обіцянок

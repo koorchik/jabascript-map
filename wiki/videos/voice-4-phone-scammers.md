@@ -2,21 +2,29 @@
 type: video
 title_uk: "Голосове №4 - як мені дзвонили шахраї"
 youtube_id: goO272Gr3g0
+level: beginner
 tags: [security, social-engineering, scams, phishing, war-story, podcast]
 date_ingested: 2026-07-09
 ---
-# Voice Message #4: When Scammers Called Me
+# Голосове №4 — як мені дзвонили шахраї
 
-> Original: "Голосове №4 - як мені дзвонили шахраї" — https://youtu.be/goO272Gr3g0
+> Оригінал: "Голосове №4 - як мені дзвонили шахраї" — https://youtu.be/goO272Gr3g0
 
-Fourth episode of the audio-podcast series. The author recounts — and plays the actual recording of — the first time phone scammers tried to defraud him. He'd long heard how these calls work (fraudsters phoning to fish out banking details), so when an unknown number called he immediately recognized it as a scam and decided to play along, recording the call to share with his parents so they wouldn't fall for it, and now with subscribers.
+Четвертий випуск аудіоподкасту. Автор розповідає — і вмикає сам запис розмови — про перший у житті випадок, коли телефонні шахраї спробували його ошукати. Він давно чув, як працюють такі дзвінки (шахраї телефонують, щоб виманити банківські дані), тож коли зателефонував незнайомий номер, одразу впізнав схему і вирішив підіграти, записавши розмову — щоб показати батькам, аби ті не попалися, а тепер і підписникам.
 
-## Key takeaways
-- The social-engineering script was well-staged: it opens with a robotic recording claiming "your call is recorded by order of the National Bank of Ukraine... your card is blocked" to create the illusion that *he* had dialed in — even though they called him — so he'd forget who initiated the contact, building false trust before an "operator" (Svitlana from the "National Bank security service") takes over.
-- The story falls apart under a simple question: they first say National Bank, then when he pushes back they say Oshchadbank, and they'd earlier mentioned PrivatBank though he never brought it up — the moment he asked the purpose of the call, the whole pretext collapsed.
-- Confidential-data tell: the "operator" recited what counts as confidential (PIN, passport/personal data, code word) — exactly the data a real bank never asks you to say aloud on a call.
-- Key realization: they already knew his name and number without him giving it, meaning his number had leaked into some database — lately he's been getting lots of spam/casino/robot calls, so his contact clearly ended up on a list that fraudsters work through.
-- Takeaway for viewers: banks never operate this way; recognizing the manufactured-trust pattern (fake inbound-looks-like-outbound framing, escalating bank names, requests for "confidential" identifiers) is the defense.
+## Головне
+- Сценарій соціальної інженерії був добре поставлений: розмова починається з робота, який заявляє «ваш дзвінок записується за розпорядженням Національного банку України… вашу картку заблоковано», створюючи ілюзію, що це *він* кудись подзвонив — хоча дзвонили йому, — щоб він забув, хто ініціював контакт. Так будується фальшива довіра, перш ніж слухавку бере «оператор» (Світлана зі «служби безпеки Національного банку»).
+- Легенда розсипається від простого питання: спершу кажуть «Національний банк», потім, коли він тисне, — «Ощадбанк», а раніше згадували ПриватБанк, хоча він його не називав. Щойно він спитав про мету дзвінка, увесь привід розвалився.
+- Маркер із «конфіденційними даними»: «оператор» перерахувала, що вважається конфіденційним (PIN, паспортні/персональні дані, кодове слово) — саме ті дані, які справжній банк ніколи не просить озвучувати в розмові.
+- Ключове усвідомлення: вони вже знали його імʼя і номер, хоча він їх не давав, — отже, номер витік у якусь базу. Останнім часом йому сипляться спам-дзвінки, казино та роботи, тож його контакт явно потрапив у список, який шахраї обробляють по черзі.
+- Висновок для глядачів: банки так не працюють; захист — упізнавати патерн штучної довіри (вхідний дзвінок, замаскований під вихідний, «ескалація» назв банків, прохання назвати «конфіденційні» ідентифікатори).
 
-## Covered
+## Розділи
+- 00:00 — Перший шахрайський дзвінок у житті — і кнопка «запис», щоб підіграти
+- 00:44 — Запис: робот заявляє, що «Національний банк» заблокував картку
+- 01:27 — Оператор «Світлана» випитує, яким банком він користується, і перераховує його «конфіденційні дані»
+- 02:54 — Розбір: НБУ перетворюється на Ощадбанк, а вхідний дзвінок маскується під вихідний
+- 03:37 — Вони знали його імʼя: номер, що витік, і хвиля спам-дзвінків
+
+## Теми
 [[social-engineering]], [[security-practices]]

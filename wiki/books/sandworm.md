@@ -5,10 +5,10 @@ tags: [book, security, non-fiction]
 ---
 # Sandworm
 
-Andy Greenberg's investigative account of the Russian state hacking group behind NotPetya and the attacks on Ukraine's power grid. It's on Viktor's five-star list under cybersecurity, but in the video he skipped past it without giving a verdict — the stars will have to speak for themselves.
+Розслідування Енді Ґрінберга про російське державне хакерське угруповання, що стоїть за NotPetya та атаками на українську енергосистему. Книжка є в п'ятизірковому списку Віктора в розділі кібербезпеки, але у відео він пройшов повз неї без вердикту — тож за неї говорять самі зірки.
 
-## Covered in
-- [[five-star-books]] — on the list under cybersecurity, skipped without a verdict
+## Де розглядається
+- [[five-star-books]] — у списку в розділі кібербезпеки, пропущена без вердикту
 
-## Related
-[[security-practices]]. Narrative non-fiction shelf-mate: [[blood-sweat-and-pixels]].
+## Повʼязане
+[[security-practices|Практики безпеки]]. Сусідка по полиці документальних оповідей: [[blood-sweat-and-pixels|Blood, Sweat, and Pixels]].

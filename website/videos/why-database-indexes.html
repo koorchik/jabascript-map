@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Навіщо потрібні індекси в базі даних — розберемо на прикладі — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body style="--h:38">
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html" class="active">Треки</a><a href="../concepts.html">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="video-page">
+  <p class="eyebrow mono"><a href="../tracks/databases-and-data-structures.html">Бази даних і структури даних</a> / крок 01</p>
+  <div class="video-head">
+    <h1>Навіщо потрібні індекси в базі даних — розберемо на прикладі</h1>
+    <div class="video-meta mono"><span class="badge badge-intermediate">середній</span> <span>19:22</span>
+      <a href="https://youtu.be/YF8xDeYlG9w" target="_blank" rel="noopener">дивитися на YouTube ↗</a>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="why-database-indexes"> переглянуто</label>
+    </div>
+  </div>
+  <div class="player-grid">
+    <div class="player-frame">
+      <iframe id="player" data-embed="https://www.youtube-nocookie.com/embed/YF8xDeYlG9w"
+        src="https://www.youtube-nocookie.com/embed/YF8xDeYlG9w?rel=0"
+        title="Навіщо потрібні індекси в базі даних — розберемо на прикладі" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="chapter-pane">
+      <h2 class="pane-title mono">Розділи</h2>
+      <ol class="chapters"><li>
+  <button type="button" class="chapter" data-t="0">
+    <span class="tc mono">00:00</span>
+    <span class="ch-label">Вступ: чому ваша база інколи повзе — алгоритми на реальному прикладі</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=0" target="_blank" rel="noopener" aria-label="Відкрити 00:00 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="22">
+    <span class="tc mono">00:22</span>
+    <span class="ch-label">Сетап: дві бази <a href="../tools/mysql.html">MySQL</a>, таблиця <code>products</code> на 1 тис. проти 10 млн рядків</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=22" target="_blank" rel="noopener" aria-label="Відкрити 00:22 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="89">
+    <span class="tc mono">01:29</span>
+    <span class="ch-label">Профілюємо перший SELECT: ~0,3 мс на маленькій таблиці</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=89" target="_blank" rel="noopener" aria-label="Відкрити 01:29 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="151">
+    <span class="tc mono">02:31</span>
+    <span class="ch-label">Той самий запит на 10 млн рядків: 3,3 секунди — катастрофа для вебзастосунку</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=151" target="_blank" rel="noopener" aria-label="Відкрити 02:31 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="216">
+    <span class="tc mono">03:36</span>
+    <span class="ch-label">Що таке індекс: відсортована структура, що живе поруч із таблицею</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=216" target="_blank" rel="noopener" aria-label="Відкрити 03:36 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="258">
+    <span class="tc mono">04:18</span>
+    <span class="ch-label">Розбір бінарного пошуку: 100 трильйонів рядків за ~46 кроків — «log N — практично безкоштовно»</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=258" target="_blank" rel="noopener" aria-label="Відкрити 04:18 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="362">
+    <span class="tc mono">06:02</span>
+    <span class="ch-label">Створюємо індекс на <code>name</code></span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=362" target="_blank" rel="noopener" aria-label="Відкрити 06:02 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="447">
+    <span class="tc mono">07:27</span>
+    <span class="ch-label">Повторний запит: 0,05 мс — у 60 000 разів швидше</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=447" target="_blank" rel="noopener" aria-label="Відкрити 07:27 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="488">
+    <span class="tc mono">08:08</span>
+    <span class="ch-label">Пошук за префіксом <code>LIKE &#x27;handmade…%&#x27;</code> усе ще миттєвий</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=488" target="_blank" rel="noopener" aria-label="Відкрити 08:08 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="531">
+    <span class="tc mono">08:51</span>
+    <span class="ch-label">Форма пошуку на сайті з <code>LIKE &#x27;%substring%&#x27;</code>: 7 секунд</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=531" target="_blank" rel="noopener" aria-label="Відкрити 08:51 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="595">
+    <span class="tc mono">09:55</span>
+    <span class="ch-label">Чому жодне сортування не знайде фразу всередині значення</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=595" target="_blank" rel="noopener" aria-label="Відкрити 09:55 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="709">
+    <span class="tc mono">11:49</span>
+    <span class="ch-label">Розвʼязок: <a href="../concepts/inverted-index.html">інвертований індекс</a> / <a href="../concepts/full-text-search.html">повнотекстовий індекс</a>; байка про 300 ТБ</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=709" target="_blank" rel="noopener" aria-label="Відкрити 11:49 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="772">
+    <span class="tc mono">12:52</span>
+    <span class="ch-label"><code>EXPLAIN</code>: перевіряємо, чи запит справді використовує індекс</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=772" target="_blank" rel="noopener" aria-label="Відкрити 12:52 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="836">
+    <span class="tc mono">13:56</span>
+    <span class="ch-label">Що зберігає індекс: проіндексовану колонку плюс вказівник на рядок; другий похід у таблицю</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=836" target="_blank" rel="noopener" aria-label="Відкрити 13:56 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="944">
+    <span class="tc mono">15:44</span>
+    <span class="ch-label">Індекси не безкоштовні на записі; плани: B+ дерева, кластерні індекси, UUID проти auto-increment</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/YF8xDeYlG9w?t=944" target="_blank" rel="noopener" aria-label="Відкрити 15:44 на YouTube">↗</a>
+</li></ol>
+    </div>
+  </div>
+  <section class="video-about">
+    <h2>Про що це відео</h2>
+    <p>Живе демо-знайомство з <a href="../concepts/database-indexes.html">індексами баз даних</a>: автор готує дві бази <a href="../tools/mysql.html">MySQL</a> — одну з таблицею <code>products</code> на 1 тис. рядків, другу на 10 мільйонів — і вимірює той самий <code>SELECT</code> з увімкненим SQL-профілюванням. На маленькій таблиці запит займає ~0,3 мс; на таблиці з 10 млн рядків ідентичний запит — 3,3 секунди, що він називає катастрофою для вебзастосунку: запити, які надходять швидше, ніж завершуються, накопичуються і кладуть усю базу. Індекс на <code>name</code> змушує той самий запит виконуватися за ~0,05 мс — він ділить прямо на екрані: приблизно <strong>у 60 000 разів швидше</strong>. Причина — <a href="../concepts/algorithmic-complexity.html">алгоритмічна складність</a>: індекс — це <em>окрема відсортована структура</em>, що живе поруч із таблицею, тож пошук стає бінарним — O(log N) замість повних сканів O(N). Його фірмова ілюстрація: на 50 рядках лінійний перебір робить 50 кроків, а на 100 трильйонах рядків бінарному пошуку треба лише ~46 кроків — «log N — це практично безкоштовно». Далі він показує, де індекси ламаються: <code>LIKE &#x27;prefix%&#x27;</code> — миттєвий (відсортовані дані підтримують пошук за префіксом), але <code>LIKE &#x27;%substring%&#x27;</code> займає ~7 секунд, бо жодний порядок сортування не допоможе знайти фразу <em>всередині</em> значення — для цього потрібен інвертований / повнотекстовий індекс («усі кажуть &quot;візьми Elastic&quot;, а що той Elastic насправді робить?»), який він обіцяє побудувати руками в наступному відео, згадуючи, що колись реалізував кастомний індекс <a href="../concepts/full-text-search.html">повнотекстового пошуку</a> по 300 ТБ даних у продакшені. Наприкінці — <code>EXPLAIN</code> для перевірки використання індексу, погляд на те, як індекс зберігає проіндексовану колонку плюс вказівник на рядок, і застереження: кожен запис перебудовує індекси, тож у таблицях із інтенсивним записом не варто індексувати кожну колонку.</p>
+  </section>
+  <section class="video-takeaways">
+    <h2>Головне</h2>
+    <ul><li>Реальний вимір, той самий запит: 1 тис. рядків ≈ 0,3 мс, 10 млн рядків ≈ 3,3 с без індексу; з індексом на <code>name</code> ≈ 0,05 мс — приблизно у 60 000 разів швидше (<a href="../concepts/database-indexes.html">індекси</a>).</li><li>Запит на 3 секунди — це не просто повільно: під вебнавантаженням запити накопичуються швидше, ніж завершуються, і база валиться.</li><li>Індекс — це відсортована структура даних, що зберігається <em>поруч</em> із таблицею (на практиці <a href="../concepts/b-tree.html">B+ дерево</a>; існують і хеш-індекси); відсортовані дані уможливлюють бінарний пошук, а O(log N) — це ~46 кроків навіть для 100 трильйонів рядків (<a href="../concepts/algorithmic-complexity.html">алгоритмічна складність</a>).</li><li>Індекси працюють для точних збігів і <code>LIKE &#x27;prefix%&#x27;</code>, і навіть для пошуку за суфіксом, якщо побудувати індекс «у зворотний бік», — але ніколи для <code>LIKE &#x27;%word%&#x27;</code>: «сортуй чи не сортуй — нічого не допоможе знайти фразу всередині» — для цього потрібен <a href="../concepts/inverted-index.html">інвертований індекс</a> (<a href="../concepts/full-text-search.html">повнотекстовий пошук</a>).</li><li>Використовуйте <code>EXPLAIN</code> (однаково в MySQL і <a href="../tools/postgresql.html">Postgres</a>), щоб перевірити, чи запит справді використовує індекс.</li><li>Індекс зберігає проіндексовану колонку плюс вказівник на рядок; щоб дістати інші колонки (наприклад, <code>description</code>), потрібен другий похід у таблицю — а MySQL і Postgres організовують таблиці зовсім по-різному (кластерний індекс проти heap; MySQL фактично не може існувати без первинного ключа).</li><li>Індекси не безкоштовні: кожен INSERT/UPDATE перебудовує кожен індекс таблиці, тож при інтенсивному записі менше індексів може бути краще.</li><li>Байка з практики: він колись побудував саморобний повнотекстовий (інвертований) індекс із пошуком по 300 ТБ даних, включно з кастомним механізмом пакування індексу.</li></ul>
+  </section>
+  <section class="video-covered">
+    <h2>Теми відео</h2>
+    <div class="chip-row"><a class="chip" href="../concepts/database-indexes.html">Індекси баз даних</a><a class="chip" href="../concepts/algorithmic-complexity.html">Алгоритмічна складність</a><a class="chip" href="../concepts/b-tree.html">B-tree / B+ tree</a><a class="chip" href="../concepts/full-text-search.html">Повнотекстовий пошук</a><a class="chip" href="../concepts/inverted-index.html">Інвертований індекс</a><a class="chip" href="../tools/mysql.html">MySQL</a><a class="chip" href="../tools/postgresql.html">PostgreSQL</a></div>
+  </section>
+  <section class="video-paths">
+    <h2>Частина цих треків</h2>
+    <div class="path-slot" style="--h:38">
+  <div class="path-name mono"><a href="../tracks/databases-and-data-structures.html">Бази даних і структури даних</a> · крок 01/09</div>
+  <div class="pn-row"><span class="pn dim">← початок треку</span><a class="pn next" href="why-algorithms-matter.html">Чому алгоритми важливі — розберемо на прикладі →</a></div>
+</div>
+  </section>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

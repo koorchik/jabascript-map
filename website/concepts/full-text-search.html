@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Повнотекстовий пошук — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / full-text-search</p>
+  <h1>Повнотекстовий пошук</h1>
+  <div class="topic-body"><p>Канал подає повнотекстовий пошук не як «просто візьми Elastic», а як механізм, який можна зібрати власноруч — Віктор саме так і зробив у продакшені, власноруч побудувавши повнотекстовий індекс на 300 TB. Мотивуюча невдача: B-tree-індекс робить <code>LIKE &#x27;prefix%&#x27;</code> миттєвим, але <code>LIKE &#x27;%word%&#x27;</code> займає ~40 с (або ~7 с у ранішому демо), бо жоден порядок сортування не допоможе знайти слово всередині значення (<a href="../videos/why-database-indexes.html">навіщо потрібні індекси в базах даних</a>, <a href="../videos/full-text-search-inverted-indexes.html">повнотекстовий пошук та інвертовані індекси</a>). Відповідь — <a href="../concepts/inverted-index.html">інвертований індекс</a>, а довкола нього конвеєр, який він будує наживо: токенізація (розбиття, фільтрація стоп-слів і закоротких токенів, зведення до нижнього регістру) та стемінг проти лематизації — з його українським контрприкладом: стемінг &#x27;німці&#x27; → &#x27;німц&#x27; не ловить &#x27;німець&#x27;, тому в його проєкті на 300 TB використовувався лематизатор (<a href="../videos/full-text-search-inverted-indexes.html">там само</a>). Критично важливо: той самий конвеєр треба застосовувати й до запитів.</p><p>Його ключова максима з Q&amp;A-продовження: «хочеш шукати інакше — мусиш індексувати інакше». Пошук підрядка всередині слова — це не хитріший запит, а n-грамний токенізатор (він малює триграми над словом &#x27;family&#x27;) ціною роздування індексу у 2–3 рази. Каталог токенізаторів Elasticsearch (edge n-gram, letter, keyword, pattern, кастомні витягувачі хештегів/IP) — це насправді меню стратегій індексації (<a href="../videos/full-text-search-part-2-qa.html">Q&amp;A до другої частини</a>). Його прагматичний вердикт: у реальному житті беріть вбудований FULLTEXT або <a href="../tools/elasticsearch.html">Elasticsearch</a> — але тепер ви знаєте, що вони насправді роблять; а його саморобний індекс обійшов MySQL <code>LIKE</code> (40 с → 21 мс на 16.5 млн рядків) і вийшов меншим за власний FULLTEXT-індекс MySQL.</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/why-database-indexes.html">Навіщо потрібні індекси в базі даних — розберемо на прикладі</a>
+  <span class="meta mono">19:22</span>
+  <p class="step-note">зав&#x27;язка: пошук за префіксом миттєвий, за підрядком ~7 с; «усі кажуть — беріть Elastic»; анонс бойової історії про 300 TB</p></li><li><a href="../videos/full-text-search-inverted-indexes.html">Як працює повнотекстовий пошук: будуємо інвертований індекс на практиці</a>
+  <span class="meta mono">48:15</span>
+  <p class="step-note">основна побудова: повний конвеєр токенізації/стемінгу, 40 с → 21 мс на 16.5 млн рядків, вердикт «у реальному житті — Elastic»</p></li><li><a href="../videos/full-text-search-part-2-qa.html">Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації</a>
+  <span class="meta mono">14:34</span>
+  <p class="step-note">«шукати інакше ⇒ індексувати інакше»: n-грамні токенізатори, зоопарк токенізаторів Elasticsearch, ціна роздування індексу</p></li><li><a href="../videos/qa-1-will-https-protect-you.html">Питання та відповіді №1: чи захистить HTTPS?</a>
+  <span class="meta mono">17:50</span>
+  <p class="step-note">Q&amp;A-контекст із поверненням до нутрощів інвертованого індексу та прикладу стиснення</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/inverted-index.html">Інвертований індекс</a> — базова структура даних під усім цим <a href="../concepts/index-compression.html">Стиснення індексу</a> — як posting-списки стають маленькими <a href="../concepts/database-indexes.html">Індекси баз даних</a> — провальний сценарій B-tree, через який усе це й потрібно <a href="../concepts/map-reduce.html">Map-reduce</a> — як індекс будується без необмеженої RAM</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -5,10 +5,10 @@ tags: [book, algorithms, fundamentals]
 ---
 # Grokking Algorithms
 
-Aditya Bhargava's illustrated, deliberately friendly introduction to algorithms. Viktor liked it exactly for being simple and approachable, and turns that into general advice: a book that looks simple and interesting is exactly the right place to start — don't overload yourself with the heaviest tome first.
+Ілюстрований і навмисно дружній вступ до алгоритмів від Адітьї Бхарґави. Віктору вона сподобалася саме простотою та доступністю, і з цього він виводить загальну пораду: книга, що виглядає простою і цікавою, — це якраз правильна точка старту; не перевантажуйте себе найважчим фоліантом із самого початку.
 
-## Covered in
-- [[qa-2-answering-questions]] — liked it; a simple-looking book is the right start, don't overload yourself
+## Де розглядається
+- [[qa-2-answering-questions]] — сподобалася; книга, що виглядає простою, — правильний старт, не перевантажуйте себе
 
-## Related
-[[algorithmic-complexity]], [[data-structures]], [[deep-learning-of-fundamentals]]. Next step up: [[cracking-the-coding-interview]].
+## Повʼязане
+[[algorithmic-complexity|Алгоритмічна складність]], [[data-structures|структури даних]], [[deep-learning-of-fundamentals|глибоке вивчення основ]]. Наступний рівень: [[cracking-the-coding-interview|Cracking the Coding Interview]].

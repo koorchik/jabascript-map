@@ -2,23 +2,34 @@
 type: video
 title_uk: "Моє робоче місце й як я підключаю три комп'ютера до одного монітора (офтоп відео для спонсорів)"
 youtube_id: umdVlL-AGc8
+level: beginner
 tags: [off-topic, sponsors-video, hardware, workspace, retro-gaming]
 date_ingested: 2026-07-09
 ---
-# My Workspace and How I Connect Three Computers to One Monitor
+# Моє робоче місце й як я підключаю три комп'ютери до одного монітора
 
-> Original: "Моє робоче місце й як я підключаю три комп'ютера до одного монітора (офтоп відео для спонсорів)" — https://youtu.be/umdVlL-AGc8
+> Оригінал: "Моє робоче місце й як я підключаю три комп'ютера до одного монітора (офтоп відео для спонсорів)" — https://youtu.be/umdVlL-AGc8
 
-An off-topic tour of the author's desk for sponsors/patrons. The central challenge: one 32" Lenovo monitor must serve a powerful desktop PC, two laptops (a ThinkPad Carbon X1 "for volunteer tasks" and a 16" MacBook "for Google tasks"), and a Nintendo Switch. His solution is the monitor itself as a KVM: three video inputs (DisplayPort for the desktop, USB-C/Thunderbolt for whichever laptop is plugged in, HDMI for the Switch) plus a switchable USB upstream source (Thunderbolt vs USB Type-B) so that the webcam, keyboard and mouse follow whichever machine is active — switching laptops is literally re-plugging one cable. He also shows his video-recording rig, a height-adjustable standing desk he actually uses standing, and — his pride — a retro-gaming setup built around a professional JVC CRT monitor driven by a Raspberry Pi with analog RGB output ([[workspace-and-hardware]], [[retro-gaming]]).
+Офтопна екскурсія робочим столом автора для спонсорів/патронів. Центральний виклик: один 32" монітор Lenovo має обслуговувати потужний десктоп, два ноутбуки (ThinkPad Carbon X1 «для волонтерських задач» і 16" MacBook «для задач Google») та Nintendo Switch. Його рішення — сам монітор у ролі KVM: три відеовходи (DisplayPort для десктопа, USB-C/Thunderbolt для того ноутбука, який зараз підключений, HDMI для Switch) плюс перемикане USB-джерело (Thunderbolt проти USB Type-B), щоб вебкамера, клавіатура й миша йшли за активною машиною — перемкнути ноутбуки означає буквально перевстромити один кабель. Він також показує свій знімальний сетап, стіл з регульованою висотою, за яким справді працює стоячи, і — свою гордість — ретроігровий куточок навколо професійного CRT-монітора JVC, до якого підключений Raspberry Pi з аналоговим RGB-виходом ([[workspace-and-hardware|робоче місце й залізо]], [[retro-gaming|ретрогеймінг]]).
 
-## Key takeaways
-- The desktop is a beast built partly for video work: RTX 3090, 128 GB RAM, AMD Ryzen 5950X, off-the-shelf AIO water cooling, 2×1 TB Samsung 980 M.2 SSDs — plus a 2 TB 2.5" SSD he had to add because edited videos and proxy files eat space. It dual-boots Windows and Linux.
-- One monitor, three sources, one set of peripherals: the monitor's "USB source" setting decides whether all attached USB devices (Logitech camera, keyboard/mouse dongle) route to the Thunderbolt laptop or to the desktop over a separate USB Type-B uplink — a poor man's KVM with zero extra hardware.
-- Recording war story: his Fujifilm X-E4 kept overheating after ~20 minutes of 4K, so he mounted a plain fan pointed at the camera — problem solved. Other studio gear: overhead mic, green screen with extra lighting, acoustic foam, a stream-deck-style button pad for switching scenes, and an Ethernet adapter he used with an iPhone for lower/more stable latency when it served as a camera.
-- He records YouTube videos with the desk lowered as far as possible so the camera sits at eye level; the whole desk rises for standing work, which he does often "just for extra load."
-- The retro corner is "прям топ": a JVC professional CRT video monitor (formerly used in TV broadcast/surveillance/medicine, nearly priceless now, found second-hand) gives a picture an ordinary LCD emulator setup can't approach.
-- To feed the CRT properly he assembled an enthusiast-made chain: an expansion board (bought in Britain) plus a Spanish-made add-on giving the Raspberry Pi *analog RGB* output over RGB SCART — since the Pi has no analog RGB natively — plus a SEGA-style retro gamepad. His verdict: analog RGB + CRT is a night-and-day difference versus an emulator on LCD.
-- Also on the desk: a PS5 gamepad for occasional Windows gaming, an air purifier (turned off while filming so it doesn't hum), and a small extra AliExpress monitor he rarely uses.
+## Головне
+- Десктоп — звір, зібраний зокрема під роботу з відео: RTX 3090, 128 GB RAM, AMD Ryzen 5950X, готове AIO водяне охолодження, 2×1 TB Samsung 980 M.2 SSD — плюс 2 TB 2.5" SSD, який довелося додати, бо змонтовані відео та проксі-файли з'їдають місце. Подвійне завантаження Windows і Linux.
+- Один монітор, три джерела, один комплект периферії: налаштування "USB source" монітора вирішує, куди маршрутизуються всі підключені USB-пристрої (камера Logitech, донгл клавіатури/миші) — до Thunderbolt-ноутбука чи до десктопа через окремий USB Type-B аплінк — KVM для бідних без жодного додаткового заліза.
+- Історія зі зйомок: його Fujifilm X-E4 постійно перегрівалася після ~20 хвилин 4K, тож він поставив звичайний вентилятор, спрямований на камеру, — проблему вирішено. Інше студійне обладнання: мікрофон над головою, зелений екран із додатковим світлом, акустичний поролон, кнопкова панель у стилі stream deck для перемикання сцен та Ethernet-адаптер, який він використовував з iPhone для нижчої і стабільнішої затримки, коли той працював камерою.
+- Відео для YouTube він записує, опустивши стіл максимально низько, щоб камера була на рівні очей; для роботи стоячи весь стіл піднімається — і він так працює часто, «просто для додаткового навантаження».
+- Ретрокуточок — «прям топ»: професійний CRT-відеомонітор JVC (раніше використовувався в телевізійному мовленні/відеонагляді/медицині, зараз майже безцінний, знайдений на вторинному ринку) дає картинку, до якої звичайному сетапу «емулятор + LCD» не наблизитися.
+- Щоб правильно годувати CRT, він зібрав ланцюжок від ентузіастів: плата розширення (куплена в Британії) плюс іспанська надбудова, що дає Raspberry Pi *аналоговий RGB* вихід через RGB SCART — бо нативно в Pi аналогового RGB немає — плюс ретрогеймпад у стилі SEGA. Його вердикт: аналоговий RGB + CRT — це різниця як день і ніч порівняно з емулятором на LCD.
+- Також на столі: геймпад PS5 для епізодичних ігор під Windows, очищувач повітря (вимкнений під час зйомки, щоб не гудів) і маленький додатковий монітор з AliExpress, яким він майже не користується.
 
-## Covered
+## Розділи
+- 00:00 — Офтопна екскурсія столом для спонсорів
+- 00:41 — Десктоп: RTX 3090, 128 GB RAM, Ryzen 5950X, водяне охолодження, три SSD
+- 01:24 — Один 32" монітор Lenovo для десктопа, двох ноутбуків і Nintendo Switch
+- 02:27 — Як усе це скомутовано: три відеовходи плюс колонки, камера й USB-донгл на моніторі
+- 02:47 — Живе демо перемикання: Thunderbolt для ноутбуків, вибір USB-джерела, HDMI для Switch
+- 04:14 — Клавіатура для монтажу, геймпад PS5, перемикач сцен у стилі stream deck і настільні гаджети
+- 05:18 — Знімальний сетап: вентилятор проти перегріву Fuji X-E4, зелений екран, стіл для роботи стоячи
+- 06:42 — Ретрокуточок: студійний CRT JVC + [[raspberry-pi|Raspberry Pi]] з аналоговим RGB-виходом
+
+## Теми
 [[workspace-and-hardware]], [[retro-gaming]], [[raspberry-pi]]

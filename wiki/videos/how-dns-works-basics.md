@@ -2,23 +2,41 @@
 type: video
 title_uk: "Як працює Інтернет? Основні питання про DNS"
 youtube_id: bUKkYCdloH4
+level: beginner
 tags: [networking, dns, internet, protocols]
 date_ingested: 2026-07-09
 ---
-# How the Internet Works: The Basics of DNS
+# Як працює Інтернет: основи DNS
 
-> Original: "Як працює Інтернет? Основні питання про DNS" — https://youtu.be/bUKkYCdloH4
+> Оригінал: "Як працює Інтернет? Основні питання про DNS" — https://youtu.be/bUKkYCdloH4
 
-First of a three-video mini-series on how the internet works, this episode explains what [[dns]] is and why we need name resolution. The author starts from the problem: when you type `rozetka.ua` or `google.com`, how does the browser know which server IP to hit, given that a big site runs on many servers that change over time? He traces the history — before DNS (introduced 1985) there was just a `hosts.txt` file copied between machines — and demonstrates live editing his own hosts file to point `rozetka.com.ua` at a Google IP, showing that (a) the browser caches DNS so nothing changes until you restart it, and (b) even hitting Google's IP you get a certificate/host error, because the server also inspects the domain name sent in the HTTP request. He then walks through a batch of practical questions using the `dig` tool and Wireshark packet captures.
+Перший із трьох епізодів міні-серії про те, як працює інтернет; тут пояснюється, що таке [[dns|DNS]] і навіщо потрібна резолюція імен. Автор починає з проблеми: коли ви набираєте `rozetka.ua` чи `google.com`, звідки браузер знає, на IP якого сервера стукати, якщо великий сайт працює на багатьох серверах, що з часом змінюються? Він простежує історію — до DNS (з’явився 1985 року) був просто файл `hosts.txt`, який копіювали між машинами — і наживо демонструє редагування власного hosts-файлу, щоб `rozetka.com.ua` вказував на IP Google, показуючи, що (а) браузер кешує DNS, тож нічого не зміниться, поки ви його не перезапустите, і (б) навіть влучивши в IP Google, ви отримуєте помилку сертифіката/хоста, бо сервер ще й перевіряє доменне ім’я, надіслане в HTTP-запиті. Далі він проходить пачку практичних питань за допомогою утиліти `dig` і захоплень пакетів у Wireshark.
 
-## Key takeaways
-- The OS itself knows nothing about DNS servers — the DNS server address comes from your network settings (from the DHCP server on the router, from the provider, or set manually; on Linux see `/etc/resolv.conf`). He manually set his resolver to Google's `8.8.8.8` to demonstrate.
-- A single domain can return multiple IPs. `dig` on `my.talks.net` returned four addresses, and repeating the query shows the order rotating — this is **DNS round-robin**, a crude load-balancing and failover mechanism (browsers will try another IP if one is down; "better than nothing").
-- Record types matter: `A` = IPv4, `AAAA` = IPv6, `MX` = mail servers, `TXT` (e.g. Google site verification, SPF), `NS` = which nameservers hold a domain's config. `A`/`AAAA` are the most common because that's what you need to reach a site.
-- **DNS uses UDP, but sometimes TCP.** He ran a poll on his channel — only 17% of 215 voters got this right. In Wireshark he shows a normal query going out UDP port 53. UDP datagrams cap around 512 bytes; if the answer doesn't fit, the server sets the **truncated (TC) flag** to 1 and the client retries over TCP. He demonstrates this with a deliberately large TXT record (`jabascript` under his domain), showing the TC=1 flag then the TCP handshake and multi-segment reassembled response. TCP isn't used first because the handshake costs extra round-trips.
-- DoH (DNS over HTTPS) adds privacy via encryption; Firefox (as of 2022, incl. Ukraine) and Chrome increasingly do DNS over HTTPS. He disabled DoH and OS caching in Firefox specifically to demonstrate plain resolution, noting caching happens at every level: browser, OS, router, provider.
-- **Who actually makes the query — browser or OS?** Neither reimplements DNS. Processes load the standard C library (**glibc** on Linux) which does the work, checks `hosts`, uses `/etc/nsswitch.conf` ordering, etc. On systemd systems a local caching resolver runs at `127.0.0.53` and supports DNSSEC. War-story tip: **Alpine Linux** uses **musl libc** instead of glibc, and musl historically did NOT support DNS-over-TCP fallback — so oversized responses could silently fail on tiny Alpine (node:alpine, python:alpine) Docker images. He notes this was being fixed (post dated May 16, 2023).
-- Practical advice: if you're a developer, buy a domain and play with the records (he manages his on Cloudflare) to understand things end-to-end. Static IPs can be pinned to a DNS name; **Dynamic DNS** re-registers your changing home IP automatically, and many home routers support it, letting you reach your home machine from outside.
+## Головне
+- Сама ОС нічого не знає про DNS-сервери — адреса DNS-сервера береться з ваших мережевих налаштувань (від DHCP-сервера на роутері, від провайдера або задана вручну; на Linux дивіться `/etc/resolv.conf`). Він вручну виставив свій резолвер на `8.8.8.8` Google, щоб продемонструвати.
+- Один домен може повертати кілька IP. `dig` на `my.talks.net` повернув чотири адреси, а повторний запит показує, що порядок ротується — це **DNS round-robin**, грубий механізм балансування навантаження й відмовостійкості (браузери спробують інший IP, якщо один недоступний; «краще, ніж нічого»).
+- Типи записів мають значення: `A` = IPv4, `AAAA` = IPv6, `MX` = поштові сервери, `TXT` (наприклад, верифікація сайту Google, SPF), `NS` = які nameserver’и тримають конфіг домену. `A`/`AAAA` найпоширеніші, бо саме вони потрібні, щоб дістатися сайту.
+- **DNS використовує UDP, але іноді TCP.** Він провів опитування на каналі — лише 17% із 215 голосів відповіли правильно. У Wireshark він показує звичайний запит, що виходить на UDP-порт 53. UDP-датаграми обмежені приблизно 512 байтами; якщо відповідь не влазить, сервер виставляє **прапорець truncated (TC)** в 1, і клієнт повторює запит по TCP. Він демонструє це на навмисно великому TXT-записі (`jabascript` під своїм доменом), показуючи прапорець TC=1, потім TCP-handshake і зібрану з кількох сегментів відповідь. TCP не використовують першим, бо handshake коштує зайвих round-trip’ів.
+- DoH (DNS over HTTPS) додає приватності через шифрування; Firefox (станом на 2022, включно з Україною) і Chrome дедалі частіше роблять DNS over HTTPS. Він вимкнув DoH і кешування ОС у Firefox спеціально, щоб продемонструвати звичайну резолюцію, зазначивши, що кешування відбувається на кожному рівні: браузер, ОС, роутер, провайдер.
+- **Хто ж власне робить запит — браузер чи ОС?** Ніхто з них не реалізує DNS заново. Процеси завантажують стандартну C-бібліотеку (**glibc** на Linux), яка робить роботу, перевіряє `hosts`, використовує порядок із `/etc/nsswitch.conf` тощо. У системах на systemd локальний кешувальний резолвер працює на `127.0.0.53` і підтримує DNSSEC. Порада з бойового досвіду: **Alpine Linux** використовує **musl libc** замість glibc, і musl історично НЕ підтримував fallback DNS-over-TCP — тож надто великі відповіді могли мовчки падати на крихітних Alpine (node:alpine, python:alpine) Docker-образах. Він зазначає, що це вже виправляли (запис датований 16 травня 2023).
+- Практична порада: якщо ви розробник, купіть домен і погратися із записами (він керує своїми на Cloudflare), щоб зрозуміти все наскрізно. Статичні IP можна прив’язати до DNS-імені; **Dynamic DNS** автоматично перереєстровує ваш змінний домашній IP, і багато домашніх роутерів це підтримують, дозволяючи діставатися домашньої машини ззовні.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: звідки браузер знає, на IP якого сервера живе домен?
+- 02:10 — До [[dns|DNS]] (1985): файл hosts.txt, який копіювали між машинами
+- 02:31 — Хак наживо: спрямовуємо rozetka.com.ua на IP Google через /etc/hosts
+- 03:54 — Який DNS-сервер питати: [[dhcp|DHCP]], ваш провайдер, /etc/resolv.conf
+- 04:57 — Вимірюємо резолюцію у Firefox: +33 мс, DoH, кешування на кожному рівні
+- 07:02 — dig: один домен, чотири IP і DNS round-robin як грубе балансування
+- 08:49 — Типи записів: A, AAAA, MX, TXT, NS
+- 09:54 — TCP чи UDP? Лише 17% в опитуванні відповіли правильно
+- 10:35 — Wireshark на порту 53: запит і відповідь по UDP
+- 12:03 — Ліміт датаграми 512 байтів і прапорець truncated (TC)
+- 13:29 — Демо завеликого TXT-запису: TC=1, повтор по TCP-handshake
+- 16:24 — Хто власне резолвить: браузер, libc, /etc/nsswitch.conf, systemd-resolved
+- 19:15 — Пастка Docker: musl libc в Alpine не робив fallback DNS-over-TCP
+- 20:38 — Купіть домен і погратися: керування записами на Cloudflare, Dynamic DNS вдома
+- 22:28 — Що далі: рекурсивна резолюція імен і хакінг DNS
+
+## Теми
 [[dns]], [[nat-and-networking]], [[dhcp]], [[latency-and-speed-of-light]], [[deep-learning-of-fundamentals]], [[firefox]]

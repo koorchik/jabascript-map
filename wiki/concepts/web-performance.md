@@ -2,15 +2,15 @@
 type: concept
 tags: [performance, web, frontend, google]
 ---
-# Web Performance (Core Web Vitals)
+# Вебперформанс (Core Web Vitals)
 
-The channel's fullest take comes from the Google I/O watch party ([[google-io-2023-watch-party]]). Google converged on user-centric metrics — LCP (≤2.5s), CLS, and an interaction-latency target around 100ms (INP replacing FID) plus `fetchpriority` — precisely because the older PageSpeed metrics got gamed while pages still visibly twitched into place as they loaded. His contrarian addition: for logged-in thick-client apps behind auth, it's the *users'* opinion that matters, not Google's — metric-chasing is really for SEO and content sites. He runs live audits on stream (an Odesa JS site scores well). This sits alongside the physics side of speed covered in the latency episode: Core Web Vitals is the perceived-experience lever, latency is the hard floor.
+Найповніший розбір на каналі — зі стриму-перегляду Google I/O ([[google-io-2023-watch-party|стрим Google I/O 2023]]). Google зійшовся на метриках, орієнтованих на користувача, — LCP (≤2.5s), CLS і ціль затримки взаємодії близько 100ms (INP на заміну FID) плюс `fetchpriority` — саме тому, що старіші метрики PageSpeed навчилися накручувати, тоді як сторінки все одно помітно смикалися, складаючись під час завантаження. Його контраріанське доповнення: для «товстоклієнтних» застосунків за автентифікацією важить думка *користувачів*, а не Google — гонитва за метриками насправді потрібна для SEO і контентних сайтів. На стримі він проводить живі аудити (сайт одеського JS-ком'юніті показує хороший результат). Ця тема стоїть поруч із фізичним боком швидкості з випуску про затримки: Core Web Vitals — важіль сприйманого досвіду, latency — жорстка нижня межа.
 
-## Covered in
-- [[google-io-2023-watch-party]] — Core Web Vitals (LCP/CLS/INP), fetchpriority, why old metrics got gamed, and his "metrics are for SEO, not thick clients" take
+## Де розглядається
+- [[google-io-2023-watch-party]] — Core Web Vitals (LCP/CLS/INP), fetchpriority, чому старі метрики накручували, і його теза «метрики — для SEO, а не для товстих клієнтів»
 
-## Related
-[[latency-and-speed-of-light]] — the physical floor under any performance metric
-[[webgpu]] — another Google I/O browser-capability topic
-[[nextjs]] — SSR/framework choices that affect these metrics
-[[react]] — thick-client apps where he argues Google's metrics matter less
+## Повʼязане
+[[latency-and-speed-of-light]] — фізична нижня межа під будь-якою метрикою перформансу
+[[webgpu]] — ще одна тема про можливості браузера з того самого Google I/O
+[[nextjs]] — SSR і вибір фреймворку, що впливають на ці метрики
+[[react]] — товстоклієнтні застосунки, де, на його думку, метрики Google важать менше

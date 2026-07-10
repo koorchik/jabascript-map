@@ -4,11 +4,11 @@ tags: [cloud, backend-as-a-service, google]
 ---
 # Firebase
 
-Firebase is Google's backend-less application platform, covered on the channel through the I/O 2023 watch party where co-host Mykyta Galkin gives a guided tour ([[google-io-2023-watch-party]]). The framing: Firebase sits on top of Google Cloud with one billing account and a shared project, so it composes with the rest of the stack rather than living in its own silo. Highlights from the tour: Hosting preview channels per pull request; Hosting rewrites that route `/api` paths straight to Cloud Run services (getting you a free custom domain and certificates for containers); Firestore's two modes and realtime sync; the Extensions marketplace (Stripe payments, email and the like); and the reveal that Cloud Functions are now built on Cloud Run containers underneath.
+Firebase — платформа Google для застосунків без власного бекенда; на каналі вона розкрита через watch party по I/O 2023, де співведучий Микита Галкін проводить екскурсію ([[google-io-2023-watch-party]]). Ключова рамка: Firebase сидить поверх Google Cloud з одним білінговим акаунтом і спільним проєктом, тож він компонується з рештою стека, а не живе у власному силосі. Найцікавіше з екскурсії: preview-канали Hosting на кожен pull request; rewrites у Hosting, які маршрутизують шляхи `/api` прямо в сервіси Cloud Run (отримуєш безкоштовний кастомний домен і сертифікати для контейнерів); два режими Firestore і realtime-синхронізація; маркетплейс Extensions (платежі Stripe, email тощо); і відкриття, що Cloud Functions тепер під капотом побудовані на контейнерах Cloud Run.
 
-## Covered in
-- [[google-io-2023-watch-party]] — the full tour: preview channels, rewrites to Cloud Run, Firestore modes, Extensions marketplace, Functions-on-Cloud-Run.
+## Де розглядається
+- [[google-io-2023-watch-party]] — повна екскурсія: preview-канали, rewrites у Cloud Run, режими Firestore, маркетплейс Extensions, Functions поверх Cloud Run.
 
-## Related
-[[google-cloud-run]] — the container platform Firebase Hosting routes to and Functions run on.
-[[terraform]] — I/O 2023 made Firebase resources Terraform-describable.
+## Повʼязане
+[[google-cloud-run|Google Cloud Run]] — контейнерна платформа, куди маршрутизує Firebase Hosting і на якій працюють Functions.
+[[terraform|Terraform]] — після I/O 2023 ресурси Firebase можна описувати в Terraform.

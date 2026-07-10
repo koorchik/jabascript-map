@@ -5,10 +5,10 @@ tags: [book, software-engineering, process, google]
 ---
 # Software Engineering at Google
 
-The "Flamingo book": the entire Google development process, A to Z, in 600 pages — code review, testing culture, tooling, deprecation. At the time of the video Viktor (himself ex-Google) was reading it and practically finished — notable for a book he freely admits others hang unfinished. Bonus: a free PDF is available online.
+«Книжка з фламінго»: увесь процес розробки в Google від А до Я на 600 сторінках — code review, культура тестування, тулінг, deprecation. На момент запису відео Віктор (сам ексгуглівець) саме читав її і практично дочитав — показово для книжки, яку, як він сам визнає, інші зазвичай кидають недочитаною. Бонус: безкоштовний PDF доступний онлайн.
 
-## Covered in
-- [[five-star-books]] — currently reading, practically finished; Google's whole process in one book
+## Де розглядається
+- [[five-star-books]] — саме читає, практично дочитав; увесь процес Google в одній книжці
 
-## Related
-[[code-review]] (the channel's Google code-review video covers this territory), [[code-quality]], [[career-and-growth]]. Companions: [[the-staff-engineers-path]], [[mythical-man-month]] (what has and hasn't changed since 1975).
+## Повʼязане
+[[code-review|Code review]] (відео каналу про code review в Google покриває ту саму територію), [[code-quality|якість коду]], [[career-and-growth|карʼєра та ріст]]. Компаньйони: [[the-staff-engineers-path|The Staff Engineer's Path]], [[mythical-man-month|The Mythical Man-Month]] (що змінилося, а що ні з 1975 року).

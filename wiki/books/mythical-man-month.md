@@ -5,10 +5,10 @@ tags: [book, software-engineering, project-management]
 ---
 # The Mythical Man-Month
 
-Frederick Brooks's 1975 essays on software project management. Viktor recommends it precisely to see that between 1975 (stacks of paper instead of Jira) and 2024 nothing fundamental has changed in how software projects go wrong — and for introducing essential vs accidental complexity, a distinction you meet daily.
+Есеї Фредеріка Брукса 1975 року про управління програмними проєктами. Віктор рекомендує її саме для того, щоб побачити: між 1975-м (стоси паперу замість Jira) і 2024-м нічого фундаментально не змінилося в тому, як програмні проєкти йдуть не так, — а ще за введення понять essential та accidental complexity (сутнісна та випадкова складність), розрізнення, з яким стикаєшся щодня.
 
-## Covered in
-- [[five-star-books]] — proof nothing fundamental changed since 1975; essential vs accidental complexity
+## Де розглядається
+- [[five-star-books]] — доказ, що з 1975 року нічого фундаментально не змінилося; сутнісна та випадкова складність
 
-## Related
-[[software-design]], [[abstractions]] (accidental complexity is what bad ones add). Kindred reads: [[code-complete]], [[software-engineering-at-google]] (the modern counterpart on process).
+## Повʼязане
+[[software-design|Проєктування ПЗ]], [[abstractions|абстракції]] (випадкова складність — це те, що додають погані абстракції). Споріднене читання: [[code-complete|Code Complete]], [[software-engineering-at-google|Software Engineering at Google]] (сучасний аналог щодо процесів).

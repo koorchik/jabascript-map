@@ -2,18 +2,18 @@
 type: concept
 tags: [data-structures, probabilistic, performance, security]
 ---
-# Bloom filter
+# Фільтр Блума
 
-"A genius data structure": a probabilistic set membership test with no false negatives ever and a tunable false-positive rate — its size depends only on element count and target FPR, not on key size. Viktor hand-implements one in JavaScript and benchmarks it against everything: 10M keys fit in an 11 MB filter at 1% FPR and answer 100,000 lookups in ~55 ms, versus ~800 MB for a JS Map, ~17 s per 100k for indexed [[mysql]], and ~6 s per 100k for [[redis]]/[[memcached]]. The tuning math is dramatic: doubling the filter's size buys 100x accuracy, while undersizing by half degrades 1% FPR to ~15%. His analogy for collisions: a club bouncer who remembers visitors only by their clothes — he'll never miss someone he's seen, but two people in the same jacket look identical ([[bloom-filter-and-firefox]]).
+«Геніальна структура даних»: імовірнісний тест належності до множини, що ніколи не дає false negatives і має настроювану частку false positives, — її розмір залежить лише від кількості елементів і цільового FPR, а не від розміру ключів. Віктор реалізує фільтр руками на JavaScript і бенчмаркає проти всього підряд: 10 млн ключів вміщаються у фільтр на 11 МБ при 1% FPR і відповідають на 100 000 пошуків за ~55 мс — проти ~800 МБ для JS Map, ~17 с на 100k для [[mysql|MySQL]] з індексом і ~6 с на 100k для [[redis|Redis]]/[[memcached|Memcached]]. Математика тюнінгу драматична: подвоєння розміру фільтра купує 100x точності, а заниження розміру вдвічі деградує 1% FPR до ~15%. Його аналогія для колізій: фейсконтрольник у клубі, що памʼятає відвідувачів лише за одягом — того, кого бачив, він не пропустить ніколи, але двоє людей в однаковій куртці для нього ідентичні ([[bloom-filter-and-firefox|фільтр Блума і Firefox]]).
 
-The climax is Firefox's CRLite: a cascade of ~13 Bloom filter levels, each holding the previous level's false positives, which turns the probabilistic filter into a deterministic binary classifier — shipping all ~4M revoked TLS certificates to every browser in ~300 KB of daily updates, in production since 2025 (and no npm library exists for the cascade variant). Real-world deployments he cites: Silpo's 25M-client CRM using one for 0.1 ms vs 50 ms lookups at 1000 RPS, Cassandra, Google Safe Browsing lists, RTB ad systems, and premium-user classification. Teased sequels: Counting Bloom Filter, Count-Min Sketch, HyperLogLog ([[bloom-filter-and-firefox]]).
+Кульмінація — CRLite у Firefox: каскад із ~13 рівнів фільтрів Блума, кожен з яких тримає false positives попереднього рівня, — і це перетворює імовірнісний фільтр на детермінований бінарний класифікатор, доставляючи всі ~4 млн відкликаних TLS-сертифікатів кожному браузеру в ~300 КБ щоденних оновлень; у продакшені з 2025 року (а npm-бібліотеки для каскадного варіанта не існує). Реальні впровадження, які він наводить: CRM «Сільпо» на 25 млн клієнтів, де фільтр дає 0.1 мс замість 50 мс при 1000 RPS, Cassandra, списки Google Safe Browsing, RTB-системи реклами і класифікація преміум-користувачів. Анонсовані продовження: Counting Bloom Filter, Count-Min Sketch, HyperLogLog ([[bloom-filter-and-firefox|фільтр Блума і Firefox]]).
 
-## Covered in
-- [[bloom-filter-and-firefox]] — the definitive video: hand-built in JS, the full benchmark ladder against Map/MySQL/Redis/Memcached, sizing math, the CRLite cascade, and production deployments
+## Де розглядається
+- [[bloom-filter-and-firefox]] — головне відео: збудований руками на JS, повна драбина бенчмарків проти Map/MySQL/Redis/Memcached, математика розмірів, каскад CRLite і продакшн-впровадження
 
-## Related
-[[data-structures]] — its home among probabilistic structures
-[[hashing]] — the k hash functions that drive it
-[[algorithmic-complexity]] — the benchmark ladder is an exercise in orders of magnitude
-[[database-indexes]] — what it outruns by living in process memory
-[[https-tls]] — the revoked-certificate problem CRLite solves
+## Повʼязане
+[[data-structures]] — його дім серед імовірнісних структур
+[[hashing]] — k хеш-функцій, які ним рухають
+[[algorithmic-complexity]] — драбина бенчмарків — вправа з порядків величин
+[[database-indexes]] — те, що він обганяє, живучи в памʼяті процесу
+[[https-tls]] — проблема відкликаних сертифікатів, яку розвʼязує CRLite

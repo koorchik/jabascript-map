@@ -4,13 +4,13 @@ tags: [networking, firewall, router, tooling]
 ---
 # pfSense
 
-A FreeBSD-based open-source virtual router and firewall (runs happily in ~512MB RAM with a tiny disk). On the channel it's the main tool for isolating a VirtualBox VM from the home LAN: installed as its own VM with two adapters, it acts as a WAN/LAN router that NATs the guest out to the home network, runs a DHCP server on the internal LAN (handing the guest 10.10.10.50–100, gateway 10.10.10.1, DNS 8.8.8.8), and enforces firewall rules that block the guest's direct access to the home router ([[vm-network-isolation]]).
+Open-source віртуальний роутер і фаєрвол на базі FreeBSD (спокійно працює на ~512 МБ RAM із крихітним диском). На каналі це головний інструмент для ізоляції VirtualBox-віртуалки від домашньої LAN: встановлений як окрема VM із двома адаптерами, він працює як WAN/LAN-роутер, що через NAT випускає гостьову систему в домашню мережу, тримає DHCP-сервер у внутрішній LAN (видає гостю адреси 10.10.10.50–100, шлюз 10.10.10.1, DNS 8.8.8.8) і застосовує правила фаєрвола, які блокують гостю прямий доступ до домашнього роутера ([[vm-network-isolation|мережева ізоляція VM]]).
 
-## Covered in
-- [[vm-network-isolation]] — the virtual router/firewall that gates and firewalls the isolated guest VM
+## Де розглядається
+- [[vm-network-isolation]] — віртуальний роутер/фаєрвол, який пропускає через себе та фільтрує трафік ізольованої гостьової VM
 
-## Related
-[[nat-and-networking]] — the WAN/LAN NAT topology it implements
-[[dhcp]] — runs the legitimate DHCP server on the isolated LAN
-[[virtualbox]] — the hypervisor hosting both it and the guest
-[[sandboxing-and-isolation]] — the isolation goal it serves
+## Повʼязане
+[[nat-and-networking]] — WAN/LAN NAT-топологія, яку він реалізує
+[[dhcp]] — тримає легітимний DHCP-сервер в ізольованій LAN
+[[virtualbox]] — гіпервізор, на якому працює і він, і гостьова система
+[[sandboxing-and-isolation]] — мета ізоляції, якій він служить

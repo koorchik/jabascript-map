@@ -2,22 +2,37 @@
 type: video
 title_uk: "Як працює Інтернет? Як працює рекурсивний пошук в DNS?"
 youtube_id: IgF7VwIKqX8
+level: intermediate
 tags: [networking, dns, internet, protocols]
 date_ingested: 2026-07-09
 ---
-# How the Internet Works: DNS Recursive Resolution
+# Як працює Інтернет: рекурсивний пошук у DNS
 
-> Original: "Як працює Інтернет? Як працює рекурсивний пошук в DNS?" — https://youtu.be/IgF7VwIKqX8
+> Оригінал: "Як працює Інтернет? Як працює рекурсивний пошук в DNS?" — https://youtu.be/IgF7VwIKqX8
 
-The second DNS episode answers the question left hanging from the first: does every DNS server in the world hold records for every website? No. The author walks — first on a whiteboard, then live in the terminal — through how **recursive resolution** works. He uses a concrete running example: you buy `itquiz.com` from a registrar, rent a server from a cloud provider (DigitalOcean/Google Cloud/Amazon — "doesn't matter"), and add an `A` record in the registrar's admin so visitors reach your box. The core puzzle: your provider's resolver has never heard of `itquiz.com` — how does it find the right authoritative server?
+Другий епізод про DNS відповідає на питання, яке лишилося невирішеним після першого: чи кожен DNS-сервер у світі тримає записи про кожен сайт? Ні. Автор проходить — спершу на дошці, потім наживо в терміналі — як працює **рекурсивна резолюція**. Він бере конкретний наскрізний приклад: ви купуєте `itquiz.com` у реєстратора, орендуєте сервер у хмарного провайдера (DigitalOcean/Google Cloud/Amazon — «неважливо») і додаєте `A`-запис в адмінці реєстратора, щоб відвідувачі потрапляли на вашу машину. Головна загадка: резолвер вашого провайдера ніколи не чув про `itquiz.com` — як він знаходить правильний авторитетний сервер?
 
-## Key takeaways
-- The resolver your browser talks to (provider's DNS, a caching resolver on your home router, or `8.8.8.8`) is almost never the server where you added the record. It has to *discover* the answer.
-- The hierarchy walked top-down: **root servers** (the zone `.`) know the nameservers for TLD zones (`.com`, `.org`, `.edu`…); the **TLD servers** (`.com`) return the `NS` records for `itquiz.com`; those point to the **authoritative DNS server** (in his case Cloudflare) that actually stores the `A` record. Resolution returns `NS` records step by step, then finally the `A` record.
-- The resolver bootstraps from **root hints** — the IPs of the ~13 root servers baked into its config, so it always knows where to start.
-- He proves every step by hand with `dig +norecurse`: querying `8.8.8.8` non-recursively returns nothing (Google hasn't cached it); `dig . NS` gets the 13 root servers; grab a root's IP, ask it for `.com` NS servers (the reply includes IPs in the **additional section** to save a round-trip), ask a `.com` server for `itquiz.com` NS (gets two Cloudflare nameservers + their IPv4/IPv6), then finally ask Cloudflare for the `A` record. Doing this manually is exactly what `8.8.8.8` does under the hood automatically.
-- `dig +trace` automates the whole recursive walk from your local machine and prints each hop (root → `.com` TLD → authoritative), so you can watch it happen.
-- **Caching + TTL:** because each lookup is many internet round-trips, servers cache. Every record carries a **TTL in seconds** — `itquiz.com` showed 300s (5 min), but 24h is common. You set it in the registrar admin. If TTL is 24h and you change your IP, the change doesn't propagate at once: different resolvers cached at different times, so some see it in minutes, others up to a full TTL later. Frequent IP changes → use a low TTL; stable IPs → use a high TTL.
+## Головне
+- Резолвер, з яким спілкується ваш браузер (DNS провайдера, кешувальний резолвер на домашньому роутері чи `8.8.8.8`), майже ніколи не є тим сервером, де ви додали запис. Він мусить *знайти* відповідь.
+- Ієрархію проходять зверху вниз: **кореневі сервери (root servers)** (зона `.`) знають nameserver’и для зон TLD (`.com`, `.org`, `.edu`…); **сервери TLD** (`.com`) повертають `NS`-записи для `itquiz.com`; ті вказують на **авторитетний DNS-сервер** (у його випадку Cloudflare), який власне зберігає `A`-запис. Резолюція крок за кроком повертає `NS`-записи, а вкінці — `A`-запис.
+- Резолвер стартує з **root hints** — IP-адрес ~13 кореневих серверів, зашитих у його конфіг, тож він завжди знає, звідки почати.
+- Він доводить кожен крок вручну через `dig +norecurse`: нерекурсивний запит до `8.8.8.8` не повертає нічого (Google його не закешував); `dig . NS` дає 13 кореневих серверів; беремо IP кореневого, питаємо його про NS-сервери `.com` (відповідь включає IP в **additional section**, щоб зекономити round-trip), питаємо сервер `.com` про NS `itquiz.com` (отримуємо два nameserver’и Cloudflare + їхні IPv4/IPv6), а тоді вже питаємо Cloudflare про `A`-запис. Робити це вручну — це рівно те, що `8.8.8.8` робить під капотом автоматично.
+- `dig +trace` автоматизує весь рекурсивний обхід із вашої локальної машини і друкує кожен хоп (root → `.com` TLD → авторитетний), тож ви можете спостерігати за процесом.
+- **Кешування + TTL:** оскільки кожен пошук — це багато інтернет-round-trip’ів, сервери кешують. Кожен запис несе **TTL у секундах** — `itquiz.com` показав 300с (5 хв), але 24 год теж поширено. Ви задаєте його в адмінці реєстратора. Якщо TTL 24 год і ви змінюєте IP, зміна поширюється не одразу: різні резолвери закешували в різний час, тож одні побачать її за хвилини, інші — аж за повний TTL. Часті зміни IP → малий TTL; стабільні IP → великий TTL.
 
-## Covered
+## Розділи
+- 00:00 — Чи кожен [[dns|DNS]]-сервер тримає кожен сайт? Ні — рекурсивний пошук
+- 00:21 — Наскрізний приклад: реєструємо itquiz.com і додаємо A-запис
+- 01:23 — Резолвер, з яким ви говорите, не той, що зберігає ваш запис
+- 02:46 — Знаходимо nameserver домену: NS-запис
+- 04:12 — Немає єдиного сервера: зони TLD і кореневі сервери
+- 05:16 — Root hints: звідки резолвер стартує пошук
+- 05:38 — Повний покроковий обхід: root, TLD, авторитетний
+- 07:05 — Демо в терміналі: dig з рекурсією і без неї на 8.8.8.8
+- 07:48 — Питаємо кореневі сервери вручну про .com
+- 08:51 — Питаємо сервер .com про nameserver’и itquiz.com
+- 09:54 — Фінальний запит до Cloudflare за A-записом і dig +trace
+- 12:09 — Кешування і TTL: затримки поширення при зміні IP
+
+## Теми
 [[dns]], [[nat-and-networking]], [[latency-and-speed-of-light]], [[deep-learning-of-fundamentals]]

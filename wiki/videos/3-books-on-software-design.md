@@ -2,22 +2,30 @@
 type: video
 title_uk: "3 важливі книги про проектування програмного забезпечення"
 youtube_id: p7awmGY9yus
+level: beginner
 tags: [books, software-design, architecture, recommendations]
 date_ingested: 2026-07-09
 ---
-# 3 Essential Books on Software Design
+# 3 важливі книги про проектування програмного забезпечення
 
-> Original: "3 важливі книги про проектування програмного забезпечення" — https://youtu.be/p7awmGY9yus
+> Оригінал: "3 важливі книги про проектування програмного забезпечення" — https://youtu.be/p7awmGY9yus
 
-Viewers keep asking for programming book recommendations, but "programming" is too broad — so the author narrows it to three foundational books on [[software-design]], each of which, he says, makes you look at building a program from a slightly different angle. He deliberately avoids "hardcore" picks: these are the fundamentals to start with. The three books form a set that he presents as mutually reinforcing: [[clean-architecture|Clean Architecture]] tells you *which layers* a backend should have, [[patterns-of-enterprise-application-architecture|Fowler's patterns]] show *how those layers are actually implemented* in real systems, and [[domain-driven-design|DDD]] explains *why* understanding the problem domain decides whether a project succeeds at all.
+Глядачі постійно просять порадити книги з програмування, але «програмування» — надто широка тема, тож автор звужує її до трьох фундаментальних книг про [[software-design|проектування ПЗ]], кожна з яких, за його словами, змушує подивитися на побудову програми під трохи іншим кутом. Він свідомо уникає «хардкорних» варіантів: це фундамент, з якого варто починати. Три книги утворюють набір, який він подає як взаємно підсилюваний: [[clean-architecture|Clean Architecture]] розповідає, *які шари* має мати бекенд, [[patterns-of-enterprise-application-architecture|патерни Фаулера]] показують, *як ці шари реально реалізуються* в живих системах, а [[domain-driven-design|DDD]] пояснює, *чому* розуміння предметної області взагалі вирішує, чи буде проєкт успішним.
 
-## Key takeaways
-- **Clean Architecture (Robert Martin)** — half the book is about how to structure a backend into layers and the logic behind that layering; the other half is SOLID. Basic but very useful. The author promises follow-up channel videos digging deeper: not just "here are the layers" but how to implement each layer.
-- **Domain-Driven Design (Eric Evans)** — explains why some projects fail while others succeed, and why adding features is easy in some codebases and painful in others; the answer is designing around the domain. For the author this book was a genuine revelation ("прям відкриттям") that changed how he looks at development.
-- He relays an Evans interview detail: Evans's one regret about the book is that the crucial *bounded context* topic sits at the end instead of the beginning. Even reading only half the book already changes how you think.
-- **Patterns of Enterprise Application Architecture (Martin Fowler)** — don't be scared off by "Enterprise" in the title; the author doesn't know why it's named that, but the book is great. Unlike the tactical GoF patterns, these are *strategic* patterns.
-- You will likely never implement Fowler's patterns directly, but you will *meet every one of them* in your application — inside your ORM, your framework, your backend structure. The book teaches you how the tools you already use actually work.
-- The three books interlock: Fowler complements Clean Architecture (which describes layers but not how to realize them) and adds concrete patterns (value objects, etc.) to the ideas of DDD.
+## Головне
+- **Clean Architecture (Роберт Мартін)** — половина книги про те, як структурувати бекенд на шари і яка логіка стоїть за цим поділом; друга половина — SOLID. Базова, але дуже корисна. Автор обіцяє наступні відео на каналі з глибшим розбором: не просто «ось шари», а як реалізувати кожен шар.
+- **Domain-Driven Design (Ерік Еванс)** — пояснює, чому одні проєкти провалюються, а інші стають успішними, і чому в одних кодових базах додавати фічі легко, а в інших — болісно; відповідь — проектування навколо предметної області. Для автора ця книга стала «прям відкриттям», яке змінило його погляд на розробку.
+- Він переказує деталь з інтерв'ю Еванса: єдине, про що Еванс шкодує в книзі, — що ключова тема *bounded context* стоїть у кінці, а не на початку. Навіть половина книги вже змінює спосіб мислення.
+- **Patterns of Enterprise Application Architecture (Мартін Фаулер)** — не лякайтеся слова «Enterprise» у назві; автор не знає, чому вона так називається, але книга чудова. На відміну від тактичних патернів GoF, це патерни *стратегічні*.
+- Ви, найімовірніше, ніколи не реалізовуватимете патерни Фаулера напряму, але *зустрінете кожен із них* у своєму застосунку — всередині ORM, фреймворку, структури бекенда. Книга вчить, як насправді працюють інструменти, якими ви вже користуєтеся.
+- Три книги зчеплені між собою: Фаулер доповнює Clean Architecture (яка описує шари, але не те, як їх втілити) і додає конкретні патерни (value objects тощо) до ідей DDD.
 
-## Covered
+## Розділи
+- 00:00 — Чому три книги про [[software-design|проектування ПЗ]], а не «про програмування»
+- 00:21 — [[clean-architecture|Clean Architecture]] (Роберт Мартін): шари бекенда плюс SOLID
+- 01:03 — [[domain-driven-design|Domain-Driven Design]] (Ерік Еванс): чому проєкти провалюються, і жаль щодо bounded context
+- 02:10 — [[patterns-of-enterprise-application-architecture|Patterns of Enterprise Application Architecture]] (Фаулер): стратегічні патерни, які ви зустрінете в кожній ORM
+- 03:14 — Як три книги доповнюють одна одну; діліться власними списками
+
+## Теми
 [[software-design]], [[clean-architecture]], [[domain-driven-design]], [[patterns-of-enterprise-application-architecture]]

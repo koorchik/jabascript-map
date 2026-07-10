@@ -5,10 +5,10 @@ tags: [book, programming, functional-programming, perl]
 ---
 # Higher-Order Perl
 
-Mark Jason Dominus's book on functional programming techniques in Perl — closures, iterators, higher-order functions. Viktor's verdict is short and honest: a great book, but skip it unless you actually write Perl.
+Книга Марка Джейсона Домінуса про техніки функційного програмування в Perl — замикання, ітератори, функції вищого порядку. Вердикт Віктора короткий і чесний: книга чудова, але якщо ви не пишете на Perl — пропускайте.
 
-## Covered in
-- [[five-star-books]] — great, but only if you write Perl
+## Де розглядається
+- [[five-star-books]] — чудова, але тільки якщо ви пишете на Perl
 
-## Related
-[[deep-learning-of-fundamentals]] — the kind of language-internals depth the channel values; [[c-programming-language]] for a similarly formative under-the-hood read.
+## Повʼязане
+[[deep-learning-of-fundamentals|Глибоке вивчення основ]] — саме та глибина занурення у нутрощі мови, яку цінує канал; [[c-programming-language|The C Programming Language]] — схоже формативне читання «під капотом».

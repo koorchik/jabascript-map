@@ -4,13 +4,13 @@ tags: [browser, networking, security, tooling]
 ---
 # Firefox
 
-Web browser. It shows up on the channel in two roles. In the DNS basics episode he uses Firefox dev tools to display DNS-resolution timing metrics, disabling its DNS-over-HTTPS and the OS cache to demonstrate plain resolution ([[how-dns-works-basics]]). In the Bloom-filter episode Firefox is the hero of the story: its CRLite uses cascade Bloom filters to ship *all* ~4M revoked certificates in ~300 KB/day (now 30–50 KB deltas) plus a 4 MB snapshot every 45 days, fully deployed since 2025 — giving deterministic certificate-revocation checks with zero extra network requests, where Chrome ships only the top ~1% of revocations ([[bloom-filter-and-firefox]]).
+Веб-браузер. На каналі з'являється у двох ролях. У випуску про основи DNS Віктор використовує dev tools Firefox, щоб показати метрики часу DNS-резолвінгу, вимкнувши його DNS-over-HTTPS і кеш ОС, аби продемонструвати «чистий» резолвінг ([[how-dns-works-basics]]). У випуску про фільтр Блума Firefox — герой історії: його CRLite використовує каскадні фільтри Блума, щоб доставляти *всі* ~4 млн відкликаних сертифікатів у ~300 КБ/день (тепер дельти по 30–50 КБ) плюс снапшот на 4 МБ кожні 45 днів, повністю в продакшені з 2025 року — детерміновані перевірки відкликання сертифікатів без жодного додаткового мережевого запиту, тоді як Chrome доставляє лише топ ~1% відкликань ([[bloom-filter-and-firefox]]).
 
-## Covered in
-- [[how-dns-works-basics]] — dev-tools DNS timing, disabling DoH and OS cache
-- [[bloom-filter-and-firefox]] — CRLite cascade Bloom filters for full certificate-revocation coverage
+## Де розглядається
+- [[how-dns-works-basics]] — таймінги DNS у dev tools, вимкнення DoH і кешу ОС
+- [[bloom-filter-and-firefox]] — каскадні фільтри Блума CRLite для повного покриття відкликаних сертифікатів
 
-## Related
-[[dns]] — the resolution it visualizes
-[[bloom-filter]] — the structure behind CRLite
-[[https-tls]] — certificate revocation is a TLS trust problem
+## Повʼязане
+[[dns|DNS]] — резолвінг, який він візуалізує
+[[bloom-filter|фільтр Блума]] — структура, що стоїть за CRLite
+[[https-tls|HTTPS/TLS]] — відкликання сертифікатів — це проблема довіри в TLS

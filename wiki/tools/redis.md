@@ -4,10 +4,10 @@ tags: [databases, caching, in-memory, key-value]
 ---
 # Redis
 
-Benchmarked on the channel as the standard caching answer — "practically an in-memory database" — in the 10M-key Bloom-filter shootout: ~6 s per 100,000 lookups, roughly 3x faster than indexed [[mysql]]'s ~17 s. But the point of the video is that it still loses by ~100x to an 11 MB in-process [[bloom-filter]] (~55 ms per 100k), while carrying far more memory and infrastructure weight ([[bloom-filter-and-firefox]]). The takeaway isn't "Redis is slow" — it's that network-hop key-value stores are unnecessary when a probabilistic filter fits in process memory and no false negatives are acceptable losses.
+Забенчмаркований на каналі як стандартна відповідь для кешування — «практично in-memory база даних» — у змаганні з Bloom-фільтром на 10 млн ключів: ~6 с на 100 000 пошуків, приблизно втричі швидше за проіндексований [[mysql|MySQL]] із його ~17 с. Але суть відео в тому, що він усе одно програє ~100x внутрішньопроцесному [[bloom-filter|Bloom-фільтру]] на 11 МБ (~55 мс на 100 тис.), тягнучи при цьому значно більше памʼяті та інфраструктури ([[bloom-filter-and-firefox|Bloom-фільтр і Firefox]]). Висновок не «Redis повільний» — а те, що key-value сховища з мережевим хопом непотрібні, коли ймовірнісний фільтр вміщується в памʼять процесу, не дає хибнонегативних відповідей, а його похибки — прийнятна плата.
 
-## Covered in
-- [[bloom-filter-and-firefox]] — the caching baseline in the benchmark ladder: full scan → index → Redis/Memcached → Bloom filter
+## Де розглядається
+- [[bloom-filter-and-firefox]] — базовий рівень кешування в драбині бенчмарків: повний скан → індекс → Redis/Memcached → Bloom-фільтр
 
-## Related
+## Повʼязане
 [[bloom-filter]], [[memcached]], [[algorithmic-complexity]], [[database-indexes]]

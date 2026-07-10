@@ -5,10 +5,10 @@ tags: [book, software-design, architecture]
 ---
 # Clean Architecture
 
-Robert Martin's book on structuring applications into layers with dependencies pointing inward. Viktor's recommended *starter* design book: half of it is how to split a backend into layers and why, the other half is SOLID. Basic, he admits, but very useful — and he promised follow-up videos showing how to actually implement each layer in practice.
+Книжка Роберта Мартіна про структурування застосунків у шари із залежностями, спрямованими всередину. Рекомендована Віктором *стартова* книжка з дизайну: половина — про те, як розбити бекенд на шари і навіщо, друга половина — SOLID. Базова, визнає він, але дуже корисна — і він пообіцяв окремі відео про те, як реалізовувати кожен шар на практиці.
 
-## Covered in
-- [[3-books-on-software-design]] — the recommended starting point of his three design books
+## Де розглядається
+- [[3-books-on-software-design]] — рекомендована стартова точка серед його трьох книжок з дизайну
 
-## Related
-Complemented by [[patterns-of-enterprise-application-architecture]] (how the layers are realized) and [[domain-driven-design]]. Rest of the canon: [[implementing-domain-driven-design]], [[design-patterns-gof]], [[a-philosophy-of-software-design]], [[code-complete]], [[clean-code]]. Concepts: [[software-design]], [[abstractions]].
+## Повʼязане
+Доповнюється [[patterns-of-enterprise-application-architecture|Patterns of Enterprise Application Architecture]] (як ці шари реалізуються) та [[domain-driven-design|Domain-Driven Design]]. Решта канону: [[implementing-domain-driven-design|Implementing Domain-Driven Design]], [[design-patterns-gof|Design Patterns (GoF)]], [[a-philosophy-of-software-design|A Philosophy of Software Design]], [[code-complete|Code Complete]], [[clean-code|Clean Code]]. Концепції: [[software-design|дизайн ПЗ]], [[abstractions|абстракції]].

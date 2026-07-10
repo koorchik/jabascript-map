@@ -5,10 +5,10 @@ tags: [book, productivity]
 ---
 # Getting Things Done
 
-David Allen's classic personal-productivity system: capture everything, then work from trusted lists. Viktor read it back in university and still uses its context-specific lists idea daily. Recommended — with the honest caveat that it's time management, not programming.
+Класична система особистої продуктивності Девіда Аллена: зафіксуй усе, а далі працюй за списками, яким довіряєш. Віктор прочитав її ще в університеті й досі щодня користується ідеєю контекстних списків. Рекомендує — з чесним застереженням, що це тайм-менеджмент, а не програмування.
 
-## Covered in
-- [[five-star-books]] — read in university; the context-lists idea stuck with him for good
+## Де розглядається
+- [[five-star-books]] — прочитав в університеті; ідея контекстних списків прижилася назавжди
 
-## Related
-Productivity shelf: [[seven-habits-of-highly-effective-people]], [[atomic-habits]], [[essentialism]], [[effortless]], [[the-checklist-manifesto]].
+## Повʼязане
+Полиця з продуктивності: [[seven-habits-of-highly-effective-people|The 7 Habits of Highly Effective People]], [[atomic-habits|Atomic Habits]], [[essentialism|Essentialism]], [[effortless|Effortless]], [[the-checklist-manifesto|The Checklist Manifesto]].

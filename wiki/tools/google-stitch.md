@@ -4,10 +4,10 @@ tags: [ai, design, ui-generation, google]
 ---
 # Google Stitch
 
-Google's free AI design generator, used as the UI-design stage of Viktor's [[vibe-coding]] pipeline in [[vibe-coding-new-project]]. He prefers it over Figma's AI tooling — "more creative" — though it needs a VPN from Ukraine. His method matters more than the tool: generating the whole app at once fails, so he iterates screen by screen, generating variations of each screen and picking winners. The screen descriptions come from a [[gemini|Gemini]] brainstorm, and the chosen designs plus descriptions then go into the repo for [[claude-code|Claude Code]] to implement.
+Безкоштовний AI-генератор дизайну від Google, використаний як етап UI-дизайну в пайплайні [[vibe-coding|вайб-кодингу]] Віктора у [[vibe-coding-new-project]]. Він віддає йому перевагу над AI-інструментами Figma — «креативніший» — хоча з України потрібен VPN. Його метод важливіший за сам інструмент: генерувати весь застосунок одразу не виходить, тож він ітерує екран за екраном, генеруючи варіації кожного екрана і відбираючи переможців. Описи екранів народжуються з брейншторму в [[gemini|Gemini]], а обрані дизайни разом з описами далі йдуть у репозиторій, щоб [[claude-code|Claude Code]] їх реалізував.
 
-## Covered in
-- [[vibe-coding-new-project]] — screen-by-screen generation with variations, Figma-AI comparison, VPN caveat.
+## Де розглядається
+- [[vibe-coding-new-project]] — генерація екран за екраном з варіаціями, порівняння з AI у Figma, застереження про VPN.
 
-## Related
+## Повʼязане
 [[vibe-coding]], [[gemini]], [[claude-code]], [[declarative-ui]]

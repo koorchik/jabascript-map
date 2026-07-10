@@ -4,18 +4,18 @@ tags: [editor, tooling, remote-development]
 ---
 # VS Code
 
-VS Code is Microsoft's code editor, and the channel treats it less as a tool tip and more as an architecture case study. The dedicated deep-dive ([[vscode-in-the-browser]]) traces the whole lineage — the Monaco editor born in the browser in 2011, the Electron desktop app, the split into a separate extension process, and why full browser support only landed in 2020 (the core first had to shed its Node.js API dependencies) — then demos complete remote development against his Google Cloud server via Remote-SSH and vscode.dev tunnels: extensions, port forwarding and the debugger all running from a bare browser. In [[vibe-coding-part-2]] Monaco doubles as his favorite performance lesson: VS Code won and Atom lost because its authors deliberately rejected general-purpose web frameworks in favor of a specialized text-rendering engine.
+VS Code — редактор коду від Microsoft, і канал розглядає його не так як пораду про інструмент, а як кейс з архітектури. Присвячений йому глибокий розбір ([[vscode-in-the-browser|VS Code у браузері]]) простежує весь родовід — редактор Monaco, народжений у браузері 2011 року, десктопний застосунок на Electron, винесення розширень в окремий процес, і чому повна підтримка браузера зʼявилася лише 2020-го (ядро спершу мало позбутися залежностей від Node.js API) — а потім демонструє повноцінну віддалену розробку на його сервері в Google Cloud через Remote-SSH і тунелі vscode.dev: розширення, port forwarding і дебагер — усе працює з голого браузера. У [[vibe-coding-part-2|вайб-кодингу, частині 2]] Monaco виступає ще і як його улюблений урок про перформанс: VS Code переміг, а Atom програв, бо його автори свідомо відмовилися від універсальних веб-фреймворків на користь спеціалізованого рушія рендерингу тексту.
 
-Personally, though, he admits VS Code is his streaming tool more than his daily driver — normally he works from a Quake-style dropdown terminal (Yakuake/iTerm2) and dev containers with Claude installed via `postCreateCommand` ([[vibe-coding-new-project]]). He also notes that Google's internal code editor is now built on VS Code, evidence for his point that Google skills transfer because the toolchain converges on common technology ([[voice-5-why-i-left-google]]).
+Особисто ж він зізнається, що VS Code — це радше його інструмент для стрімів, ніж щоденний робочий: зазвичай він працює з випадного термінала в стилі Quake (Yakuake/iTerm2) і dev-контейнерів із Claude, встановленим через `postCreateCommand` ([[vibe-coding-new-project|вайб-кодинг нового проєкту]]). Він також зазначає, що внутрішній редактор коду Google тепер побудований на VS Code — аргумент на користь його тези, що навички з Google переносяться, бо тулчейн сходиться до спільних технологій ([[voice-5-why-i-left-google|войс №5: чому я пішов із Google]]).
 
-## Covered in
-- [[vscode-in-the-browser]] — the full deep dive: Monaco-to-Electron history, the extension process, and hands-on Remote-SSH and vscode.dev tunnel setups.
-- [[vibe-coding-part-2]] — the Monaco performance story: a specialized text-rendering engine over generic frameworks is why VS Code beat Atom.
-- [[vibe-coding-new-project]] — used on stream for convenience; his real setup is a dropdown terminal plus dev containers.
-- [[voice-5-why-i-left-google]] — Google's internal editor now builds on VS Code; internal toolchains converge on common tech.
+## Де розглядається
+- [[vscode-in-the-browser]] — повний глибокий розбір: історія від Monaco до Electron, процес розширень і практичні налаштування Remote-SSH та тунелів vscode.dev.
+- [[vibe-coding-part-2]] — історія про перформанс Monaco: спеціалізований рушій рендерингу тексту замість універсальних фреймворків — ось чому VS Code переміг Atom.
+- [[vibe-coding-new-project]] — використовується на стрімі для зручності; його справжній сетап — випадний термінал плюс dev-контейнери.
+- [[voice-5-why-i-left-google]] — внутрішній редактор Google тепер будується на VS Code; внутрішні тулчейни сходяться до спільних технологій.
 
-## Related
-[[remote-development]] — the concept the browser-VS-Code video is really about.
-[[language-server-protocol]] — the protocol ecosystem that grew out of VS Code's architecture.
-[[claude-code]] — installed into his dev containers alongside the editor.
-[[web-performance]] — the Monaco lesson in deliberate performance engineering.
+## Повʼязане
+[[remote-development]] — концепція, про яку насправді відео про VS Code у браузері.
+[[language-server-protocol]] — екосистема протоколів, що виросла з архітектури VS Code.
+[[claude-code]] — встановлений у його dev-контейнери поруч із редактором.
+[[web-performance]] — урок Monaco про свідому інженерію перформансу.

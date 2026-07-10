@@ -2,23 +2,23 @@
 type: concept
 tags: [ai, vibe-coding, workflow, llm, software-design]
 ---
-# Vibe-coding
+# Вайб-кодинг
 
-Vibe-coding, as Viktor practices it live on the channel, is not "close your eyes and accept whatever the model outputs" — it is a disciplined, standards-driven workflow where the human stays the architect and the AI does the typing. His full pipeline, demonstrated from an empty folder in the racing-telemetry livestream ([[vibe-coding-new-project]]): brainstorm the app idea with [[gemini|Gemini]] and write per-screen descriptions, generate the UI screens in [[google-stitch|Google Stitch]] (iterating screen by screen, picking winners from variations), paste the descriptions into the repo, and then drive [[claude-code|Claude Code]] in plan mode — reading and correcting *every* plan before letting it run. The central trick is encoding project standards in `CLAUDE.md` instead of repeating them in prompts: every time the AI does something wrong, the correction goes into `CLAUDE.md`, not just into the chat. He runs several Claude instances in parallel and reviews diffs after non-stop runs; with Opus 4.5 he found "ultrathink" no longer necessary, and skills only worth writing for genuinely reusable procedures.
+Вайб-кодинг у тому вигляді, як Віктор практикує його наживо на каналі, — це не «заплющ очі й приймай усе, що видасть модель», а дисциплінований, керований стандартами робочий процес, де людина залишається архітектором, а ШІ друкує. Його повний конвеєр, продемонстрований з порожньої папки на стримі про гоночну телеметрію ([[vibe-coding-new-project|стрим вайб-кодингу нового проєкту]]): забрейнштормити ідею застосунку з [[gemini|Gemini]] і написати описи кожного екрана, згенерувати UI-екрани в [[google-stitch|Google Stitch]] (ітеруючи екран за екраном і вибираючи переможців серед варіацій), покласти описи в репозиторій — і далі вести [[claude-code|Claude Code]] у плановому режимі, читаючи і виправляючи *кожен* план перед тим, як дати йому виконуватись. Центральний трюк — кодувати стандарти проєкту в `CLAUDE.md` замість повторювати їх у промптах: щоразу, коли ШІ робить щось не так, виправлення йде в `CLAUDE.md`, а не лише в чат. Він запускає кілька інстансів Claude паралельно й ревʼюїть диффи після безперервних прогонів; з Opus 4.5 він виявив, що "ultrathink" більше не потрібен, а skills варто писати лише для справді повторюваних процедур.
 
-The thesis he keeps returning to in [[vibe-coding-part-2]]: **the better structured the project, the better AI works**. Iterate corrections into `CLAUDE.md` for a few weeks and every new feature "just lands". The flip side is that setting up the infrastructure — the decision-heavy part — is exactly what AI (like juniors) can't do, which is why he plans an opinionated boilerplate (a refresh of his chista/chista-express) that ships *with* a `CLAUDE.md` and skills, so "the AI already knows how to work with it" from the first prompt. Vibe-coding in his framing is therefore continuous with the channel's older themes: [[software-design]], [[abstractions]], [[code-quality]] and standards matter *more* in the AI era, not less, because they are the leverage that turns a fast-but-sloppy junior into a productive team.
+Теза, до якої він постійно повертається у [[vibe-coding-part-2|другій частині про вайб-кодинг]]: **що краще структурований проєкт, то краще працює ШІ**. Кілька тижнів ітеративно зносиш виправлення в `CLAUDE.md` — і кожна нова фіча «просто лягає». Зворотний бік: налаштування інфраструктури — та сама частина, де багато рішень, — це якраз те, чого ШІ (як і джуни) не вміє, і тому він планує opinionated-бойлерплейт (оновлення своїх chista/chista-express), який постачатиметься *разом* із `CLAUDE.md` і skills, щоб «ШІ вже знав, як з ним працювати» з першого промпта. Вайб-кодинг у його подачі — пряме продовження давніших тем каналу: [[software-design|проєктування]], [[abstractions|абстракції]], [[code-quality|якість коду]] і стандарти в епоху ШІ важать *більше*, а не менше, бо саме вони — важіль, який перетворює швидкого, але неохайного джуна на продуктивну команду.
 
-He also shows vibe-coding is past the toy stage: Blackmagic ships a REST API but no app for his screen-less Micro Studio Camera, so he vibe-coded a full-featured [[flutter|Flutter]] controller app in two evenings ([[vibe-coded-mobile-app]]). His takeaway is economic — vibe-coding makes "write your own vendor app" a sane weekend project rather than a months-long commitment.
+Він також показує, що вайб-кодинг уже переріс стадію іграшки: Blackmagic постачає REST API, але не застосунок для його безекранної Micro Studio Camera, тож він за два вечори навайбкодив повнофункціональний застосунок-пульт на [[flutter|Flutter]] ([[vibe-coded-mobile-app|навайбкоджений мобільний застосунок]]). Його висновок економічний: вайб-кодинг перетворює «напиши собі власний вендорський застосунок» з місяців роботи на осудний проєкт вихідного дня.
 
-## Covered in
-- [[vibe-coding-new-project]] — the full workflow live from an empty folder: Gemini brainstorm → Stitch screens → CLAUDE.md-encoded standards → plan mode → parallel Claude instances → diff review.
-- [[vibe-coding-part-2]] — the "structure feeds the AI" thesis, iterating corrections into CLAUDE.md, why infrastructure setup stays human, and the plan for an AI-ready opinionated boilerplate.
-- [[vibe-coded-mobile-app]] — concrete non-toy proof: a complete Blackmagic camera controller app vibe-coded in two evenings against the camera's REST API.
+## Де розглядається
+- [[vibe-coding-new-project]] — повний робочий процес наживо з порожньої папки: брейншторм у Gemini → екрани в Stitch → стандарти в CLAUDE.md → плановий режим → паралельні інстанси Claude → ревʼю диффів.
+- [[vibe-coding-part-2]] — теза «структура годує ШІ», ітеративне занесення виправлень у CLAUDE.md, чому налаштування інфраструктури лишається за людиною, і план opinionated-бойлерплейта, готового до ШІ.
+- [[vibe-coded-mobile-app]] — конкретний неіграшковий доказ: повноцінний застосунок-пульт для камери Blackmagic, навайбкоджений за два вечори поверх REST API камери.
 
-## Related
-[[ai-coding-agents]] — the tooling and agent mechanics underneath the workflow.
-[[ai-and-jobs]] — the AI-as-junior scaling analogy that justifies investing in standards.
-[[software-design]] — clean architecture taught live during the vibe-coding streams.
-[[code-quality]] — standards in CLAUDE.md are the AI-era version of style guides.
-[[automated-testing]] — you design the tests, the LLM writes them.
-[[code-review]] — reviewing AI diffs replaces reviewing junior PRs.
+## Повʼязане
+[[ai-coding-agents]] — інструменти й механіка агентів під цим робочим процесом.
+[[ai-and-jobs]] — аналогія «ШІ як джун, що масштабується», яка виправдовує інвестиції в стандарти.
+[[software-design]] — чиста архітектура, якої він навчає наживо під час вайб-кодинг-стримів.
+[[code-quality]] — стандарти в CLAUDE.md — це стайлгайди епохи ШІ.
+[[automated-testing]] — тести проєктуєте ви, а пише їх LLM.
+[[code-review]] — ревʼю диффів від ШІ приходить на зміну ревʼю PR від джунів.

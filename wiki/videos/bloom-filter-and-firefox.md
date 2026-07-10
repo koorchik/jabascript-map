@@ -2,24 +2,42 @@
 type: video
 title_uk: "Геніальна структура даних й як її покращив Firefox"
 youtube_id: WEtSsPF58Bk
+level: intermediate
 tags: [data-structures, bloom-filter, hashing, benchmarks, tls, firefox]
 date_ingested: 2026-07-09
 ---
-# A Genius Data Structure — and How Firefox Improved It
+# Геніальна структура даних й як її покращив Firefox
 
-> Original: "Геніальна структура даних й як її покращив Firefox" — https://youtu.be/WEtSsPF58Bk
+> Оригінал: "Геніальна структура даних й як її покращив Firefox" — https://youtu.be/WEtSsPF58Bk
 
-A deep dive into the [[bloom-filter]], framed by a real war story: how browsers check revoked HTTPS certificates. The topic came out of a meetup with channel sponsors in Kyiv. Millions of certificates are issued daily (many via Let's Encrypt); if a private key is stolen the cert gets revoked, but the old OCSP online check added an extra request per site, so browsers dropped it — Chrome ships a ~600 KB daily list covering only the top ~1% of sites, leaving everyone else exposed. [[firefox]] instead ships **all ~4 million revoked certificates** in ~300 KB/day plus a 4 MB snapshot every 45 days, using **CRLite — a cascade of Bloom filters** that turns a probabilistic structure into a deterministic one (100% guaranteed answers, in production for all users since 2025, and not available as an npm library). The author benchmarks the alternatives on 10M keys (JS Map in memory, MySQL with/without index, MySQL Handler Socket, Redis, Memcached), then hand-implements a Bloom filter and the cascade in JavaScript, with all code in a public GitHub repo.
+Глибоке занурення у [[bloom-filter|фільтр Блума]], обрамлене реальною історією: як браузери перевіряють відкликані HTTPS-сертифікати. Тема виникла на мітапі зі спонсорами каналу в Києві. Щодня видаються мільйони сертифікатів (значна частина через Let's Encrypt); якщо приватний ключ украли, сертифікат відкликають, але стара онлайн-перевірка OCSP додавала зайвий запит на кожен сайт, тож браузери від неї відмовилися — Chrome щодня розсилає список на ~600 КБ, що покриває лише топ-~1% сайтів, залишаючи решту без захисту. [[firefox|Firefox]] натомість доставляє **всі ~4 мільйони відкликаних сертифікатів** у ~300 КБ/день плюс 4 МБ снапшот кожні 45 днів, використовуючи **CRLite — каскад фільтрів Блума**, який перетворює ймовірнісну структуру на детерміністичну (100% гарантовані відповіді, у продакшені для всіх користувачів з 2025 року, і як бібліотеки в npm цього немає). Автор бенчмаркає альтернативи на 10 млн ключів (JS Map у пам'яті, MySQL з індексом і без, MySQL Handler Socket, Redis, Memcached), а потім власноруч реалізує фільтр Блума і каскад на JavaScript — увесь код у публічному репозиторії на GitHub.
 
-## Key takeaways
-- The benchmark ladder for "is this key in the set?" over 10M keys: an in-memory JS `Map` is blazing fast but the 219 MB data file balloons to ~800 MB of process memory; MySQL without an index takes ~18 s for just 10 misses (full scan); with an index ~17 s per 100,000 queries; Redis ~6 s per 100,000; the Bloom filter does 100,000 lookups in ~55 ms **in 11 MB of RAM** — see [[database-indexes]] for the index side of this.
-- A Bloom filter never gives false negatives — "if it says the key is not there, it is 100% not there" — but has a tunable false-positive rate. Its size depends only on element count and target FPR, never on key length; hash long URLs and store the fingerprint ([[hashing]]).
-- The accuracy/size trade is asymmetric and beautiful: going from 1% to 0.01% FPR (100× more accurate) only grew the filter from 11 MB to 22 MB. But undersizing hurts the same way: allocate for 5M elements and insert 10M, and FPR jumps from 1% to ~15%.
-- His analogy: a club bouncer who doesn't remember banned people's faces, only checkboxes of their clothing (yellow sneakers, red hat…). "Red hat never seen" → definitely allowed in; but someone wearing a banned person's hat plus another's shoes gets falsely flagged — that's a hash collision, and adding more attributes (size, brand = more bits/hash functions) shrinks the false-positive rate.
-- Implementation tricks: a bit array packed into a `Uint32Array`; the fast **xxHash** — compute one 64-bit hash, split it into two 32-bit halves h1 and h2, then derive any number of hash functions as `h1 + i*h2` (a mathematically proven double-hashing scheme), so k hashes cost roughly one hash computation. Naive "sum the char codes" hashes fail because they can never reach the far end of a 10M-bit array — you need a uniform distribution.
-- The Firefox cascade idea: put all 1M revoked ("bad") certs in filter #1; run all 9M good certs through it, collect the ~1% false positives into filter #2; its false positives go into filter #3… ~13 levels until only a handful of exceptions remain. Result: a deterministic binary **classifier** (`classify()` instead of `has()`), FPR exactly 0 in his benchmark, and 1M revoked-of-10M keys fit in ~1 MB. It's "like machine learning without generalization". Works whenever the full key space is enumerable.
-- Practical uses he cites: checking username/email availability without hitting the database; Google Safe Browsing-style malicious-URL lists (only ~1 in 10,000 visits needs a server round-trip at 0.01% FPR); Cassandra internals; real-time bidding systems counting ad impressions at hundreds of thousands of RPS; a premium/free user classifier (10M users, 1M premium → ~1 MB structure, refreshed with small deltas like Firefox's daily 30–50 KB updates); and a fresh post from Ukrainian retailer Silpo whose 25M-client CRM uses a Bloom filter for 0.1 ms lookups instead of 50 ms — "a trifle? at 1000 RPS it decides everything".
-- Teasers for the curious: Counting Bloom Filter, Count-Min Sketch, HyperLogLog (approximate set cardinality); hash-table collision attacks (an old Python vulnerability) deserve their own video; he once gave a talk on topological sort saving a JS spreadsheet, and learned many of these algorithms preparing for his Google interview.
+## Головне
+- Драбина бенчмарків для «чи є ключ у множині?» на 10 млн ключів: JS `Map` у пам'яті блискавично швидкий, але файл даних на 219 МБ роздувається до ~800 МБ пам'яті процесу; MySQL без індексу — ~18 с лише на 10 промахів (повне сканування); з індексом ~17 с на 100 000 запитів; Redis ~6 с на 100 000; фільтр Блума робить 100 000 перевірок за ~55 мс **в 11 МБ RAM** — про індексний бік цієї історії див. [[database-indexes|індекси в базах даних]].
+- Фільтр Блума ніколи не дає хибнонегативних відповідей — «якщо він каже, що ключа немає, то його немає на 100%», — але має настроюваний рівень хибнопозитивних. Його розмір залежить лише від кількості елементів і цільового FPR, і ніколи — від довжини ключа; довгі URL хешуй і зберігай відбиток ([[hashing|хешування]]).
+- Розмін «точність/розмір» асиметричний і прекрасний: перехід від 1% до 0.01% FPR (у 100 разів точніше) збільшив фільтр лише з 11 МБ до 22 МБ. Але заниження розміру б'є так само: виділи під 5 млн елементів, а вклади 10 млн — і FPR стрибає з 1% до ~15%.
+- Його аналогія: викидайло в клубі, який не пам'ятає облич забанених — лише чекбокси їхнього одягу (жовті кросівки, червона шапка…). «Червоної шапки не бачив» → точно пускаємо; але хтось у шапці одного забаненого і взутті іншого отримує хибне спрацювання — це колізія хешів, і додавання атрибутів (розмір, бренд = більше бітів/хеш-функцій) зменшує частку хибнопозитивних.
+- Трюки реалізації: бітовий масив, запакований у `Uint32Array`; швидкий **xxHash** — порахуй один 64-бітний хеш, розріж його на дві 32-бітні половини h1 і h2, і виводь будь-яку кількість хеш-функцій як `h1 + i*h2` (математично доведена схема подвійного хешування), тож k хешів коштують приблизно як один. Наївні хеші типу «сума кодів символів» провалюються, бо ніколи не дотягнуться до дальнього краю масиву на 10 млн бітів — потрібен рівномірний розподіл.
+- Ідея каскаду у Firefox: поклади весь 1 млн відкликаних («поганих») сертифікатів у фільтр №1; прожени крізь нього всі 9 млн хороших, збери ~1% хибнопозитивних у фільтр №2; його хибнопозитивні йдуть у фільтр №3… ~13 рівнів, поки не лишиться жменька винятків. Результат: детерміністичний бінарний **класифікатор** (`classify()` замість `has()`), FPR рівно 0 у його бенчмарку, і 1 млн відкликаних із 10 млн ключів вміщаються в ~1 МБ. Це «як машинне навчання, тільки без генералізації». Працює всюди, де повний простір ключів можна перелічити.
+- Практичні застосування, які він наводить: перевірка доступності юзернейма/email без походу в базу; списки шкідливих URL у стилі Google Safe Browsing (лише ~1 із 10 000 відвідувань потребує звернення до сервера при 0.01% FPR); нутрощі Cassandra; системи real-time bidding, що рахують покази реклами на сотнях тисяч RPS; класифікатор преміум/безкоштовних користувачів (10 млн користувачів, 1 млн преміум → структура на ~1 МБ, оновлювана маленькими дельтами, як щоденні 30–50 КБ у Firefox); і свіжий пост українського ритейлера «Сільпо», чия CRM на 25 млн клієнтів використовує фільтр Блума для перевірок за 0.1 мс замість 50 мс — «дрібниця? на 1000 RPS вона вирішує все».
+- Тизери для допитливих: Counting Bloom Filter, Count-Min Sketch, HyperLogLog (приблизна потужність множини); атаки колізіями на хеш-таблиці (стара вразливість Python) заслуговують окремого відео; колись він читав доповідь про те, як топологічне сортування врятувало JS-таблицю, а багато з цих алгоритмів вивчив, готуючись до співбесіди в Google.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: геніальна структура даних і варіант, якого не знайдеш в npm
+- 00:22 — Передісторія: вкрадені ключі, відкликані сертифікати і смерть OCSP
+- 01:46 — Щоденні 600 КБ Chrome для топ-1% проти Firefox з усіма 4 млн відкликань
+- 03:51 — Не лише сертифікати: перевірка юзернеймів, real-time bidding, 0.1 мс у «Сільпо»
+- 05:35 — План і тур репозиторієм: 10 млн згенерованих ключів, інфраструктура на docker-compose
+- 08:48 — Бенчмарк: JS Map у пам'яті — швидко, але 219 МБ стають 800 МБ RAM
+- 10:13 — MySQL: 18 с повного сканування, 17 с на 100 тис. з індексом, прямий доступ Handler Socket
+- 15:33 — Redis і Memcached: ~6 с на 100 000 перевірок
+- 16:37 — Фільтр Блума: 100 000 перевірок за 55 мс в 11 МБ — і жодного хибнонегативного
+- 20:31 — Налаштування розміну: у 100 разів точніше за подвійний розмір, і пастка заниження
+- 23:44 — Теорія на дошці: колізії хешів, бітові масиви й аналогія з викидайлом
+- 32:32 — Реалізація: формула розміру, бітовий буфер Uint32Array, подвійне хешування xxHash
+- 40:56 — CRLite: як Firefox пакує кожен відкликаний сертифікат у каскад
+- 43:44 — Всередині каскаду: фільтри винятків стають детерміністичним класифікатором
+- 49:23 — Фінал: Counting Bloom Filter, Count-Min Sketch, HyperLogLog
+
+## Теми
 [[bloom-filter]], [[data-structures]], [[hashing]], [[https-tls]], [[database-indexes]], [[algorithmic-complexity]], [[firefox]], [[mysql]], [[redis]], [[memcached]]

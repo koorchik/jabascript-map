@@ -4,12 +4,12 @@ tags: [virtualization, hypervisor, tooling]
 ---
 # VirtualBox
 
-Desktop hypervisor. On the channel it's the host for the VM-isolation build: he uses it to run both the guest VM and the pfSense router VM, and demonstrates its bridged vs NAT vs internal-network adapter modes as the actual mechanism for isolation — routing the guest through pfSense on an internal network so it can't roam the home LAN ([[vm-network-isolation]]).
+Десктопний гіпервізор. На каналі це хост для збірки з ізоляцією VM: у ньому він запускає і гостьову віртуалку, і роутер-VM з pfSense, а режими мережевих адаптерів bridged / NAT / internal network демонструє як сам механізм ізоляції — гостьова система маршрутизується через pfSense у внутрішній мережі й не може гуляти домашньою LAN ([[vm-network-isolation|мережева ізоляція VM]]).
 
-## Covered in
-- [[vm-network-isolation]] — host hypervisor; bridged/NAT/internal-network adapter modes as the isolation mechanism
+## Де розглядається
+- [[vm-network-isolation]] — хостовий гіпервізор; режими адаптерів bridged/NAT/internal network як механізм ізоляції
 
-## Related
-[[nat-and-networking]] — the adapter modes map directly onto networking concepts
-[[pfsense]] — the router VM it hosts
-[[sandboxing-and-isolation]] — the isolation goal
+## Повʼязане
+[[nat-and-networking]] — режими адаптерів напряму лягають на мережеві концепції
+[[pfsense]] — роутер-VM, яку він хостить
+[[sandboxing-and-isolation]] — мета ізоляції

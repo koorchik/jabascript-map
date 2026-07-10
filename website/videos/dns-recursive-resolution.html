@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Як працює Інтернет: рекурсивний пошук у DNS — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body style="--h:190">
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html" class="active">Треки</a><a href="../concepts.html">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="video-page">
+  <p class="eyebrow mono"><a href="../tracks/networking-and-internet.html">Мережі та інтернет</a> / крок 03</p>
+  <div class="video-head">
+    <h1>Як працює Інтернет: рекурсивний пошук у DNS</h1>
+    <div class="video-meta mono"><span class="badge badge-intermediate">середній</span> <span>13:56</span>
+      <a href="https://youtu.be/IgF7VwIKqX8" target="_blank" rel="noopener">дивитися на YouTube ↗</a>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="dns-recursive-resolution"> переглянуто</label>
+    </div>
+  </div>
+  <div class="player-grid">
+    <div class="player-frame">
+      <iframe id="player" data-embed="https://www.youtube-nocookie.com/embed/IgF7VwIKqX8"
+        src="https://www.youtube-nocookie.com/embed/IgF7VwIKqX8?rel=0"
+        title="Як працює Інтернет: рекурсивний пошук у DNS" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="chapter-pane">
+      <h2 class="pane-title mono">Розділи</h2>
+      <ol class="chapters"><li>
+  <button type="button" class="chapter" data-t="0">
+    <span class="tc mono">00:00</span>
+    <span class="ch-label">Чи кожен <a href="../concepts/dns.html">DNS</a>-сервер тримає кожен сайт? Ні — рекурсивний пошук</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=0" target="_blank" rel="noopener" aria-label="Відкрити 00:00 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="21">
+    <span class="tc mono">00:21</span>
+    <span class="ch-label">Наскрізний приклад: реєструємо itquiz.com і додаємо A-запис</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=21" target="_blank" rel="noopener" aria-label="Відкрити 00:21 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="83">
+    <span class="tc mono">01:23</span>
+    <span class="ch-label">Резолвер, з яким ви говорите, не той, що зберігає ваш запис</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=83" target="_blank" rel="noopener" aria-label="Відкрити 01:23 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="166">
+    <span class="tc mono">02:46</span>
+    <span class="ch-label">Знаходимо nameserver домену: NS-запис</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=166" target="_blank" rel="noopener" aria-label="Відкрити 02:46 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="252">
+    <span class="tc mono">04:12</span>
+    <span class="ch-label">Немає єдиного сервера: зони TLD і кореневі сервери</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=252" target="_blank" rel="noopener" aria-label="Відкрити 04:12 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="316">
+    <span class="tc mono">05:16</span>
+    <span class="ch-label">Root hints: звідки резолвер стартує пошук</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=316" target="_blank" rel="noopener" aria-label="Відкрити 05:16 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="338">
+    <span class="tc mono">05:38</span>
+    <span class="ch-label">Повний покроковий обхід: root, TLD, авторитетний</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=338" target="_blank" rel="noopener" aria-label="Відкрити 05:38 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="425">
+    <span class="tc mono">07:05</span>
+    <span class="ch-label">Демо в терміналі: dig з рекурсією і без неї на 8.8.8.8</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=425" target="_blank" rel="noopener" aria-label="Відкрити 07:05 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="468">
+    <span class="tc mono">07:48</span>
+    <span class="ch-label">Питаємо кореневі сервери вручну про .com</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=468" target="_blank" rel="noopener" aria-label="Відкрити 07:48 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="531">
+    <span class="tc mono">08:51</span>
+    <span class="ch-label">Питаємо сервер .com про nameserver’и itquiz.com</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=531" target="_blank" rel="noopener" aria-label="Відкрити 08:51 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="594">
+    <span class="tc mono">09:54</span>
+    <span class="ch-label">Фінальний запит до Cloudflare за A-записом і dig +trace</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=594" target="_blank" rel="noopener" aria-label="Відкрити 09:54 на YouTube">↗</a>
+</li><li>
+  <button type="button" class="chapter" data-t="729">
+    <span class="tc mono">12:09</span>
+    <span class="ch-label">Кешування і TTL: затримки поширення при зміні IP</span>
+  </button>
+  <a class="yt-jump mono" href="https://youtu.be/IgF7VwIKqX8?t=729" target="_blank" rel="noopener" aria-label="Відкрити 12:09 на YouTube">↗</a>
+</li></ol>
+    </div>
+  </div>
+  <section class="video-about">
+    <h2>Про що це відео</h2>
+    <p>Другий епізод про DNS відповідає на питання, яке лишилося невирішеним після першого: чи кожен DNS-сервер у світі тримає записи про кожен сайт? Ні. Автор проходить — спершу на дошці, потім наживо в терміналі — як працює <strong>рекурсивна резолюція</strong>. Він бере конкретний наскрізний приклад: ви купуєте <code>itquiz.com</code> у реєстратора, орендуєте сервер у хмарного провайдера (DigitalOcean/Google Cloud/Amazon — «неважливо») і додаєте <code>A</code>-запис в адмінці реєстратора, щоб відвідувачі потрапляли на вашу машину. Головна загадка: резолвер вашого провайдера ніколи не чув про <code>itquiz.com</code> — як він знаходить правильний авторитетний сервер?</p>
+  </section>
+  <section class="video-takeaways">
+    <h2>Головне</h2>
+    <ul><li>Резолвер, з яким спілкується ваш браузер (DNS провайдера, кешувальний резолвер на домашньому роутері чи <code>8.8.8.8</code>), майже ніколи не є тим сервером, де ви додали запис. Він мусить <em>знайти</em> відповідь.</li><li>Ієрархію проходять зверху вниз: <strong>кореневі сервери (root servers)</strong> (зона <code>.</code>) знають nameserver’и для зон TLD (<code>.com</code>, <code>.org</code>, <code>.edu</code>…); <strong>сервери TLD</strong> (<code>.com</code>) повертають <code>NS</code>-записи для <code>itquiz.com</code>; ті вказують на <strong>авторитетний DNS-сервер</strong> (у його випадку Cloudflare), який власне зберігає <code>A</code>-запис. Резолюція крок за кроком повертає <code>NS</code>-записи, а вкінці — <code>A</code>-запис.</li><li>Резолвер стартує з <strong>root hints</strong> — IP-адрес ~13 кореневих серверів, зашитих у його конфіг, тож він завжди знає, звідки почати.</li><li>Він доводить кожен крок вручну через <code>dig +norecurse</code>: нерекурсивний запит до <code>8.8.8.8</code> не повертає нічого (Google його не закешував); <code>dig . NS</code> дає 13 кореневих серверів; беремо IP кореневого, питаємо його про NS-сервери <code>.com</code> (відповідь включає IP в <strong>additional section</strong>, щоб зекономити round-trip), питаємо сервер <code>.com</code> про NS <code>itquiz.com</code> (отримуємо два nameserver’и Cloudflare + їхні IPv4/IPv6), а тоді вже питаємо Cloudflare про <code>A</code>-запис. Робити це вручну — це рівно те, що <code>8.8.8.8</code> робить під капотом автоматично.</li><li><code>dig +trace</code> автоматизує весь рекурсивний обхід із вашої локальної машини і друкує кожен хоп (root → <code>.com</code> TLD → авторитетний), тож ви можете спостерігати за процесом.</li><li><strong>Кешування + TTL:</strong> оскільки кожен пошук — це багато інтернет-round-trip’ів, сервери кешують. Кожен запис несе <strong>TTL у секундах</strong> — <code>itquiz.com</code> показав 300с (5 хв), але 24 год теж поширено. Ви задаєте його в адмінці реєстратора. Якщо TTL 24 год і ви змінюєте IP, зміна поширюється не одразу: різні резолвери закешували в різний час, тож одні побачать її за хвилини, інші — аж за повний TTL. Часті зміни IP → малий TTL; стабільні IP → великий TTL.</li></ul>
+  </section>
+  <section class="video-covered">
+    <h2>Теми відео</h2>
+    <div class="chip-row"><a class="chip" href="../concepts/dns.html">DNS (Domain Name System)</a><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a><a class="chip" href="../concepts/latency-and-speed-of-light.html">Затримка і швидкість світла</a><a class="chip" href="../concepts/deep-learning-of-fundamentals.html">Глибоке вивчення фундаментальних речей</a></div>
+  </section>
+  <section class="video-paths">
+    <h2>Частина цих треків</h2>
+    <div class="path-slot" style="--h:190">
+  <div class="path-name mono"><a href="../tracks/networking-and-internet.html">Мережі та інтернет</a> · крок 03/08</div>
+  <div class="pn-row"><a class="pn prev" href="how-dns-works-basics.html">← Як працює Інтернет: основи DNS</a><a class="pn next" href="dhcp-cafe-wifi.html">Що не так з Інтернетом в кафе? Розбираємо DHCP →</a></div>
+</div>
+  </section>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

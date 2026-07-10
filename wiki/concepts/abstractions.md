@@ -2,27 +2,27 @@
 type: concept
 tags: [engineering-craft, software-design, abstractions]
 ---
-# Abstractions
+# Абстракції
 
-Designing abstractions is the third of the three skills that, per the channel's first video, turn a good coder into a great programmer — with coupling and cohesion as its two core aspects ([[3-things-that-make-a-programmer-better]]); quality code, in turn, is defined as abstractions that keep working as you extend them, code you never have to throw away ([[3-things-that-ruin-a-programmer]]). His practical test for a boundary: business logic must not know the web framework — if the same service classes could power a CLI or a Telegram bot (he shows his 7-year-old Perl 6 golf bot built on exactly that pattern), the abstraction is right ([[vibe-coding-new-project]]). He considers design skill essentially synonymous with skill at abstractions — it's what determines your level at Google, and why he calls Go "absolutely not okay" for business-logic-heavy systems like accounting: the language lacks abstraction constructs, fine for microservices, proxies and CLI tools, while he reaches for TypeScript/C# for complex apps ([[qa-and-plans-for-2024]], [[qa-2-answering-questions]]).
+Проєктування абстракцій — третя з трьох навичок, які, за першим відео каналу, перетворюють хорошого кодера на видатного програміста, з двома ключовими аспектами: звʼязаністю (coupling) та звʼязністю (cohesion) ([[3-things-that-make-a-programmer-better|3 речі, які роблять програміста кращим]]); якісний код, своєю чергою, визначається як абстракції, що продовжують працювати, коли ви їх розширюєте, — код, який ніколи не доводиться викидати ([[3-things-that-ruin-a-programmer|3 речі, які псують програміста]]). Його практичний тест для межі: бізнес-логіка не повинна знати про веб-фреймворк — якщо ті самі сервісні класи могли б працювати під CLI чи Telegram-ботом (він показує свого семирічного гольф-бота на Perl 6, збудованого саме за цим патерном), абстракція правильна ([[vibe-coding-new-project|вайб-кодинг нового проєкту]]). Навичку проєктування він вважає по суті синонімом навички роботи з абстракціями — саме вона визначає твій рівень у Google, і саме тому він називає Go «абсолютно не окей» для систем із важкою бізнес-логікою на кшталт бухгалтерії: мові бракує конструкцій для абстракцій, вона годиться для мікросервісів, проксі та CLI-інструментів, тоді як для складних застосунків він бере TypeScript/C# ([[qa-and-plans-for-2024|Q&A і плани на 2024]], [[qa-2-answering-questions|Q&A №2]]).
 
-His most original observation — he made a DOU Day slide of it — is that less-experienced developers *fear creating new abstractions*: they reuse or copy existing structures and almost never extract new ones. Not fear of new files (devs create files constantly), but the extra thinking a new abstraction demands, plus not yet seeing the consequences ([[voice-3-scary-abstractions]]). The war stories: `assertDate` bolted onto WebbyLab's TestFactory because the factory was "already everywhere"; base service classes accumulating date/file/session utils into a God Object; his ~100-line widget PoC grown into one 5000-line file ("that's how YOU showed us"); a React team uncomfortable adding a controller concept because nobody there had done it — while at Google his UI controllers over low-level pieces "wonderfully" simplified the code. The inverse failure exists too: AI over-engineers, inventing brand-manager class hierarchies with `registerNewBrand()` where a JSON file of car brands would do — he constantly commands "delete this abstraction" ([[vibe-coding-part-2]]). And the constructive direction: project-specific declarative builders (grid, form, PageBuilder) as deliberate extra layers that massively cheapen UI work ([[voice-2-faster-ui-development]], see [[declarative-ui]]).
+Його найоригінальніше спостереження — він виніс його на слайд DOU Day — у тому, що менш досвідчені розробники *бояться створювати нові абстракції*: вони перевикористовують або копіюють наявні структури і майже ніколи не виокремлюють нові. Це не страх нових файлів (файли розробники створюють постійно), а додаткове мислення, якого вимагає нова абстракція, плюс ще невміння бачити наслідки ([[voice-3-scary-abstractions|страшні абстракції]]). Бойові історії: `assertDate`, приліплений до TestFactory у WebbyLab, бо фабрика «вже всюди»; базові сервісні класи, що обростають утилітами для дат/файлів/сесій до стану God Object; його PoC-віджет на ~100 рядків, що виріс в один файл на 5000 рядків («так ВИ ж нам показали»); React-команда, якій було некомфортно додати поняття контролера, бо ніхто там такого не робив, — тоді як у Google його UI-контролери над низькорівневими шматками «чудово» спростили код. Існує і зворотний провал: ШІ перемудровує, вигадуючи ієрархії класів brand-manager із `registerNewBrand()` там, де вистачило б JSON-файлу з марками авто, — він постійно командує «видали цю абстракцію» ([[vibe-coding-part-2|вайб-кодинг, частина 2]]). І конструктивний напрямок: специфічні для проєкту декларативні білдери (grid, form, PageBuilder) як свідомі додаткові шари, що кардинально здешевлюють роботу над UI ([[voice-2-faster-ui-development|швидша розробка UI]], див. [[declarative-ui|декларативний UI]]).
 
-## Covered in
-- [[voice-3-scary-abstractions]] — the core video: why devs stuff code into existing structures instead of extracting new abstractions, four war stories
-- [[3-things-that-make-a-programmer-better]] — designing abstractions as one of the three great-programmer skills; coupling and cohesion
-- [[3-things-that-ruin-a-programmer]] — quality = abstractions that survive extension
-- [[vibe-coding-new-project]] — the swap test: services that could power a CLI/Telegram bot; layering as the boundary
-- [[vibe-coding-part-2]] — the opposite failure: AI's needless abstraction hierarchies, "delete this abstraction"
-- [[microservices-main-problem]] — wrong abstractions are cheap to fix in a monolith, brutal across services
-- [[voice-2-faster-ui-development]] — builders as productive extra abstraction layers, with a drop-down-a-layer escape hatch
-- [[qa-2-answering-questions]] — Go's missing abstraction tools; extending architecture patterns (own controller concept) when they stop fitting
-- [[qa-and-plans-for-2024]] — design skill = skill with abstractions; Go verdict for business-logic-heavy systems
+## Де розглядається
+- [[voice-3-scary-abstractions]] — головне відео: чому розробники запихають код у наявні структури замість виокремлювати нові абстракції; чотири бойові історії
+- [[3-things-that-make-a-programmer-better]] — проєктування абстракцій як одна з трьох навичок видатного програміста; coupling і cohesion
+- [[3-things-that-ruin-a-programmer]] — якість = абстракції, що переживають розширення
+- [[vibe-coding-new-project]] — тест на заміну: сервіси, які могли б працювати під CLI/Telegram-ботом; шари як межа
+- [[vibe-coding-part-2]] — протилежний провал: непотрібні ієрархії абстракцій від ШІ, «видали цю абстракцію»
+- [[microservices-main-problem]] — неправильні абстракції дешево виправити в моноліті та боляче — між сервісами
+- [[voice-2-faster-ui-development]] — білдери як продуктивні додаткові шари абстракції з люком, щоб спуститися на шар нижче
+- [[qa-2-answering-questions]] — відсутні інструменти абстракції в Go; розширення архітектурних патернів (власне поняття контролера), коли вони перестають пасувати
+- [[qa-and-plans-for-2024]] — навичка проєктування = навичка роботи з абстракціями; вердикт щодо Go для систем із важкою бізнес-логікою
 
-## Related
-[[software-design]] — abstraction design is the heart of it
-[[declarative-ui]] — his favorite constructive abstraction: schema-driven UI builders
-[[code-quality]] — rot happens when structure stops matching responsibilities
-[[technical-debt]] — un-extracted abstractions compound into debt
-[[design-patterns]] — patterns as named, pre-classified abstractions
-[[a-philosophy-of-software-design]] — the book he quotes on design attention
+## Повʼязане
+[[software-design]] — проєктування абстракцій — його серце
+[[declarative-ui]] — його улюблена конструктивна абстракція: UI-білдери на основі схем
+[[code-quality]] — гниття починається, коли структура перестає відповідати відповідальностям
+[[technical-debt]] — невиокремлені абстракції накопичуються в борг
+[[design-patterns]] — патерни як названі, заздалегідь класифіковані абстракції
+[[a-philosophy-of-software-design]] — книжка, яку він цитує про увагу до дизайну

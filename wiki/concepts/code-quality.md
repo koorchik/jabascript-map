@@ -2,19 +2,19 @@
 type: concept
 tags: [engineering-craft, code-quality]
 ---
-# Code quality
+# Якість коду
 
-Viktor challenges the classic "fast / quality / cheap — pick two" triangle: maybe you can have all three, because quality code is *cheaper and faster* to develop, not a luxury you trade speed for ([[3-things-that-ruin-a-programmer]]). His definition is pointedly non-perfectionist: quality is code that doesn't stop you from extending it — abstractions that keep working as the system grows, code you never have to throw away. And his most personal argument is that bad code hurts *you*, not just the project: writing crappy code destroys the "code smell" intuition that lets seniors spot problems before they've even read the code. The habit caps your own growth.
+Віктор ставить під сумнів класичний трикутник «швидко / якісно / дешево — обери два»: можливо, можна мати всі три, бо якісний код *дешевший і швидший* у розробці, а не розкіш, за яку платиш швидкістю ([[3-things-that-ruin-a-programmer|3 речі, що псують програміста]]). Його визначення підкреслено неперфекціоністське: якість — це код, який не заважає себе розширювати; абстракції, що продовжують працювати, коли система росте; код, який ніколи не доводиться викидати. А найособистіший його аргумент — що поганий код шкодить *тобі*, а не лише проєкту: звичка писати халтурний код руйнує ту інтуїцію на «запах коду», завдяки якій сеньйори бачать проблеми ще до того, як прочитали код. Ця звичка ставить стелю твоєму власному росту.
 
-The subtle enemy is consistency with a stale structure: codebase rot happens even while every individual change looks perfectly consistent with the surrounding code — that's exactly how God Objects and 5000-line files grow ([[voice-3-scary-abstractions]]). Quality, in the channel's telling, is therefore less about polishing lines and more about noticing when the structure itself has expired — which connects it to [[technical-debt]] and to review formats that look beyond the diff ([[code-review]]).
+Підступний ворог — консистентність зі структурою, що вже віджила своє: кодова база гниє навіть тоді, коли кожна окрема зміна виглядає ідеально консистентною з навколишнім кодом — саме так виростають God Object-и та файли на 5000 рядків ([[voice-3-scary-abstractions|страшні абстракції]]). Тож якість, як її подає канал, — це не так про вилизування рядків, як про вміння помітити, що сама структура вже прострочена, — і це повʼязує її з [[technical-debt|технічним боргом]] та форматами ревʼю, які дивляться далі за дифф ([[code-review|код-ревʼю]]).
 
-## Covered in
-- [[3-things-that-ruin-a-programmer]] — the fast/quality/cheap challenge, quality as extensibility, bad code destroying your smell intuition
-- [[voice-3-scary-abstractions]] — rot through consistency: every change looks fine, the file hits 5000 lines
+## Де розглядається
+- [[3-things-that-ruin-a-programmer]] — виклик трикутнику швидко/якісно/дешево, якість як розширюваність, поганий код руйнує інтуїцію на «запахи»
+- [[voice-3-scary-abstractions]] — гниття через консистентність: кожна зміна виглядає нормально, а файл сягає 5000 рядків
 
-## Related
-[[abstractions]] — quality = abstractions that survive extension
-[[technical-debt]] — what accumulates when quality is only judged per-diff
-[[code-review]] — automating style, catching what diffs can't show
-[[career-and-growth]] — crappy code damages the programmer, not just the codebase
-[[clean-code]], [[code-complete]] — the craft bookshelf
+## Повʼязане
+[[abstractions]] — якість = абстракції, що переживають розширення
+[[technical-debt]] — те, що накопичується, коли якість оцінюють лише по діффу
+[[code-review]] — автоматизація стилю, виявлення того, чого не покажуть діффи
+[[career-and-growth]] — халтурний код шкодить програмісту, а не лише кодовій базі
+[[clean-code]], [[code-complete]] — книжкова полиця майстерності

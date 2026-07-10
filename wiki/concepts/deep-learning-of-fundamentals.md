@@ -2,32 +2,32 @@
 type: concept
 tags: [engineering-craft, learning, fundamentals, philosophy]
 ---
-# Deep learning of fundamentals
+# Глибоке вивчення фундаментальних речей
 
-This is the channel's single most connective thesis — nearly every video, from DNS to AWD cars, is an application of it. The claim: there are two kinds of engineers, those who "just call the methods" and those who dig, and only understanding a technology's *internals* gives you its *properties* — what happens to the database if the data doubles, why an index speeds up one query shape and not another ([[3-things-that-make-a-programmer-better]], with John Carmack cited as his authority for "learn things deeply"). Marketing materials will never give you those properties; internals will ([[learning-deeply-and-remembering]]). The closing parable of the indexes deep-dive distills it: three programmers — one unaware of indexes, one who knows "indexes = faster," one who understands the internals — and only the third designs well ([[database-indexes-mysql-vs-postgres]]). The flip side is dogmatism, one of the three things that *ruin* a programmer: reading and believing instead of understanding, like "props in getInitialState is a React antipattern" repeated as absolute truth when the docs said it depends on the reasons ([[3-things-that-ruin-a-programmer]]).
+Це найзвʼязніша теза каналу — майже кожне відео, від DNS до повнопривідних авто, є її застосуванням. Твердження: є два типи інженерів — ті, хто «просто викликає методи», і ті, хто копає, — і лише розуміння *нутрощів* технології дає тобі її *властивості*: що станеться з базою, якщо даних стане вдвічі більше, чому індекс прискорює одну форму запиту й не прискорює іншу ([[3-things-that-make-a-programmer-better|3 речі, що роблять програміста кращим]], з Джоном Кармаком як авторитетом для «вивчай речі глибоко»). Маркетингові матеріали цих властивостей не дадуть ніколи; нутрощі — дадуть ([[learning-deeply-and-remembering|вчитися глибоко і памʼятати]]). Фінальна притча з глибокого занурення в індекси дистилює це: три програмісти — один не знає про індекси, другий знає «індекси = швидше», третій розуміє нутрощі — і лише третій проєктує добре ([[database-indexes-mysql-vs-postgres|індекси: MySQL проти Postgres]]). Зворотний бік — догматизм, одна з трьох речей, що *псують* програміста: читати і вірити замість розуміти, як-от «props у getInitialState — це антипатерн React», повторюване як абсолютна істина, хоча в доках було написано, що все залежить від причин ([[3-things-that-ruin-a-programmer|3 речі, що псують програміста]]).
 
-The retention argument is his **knowledge-tree analogy** ([[learning-deeply-and-remembering]]): fundamentals are the trunk and branches that new knowledge hooks onto. Learn a leaf (a detail, a framework API) with no branch under it and it "falls to the ground" — forgotten in a month, the fate viewers complain about. With the branch in place, leaves regrow fast and knowledge compounds every year; prefer knowledge that stays relevant 5–10 years, and he even suggests drawing your own technology tree. His personal learning method builds on this: "useful procrastination" — binge many videos on a topic from different angles until saturation, then practice; connect everything new to everything you already know; learn a stack via theory plus a pet project you actually want to launch for a "virtual customer"; and books beat articles, because mid-book-chapter content can't survive as a standalone article ([[qa-and-plans-for-2024]]). Every engineer, he says there, should know OS basics, processes, and networking; to newcomers he adds: ship a pet project end to end — frontend, backend, DB, Docker, cloud, domain, DNS, mail — to own the whole delivery process ([[qa-2-answering-questions]]). Starter exercises from WebbyLab's internal 13–14-topic baseline: the "URL to rendered page" interview question, studying security exploits, writing a JSON parser with zero libraries ([[3-things-that-make-a-programmer-better]]).
+Аргумент про запамʼятовування — його **аналогія з деревом знань** ([[learning-deeply-and-remembering|вчитися глибоко і памʼятати]]): фундаментальні речі — це стовбур і гілки, на які чіпляється нове знання. Вивчи листок (деталь, API фреймворка) без гілки під ним — і він «падає на землю»: забувається за місяць, доля, на яку скаржаться глядачі. Коли гілка на місці, листя відростає швидко, і знання компаундиться рік за роком; віддавай перевагу знанням, що лишаються актуальними 5–10 років, — він навіть радить намалювати власне дерево технологій. Його особистий метод навчання будується на цьому: «корисна прокрастинація» — надивитися багато відео на тему з різних кутів до насичення, а потім практика; чіпляти все нове до всього, що вже знаєш; вчити стек через теорію плюс пет-проєкт, який ти справді хочеш запустити для «віртуального замовника»; і книжки бʼють статті, бо контент із середини розділу книжки не виживе як окрема стаття ([[qa-and-plans-for-2024|Q&A і плани на 2024]]). Кожен інженер, каже він там, має знати основи ОС, процеси і мережі; новачкам додає: доведи пет-проєкт до кінця — фронтенд, бекенд, БД, Docker, хмара, домен, DNS, пошта — щоб володіти всім процесом доставки ([[qa-2-answering-questions|друге Q&A]]). Стартові вправи з внутрішнього бейзлайну WebbyLab на 13–14 тем: інтервʼю-питання «від URL до відрендереної сторінки», вивчення security-експлойтів, написання JSON-парсера без жодної бібліотеки ([[3-things-that-make-a-programmer-better|3 речі, що роблять програміста кращим]]).
 
-In the AI era he argues fundamentals matter *more*, not less: without understanding internals you can only parrot marketing or the AI, which "does so much wrong" — his Flutter-over-React-Native call (native compilation vs a JS bridge, decisive for real-time telemetry math) is the kind of decision no prompt makes for you ([[vibe-coding-new-project]]). Depth is also a design prerequisite — you need each subsystem's properties to make the whole system meet its requirements ([[learning-deeply-and-remembering]], see [[software-design]]). And the thesis travels beyond software: "AWD" is a marketing label, and unless you understand torque splits, coupling cooling, and gearbox types you can't predict how the car behaves — Audi sells three very different things all called "quattro" ([[awd-systems-compared]]).
+В епоху AI він стверджує, що фундамент важить *більше*, а не менше: без розуміння нутрощів ти можеш лише повторювати за маркетингом чи за AI, який «стільки всього робить неправильно», — його вибір Flutter замість React Native (нативна компіляція проти JS-моста, вирішально для realtime-математики телеметрії) — це той тип рішення, який жоден промпт за тебе не ухвалить ([[vibe-coding-new-project|вайб-кодинг нового проєкту]]). Глибина — ще й передумова проєктування: потрібно знати властивості кожної підсистеми, щоб уся система відповідала вимогам ([[learning-deeply-and-remembering|вчитися глибоко і памʼятати]], див. [[software-design|проєктування ПЗ]]). І теза працює за межами софту: «AWD» — маркетингова наліпка, і поки не розумієш розподілу моменту, охолодження муфти і типів коробок, не передбачиш поведінку авто — Audi продає три дуже різні речі під однією назвою «quattro» ([[awd-systems-compared|порівняння систем повного приводу]]).
 
-## Covered in
-- [[learning-deeply-and-remembering]] — the core video: knowledge tree, internals → properties, 5–10-year knowledge, draw your own tree
-- [[3-things-that-make-a-programmer-better]] — "just call the methods" vs digging, Carmack, WebbyLab's starter exercises
-- [[3-things-that-ruin-a-programmer]] — dogmatism as the anti-pattern: believing instead of understanding
-- [[database-indexes-mysql-vs-postgres]] — the three-programmers parable; internals predict a technology's properties
-- [[vibe-coding-new-project]] — fundamentals matter more with AI; the Flutter-vs-React-Native call; the honest Rust→WASM 2x benchmark
-- [[how-dns-works-basics]] — web devs should understand the internet end-to-end; buy a domain and play
-- [[dns-recursive-resolution]] — reproduce every dig command yourself
-- [[speed-of-light-website-latency]] — you must understand the network to design for it
-- [[five-star-books]] — K&R C in two evenings: the layer beneath JS/Python (char arrays, null termination, hand-rolled hash table)
-- [[awd-systems-compared]] — the thesis applied to cars: marketing labels vs implementation properties
-- [[qa-2-answering-questions]] — ship a pet project end to end; why Docker on macOS eats RAM (it's a Linux VM)
-- [[qa-and-plans-for-2024]] — the full learning method: useful procrastination, hooks onto existing knowledge, books over articles, OS + networking baseline
+## Де розглядається
+- [[learning-deeply-and-remembering]] — базове відео: дерево знань, нутрощі → властивості, знання на 5–10 років, намалюй власне дерево
+- [[3-things-that-make-a-programmer-better]] — «просто викликати методи» проти копання, Кармак, стартові вправи WebbyLab
+- [[3-things-that-ruin-a-programmer]] — догматизм як антипатерн: вірити замість розуміти
+- [[database-indexes-mysql-vs-postgres]] — притча про трьох програмістів; нутрощі передбачають властивості технології
+- [[vibe-coding-new-project]] — з AI фундамент важить більше; вибір Flutter проти React Native; чесний бенчмарк Rust→WASM з 2x
+- [[how-dns-works-basics]] — веброзробники мають розуміти інтернет наскрізь; купи домен і грайся
+- [[dns-recursive-resolution]] — відтвори кожну команду dig самостійно
+- [[speed-of-light-website-latency]] — щоб проєктувати під мережу, її треба розуміти
+- [[five-star-books]] — K&R C за два вечори: шар під JS/Python (масиви char, нульовий термінатор, хеш-таблиця руками)
+- [[awd-systems-compared]] — теза в застосуванні до авто: маркетингові наліпки проти властивостей реалізації
+- [[qa-2-answering-questions]] — доведи пет-проєкт до кінця; чому Docker на macOS їсть RAM (це Linux-VM)
+- [[qa-and-plans-for-2024]] — повний метод навчання: корисна прокрастинація, гачки до наявних знань, книжки понад статті, бейзлайн з ОС і мереж
 
-## Related
-[[software-design]] — internals give you the properties designs are made of
-[[domain-knowledge]] — the other half of "understand before you build"
-[[career-and-growth]] — depth is his explanation of how engineers actually level up
-[[database-indexes]], [[dns]], [[latency-and-speed-of-light]] — flagship demonstrations of the thesis
-[[awd-and-drivetrains]] — the off-topic proof it generalizes
-[[vibe-coding]] — why AI raises, not lowers, the value of fundamentals
+## Повʼязане
+[[software-design]] — нутрощі дають властивості, з яких складаються дизайни
+[[domain-knowledge]] — друга половина принципу «зрозумій, перш ніж будувати»
+[[career-and-growth]] — глибина — його пояснення того, як інженери насправді ростуть
+[[database-indexes]], [[dns]], [[latency-and-speed-of-light]] — флагманські демонстрації тези
+[[awd-and-drivetrains]] — оффтоп-доказ, що теза узагальнюється
+[[vibe-coding]] — чому AI підвищує, а не знижує цінність фундаменту

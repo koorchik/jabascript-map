@@ -2,19 +2,19 @@
 type: concept
 tags: [security, data-representation, fundamentals]
 ---
-# Encoding
+# Кодування
 
-Representation, not secrecy — the most misunderstood member of the channel's deliberately-taught trio of [[encoding]], [[encryption]] and [[hashing]]. Per [[hashing-encoding-encryption-difference]], encoding is just representing data in another form for some task: Base64 turns binary into text (the same idea yields Base32 and Base85), and even zip compression is an encoding. There is no key and no secret — anyone can reverse it. Viktor's sharpest framing: encryption is technically a *kind* of encoding that adds a security property; plain encoding adds none.
+Представлення, а не секретність — найбільш недозрозумілий член трійці, яку канал свідомо викладає разом: [[encoding|кодування]], [[encryption|шифрування]] і [[hashing|хешування]]. За [[hashing-encoding-encryption-difference|відео про різницю між хешуванням, кодуванням і шифруванням]], кодування — це просто подання даних в іншій формі під певну задачу: Base64 перетворює бінарні дані на текст (та сама ідея дає Base32 і Base85), і навіть zip-стиснення — теж кодування. Тут немає ні ключа, ні секрету — розкодувати може будь-хто. Найгостріше формулювання Віктора: шифрування — це, технічно, *різновид* кодування, який додає властивість безпеки; звичайне кодування не додає жодної.
 
-The practical companion video [[how-base64-works]] shows *why* encodings exist: you can't just ship raw bytes as "text" — control characters and encoding-specific alphabets break things — hence a lowest-common-denominator 64-character alphabet. The stakes of confusing encoding with encryption are illustrated by his favorite war story in [[3-things-that-make-a-programmer-better]]: an engineer who claimed HTTP Basic Auth was "encrypted because it's Base64." Knowing this distinction is, in his words, the ABC-level knowledge that reveals a mechanism's real security properties.
+Практичне відео-компаньйон [[how-base64-works|«Як працює Base64»]] показує, *навіщо* кодування взагалі існують: сирі байти не відправиш як «текст» — керівні символи та алфавіти конкретних кодувань усе ламають, — тому й потрібен алфавіт із 64 символів як найменший спільний знаменник. Ціну плутанини між кодуванням і шифруванням ілюструє його улюблена бойова історія з [[3-things-that-make-a-programmer-better|«3 речей, що роблять програміста кращим»]]: інженер, який стверджував, що HTTP Basic Auth «зашифрований, бо це Base64». Знати цю різницю — за його словами, знання рівня абетки, яке відкриває справжні властивості безпеки механізму.
 
-## Covered in
-- [[hashing-encoding-encryption-difference]] — the definition: another representation for a task (Base64/Base32/Base85, even zip); encryption framed as encoding plus a security property
-- [[how-base64-works]] — why raw bytes can't travel as text, and how the 64-char lowest-common-denominator alphabet solves it
-- [[3-things-that-make-a-programmer-better]] — the encoding-vs-encryption distinction as ABC-level knowledge that exposes real security properties
+## Де розглядається
+- [[hashing-encoding-encryption-difference]] — визначення: інше представлення під задачу (Base64/Base32/Base85, навіть zip); шифрування як кодування плюс властивість безпеки
+- [[how-base64-works]] — чому сирі байти не можуть подорожувати як текст і як це вирішує 64-символьний алфавіт — найменший спільний знаменник
+- [[3-things-that-make-a-programmer-better]] — різниця між кодуванням і шифруванням як знання рівня абетки, що відкриває справжні властивості безпеки
 
-## Related
-[[base64]] — the canonical encoding, dissected bit by bit.
-[[encryption]] — encoding plus a key; the thing encoding is not.
-[[hashing]] — the third of the trio: not reversible at all.
-[[security-practices]] — "it's encoded" never means "it's protected."
+## Повʼязане
+[[base64]] — канонічне кодування, розібране біт за бітом.
+[[encryption]] — кодування плюс ключ; те, чим кодування не є.
+[[hashing]] — третій член трійці: незворотне взагалі.
+[[security-practices]] — «воно закодоване» ніколи не означає «воно захищене».

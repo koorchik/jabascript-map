@@ -5,10 +5,10 @@ tags: [book, futurology, non-technical]
 ---
 # Summa Technologiae
 
-Stanisław Lem's 1960s work of pure-logic, emotionless futurology, reasoning about technology roughly a thousand years out. Viktor was struck by recognizing the plots of *The Matrix* and *The Thirteenth Floor* already laid out in it decades earlier. His verdict: it will click for some readers and not for others — it's that kind of book.
+Праця Станіслава Лема 1960-х років — беземоційна футурологія чистої логіки, міркування про технології приблизно на тисячу років уперед. Віктора вразило, що сюжети «Матриці» та «Тринадцятого поверху» вже були викладені в ній за десятиліття до появи фільмів. Його вердикт: комусь зайде, комусь ні — це книжка саме такого типу.
 
-## Covered in
-- [[five-star-books]] — 1960s futurology where he recognized The Matrix; clicks for some, not others
+## Де розглядається
+- [[five-star-books]] — футурологія 1960-х, у якій він упізнав «Матрицю»; комусь зайде, комусь ні
 
-## Related
-[[blood-sweat-and-pixels]] — the other non-technical narrative standout on his five-star list.
+## Повʼязане
+[[blood-sweat-and-pixels|Blood, Sweat, and Pixels]] — інша нетехнічна оповідна перлина його п'ятизіркового списку.

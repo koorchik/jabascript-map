@@ -2,24 +2,35 @@
 type: video
 title_uk: "Як налаштувати повноцінну розробку в Visual Studio Code в браузері？"
 youtube_id: VtKjgQLgus0
+level: intermediate
 tags: [vs-code, remote-development, tooling, architecture]
 date_ingested: 2026-07-09
 ---
-# How to Set Up Full Development in VS Code in the Browser
+# Як налаштувати повноцінну розробку в Visual Studio Code в браузері
 
-> Original: "Як налаштувати повноцінну розробку в Visual Studio Code в браузері？" — https://youtu.be/VtKjgQLgus0
+> Оригінал: "Як налаштувати повноцінну розробку в Visual Studio Code в браузері？" — https://youtu.be/VtKjgQLgus0
 
-When the author joined Google, what struck him was how fast you can spin up a project: open a browser, open a URL — and you have a full code editor; nothing on your laptop but a browser. This video is his attempt to recreate that outside Google using [[vs-code]]. He structures it in three parts: first the architecture history of VS Code (why its multi-process design made remote development almost free), then a live demo of [[remote-development|remote development]] over SSH against a real server he spun up in Google Cloud, then the fully-in-browser setup via vscode.dev and tunnels — ending with working extensions, terminal, port forwarding and a step-through debugger, all from a bare browser.
+Коли автор прийшов у Google, його вразило, як швидко там розгортається проєкт: відкриваєш браузер, відкриваєш URL — і маєш повноцінний редактор коду; на ноутбуці немає нічого, крім браузера. Це відео — його спроба відтворити таке поза Google за допомогою [[vs-code|VS Code]]. Структура з трьох частин: спершу історія архітектури VS Code (чому його багатопроцесна будова зробила віддалену розробку майже безкоштовною), потім живе демо [[remote-development|віддаленої розробки]] через SSH на реальному сервері, який він підняв у Google Cloud, а далі повністю браузерний сетап через vscode.dev і тунелі — з фіналом, де з голого браузера працюють розширення, термінал, прокидання портів і покроковий дебагер.
 
-## Key takeaways
-- VS Code's history explains its remote powers: it began (~2011) as the Monaco web editor (still embeddable in your own apps today), moved onto Electron (Node.js APIs + browser APIs, UI in HTML/CSS), and when plugins were added they were deliberately put in a *separate process* talking to the core — for fast startup and stability.
-- To support many languages, Microsoft added [[language-server-protocol|language servers]]: yet another separate process per language, speaking JSON-RPC over the Language Server Protocol. So the editor was already core + extension-host + language-server processes.
-- Windows Subsystem for Linux forced the next step: run the UI on Windows but the code/processes in Linux. Since extensions were already a separate process, the solution was an *agent* (with its own extensions and language servers) that the core talks to — and an SSH agent is barely different from a local one. Pure-browser support was hardest (the core had to drop all Node.js API dependencies) and only landed in 2020.
-- SSH demo: with the Remote-SSH extension, connecting to a host makes VS Code silently *install its own vscode-server on the remote machine* — he proves it by showing no processes before connect and a running VS Code server plus `~/.vscode-server` directory after.
-- Everything then works "as if local": the terminal is remote, ports are auto-forwarded (his Node.js hello-world on remote port 3000 opens on 127.0.0.1:3000 locally), and extensions are split into "local" and "remote" — he installs Prettier *onto the server*, and format-on-save plus breakpoint debugging just work.
-- Browser-only setup: go to vscode.dev, sign in with GitHub, then on the server download the standalone VS Code CLI binary and run `code tunnel`; authorize once via the github.com/login/device code, name the machine, and you get a vscode.dev tunnel URL usable from any machine.
-- Why GitHub sign-in is needed: you don't connect to your server directly — both your browser and the server connect out to a proxy (he believes over WebSockets), which stitches the tunnel together. That's why it works even when both ends sit behind [[nat-and-networking|NAT]] and firewalls; the debugged app itself gets a special devtunnels URL instead of localhost.
-- His summary of the option space (matching Microsoft's own docs diagram): SSH remoting, WSL, GitHub Codespaces (works the same way as the tunnel setup, he reckons), browser tunnels, and dev containers — the latter he calls especially cool: the app and all extensions run in a container for a zero-click reproducible setup.
+## Головне
+- Історія VS Code пояснює його «віддалені» суперсили: він починався (~2011) як веб-редактор Monaco (який і сьогодні можна вбудувати у власний застосунок), переїхав на Electron (API Node.js + API браузера, UI на HTML/CSS), а коли додали плагіни, їх свідомо винесли в *окремий процес*, що спілкується з ядром, — заради швидкого старту і стабільності.
+- Щоб підтримати багато мов, Microsoft додала [[language-server-protocol|language servers]]: ще один окремий процес на кожну мову, що говорить JSON-RPC за Language Server Protocol. Отже, редактор і так уже складався з процесів ядра + extension host + language server.
+- Windows Subsystem for Linux змусив зробити наступний крок: UI працює на Windows, а код і процеси — у Linux. Оскільки розширення вже були окремим процесом, рішенням став *агент* (зі своїми розширеннями та language server-ами), з яким спілкується ядро, — а SSH-агент майже не відрізняється від локального. Найважчою була чисто браузерна підтримка (ядру довелося позбутися всіх залежностей від API Node.js) — вона зʼявилася лише у 2020-му.
+- SSH-демо: з розширенням Remote-SSH підключення до хоста змушує VS Code непомітно *встановити власний vscode-server на віддаленій машині* — він доводить це, показуючи відсутність процесів до підключення і запущений VS Code server разом із директорією `~/.vscode-server` після.
+- Далі все працює «ніби локально»: термінал — віддалений, порти прокидаються автоматично (його Node.js hello-world на віддаленому порту 3000 відкривається локально на 127.0.0.1:3000), а розширення поділені на «локальні» та «віддалені» — він ставить Prettier *на сервер*, і форматування при збереженні та дебаг із брейкпоінтами просто працюють.
+- Суто браузерний сетап: заходиш на vscode.dev, логінишся через GitHub, потім на сервері завантажуєш standalone-бінарник VS Code CLI і запускаєш `code tunnel`; одна авторизація через код на github.com/login/device, назва машини — і маєш tunnel-URL на vscode.dev, доступний із будь-якої машини.
+- Навіщо потрібен логін через GitHub: до свого сервера ти не підключаєшся напряму — і браузер, і сервер підключаються назовні до проксі (він вважає, через WebSockets), яке зшиває тунель. Тому це працює, навіть коли обидва кінці сидять за [[nat-and-networking|NAT]] і фаєрволами; сам застосунок, що дебажиться, отримує спеціальний devtunnels-URL замість localhost.
+- Його підсумок простору опцій (що збігається з діаграмою в документації Microsoft): SSH-remoting, WSL, GitHub Codespaces (працює так само, як тунельний сетап, на його думку), браузерні тунелі та dev containers — останні він називає особливо крутими: застосунок і всі розширення працюють у контейнері, даючи відтворюване середовище без жодного кліку.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: у Google повноцінне дев-середовище — це просто URL у браузері
+- 00:41 — Історія VS Code: веб-редактор Monaco, Electron, розширення винесено в окремий процес
+- 02:06 — [[language-server-protocol|Language servers]], проблема WSL і архітектура з віддаленим агентом
+- 03:50 — SSH-демо: [[remote-development|Remote-SSH]] непомітно ставить vscode-server на хост у Google Cloud
+- 05:37 — Віддалений термінал, автоматичне прокидання портів і встановлення Prettier на сервер
+- 07:03 — Дебаг із брейкпоінтами через SSH, ніби все локально
+- 08:05 — Суто браузерний сетап: vscode.dev, standalone CLI `code tunnel`, device-авторизація GitHub
+- 10:14 — Повний робочий процес із голого браузера; як тунельне проксі працює за [[nat-and-networking|NAT]]; Codespaces і dev containers
+
+## Теми
 [[vs-code]], [[remote-development]], [[language-server-protocol]], [[nat-and-networking]]

@@ -2,39 +2,32 @@
 type: cluster
 tags: [channel-meta, moc]
 ---
-# Channel Meta — Map of Content
+# Про канал — мапа контенту
 
-The layer of jabascript that is *about the channel itself* rather than a technical topic. It has three recurring formats: **Q&A livestreams** (viewer questions, autobiography, yearly plans), **"voice message" episodes** — short, unscripted war stories and opinions recorded for sponsors — and **unedited off-topic sponsor videos** (cars, workspace, home networking), a perk of the "Суперсила каналу" tier. Together they carry the channel's story: who [[channel-and-author|Viktor]] is, why the channel exists (an evergreen Ukrainian-language knowledge base, watchable oldest-first), and how it is funded.
+Шар jabascript, який стосується *самого каналу*, а не технічних тем. Тут три повторювані формати: **Q&A-стріми** (питання глядачів, автобіографія, плани на рік), **«голосові повідомлення»** — короткі, без сценарію, історії з практики та думки, записані для спонсорів — і **немонтовані офтопні спонсорські відео** (машини, робоче місце, домашня мережа), бонус рівня «Суперсила каналу». Разом вони несуть історію каналу: хто такий [[channel-and-author|Віктор]], навіщо існує канал (вічнозелена україномовна база знань, яку можна дивитися від найстаріших відео) і як він фінансується.
 
-## Q&A streams
+## Відео (порядок перегляду)
 
-- [[qa-1-will-https-protect-you]] — first Q&A episode: HTTPS doesn't save you on a hostile network, plus answers on Base64, JWT, UUID keys and inverted-index compression.
-- [[qa-2-answering-questions]] — morning livestream: QA/testing at Google vs WebbyLab, his personal LLM coding benchmark, React state-management history first-hand, Google interviews, pet-project philosophy, and news that he enrolled in a cybersecurity PhD.
-- [[qa-and-plans-for-2024]] — 2+ hour livestream: full autobiography (infosec → Mail.ua → VoIP → WebbyLab → Google), 2023 results and 2024 plans, Google levels/comp/culture, the dying wartime outstaffing market, AI and jobs, and his learning method.
+Це бонус-трек каналу, а не трек знань — порядок тут важить менше; список нижче — просто розумний маршрут: спершу організаційне, далі Q&A-стріми в порядку виходу, пʼять голосових повідомлень і офтопні спонсорські відео.
 
-## Voice-message episodes (for sponsors)
+1. [[how-to-support-the-channel]] — огляд чотирьох рівнів спонсорства з правилом: обирайте той рівень, сповіщення про оплату якого вас тішить.
+2. [[qa-1-will-https-protect-you]] — перший Q&A-випуск: HTTPS не рятує у ворожій мережі, плюс відповіді про Base64, JWT, UUID-ключі та стиснення інвертованого індексу.
+3. [[qa-and-plans-for-2024]] — стрім на 2+ години: повна автобіографія (інфобезпека → Mail.ua → VoIP → WebbyLab → Google), підсумки 2023-го і плани на 2024-й, рівні/компенсації/культура в Google, вмираючий воєнний ринок аутстафінгу, AI і робочі місця, його метод навчання.
+4. [[qa-2-answering-questions]] — ранковий стрім: QA/тестування в Google проти WebbyLab, його особистий бенчмарк LLM для кодингу, історія стейт-менеджменту в React з перших рук, співбесіди в Google, філософія pet-проєктів і новина про вступ на PhD із кібербезпеки.
+5. [[voice-1-admin-keys-for-developers]] — голосове: адмінський ключ Redmine плюс скопійований приклад коду видалили співзасновника й перейменували клієнта на «Рауль».
+6. [[voice-2-faster-ui-development]] — голосове: позичте у геймдеву ідею редактора рівнів — проєктно-специфічні декларативні білдери радикально здешевлюють роботу над UI.
+7. [[voice-3-scary-abstractions]] — голосове: чому розробники бояться створювати нові абстракції — у чотирьох історіях з практики.
+8. [[voice-4-phone-scammers]] — голосове: запис шахраїв, що видають себе за службу безпеки банку, розібраний до моменту, коли сценарій сфабрикованої довіри розсипається.
+9. [[voice-5-why-i-left-google]] — голосове, записане в машині біля лікарні: чому він пішов із Google після 4 років, включно з історією Application Canvas.
+10. [[my-workspace-setup]] — офтопне спонсорське відео: 32-дюймовий монітор, що працює як KVM для трьох компʼютерів, стіл із регулюванням висоти та сетап для запису, ретрокуточок із CRT і Raspberry Pi.
+11. [[vm-network-isolation]] — офтопне спонсорське відео, немонтований скринкаст: ізоляція VirtualBox-VM від домашньої LAN через віртуальний роутер pfSense.
+12. [[awd-systems-compared]] — офтопне спонсорське відео: чому його Subaru Outback кращий у снігу за його ж Porsche Macan — розподіл моменту, перегрів муфти, маркетингові рівні quattro, e-CVT, норми CO2 в ЄС.
 
-- [[voice-1-admin-keys-for-developers]] — war story from WebbyLab's early days: an admin Redmine key plus copy-pasted example code deleted a co-founder and renamed a client to "Raul".
-- [[voice-2-faster-ui-development]] — borrow the game level-editor idea for frontend: project-specific declarative builders massively cheapen UI work, even inside a single project.
-- [[voice-3-scary-abstractions]] — why developers fear creating new abstractions: four war stories of devs stuffing code into existing structures instead of extracting new ones.
-- [[voice-4-phone-scammers]] — he plays a recording of scammers posing as bank security and dissects their manufactured-trust script until it collapses.
-- [[voice-5-why-i-left-google]] — recorded in his car outside a hospital: why he left Google after 4 years — no time for PhD/volunteering/parents/health — including the Application Canvas story.
+## Концепції
 
-## Channel housekeeping
+- [[channel-and-author]] — біографія Віктора, засаднича ідея каналу, PhD, pet-проєкти та модель спонсорства.
+- [[workspace-and-hardware]] — фізичний сетап: монітор-як-KVM, характеристики робочої станції, обладнання для запису.
+- [[retro-gaming]] — хобі з JVC CRT і Raspberry Pi, з якого виріс його перший канал.
+- [[awd-and-drivetrains]] — вичавка з офтопного глибокого занурення в автомобілі.
 
-- [[how-to-support-the-channel]] — walkthrough of the four sponsorship tiers, with the rule: pick the tier whose payment notification makes you happy.
-
-## Off-topic sponsor videos
-
-- [[my-workspace-setup]] — desk tour: a 32-inch monitor doubling as a KVM for three computers, a standing desk and recording rig, and a CRT + Raspberry Pi analog-RGB retro corner.
-- [[awd-systems-compared]] — why his Subaru Outback beats his Porsche Macan in snow on identical tires: torque splits, coupling overheating, quattro marketing tiers, e-CVT, EU CO2 rules.
-- [[vm-network-isolation]] — unedited screencast: isolating a VirtualBox VM from the home LAN by routing it through a pfSense virtual router with firewall rules.
-
-## Concepts
-
-- [[channel-and-author]] — Viktor's biography, the channel's founding idea, PhD, pet projects, and the sponsorship model.
-- [[workspace-and-hardware]] — the physical setup: monitor-as-KVM, workstation specs, recording rig.
-- [[retro-gaming]] — the JVC CRT + Raspberry Pi hobby behind his first channel.
-- [[awd-and-drivetrains]] — the off-topic car deep dive distilled.
-
-Sideways: the voice messages seed technical concepts too — [[least-privilege]] (voice #1), [[declarative-ui]] (voice #2), [[abstractions]] (voice #3), [[social-engineering]] (voice #4) — and [[vm-network-isolation]] feeds [[sandboxing-and-isolation]].
+Побічно: голосові повідомлення теж засівають технічні концепції — [[least-privilege|мінімальні привілеї]] (голосове №1), [[declarative-ui|декларативний UI]] (голосове №2), [[abstractions|абстракції]] (голосове №3), [[social-engineering|соціальна інженерія]] (голосове №4) — а [[vm-network-isolation|ізоляція мережі VM]] підживлює [[sandboxing-and-isolation|пісочниці та ізоляцію]].

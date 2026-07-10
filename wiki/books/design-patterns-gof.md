@@ -5,10 +5,10 @@ tags: [book, software-design, design-patterns]
 ---
 # Design Patterns (GoF)
 
-The Gang of Four catalog of classic object-oriented design patterns. Viktor's take: it is *not* sacred knowledge — these are simply the most common solutions everyone re-invents anyway (he had implemented 8 of 24 patterns himself at Mail.ua before ever reading it). Read it for the shared vocabulary with other developers, not for hidden wisdom.
+Каталог класичних обʼєктно-орієнтованих патернів проєктування від «банди чотирьох». Теза Віктора: це *не* сакральне знання — це просто найпоширеніші рішення, які всі й так перевинаходять (сам він реалізував 8 із 24 патернів у Mail.ua ще до того, як прочитав книжку). Читати варто заради спільного словника з іншими розробниками, а не заради прихованої мудрості.
 
-## Covered in
-- [[five-star-books]] — "not sacred knowledge", read for the shared vocabulary
+## Де розглядається
+- [[five-star-books]] — «не сакральне знання», читати заради спільного словника
 
-## Related
-The tactical counterpart to strategic [[patterns-of-enterprise-application-architecture]]. Canon: [[clean-architecture]], [[domain-driven-design]], [[implementing-domain-driven-design]], [[a-philosophy-of-software-design]], [[code-complete]], [[clean-code]]. Concepts: [[design-patterns]], [[software-design]].
+## Повʼязане
+Тактична пара до стратегічної [[patterns-of-enterprise-application-architecture|Patterns of Enterprise Application Architecture]]. Канон: [[clean-architecture|Clean Architecture]], [[domain-driven-design|Domain-Driven Design]], [[implementing-domain-driven-design|Implementing Domain-Driven Design]], [[a-philosophy-of-software-design|A Philosophy of Software Design]], [[code-complete|Code Complete]], [[clean-code|Clean Code]]. Концепції: [[design-patterns|патерни проєктування]], [[software-design|дизайн ПЗ]].

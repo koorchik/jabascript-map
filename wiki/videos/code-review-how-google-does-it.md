@@ -2,24 +2,39 @@
 type: video
 title_uk: "Як покращити Code Review? Як це робить Google?"
 youtube_id: Xv92EsebyvU
+level: intermediate
 tags: [code-review, google, engineering-process, architecture]
 date_ingested: 2026-07-09
 ---
-# How to Improve Code Review? How Google Does It
+# Як покращити Code Review? Як це робить Google?
 
-> Original: "Як покращити Code Review? Як це робить Google?" — https://youtu.be/Xv92EsebyvU
+> Оригінал: "Як покращити Code Review? Як це робить Google?" — https://youtu.be/Xv92EsebyvU
 
-There is no single "right" way to do [[code-review]] — so he shares first-hand experience from two places: his company webilab and Google (where he works). He covers the classic pull-request review and how to unload it with automation, Google's peer-review + *readability* system, how to be a kind PR author, and then the part he thinks people underestimate: why per-PR review is **not enough**, and the periodic *architectural review* process webilab runs to catch the [[technical-debt]] that accumulates even when every individual PR looks great.
+Єдиного «правильного» способу робити [[code-review|код-рев'ю]] не існує — тож він ділиться досвідом з перших рук із двох місць: своєї компанії webilab і Google (де він працює). Він розбирає класичне рев'ю pull request-ів і те, як розвантажити його автоматизацією, гуглівську систему peer review + *readability*, те, як бути добрим автором PR, а потім — частину, яку, на його думку, недооцінюють: чому рев'ю окремих PR **недостатньо**, і процес періодичного *архітектурного рев'ю*, який webilab проводить, щоб ловити [[technical-debt|технічний борг]], що накопичується, навіть коли кожен окремий PR виглядає чудово.
 
-## Key takeaways
-- Classic flow (branch → PR → senior reviews → merge) works, but only with **guidelines**: often two approaches are both correct and you should just standardize on one so the whole company's code reads uniformly. Once the reviewer starts writing "2 spaces here, 4 there", you've failed — **automate style away** with [[prettier]] and [[eslint]] with every plugin you can find, each tuned to your style guide. webilab even published its own plugin (`eslint-plugin-more` on npm) and kept adding rules for problems they saw repeatedly in reviews, so no senior ever has to comment on them again.
-- **Who reviews?** Senior/team-lead review and peer review both work — it depends on whether you even have seniors free. At Google it's peer review: he can put *any* googler as reviewer, junior reviewing senior included.
-- **Google's twist — the "readability" status**: besides an engineer who knows the feature saying LGTM, someone holding *readability* for that language must certify the code matches the style guides. Readability in TypeScript takes about half a year to earn; in C++ maybe years. In his team a junior developer has readability and can approve his code — while his own approval alone is never enough, since he doesn't hold the status. Both roles can be one person; teams switching language stacks get assigned an outside readability reviewer from anywhere in Google.
-- Google backs this with a colossal amount of static analysis (per file type, built up over years) and a mono-repo so uniform that "you practically don't use Stack Overflow — you use code search", find good examples, and learn any library from real usage.
-- **Be kind to your reviewer** — a mentality he says works great at Google: the reviewer has their own job, so make review effortless if you want it fast, thorough and repeatable. One merge request = one concern; describe it; and for any UI change attach a screenshot or a screencast, often annotated "was like this → became like this". Reviewers see the behavior instantly.
-- The phrase that stuck with him from a book: **"if you just write code, you accumulate technical debt."** His example: a codebase designed for 10 modules now has 50 or 300; every new module is written and reviewed exactly like the previous ones, each piece looks great — yet the system no longer works as intended and none of it is visible in a pre-submit diff ([[technical-debt]]).
-- webilab's answer: **periodic architectural review** (monthly or every few months). Checklists of the typical frontend, backend and [[security-practices|security]] mistakes (down to things like config handling or the *anemic domain model* antipattern); the reviewer works independently first — starting by launching the project, which must start with one command; the team self-audits against the same checklist; then a ~2-hour call where the team lead first draws a **C4 container diagram** (a notation you can learn in 5 minutes) of the processes/subsystems; output is a document and action plan; re-review after ~2 months ([[software-design]]).
-- Post-launch review at Google: when something ships, the team gathers and whoever implemented a big feature walks everyone through the code and answers questions — after it's merged. His summary: don't *under*rate these other review types, and don't *over*rate the review you do on merge requests, because alone it's simply not enough.
+## Головне
+- Класичний потік (гілка → PR → рев'ю сеньйора → merge) працює, але лише з **гайдлайнами**: часто обидва підходи правильні, і треба просто стандартизувати один, щоб код усієї компанії читався однаково. Щойно рев'юер починає писати «тут 2 пробіли, там 4» — ви програли: **автоматизуйте стиль геть** за допомогою [[prettier]] і [[eslint]] з усіма плагінами, які лише знайдете, налаштованими під ваш стайлгайд. webilab навіть опублікувала власний плагін (`eslint-plugin-more` в npm) і додавала правила для проблем, що повторювалися на рев'ю, — щоб жодному сеньйору більше ніколи не довелося коментувати їх руками.
+- **Хто рев'юїть?** Рев'ю сеньйора/тімліда і peer review — працює і те, і те; залежить від того, чи є у вас узагалі вільні сеньйори. У Google — peer review: він може поставити рев'юером *будь-якого* гуглера, включно з джуном, що рев'юїть сеньйора.
+- **Гуглівська фішка — статус «readability»**: окрім інженера, який знає фічу і каже LGTM, хтось із *readability* для цієї мови має засвідчити, що код відповідає стайлгайдам. Readability у TypeScript заробляється приблизно за пів року; у C++ — можливо, роками. У його команді джуніор має readability і може апрувити його код — тоді як його власного апруву самого по собі ніколи не досить, бо статусу він не має. Обидві ролі може поєднувати одна людина; командам, що змінюють мовний стек, призначають зовнішнього readability-рев'юера з будь-якого куточка Google.
+- Google підпирає це колосальним обсягом статичного аналізу (під кожен тип файлів, нарощеним роками) і настільки однорідним монорепо, що «Stack Overflow практично не потрібен — користуєшся code search», знаходиш добрі приклади і вивчаєш будь-яку бібліотеку з реального використання.
+- **Будьте добрі до свого рев'юера** — менталітет, який, за його словами, чудово працює в Google: у рев'юера є власна робота, тож зробіть рев'ю легким, якщо хочете, щоб воно було швидким, ретельним і повторюваним. Один merge request = одна тема; опишіть її; а до будь-якої зміни UI додайте скриншот чи скрінкаст, часто з позначками «було так → стало так». Рев'юер бачить поведінку миттєво.
+- Фраза з книги, що запала йому в пам'ять: **«якщо ти просто пишеш код — ти накопичуєш технічний борг»**. Його приклад: кодова база, спроектована під 10 модулів, тепер має 50 чи 300; кожен новий модуль пишеться і рев'юїться точно як попередні, кожен шматок виглядає чудово — а система вже не працює як задумано, і нічого з цього не видно в дифі перед мержем ([[technical-debt|технічний борг]]).
+- Відповідь webilab: **періодичне архітектурне рев'ю** (щомісяця або раз на кілька місяців). Чеклісти типових фронтендних, бекендних і [[security-practices|безпекових]] помилок (аж до речей на кшталт роботи з конфігами чи антипатерну *анемічної доменної моделі*); рев'юер спершу працює незалежно — починаючи із запуску проєкту, який має стартувати однією командою; команда самоаудитується за тим самим чеклістом; потім ~2-годинний дзвінок, на якому тімлід спершу малює **C4-діаграму контейнерів** (нотацію можна вивчити за 5 хвилин) процесів/підсистем; на виході — документ і план дій; повторне рев'ю через ~2 місяці ([[software-design|проектування ПЗ]]).
+- Рев'ю після запуску в Google: коли щось виїжджає в продакшен, команда збирається, і той, хто реалізував велику фічу, проводить усіх по коду і відповідає на запитання — вже після мержа. Його підсумок: не *недо*оцінюйте ці інші типи рев'ю і не *пере*оцінюйте рев'ю на merge request-ах, бо самого по собі його просто недостатньо.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: немає єдиного правильного способу робити [[code-review|код-рев'ю]]
+- 00:24 — Класичний потік pull request-ів і чому гайдлайни — насамперед
+- 01:45 — Автоматизуйте стиль геть: [[prettier]], [[eslint]] і правила eslint-plugin-more
+- 02:28 — Хто має рев'юїти: сеньйор, тімлід чи колеги
+- 03:59 — Всередині Google: роки статичного аналізу і code search замість Stack Overflow
+- 04:42 — Статус «readability» у Google: другий апрув, якого ваш LGTM не замінить
+- 07:10 — Будьте добрі до рев'юера: одна тема на MR, скриншоти «було → стало»
+- 09:00 — «Якщо ти просто пишеш код — ти накопичуєш [[technical-debt|технічний борг]]»
+- 10:26 — За межами PR: періодичне архітектурне рев'ю webilab
+- 11:08 — Чеклісти типових фронтендних, бекендних і безпекових помилок
+- 12:34 — Двогодинний дзвінок: C4-діаграма контейнерів, документ і план дій
+- 14:23 — Розбори коду після запуску в Google — чому рев'ю MR-ів самого недостатньо
+
+## Теми
 [[code-review]], [[technical-debt]], [[software-design]], [[security-practices]], [[eslint]], [[prettier]]

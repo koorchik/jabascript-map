@@ -4,10 +4,10 @@ tags: [ai, llm, open-source, local-models]
 ---
 # DeepSeek
 
-The Chinese open-weights LLM family, which the channel treats as a data point on the local-vs-frontier gap. Against Viktor's binary-search-in-file benchmark ([[qa-2-answering-questions]]): local R1 distills up to 70B fail even with reasoning enabled, while the full ~700B online version does solve it — but thinks for a long time. The takeaway matches his broader local-model verdict via [[ollama|Ollama]]: distills are not the full model, and as of that Q&A the models you can self-host don't clear the bar frontier models clear casually.
+Китайська родина LLM із відкритими вагами, яку канал розглядає як показник розриву між локальними та frontier-моделями. На бенчмарку Віктора з бінарним пошуком у файлі ([[qa-2-answering-questions]]): локальні дистиляти R1 аж до 70B провалюються навіть з увімкненим reasoning, тоді як повна онлайн-версія на ~700B задачу таки розв'язує — але думає довго. Висновок збігається з його загальним вердиктом щодо локальних моделей через [[ollama|Ollama]]: дистилят — це не повна модель, і станом на те Q&A моделі, які можна захостити в себе, не беруть планку, яку frontier-моделі беруть завиграшки.
 
-## Covered in
-- [[qa-2-answering-questions]] — R1 distills ≤70B fail the benchmark; the full ~700B version passes slowly.
+## Де розглядається
+- [[qa-2-answering-questions]] — дистиляти R1 ≤70B провалюють бенчмарк; повна версія на ~700B проходить, але повільно.
 
-## Related
-[[ai-coding-agents]], [[ollama]], [[chatgpt]], [[gemini]]
+## Повʼязане
+[[ai-coding-agents|AI-агенти для кодингу]], [[ollama|Ollama]], [[chatgpt|ChatGPT]], [[gemini|Gemini]]

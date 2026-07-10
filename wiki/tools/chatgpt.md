@@ -4,13 +4,13 @@ tags: [ai, llm, openai, assistant]
 ---
 # ChatGPT
 
-OpenAI's chat assistant — Viktor's daily brainstorming and explain-anything tool since the channel's early AI coverage, and a consistent passer of his binary-search-in-file benchmark (GPT-4 already nailed the 2023 Node.js Buffer task that Bard flailed on). In [[qa-and-plans-for-2024]] it's the everyday assistant: brainstorming, generating five variable-name options, parsing binary formats, explaining commands and Unix output — effectively a man-page replacement. It's also why he recommends Node over Bun for learners: ChatGPT simply knows the standard stack better. At that point he had never tried generating unit tests with it.
+Чат-асистент від OpenAI — щоденний інструмент Віктора для брейнштормінгу та пояснення чого завгодно ще з ранніх AI-випусків каналу, і стабільний «відмінник» його бенчмарка з бінарним пошуком у файлі (GPT-4 ще у 2023 впорався із задачею на Node.js Buffer, на якій Bard безпорадно буксував). У [[qa-and-plans-for-2024]] це асистент на щодень: брейнштормінг, генерація п'яти варіантів назви змінної, розбір бінарних форматів, пояснення команд і виводу Unix — фактично заміна man-сторінок. Саме тому він радить новачкам Node, а не Bun: ChatGPT просто краще знає стандартний стек. На той момент він ще жодного разу не пробував генерувати ним юніт-тести.
 
-By [[qa-2-answering-questions]] his usage got more structured: latest versions pass his benchmark, he uses o3-mini-high for brainstorming, and he keeps a ChatGPT "project" with a standing system prompt (React + Material UI + TypeScript, regular rather than arrow functions) so prototypes come out in his own conventions — a lightweight precursor of the `CLAUDE.md` idea at the heart of his [[vibe-coding]] workflow.
+До [[qa-2-answering-questions]] використання стало структурованішим: найновіші версії проходять його бенчмарк, для брейнштормінгу він бере o3-mini-high і тримає в ChatGPT «проєкт» із постійним системним промптом (React + Material UI + TypeScript, звичайні функції замість стрілкових), щоб прототипи виходили в його власних конвенціях — легкий попередник ідеї `CLAUDE.md`, що лежить в основі його воркфлоу [[vibe-coding|вайб-кодингу]].
 
-## Covered in
-- [[qa-and-plans-for-2024]] — daily assistant patterns, the Node-over-Bun reasoning, adopt-AI-or-lose-competitiveness stance.
-- [[qa-2-answering-questions]] — passes the benchmark; standing system-prompt project; o3-mini-high for brainstorming.
+## Де розглядається
+- [[qa-and-plans-for-2024]] — патерни щоденного асистента, аргументація «Node замість Bun», позиція «опановуй AI або втратиш конкурентність».
+- [[qa-2-answering-questions]] — проходить бенчмарк; проєкт із постійним системним промптом; o3-mini-high для брейнштормінгу.
 
-## Related
-[[ai-coding-agents]], [[gemini]], [[claude-code]], [[vibe-coding]], [[react]], [[material-ui]]
+## Повʼязане
+[[ai-coding-agents|AI-агенти для кодингу]], [[gemini|Gemini]], [[claude-code|Claude Code]], [[vibe-coding|вайб-кодинг]], [[react|React]], [[material-ui|Material UI]]

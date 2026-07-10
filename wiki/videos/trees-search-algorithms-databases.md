@@ -2,23 +2,39 @@
 type: video
 title_uk: "Дерева. Пошук. Алгоритми. Бази даних"
 youtube_id: 7xoYPVZVHX4
+level: intermediate
 tags: [databases, data-structures, algorithms, trees]
 date_ingested: 2026-07-09
 ---
-# Trees, Search, Algorithms, Databases
+# Дерева. Пошук. Алгоритми. Бази даних
 
-> Original: "Дерева. Пошук. Алгоритми. Бази даних" — https://youtu.be/7xoYPVZVHX4
+> Оригінал: "Дерева. Пошук. Алгоритми. Бази даних" — https://youtu.be/7xoYPVZVHX4
 
-A whiteboard "bridge" video the author made deliberately as preparation for his MySQL-vs-Postgres index deep dive: which tree [[data-structures]] databases actually use inside [[database-indexes]] and why. Starting from a products table, he recaps that a sorted copy of a column enables binary search — his recurring number: 100 trillion records searched in ~46 halvings instead of 100 trillion steps ([[algorithmic-complexity]]) — but a sorted array makes inserts O(N), so we need trees. He draws a binary search tree ("everything left of 7 is smaller, everything right is bigger") and shows its trap: insert 1,2,3,4,5 in order and the BST degenerates into a linked list with O(N) search, hence self-balancing variants like AVL trees that rotate nodes on insert to keep left/right heights within 1. Then the key argument: databases still don't use binary trees, because with 100M records the tree is ~23 levels deep, and if each level costs a disk seek (~5 ms on a spinning disk), 23×5 ms is too slow. A [[b-tree|B-tree]] gives each node many children — in Postgres/MySQL a node is sized to a disk block (e.g. 8 KB), giving roughly 200–2000 children per node — collapsing the depth from ~23 levels to ~4, or even 2, disk reads. Finally he explains why databases use the **B+ tree** modification: data lives only in the leaf nodes, and leaves point to each other in a linked chain, so range queries ("price from 100 to 110") and full index scans just walk sideways along the leaves without bouncing up and down the tree.
+«Місткове» відео біля дошки, яке автор свідомо зробив як підготовку до свого глибокого розбору індексів MySQL проти Postgres: які деревоподібні [[data-structures|структури даних]] бази даних насправді використовують усередині [[database-indexes|індексів]] і чому. Починаючи з таблиці товарів, він нагадує, що відсортована копія колонки вмикає бінарний пошук — його повторюване число: 100 трильйонів записів шукаються за ~46 поділів навпіл замість 100 трильйонів кроків ([[algorithmic-complexity|алгоритмічна складність]]) — але відсортований масив робить вставку O(N), тож потрібні дерева. Він малює бінарне дерево пошуку («все, що ліворуч від 7, менше, все праворуч — більше») і показує його пастку: вставте 1,2,3,4,5 по черзі — і BST вироджується у зв'язний список із пошуком O(N), звідси самобалансовані варіанти на кшталт AVL-дерев, які обертають вузли при вставці, тримаючи різницю висот лівого/правого піддерев у межах 1. Далі ключовий аргумент: бази даних усе одно не використовують бінарні дерева, бо на 100 млн записів дерево має ~23 рівні, і якщо кожен рівень коштує disk seek (~5 мс на шпиндельному диску), 23×5 мс — надто повільно. [[b-tree|B-дерево]] дає кожному вузлу багато дітей — у Postgres/MySQL вузол має розмір дискового блока (наприклад, 8 KB), що дає приблизно 200–2000 дітей на вузол — і глибина падає з ~23 рівнів до ~4, а то й 2 читань із диска. Наостанок він пояснює, чому бази даних використовують модифікацію **B+ дерево**: дані живуть лише в листових вузлах, а листи вказують одне на одного зв'язним ланцюжком, тож діапазонні запити («ціна від 100 до 110») і повні скани індексу просто йдуть уздовж листів, не стрибаючи вгору-вниз по дереву.
 
-## Key takeaways
-- An index is conceptually a copied, sorted column; you can't keep one table sorted by both name and price at once, so each index is its own sorted structure ([[database-indexes]]).
-- Sorted data gives O(log N) binary search — 100 trillion records in ~46 steps — but insertion into a sorted array is O(N), which is why trees are needed ([[algorithmic-complexity]]).
-- A plain binary search tree degenerates into a linked list (his example: inserting 1..5 in order — every node hangs off the right), making search O(N); balanced variants (AVL and friends) rotate nodes during insert to keep the tree's height minimal ([[data-structures]]).
-- Databases reject binary trees for a hardware reason: ~23 levels deep at 100M rows × ~5 ms per disk seek is too slow; a [[b-tree]] node sized to a disk block (8 KB, ~200–2000 children) cuts depth to ~4 levels, sometimes 2.
-- B+ trees (what databases actually use) keep data only in leaf nodes and chain the leaves together, so range scans ("price 100–110") walk the leaf chain without re-descending the tree.
-- Deliberately concept-level: he skips rotation/split mechanics — "what matters is understanding how this shapes database behavior" — as setup for the [[database-indexes-mysql-vs-postgres]] video.
-- Teaser: file systems use the same ideas — ext4 indexes files with an H-tree, a simplified B-tree analog; k-nearest / quadtrees promised as future topics.
+## Головне
+- Індекс — концептуально скопійована й відсортована колонка; одну таблицю не можна тримати відсортованою одночасно за назвою і ціною, тож кожен індекс — окрема відсортована структура ([[database-indexes|індекси]]).
+- Відсортовані дані дають бінарний пошук за O(log N) — 100 трильйонів записів за ~46 кроків — але вставка у відсортований масив коштує O(N), і саме тому потрібні дерева ([[algorithmic-complexity|складність]]).
+- Звичайне бінарне дерево пошуку вироджується у зв'язний список (його приклад: вставка 1..5 по черзі — кожен вузол чіпляється справа), і пошук стає O(N); збалансовані варіанти (AVL і компанія) обертають вузли під час вставки, щоб висота дерева була мінімальною ([[data-structures|структури даних]]).
+- Бази даних відкидають бінарні дерева з апаратної причини: ~23 рівні глибини на 100 млн рядків × ~5 мс на disk seek — надто повільно; вузол [[b-tree|B-дерева]] розміром із дисковий блок (8 KB, ~200–2000 дітей) зрізає глибину до ~4 рівнів, іноді 2.
+- B+ дерева (те, що бази даних реально використовують) тримають дані лише в листах і зшивають листи в ланцюжок, тож діапазонні скани («ціна 100–110») ідуть по ланцюжку листів без повторного спуску по дереву.
+- Свідомо на рівні концепцій: механіку обертань/розбиттів він пропускає — «важливо зрозуміти, як це формує поведінку бази даних» — як підготовку до відео [[database-indexes-mysql-vs-postgres]].
+- Тизер: файлові системи використовують ті самі ідеї — ext4 індексує файли H-деревом, спрощеним аналогом B-дерева; k-nearest / quadtree обіцяні як майбутні теми.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: місткове відео перед глибоким розбором індексів MySQL проти Postgres
+- 00:42 — Таблиця товарів: пошук серед 100 млн назв без індексу означає повний скан
+- 01:02 — Відсортуй колонку й шукай бінарно: щокроку простір пошуку вдвічі менший
+- 01:46 — Масштаб виграшу: 100 трильйонів записів за ~46 поділів навпіл
+- 02:27 — Індекс — відсортована копія однієї колонки; один порядок сортування на індекс
+- 03:10 — Пастка: вставка у відсортований масив — O(N), тож потрібні дерева
+- 03:52 — Бінарне дерево пошуку: менше — ліворуч від 7, більше — праворуч
+- 06:03 — Пастка: вставте 1..5 по черзі — і BST вироджується у зв'язний список
+- 06:48 — Тримаємо баланс: мінімальна висота, обертання AVL і red-black при вставці
+- 08:33 — Чому бази даних усе одно оминають бінарні дерева: ~23 рівні x ~5 мс на disk seek
+- 10:00 — [[b-tree|B-дерева]]: вузли розміром із блок (8 KB, ~200–2000 дітей) зрізають глибину до 4, навіть 2
+- 12:12 — B+ дерева: дані лише в листах, а листи зшиті для дешевих діапазонних сканів
+- 14:20 — Свідомо на рівні концепцій; тизери: H-дерева ext4, quadtree, k-NN
+
+## Теми
 [[b-tree]], [[data-structures]], [[algorithmic-complexity]], [[database-indexes]], [[mysql]], [[postgresql]]

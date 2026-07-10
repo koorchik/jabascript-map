@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вайб-кодинг — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / vibe-coding</p>
+  <h1>Вайб-кодинг</h1>
+  <div class="topic-body"><p>Вайб-кодинг у тому вигляді, як Віктор практикує його наживо на каналі, — це не «заплющ очі й приймай усе, що видасть модель», а дисциплінований, керований стандартами робочий процес, де людина залишається архітектором, а ШІ друкує. Його повний конвеєр, продемонстрований з порожньої папки на стримі про гоночну телеметрію (<a href="../videos/vibe-coding-new-project.html">стрим вайб-кодингу нового проєкту</a>): забрейнштормити ідею застосунку з <a href="../tools/gemini.html">Gemini</a> і написати описи кожного екрана, згенерувати UI-екрани в <a href="../tools/google-stitch.html">Google Stitch</a> (ітеруючи екран за екраном і вибираючи переможців серед варіацій), покласти описи в репозиторій — і далі вести <a href="../tools/claude-code.html">Claude Code</a> у плановому режимі, читаючи і виправляючи <em>кожен</em> план перед тим, як дати йому виконуватись. Центральний трюк — кодувати стандарти проєкту в <code>CLAUDE.md</code> замість повторювати їх у промптах: щоразу, коли ШІ робить щось не так, виправлення йде в <code>CLAUDE.md</code>, а не лише в чат. Він запускає кілька інстансів Claude паралельно й ревʼюїть диффи після безперервних прогонів; з Opus 4.5 він виявив, що &quot;ultrathink&quot; більше не потрібен, а skills варто писати лише для справді повторюваних процедур.</p><p>Теза, до якої він постійно повертається у <a href="../videos/vibe-coding-part-2.html">другій частині про вайб-кодинг</a>: <strong>що краще структурований проєкт, то краще працює ШІ</strong>. Кілька тижнів ітеративно зносиш виправлення в <code>CLAUDE.md</code> — і кожна нова фіча «просто лягає». Зворотний бік: налаштування інфраструктури — та сама частина, де багато рішень, — це якраз те, чого ШІ (як і джуни) не вміє, і тому він планує opinionated-бойлерплейт (оновлення своїх chista/chista-express), який постачатиметься <em>разом</em> із <code>CLAUDE.md</code> і skills, щоб «ШІ вже знав, як з ним працювати» з першого промпта. Вайб-кодинг у його подачі — пряме продовження давніших тем каналу: <a href="../concepts/software-design.html">проєктування</a>, <a href="../concepts/abstractions.html">абстракції</a>, <a href="../concepts/code-quality.html">якість коду</a> і стандарти в епоху ШІ важать <em>більше</em>, а не менше, бо саме вони — важіль, який перетворює швидкого, але неохайного джуна на продуктивну команду.</p><p>Він також показує, що вайб-кодинг уже переріс стадію іграшки: Blackmagic постачає REST API, але не застосунок для його безекранної Micro Studio Camera, тож він за два вечори навайбкодив повнофункціональний застосунок-пульт на <a href="../tools/flutter.html">Flutter</a> (<a href="../videos/vibe-coded-mobile-app.html">навайбкоджений мобільний застосунок</a>). Його висновок економічний: вайб-кодинг перетворює «напиши собі власний вендорський застосунок» з місяців роботи на осудний проєкт вихідного дня.</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>
+  <span class="meta mono">1:40:28</span>
+  <p class="step-note">повний робочий процес наживо з порожньої папки: брейншторм у Gemini → екрани в Stitch → стандарти в CLAUDE.md → плановий режим → паралельні інстанси Claude → ревʼю диффів.</p></li><li><a href="../videos/vibe-coding-part-2.html">Вайб-кодінг — частина 2 (стрим)</a>
+  <span class="meta mono">1:48:25</span>
+  <p class="step-note">теза «структура годує ШІ», ітеративне занесення виправлень у CLAUDE.md, чому налаштування інфраструктури лишається за людиною, і план opinionated-бойлерплейта, готового до ШІ.</p></li><li><a href="../videos/vibe-coded-mobile-app.html">Навайбкодив мобільний додаток за два вечори (short)</a>
+  <span class="meta mono">01:50</span>
+  <p class="step-note">конкретний неіграшковий доказ: повноцінний застосунок-пульт для камери Blackmagic, навайбкоджений за два вечори поверх REST API камери.</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/ai-coding-agents.html">ШІ-агенти для кодування</a> — інструменти й механіка агентів під цим робочим процесом. <a href="../concepts/ai-and-jobs.html">ШІ та робочі місця</a> — аналогія «ШІ як джун, що масштабується», яка виправдовує інвестиції в стандарти. <a href="../concepts/software-design.html">Проєктування програмного забезпечення</a> — чиста архітектура, якої він навчає наживо під час вайб-кодинг-стримів. <a href="../concepts/code-quality.html">Якість коду</a> — стандарти в CLAUDE.md — це стайлгайди епохи ШІ. <a href="../concepts/automated-testing.html">Автоматизоване тестування</a> — тести проєктуєте ви, а пише їх LLM. <a href="../concepts/code-review.html">Код-ревʼю</a> — ревʼю диффів від ШІ приходить на зміну ревʼю PR від джунів.</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

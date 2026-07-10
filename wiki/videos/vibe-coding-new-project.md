@@ -2,24 +2,52 @@
 type: video
 title_uk: "Вайб-коджу новий крутий проект"
 youtube_id: BtHQyH6mniQ
+level: intermediate
 tags: [vibe-coding, ai, claude-code, clean-architecture, backend, livestream]
 date_ingested: 2026-07-09
 ---
-# Vibe-coding a New Cool Project (livestream)
+# Вайб-коджу новий крутий проєкт (стрім)
 
-> Original: "Вайб-коджу новий крутий проект" — https://youtu.be/BtHQyH6mniQ
+> Оригінал: "Вайб-коджу новий крутий проект" — https://youtu.be/BtHQyH6mniQ
 
-Live stream where the author starts a brand-new pet project — a racing telemetry app — from an empty folder, using [[claude-code|Claude Code]] (Opus 4.5 on the ~$100–120/month Max plan) as the main coding agent. He first shows off the previously vibe-coded [[flutter|Flutter]] app for his Blackmagic camera (native builds fly, the web build was "super slow" in debug until Claude optimized state handling), then walks through his real workflow: brainstorm the app with [[gemini|Gemini]], generate screen designs iteratively in [[google-stitch|Google Stitch]] (free, more creative than Figma's AI, needs a VPN from Ukraine), paste the whole description into the repo, and write instructions into `CLAUDE.md` instead of repeating prompts. The bulk of the stream is him dictating his backend philosophy to Claude: clean architecture ([[software-design]] à la Robert Martin's 2012 post — he argues "vertical slice architecture" is nothing new), thin controllers as glue, one application service per endpoint with a single `run()` method, validation inside the service (the real boundary), never leaking domain entities out of controllers, and always returning HTTP 200 with a `status: 0/1` payload "like Facebook's API". He plans the work in Claude's plan mode, reads every plan line by line, corrects it ("routing in one file", "use type inference from validation rules"), and runs several Claude instances in parallel from a Quake-style drop-down terminal inside dev containers.
+Стрім, на якому автор починає зовсім новий pet-проєкт — застосунок гоночної телеметрії — з порожньої папки, використовуючи [[claude-code|Claude Code]] (Opus 4.5 на Max-тарифі за ~$100–120/місяць) як основного кодуючого агента. Спершу він показує раніше навайбкоджений [[flutter|Flutter]]-застосунок для своєї камери Blackmagic (нативні збірки літають, а веб-збірка була «супер повільна» в debug, поки Claude не оптимізував роботу зі станом), а потім розкриває свій реальний workflow: брейншторм застосунку з [[gemini|Gemini]], ітеративна генерація дизайнів екранів у [[google-stitch|Google Stitch]] (безкоштовний, креативніший за AI Фігми, з України потрібен VPN), вставка повного опису в репозиторій і запис інструкцій у `CLAUDE.md` замість повторення промптів. Більша частина стріму — це він диктує Claude свою бекенд-філософію: чиста архітектура ([[software-design|проєктування ПЗ]] у дусі поста Robert Martin 2012 року — він доводить, що "vertical slice architecture" не є нічим новим), тонкі контролери як клей, один application-сервіс на ендпоінт з єдиним методом `run()`, валідація всередині сервісу (справжня межа), заборона витікання доменних сутностей з контролерів, і завжди HTTP 200 з пейлоадом `status: 0/1` «як в API Facebook». Роботу він планує в plan mode Claude, читає кожен план рядок за рядком, виправляє його («роутинг в одному файлі», «використовуй виведення типів з правил валідації») і ганяє кілька інстансів Claude паралельно з випадаючого термінала в стилі Quake всередині dev-контейнерів.
 
-## Key takeaways
-- **His vibe-coding loop:** empty repo → `CLAUDE.md` with project guidelines (updated constantly) → `/init` → plan mode → read and correct the whole plan → let Claude run non-stop on a committed git state and review the diffs afterward. "Skills" in Claude Code only made sense to him for reuse; he stays "vanilla + a constantly updated CLAUDE.md". The old `ultrathink` trick is no longer needed on Opus 4.5, which he finds dramatically better at design and less token-hungry.
-- **Architecture is the human's job:** business logic must not know about the web framework; controllers are hard-to-test glue that should be maximally thin (fat controllers and anemic domain models are antipatterns he calls out). Mental test: if the same services could power a CLI or a Telegram bot (he shows his 7-year-old Perl 6 golf bot with the same service-class pattern), the layering is right.
-- **Validation lives in the service, not the controller** — the controller only checks that JSON parses. Same rules serve runtime and static typing via [[livr|LIVR]]-style type inference; duplicating validation per transport (HTTP, CLI, GraphQL) is the smell.
-- **Don't return domain objects:** services dump only explicitly public fields — otherwise one day you leak a user's password hash. Password hashing itself is a domain-model business policy, not use-case code (a mistake Claude made that he corrects on stream).
-- **His "API for terrans":** he found JSON:API so low-level and inhuman he dubbed it "an API for zergs" (StarCraft joke) and wrote his own simpler JSON response spec, which he feeds Claude along with his `chista` / `chista-express` npm modules as reference implementations.
-- **With AI agents you become a tech lead from day one** ([[ai-coding-agents]], [[career-and-growth]]): the LLM writes the tests, you design them; your scarce skill shifts to architecture, requirements analysis and reading code. But [[deep-learning-of-fundamentals|deep fundamentals]] matter more, not less — he picked Flutter over React Native *because* he understands Flutter compiles natively while RN shuttles messages over a JS bridge, which matters for real-time telemetry math; without that understanding you can't correct the AI, "and it does so much that's wrong".
-- **Life update:** he quit Google because he couldn't fit everything in — volunteering (the war), a PhD dissertation on extracting sensitive data from large text corpora with LLMs, and YouTube; he won't job-hunt until the dissertation is written. A Rust aside: he once reimplemented a JS benchmark in Rust→WASM and got only 2× speedup — not worth switching for.
-- **Books he's currently enjoying (audio):** [[essentialism|Essentialism]] and [[effortless|Effortless]] by Greg McKeown, and [[atomic-habits|Atomic Habits]] — he expected nothing new from the latter and is "in delight".
+## Головне
+- **Його цикл вайб-кодингу:** порожній репозиторій → `CLAUDE.md` з гайдлайнами проєкту (постійно оновлюється) → `/init` → plan mode → прочитати й виправити весь план → дати Claude працювати нон-стоп від закоммічeного стану git і переглядати диффи потім. "Skills" у Claude Code мали для нього сенс лише для повторного використання; він залишається «vanilla + постійно оновлюваний CLAUDE.md». Старий трюк `ultrathink` на Opus 4.5 більше не потрібен — модель, на його думку, драматично краща в проєктуванні й менш ненажерлива до токенів.
+- **Архітектура — робота людини:** бізнес-логіка не повинна знати про веб-фреймворк; контролери — важкий для тестування клей, який має бути максимально тонким (товсті контролери й анемічні доменні моделі — антипатерни, які він прямо називає). Ментальний тест: якщо ті самі сервіси можуть живити CLI або Telegram-бота (він показує свого 7-річного гольф-бота на Perl 6 з тим самим патерном сервіс-класів), шарування правильне.
+- **Валідація живе в сервісі, а не в контролері** — контролер лише перевіряє, що JSON парситься. Ті самі правила обслуговують і рантайм, і статичну типізацію через виведення типів у стилі [[livr|LIVR]]; дублювання валідації на кожен транспорт (HTTP, CLI, GraphQL) — це запах.
+- **Не повертайте доменні об'єкти:** сервіси віддають лише явно публічні поля — інакше одного дня ви віддасте назовні хеш пароля користувача. Саме хешування пароля — бізнес-політика доменної моделі, а не код use case (помилка, яку Claude зробив і яку він виправляє на стрімі).
+- **Його «API для терранів»:** JSON:API здався йому настільки низькорівневим і нелюдським, що він охрестив його «API для зергів» (жарт зі StarCraft) і написав власну простішу специфікацію JSON-відповідей, яку згодовує Claude разом зі своїми npm-модулями `chista` / `chista-express` як еталонними реалізаціями.
+- **З AI-агентами ти стаєш техлідом з першого дня** ([[ai-coding-agents|AI-агенти]], [[career-and-growth|кар'єра]]): LLM пише тести, а ти їх проєктуєш; твоя дефіцитна навичка зміщується до архітектури, аналізу вимог і читання коду. Але [[deep-learning-of-fundamentals|глибокий фундамент]] важить більше, а не менше — він обрав Flutter замість React Native саме *тому*, що розуміє: Flutter компілюється нативно, а RN ганяє повідомлення через JS-міст, що критично для телеметричної математики в реальному часі; без цього розуміння ти не можеш виправляти AI, «а він робить стільки всього неправильно».
+- **Оновлення з життя:** він пішов з Google, бо не міг вмістити все — волонтерство (війна), дисертацію про витягування чутливих даних з великих текстових корпусів за допомогою LLM і YouTube; шукати роботу не буде, поки не напише дисертацію. Відступ про Rust: він якось переписав JS-бенчмарк на Rust→WASM і отримав лише 2× прискорення — не варте переходу.
+- **Книжки, якими зараз насолоджується (аудіо):** [[essentialism|Essentialism]] і [[effortless|Effortless]] Greg McKeown та [[atomic-habits|Atomic Habits]] — від останньої нічого нового не чекав і «в захваті».
 
-## Covered
+## Розділи
+- 00:00 — Вступ: перший стрім на новому камерному сетапі («поїж перед стрімом»)
+- 02:33 — Демо раніше навайбкодженого [[flutter|Flutter]]-застосунку для камери Blackmagic: релізи під кожну ОС
+- 07:10 — Нативні збірки літають, а debug веб-збірка була «супер повільна», поки Claude не оптимізував стан
+- 08:56 — Читання згенерованого Flutter-коду: структура віджетів і рефакторинг з базовим контролером, що зрізав ~40% коду
+- 12:32 — Щоденний workflow: усе працює в dev-контейнерах на Windows
+- 13:17 — Дизайни екранів гоночного застосунку в [[google-stitch|Google Stitch]]: безкоштовний, креативніший за Figma, з України потрібен VPN
+- 17:24 — Що отримав Stitch на вхід: брейншторм застосунку з [[gemini|Gemini]], ітерації екран за екраном
+- 18:59 — Старт з порожньої папки: монорепо чи ні, вставка повного опису дизайну в репозиторій
+- 21:12 — `CLAUDE.md` як живі інструкції замість повторюваних промптів; вибір модулів chista і chista-express
+- 24:30 — JSON:API — це «API для зергів»: власний простіший формат відповідей для терранів
+- 27:07 — Перший запуск [[claude-code|Claude Code]]: завжди починай з `/init`
+- 31:35 — Чиста архітектура: чому "vertical slice architecture" не є нічим новим (Robert Martin, 2012)
+- 34:24 — Карта шарів: тонкі контролери як клей, один application-сервіс на ендпоінт з єдиним `run()`
+- 38:03 — Q&A: звільнення з Google, техлід з першого дня з AI-агентами, аудіокниги й тема дисертації
+- 43:02 — Q&A: фундамент важить більше, а не менше — чому Flutter б'є React Native для телеметрії в реальному часі
+- 45:27 — Контролери — важкий для тестування клей: ментальний тест з CLI і валідація всередині сервісу
+- 49:28 — Ніколи не повертайте доменні сутності: віддавайте лише публічні поля (приклад із хешем пароля)
+- 51:18 — Диктування бекенд-дизайну Claude у plan mode: TypeScript, chista, MikroORM
+- 56:19 — 7-річний гольф-бот у Telegram на Perl 6 з тим самим патерном сервіс-класів
+- 1:00:58 — Другий Claude паралельно проєктує API; Q&A: контролер лише перевіряє, що JSON парситься
+- 1:03:29 — `ultrathink` на Opus 4.5 більше не потрібен; workflow з випадаючим терміналом у стилі Quake
+- 1:08:31 — Читання всього плану рядок за рядком: роутинг в одному файлі, свіжі версії бібліотек, виведення типів
+- 1:15:36 — Екскурсія прикладами chista-express: builder, виведення типів [[livr|LIVR]], пайплайн `run()`
+- 1:24:35 — Skills проти «vanilla + постійно оновлюваний CLAUDE.md»; вартість і враження від Opus 4.5
+- 1:28:28 — Перегляд згенерованих доків і коду: оновлення лише через PUT, завжди HTTP 200 зі `status: 0/1` «як у Facebook», хешування пароля належить доменній моделі
+
+## Теми
 [[vibe-coding]], [[ai-coding-agents]], [[software-design]], [[abstractions]], [[deep-learning-of-fundamentals]], [[career-and-growth]], [[claude-code]], [[gemini]], [[google-stitch]], [[flutter]], [[vs-code]], [[livr]], [[essentialism]], [[effortless]], [[atomic-habits]]

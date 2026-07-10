@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цифрові підписи — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / digital-signatures</p>
+  <h1>Цифрові підписи</h1>
+  <div class="topic-body"><p>Друга суперсила <a href="../concepts/asymmetric-encryption.html">асиметричного шифрування</a>, як її подає канал: зашифрувати хеш документа своїм <em>приватним</em> ключем — це <strong>і є</strong> підпис. Будь-хто може перевірити його твоїм публічним ключем, і це дає автентичність (це був ти), цілісність (нічого не змінилося — змінений документ змінює контрольну суму) і непідробність, бо приватного ключа більше ні в кого немає (<a href="../videos/asymmetric-encryption-digital-signatures.html">асиметричне шифрування і цифрові підписи</a>). Практична деталь, на якій він наполягає: у реальності ніколи не підписують весь документ — підписують його контрольну суму/хеш. Він також розбирає симетричного двійника — MAC на основі HMAC, — де той, хто підписує, і той, хто перевіряє, ділять один спільний секрет.</p><p>Підписи — це відповідь каналу на його улюблене питання-пастку: чи зашифрований JWT? Ні — він <em>підписаний</em> (симетрично або асиметрично), що доводить цілісність, але нічого не ховає; фронтенд може прочитати кожен байт пейлоада (<a href="../videos/hashing-encoding-encryption-difference.html">хешування, кодування і шифрування</a>). Розуміння того, чим підпис є насправді — на відміну від шифрування, — у <a href="../videos/3-things-that-make-a-programmer-better.html">3 речах, що роблять програміста кращим</a> подано як маркер глибокого знання проти поверхневого.</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/asymmetric-encryption-digital-signatures.html">Що захищає твої дані й гроші від хакерів? Асиметричне шифрування та цифровий підпис</a>
+  <span class="meta mono">37:32</span>
+  <p class="step-note">механіка: приватний ключ підписує хеш, публічний перевіряє; автентичність + цілісність + непідробність; HMAC для симетричного випадку</p></li><li><a href="../videos/hashing-encoding-encryption-difference.html">Хешування, кодування, шифрування — у чому різниця?</a>
+  <span class="meta mono">08:41</span>
+  <p class="step-note">друга можливість, яку відкриває асиметрична криптографія; на ній тримається відповідь на питання-пастку про JWT</p></li><li><a href="../videos/3-things-that-make-a-programmer-better.html">3 речі, які роблять програміста кращим</a>
+  <span class="meta mono">20:13</span>
+  <p class="step-note">JWT — це підпис, а не шифрування; саме знання різниці дозволяє використовувати його правильно</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/asymmetric-encryption.html">Асиметричне шифрування</a> — пара ключів, що робить підписи можливими. <a href="../concepts/hashing.html">Хешування</a> — те, що насправді підписується. <a href="../concepts/jwt.html">JWT</a> — канонічний повсякденний підписаний (не зашифрований) артефакт. <a href="../concepts/encryption.html">Шифрування</a> — вічно плутаний родич: шифрування ховає, підписи доводять. <a href="../concepts/cold-crypto-wallets.html">Холодні криптогаманці</a> — підписати транзакцію офлайн — у цьому весь трюк. <a href="../concepts/security-practices.html">Практики безпеки</a> — підписування образів/пакетів у ланцюжку постачання (із застереженням, що підпис доводить лише те, чиїм ключем підписано).</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

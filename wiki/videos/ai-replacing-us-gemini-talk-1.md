@@ -2,20 +2,28 @@
 type: video
 title_uk: "На тему заміни нас ШІ - розмова з Gemini #ai #gemini"
 youtube_id: 0FzlH1EdLdU
+level: beginner
 tags: [ai, gemini, llm-limitations, humor, shorts]
 date_ingested: 2026-07-09
 ---
-# On AI Replacing Us — a Chat with Gemini (short)
+# На тему заміни нас ШІ — розмова з Gemini (short)
 
-> Original: "На тему заміни нас ШІ - розмова з Gemini #ai #gemini" — https://youtu.be/0FzlH1EdLdU
+> Оригінал: "На тему заміни нас ШІ - розмова з Gemini #ai #gemini" — https://youtu.be/0FzlH1EdLdU
 
-A comedic voice conversation with [[gemini|Gemini]] that doubles as a common-sense reasoning test. The author asks a trivially simple question: "There's a car wash 100 m from me and I want to wash my car — should I walk or drive?" Gemini confidently answers "walk, it's only 100 m", then, when reminded that the car needs washing, flips to "right, I completely forgot — better drive". As he keeps probing, it drifts back into absurdity: it suggests he could "walk to the car wash, leave the car there and go for a stroll" — prompting the deadpan "I walked here. Where is my car?" — before finally apologizing ("I got completely confused. If you're on foot, the car isn't with you") and landing on the obvious answer. The unstated punchline, given the title: this is the intelligence that's supposed to replace us.
+Комедійна голосова розмова з [[gemini|Gemini]], що заразом є тестом на здоровий глузд. Автор ставить тривіально просте запитання: «За 100 м від мене автомийка, і я хочу помити машину — йти пішки чи їхати?» Gemini впевнено відповідає «йдіть пішки, це ж лише 100 м», а коли йому нагадують, що мити треба саме машину, перевзувається: «точно, я зовсім забув — краще їдьте». Що далі автор розпитує, то глибше модель з'їжджає в абсурд: пропонує «дійти до мийки пішки, залишити там машину й піти прогулятися» — на що звучить незворушне «Я прийшов пішки. Де моя машина?» — і врешті вибачається («я зовсім заплутався. Якщо ви пішки, машини з вами немає») і приходить до очевидної відповіді. Неозвучена пуанта, з огляду на назву: ось той інтелект, який має нас замінити.
 
-## Key takeaways
-- A live demonstration that LLMs can fluently agree, apologize and re-derive "the key point" ("to wash the car, it must be with you") while repeatedly losing track of elementary physical state — the car's location — within a few conversational turns.
-- The model optimizes for helpful-sounding options (find a closer car wash! book ahead! enjoy the walk!) rather than tracking the actual constraint of the problem.
-- The author's Socratic style — never correcting directly, just asking "and how do you picture that?" — is what exposes the failure; a less patient user would have accepted the first confident nonsense.
-- Framed as a data point in the [[ai-and-jobs]] debate: entertaining, but a reminder of how brittle current assistants' world-models are on tasks any human finds trivial.
+## Головне
+- Жива демонстрація того, як LLM може красномовно погоджуватися, вибачатися і заново виводити «ключовий момент» («щоб помити машину, вона має бути з вами»), водночас раз за разом гублячи елементарний фізичний стан — місцезнаходження машини — протягом кількох реплік розмови.
+- Модель оптимізує під варіанти, що звучать корисно (знайдіть ближчу мийку! запишіться заздалегідь! насолодіться прогулянкою!), замість відстежувати фактичне обмеження задачі.
+- Сократівський стиль автора — жодного прямого виправлення, лише «і як ти це собі уявляєш?» — саме він і оголює провал; менш терплячий користувач прийняв би першу впевнену нісенітницю.
+- Подано як аргумент у дебатах про [[ai-and-jobs|ШІ та робочі місця]]: весело, але це нагадування, наскільки крихкі моделі світу теперішніх асистентів на задачах, тривіальних для будь-якої людини.
 
-## Covered
+## Розділи
+- 00:00 — Питання: мийка за 100 м — пішки чи машиною? «Пішки, однозначно»
+- 00:23 — Перше виправлення: «точно, я зовсім забув — краще їдьте»
+- 00:45 — «Вирішувати вам, це ж лише 100 м» — обмеження знову вислизає
+- 01:07 — Gemini влучає в «ключовий момент», а тоді все одно пропонує прийти пішки й залишити машину
+- 01:48 — «Я прийшов пішки — де моя машина?» і фінальне вибачення
+
+## Теми
 [[ai-and-jobs]], [[gemini]]

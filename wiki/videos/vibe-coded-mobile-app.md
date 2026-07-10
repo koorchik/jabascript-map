@@ -2,20 +2,28 @@
 type: video
 title_uk: "Навайбкодив мобільний додаток за два вечори"
 youtube_id: 3J8VA4Y3Ba4
+level: beginner
 tags: [vibe-coding, ai, flutter, shorts]
 date_ingested: 2026-07-09
 ---
-# I Vibe-coded a Mobile App in Two Evenings (short)
+# Навайбкодив мобільний додаток за два вечори (short)
 
-> Original: "Навайбкодив мобільний додаток за два вечори" — https://youtu.be/3J8VA4Y3Ba4
+> Оригінал: "Навайбкодив мобільний додаток за два вечори" — https://youtu.be/3J8VA4Y3Ba4
 
-Short demo of a real itch-scratching app the author vibe-coded in two evenings. His Blackmagic Micro Studio Camera has no screen, barely any interface and no dedicated Blackmagic app — but it does have a REST API over the network (via a USB-C-to-Ethernet adapter). So he built a [[flutter|Flutter]] controller app that runs on Linux, Android "and whatever you want": it scans for the camera (or takes an IP), and since Blackmagic has no continuous autofocus, he added tap-to-focus — tap a point on the monitor feed and the camera refocuses there. The app exposes essentially the full camera feature set: audio and media controls, recording, a monitor view, false color, zebra, various frame guides, and color grading controls — and the same UI works both on a big screen and squeezed down to phone format on Android. "What I liked is that I vibe-coded this" — a working, genuinely useful multi-platform app for hardware nobody wrote an app for.
+Коротка демонстрація реального застосунку «для власного болю», який автор навайбкодив за два вечори. Його Blackmagic Micro Studio Camera не має екрана, майже не має інтерфейсу і не має окремого застосунку від Blackmagic — зате має REST API по мережі (через адаптер USB-C-на-Ethernet). Тож він зробив [[flutter|Flutter]]-застосунок керування камерою, який працює на Linux, Android «і на чому завгодно»: він сканує мережу в пошуках камери (або приймає IP), а оскільки Blackmagic не має безперервного автофокуса, він додав tap-to-focus — тицяєш точку на моніторній картинці, і камера перефокусовується туди. Застосунок відкриває практично весь набір можливостей камери: керування звуком і носіями, запис, моніторний перегляд, false color, zebra, різні рамки кадрування та керування кольорокорекцією — і той самий UI працює і на великому екрані, і стиснутий до формату телефона на Android. «Що мені сподобалося — це те, що я це навайбкодив» — працюючий, справді корисний мультиплатформний застосунок для заліза, під яке ніхто не написав програму.
 
-## Key takeaways
-- A concrete, non-toy [[vibe-coding]] success story: a full-featured camera control app for niche hardware, built in two evenings with an [[ai-coding-agents|AI coding agent]] rather than weeks of manual work.
-- The gap it fills is real: Blackmagic ships a REST API but no app for this camera — vibe-coding makes "write your own vendor app" economically sane.
-- Flutter's cross-platform story is the enabler: one codebase running on desktop Linux and Android, with responsive layout from tablet/monitor size down to phone.
-- Tap-to-focus on the video feed compensates for the camera's missing continuous autofocus — the app doesn't just mirror the API, it adds workflow features the hardware lacks.
+## Головне
+- Конкретна, не іграшкова історія успіху [[vibe-coding|вайб-кодингу]]: повнофункціональний застосунок керування камерою для нішевого заліза, зроблений за два вечори з [[ai-coding-agents|AI-агентом для кодування]] замість тижнів ручної роботи.
+- Прогалина, яку він закриває, реальна: Blackmagic постачає REST API, але не застосунок для цієї камери — вайб-кодинг робить «напиши власний вендорський застосунок» економічно осмисленим.
+- Кросплатформність Flutter — ключовий уможливлювач: одна кодова база на десктопному Linux і Android, з адаптивною версткою від розміру планшета/монітора до телефона.
+- Tap-to-focus на відеокартинці компенсує відсутність безперервного автофокуса в камери — застосунок не просто віддзеркалює API, а додає робочі функції, яких бракує залізу.
 
-## Covered
+## Розділи
+- 00:00 — Проблема: камера Blackmagic з REST API, але без екрана й без вендорського застосунку
+- 00:21 — [[flutter|Flutter]]-застосунок, навайбкоджений за два вечори: сканування або введення IP для підключення
+- 00:41 — Tap-to-focus на моніторній картинці плюс керування звуком, носіями, записом
+- 01:02 — Zebra, рамки кадрування, false color і керування кольорокорекцією
+- 01:23 — Той самий UI від великого екрана до Android-телефона — «жодного рядка коду руками»
+
+## Теми
 [[vibe-coding]], [[ai-coding-agents]], [[flutter]]

@@ -2,59 +2,59 @@
 type: overview
 tags: [synthesis]
 ---
-# jabascript — The Knowledge Map
+# jabascript — мапа знань
 
-**jabascript** is Viktor's Ukrainian-language YouTube channel (~19k subscribers as
-of early 2024), built as an *evergreen knowledge base for engineers* — designed to
-be watchable oldest-first without going stale. This wiki compiles all 40 ingested
-videos into an interlinked map. Start here, drill into a [[networking-and-internet|cluster]],
-or jump straight to a concept.
+**jabascript** — україномовний YouTube-канал Віктора (~19 тис. підписників
+станом на початок 2024-го), задуманий як *вічнозелена база знань для інженерів* —
+його можна дивитися від найстаріших відео, і він не застаріває. Ця вікі збирає
+всі 40 інгестованих відео в повʼязану мапу. Починайте звідси, пірнайте в
+[[networking-and-internet|кластер]] або стрибайте одразу до концепції.
 
-## The one thesis that runs through everything
+## Одна теза, що проходить крізь усе
 
-**[[deep-learning-of-fundamentals|Learn things deeply]]** is the channel's spine.
-Almost every video is an instance of it:
+**[[deep-learning-of-fundamentals|Вивчайте речі глибоко]]** — хребет каналу.
+Майже кожне відео — її втілення:
 
-- Understanding *internals* gives you a system's **properties** — marketing
-  materials never will ([[database-indexes]], [[uuid-vs-auto-increment]],
-  [[awd-and-drivetrains|even car drivetrains]]).
-- Knowledge sticks only when hooked onto a **knowledge tree** of fundamentals —
-  leaves (details) fall off; branches let you re-learn fast
+- Розуміння *нутрощів* дає вам **властивості** системи — маркетингові
+  матеріали не дадуть їх ніколи ([[database-indexes|індекси]], [[uuid-vs-auto-increment|UUID проти автоінкременту]],
+  [[awd-and-drivetrains|навіть автомобільні приводи]]).
+- Знання тримається, лише коли зачеплене за **дерево знань** із фундаментальних
+  речей — листя (деталі) опадає; гілки дозволяють швидко вивчити наново
   ([[learning-deeply-and-remembering]]).
-- "Almost all of information security is understanding how things work inside" —
-  the stated reason the channel does protocol deep-dives
+- «Майже вся інформаційна безпека — це розуміння того, як речі працюють
+  усередині» — заявлена причина, чому канал робить глибокі розбори протоколів
   ([[security-and-cryptography]]).
-- With AI, fundamentals matter *more*, not less: you can't correct what you
-  can't evaluate ([[vibe-coding]], [[ai-coding-agents]]).
+- З AI фундаментальні знання важать *більше*, а не менше: не можна виправити
+  те, що не можеш оцінити ([[vibe-coding|вайб-кодинг]], [[ai-coding-agents|AI-агенти для кодингу]]).
 
-## The six territories
+## Шість територій
 
-| Cluster | What lives there |
+| Кластер | Що там живе |
 |---|---|
-| [[networking-and-internet]] | The "How the Internet works" series: [[latency-and-speed-of-light]] → [[dns]] (3 parts) → [[dhcp]]; plus [[https-tls]], [[remote-development]] |
-| [[databases-and-data-structures]] | The densest learning path: [[algorithmic-complexity]] → [[b-tree|trees]] → [[database-indexes]] → [[full-text-search]]/[[inverted-index]] → [[bloom-filter]] |
-| [[security-and-cryptography]] | The [[hashing]]/[[encoding]]/[[encryption]] taxonomy, [[asymmetric-encryption]] and [[digital-signatures]], attack stories ([[social-engineering]], rogue [[dhcp|DHCP]]) |
-| [[ai-and-vibe-coding]] | From Gemini comedy stress-tests to full [[vibe-coding]] livestreams with [[claude-code]]; the [[ai-and-jobs|AI-as-junior]] position |
-| [[engineering-craft-and-career]] | The opinion core: [[software-design]], [[abstractions]], [[code-review]] (Google's process first-hand), [[microservices]] skepticism, [[career-and-growth]] with real Google comp numbers, and the book canon |
-| [[channel-meta]] | Q&A streams, voice-message war stories, [[channel-and-author|who Viktor is]] and why he joined — and left — Google |
+| [[networking-and-internet]] | Цикл «Як працює інтернет»: [[latency-and-speed-of-light|швидкість світла й затримки]] → [[dns|DNS]] (3 частини) → [[dhcp|DHCP]]; плюс [[https-tls|HTTPS/TLS]], [[remote-development|віддалена розробка]] |
+| [[databases-and-data-structures]] | Найщільніший навчальний шлях: [[algorithmic-complexity|складність алгоритмів]] → [[b-tree|дерева]] → [[database-indexes|індекси]] → [[full-text-search|повнотекстовий пошук]]/[[inverted-index|інвертований індекс]] → [[bloom-filter|фільтр Блума]] |
+| [[security-and-cryptography]] | Таксономія [[hashing|хешування]]/[[encoding|кодування]]/[[encryption|шифрування]], [[asymmetric-encryption|асиметричне шифрування]] і [[digital-signatures|цифрові підписи]], історії атак ([[social-engineering|соціальна інженерія]], rogue [[dhcp|DHCP]]) |
+| [[ai-and-vibe-coding]] | Від комедійних стрес-тестів Gemini до повних стрімів [[vibe-coding|вайб-кодингу]] з [[claude-code|Claude Code]]; позиція [[ai-and-jobs|«AI — це джуніор»]] |
+| [[engineering-craft-and-career]] | Опінійне ядро: [[software-design|дизайн ПЗ]], [[abstractions|абстракції]], [[code-review|код-ревʼю]] (процес Google із перших рук), скепсис щодо [[microservices|мікросервісів]], [[career-and-growth|карʼєра]] з реальними цифрами компенсацій у Google і книжковий канон |
+| [[channel-meta]] | Q&A-стріми, голосові історії з практики, [[channel-and-author|хто такий Віктор]] і чому він прийшов у Google — і пішов |
 
-## Signature material (the things only this channel gives you)
+## Фірмовий матеріал (те, що дає лише цей канал)
 
-- **First-hand Google mechanics**: readability certification in [[code-review]],
-  comp/stock-cliff arithmetic and promo-committee mechanics in
-  [[career-and-growth]] and [[voice-5-why-i-left-google]].
-- **A 300 TB hand-rolled full-text search** war story grounding the
-  [[inverted-index]] and [[index-compression]] pages.
-- **Real benchmarks with numbers**: 60,000× index speedup, UUID-PK bloat
-  measurements, Bloom filter vs Redis/MySQL/Map ladders, Kyiv→LA latency stacks.
-- **The WebbyLab practice**: architectural reviews beyond per-PR
-  [[code-review]], [[declarative-ui]] builders, [[livr]], the
-  [[least-privilege|admin-key disaster]].
-- **A complete [[five-star-books|book canon]]** with personal verdicts — the
-  [[software-design]] set (Evans, Fowler, Martin, Ousterhout) most of all.
+- **Механіка Google з перших рук**: сертифікація readability у [[code-review|код-ревʼю]],
+  арифметика компенсацій і сток-кліфів та механіка промо-комітетів у
+  [[career-and-growth|карʼєрі]] та [[voice-5-why-i-left-google]].
+- **Історія про самописний повнотекстовий пошук на 300 ТБ**, на якій стоять
+  сторінки [[inverted-index|інвертований індекс]] і [[index-compression|стиснення індексів]].
+- **Справжні бенчмарки з цифрами**: прискорення індексом у 60 000×, виміри
+  роздування таблиць через UUID-PK, драбини «фільтр Блума проти Redis/MySQL/Map», стеки затримок Київ→Лос-Анджелес.
+- **Практика WebbyLab**: архітектурні ревʼю на додачу до [[code-review|ревʼю кожного PR]],
+  білдери [[declarative-ui|декларативного UI]], [[livr|LIVR]],
+  [[least-privilege|катастрофа з адмін-ключем]].
+- **Повний [[five-star-books|книжковий канон]]** з особистими вердиктами —
+  насамперед набір із [[software-design|дизайну ПЗ]] (Еванс, Фаулер, Мартін, Оустергаут).
 
-## How to use this wiki
+## Як користуватися цією вікі
 
-Ask questions against it; answers worth keeping get filed back as new pages.
-The catalog lives in [[index]]; the ingest history in [[log]]. Conventions and
-workflows are in `CLAUDE.md` at the repo root.
+Ставте їй запитання; відповіді, варті збереження, повертаються назад новими
+сторінками. Каталог живе в [[index]]; історія інгестів — у [[log]]. Конвенції
+та воркфлоу — у `CLAUDE.md` в корені репозиторію.

@@ -2,16 +2,16 @@
 type: concept
 tags: [security, authentication, 2fa, cryptography]
 ---
-# One-time passwords (TOTP)
+# Одноразові паролі (TOTP)
 
-The channel demystifies Google Authenticator in one line: TOTP is just an HMAC over a shared secret plus the current Unix-time interval (e.g. 30-second windows). When you scan the QR code, your phone and the server end up holding the same secret; both compute the same HMAC for the current window, so the six digits match without any network round-trip ([[asymmetric-encryption-digital-signatures]]).
+Канал демістифікує Google Authenticator одним рядком: TOTP — це просто HMAC від спільного секрету та поточного інтервалу Unix-часу (наприклад, 30-секундні вікна). Коли ви скануєте QR-код, ваш телефон і сервер отримують той самий секрет; обидва обчислюють однаковий HMAC для поточного вікна, тож шість цифр збігаються без жодного мережевого обміну ([[asymmetric-encryption-digital-signatures|відео про асиметричне шифрування і підписи]]).
 
-The corollary Viktor points out is the classic support mystery solved: if your phone's clock is wrong, your codes are computed for the wrong time window and are simply invalid. No magic, no per-code server push — just a keyed hash and a synchronized clock.
+Наслідок, на який вказує Віктор, — розгадка класичної загадки служби підтримки: якщо годинник телефона збитий, коди обчислюються для неправильного часового вікна і просто недійсні. Жодної магії, жодного надсилання кодів із сервера — лише хеш із ключем і синхронізований годинник.
 
-## Covered in
-- [[asymmetric-encryption-digital-signatures]] — TOTP = HMAC(shared secret, Unix-time interval); phone and server hold the same secret; wrong clock means wrong codes
+## Де розглядається
+- [[asymmetric-encryption-digital-signatures]] — TOTP = HMAC(спільний секрет, інтервал Unix-часу); телефон і сервер тримають той самий секрет; збитий годинник — недійсні коди
 
-## Related
-[[hashing]] — HMAC is a keyed hash construction.
-[[digital-signatures]] — HMAC is the symmetric cousin of signing.
-[[security-practices]] — 2FA as a standard defense layer.
+## Повʼязане
+[[hashing]] — HMAC — це конструкція хешу з ключем.
+[[digital-signatures]] — HMAC — симетричний родич цифрового підпису.
+[[security-practices]] — 2FA як стандартний шар захисту.

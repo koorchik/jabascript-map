@@ -4,17 +4,17 @@ tags: [javascript, frontend, ui, framework]
 ---
 # React
 
-React is the dominant JavaScript UI library, and the channel carries rare first-hand history with it: WebbyLab ran React 0.4 in production just two months after its release ([[qa-2-answering-questions]], [[qa-and-plans-for-2024]]). Viktor lived through the whole state-management saga from the inside — Flux announced by Facebook with no implementation, the community's Fluxxor, his team wrapping PubSubJS to fake Flux, then Redux with its boilerplate, then metaprogramming wrappers to tame it. His conclusion after that tour: there is no single "correct" frontend architecture — today his pet projects use no Redux at all, just React plus his own API-access library.
+React — домінантна JavaScript-бібліотека для UI, і канал несе рідкісну історію з перших рук: WebbyLab запустив React 0.4 у продакшн лише через два місяці після релізу ([[qa-2-answering-questions|Q&A №2]], [[qa-and-plans-for-2024|Q&A та плани на 2024]]). Віктор пережив усю сагу зі стейт-менеджментом зсередини — Flux, який Facebook анонсував без реалізації, ком'юнітівський Fluxxor, його команда, що обгортала PubSubJS, аби зімітувати Flux, потім Redux зі своїм boilerplate, а тоді метапрограмні обгортки, щоб його приборкати. Його висновок після цього туру: єдиної «правильної» фронтенд-архітектури не існує — сьогодні в його pet-проєктах немає жодного Redux, лише React плюс власна бібліотека для доступу до API.
 
-The SSR chapter is a war story with a trophy: his production-grade server-side-rendering article (grown from a KharkivJS talk) won react.js Newsletter's worldwide best-article contest, earning him a ReactConf ticket and an afterparty with the React team, including vjeux ([[qa-and-plans-for-2024]]). React also anchors his default product stack — Node backend, JS frontend, React Native mobile — so one team shares one language.
+Розділ про SSR — це воєнна історія з трофеєм: його стаття про продакшн-рівень server-side rendering (що виросла з доповіді на KharkivJS) виграла всесвітній конкурс найкращої статті від react.js Newsletter, принісши йому квиток на ReactConf і афтепаті з командою React, включно з vjeux ([[qa-and-plans-for-2024|Q&A та плани на 2024]]). React також лежить в основі його дефолтного продуктового стеку — бекенд на Node, фронтенд на JS, мобайл на React Native — щоб одна команда працювала однією мовою.
 
-## Covered in
-- [[qa-2-answering-questions]] — first-hand state-management history: React 0.4 in production, Flux → Fluxxor → PubSubJS wrapper → Redux → metaprogramming; no Redux in his pet projects today.
-- [[qa-and-plans-for-2024]] — the SSR article that won react.js Newsletter's worldwide contest and the ReactConf afterparty with the React team.
+## Де розглядається
+- [[qa-2-answering-questions]] — історія стейт-менеджменту з перших рук: React 0.4 у продакшні, Flux → Fluxxor → обгортка над PubSubJS → Redux → метапрограмування; сьогодні в його pet-проєктах Redux немає.
+- [[qa-and-plans-for-2024]] — стаття про SSR, що виграла всесвітній конкурс react.js Newsletter, і афтепаті ReactConf із командою React.
 
-## Related
-[[nextjs]] — the React SSR framework he now uses instead of hand-rolling SSR.
-[[nodejs]] — the backend half of the one-language stack.
-[[material-ui]] — the React component library under his grid builders.
-[[react-admin]] — declarative admin building in the React ecosystem.
-[[declarative-ui]] — the paradigm React mainstreamed.
+## Повʼязане
+[[nextjs]] — React-фреймворк для SSR, яким він тепер користується замість ручного SSR.
+[[nodejs]] — бекендна половина одномовного стеку.
+[[material-ui]] — бібліотека React-компонентів під його grid-конструкторами.
+[[react-admin]] — декларативна побудова адмінок в екосистемі React.
+[[declarative-ui]] — парадигма, яку React зробив мейнстримом.

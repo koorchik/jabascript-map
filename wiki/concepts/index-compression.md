@@ -2,19 +2,19 @@
 type: concept
 tags: [databases, search, compression, indexes]
 ---
-# Index compression
+# Стиснення індексу
 
-How Viktor shrinks an inverted index stage by stage, with the sizes on screen: raw JSON 4 GB → flattened arrays 3.4 GB → delta-encoded sorted doc ids (store `100, 3, 5` instead of `100, 103, 108`) 2.3 GB → varbyte encoding (7 data bits + 1 continuation bit per byte) wrapped in base64 → 1.3 GB — smaller than MySQL's own FULLTEXT index at 1.7 GB ([[full-text-search-inverted-indexes]]). Delta compression is the enabler: it turns large ids into small integers so VByte (from a paper he references) can pack them tightly, which also speeds filesystem reads and lets a bigger index fit in RAM ([[qa-1-will-https-protect-you]]).
+Як Віктор стискає інвертований індекс крок за кроком, із розмірами на екрані: сирий JSON 4 GB → сплощені масиви 3.4 GB → дельта-кодування відсортованих doc id (зберігати `100, 3, 5` замість `100, 103, 108`) 2.3 GB → varbyte-кодування (7 бітів даних + 1 біт продовження на байт), загорнуте в base64, → 1.3 GB — менше за власний FULLTEXT-індекс MySQL з його 1.7 GB ([[full-text-search-inverted-indexes|інвертовані індекси]]). Дельта-стиснення — те, що все уможливлює: воно перетворює великі id на маленькі цілі числа, які VByte (зі статті, на яку він посилається) пакує щільно; це ще й пришвидшує читання з файлової системи та дозволяє більшому індексу поміститися в RAM ([[qa-1-will-https-protect-you|Q&A №1]]).
 
-In the Q&A follow-up he shows a survey paper of posting-list compression algorithms and draws the honest conclusions: they all presuppose sorted integers, there is no universal winner, and varbyte is decent everywhere. The corollary bites in practice: UUID doc ids defeat all of them — you must map UUIDs to integers first, exactly what InnoDB's hidden FTS_DOC_ID column does ([[full-text-search-part-2-qa]], [[uuid-vs-auto-increment]]).
+У Q&A-продовженні він показує оглядову статтю про алгоритми стиснення posting-списків і робить чесні висновки: усі вони передбачають відсортовані цілі числа, універсального переможця немає, а varbyte пристойний скрізь. Наслідок кусається на практиці: UUID як doc id ламають їх усі — спершу треба відобразити UUID у цілі числа, саме це й робить прихована колонка FTS_DOC_ID в InnoDB ([[full-text-search-part-2-qa|Q&A до другої частини]], [[uuid-vs-auto-increment|UUID проти auto-increment]]).
 
-## Covered in
-- [[full-text-search-inverted-indexes]] — the full compression ladder with on-screen sizes: 4 GB → 1.3 GB, beating MySQL FULLTEXT's 1.7 GB
-- [[full-text-search-part-2-qa]] — the survey paper: all algorithms assume sorted integers, no universal winner, UUIDs break everything
-- [[qa-1-will-https-protect-you]] — delta compression as the enabler for VByte, faster reads, and RAM-resident indexes
+## Де розглядається
+- [[full-text-search-inverted-indexes]] — повна драбина стиснення з розмірами на екрані: 4 GB → 1.3 GB, перемога над 1.7 GB FULLTEXT-індексу MySQL
+- [[full-text-search-part-2-qa]] — оглядова стаття: всі алгоритми розраховують на відсортовані цілі числа, універсального переможця немає, UUID ламають усе
+- [[qa-1-will-https-protect-you]] — дельта-стиснення як передумова VByte, швидшого читання та індексів у RAM
 
-## Related
-[[inverted-index]] — the structure being compressed
-[[uuid-vs-auto-increment]] — why doc-id choice makes or breaks compression
-[[base64]] — the +33% serialization overhead removed in part 2
-[[encoding]] — varbyte as an encoding scheme
+## Повʼязане
+[[inverted-index]] — структура, яку стискаємо
+[[uuid-vs-auto-increment]] — чому вибір doc id вирішує долю стиснення
+[[base64]] — +33% накладних витрат на серіалізацію, прибраних у частині 2
+[[encoding]] — varbyte як схема кодування

@@ -2,20 +2,20 @@
 type: concept
 tags: [security, cryptography, data-structures, algorithms]
 ---
-# Hashing
+# Хешування
 
-Strictly one-way: arbitrary input to fixed-size output — 1 TB or 100 TB in, 20 bytes out, and as Viktor quips, "it's not archiving": you cannot get the data back. The taxonomy video ([[hashing-encoding-encryption-difference]]) sorts hash functions into his three families by purpose: **checksums** (MD5, SHA-1 — git uses SHA-1), **cryptographic password hashing** (scrypt/bcrypt — how passwords are actually stored, so even an attacker with the full database and configs cannot recover them), and **hash-table hashes** (MurmurHash) built for speed and distribution rather than security. This one-way property is his answer to another trick question: database passwords aren't "encrypted," they're hashed — there is nothing to decrypt.
+Строго в один бік: довільний вхід — вихід фіксованого розміру; 1 TB чи 100 TB на вході, 20 байтів на виході, і, як жартує Віктор, «це не архівація»: дані назад не дістанеш. Відео-таксономія ([[hashing-encoding-encryption-difference|різниця між хешуванням, кодуванням і шифруванням]]) розкладає хеш-функції на його три родини за призначенням: **контрольні суми** (MD5, SHA-1 — git використовує SHA-1), **криптографічне хешування паролів** (scrypt/bcrypt — саме так паролі насправді й зберігають, тож навіть атакувальник із повною базою та конфігами не зможе їх відновити) та **хеші для хеш-таблиць** (MurmurHash), створені заради швидкості й розподілу, а не безпеки. Ця односторонність — його відповідь на ще одне питання з підступом: паролі в базі не «зашифровані», а захешовані — там нема чого розшифровувати.
 
-The channel treats hashing as a bridge concept between security and data structures. In [[why-algorithms-matter]] JS Maps/objects are revealed as hash tables with average O(1) lookup — the thing that turns an O(n·m) merge into O(n+m). In [[bloom-filter-and-firefox]] he gets into serious implementation detail: Bloom filters need fast, *uniformly distributed* hashes (a naive char-code sum can never reach the far end of a 10M-bit array), so he uses xxHash and the proven double-hashing trick — compute one 64-bit hash, split it into h1/h2, and derive k hashes as h1 + i·h2; he also recalls hash-table collision chains and an old Python hash-collision-attack vulnerability. On the crypto side, signatures are computed over a hash of the document ([[asymmetric-encryption-digital-signatures]]), and an encryption IV is likened to a password salt defeating rainbow tables.
+Канал подає хешування як міст між безпекою і структурами даних. У [[why-algorithms-matter|відео про те, навіщо алгоритми]] JS-івські Map-и та об'єкти виявляються хеш-таблицями з пошуком за O(1) у середньому — саме це перетворює злиття за O(n·m) на O(n+m). У [[bloom-filter-and-firefox|випуску про фільтр Блума і Firefox]] він занурюється в серйозні деталі реалізації: фільтру Блума потрібні швидкі та *рівномірно розподілені* хеші (наївна сума кодів символів ніколи не дотягнеться до дальнього кінця масиву з 10 млн бітів), тож він бере xxHash і перевірений трюк подвійного хешування — порахувати один 64-бітний хеш, розділити його на h1/h2 і вивести k хешів як h1 + i·h2; згадує і ланцюжки колізій у хеш-таблицях, і стару вразливість Python з атакою через хеш-колізії. З криптографічного боку підписи обчислюються над хешем документа ([[asymmetric-encryption-digital-signatures|цифрові підписи]]), а IV у шифруванні порівняно із сіллю пароля, що ламає райдужні таблиці.
 
-## Covered in
-- [[hashing-encoding-encryption-difference]] — the definition (one-way, fixed output) and the three-family taxonomy by purpose: checksums, password hashing, hash-table hashes; promises a dedicated password-storage video
-- [[bloom-filter-and-firefox]] — hash quality in anger: uniform distribution, xxHash, the h1 + i·h2 double-hashing trick, collision chains, the Python collision-attack story
-- [[why-algorithms-matter]] — JS Maps/objects are hash tables; average O(1) lookup is what collapses O(n·m) to O(n+m)
-- [[asymmetric-encryption-digital-signatures]] — signatures sign a hash/checksum, not the document; changing the document changes the checksum; IV likened to a password salt
+## Де розглядається
+- [[hashing-encoding-encryption-difference]] — визначення (односторонність, фіксований вихід) і таксономія з трьох родин за призначенням: контрольні суми, хешування паролів, хеші для хеш-таблиць; обіцянка окремого відео про зберігання паролів
+- [[bloom-filter-and-firefox]] — якість хешів у бойових умовах: рівномірний розподіл, xxHash, трюк подвійного хешування h1 + i·h2, ланцюжки колізій, історія про атаку колізіями в Python
+- [[why-algorithms-matter]] — JS-івські Map-и/об'єкти — це хеш-таблиці; середнє O(1) на пошук — саме те, що згортає O(n·m) до O(n+m)
+- [[asymmetric-encryption-digital-signatures]] — підписується хеш/контрольна сума, а не сам документ; зміна документа міняє контрольну суму; IV порівняно із сіллю пароля
 
-## Related
-[[encoding]] and [[encryption]] — the other two thirds of the constantly-confused trio: encoding is reversible by anyone, encryption reversible with the key, hashing reversible by no one.
-[[digital-signatures]] — built on top of hashes.
-[[bloom-filter]] — a data structure that is nothing but hashes and bits.
-[[data-structures]], [[algorithmic-complexity]] — hash tables as the O(1) workhorse.
+## Повʼязане
+[[encoding]] і [[encryption]] — дві інші третини трійці, яку постійно плутають: кодування зворотне для будь-кого, шифрування — для власника ключа, хешування — ні для кого.
+[[digital-signatures]] — побудовані поверх хешів.
+[[bloom-filter]] — структура даних, що складається лише з хешів і бітів.
+[[data-structures]], [[algorithmic-complexity]] — хеш-таблиці як робоча конячка O(1).

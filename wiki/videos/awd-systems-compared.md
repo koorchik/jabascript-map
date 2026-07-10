@@ -2,24 +2,42 @@
 type: video
 title_uk: "Яка різниця між повними приводами в авто？ (Subaru vs Porsche vs Audi vs Toyota)"
 youtube_id: iikap-kZ_AY
+level: beginner
 tags: [off-topic, sponsors-video, cars, engineering]
 date_ingested: 2026-07-09
 ---
-# What's the Difference Between AWD Systems? (Subaru vs Porsche vs Audi vs Toyota)
+# Яка різниця між повними приводами в авто? (Subaru vs Porsche vs Audi vs Toyota)
 
-> Original: "Яка різниця між повними приводами в авто？ (Subaru vs Porsche vs Audi vs Toyota)" — https://youtu.be/iikap-kZ_AY
+> Оригінал: "Яка різниця між повними приводами в авто？ (Subaru vs Porsche vs Audi vs Toyota)" — https://youtu.be/iikap-kZ_AY
 
-An off-topic sponsors video with zero IT content but the channel's core philosophy intact: "all-wheel drive" is a marketing label, and unless you dig into how a system is actually implemented, you cannot predict its properties ([[deep-learning-of-fundamentals]]). The trigger was personal: in winter, on identical Hakkapeliitta R3 tires, his parents' Subaru Outback drove out of a snowy village yard effortlessly while his own Porsche Macan T barely made it out and was hard to control. Add two more puzzles — a hybrid Subaru Forester dropping from 1st to ~12th place in a crossover comparison test, and a Toyota RAV4 failing a slippery hill a Forester climbs — and he went down the rabbit hole (grilling [[gemini|Gemini]] and reading everything he could) to map out how AWD really differs across brands ([[awd-and-drivetrains]]).
+Позатематичне відео для спонсорів без жодного IT, але з незмінною філософією каналу: «повний привід» — це маркетингова назва, і поки не розкопаєш, як система реально реалізована, її властивостей не передбачиш ([[deep-learning-of-fundamentals|глибоке вивчення основ]]). Тригер був особистий: узимку, на однакових шинах Hakkapeliitta R3, батьківський Subaru Outback без зусиль виїхав із засніженого сільського двору, тоді як його власний Porsche Macan T ледве вибрався і погано слухався. Додайте ще дві загадки — гібридний Subaru Forester, що впав з 1-го на ~12-те місце в порівняльному тесті кросоверів, і Toyota RAV4, яка не бере слизький підйом, що його долає Forester, — і він пірнув у кролячу нору (допитуючи [[gemini|Gemini]] і читаючи все, що знайшов), щоб розкласти, чим повний привід насправді відрізняється в різних брендів ([[awd-and-drivetrains|повний привід і трансмісії]]).
 
-## Key takeaways
-- The Outback vs Macan gap decomposes into many factors: torque split (Subaru roughly 60:50-ish and always engaged; Macan ~20:80 rear-biased with the front axle getting torque later), tire width (narrow tires dig through snow better than wide "skis"), ~350 kg extra weight, and throttle behavior — Subaru's naturally-aspirated 2.5 is easier to modulate than a turbo engine whose torque arrives in a lump.
-- The transmission matters as much as the AWD itself: Subaru's torque converter ahead of the CVT acts like "a mixer spinning a bowl of dough" — it accumulates torque and feeds it in smoothly, letting you crawl out under load. Near-direct dual-clutch/robotized boxes (Macan's PDK, Hyundai Santa Fe's robot in an InfoCar video he cites) can't store torque; the electronics cut power to save the clutch, and you go nowhere in sand or on ice.
-- Overheating is the dirty secret of most on-demand AWD: the multi-plate coupling lives in a little box with ~0.5 L of oil, so Macan-style systems overheat quickly on rocky terrain. Subaru's transfer mechanism shares the CVT's big radiator and ~12 L of oil — it "swims in a bucket of oil" and practically never overheats, which is why it can stay permanently engaged.
-- "Quattro" is three different things: on an Audi Q3 it's marketing — the same transverse-engine Haldex-type setup as a Tiguan, whose driveshaft even stops to save fuel; Q5's "quattro ultra" is longitudinal with two clutches but still fully disconnects on the highway; only the expensive Q7/Q8 keep a true permanent center (Torsen) differential — and even a real Torsen struggles with diagonal wheel lift, since it needs the gripping axle to push against.
-- Subaru's *symmetrical* AWD plus the flat boxer engine yields side benefits: low center of gravity, equal-length half-shafts (no torque steer — he recalls his 250-hp front-wheel-drive Focus ST trying to rip the wheel out of his hands), and longer suspension travel, i.e. more grip and less chance of diagonal lift.
-- Why the hybrid Forester flopped in the test: it uses Toyota's e-CVT, and (citing an Engineering Explained video) an e-CVT is "genius from the economy side, a disappointment as a CVT" — it works like a power-split differential, so you lose real gear-ratio torque multiplication and there's no torque converter; without a monster electric motor the car simply lacks wheel torque.
-- Regulation shapes engineering: EU CO2 fines push everyone to disconnect AWD to save ~0.3–0.5 L/100 km; Subaru survives because Toyota's 20% stake pools them together and Toyota's hybrid sales provide the CO2 quota. Side story: emission-credit sales were roughly a third of Tesla's profit until Trump killed the credit scheme and the ~$7,500 EV tax credit — a huge blow he links to Musk's backing of Trump.
-- Porsche's PTM was developed from scratch (the same contractor reportedly did BMW's xDrive, making them "brothers"); the front axle is never fully disconnected — Porsche accepts the fuel penalty on an expensive car. His verdict: the Macan's AWD is built for fun and handling (in off-road mode it goes 50:50 and dulls the throttle, which helps), the Subaru's for effortlessly getting you out — "the Subaru AWD is definitely more comfortable, but for a fun drive or a track day the Porsche wins hands down."
+## Головне
+- Розрив між Outback і Macan розкладається на багато чинників: розподіл моменту (у Subaru приблизно 60:50 і привід завжди підключений; у Macan ~20:80 із перевагою назад, і передня вісь отримує момент із запізненням), ширина шин (вузькі шини прогрібаються крізь сніг краще за широкі «лижі»), ~350 кг зайвої ваги і поведінка газу — атмосферний 2.5 Subaru легше дозувати, ніж турбомотор, момент якого приходить одним куском.
+- Коробка передач важить не менше за сам привід: гідротрансформатор Subaru перед CVT працює як «міксер, що крутить миску з тістом» — накопичує момент і подає його плавно, дозволяючи виповзати під навантаженням. Майже прямі преселективні/роботизовані коробки (PDK у Macan, робот Hyundai Santa Fe у відео InfoCar, яке він цитує) не вміють запасати момент; електроніка ріже потужність, рятуючи зчеплення, — і в піску чи на льоду ти нікуди не їдеш.
+- Перегрів — брудний секрет більшості підключних приводів: багатодискова муфта живе в коробочці з ~0.5 л оливи, тож системи типу маканівської швидко перегріваються на кам'янистому бездоріжжі. Механізм відбору моменту в Subaru ділить із CVT великий радіатор і ~12 л оливи — він «плаває у відрі з оливою» і практично ніколи не перегрівається, тому й може бути підключеним постійно.
+- «Quattro» — це три різні речі: на Audi Q3 це маркетинг — та сама схема з поперечним двигуном і муфтою типу Haldex, як у Tiguan, де карданний вал навіть зупиняється заради економії пального; «quattro ultra» на Q5 — поздовжня, з двома муфтами, але на трасі так само повністю відключається; лише дорогі Q7/Q8 зберігають справжній постійний центральний диференціал (Torsen) — і навіть справжній Torsen страждає від діагонального вивішування, бо йому потрібно, щоб вісь із зачепленням мала об що впертися.
+- *Симетричний* повний привід Subaru плюс плаский опозитний двигун дають побічні бонуси: низький центр ваги, однакові за довжиною піввісі (немає підруливання моментом — він згадує свій 250-сильний передньопривідний Focus ST, який намагався вирвати кермо з рук) і довший хід підвіски, тобто більше зчеплення й менше шансів на діагональне вивішування.
+- Чому гібридний Forester провалив тест: він використовує e-CVT від Toyota, а (цитуючи відео Engineering Explained) e-CVT — «геніальна з погляду економічності, розчарування як CVT» — вона працює як диференціал розподілу потужності, тож втрачаєш справжнє множення моменту передавальними числами, і гідротрансформатора немає; без монструозного електромотора машині просто бракує моменту на колесах.
+- Регуляції формують інженерію: штрафи ЄС за CO2 штовхають усіх відключати повний привід заради ~0.3–0.5 л/100 км; Subaru виживає, бо 20% частка Toyota об'єднує їх в один пул, і гібридні продажі Toyota дають квоту CO2. Побічна історія: продаж емісійних кредитів давав приблизно третину прибутку Tesla, поки Трамп не прибив схему кредитів і податкову пільгу ~$7,500 на електромобілі — величезний удар, який він пов'язує з підтримкою Трампа Маском.
+- PTM у Porsche розроблявся з нуля (той самий підрядник, кажуть, робив і xDrive для BMW, що робить їх «братами»); передня вісь ніколи не відключається повністю — Porsche приймає витрату пального на дорогій машині. Його вердикт: привід Macan створений для драйву й керованості (у позашляховому режимі він дає 50:50 і притуплює газ, що допомагає), привід Subaru — щоб без зусиль тебе витягти: «субарівський повний привід однозначно комфортніший, але для драйву чи трек-дня Porsche виграє з розгромним рахунком».
 
-## Covered
+## Розділи
+- 00:00 — Вступ: новий звук, позатематичне відео для спонсорів; чому одне буксуюче колесо знерухомлює передньопривідну машину
+- 01:23 — Загадка: на однакових Hakkapeliitta R3 Outback виїжджає зі снігу, а Macan T — ледве
+- 03:13 — Допит Gemini і мапа того, як повний привід працює насправді: розподіли моменту і «quattro — це маркетинг»
+- 04:17 — Розкладаємо сніговий розрив: 60:50 проти 20:80, вузькі шини, 350 кг, турбо-газ, позашляхові 50:50
+- 06:47 — Перегрів, брудний секрет: коробочка муфти на 0.5 л проти Subaru, що «плаває» у 12 л оливи CVT
+- 08:12 — Коробки, що запасають момент: гідротрансформатор-«міксер для тіста» проти роботів (Santa Fe, що застряг у піску)
+- 11:19 — Симетричний повний привід: поперечне проти поздовжнього компонування двигуна і чого це коштує
+- 13:03 — Бонуси опозитника: без підруливання моментом (історія з 250-сильним Focus ST), низький центр ваги, довший хід підвіски
+- 14:28 — Чому провалився гібридний Forester: e-CVT від Toyota — диференціал розподілу потужності без множення моменту
+- 16:35 — Три різні quattro: Haldex-маркетинг Q3, відключна «ultra» Q5, справжній Torsen Q7/Q8
+- 18:00 — Регуляції формують інженерію: штрафи ЄС за CO2, 20% частка Toyota, що рятує Subaru, втрачені кредити Tesla
+- 20:09 — Коли потрібен гідротрансформатор: порада щодо купівлі Suzuki Jimny і буксирування важкого
+- 20:51 — Macan проти Q5 віч-на-віч: перенастроєний мотор VW, софтверна магія PDK, PTM, що ніколи не відключається
+- 24:43 — Блокування диференціалів: імітація гальмами, слабкість Torsen до діагонального вивішування, перемикачі G-Wagen, стабілізатори
+- 28:15 — Підсумок і вердикт: знай реалізацію, інакше знаєш лише маркетинг; Subaru для комфорту, Porsche для драйву
+
+## Теми
 [[deep-learning-of-fundamentals]], [[awd-and-drivetrains]], [[gemini]]

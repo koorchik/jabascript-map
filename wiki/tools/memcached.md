@@ -4,10 +4,10 @@ tags: [databases, caching, in-memory, key-value]
 ---
 # Memcached
 
-Benchmarked alongside [[redis]] in the Bloom-filter shootout as a distributed in-memory hash table: comparable lookup speed to Redis (~6 s per 100,000 lookups on 10M keys), though oddly the slowest of everything to populate. Both in-memory stores are shown to be unnecessary for existence checks when an 11 MB [[bloom-filter]] in process memory answers the same 100k lookups in ~55 ms ([[bloom-filter-and-firefox]]).
+Бенчмаркався поруч із [[redis|Redis]] у порівняльному забігу з Bloom-фільтром як розподілена in-memory хеш-таблиця: швидкість пошуку порівнянна з Redis (~6 с на 100 000 пошуків по 10 млн ключів), хоча, як не дивно, наповнювався найповільніше з усіх. Обидва in-memory сховища, як показано, зайві для перевірок існування, коли [[bloom-filter|Bloom-фільтр]] на 11 МБ у памʼяті процесу відповідає на ті самі 100 тис. пошуків за ~55 мс ([[bloom-filter-and-firefox]]).
 
-## Covered in
-- [[bloom-filter-and-firefox]] — benchmarked as the second in-memory cache; slowest to populate, outclassed by the in-process filter
+## Де розглядається
+- [[bloom-filter-and-firefox]] — бенчмарк як другий in-memory кеш; найповільніший у наповненні, програє фільтру всередині процесу
 
-## Related
+## Повʼязане
 [[bloom-filter]], [[redis]], [[data-structures]]

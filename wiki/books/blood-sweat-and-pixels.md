@@ -5,10 +5,10 @@ tags: [book, gamedev, non-fiction]
 ---
 # Blood, Sweat, and Pixels
 
-Jason Schreier's collection of game-development war stories, from one-man Stardew Valley to AAA productions. Viktor's verdict: "прям топ" (straight-up top tier) — his rule of thumb is that if it covers even one game you know, buy it and read the whole thing.
+Збірка Джейсона Шраєра з історій про розробку ігор — від Stardew Valley, зробленої однією людиною, до AAA-продакшенів. Вердикт Віктора: «прям топ», а його просте правило: якщо в книжці є хоч одна гра, яку ви знаєте, — купуйте і читайте всю.
 
-## Covered in
-- [[five-star-books]] — "прям топ"; if it covers one game you know, read the whole book
+## Де розглядається
+- [[five-star-books]] — «прям топ»; якщо там є хоч одна знайома гра — читайте всю книжку
 
-## Related
-Narrative non-fiction shelf-mates on his list: [[sandworm]], [[summa-technologiae]].
+## Повʼязане
+Сусіди по поличці наративного нонфікшену з його списку: [[sandworm|Sandworm]], [[summa-technologiae|Summa Technologiae]].

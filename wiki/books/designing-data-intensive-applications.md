@@ -5,10 +5,10 @@ tags: [book, databases, distributed-systems]
 ---
 # Designing Data-Intensive Applications
 
-Martin Kleppmann's famous "DDIA" — the modern reference on storage engines, replication, partitioning, and distributed data systems. Viktor's refreshingly honest verdict: it's famous, everyone cites it, and it has hung unfinished on his shelf for a long time. On the list, but he won't pretend he finished it.
+Знаменита «DDIA» Мартіна Клеппмана — сучасний довідник зі storage engines, реплікації, партиціонування та розподілених систем даних. Освіжно чесний вердикт Віктора: книжка знаменита, її цитують усі, а в нього вона вже давно висить недочитаною на полиці. У списку є, але вдавати, що дочитав, він не буде.
 
-## Covered in
-- [[five-star-books]] — famous, but honestly admitted to hang unfinished for a long time
+## Де розглядається
+- [[five-star-books]] — знаменита, але чесно зізнається: давно висить недочитаною
 
-## Related
-[[data-structures]], [[microservices]] (distributed-systems territory), [[deep-learning-of-fundamentals]]. Fellow famously-unfinishable tome: [[code-complete]].
+## Повʼязане
+[[data-structures|Структури даних]], [[microservices|мікросервіси]] (територія розподілених систем), [[deep-learning-of-fundamentals|глибоке вивчення основ]]. Ще один знаменито недочитуваний том: [[code-complete|Code Complete]].

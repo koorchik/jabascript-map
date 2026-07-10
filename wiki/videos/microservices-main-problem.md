@@ -2,22 +2,33 @@
 type: video
 title_uk: "Головна проблема мікросервісів, яку часто недооцінюють"
 youtube_id: MCFMQR6Yvd0
+level: intermediate
 tags: [microservices, architecture, monolith, software-design]
 date_ingested: 2026-07-09
 ---
-# The Main Problem of Microservices That People Underestimate
+# Головна проблема мікросервісів, яку часто недооцінюють
 
-> Original: "Головна проблема мікросервісів, яку часто недооцінюють" — https://youtu.be/MCFMQR6Yvd0
+> Оригінал: "Головна проблема мікросервісів, яку часто недооцінюють" — https://youtu.be/MCFMQR6Yvd0
 
-A warning for anyone planning to *start* a new project with [[microservices]]. People see them as simpler "because they're small", but the problems outnumber the first impression. He opens with Simon Brown's line — "what makes you think you can build a microservices architecture if you can't build a monolith?" — runs through the well-known (solvable) problems, and then lands on the conceptual one he thinks is underrated: **on day one you never know the domain well enough to slice service boundaries correctly**, and unlike a monolith, microservices make fixing the wrong cut brutally expensive ([[domain-knowledge]], [[software-design]]).
+Пересторога для всіх, хто планує *починати* новий проєкт із [[microservices|мікросервісів]]. Людям вони здаються простішими, «бо маленькі», але проблем більше, ніж видається на перший погляд. Автор починає з фрази Саймона Брауна — «чому ви думаєте, що зможете побудувати мікросервісну архітектуру, якщо не можете побудувати моноліт?» — проходиться по загальновідомих (розв'язуваних) проблемах, а потім доходить до концептуальної, яку вважає недооціненою: **у перший день ви ніколи не знаєте домен достатньо добре, щоб правильно нарізати межі сервісів**, і, на відміну від моноліту, з мікросервісами виправити невдалий поділ шалено дорого ([[domain-knowledge|знання домену]], [[software-design|проєктування ПЗ]]).
 
-## Key takeaways
-- The "known" costs he lists first: instead of one deployed binary you get a wagon of services needing an orchestration platform for building/deploying/rollbacks; **version compatibility** — after rolling back service B you must somehow guarantee A/B/C still fit together (a non-problem in a monolith where all code ships together); each service having its own database kills transactionality — for something like a bookkeeping system needing an atomic posting across services, "distributed transactions… just forget it"; and a call to another module in a monolith always succeeds (it's in memory), while a microservice call can be down or half-down, all of which needs handling patterns and complicates the program.
-- He's also skeptical of the "right technology per task" pitch — one service in each of four languages: does that really make development cheaper or maintenance easier? "I'm not sure." Plus you have to *hire* people who actually know how to do all this, in the current market — one more huge problem.
-- The core idea comes from Robert C. Martin's talk (link under the video): the architect's job is **not to make decisions but to defer them as long as possible — good architecture maximizes the number of decisions NOT made**. It sounds like heresy, but: architecture quality depends on how well you understand the domain, you understand it better every day, so a decision taken later is a better decision. You deliberately add [[abstractions]] (without fanaticism) that let you decide later.
-- Microservices are the opposite bet: they assume that on day one you already know how to cut the system into pieces — but you almost never know the [[domain-knowledge|domain]] well enough yet. A monolith suffers the same wrong-abstraction problem, **but there you have refactoring**: one codebase, one or a few teams, you move responsibilities between modules and classes easily. With microservices in different languages owned by different teams, the same fix is "incredibly hard."
-- His favourite mechanism of decay: everyone makes each microservice nice and simple, **but the complexity doesn't disappear — it migrates to the communication level**. When the service boundaries turn out wrong, teams try to fix it in the inter-service communication, one service pulls another pulls a third, extra services get added — "it turns into porridge."
-- Bottom line: in ~90% of cases start with a **modular monolith** (a monolith should always be modular) — then splitting it into microservices later, when you actually understand the domain and know *why* you need them, is much easier and usually works better than starting with microservices. He points to Medium's engineering article about their monolith-to-microservices migration (link under the video) as a good example of the approach.
+## Головне
+- «Відомі» витрати, які він перелічує спочатку: замість одного бінарника на деплой отримуєте цілий вагон сервісів, яким потрібна платформа оркестрації для збирання/деплою/відкатів; **сумісність версій** — після відкату сервісу B треба якось гарантувати, що A/B/C і далі стикуються (у моноліті, де весь код їде разом, цієї проблеми немає); окрема база даних у кожного сервісу вбиває транзакційність — для чогось на кшталт бухгалтерської системи, якій потрібна атомарна проводка через кілька сервісів, «розподілені транзакції… просто забудьте»; а виклик іншого модуля в моноліті завжди спрацьовує (він у пам'яті), тоді як мікросервіс може лежати або напівлежати — усе це вимагає патернів обробки й ускладнює програму.
+- Він скептичний і до пітчу «правильна технологія під кожну задачу» — по сервісу на кожній із чотирьох мов: чи справді це здешевлює розробку або спрощує підтримку? «Я не впевнений.» Плюс людей, які реально вміють усе це робити, треба ще *найняти* — на нинішньому ринку це ще одна величезна проблема.
+- Ключова ідея — з доповіді Robert C. Martin (посилання під відео): робота архітектора — **не ухвалювати рішення, а відкладати їх якомога довше — хороша архітектура максимізує кількість НЕухвалених рішень**. Звучить як єресь, але: якість архітектури залежить від того, наскільки добре ви розумієте домен, а розумієте ви його щодня краще, тож рішення, ухвалене пізніше, — краще рішення. Ви свідомо додаєте [[abstractions|абстракції]] (без фанатизму), які дозволяють вирішити потім.
+- Мікросервіси — протилежна ставка: вони припускають, що в перший день ви вже знаєте, як порізати систему на шматки, — але ви майже ніколи ще не знаєте [[domain-knowledge|домен]] достатньо добре. Моноліт страждає від тієї самої проблеми неправильних абстракцій, **але там є рефакторинг**: одна кодова база, одна чи кілька команд, ви легко переносите відповідальності між модулями й класами. З мікросервісами різними мовами, якими володіють різні команди, те саме виправлення — «неймовірно важке».
+- Його улюблений механізм деградації: усі роблять кожен мікросервіс гарним і простим, **але складність не зникає — вона мігрує на рівень комунікації**. Коли межі сервісів виявляються неправильними, команди намагаються полагодити це в міжсервісній комунікації, один сервіс смикає другий, той — третій, додаються зайві сервіси — «виходить каша».
+- Підсумок: у ~90% випадків починайте з **модульного моноліту** (моноліт завжди має бути модульним) — тоді розпиляти його на мікросервіси пізніше, коли ви вже реально розумієте домен і знаєте, *навіщо* вони вам, значно легше, і зазвичай це працює краще, ніж стартувати з мікросервісів. Як хороший приклад підходу він наводить інженерну статтю Medium про їхню міграцію з моноліту на мікросервіси (посилання під відео).
 
-## Covered
+## Розділи
+- 00:00 — Вступ: починати новий проєкт із [[microservices|мікросервісів]]? Саймон Браун: «чому ви думаєте, що збудуєте мікросервіси, якщо не можете збудувати моноліт?»
+- 01:02 — Розв'язувані витрати: платформа оркестрації, деплої, сумісність версій при відкатах
+- 02:05 — База даних на кожен сервіс: розподілені транзакції — «просто забудьте»
+- 02:48 — Виклики в пам'яті працюють завжди; виклики мікросервісів можуть падати — плюс поліглотні стеки й наймання
+- 04:17 — Robert C. Martin: хороша архітектура максимізує кількість НЕухвалених рішень
+- 06:04 — Недооцінена проблема: у перший день ви не знаєте домен достатньо, щоб нарізати межі
+- 07:07 — Моноліт із невдалим поділом рятує рефакторинг; у мікросервісах складність мігрує в комунікацію — «каша»
+- 08:30 — Вердикт: починайте з модульного моноліту (стаття Medium про міграцію)
+
+## Теми
 [[microservices]], [[software-design]], [[abstractions]], [[domain-knowledge]]

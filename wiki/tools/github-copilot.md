@@ -4,11 +4,11 @@ tags: [ai, autocomplete, coding-assistant]
 ---
 # GitHub Copilot
 
-GitHub's AI autocomplete assistant — and the one AI tool the channel repeatedly declined. Viktor subscribed, tried it, and unsubscribed ([[qa-and-plans-for-2024]]); he doesn't really use autocomplete assistants at all, conceding only that Copilot's free tier "works okay" ([[qa-2-answering-questions]]). The comparison that damns it is Google's internal equivalent: trained on Google's own codebase and integrated everywhere, it completes code *in Google's style* — that one actually convinced him. The lesson he draws is the same as his `CLAUDE.md` thesis in [[vibe-coding]]: AI assistance is only as good as its knowledge of *your* conventions.
+AI-асистент автодоповнення від GitHub — і єдиний AI-інструмент, від якого канал послідовно відмовляється. Віктор оформив підписку, спробував і відписався ([[qa-and-plans-for-2024]]); асистентами автодоповнення він узагалі майже не користується, визнаючи хіба що те, що безкоштовний тариф Copilot «працює нормально» ([[qa-2-answering-questions]]). Порівняння, яке ставить на ньому хрест, — внутрішній аналог у Google: натренований на власній кодовій базі Google та інтегрований усюди, він доповнює код *у стилі Google* — от той його справді переконав. Висновок він робить той самий, що й у своїй тезі про `CLAUDE.md` у [[vibe-coding|вайб-кодингу]]: AI-допомога хороша рівно настільки, наскільки добре вона знає *ваші* конвенції.
 
-## Covered in
-- [[qa-2-answering-questions]] — skips autocomplete; free tier "works okay"; Google's internal codebase-trained analog is far better.
-- [[qa-and-plans-for-2024]] — subscribed, tried, unsubscribed; what would actually convince him.
+## Де розглядається
+- [[qa-2-answering-questions]] — автодоповнення оминає; безкоштовний тариф «працює нормально»; внутрішній аналог Google, натренований на його кодовій базі, значно кращий.
+- [[qa-and-plans-for-2024]] — підписався, спробував, відписався; що б його насправді переконало.
 
-## Related
+## Повʼязане
 [[ai-coding-agents]], [[claude-code]], [[cursor]], [[vibe-coding]]

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бази даних і структури даних — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body style="--h:38">
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html" class="active">Треки</a><a href="../concepts.html">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="track-page">
+  <p class="eyebrow mono"><a href="../index.html#tracks">треки</a> / 03</p>
+  <h1>Бази даних і структури даних</h1>
+  <div class="meta mono">9 відео · 5 год 5 хв</div>
+  <div class="progress big" data-slugs="why-database-indexes,why-algorithms-matter,trees-search-algorithms-databases,database-indexes-mysql-vs-postgres,full-text-search-inverted-indexes,full-text-search-part-2-qa,bloom-filter-and-firefox,qa-1-will-https-protect-you,qa-2-answering-questions"><span></span></div>
+  <div class="track-intro"><p>Найщільніший і найретельніше вибудуваний кластер каналу. Віктор будує навчальний шлях, де кожне відео створює проблему, яку розвʼязує наступне: спершу сирий шок від <em>навіщо взагалі індекси</em> (той самий запит, у 60 000 разів швидше), потім <em>дерева</em>, щоб пояснити, чим індекс є фізично і чому диски вимагають неглибоких B+ дерев, далі <em>нутрощі індексів</em> (MySQL проти Postgres, кластерний проти heap, UUID проти автоінкременту — з експериментами на 16 млн рядків), потім місце, де B-дерева пасують, — пошук усередині рядка — яке відкриває <em>повнотекстовий пошук та інвертовані індекси</em> (побудовані вручну, стиснені й забенчмарчені проти рідного FULLTEXT у MySQL), і нарешті <em>фільтри Блума</em> як імовірнісний фінал, що обганяє кожну базу даних і кеш у цій драбині. Усе вимірюється наживо, все спирається на його історії з практики — насамперед на систему повнотекстового пошуку на 300 ТБ, яку він власноруч побудував у продакшені, — а повторюваний висновок і є тезою каналу: знай властивості й нутрощі своїх інструментів, а не хайп.</p></div>
+  <h2>Порядок перегляду</h2>
+  <ol class="stepper">
+  <li class="step">
+  <div class="node mono" data-watch-node="why-database-indexes">1</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/why-database-indexes.html">Навіщо потрібні індекси в базі даних — розберемо на прикладі</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="why-database-indexes"> переглянуто</label>
+    </div>
+    <p class="step-note">жива демонстрація в MySQL: 3.3 с → 0.05 мс на 10 млн рядків, плюс де індекси ламаються</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/database-indexes.html">Індекси баз даних</a><a class="chip" href="../concepts/algorithmic-complexity.html">Алгоритмічна складність</a><a class="chip" href="../concepts/b-tree.html">B-tree / B+ tree</a><a class="chip" href="../concepts/full-text-search.html">Повнотекстовий пошук</a><a class="chip" href="../concepts/inverted-index.html">Інвертований індекс</a><a class="chip" href="../tools/mysql.html">MySQL</a></div>
+    <div class="meta mono">19:22 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="why-algorithms-matter">2</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/why-algorithms-matter.html">Чому алгоритми важливі — розберемо на прикладі</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="why-algorithms-matter"> переглянуто</label>
+    </div>
+    <p class="step-note">O(n*m) проти O(n+m), закодоване наживо на JS і спроєктоване на індекси баз даних</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/algorithmic-complexity.html">Алгоритмічна складність</a><a class="chip" href="../concepts/data-structures.html">Структури даних</a><a class="chip" href="../concepts/hashing.html">Хешування</a><a class="chip" href="../concepts/database-indexes.html">Індекси баз даних</a><a class="chip" href="../concepts/b-tree.html">B-tree / B+ tree</a></div>
+    <div class="meta mono">23:44 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="trees-search-algorithms-databases">3</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/trees-search-algorithms-databases.html">Дерева. Пошук. Алгоритми. Бази даних</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="trees-search-algorithms-databases"> переглянуто</label>
+    </div>
+    <p class="step-note">місток на дошці: бінарний пошук → BST → AVL → неглибокі дискові B+ дерева</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/b-tree.html">B-tree / B+ tree</a><a class="chip" href="../concepts/data-structures.html">Структури даних</a><a class="chip" href="../concepts/algorithmic-complexity.html">Алгоритмічна складність</a><a class="chip" href="../concepts/database-indexes.html">Індекси баз даних</a><a class="chip" href="../tools/mysql.html">MySQL</a><a class="chip" href="../tools/postgresql.html">PostgreSQL</a></div>
+    <div class="meta mono">15:56 · 13 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="database-indexes-mysql-vs-postgres">4</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/database-indexes-mysql-vs-postgres.html">Як працюють індекси в базах на прикладі: MySQL vs Postgres, UUID vs Auto Increment</a>
+      <span class="badge badge-advanced">просунутий</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="database-indexes-mysql-vs-postgres"> переглянуто</label>
+    </div>
+    <p class="step-note">хардкорні нутрощі з експериментами на 16 млн рядків: кластерний проти heap, MVCC, штрафи за UUID</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/database-indexes.html">Індекси баз даних</a><a class="chip" href="../concepts/b-tree.html">B-tree / B+ tree</a><a class="chip" href="../concepts/mvcc.html">MVCC (багатоверсійне керування конкурентним доступом)</a><a class="chip" href="../concepts/uuid-vs-auto-increment.html">UUID проти auto-increment у первинних ключах</a><a class="chip" href="../concepts/algorithmic-complexity.html">Алгоритмічна складність</a><a class="chip" href="../concepts/deep-learning-of-fundamentals.html">Глибоке вивчення фундаментальних речей</a></div>
+    <div class="meta mono">37:42 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="full-text-search-inverted-indexes">5</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/full-text-search-inverted-indexes.html">Як працює повнотекстовий пошук: будуємо інвертований індекс на практиці</a>
+      <span class="badge badge-advanced">просунутий</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="full-text-search-inverted-indexes"> переглянуто</label>
+    </div>
+    <p class="step-note">вручну будує інвертований індекс продакшен-рівня через map-reduce; бʼє MySQL LIKE: 40 с → 21 мс</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/full-text-search.html">Повнотекстовий пошук</a><a class="chip" href="../concepts/inverted-index.html">Інвертований індекс</a><a class="chip" href="../concepts/index-compression.html">Стиснення індексу</a><a class="chip" href="../concepts/map-reduce.html">Map-reduce</a><a class="chip" href="../concepts/base64.html">Base64</a><a class="chip" href="../concepts/database-indexes.html">Індекси баз даних</a></div>
+    <div class="meta mono">48:15 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="full-text-search-part-2-qa">6</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/full-text-search-part-2-qa.html">Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації</a>
+      <span class="badge badge-advanced">просунутий</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="full-text-search-part-2-qa"> переглянуто</label>
+    </div>
+    <p class="step-note">розділення на файл токенів + бінарні postings, n-грамні токенізатори, пошук через S3 Range-запити</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/full-text-search.html">Повнотекстовий пошук</a><a class="chip" href="../concepts/inverted-index.html">Інвертований індекс</a><a class="chip" href="../concepts/index-compression.html">Стиснення індексу</a><a class="chip" href="../concepts/base64.html">Base64</a><a class="chip" href="../concepts/uuid-vs-auto-increment.html">UUID проти auto-increment у первинних ключах</a><a class="chip" href="../tools/elasticsearch.html">Elasticsearch</a></div>
+    <div class="meta mono">14:34 · 8 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="bloom-filter-and-firefox">7</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/bloom-filter-and-firefox.html">Геніальна структура даних й як її покращив Firefox</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="bloom-filter-and-firefox"> переглянуто</label>
+    </div>
+    <p class="step-note">фільтри Блума проти Map/MySQL/Redis/Memcached на 10 млн ключів, і каскад CRLite у Firefox</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/bloom-filter.html">Фільтр Блума</a><a class="chip" href="../concepts/data-structures.html">Структури даних</a><a class="chip" href="../concepts/hashing.html">Хешування</a><a class="chip" href="../concepts/https-tls.html">HTTPS і TLS</a><a class="chip" href="../concepts/database-indexes.html">Індекси баз даних</a><a class="chip" href="../concepts/algorithmic-complexity.html">Алгоритмічна складність</a></div>
+    <div class="meta mono">51:02 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="qa-1-will-https-protect-you">8</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/qa-1-will-https-protect-you.html">Питання та відповіді №1: чи захистить HTTPS?</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="qa-1-will-https-protect-you"> переглянуто</label>
+    </div>
+    <p class="step-note">Q&amp;A-продовження про UUID-ключі та стиснення інвертованого індексу</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/https-tls.html">HTTPS і TLS</a><a class="chip" href="../concepts/dhcp.html">DHCP (Dynamic Host Configuration Protocol)</a><a class="chip" href="../concepts/dns.html">DNS (Domain Name System)</a><a class="chip" href="../concepts/nat-and-networking.html">NAT і основи мереж</a><a class="chip" href="../concepts/security-practices.html">Практики безпеки</a><a class="chip" href="../concepts/social-engineering.html">Соціальна інженерія</a></div>
+    <div class="meta mono">17:50 · 15 розділів</div>
+  </div>
+</li><li class="step">
+  <div class="node mono" data-watch-node="qa-2-answering-questions">9</div>
+  <div class="step-body">
+    <div class="step-top">
+      <a class="step-title" href="../videos/qa-2-answering-questions.html">Відповідаю на питання №2</a>
+      <span class="badge badge-intermediate">середній</span>
+      <label class="watched-box mono"><input type="checkbox" class="watched" data-slug="qa-2-answering-questions"> переглянуто</label>
+    </div>
+    <p class="step-note">алгоритми в реальному житті: аналіз складності на ревʼю, історія з практики про топологічне сортування стека</p>
+    <div class="chip-row small"><a class="chip" href="../concepts/career-and-growth.html">Карʼєра і зростання</a><a class="chip" href="../concepts/ai-coding-agents.html">ШІ-агенти для кодування</a><a class="chip" href="../concepts/algorithmic-complexity.html">Алгоритмічна складність</a><a class="chip" href="../concepts/data-structures.html">Структури даних</a><a class="chip" href="../concepts/software-design.html">Проєктування програмного забезпечення</a><a class="chip" href="../concepts/abstractions.html">Абстракції</a></div>
+    <div class="meta mono">1:16:50 · 25 розділів</div>
+  </div>
+</li>
+  </ol>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

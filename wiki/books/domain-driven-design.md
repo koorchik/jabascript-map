@@ -5,12 +5,12 @@ tags: [book, software-design, ddd]
 ---
 # Domain-Driven Design
 
-Eric Evans's classic on modelling software around the business domain — bounded contexts, ubiquitous language, and taming complexity. For Viktor it was **a personal revelation** that changed how he views development: it explains why projects fail or succeed and why some features are easy to add and others painful. His top pick for learning to think in domains — read it for *why* Evans structures code the way he does, not for the sample code; he even relays Evans's own regret that bounded contexts sit at the end of the book instead of the start. Some find it too abstract, but "even half the book changes your thinking" — first of all for backenders, because it's a book about fighting complexity.
+Класика Еріка Еванса про моделювання софту навколо бізнес-домену — bounded contexts, ubiquitous language і приборкання складності. Для Віктора це було **особисте одкровення**, яке змінило його погляд на розробку: книжка пояснює, чому проєкти провалюються або вистрілюють і чому одні фічі додаються легко, а інші — болісно. Його головна рекомендація для того, щоб навчитися мислити доменами: читати її заради того, *чому* Еванс структурує код саме так, а не заради прикладів коду; він навіть переказує жаль самого Еванса, що bounded contexts опинилися наприкінці книжки, а не на початку. Декому вона здається надто абстрактною, але «навіть половина книжки змінює мислення» — насамперед для бекендерів, бо це книжка про боротьбу зі складністю.
 
-## Covered in
-- [[3-things-that-make-a-programmer-better]] — his top recommendation for learning domain thinking
-- [[3-books-on-software-design]] — the "personal revelation" among his three design books
-- [[five-star-books]] — one of the best design books he knows; about fighting complexity
+## Де розглядається
+- [[3-things-that-make-a-programmer-better]] — його головна рекомендація для навчання доменного мислення
+- [[3-books-on-software-design]] — «особисте одкровення» серед його трьох книжок з дизайну
+- [[five-star-books]] — одна з найкращих книжок з дизайну, які він знає; про боротьбу зі складністю
 
-## Related
-Part of his software-design canon: [[implementing-domain-driven-design]] (the practical follow-up), [[clean-architecture]], [[patterns-of-enterprise-application-architecture]], [[design-patterns-gof]], [[a-philosophy-of-software-design]], [[code-complete]], [[clean-code]]. Concepts: [[software-design]], [[domain-knowledge]], [[abstractions]].
+## Повʼязане
+Частина його канону з дизайну ПЗ: [[implementing-domain-driven-design|Implementing Domain-Driven Design]] (практичне продовження), [[clean-architecture|Clean Architecture]], [[patterns-of-enterprise-application-architecture|Patterns of Enterprise Application Architecture]], [[design-patterns-gof|Design Patterns (GoF)]], [[a-philosophy-of-software-design|A Philosophy of Software Design]], [[code-complete|Code Complete]], [[clean-code|Clean Code]]. Концепції: [[software-design|дизайн ПЗ]], [[domain-knowledge|доменні знання]], [[abstractions|абстракції]].

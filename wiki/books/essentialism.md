@@ -5,10 +5,10 @@ tags: [book, productivity]
 ---
 # Essentialism
 
-Greg McKeown's manifesto for the disciplined pursuit of less — doing only what truly matters. One of the recent non-technical audiobooks Viktor listened to and recommends; he liked it enough to go straight into McKeown's follow-up, [[effortless]].
+Маніфест Ґреґа МакКеона про дисципліноване прагнення меншого — робити лише те, що справді важливо. Одна з нещодавніх нетехнічних аудіокниг, які Віктор прослухав і рекомендує; вона сподобалася йому настільки, що він одразу взявся за продовження МакКеона — [[effortless|Effortless]].
 
-## Covered in
-- [[vibe-coding-new-project]] — recent non-technical audiobook he listened to and recommends
+## Де розглядається
+- [[vibe-coding-new-project]] — нещодавня нетехнічна аудіокнига, яку він прослухав і рекомендує
 
-## Related
-Sequel: [[effortless]]. Productivity shelf: [[atomic-habits]], [[getting-things-done]], [[seven-habits-of-highly-effective-people]], [[the-checklist-manifesto]].
+## Повʼязане
+Продовження: [[effortless|Effortless]]. Полиця з продуктивності: [[atomic-habits|Atomic Habits]], [[getting-things-done|Getting Things Done]], [[seven-habits-of-highly-effective-people|The 7 Habits of Highly Effective People]], [[the-checklist-manifesto|The Checklist Manifesto]].

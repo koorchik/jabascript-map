@@ -4,12 +4,12 @@ tags: [react, admin, declarative-ui, frontend]
 ---
 # React Admin
 
-React Admin is a ready-made declarative framework for building admin panels on top of React. On the channel it appears as the reference example of an off-the-shelf declarative builder in Viktor's "develop UI faster" argument ([[voice-2-faster-ui-development]]): tools like it make standard CRUD/list screens very fast, but they are too standardized to fit every project — which is exactly why WebbyLab ended up building its own cross-project admin tool instead. The broader lesson stands either way: schema-driven, level-editor-style builders massively cheapen UI work.
+React Admin — готовий декларативний фреймворк для побудови адмінок поверх React. На каналі він фігурує як еталонний приклад готового декларативного конструктора в аргументі Віктора про те, як «розробляти UI швидше» ([[voice-2-faster-ui-development|войс №2: швидша розробка UI]]): такі інструменти роблять стандартні CRUD/спискові екрани дуже швидкими, але вони надто стандартизовані, щоб пасувати кожному проєкту — саме тому WebbyLab зрештою побудував власний крос-проєктний інструмент для адмінок. Ширший висновок від цього не змінюється: schema-driven конструктори в стилі редактора рівнів кардинально здешевлюють роботу над UI.
 
-## Covered in
-- [[voice-2-faster-ui-development]] — cited as the archetypal ready-made declarative admin builder: fast for standard screens, too rigid for every project.
+## Де розглядається
+- [[voice-2-faster-ui-development]] — наведений як архетипний готовий декларативний конструктор адмінок: швидкий для стандартних екранів, надто жорсткий для будь-якого проєкту.
 
-## Related
-[[declarative-ui]] — the concept React Admin exemplifies.
-[[material-ui]] — the lower-level layer he wrapped with his own schema-driven builders.
-[[abstractions]] — building project-specific builders is the abstraction courage the channel preaches.
+## Повʼязане
+[[declarative-ui]] — концепція, яку React Admin уособлює.
+[[material-ui]] — нижчий шар, який він обгорнув власними schema-driven конструкторами.
+[[abstractions]] — будувати конструктори під конкретний проєкт — це та сама сміливість щодо абстракцій, яку проповідує канал.

@@ -5,10 +5,10 @@ tags: [book, business, hiring]
 ---
 # Who: The A Method for Hiring
 
-Smart and Street's playbook for building a structured recruiting process. Viktor's verdict is measured: decent, with many good ideas for a hiring process, but *not* the revelation others claim — much of it you could reach on your own, and you needn't build your process exactly the book's way.
+Плейбук Джеффа Смарта та Ренді Стріта з побудови структурованого процесу рекрутингу. Вердикт Віктора стриманий: пристойна, з багатьма гарними ідеями для процесу наймання, але *не* те одкровення, яким її подають інші, — до багато чого можна дійти самостійно, і не обов'язково будувати свій процес точно за книжкою.
 
-## Covered in
-- [[five-star-books]] — decent with good ideas, but not the revelation others claim
+## Де розглядається
+- [[five-star-books]] — пристойна, з гарними ідеями, але не одкровення, як стверджують інші
 
-## Related
-Business shelf: [[the-goal]], [[its-not-luck]], [[good-strategy-bad-strategy]], [[spin-selling]]. Concept: [[career-and-growth]] (the other side of the hiring table).
+## Повʼязане
+Бізнес-полиця: [[the-goal|The Goal]], [[its-not-luck|It's Not Luck]], [[good-strategy-bad-strategy|Good Strategy Bad Strategy]], [[spin-selling|SPIN Selling]]. Концепція: [[career-and-growth|карʼєра та ріст]] (інший бік столу наймання).

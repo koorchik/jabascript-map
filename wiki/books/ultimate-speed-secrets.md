@@ -5,10 +5,10 @@ tags: [book, racing, hobby]
 ---
 # Speed Secrets / Ultimate Speed Secrets
 
-Ross Bentley's series on race-driving technique — lines, braking, car control, and the driver's mind. Viktor read the whole series and reports the volumes largely repeat each other, so just read *Ultimate Speed Secrets*, the consolidated one. It was his starting point as a racing/karting driver and measurably improved his results on track.
+Серія Росса Бентлі про техніку гоночного пілотування — траєкторії, гальмування, контроль авто і психологія пілота. Віктор прочитав усю серію і каже, що томи здебільшого повторюють один одного, тож читайте просто *Ultimate Speed Secrets* — зведений том. Ця серія була його стартовою точкою як гонщика-картингіста і відчутно покращила його результати на треку.
 
-## Covered in
-- [[five-star-books]] — read the whole series; the consolidated volume measurably improved his results
+## Де розглядається
+- [[five-star-books]] — прочитав усю серію; зведений том відчутно покращив його результати
 
-## Related
-Racing shelf: [[karting-book]] (30% different perspective — the two together beat either alone), [[making-sense-of-squiggly-lines]] (the telemetry side).
+## Повʼязане
+Гоночна полиця: [[karting-book|книжка про картинг]] (на 30% інший погляд — удвох вони кращі, ніж кожна окремо), [[making-sense-of-squiggly-lines|Making Sense of Squiggly Lines]] (телеметричний бік).

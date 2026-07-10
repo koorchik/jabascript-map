@@ -2,22 +2,33 @@
 type: video
 title_uk: "Навіщо глибоко розбиратися в речах й як менше забувати те, що вивчили?"
 youtube_id: vunaSc37B5o
+level: beginner
 tags: [fundamentals, learning, career, knowledge]
 date_ingested: 2026-07-09
 ---
-# Why Learn Things Deeply, and How to Forget Less of What You Learned
+# Навіщо глибоко розбиратися в речах й як менше забувати вивчене
 
-> Original: "Навіщо глибоко розбиратися в речах й як менше забувати те, що вивчили?" — https://youtu.be/vunaSc37B5o
+> Оригінал: "Навіщо глибоко розбиратися в речах й як менше забувати те, що вивчили?" — https://youtu.be/vunaSc37B5o
 
-A conceptual follow-up to [[3-things-that-make-a-programmer-better]], triggered by two viewer comments: "I learned network protocols at university and never once needed them" and "whatever I learn, I forget in a month — do I have to keep re-learning?". He defers the concrete war stories to a separate video and instead gives his mental model of why depth matters ([[deep-learning-of-fundamentals]]) and his **knowledge-tree** analogy for why fundamentals make new knowledge stick.
+Концептуальне продовження відео [[3-things-that-make-a-programmer-better]], спровоковане двома коментарями глядачів: «вивчив мережеві протоколи в університеті й жодного разу вони мені не знадобилися» та «що б я не вивчив — за місяць забуваю; невже треба вчити заново?». Конкретні історії з практики автор відкладає на окреме відео, а тут дає свою ментальну модель того, навіщо потрібна глибина ([[deep-learning-of-fundamentals|глибоке вивчення фундаментальних речей]]), і свою аналогію **дерева знань** — чому саме фундамент допомагає новим знанням закріплюватися.
 
-## Key takeaways
-- He used to think deep understanding was mainly for debugging (where it does save enormous time), but the bigger payoff is **design**: you can't base architecture on marketing materials. Understanding how a system works inside — even just conceptually — gives you its *properties*, and you need the properties of every subsystem to make the overall system meet its requirements ([[software-design]]).
-- His standing test questions for any database (MySQL, MongoDB, Postgres, whatever): what happens to performance if you pour in twice the data? How do its transactions and isolation actually behave? If you can't answer, you don't know the system's properties and can't design with it.
-- **The knowledge tree**: the trunk is the most fundamental knowledge; branches are fields; twigs are more detailed concepts; leaves are the super-fine details. New knowledge must *catch onto* an existing branch — it also hooks onto practical experience. If the branch isn't there, the new leaf "falls to the ground and is lost" — that's exactly the "I forgot it in a month" effect. He even suggests literally drawing such a tree of your technologies.
-- **Leaves fall, branches remain.** A viewer said he read a whole book on TLS and forgot the protocol details two months later. Fine — what stays is the branch: you still know [[https-tls|TLS]] has a certificate chain, a symmetric session key, and that forward secrecy is only guaranteed with Diffie-Hellman key exchange, not when the session key is exchanged via the private key. With the branch in place you can re-hang the leaves quickly whenever needed, and hook neighbouring branches onto it.
-- Rule of thumb for what to learn: prefer fundamentals that won't lose relevance in a month or a year — things that hold for 2, 5, sometimes 10 years. The tree then compounds year after year, and you understand how distant leaves relate (or don't) to each other.
-- Closing recommendation: the classic ~5-minute "MongoDB is web scale" cartoon (link under the video) — "absolute top" — because it's precisely about understanding a system's properties and internals instead of buying the hype ([[mongodb]]).
+## Головне
+- Раніше він вважав, що глибоке розуміння потрібне головно для дебагу (там воно справді економить купу часу), але найбільша віддача — у **проєктуванні**: не можна будувати архітектуру на маркетингових матеріалах. Розуміння того, як система працює всередині — хоча б концептуально — дає її *властивості*, а щоб уся система відповідала вимогам, потрібно знати властивості кожної підсистеми ([[software-design|проєктування ПЗ]]).
+- Його незмінні контрольні питання до будь-якої бази даних (MySQL, MongoDB, Postgres, будь-яка): що станеться з продуктивністю, якщо влити вдвічі більше даних? Як насправді поводяться її транзакції та ізоляція? Якщо не можете відповісти — ви не знаєте властивостей системи й не можете з нею проєктувати.
+- **Дерево знань**: стовбур — найфундаментальніші знання; гілки — галузі; гілочки — детальніші концепції; листя — найдрібніші деталі. Нове знання має *зачепитися* за наявну гілку — воно чіпляється й за практичний досвід. Якщо гілки немає, новий листок «падає на землю й губиться» — це і є той самий ефект «забув за місяць». Він навіть радить буквально намалювати таке дерево своїх технологій.
+- **Листя опадає, гілки лишаються.** Один глядач розповів, що прочитав цілу книжку про TLS і за два місяці забув деталі протоколу. І нехай — залишається гілка: ви все одно знаєте, що в [[https-tls|TLS]] є ланцюжок сертифікатів, симетричний сесійний ключ, і що forward secrecy гарантується лише з обміном ключами Diffie-Hellman, а не коли сесійний ключ передається через приватний ключ. Маючи гілку, ви швидко «перевішаєте» листя, коли знадобиться, і зачепите за неї сусідні гілки.
+- Правило вибору, що вчити: віддавайте перевагу фундаментальним речам, які не втратять актуальності за місяць чи рік — тому, що тримається 2, 5, а іноді й 10 років. Тоді дерево накопичується рік за роком, і ви розумієте, як віддалені листки пов'язані (чи не пов'язані) між собою.
+- Рекомендація наприкінці: класичний ~5-хвилинний мультик "MongoDB is web scale" (посилання під відео) — «абсолютний топ» — бо він саме про розуміння властивостей і нутрощів системи замість купівлі хайпу ([[mongodb]]).
 
-## Covered
+## Розділи
+- 00:00 — Питання глядача: «вивчив мережеві протоколи в університеті й вони не знадобилися»
+- 00:44 — Глибина потрібна не лише для дебагу — вона критична для [[software-design|проєктування]]
+- 01:04 — Не проєктуйте з маркетингових матеріалів: що буде з 2x даних? Наскільки ізольовані транзакції?
+- 02:09 — Друге питання: «за місяць усе забуваю» — його відповідь: вчіть фундамент
+- 02:51 — Дерево знань: стовбур = фундамент, гілки = галузі, листя = дрібні деталі
+- 05:03 — Без гілки, за яку можна зачепитися, нове знання падає на землю й губиться
+- 05:45 — Приклад із книжкою про [[https-tls|TLS]]: листя опадає, але гілка лишається
+- 06:49 — Наостанок: рекомендація мультика "[[mongodb|MongoDB]] is web scale"
+
+## Теми
 [[deep-learning-of-fundamentals]], [[software-design]], [[career-and-growth]], [[https-tls]], [[mongodb]]

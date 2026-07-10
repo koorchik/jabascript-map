@@ -2,21 +2,31 @@
 type: video
 title_uk: "Хешування, кодування, шифрування. В чому різниця？"
 youtube_id: GQ0rDbJCKhQ
+level: intermediate
 tags: [hashing, encoding, encryption, security, fundamentals]
 date_ingested: 2026-07-09
 ---
-# Hashing vs Encoding vs Encryption — What's the Difference?
+# Хешування, кодування, шифрування — у чому різниця?
 
-> Original: "Хешування, кодування, шифрування. В чому різниця？" — https://youtu.be/GQ0rDbJCKhQ
+> Оригінал: "Хешування, кодування, шифрування. В чому різниця？" — https://youtu.be/GQ0rDbJCKhQ
 
-Three concepts developers constantly confuse, untangled on the tablet as a small taxonomy tree. The author opens with trick questions: is a [[jwt|JSON Web Token]] encrypted — can the frontend read it without the key? Are passwords in your database encrypted? Is HTTP Basic Auth sending credentials in [[base64]] secure? His answers: JWT is *signed and encoded*, not encrypted; passwords are *hashed*, not encrypted; and Base64 is the same as plain text. He treats [[encryption]] as technically a form of [[encoding]] that adds a security property (unreadability without a key), while [[hashing]] stands apart as strictly one-way.
+Три поняття, які розробники постійно плутають, розплутані на планшеті у вигляді маленького дерева-таксономії. Автор відкриває каверзними питаннями: чи [[jwt|JSON Web Token]] зашифрований — чи може фронтенд прочитати його без ключа? Чи паролі у вашій базі зашифровані? Чи безпечно, що HTTP Basic Auth шле облікові дані в [[base64|Base64]]? Його відповіді: JWT *підписаний і закодований*, а не зашифрований; паролі *хешовані*, а не зашифровані; а Base64 — це те саме, що звичайний текст. Він трактує [[encryption|шифрування]] технічно як форму [[encoding|кодування]], що додає властивість безпеки (нечитабельність без ключа), тоді як [[hashing|хешування]] стоїть окремо як строго одностороннє.
 
-## Key takeaways
-- [[hashing|Hashing]] is one-directional compression to a fixed size: feed it 1 TB or 100 TB, you still get e.g. 20 bytes out (SHA-1's size), and there is no way back — it's not archiving.
-- He distinguishes three families of hash functions by purpose: checksums (MD5, SHA-1 — which git uses for integrity), cryptographic password hashing (scrypt, bcrypt — how passwords must be stored, a dedicated video promised), and fast hashes for hash tables (MurmurHash — turning keys into array indexes, see [[data-structures]]).
-- [[encryption|Encryption]]'s job is that others *cannot understand* the data without a key. Two kinds: symmetric — one key both ways (AES, ChaCha20) — and [[asymmetric-encryption]] with a public/private key pair (RSA, elliptic curves), which works in both directions and therefore also enables [[digital-signatures]].
-- [[encoding|Encoding]] is just representing data in a different form for a task: [[base64]] turns binary into text (and once you get it, Base32 and Base85 follow the same idea), and even zip compression is a kind of encoding.
-- Answering his own openers: a JWT *looks* encrypted but isn't — it's Base64-encoded and signed (symmetrically or asymmetrically); HTTP Basic Auth in Base64 "is the same as plaintext"; and hashed DB passwords cannot be recovered even by someone holding the entire database and all the configs — that's the point ([[security-practices]]).
+## Головне
+- [[hashing|Хешування]] — це одностороннє стиснення до фіксованого розміру: подай йому 1 ТБ чи 100 ТБ — на виході все одно, наприклад, 20 байтів (розмір SHA-1), і назад дороги немає — це не архівація.
+- Він розрізняє три сімейства хеш-функцій за призначенням: контрольні суми (MD5, SHA-1 — які git використовує для цілісності), криптографічне хешування паролів (scrypt, bcrypt — як паролі мають зберігатися, обіцяне окреме відео) і швидкі хеші для хеш-таблиць (MurmurHash — перетворення ключів на індекси масиву, див. [[data-structures]]).
+- Завдання [[encryption|шифрування]] в тому, щоб інші *не могли зрозуміти* дані без ключа. Два види: симетричне — один ключ в обидва боки (AES, ChaCha20) — і [[asymmetric-encryption|асиметричне]] з парою публічний/приватний ключ (RSA, еліптичні криві), яке працює в обидва боки й тому також уможливлює [[digital-signatures|цифрові підписи]].
+- [[encoding|Кодування]] — це просто подання даних в іншій формі під задачу: [[base64|Base64]] перетворює бінарник на текст (а щойно ви це зрозуміли, Base32 і Base85 йдуть за тією самою ідеєю), і навіть zip-стиснення — це різновид кодування.
+- Відповідаючи на власні вступні питання: JWT *виглядає* зашифрованим, але це не так — він закодований у Base64 і підписаний (симетрично чи асиметрично); HTTP Basic Auth у Base64 «це те саме, що plaintext»; а хешовані паролі в БД не можна відновити навіть тому, хто тримає всю базу і всі конфіги — у цьому й суть ([[security-practices]]).
 
-## Covered
+## Розділи
+- 00:00 — Каверзні питання: чи [[jwt|JWT]] зашифрований? Чи паролі в БД? Чи безпечний Basic Auth у [[base64|Base64]]?
+- 01:06 — Малюємо дерево-таксономію: хеш, шифрування, кодування
+- 01:47 — [[hashing|Хешування]] одностороннє: 1 ТБ на вході, 20 байтів на виході, назад дороги немає
+- 02:53 — Три сімейства хешів: контрольні суми (MD5, SHA-1), хешування паролів (scrypt/bcrypt), хеш-таблиці (MurmurHash)
+- 04:41 — [[encryption|Шифрування]]: симетричне (AES, ChaCha20) проти асиметричного (RSA, еліптичні криві) + [[digital-signatures|цифрові підписи]]
+- 06:06 — [[encoding|Кодування]] — це просто інше подання: Base64, навіть zip
+- 07:12 — Відповіді на вступні питання: JWT підписаний + закодований, Base64 = plaintext, паролі хешовані
+
+## Теми
 [[hashing]], [[encoding]], [[encryption]], [[asymmetric-encryption]], [[digital-signatures]], [[base64]], [[jwt]], [[security-practices]]

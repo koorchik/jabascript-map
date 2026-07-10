@@ -2,24 +2,35 @@
 type: video
 title_uk: "Як працює повнотекстовий пошук？ Частина 2. Питання та відповіді"
 youtube_id: LaXU5tlY3ZM
+level: advanced
 tags: [databases, full-text-search, inverted-index, q-and-a]
 date_ingested: 2026-07-09
 ---
-# How Full-Text Search Works, Part 2: Q&A and Further Optimizations
+# Як працює повнотекстовий пошук, частина 2: запитання-відповіді й подальші оптимізації
 
-> Original: "Як працює повнотекстовий пошук？ Частина 2. Питання та відповіді" — https://youtu.be/LaXU5tlY3ZM
+> Оригінал: "Як працює повнотекстовий пошук？ Частина 2. Питання та відповіді" — https://youtu.be/LaXU5tlY3ZM
 
-The first video in a new format the author invented for his patrons: collect questions under an existing video and answer them in depth — here, follow-ups to his hand-built [[inverted-index]] ([[full-text-search-inverted-indexes]]). The headline improvement came from a viewer's suggestion and kills the [[base64]] overhead from part 1: instead of one text file with base64-wrapped binary postings, split the index into **two files** — a tiny `tokens` file (sorted tokens + byte offset/length of each postings block) and a raw binary `entries` file. Result: 1.3 GB shrinks to 938 MB + a 2 MB token file; search latency drops from 15 ms to ~5 ms, because the 2 MB token file (typically 200–300K tokens even at scale, ~6 MB) is simply read into memory and binary-searched there, then exactly one ranged read fetches the needed postings. His favorite consequence: the big entries file can sit on S3/cloud storage and be queried via HTTP Range requests — a working full-text search over huge data "without any server holding things in memory". Q1: how to search by a *fragment* of a word (e.g. "cks" inside "socks")? Answer: you can't search differently, you must *index* differently — the tokenizer decides what's searchable: n-gram tokenizers (he draws trigrams sliding over "family"), edge n-grams, letter/whitespace/keyword/pattern tokenizers, URL-splitting, even hashtag- or IP-extracting custom tokenizers — walking through the [[elasticsearch|Elasticsearch]] tokenizer reference — at the cost of a 2–3× bigger index. Q2: how do you compress the index when doc ids are UUIDs? Answer: you basically can't — every serious posting-list compression scheme (he shows a survey paper of them) assumes sorted *integers*; so map UUIDs to ints (extra int column or a separate UUID↔int mapping), which is exactly what [[mysql|MySQL]]/InnoDB does internally with its hidden auto-increment `FTS_DOC_ID` column ([[index-compression]], [[uuid-vs-auto-increment]]).
+Перше відео в новому форматі, який автор придумав для своїх патронів: збирати питання під наявним відео і відповідати на них ґрунтовно — тут це продовження до його власноруч побудованого [[inverted-index|інвертованого індексу]] ([[full-text-search-inverted-indexes|повнотекстовий пошук]]). Головне покращення прийшло від пропозиції глядача і вбиває накладні витрати [[base64|Base64]] з частини 1: замість одного текстового файлу з бінарником, загорнутим у base64, розділити індекс на **два файли** — крихітний файл `tokens` (відсортовані токени + байтовий зсув/довжина блока постингів кожного) і сирий бінарний файл `entries`. Результат: 1.3 ГБ стискається до 938 МБ + 2 МБ файл токенів; латентність пошуку падає з 15 мс до ~5 мс, бо файл токенів на 2 МБ (зазвичай 200–300 тис. токенів навіть на масштабі, ~6 МБ) просто читається в пам’ять і бінарно шукається там, а потім рівно одне діапазонне читання дістає потрібні постинги. Його улюблений наслідок: великий файл entries може лежати на S3/хмарному сховищі й запитуватися через HTTP Range-запити — робочий повнотекстовий пошук по величезних даних «без жодного сервера, що тримає щось у пам’яті». Q1: як шукати за *фрагментом* слова (наприклад, «cks» усередині «socks»)? Відповідь: шукати по-іншому не можна, треба по-іншому *індексувати* — токенайзер вирішує, що можна знайти: n-gram токенайзери (він малює триграми, що ковзають по «family»), edge n-gram, letter/whitespace/keyword/pattern токенайзери, розбиття URL, навіть власні токенайзери, що витягують хештеги чи IP — проходить по довіднику токенайзерів [[elasticsearch|Elasticsearch]] — ціною у 2–3 рази більшого індексу. Q2: як стискати індекс, коли id документів — це UUID? Відповідь: по суті ніяк — кожна серйозна схема стиснення списків постингів (він показує оглядову статтю про них) припускає відсортовані *цілі числа*; тож зіставте UUID з int’ами (додаткова int-колонка чи окремий маппінг UUID↔int), що саме й робить [[mysql|MySQL]]/InnoDB усередині своєю прихованою auto-increment колонкою `FTS_DOC_ID` ([[index-compression|стиснення індексу]], [[uuid-vs-auto-increment]]).
 
-## Key takeaways
-- Splitting the index into a small tokens file (token + byte offset/length) and a raw binary entries file eliminates base64's +33% overhead: 1.3 GB → 938 MB + 2 MB, and search went from 15 ms to ~5 ms ([[inverted-index]], [[base64]]).
-- The token dictionary is tiny (88K tokens ≈ 2 MB; rarely above 200–300K ≈ 6 MB), so it can live fully in memory and be binary-searched in ~0.2 ms — no more risky binary search over a huge file where you can land mid-line.
-- Serverless search idea he highlights: park the entries file on S3/CDN and fetch postings via HTTP Range requests — full-text search over massive data with no stateful search server.
-- "If you want to search differently, you must index differently": substring-in-word search needs an n-gram (or other custom) tokenizer, not a cleverer query — demonstrated with trigrams over "family" and the Elasticsearch tokenizer reference (n-gram, edge n-gram, letter, keyword, pattern, URL, custom hashtag/IP extractors) ([[full-text-search]]).
-- N-gram indexing multiplies index size 2–3×: same documents, but each doc id now appears against every n-gram instead of one word — "there's nothing much to be done about it".
-- Posting-list [[index-compression]] algorithms (delta, varbyte, the many variants in the survey paper he shows) all presuppose sorted integers; there's no best one — different data favors different schemes, and varbyte works decently everywhere.
-- UUID doc ids defeat these compressors; the standard fix is a UUID→integer mapping — MySQL's FULLTEXT does precisely this via a hidden 8-byte auto-increment `FTS_DOC_ID` column (you can declare it yourself to avoid the hidden column) ([[uuid-vs-auto-increment]], [[mysql]]).
-- On slower hardware the gap is brutal: plain `LIKE` search on the same data on an HDD simply timed out after minutes, while the split-file inverted index worked fine.
+## Головне
+- Розділення індексу на малий файл токенів (токен + байтовий зсув/довжина) і сирий бінарний файл entries усуває +33% накладних витрат base64: 1.3 ГБ → 938 МБ + 2 МБ, а пошук пришвидшився з 15 мс до ~5 мс ([[inverted-index]], [[base64]]).
+- Словник токенів крихітний (88 тис. токенів ≈ 2 МБ; рідко понад 200–300 тис. ≈ 6 МБ), тож він може повністю жити в пам’яті й бінарно шукатися за ~0.2 мс — жодного ризикованого бінарного пошуку по величезному файлу, де можна приземлитися посеред рядка.
+- Ідея serverless-пошуку, яку він виділяє: залишити файл entries на S3/CDN і діставати постинги через HTTP Range-запити — повнотекстовий пошук по величезних даних без stateful-сервера пошуку.
+- «Якщо хочеш шукати по-іншому — індексуй по-іншому»: пошук підрядка в слові потребує n-gram (або іншого власного) токенайзера, а не хитрішого запиту — показано на триграмах по «family» і довіднику токенайзерів Elasticsearch (n-gram, edge n-gram, letter, keyword, pattern, URL, власні витягувачі хештегів/IP) ([[full-text-search]]).
+- N-gram-індексація множить розмір індексу в 2–3 рази: ті самі документи, але кожен id документа тепер з’являється проти кожної n-грами замість одного слова — «тут особливо нічого не вдієш».
+- Алгоритми [[index-compression|стиснення]] списків постингів (delta, varbyte, багато варіантів з оглядової статті, яку він показує) усі передбачають відсортовані цілі числа; найкращого немає — різні дані вимагають різних схем, а varbyte працює пристойно всюди.
+- UUID як id документів перемагають ці компресори; стандартне рішення — маппінг UUID→ціле число — саме це й робить FULLTEXT у MySQL через приховану 8-байтну auto-increment колонку `FTS_DOC_ID` (можна оголосити її самому, щоб уникнути прихованої колонки) ([[uuid-vs-auto-increment]], [[mysql]]).
+- На повільнішому залізі розрив жорстокий: звичайний `LIKE`-пошук по тих самих даних на HDD просто впав по таймауту за хвилини, тоді як інвертований індекс на розділених файлах працював нормально.
 
-## Covered
+## Розділи
+- 00:00 — Новий формат: Q&A від патронів на теми, вже розібрані на каналі
+- 01:06 — Ідея глядача: розділити [[inverted-index|інвертований індекс]], щоб позбутися [[base64|Base64]]
+- 02:54 — скрипт split-index: крихітний файл токенів зі зсувами + сирий бінарний файл entries
+- 03:38 — Результат: 1.3 ГБ стає 938 МБ + 2 МБ; словник токенів влазить у пам’ять, entries може жити на S3 з Range-читаннями
+- 05:27 — Бенчмарк: 15 мс на старому індексі проти ~5 мс на розділеному
+- 07:56 — Q1: збіг фрагмента всередині слова — треба індексувати по-іншому, з n-грамами
+- 09:43 — Довідник токенайзерів Elasticsearch; n-грами роздувають індекс у 2–3 рази
+- 11:07 — Q2: UUID як id документів перемагають стиснення постингів — зіставте їх із цілими числами (прихований FTS_DOC_ID у MySQL)
+
+## Теми
 [[full-text-search]], [[inverted-index]], [[index-compression]], [[base64]], [[uuid-vs-auto-increment]], [[elasticsearch]], [[mysql]]

@@ -2,49 +2,46 @@
 type: cluster
 tags: [moc, engineering-craft, career]
 ---
-# Engineering Craft & Career
+# Інженерна майстерність і карʼєра
 
-The channel's opinion core: what makes a programmer great beyond writing code, how to design software, and what a career actually looks like from inside Google and a co-founded outsourcing company. Everything here orbits one thesis — [[deep-learning-of-fundamentals|learn things deeply]], because internals give you the properties that design, career growth, and even car-buying decisions depend on. The material is first-person throughout: Mail.ua and WebbyLab war stories, Google promo mechanics with real numbers, and a design canon he re-derived in practice before reading the books.
+Опінійне ядро каналу: що робить програміста класним поза самим написанням коду, як проєктувати софт і як насправді виглядає карʼєра зсередини Google та співзаснованої аутсорсингової компанії. Усе тут обертається навколо однієї тези — [[deep-learning-of-fundamentals|вивчайте речі глибоко]], бо нутрощі дають вам властивості, від яких залежать дизайн, карʼєрне зростання і навіть рішення про купівлю машини. Матеріал наскрізь від першої особи: історії з Mail.ua і WebbyLab, механіка промо в Google з реальними цифрами і канон книжок із дизайну, який він перевідкрив на практиці ще до того, як прочитав самі книжки.
 
-## Concepts
+## Концепції
 
-- [[deep-learning-of-fundamentals]] — the channel's connective thesis: internals → properties, the knowledge-tree analogy, his learning method
-- [[career-and-growth]] — the autobiography, Google comp/promo mechanics, interview prep, ceilings and leaving well
-- [[software-design]] — API-first design, clean architecture in practice, defer decisions, the design bookshelf
-- [[abstractions]] — the skill and the fear: why devs stuff code into stale structures instead of extracting new ones
-- [[domain-knowledge]] — the domain, not patterns, dictates architecture (and fuels motivation)
-- [[design-patterns]] — vocabulary, not gospel; his team reinvented 8 GoF patterns before reading the book
-- [[code-quality]] — quality code is cheaper and faster; bad code destroys your smell intuition
-- [[code-review]] — Google's readability system, automating style, and why per-PR review is never enough
-- [[technical-debt]] — "if you just write code, you accumulate technical debt": rot that every diff hides
-- [[microservices]] — the underestimated problem: day-one domain ignorance frozen into service boundaries
-- [[test-driven-development]] — his anti-purist stance: tests yes, red/green loop and mock-everything no
-- [[automated-testing]] — test layout, parallel DB containers, tests as the AI's feedback loop
-- [[declarative-ui]] — schema-driven grid/form/page builders: a project-specific layer worth building even once
+- [[deep-learning-of-fundamentals]] — сполучна теза каналу: нутрощі → властивості, аналогія з деревом знань, його метод навчання
+- [[career-and-growth]] — автобіографія, механіка компенсацій/промо в Google, підготовка до співбесід, стелі та як піти красиво
+- [[software-design]] — API-first дизайн, чиста архітектура на практиці, відкладай рішення, книжкова полиця з дизайну
+- [[abstractions]] — навичка і страх: чому розробники запихають код у застарілі структури замість виділяти нові
+- [[domain-knowledge]] — архітектуру диктує домен, а не патерни (і він же живить мотивацію)
+- [[design-patterns]] — словник, а не євангеліє; його команда перевинайшла 8 патернів GoF до прочитання книжки
+- [[code-quality]] — якісний код дешевший і швидший; поганий код руйнує ваш нюх на код
+- [[code-review]] — система readability в Google, автоматизація стилю і чому ревʼю окремих PR ніколи не досить
+- [[technical-debt]] — «якщо ви просто пишете код — ви накопичуєте технічний борг»: гниль, яку ховає кожен diff
+- [[microservices]] — недооцінена проблема: незнання домену з першого дня, заморожене в межах сервісів
+- [[test-driven-development]] — його антипуристська позиція: тести — так, red/green-цикл і мокати все — ні
+- [[automated-testing]] — розкладка тестів, паралельні контейнери з БД, тести як фідбек-луп для AI
+- [[declarative-ui]] — schema-driven білдери гридів/форм/сторінок: проєктно-специфічний шар, який окупається навіть в одному проєкті
 
-## Videos
+## Відео (порядок перегляду)
 
-### Craft
-- [[3-things-that-make-a-programmer-better]] — the channel's first video: domain knowledge, deep understanding, and abstraction design
-- [[3-things-that-ruin-a-programmer]] — crappy code, dogmatism, and contempt for colleagues as self-inflicted damage
-- [[learning-deeply-and-remembering]] — the knowledge-tree analogy: fundamentals are the branches new knowledge hooks onto
-- [[code-review-how-google-does-it]] — Google's peer review + readability status, automating style, architectural reviews
-- [[microservices-main-problem]] — you can't slice service boundaries right on day one, and you can't cheaply refactor the cut
-- [[voice-3-scary-abstractions]] — four war stories of code stuffed into existing structures instead of new abstractions
-- [[voice-2-faster-ui-development]] — the game level-editor idea for frontend: declarative builders inside a single project
-- [[vibe-coding-new-project]] — crossover with AI: clean architecture dictated live to Claude Code
-- [[vibe-coding-part-2]] — crossover with AI: catching the agent's over-engineering, testing strategy in the AI era
+Один шлях: спершу мислення (1–3), далі майстерність — дизайн, архітектура, якість і перетин з AI (4–10) — потім карʼєрна арка від засновника WebbyLab до відходу з Google (11–14), і на завершення повна книжкова полиця (15).
 
-### Career
-- [[qa-and-plans-for-2024]] — the 2+ hour autobiography: Mail.ua to Google, levels/comp/culture, interview prep, learning method
-- [[qa-2-answering-questions]] — Google interviews and luck, burnout, health, real-world algorithms, pet-project philosophy
-- [[voice-5-why-i-left-google]] — the comp cliff, the Application Canvas promo reset, and the decision to leave
-- [[voice-1-admin-keys-for-developers]] — a founder's lesson from WebbyLab's early days
+1. [[3-things-that-make-a-programmer-better]] — перше відео каналу і його теза: знання домену, глибоке розуміння і вміння проєктувати абстракції
+2. [[3-things-that-ruin-a-programmer]] — дзеркальне відображення: паскудний код, догматизм і зневага до колег як самопошкодження
+3. [[learning-deeply-and-remembering]] — метод за тезою: фундаментальні знання — це гілки, на які чіпляється нове
+4. [[voice-3-scary-abstractions]] — теза в дикій природі: чотири історії з практики про код, запханий у наявні структури замість нових абстракцій
+5. [[3-books-on-software-design]] — канон дизайну: [[clean-architecture]], [[domain-driven-design]], [[patterns-of-enterprise-application-architecture]]
+6. [[microservices-main-problem]] — дизайн у застосуванні до архітектури: межі сервісів неможливо правильно нарізати в перший день, а перекроїти цей наріз дешево не вийде
+7. [[voice-2-faster-ui-development]] — дизайн у застосуванні до фронтенду: ідея редактора рівнів з ігор, декларативні білдери всередині одного проєкту
+8. [[code-review-how-google-does-it]] — як тримати якість у масштабі: peer review + статус readability в Google, автоматизація стилю, архітектурні ревʼю
+9. [[vibe-coding-new-project]] — майстерність під стрес-тестом AI: чиста архітектура, надиктована наживо Claude Code
+10. [[vibe-coding-part-2]] — стрес-тест триває: виловлювання оверінжинірингу агента, стратегія тестування в епоху AI
+11. [[qa-and-plans-for-2024]] — карʼєрний хребет: автобіографія на 2+ години, від Mail.ua до Google, рівні/компенсації/культура, підготовка до співбесід, метод навчання
+12. [[voice-1-admin-keys-for-developers]] — засновницький урок із перших днів WebbyLab
+13. [[qa-2-answering-questions]] — співбесіди в Google і удача, вигорання, здоровʼя, алгоритми в реальному житті, філософія pet-проєктів
+14. [[voice-5-why-i-left-google]] — фінал арки: кліф компенсації, скинуте через Application Canvas промо і рішення піти
+15. [[five-star-books]] — список для подальшого читання: кожна пʼятизіркова книжка з його Goodreads, від [[code-complete]] до [[the-staff-engineers-path]], з історією про перевинайдення GoF у Mail.ua
 
-### Books
-- [[3-books-on-software-design]] — the design canon: [[clean-architecture]], [[domain-driven-design]], [[patterns-of-enterprise-application-architecture]]
-- [[five-star-books]] — every five-star book on his Goodreads, from [[code-complete]] to [[the-staff-engineers-path]], with the Mail.ua GoF-reinvention story
+## Повʼязані кластери
 
-## Related clusters
-
-The craft thesis runs through the whole wiki: the database and networking deep-dives are its demonstrations, and the AI/vibe-coding material is its stress test — see [[vibe-coding]], [[database-indexes]], [[dns]], and [[channel-and-author]] for who is talking.
+Теза про майстерність проходить крізь усю вікі: глибокі занурення в бази даних і мережі — її демонстрації, а матеріал про AI/вайб-кодинг — її стрес-тест; див. [[vibe-coding|вайб-кодинг]], [[database-indexes|індекси баз даних]], [[dns|DNS]] і [[channel-and-author|хто це говорить]].

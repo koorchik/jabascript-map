@@ -2,16 +2,16 @@
 type: concept
 tags: [security, virtualization, networking]
 ---
-# Sandboxing and isolation
+# Пісочниці та ізоляція
 
-Contain the untrusted thing so that even if it's compromised, it can't reach anything that matters. The channel's hands-on treatment is [[vm-network-isolation]], an unedited screencast triggered by a real concern: VirtualBox's default bridged mode puts a VM directly on the home subnet (192.168.50.x), able to reach every device in the house — which is dangerous when the VM runs untrusted code or AI agents. Viktor's fix is a network sandbox built from another VM: a pfSense virtual router with two adapters — a bridged WAN adapter and an internal-network LAN adapter — with the target Ubuntu VM attached only to the internal network (he also mentions MikroTik CHR and OpenWRT/DD-WRT as alternatives).
+Ізолюй ненадійне так, щоб навіть у разі компрометації воно не дотяглося ні до чого важливого. Практичний розбір на каналі — [[vm-network-isolation|мережева ізоляція VM]], незмонтований скрінкаст, спричинений реальним занепокоєнням: дефолтний bridged-режим VirtualBox садить VM просто в домашню підмережу (192.168.50.x), з доступом до кожного пристрою в домі — а це небезпечно, коли VM виконує ненадійний код чи AI-агентів. Рішення Віктора — мережева пісочниця, побудована з іще однієї VM: віртуальний роутер pfSense з двома адаптерами — bridged-адаптер для WAN і адаптер внутрішньої мережі для LAN, — а цільова Ubuntu VM під’єднана лише до внутрішньої мережі (як альтернативи він згадує MikroTik CHR і OpenWRT/DD-WRT).
 
-The firewall ruleset is the lesson in [[least-privilege]] applied to packets: keep the anti-lockout rule, allow the guest out to the internet, block the guest from the home LAN subnet, and block access to the pfSense admin UI itself. End state: the guest reaches google.com but cannot ping home devices, the home router, or the router's admin page. The whole exercise is framed as defense-in-depth ([[security-practices]]) — assume the sandbox contents are hostile and make the blast radius zero.
+Набір правил фаєрвола — це урок [[least-privilege|найменших привілеїв]] у застосуванні до пакетів: залишити правило anti-lockout, випустити гостя в інтернет, заблокувати гостю домашню LAN-підмережу і заблокувати доступ до самої адмінки pfSense. Кінцевий стан: гість дістає google.com, але не може пропінгувати домашні пристрої, домашній роутер чи його адмін-сторінку. Уся вправа подається як глибокоешелонований захист ([[security-practices|практики безпеки]]): виходь із того, що вміст пісочниці ворожий, і зроби радіус ураження нульовим.
 
-## Covered in
-- [[vm-network-isolation]] — the full build: why bridged mode is dangerous, pfSense virtual router with WAN + internal-net adapters, and the four firewall rules that let the VM online but keep it off the home LAN
+## Де розглядається
+- [[vm-network-isolation]] — повний білд: чому bridged-режим небезпечний, віртуальний роутер pfSense з адаптерами WAN + internal network і чотири правила фаєрвола, що пускають VM в інтернет, але не в домашню LAN
 
-## Related
-[[security-practices]] — defense-in-depth: assume compromise, limit reach.
-[[least-privilege]] — same principle, applied to network access instead of credentials.
-[[nat-and-networking]] — the routing/subnet machinery the sandbox is built from.
+## Повʼязане
+[[security-practices]] — defense-in-depth: припускай компрометацію, обмежуй досяжність.
+[[least-privilege]] — той самий принцип, застосований до мережевого доступу замість креденшелів.
+[[nat-and-networking]] — маршрутизація і підмережі, з яких побудована пісочниця.

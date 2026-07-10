@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Соціальна інженерія — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / social-engineering</p>
+  <h1>Соціальна інженерія</h1>
+  <div class="topic-body"><p>Позиція каналу: найслабша ланка — це рідко криптографія, це людина, яку вмовили співпрацювати. Головний розбір теми — <a href="../videos/voice-4-phone-scammers.html">випуск про телефонних шахраїв</a>, де Віктор програє справжній запис дзвінка шахраїв йому самому і розбирає їхній сценарій. Усе починається з роботизованого повідомлення «записано за розпорядженням Національного банку України, вашу картку заблоковано» — трюк із подачею, через який вхідний дзвінок сприймається як щось офіційне, що жертва нібито ініціювала сама, тож вона забуває, що це <em>їй</em> подзвонили. Далі жива «операторка» на імʼя Світлана нарощує довіру. Він проходить по ознаках обману: назва банку непомітно зʼїжджає з Національного банку на Ощадбанк, вони згадують ПриватБанк, якого він не називав, а просте запитання «яка мета дзвінка?» розвалює весь сценарій. Захист, який він повторює (відео він записав, щоб попередити батьків не менше, ніж підписників): справжні банки ніколи не просять промовляти вголос конфіденційні ідентифікатори — PIN, паспортні дані, кодове слово. Тверезна деталь: шахраї вже знали його імʼя та номер, а отже його контактні дані витекли до шахрайської бази.</p><p>Та сама схема маніпуляції зʼявляється і в технічних атаках: у <a href="../videos/qa-1-will-https-protect-you.html">випуску про те, чи захистить вас HTTPS</a> атака з підробленим сертифікатом працює лише тому, що жертву переконують двічі клацнути й встановити сертифікат «щоб запрацював інтернет у кафе» — криптографія надійна, експлойтом є людина. А <a href="../videos/voice-1-admin-keys-for-developers.html">голосове про адмінські ключі для розробників</a> показує суміжний сценарій провалу: взагалі без атакувальника — лише довіра та зручність, які ведуть до надто широкого доступу і реальної шкоди.</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/voice-4-phone-scammers.html">Голосове №4 — як мені дзвонили шахраї</a>
+  <span class="meta mono">04:05</span>
+  <p class="step-note">справжній шахрайський дзвінок, записаний і розібраний: сценарій штучно створеної довіри, його ознаки і як одне запитання його розвалює</p></li><li><a href="../videos/qa-1-will-https-protect-you.html">Питання та відповіді №1: чи захистить HTTPS?</a>
+  <span class="meta mono">17:50</span>
+  <p class="step-note">атака з підробленим сертифікатом працює через те, що жертву переконують встановити сертифікат «для інтернету в кафе»</p></li><li><a href="../videos/voice-1-admin-keys-for-developers.html">Голосове №1 — чому не можна давати розробникам адмінські ключі</a>
+  <span class="meta mono">03:32</span>
+  <p class="step-note">людсько-процесний «родич» проблеми: ризик, породжений довірою та зручністю, а не атакувальником</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/security-practices.html">Практики безпеки</a> — технічний захист марний, якщо людина сама віддає ключі. <a href="../concepts/least-privilege.html">Принцип найменших привілеїв</a> — обмежує радіус ураження, коли довіра виявилася хибною. <a href="../concepts/https-tls.html">HTTPS і TLS</a> — валідний замочок нічого не означає, якщо ви власноруч встановили сертифікат атакувальника.</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

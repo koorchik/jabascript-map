@@ -4,18 +4,18 @@ tags: [cloud, serverless, containers, google]
 ---
 # Google Cloud Run
 
-Cloud Run is Google Cloud's serverless container platform — bring any container, get scale-to-zero, metrics and CI/CD "in two clicks" — and it is literally the product Viktor's team at Google built ([[qa-2-answering-questions]]). He speaks about it as both insider and satisfied customer: he moved all his pet projects from DigitalOcean to Cloud Run and found it "much cheaper" (a couple of dollars for a small service), and reveals that Cloud Functions v2 is literally a Cloud Run container underneath ([[qa-and-plans-for-2024]]). His cost advice: don't trust the request calculator — simulate a day of real traffic and multiply by 30. At the I/O 2023 watch party, co-host Mykyta (also on the Cloud Run team) adds the pitch details: deploy-time signature verification for images, custom domains finally integrated via Firebase Hosting, and his mytalks.tech running on it ~3x cheaper than DigitalOcean ([[google-io-2023-watch-party]]). In [[qa-2-answering-questions]] Viktor announces GPU support — "serverless 2.0" — aimed at inference workloads.
+Cloud Run — serverless-платформа для контейнерів у Google Cloud: приносиш будь-який контейнер і отримуєш scale-to-zero, метрики та CI/CD «у два кліки» — і це буквально продукт, який будувала команда Віктора в Google ([[qa-2-answering-questions]]). Він говорить про нього і як інсайдер, і як задоволений клієнт: переніс усі свої pet-проєкти з DigitalOcean на Cloud Run і виявив, що це «значно дешевше» (пара доларів за маленький сервіс), а ще розкриває, що Cloud Functions v2 під капотом — це буквально контейнер Cloud Run ([[qa-and-plans-for-2024]]). Його порада щодо витрат: не вірте калькулятору запитів — просимулюйте день реального трафіку і помножте на 30. На watch party з I/O 2023 співведучий Микита (теж із команди Cloud Run) додає деталей до пітчу: перевірка підпису образів на етапі деплою, кастомні домени, нарешті інтегровані через Firebase Hosting, і його mytalks.tech, що працює на Cloud Run приблизно втричі дешевше, ніж на DigitalOcean ([[google-io-2023-watch-party]]). У [[qa-2-answering-questions]] Віктор анонсує підтримку GPU — «serverless 2.0» — націлену на inference-навантаження.
 
-Cloud Run is also the stage of his most personal Google story ([[voice-5-why-i-left-google]]): his Application Canvas project let users drag Cloud Run services and databases onto a canvas, deploy whole applications and merge architectures. It shipped first as "Cloud Run integrations," was shown at Google Cloud Next keynotes and praised by top management — then cancelled and deleted, resetting his L6 promotion track and feeding into his decision to leave Google.
+Cloud Run — це ще й сцена його найособистішої історії з Google ([[voice-5-why-i-left-google]]): його проєкт Application Canvas дозволяв перетягувати сервіси Cloud Run і бази даних на канву, деплоїти цілі застосунки та зливати архітектури. Спершу він вийшов як «Cloud Run integrations», його показували на кіноутах Google Cloud Next і хвалило топменеджмент — а потім проєкт скасували й видалили, що обнулило його трек на підвищення до L6 і стало однією з причин піти з Google.
 
-## Covered in
-- [[google-io-2023-watch-party]] — the team-insider pitch: any container, scale-to-zero, image signature verification, Firebase Hosting domains, mytalks.tech 3x cheaper than DigitalOcean.
-- [[qa-2-answering-questions]] — "his team's product"; GPU support announced as serverless 2.0 for inference.
-- [[qa-and-plans-for-2024]] — pet projects migrated from DigitalOcean, Cloud Functions v2 = Cloud Run container, traffic-simulation cost estimation.
-- [[voice-5-why-i-left-google]] — the Application Canvas rise-and-cancellation story that reset his promo.
+## Де розглядається
+- [[google-io-2023-watch-party]] — пітч від інсайдерів команди: будь-який контейнер, scale-to-zero, перевірка підписів образів, домени через Firebase Hosting, mytalks.tech утричі дешевше за DigitalOcean.
+- [[qa-2-answering-questions]] — «продукт його команди»; анонс підтримки GPU як serverless 2.0 для inference.
+- [[qa-and-plans-for-2024]] — pet-проєкти, мігровані з DigitalOcean, Cloud Functions v2 = контейнер Cloud Run, оцінка витрат через симуляцію трафіку.
+- [[voice-5-why-i-left-google]] — історія злету і скасування Application Canvas, що обнулила його promo.
 
-## Related
-[[firebase]] — the backend-less layer that routes and hosts on top of Cloud Run.
-[[docker]] — the container format Cloud Run consumes.
-[[terraform]] — infra-as-code coverage of the same Google stack.
-[[career-and-growth]] — the Application Canvas story as a big-company career lesson.
+## Повʼязане
+[[firebase]] — прошарок без бекенду, що маршрутизує і хостить поверх Cloud Run.
+[[docker]] — формат контейнерів, який споживає Cloud Run.
+[[terraform]] — той самий стек Google з боку infrastructure-as-code.
+[[career-and-growth]] — історія Application Canvas як карʼєрний урок про великі компанії.

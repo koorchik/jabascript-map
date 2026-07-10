@@ -5,10 +5,10 @@ tags: [book, software-design]
 ---
 # A Philosophy of Software Design
 
-John Ousterhout's thin book on deep modules, information hiding, and designing against complexity. Viktor read it a couple of months before his Q&A stream and praises it, singling out Ousterhout's quote that TDD makes you focus on the wrong things — which matches his own design-first, tests-after workflow.
+Тонка книжка Джона Остергаута про глибокі модулі, приховування інформації та проєктування як боротьбу зі складністю. Віктор прочитав її за кілька місяців до свого Q&A-стріму і дуже хвалить, окремо виділяючи цитату Остергаута про те, що TDD змушує зосереджуватися не на тому, — вона збігається з його власним підходом «спершу дизайн, тести потім».
 
-## Covered in
-- [[qa-2-answering-questions]] — praised; its anti-TDD quote matches his design-first workflow
+## Де розглядається
+- [[qa-2-answering-questions]] — хвалить; цитата проти TDD збігається з його підходом «спершу дизайн»
 
-## Related
-Canon: [[domain-driven-design]], [[implementing-domain-driven-design]], [[clean-architecture]], [[patterns-of-enterprise-application-architecture]], [[design-patterns-gof]], [[code-complete]], [[clean-code]]. Concepts: [[software-design]], [[test-driven-development]], [[abstractions]], [[code-quality]].
+## Повʼязане
+Канон: [[domain-driven-design|Domain-Driven Design]], [[implementing-domain-driven-design|Implementing Domain-Driven Design]], [[clean-architecture|Clean Architecture]], [[patterns-of-enterprise-application-architecture|Patterns of Enterprise Application Architecture]], [[design-patterns-gof|Design Patterns (GoF)]], [[code-complete|Code Complete]], [[clean-code|Clean Code]]. Концепції: [[software-design|дизайн ПЗ]], [[test-driven-development|TDD]], [[abstractions|абстракції]], [[code-quality|якість коду]].

@@ -4,12 +4,12 @@ tags: [javascript, formatting, code-quality, tooling]
 ---
 # Prettier
 
-Prettier is the opinionated code formatter for JavaScript and friends. Its role in the channel's code-review doctrine is simple and absolute ([[code-review-how-google-does-it]]): Prettier plus linting should eliminate *all* style comments from human review — "automation to the maximum". If a reviewer is still commenting on formatting, the tooling has failed; human attention belongs on design, correctness and readability, not on where the braces go.
+Prettier — це opinionated-форматер коду для JavaScript і компанії. Його роль у доктрині код-ревʼю на каналі проста й категорична ([[code-review-how-google-does-it|як код-ревʼю робить Google]]): Prettier плюс лінтинг мають прибрати з людського ревʼю *всі* коментарі про стиль — «автоматизація на максимум». Якщо ревʼюер досі коментує форматування, значить тулінг не впорався; людська увага має йти на дизайн, коректність і читабельність, а не на те, де стоять дужки.
 
-## Covered in
-- [[code-review-how-google-does-it]] — Prettier + linting must remove every style comment from human review.
+## Де розглядається
+- [[code-review-how-google-does-it]] — Prettier + лінтинг мають усунути кожен коментар про стиль із людського ревʼю.
 
-## Related
-[[eslint]] — the semantic-rules companion in the same automation stack.
-[[code-review]] — the process Prettier exists to declutter.
-[[code-quality]] — style consistency as a machine problem, not a debate.
+## Повʼязане
+[[eslint]] — напарник із семантичними правилами в тому самому стеку автоматизації.
+[[code-review]] — процес, який Prettier існує щоб розвантажити.
+[[code-quality]] — консистентність стилю як задача для машини, а не предмет суперечок.

@@ -4,13 +4,13 @@ tags: [databases, nosql, document-store]
 ---
 # MongoDB
 
-Appears on the channel in two roles. First, as serious production infrastructure: Viktor's hand-built 300 TB full-text search system stored its inverted index in MongoDB — per-day immutable indexes queried in parallel through a custom PEG-parsed query language ([[full-text-search-inverted-indexes]]).
+Зʼявляється на каналі у двох ролях. Перша — серйозна продакшен-інфраструктура: власноруч збудована Віктором система повнотекстового пошуку на 300 ТБ зберігала свій інвертований індекс у MongoDB — незмінні поденні індекси, які запитуються паралельно через власну мову запитів із PEG-парсером ([[full-text-search-inverted-indexes]]).
 
-Second, as the punchline of hype-driven engineering: he closes his learning-deeply video by recommending the classic "MongoDB is web scale" cartoon ("absolute top") — precisely because it's about understanding a database's actual properties and internals instead of buying the marketing ([[learning-deeply-and-remembering]]). The two roles together are the channel's thesis in miniature: the tool is fine; choosing it without knowing its properties is not.
+Друга — панчлайн про hype-driven engineering: відео про глибоке навчання він завершує рекомендацією класичного мультика «MongoDB is web scale» («абсолютний топ») — саме тому, що той про розуміння реальних властивостей і нутрощів бази даних замість купівлі маркетингу ([[learning-deeply-and-remembering]]). Разом ці дві ролі — теза каналу в мініатюрі: інструмент нормальний; обирати його, не знаючи його властивостей, — ні.
 
-## Covered in
-- [[full-text-search-inverted-indexes]] — storage backend of his 300 TB production inverted index
-- [[learning-deeply-and-remembering]] — the "web scale" cartoon as a lesson in properties over hype
+## Де розглядається
+- [[full-text-search-inverted-indexes]] — сховище його продакшен-інвертованого індексу на 300 ТБ
+- [[learning-deeply-and-remembering]] — мультик про «web scale» як урок про властивості замість хайпу
 
-## Related
+## Повʼязане
 [[inverted-index]], [[full-text-search]], [[deep-learning-of-fundamentals]]

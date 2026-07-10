@@ -2,17 +2,17 @@
 type: concept
 tags: [channel-meta, hobby, retro-gaming, hardware]
 ---
-# Retro Gaming
+# Ретрогеймінг
 
-Viktor's long-running hobby — and the subject of his *first* YouTube channel, a retro-gaming test channel that earned ~300 subscribers in a year of weekly streams but served as his OBS and gear laboratory before jabascript ([[qa-and-plans-for-2024]]).
+Давнє хобі Віктора — і тема його *першого* YouTube-каналу, тестового ретрогеймінгового, який за рік щотижневих стримів зібрав ~300 підписників, але послужив лабораторією для OBS та обладнання перед jabascript ([[qa-and-plans-for-2024|Q&A і плани на 2024]]).
 
-His pride, shown in [[my-workspace-setup]]: a near-priceless **professional JVC CRT** (ex-broadcast) fed **analog RGB over SCART from a [[raspberry-pi|Raspberry Pi]]**. Since the Pi has no native analog RGB output, the signal goes through enthusiast add-on boards sourced from Britain and Spain. The result, in his words, is a night-and-day picture compared to emulators on an LCD — completed by a SEGA-style gamepad.
+Його гордість, показана у [[my-workspace-setup|турі по робочому місцю]]: майже безцінний **професійний CRT-монітор JVC** (колишній студійний, з телемовлення), на який подається **аналоговий RGB через SCART з [[raspberry-pi|Raspberry Pi]]**. Оскільки Pi не має нативного аналогового RGB-виходу, сигнал іде через ентузіастські плати розширення, привезені з Британії та Іспанії. Результат, за його словами, — картинка «небо і земля» порівняно з емуляторами на LCD, а довершує все геймпад у стилі SEGA.
 
-## Covered in
+## Де розглядається
 
-- [[my-workspace-setup]] — the CRT + Raspberry Pi analog-RGB rig in his workspace tour.
+- [[my-workspace-setup]] — зв’язка CRT + Raspberry Pi з аналоговим RGB у турі по його робочому місцю.
 
-## Related
+## Повʼязане
 
-- [[workspace-and-hardware]] — the rest of the room this setup lives in.
-- [[channel-and-author]] — the failed retro-gaming channel that trained him for jabascript.
+- [[workspace-and-hardware]] — решта кімнати, в якій живе цей сетап.
+- [[channel-and-author]] — невдалий ретрогеймінговий канал, що натренував його для jabascript.

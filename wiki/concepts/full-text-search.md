@@ -2,20 +2,20 @@
 type: concept
 tags: [databases, search, elasticsearch, indexes]
 ---
-# Full-text search
+# Повнотекстовий пошук
 
-The channel treats full-text search not as "just use Elastic" but as a mechanism you can build with your own hands — Viktor did exactly that in production, hand-rolling a 300 TB full-text index. The motivating failure: a B-tree index makes `LIKE 'prefix%'` instant, but `LIKE '%word%'` takes ~40 s (or ~7 s in the earlier demo) because no sort order helps you find a word in the middle of a value ([[why-database-indexes]], [[full-text-search-inverted-indexes]]). The answer is the [[inverted-index]], and the surrounding pipeline he builds live: tokenization (split, stop-word and short-token filtering, lowercasing) and stemming vs lemmatization — with his Ukrainian counterexample that stemming 'німці' → 'німц' misses 'німець', which is why his 300 TB project used a lemmatizer ([[full-text-search-inverted-indexes]]). Crucially, the same pipeline must be applied to queries.
+Канал подає повнотекстовий пошук не як «просто візьми Elastic», а як механізм, який можна зібрати власноруч — Віктор саме так і зробив у продакшені, власноруч побудувавши повнотекстовий індекс на 300 TB. Мотивуюча невдача: B-tree-індекс робить `LIKE 'prefix%'` миттєвим, але `LIKE '%word%'` займає ~40 с (або ~7 с у ранішому демо), бо жоден порядок сортування не допоможе знайти слово всередині значення ([[why-database-indexes|навіщо потрібні індекси в базах даних]], [[full-text-search-inverted-indexes|повнотекстовий пошук та інвертовані індекси]]). Відповідь — [[inverted-index|інвертований індекс]], а довкола нього конвеєр, який він будує наживо: токенізація (розбиття, фільтрація стоп-слів і закоротких токенів, зведення до нижнього регістру) та стемінг проти лематизації — з його українським контрприкладом: стемінг 'німці' → 'німц' не ловить 'німець', тому в його проєкті на 300 TB використовувався лематизатор ([[full-text-search-inverted-indexes|там само]]). Критично важливо: той самий конвеєр треба застосовувати й до запитів.
 
-His key maxim from the Q&A follow-up: "if you want to search differently, you must index differently." Substring-inside-word search is not a cleverer query — it's an n-gram tokenizer (he draws trigrams over 'family'), at the cost of inflating the index 2–3x. Elasticsearch's tokenizer catalog (edge n-gram, letter, keyword, pattern, custom hashtag/IP extractors) is really a menu of indexing strategies ([[full-text-search-part-2-qa]]). His pragmatic verdict: in real life use built-in FULLTEXT or [[elasticsearch]] — but now you know what they actually do, and his hand-built index beat MySQL `LIKE` 40 s → 21 ms on 16.5M rows and came out smaller than MySQL's own FULLTEXT index.
+Його ключова максима з Q&A-продовження: «хочеш шукати інакше — мусиш індексувати інакше». Пошук підрядка всередині слова — це не хитріший запит, а n-грамний токенізатор (він малює триграми над словом 'family') ціною роздування індексу у 2–3 рази. Каталог токенізаторів Elasticsearch (edge n-gram, letter, keyword, pattern, кастомні витягувачі хештегів/IP) — це насправді меню стратегій індексації ([[full-text-search-part-2-qa|Q&A до другої частини]]). Його прагматичний вердикт: у реальному житті беріть вбудований FULLTEXT або [[elasticsearch|Elasticsearch]] — але тепер ви знаєте, що вони насправді роблять; а його саморобний індекс обійшов MySQL `LIKE` (40 с → 21 мс на 16.5 млн рядків) і вийшов меншим за власний FULLTEXT-індекс MySQL.
 
-## Covered in
-- [[why-database-indexes]] — the setup: prefix search instant, substring search ~7 s; "everyone says use Elastic"; teases his 300 TB war story
-- [[full-text-search-inverted-indexes]] — the main build: full tokenization/stemming pipeline, 40 s → 21 ms on 16.5M rows, the use-Elastic-in-real-life verdict
-- [[full-text-search-part-2-qa]] — "search differently ⇒ index differently": n-gram tokenizers, Elasticsearch's tokenizer zoo, index inflation costs
-- [[qa-1-will-https-protect-you]] — Q&A context revisiting the inverted-index internals and compression example
+## Де розглядається
+- [[why-database-indexes]] — зав'язка: пошук за префіксом миттєвий, за підрядком ~7 с; «усі кажуть — беріть Elastic»; анонс бойової історії про 300 TB
+- [[full-text-search-inverted-indexes]] — основна побудова: повний конвеєр токенізації/стемінгу, 40 с → 21 мс на 16.5 млн рядків, вердикт «у реальному житті — Elastic»
+- [[full-text-search-part-2-qa]] — «шукати інакше ⇒ індексувати інакше»: n-грамні токенізатори, зоопарк токенізаторів Elasticsearch, ціна роздування індексу
+- [[qa-1-will-https-protect-you]] — Q&A-контекст із поверненням до нутрощів інвертованого індексу та прикладу стиснення
 
-## Related
-[[inverted-index]] — the core data structure underneath
-[[index-compression]] — how the posting lists get small
-[[database-indexes]] — the B-tree failure mode that makes this necessary
-[[map-reduce]] — how the index gets built without unbounded RAM
+## Повʼязане
+[[inverted-index]] — базова структура даних під усім цим
+[[index-compression]] — як posting-списки стають маленькими
+[[database-indexes]] — провальний сценарій B-tree, через який усе це й потрібно
+[[map-reduce]] — як індекс будується без необмеженої RAM

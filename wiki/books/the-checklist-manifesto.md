@@ -5,10 +5,10 @@ tags: [book, productivity, process]
 ---
 # The Checklist Manifesto
 
-Surgeon Atul Gawande's collection of stories about when and why simple checklists prevent catastrophic failures — in operating rooms, cockpits, construction. It changed Viktor's view of checklists and gives you one more process-improvement tool, though he concedes the storytelling format may or may not suit your taste.
+Збірка історій хірурга Атула Ґаванде про те, коли і чому прості чеклісти запобігають катастрофічним провалам — в операційних, кабінах пілотів, на будівництві. Вона змінила погляд Віктора на чеклісти й дає ще один інструмент покращення процесів, хоча він визнає: формат сторітелінгу може бути на любителя.
 
-## Covered in
-- [[five-star-books]] — changed his view of checklists; one more process-improvement tool
+## Де розглядається
+- [[five-star-books]] — змінила його погляд на чеклісти; ще один інструмент покращення процесів
 
-## Related
-Productivity shelf: [[getting-things-done]], [[seven-habits-of-highly-effective-people]], [[atomic-habits]], [[essentialism]], [[effortless]]. Kindred process spirit: [[the-goal]].
+## Повʼязане
+Полиця продуктивності: [[getting-things-done|Getting Things Done]], [[seven-habits-of-highly-effective-people|The 7 Habits of Highly Effective People]], [[atomic-habits|Atomic Habits]], [[essentialism|Essentialism]], [[effortless|Effortless]]. Споріднена за духом процесів: [[the-goal|The Goal]].

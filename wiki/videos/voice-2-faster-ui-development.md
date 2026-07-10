@@ -2,23 +2,34 @@
 type: video
 title_uk: "Голосове №2 - як швидше розробляти інтерфейс"
 youtube_id: fzJngfQ9lWo
+level: intermediate
 tags: [frontend, ui, abstractions, declarative, voice-message]
 date_ingested: 2026-07-09
 ---
-# Voice Message #2 — How to Develop UI Faster
+# Голосове №2 — як швидше розробляти інтерфейс
 
-> Original: "Голосове №2 - як швидше розробляти інтерфейс" — https://youtu.be/fzJngfQ9lWo
+> Оригінал: "Голосове №2 - як швидше розробляти інтерфейс" — https://youtu.be/fzJngfQ9lWo
 
-Second voice-message episode (he renamed the podcast from "5 minutes about programming" because he literally records these as voice messages on his iPhone). One idea for speeding up frontend work: borrow the **game level editor** concept. Games separate the engine from content — Doom was built with a level editor from day one (edit level → relaunch → look → repeat), and the editor implies a *declarative saved description* of the level. His thesis: [[declarative-ui|declarative UI builders]] — schemas compiled into low-level components — are worth building not only as cross-project tools but **even inside a single project**, where he claims they dramatically cheapen development and keep the UI consistent ([[abstractions]]).
+Другий випуск формату «голосових» (він перейменував подкаст із «5 хвилин про програмування», бо буквально записує ці випуски як голосові повідомлення на iPhone). Одна ідея для пришвидшення фронтенд-роботи: позичити концепцію **редактора рівнів з ігор**. Ігри відділяють рушій від контенту — Doom із першого дня будували разом із редактором рівнів (відредагував рівень → перезапустив → подивився → повторив), а редактор передбачає *декларативний збережений опис* рівня. Його теза: [[declarative-ui|декларативні UI-білдери]] — схеми, що компілюються в низькорівневі компоненти — варто будувати не лише як кроспроєктні інструменти, а **навіть усередині одного проєкту**, де вони, за його словами, різко здешевлюють розробку і тримають UI консистентним ([[abstractions]]).
 
-## Key takeaways
-- Ready-made declarative admin tools ([[react-admin]] and the like) let you assemble list/CRUD/grid/gallery screens fast — but they're standardized and don't fit every project or company. webilab invested in its own cross-project admin-building tool; that pays off across many projects but requires serious investment.
-- His newer realization: the same builder approach makes sense **within one project**. It looks like a stupidly expensive move, but a project-specific framework is much cheaper than a cross-project one — and you'd have to write those screens anyway.
-- Concrete example from a recent project: React [[material-ui|Material]] grid is powerful but quite low-level, so he wrote his own **grid builder** that takes a schema; from ~2 of his parameters it initializes ~5 low-level ones. Result: a grid he configures easily on any page, behaves consistently, persists its settings where he wants, is compatible with his API, supports per-row custom actions via an extra schema, shows delete confirmations, and integrates with navigation — all things you'd otherwise hand-write per page.
-- On top of that: a **form builder** (forms in dialogs or on pages, callable from the grid or anywhere), and above everything a **PageBuilder** that produces an entire CRUD page from one schema. For more custom pages he drops down a level and uses just the grid builder or form builder — the layers stay useful individually.
-- The key advantage of project-specific (vs cross-project) builders: when a new feature arrives, he just extends the schema that same day with the missing elements. The whole UI stays consistent everywhere, which "strongly, strongly cheapens" development and maintenance.
-- He's puzzled the approach isn't more popular: people take a forms library and use it raw on every screen, even though every project has custom bits — e.g. your API returns errors in a specific format that must be handled and bound to fields — and one more declarative layer over the library would encode that once ([[software-design]]).
-- Usual caveat for the series: these are ideas and reflections, not the one true way — "maybe it won't fly on your project, and maybe on some of mine it won't either."
+## Головне
+- Готові декларативні адмінські інструменти ([[react-admin|react-admin]] тощо) дозволяють швидко збирати екрани списків/CRUD/ґрідів/галерей — але вони стандартизовані й пасують не кожному проєкту чи компанії. webilab інвестував у власний кроспроєктний інструмент побудови адмінок; це окупається на багатьох проєктах, але вимагає серйозних вкладень.
+- Його новіше усвідомлення: той самий підхід із білдером має сенс **у межах одного проєкту**. Виглядає як безглуздо дорогий хід, але проєктно-специфічний фреймворк набагато дешевший за кроспроєктний — а ці екрани все одно довелося б писати.
+- Конкретний приклад із нещодавнього проєкту: ґрід React [[material-ui|Material]] потужний, але доволі низькорівневий, тож він написав власний **grid builder**, який приймає схему; з ~2 його параметрів ініціалізується ~5 низькорівневих. Результат: ґрід, який він легко конфігурує на будь-якій сторінці, поводиться консистентно, зберігає налаштування там, де йому треба, сумісний із його API, підтримує кастомні дії по рядку через додаткову схему, показує підтвердження видалення та інтегрується з навігацією — усе те, що інакше писалося б руками на кожній сторінці.
+- Поверх цього: **form builder** (форми в діалогах або на сторінках, викликаються з ґріда чи будь-звідки), а над усім — **PageBuilder**, який видає цілу CRUD-сторінку з однієї схеми. Для більш кастомних сторінок він спускається на рівень нижче і бере лише grid builder чи form builder — шари корисні й поодинці.
+- Ключова перевага проєктно-специфічних білдерів (проти кроспроєктних): коли приходить нова фіча, він того ж дня просто розширює схему потрібними елементами. Увесь UI лишається консистентним усюди, що «сильно, сильно здешевлює» розробку і підтримку.
+- Його дивує, що підхід не популярніший: люди беруть бібліотеку форм і використовують її «сирою» на кожному екрані, хоча в кожному проєкті є кастомні речі — наприклад, ваш API повертає помилки у певному форматі, який треба обробити і привʼязати до полів, — і ще один декларативний шар над бібліотекою закодував би це один раз ([[software-design]]).
+- Звична для серії обмовка: це ідеї та роздуми, а не єдино правильний шлях — «може, на вашому проєкті це не полетить, а може, і на якомусь із моїх не полетить».
 
-## Covered
+## Розділи
+- 00:00 — Подкаст перейменовано на «голосові» — буквально записується на iPhone
+- 00:22 — Ідея редактора рівнів: як Doom відділив рушій від контенту
+- 01:24 — Декларативні адмінські інструменти ([[react-admin|react-admin]]) і кроспроєктний білдер адмінок Webbylab
+- 02:30 — Контрінтуїтивний хід: будувати UI-білдер для одного проєкту
+- 03:35 — Схемний grid builder поверх низькорівневого ґріда [[material-ui|Material]]
+- 04:59 — Нарощуємо шари: form builder, перевикористовувані діалоги і PageBuilder з однієї схеми
+- 06:02 — Розширюй схему хоч щодня, тримай UI консистентним — то чому це не популярно?
+- 07:07 — Обмовки: ідеї на подумати, а не єдино правильний шлях
+
+## Теми
 [[declarative-ui]], [[abstractions]], [[software-design]], [[react-admin]], [[material-ui]]

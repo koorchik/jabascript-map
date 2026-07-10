@@ -2,17 +2,17 @@
 type: concept
 tags: [engineering-craft, software-design, patterns]
 ---
-# Design patterns
+# Патерни проєктування
 
-The channel's stance on patterns is deliberately deflationary: they are not sacred knowledge, just the most widespread solutions that someone classified and named. Viktor's proof from his own career: at Mail.ua his team had independently implemented 8 of the 24 GoF patterns before he ever read the book ([[five-star-books]]) — if you solve real problems long enough, you reinvent them. The real value of the catalog, he argues, is a *shared vocabulary*: saying "facade," "strategy," or "adapter" to another developer transmits a whole design in one word.
+Позиція каналу щодо патернів свідомо дефляційна: це не сакральне знання, а просто найпоширеніші рішення, які хтось класифікував і назвав. Доказ Віктора з власної карʼєри: у Mail.ua його команда самостійно реалізувала 8 із 24 патернів GoF ще до того, як він прочитав книжку ([[five-star-books|книжки на пʼять зірок]]), — якщо достатньо довго розвʼязуєш реальні задачі, ти їх перевинаходиш. Справжня цінність каталогу, стверджує він, — *спільний словник*: сказавши іншому розробнику «фасад», «стратегія» чи «адаптер», ти передаєш цілий дизайн одним словом.
 
-The corollary — developed in [[3-things-that-ruin-a-programmer]] and the Q&As — is that treating patterns (GoF or Fowler) as gospel is dogmatism: a pattern is a name for what worked, and the point is the *problem it solves*, not the ceremony. As a book recommendation he even ranks Fowler's [[patterns-of-enterprise-application-architecture]] above [[design-patterns-gof]]: you lean on ~70% of its patterns without ever implementing them yourself ([[five-star-books]], [[3-books-on-software-design]]).
+Наслідок — розвинутий у [[3-things-that-ruin-a-programmer|3 речах, що псують програміста]] та у Q&A — у тому, що ставитися до патернів (GoF чи Фаулера) як до євангелія — це догматизм: патерн — це назва для того, що спрацювало, і суть у *проблемі, яку він розвʼязує*, а не в церемонії. У книжкових рекомендаціях він навіть ставить фаулерівську [[patterns-of-enterprise-application-architecture|Patterns of Enterprise Application Architecture]] вище за [[design-patterns-gof|Design Patterns (GoF)]]: на ~70% її патернів ти спираєшся, ніколи не реалізовуючи їх власноруч ([[five-star-books|книжки на пʼять зірок]], [[3-books-on-software-design|3 книжки про проєктування ПЗ]]).
 
-## Covered in
-- [[five-star-books]] — the Mail.ua reinvention story, patterns as shared vocabulary, PoEAA over GoF
+## Де розглядається
+- [[five-star-books]] — історія перевинайдення у Mail.ua, патерни як спільний словник, PoEAA понад GoF
 
-## Related
-[[software-design]] — patterns as one input to design, never a substitute for understanding
-[[abstractions]] — a pattern is a pre-named abstraction
-[[deep-learning-of-fundamentals]] — understand the reasons behind a practice before following (or breaking) it
-[[design-patterns-gof]], [[patterns-of-enterprise-application-architecture]] — the two catalogs discussed
+## Повʼязане
+[[software-design]] — патерни як один із входів у проєктування, але ніколи не заміна розумінню
+[[abstractions]] — патерн — це заздалегідь названа абстракція
+[[deep-learning-of-fundamentals]] — зрозумій причини за практикою, перш ніж їй слідувати (чи її порушувати)
+[[design-patterns-gof]], [[patterns-of-enterprise-application-architecture]] — два обговорювані каталоги

@@ -4,19 +4,19 @@ tags: [networking, dhcp, internet, security]
 ---
 # DHCP (Dynamic Host Configuration Protocol)
 
-The channel's angle on DHCP is "what's actually wrong with café Wi-Fi?" ([[dhcp-cafe-wifi]]). A device that just joined a network has no settings, so it can't address a request to anyone specific — it UDP-*broadcasts* (IP 255.255.255.255, MAC FF:FF:FF:FF:FF:FF) asking for configuration, and those broadcasts don't cross the router. The server listens on UDP port 67, the client on 68. He walks the DORA exchange (Discover / Offer / Request / Ack), lease times, and the renewal timers T1 (~50%) and T2 (~87.5%) that come from the RFC but are configurable. The security payoff: because *any* machine on the LAN can answer, a rogue DHCP server can hand out a malicious DNS server or default gateway. The attacker wins the race by exhausting the legitimate server's address pool — ~10 fake-MAC Discover requests until the real client is told "no addresses left."
+Кут, під яким канал заходить у DHCP: «що насправді не так з Wi-Fi у кавʼярні?» ([[dhcp-cafe-wifi|DHCP і Wi-Fi в кавʼярні]]). Пристрій, який щойно приєднався до мережі, не має жодних налаштувань, тож не може адресувати запит комусь конкретному — він робить UDP-*broadcast* (IP 255.255.255.255, MAC FF:FF:FF:FF:FF:FF) із проханням про конфігурацію, і ці broadcast-и не перетинають роутер. Сервер слухає UDP-порт 67, клієнт — 68. Віктор проходить обмін DORA (Discover / Offer / Request / Ack), часи оренди (lease) і таймери поновлення T1 (~50%) та T2 (~87.5%), які походять з RFC, але конфігуруються. Безпековий висновок: оскільки відповісти може *будь-яка* машина в LAN, шахрайський DHCP-сервер може роздати шкідливий DNS-сервер або шлюз за замовчуванням. Атакувальник виграє перегони, вичерпавши пул адрес легітимного сервера — ~10 Discover-запитів з фейковими MAC, поки справжньому клієнту не скажуть «адрес більше немає».
 
-He builds this live with [[dnsmasq]] and Wireshark, and returns to it in Q&A: DHCP starvation is trivial (a ~100-line loop of DHCP requests with random MACs drains 100–10,000 addresses), and manually setting your DNS to 8.8.8.8 doesn't save you — the attacker just hands you a malicious *default gateway* and routes all your traffic through himself ([[qa-1-will-https-protect-you]]). In the VM-isolation build, DHCP appears in a benign role: pfSense runs a DHCP server on the internal LAN handing the guest an IP (10.10.10.50–100), gateway 10.10.10.1, and DNS, while the WAN interface gets its own address from the home router's DHCP ([[vm-network-isolation]]).
+Він будує це наживо з [[dnsmasq]] і Wireshark та повертається до теми у Q&A: DHCP starvation тривіальна (цикл на ~100 рядків з DHCP-запитами з випадковими MAC зливає 100–10 000 адрес), і вручну виставлений DNS 8.8.8.8 тебе не рятує — атакувальник просто видає тобі шкідливий *шлюз за замовчуванням* і пропускає весь твій трафік через себе ([[qa-1-will-https-protect-you|перше Q&A]]). У білді з ізоляцією VM DHCP зʼявляється в мирній ролі: pfSense тримає DHCP-сервер у внутрішній LAN, видаючи гостьовій машині IP (10.10.10.50–100), шлюз 10.10.10.1 і DNS, а WAN-інтерфейс отримує власну адресу від DHCP домашнього роутера ([[vm-network-isolation|мережева ізоляція VM]]).
 
-## Covered in
-- [[dhcp-cafe-wifi]] — full breakdown: broadcast bootstrapping, ports 67/68, DORA, lease/renewal timers, rogue-server + pool-exhaustion attack
-- [[how-dns-works-basics]] — named as the source of your DNS server setting
-- [[vm-network-isolation]] — pfSense DHCP on the isolated LAN vs WAN address from the home router
-- [[qa-1-will-https-protect-you]] — DHCP starvation and the malicious-gateway follow-up
+## Де розглядається
+- [[dhcp-cafe-wifi]] — повний розбір: початкове налаштування через broadcast, порти 67/68, DORA, таймери оренди/поновлення, атака «шахрайський сервер + вичерпання пулу»
+- [[how-dns-works-basics]] — згаданий як джерело налаштування твого DNS-сервера
+- [[vm-network-isolation]] — DHCP від pfSense в ізольованій LAN проти WAN-адреси від домашнього роутера
+- [[qa-1-will-https-protect-you]] — DHCP starvation і продовження про шкідливий шлюз
 
-## Related
-[[dns]] — the setting most often poisoned via rogue DHCP
-[[nat-and-networking]] — why DHCP must broadcast over UDP and stay inside the LAN
-[[https-tls]] — the last line of defense once your gateway/DNS are hijacked
-[[dnsmasq]] — the tiny DHCP+DNS server used to build the attack
-[[pfsense]] — runs the legitimate DHCP server in the VM-isolation setup
+## Повʼязане
+[[dns]] — налаштування, яке найчастіше отруюють через шахрайський DHCP
+[[nat-and-networking]] — чому DHCP мусить broadcast-ити по UDP і лишатися всередині LAN
+[[https-tls]] — остання лінія оборони, коли твої шлюз/DNS уже захоплені
+[[dnsmasq]] — крихітний DHCP+DNS-сервер, яким побудовано атаку
+[[pfsense]] — тримає легітимний DHCP-сервер у сетапі з ізоляцією VM

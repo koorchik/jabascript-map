@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flutter — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">інструменти</a> / flutter</p>
+  <h1>Flutter</h1>
+  <div class="topic-body"><p>Flutter — кросплатформний UI-тулкіт від Google, і на каналі він є доказом того, що вайб-кодинг переріс стадію іграшки: Віктор за два вечори навайбкодив повноцінний застосунок-контролер для своєї безекранної камери Blackmagic поверх її REST API (<a href="../videos/vibe-coded-mobile-app.html">Навайбкодив мобільний додаток за два вечори (short)</a>) — одна кодова база, що працює на Linux, Android «і на чому завгодно», адаптивна від великого монітора до телефона, з tap-to-focus, доданим, щоб компенсувати відсутність у камери безперервного автофокуса. Демонструючи той самий застосунок у <a href="../videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>, він показує збірки для Linux, Windows і вебу (GitHub Pages), зазначає, що web/debug-збірки були «супер повільні», доки Claude не оптимізував локальний стан, а нативні літають, і захищає рішення лишити дефолтний дизайн Flutter: спочатку структура компонентів та UX, стилізація потім.</p><p>Його вердикт у суперечці Flutter проти React Native (<a href="../videos/vibe-coding-part-2.html">Вайб-кодінг — частина 2 (стрим)</a>) виважений: RN зріліший, використовує нативні UI-компоненти і простіший для React-розробників, зате Flutter компілюється в нативний код, покриває iOS/веб/десктоп з однієї кодової бази і б&#x27;є QT/GTK для десктопних застосунків під Linux. До цитованої статистики «42% ринку» він ставиться скептично і планує спробувати тестування у Flutter (є все: Storybook-подібні, golden- і юніт-тести).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/vibe-coded-mobile-app.html">Навайбкодив мобільний додаток за два вечори (short)</a>
+  <span class="meta mono">01:50</span>
+  <p class="step-note">застосунок для камери Blackmagic за два вечори: одна адаптивна кодова база на всі платформи, tap-to-focus на відеопотоці.</p></li><li><a href="../videos/vibe-coding-new-project.html">Вайб-коджу новий крутий проєкт (стрім)</a>
+  <span class="meta mono">1:40:28</span>
+  <p class="step-note">демо того самого застосунку: мультиплатформні збірки, повільний web/debug проти швидкого нативного, свідомо залишений дефолтний дизайн.</p></li><li><a href="../videos/vibe-coding-part-2.html">Вайб-кодінг — частина 2 (стрим)</a>
+  <span class="meta mono">1:48:25</span>
+  <p class="step-note">компроміси Flutter проти React Native, перевага на десктопі Linux, плани щодо тестування.</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/vibe-coding.html">вайб-кодинг</a> — воркфлоу, завдяки якому застосунок-заміна вендорського став проєктом на вихідні. <a href="../tools/claude-code.html">Claude Code</a> — агент, який написав і оптимізував Flutter-код. <a href="../concepts/declarative-ui.html">декларативний UI</a> — віджетна модель Flutter як декларативний UI на практиці.</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

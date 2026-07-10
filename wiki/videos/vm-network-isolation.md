@@ -2,22 +2,40 @@
 type: video
 title_uk: "Як не дати віртуальній машині лазити по вашій домашній мережі. (офтоп відео для спонсорів)"
 youtube_id: L5Em64f-Qjw
+level: advanced
 tags: [networking, security, virtualization, homelab, channel-meta]
 date_ingested: 2026-07-09
 ---
-# Stopping a VM from Roaming Your Home Network (Sponsors Off-topic)
+# Як не дати віртуальній машині лазити по вашій домашній мережі (офтоп для спонсорів)
 
-> Original: "Як не дати віртуальній машині лазити по вашій домашній мережі. (офтоп відео для спонсорів)" — https://youtu.be/L5Em64f-Qjw
+> Оригінал: "Як не дати віртуальній машині лазити по вашій домашній мережі. (офтоп відео для спонсорів)" — https://youtu.be/L5Em64f-Qjw
 
-The first of the channel's unedited, off-topic videos made specifically for paying sponsors — recorded live without montage, effectively a screen-share hack session. The problem: when you run a VirtualBox VM in **bridged** mode, it gets a real IP from the home router's [[dhcp]] and sits directly on your LAN — so if the VM (or something you run inside it, e.g. untrusted code, an AI model) is compromised, it can scan and reach every device on your home network. NAT mode isolates the VM but the author wants something more deliberate. His solution: put a **virtual router** between the VM and the home LAN and lock it down with firewall rules, so the VM gets internet but cannot touch the home network.
+Перше з незмонтованих офтоп-відео каналу, записаних спеціально для платних спонсорів — наживо, без монтажу, фактично хакерська сесія з демонстрацією екрана. Проблема: коли віртуальна машина VirtualBox працює в режимі **bridged**, вона отримує реальний IP від [[dhcp|DHCP]] домашнього роутера і сидить прямо у вашій локальній мережі — тож якщо VM (або те, що ви в ній запускаєте, наприклад недовірений код чи AI-модель) скомпрометовано, вона може сканувати й діставатися до кожного пристрою у вашій домашній мережі. Режим NAT ізолює VM, але автор хоче чогось більш свідомого. Його рішення: поставити між VM і домашньою мережею **віртуальний роутер** і закрутити його правилами фаєрвола, щоб VM мала інтернет, але не могла торкнутися домашньої мережі.
 
-## Key takeaways
-- Bridged mode is the danger: the VM appears as just another host on the home subnet (e.g. `192.168.50.x`), fully able to ping and reach home devices. NAT mode hides it, but he wants an explicit, controllable boundary.
-- **The architecture:** a second VM acting as a router, with two adapters — a **bridged** adapter as WAN (gets a home-LAN IP via the router's DHCP, provides internet) and an **internal-network** adapter as LAN. The target Ubuntu VM sits only on that internal network, so all its traffic must pass through the virtual router.
-- **Tools tried:** he mentions flashing real routers with OpenWRT/DD-WRT historically, and notes ready-made virtual-router images — a MikroTik **Cloud Hosted Router (CHR)** image for VirtualBox (free tier limited to ~1 Mbit, tiny footprint) — but settles on **pfSense** (FreeBSD-based, open source, needs ~512 MB RAM and a small disk). He installs it into a VM, assigns WAN via DHCP and configures the internal LAN interface with a static subnet (e.g. `10.10.10.1/24`) plus its own DHCP range (`10.10.10.50–100`) to hand addresses to the guest VMs.
-- The pfSense DHCP server on the internal LAN issues IPs, gateway (`10.10.10.1`), and a DNS server (he set `8.8.8.8`) to the Ubuntu guest.
-- **Firewall lockdown (the point of the exercise):** by default he keeps the anti-lockout rule so he doesn't lose admin access, then adds rules to (a) allow the guest out to the internet, (b) **block the guest from reaching the home LAN subnet** (`192.168.x.x`), and (c) block access to the pfSense admin UI itself from the guest. He iterates live in Wireshark/ping, fixing rule-priority mistakes (floating rules), until the end state holds: the Ubuntu guest can reach `google.com` but cannot ping the home router or any home device, and cannot open the pfSense admin page — full isolation with working internet.
-- Closing note: future sponsor videos in this rough format may cover experimenting with local neural nets / running Stable Diffusion and Llama on his RTX 3090 (24 GB).
+## Головне
+- Небезпека саме в bridged-режимі: VM виглядає як просто ще один хост у домашній підмережі (наприклад, `192.168.50.x`) і вільно пінгує та дістається до домашніх пристроїв. NAT її ховає, але він хоче явну, контрольовану межу.
+- **Архітектура:** друга VM у ролі роутера з двома адаптерами — **bridged**-адаптер як WAN (отримує IP домашньої мережі через DHCP роутера, дає інтернет) та адаптер **internal network** як LAN. Цільова Ubuntu-VM сидить лише в тій внутрішній мережі, тож увесь її трафік мусить проходити через віртуальний роутер.
+- **Випробувані інструменти:** він згадує, що колись прошивав реальні роутери OpenWRT/DD-WRT, і зауважує готові образи віртуальних роутерів — образ MikroTik **Cloud Hosted Router (CHR)** для VirtualBox (безкоштовний тариф обмежено ~1 Мбіт, крихітний розмір) — але зупиняється на **pfSense** (на основі FreeBSD, open source, потребує ~512 МБ RAM і невеликий диск). Він ставить його у VM, призначає WAN через DHCP і налаштовує внутрішній LAN-інтерфейс зі статичною підмережею (наприклад, `10.10.10.1/24`) та власним діапазоном DHCP (`10.10.10.50–100`), щоб роздавати адреси гостьовим VM.
+- DHCP-сервер pfSense у внутрішній мережі видає Ubuntu-гостю IP, шлюз (`10.10.10.1`) і DNS-сервер (він поставив `8.8.8.8`).
+- **Закручування фаєрвола (сенс усієї вправи):** за замовчуванням він лишає anti-lockout-правило, щоб не втратити адмінський доступ, а далі додає правила, які (а) випускають гостя в інтернет, (б) **блокують гостю доступ до домашньої підмережі** (`192.168.x.x`) і (в) блокують доступ до адмінки самого pfSense із гостя. Він ітерує наживо у Wireshark/ping, виправляючи помилки з пріоритетом правил (floating rules), доки не тримається кінцевий стан: Ubuntu-гість дістається до `google.com`, але не може пінгнути домашній роутер чи будь-який домашній пристрій і не відкриває адмінку pfSense — повна ізоляція з робочим інтернетом.
+- Наприкінці: майбутні спонсорські відео в такому «сирому» форматі можуть бути про експерименти з локальними нейромережами — запуск Stable Diffusion і Llama на його RTX 3090 (24 ГБ).
 
-## Covered
+## Розділи
+- 00:00 — Вступ: перше незмонтоване офтоп-відео для спонсорів каналу
+- 00:43 — Вихідна ситуація: Kubuntu-VM, яка пінгує всю домашню мережу
+- 02:32 — NAT проти bridged-адаптерів: як VM опиняється в домашній мережі 192.168.50.x
+- 04:22 — Вибір віртуального роутера: історія з OpenWRT/DD-WRT, MikroTik CHR, перемагає pfSense
+- 06:07 — Створення VM для pfSense: 512 МБ RAM і невеликий динамічний диск
+- 07:16 — Збирання топології: bridged WAN-адаптер плюс внутрішня мережа як LAN
+- 09:38 — Встановлення pfSense і перший запуск
+- 11:09 — Інтерфейси: WAN через DHCP, LAN статично 10.10.10.1/24 із діапазоном DHCP .50–.100
+- 14:49 — Ubuntu-гість приєднується до внутрішньої мережі; майстер налаштування pfSense
+- 17:44 — google.com не відкривається: роздаємо DNS 8.8.8.8 через DHCP-сервер
+- 20:01 — Фаєрвол, раунд 1: правила WAN, anti-lockout, баги з пріоритетом floating-правил
+- 24:22 — Фаєрвол, раунд 2: блокуємо гостю домашню мережу 192.168.x.x
+- 27:26 — Відрізаємо гостя від адмінки pfSense
+- 30:58 — Фінальна перевірка: інтернет працює, домашня мережа недосяжна
+- 35:00 — Завершення: наступні експерименти — Stable Diffusion і Llama на RTX 3090
+
+## Теми
 [[nat-and-networking]], [[dhcp]], [[dns]], [[security-practices]], [[sandboxing-and-isolation]]

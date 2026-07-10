@@ -2,21 +2,21 @@
 type: concept
 tags: [databases, search, data-structures, indexes]
 ---
-# Inverted index
+# Інвертований індекс
 
-The data structure that solves what B-tree indexes cannot: mid-string word search. The structure is word → list of (document id, position) pairs; the positions unlock exact-phrase and proximity queries. Viktor's summary: "conceptually that's all there is — the rest is engineering" ([[full-text-search-inverted-indexes]]). And the engineering is where his war story lives: he hand-wrote an inverted index over 300 TB of data in production — per-day immutable indexes, geo attributes, a custom query language parsed with a PEG grammar, stored in [[mongodb]] and queried per-day in parallel — and gave a KyivJS talk about it.
+Структура даних, що розв'язує те, чого не вміють B-tree-індекси: пошук слова всередині рядка. Сама структура — слово → список пар (id документа, позиція); позиції відкривають пошук точних фраз і запити за близькістю слів. Підсумок Віктора: «концептуально це все — решта інженерія» ([[full-text-search-inverted-indexes|інвертовані індекси]]). І саме в інженерії живе його бойова історія: він власноруч написав інвертований індекс над 300 TB даних у продакшені — незмінні поденні індекси, геоатрибути, власна мова запитів із парсером на PEG-граматиці, зберігання в [[mongodb|MongoDB]] і паралельні запити по днях — і виступив про це на KyivJS.
 
-The follow-up Q&A carries a viewer-suggested optimization he loved: split the index into a tiny tokens file (token + byte offset/length, ~2 MB for 88K tokens — real dictionaries rarely exceed 200–300K tokens, so it fits fully in memory for binary search) plus a raw binary postings file, killing the base64 overhead: 1.3 GB → 938 MB, search latency 15 ms → 5 ms. His favorite consequence: the postings file can live on S3 or a CDN and be queried via HTTP Range requests — serverless full-text search ([[full-text-search-part-2-qa]]). The Q&A episode adds the framing that the inverted index IS the efficient structure — optimizations change serialization (delta compression, VByte) rather than replacing it ([[qa-1-will-https-protect-you]]).
+Q&A-продовження несе запропоновану глядачем оптимізацію, яка йому дуже сподобалася: розділити індекс на крихітний файл токенів (токен + байтовий offset/довжина, ~2 MB на 88K токенів — реальні словники рідко перевищують 200–300K токенів, тож він цілком уміщається в пам'яті для бінарного пошуку) плюс сирий бінарний файл постингів, що прибирає накладні витрати base64: 1.3 GB → 938 MB, затримка пошуку 15 мс → 5 мс. Його улюблений наслідок: файл постингів може жити на S3 чи CDN і опитуватися через HTTP Range-запити — serverless-повнотекстовий пошук ([[full-text-search-part-2-qa|Q&A до другої частини]]). Q&A-випуск додає рамку: інвертований індекс і Є тією ефективною структурою — оптимізації міняють серіалізацію (дельта-стиснення, VByte), а не замінюють її ([[qa-1-will-https-protect-you|Q&A №1]]).
 
-## Covered in
-- [[why-database-indexes]] — introduced as the mechanism (aka full-text index) for mid-string search; teased as a future hands-on video
-- [[full-text-search-inverted-indexes]] — built live in JavaScript: word → (doc id, position), phrase/proximity queries, the 300 TB production war story
-- [[full-text-search-part-2-qa]] — the tokens-file + binary-postings split (1.3 GB → 938 MB, 15 ms → 5 ms) and S3 Range-request serverless search
-- [[qa-1-will-https-protect-you]] — you change serialization, not the structure; delta compression makes bigger indexes fit in RAM
+## Де розглядається
+- [[why-database-indexes]] — представлений як механізм (він же повнотекстовий індекс) для пошуку всередині рядка; анонсований як майбутнє практичне відео
+- [[full-text-search-inverted-indexes]] — збудований наживо на JavaScript: слово → (id документа, позиція), фразові запити і запити за близькістю, бойова історія про 300 TB у продакшені
+- [[full-text-search-part-2-qa]] — розділення на файл токенів + бінарні постинги (1.3 GB → 938 MB, 15 мс → 5 мс) і serverless-пошук через S3 Range-запити
+- [[qa-1-will-https-protect-you]] — міняєш серіалізацію, а не структуру; дельта-стиснення дає більшим індексам поміститися в RAM
 
-## Related
-[[full-text-search]] — the pipeline around the structure
-[[index-compression]] — delta encoding and varbyte over the posting lists
-[[map-reduce]] — how he built it without 10–15 GB of RAM
-[[database-indexes]] — the B-tree counterpart it complements
-[[base64]] — the serialization overhead the part-2 optimization removed
+## Повʼязане
+[[full-text-search]] — конвеєр довкола структури
+[[index-compression]] — дельта-кодування і varbyte над posting-списками
+[[map-reduce]] — як він збудував це без 10–15 GB RAM
+[[database-indexes]] — B-tree-побратим, який він доповнює
+[[base64]] — накладні витрати серіалізації, які прибрала оптимізація з частини 2

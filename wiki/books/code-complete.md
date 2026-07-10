@@ -5,10 +5,10 @@ tags: [book, software-design, code-quality]
 ---
 # Code Complete
 
-Steve McConnell's encyclopedic guide to code construction — naming, structure, optimization, profiling, all covered systematically. Viktor strongly recommends it despite the 1993-vintage code examples: it answered his beginner-era question of whether a trade-off-free "third solution" ever exists (it doesn't — engineering is trade-offs). His one warning is its thickness: many people never finish it.
+Енциклопедичний посібник Стіва Макконнелла з конструювання коду — іменування, структура, оптимізація, профілювання, і все це системно. Віктор наполегливо рекомендує її попри приклади коду зразка 1993 року: саме вона відповіла на його питання часів початку карʼєри — чи існує «третє рішення» без компромісів (не існує: інженерія — це і є компроміси). Єдине застереження — товщина: багато хто так і не дочитує.
 
-## Covered in
-- [[five-star-books]] — strongly recommended; the book that taught him there's no trade-off-free solution
+## Де розглядається
+- [[five-star-books]] — наполегливо рекомендує; книжка, яка навчила його, що рішень без компромісів не буває
 
-## Related
-Canon: [[clean-code]], [[a-philosophy-of-software-design]], [[clean-architecture]], [[domain-driven-design]], [[implementing-domain-driven-design]], [[patterns-of-enterprise-application-architecture]], [[design-patterns-gof]]. Concepts: [[software-design]], [[code-quality]].
+## Повʼязане
+Канон: [[clean-code|Clean Code]], [[a-philosophy-of-software-design|A Philosophy of Software Design]], [[clean-architecture|Clean Architecture]], [[domain-driven-design|Domain-Driven Design]], [[implementing-domain-driven-design|Implementing Domain-Driven Design]], [[patterns-of-enterprise-application-architecture|Patterns of Enterprise Application Architecture]], [[design-patterns-gof|Design Patterns (GoF)]]. Концепції: [[software-design|дизайн ПЗ]], [[code-quality|якість коду]].

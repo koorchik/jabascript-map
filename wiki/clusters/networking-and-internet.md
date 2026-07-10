@@ -2,35 +2,36 @@
 type: cluster
 tags: [networking, internet, cluster, moc]
 ---
-# Networking and the Internet
+# Мережі та інтернет
 
-This cluster gathers the channel's "How the Internet works" material — a deliberate multi-part series in which Viktor rebuilds the internet's plumbing from first principles and, characteristically, proves every claim live with `dig`, Wireshark, real cloud servers and small tools. The through-line is that the abstractions we take for granted (a URL resolving, a page loading "fast," a padlock meaning "safe") hide layers of round-trips, hierarchies and trust assumptions that mostly hold — until someone on your café Wi-Fi decides they don't. The series spans name resolution ([[dns]]), how a device joins a network ([[dhcp]]), the underlying transport and address translation ([[nat-and-networking]]), the physics that caps speed ([[latency-and-speed-of-light]]), and the trust layer on top ([[https-tls]]) — with side-trips into remote development and browser capabilities.
+Цей кластер збирає матеріал каналу «Як працює інтернет» — свідомо багатосерійний цикл, у якому Віктор відбудовує сантехніку інтернету з перших принципів і, як завжди, доводить кожне твердження наживо — з `dig`, Wireshark, справжніми хмарними серверами й маленькими тулзами. Наскрізна думка: абстракції, які ми сприймаємо як даність (URL, що резолвиться; сторінка, що вантажиться «швидко»; замочок, що означає «безпечно»), ховають шари раунд-тріпів, ієрархій і припущень про довіру, які здебільшого тримаються — доки хтось у кавʼярняному Wi-Fi не вирішить інакше. Цикл охоплює резолвінг імен ([[dns|DNS]]), приєднання пристрою до мережі ([[dhcp|DHCP]]), транспортний рівень і трансляцію адрес ([[nat-and-networking|NAT і мережі]]), фізику, що обмежує швидкість ([[latency-and-speed-of-light|затримки і швидкість світла]]), і шар довіри поверх усього ([[https-tls|HTTPS/TLS]]) — з відгалуженнями у віддалену розробку й можливості браузера.
 
-## Concepts
-- [[dns]] — name resolution: hosts.txt history, record types, recursive resolution, UDP→TCP, TTL
-- [[dhcp]] — how a device bootstraps onto a network, and the rogue-server attack
-- [[nat-and-networking]] — TCP vs UDP, handshakes, address translation, the internet-series framing
-- [[latency-and-speed-of-light]] — physics as the hard floor on website speed
-- [[https-tls]] — what HTTPS actually guarantees (and what it doesn't)
-- [[web-performance]] — Core Web Vitals and where they do/don't matter
-- [[webgpu]] — direct GPU compute in the browser
-- [[remote-development]] — full dev environments over SSH and in the browser
-- [[language-server-protocol]] — the editor architecture that made remote dev cheap
+## Концепції
+- [[dns]] — резолвінг імен: історія hosts.txt, типи записів, рекурсивний резолвінг, UDP→TCP, TTL
+- [[dhcp]] — як пристрій бутстрапиться в мережу, і атака з rogue-сервером
+- [[nat-and-networking]] — TCP проти UDP, хендшейки, трансляція адрес, рамка циклу про інтернет
+- [[latency-and-speed-of-light]] — фізика як жорстка нижня межа швидкості сайту
+- [[https-tls]] — що HTTPS гарантує насправді (і чого не гарантує)
+- [[web-performance]] — Core Web Vitals і де вони важать, а де ні
+- [[webgpu]] — прямі GPU-обчислення в браузері
+- [[remote-development]] — повноцінні дев-середовища через SSH і в браузері
+- [[language-server-protocol]] — архітектура редакторів, що здешевила віддалену розробку
 
-## Videos
-- [[how-dns-works-basics]] — DNS part 1: hosts.txt, record types, DoH, the UDP-to-TCP-at-512-bytes gotcha
-- [[dns-recursive-resolution]] — DNS part 2: root→TLD→authoritative, proven by hand with dig
-- [[dhcp-cafe-wifi]] — DHCP explained via a café-Wi-Fi rogue-server attack, built live with dnsmasq
-- [[speed-of-light-website-latency]] — how the speed of light and TCP/TLS handshakes bloat a 20ms backend into ~420ms
-- [[vm-network-isolation]] — isolating a VirtualBox VM from the home LAN via a pfSense router
-- [[vscode-in-the-browser]] — full remote development over SSH and vscode.dev tunnels
-- [[bloom-filter-and-firefox]] — certificate revocation and Firefox's CRLite cascade filters
-- [[qa-1-will-https-protect-you]] — the ways HTTPS fails on a hostile network
-- [[google-io-2023-watch-party]] — Chrome dropping the padlock, WebGPU, Core Web Vitals
+## Відео (порядок перегляду)
 
-## Tools
-- [[dnsmasq]] — tiny DNS+DHCP server used to build the rogue-Wi-Fi demo
-- [[pfsense]] — open-source virtual router/firewall for VM network isolation
-- [[virtualbox]] — hypervisor whose adapter modes drive the isolation demo
-- [[nginx]] — the LA test server for measuring real request latency
-- [[firefox]] — DNS-timing dev tools and the CRLite revocation story
+1. [[speed-of-light-website-latency]] — спершу фізична межа: як швидкість світла і хендшейки TCP/TLS роздувають бекенд на 20 мс до ~420 мс
+2. [[how-dns-works-basics]] — DNS, частина 1: hosts.txt, типи записів, DoH, підступ переходу з UDP на TCP на 512 байтах
+3. [[dns-recursive-resolution]] — DNS, частина 2: root→TLD→authoritative, доведено вручну через dig
+4. [[dhcp-cafe-wifi]] — як пристрій узагалі потрапляє в мережу: DHCP через атаку rogue-сервером у кавʼярняному Wi-Fi, зібрану наживо на dnsmasq
+5. [[qa-1-will-https-protect-you]] — шар довіри поверх: у які саме способи HTTPS підводить у ворожій мережі
+6. [[bloom-filter-and-firefox]] — глибше в той самий шар довіри: відкликання сертифікатів і каскад CRLite у Firefox
+7. [[vm-network-isolation]] — сантехніка в дії: підмережі, маршрутизація і фаєрвол для ізоляції VirtualBox-VM через роутер pfSense
+8. [[vscode-in-the-browser]] — відгалуження у віддалену розробку через SSH і тунелі vscode.dev
+9. [[google-io-2023-watch-party]] — огляд можливостей браузера: Chrome прибирає замочок, WebGPU, Core Web Vitals
+
+## Інструменти
+- [[dnsmasq]] — крихітний DNS+DHCP-сервер, на якому зібрано демо rogue-Wi-Fi
+- [[pfsense]] — опенсорсний віртуальний роутер/фаєрвол для ізоляції мережі VM
+- [[virtualbox]] — гіпервізор, чиї режими мережевих адаптерів рухають демо з ізоляції
+- [[nginx]] — тестовий сервер у Лос-Анджелесі для вимірювання реальної затримки запитів
+- [[firefox]] — dev tools із таймінгами DNS та історія відкликання сертифікатів CRLite

@@ -4,16 +4,16 @@ tags: [mobile, cross-platform, ui, vibe-coding]
 ---
 # Flutter
 
-Flutter is Google's cross-platform UI toolkit, and on the channel it is the proof that vibe-coding is past the toy stage: Viktor vibe-coded a full-featured controller app for his screen-less Blackmagic camera against its REST API in two evenings ([[vibe-coded-mobile-app]]) — one codebase running on Linux, Android "and whatever you want", responsive from a big monitor down to a phone, with tap-to-focus added to compensate for the camera's missing continuous autofocus. Demoing the same app in [[vibe-coding-new-project]], he shows builds for Linux, Windows and web (GitHub Pages), notes that web/debug builds were "super slow" until Claude optimized local state while native builds fly, and defends keeping the default Flutter design: component structure and UX first, styling later.
+Flutter — кросплатформний UI-тулкіт від Google, і на каналі він є доказом того, що вайб-кодинг переріс стадію іграшки: Віктор за два вечори навайбкодив повноцінний застосунок-контролер для своєї безекранної камери Blackmagic поверх її REST API ([[vibe-coded-mobile-app]]) — одна кодова база, що працює на Linux, Android «і на чому завгодно», адаптивна від великого монітора до телефона, з tap-to-focus, доданим, щоб компенсувати відсутність у камери безперервного автофокуса. Демонструючи той самий застосунок у [[vibe-coding-new-project]], він показує збірки для Linux, Windows і вебу (GitHub Pages), зазначає, що web/debug-збірки були «супер повільні», доки Claude не оптимізував локальний стан, а нативні літають, і захищає рішення лишити дефолтний дизайн Flutter: спочатку структура компонентів та UX, стилізація потім.
 
-His verdict in the Flutter-vs-React-Native debate ([[vibe-coding-part-2]]) is balanced: RN is more mature, uses native UI components and is easier for React devs, but Flutter compiles natively, covers iOS/web/desktop from one codebase, and beats QT/GTK for Linux desktop apps. He is skeptical of the quoted "42% market share" stat, and plans to try Flutter's testing story (Storybook-style, golden and unit tests all exist).
+Його вердикт у суперечці Flutter проти React Native ([[vibe-coding-part-2]]) виважений: RN зріліший, використовує нативні UI-компоненти і простіший для React-розробників, зате Flutter компілюється в нативний код, покриває iOS/веб/десктоп з однієї кодової бази і б'є QT/GTK для десктопних застосунків під Linux. До цитованої статистики «42% ринку» він ставиться скептично і планує спробувати тестування у Flutter (є все: Storybook-подібні, golden- і юніт-тести).
 
-## Covered in
-- [[vibe-coded-mobile-app]] — the two-evening Blackmagic camera app: one responsive codebase across platforms, tap-to-focus on the video feed.
-- [[vibe-coding-new-project]] — the same app demoed: multi-platform builds, slow web/debug vs fast native, default design kept deliberately.
-- [[vibe-coding-part-2]] — Flutter vs React Native trade-offs, Linux desktop advantage, testing plans.
+## Де розглядається
+- [[vibe-coded-mobile-app]] — застосунок для камери Blackmagic за два вечори: одна адаптивна кодова база на всі платформи, tap-to-focus на відеопотоці.
+- [[vibe-coding-new-project]] — демо того самого застосунку: мультиплатформні збірки, повільний web/debug проти швидкого нативного, свідомо залишений дефолтний дизайн.
+- [[vibe-coding-part-2]] — компроміси Flutter проти React Native, перевага на десктопі Linux, плани щодо тестування.
 
-## Related
-[[vibe-coding]] — the workflow that made a vendor-replacement app a weekend project.
-[[claude-code]] — the agent that wrote and optimized the Flutter code.
-[[declarative-ui]] — Flutter's widget model as declarative UI in practice.
+## Повʼязане
+[[vibe-coding|вайб-кодинг]] — воркфлоу, завдяки якому застосунок-заміна вендорського став проєктом на вихідні.
+[[claude-code|Claude Code]] — агент, який написав і оптимізував Flutter-код.
+[[declarative-ui|декларативний UI]] — віджетна модель Flutter як декларативний UI на практиці.

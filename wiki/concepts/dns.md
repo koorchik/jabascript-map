@@ -4,23 +4,23 @@ tags: [networking, dns, internet]
 ---
 # DNS (Domain Name System)
 
-The channel treats DNS as the flagship of its "How the Internet works" series. Before DNS (which arrived in 1985) the mapping of names to IPs lived in a hand-distributed `hosts.txt`; a residue survives as `/etc/hosts`, which the author edits live to spoof rozetka to a Google IP — showing the browser's own DNS cache and the fact that the *server* also inspects the domain in the HTTP request, so a matching IP alone isn't enough ([[how-dns-works-basics]]). He walks the common record types (A/AAAA/MX/TXT/SPF/NS), presents DNS round-robin (multiple IPs for one name) as crude load-balancing and failover, and covers DNS-over-HTTPS (DoH) as browsers moving resolution out of the OS. A favorite gotcha: DNS runs over UDP port 53 but falls back to TCP once the answer passes ~512 bytes (the truncated/TC flag flips to 1), demoed with a large TXT record — only 17% of 215 poll voters knew this. He also stresses that resolution is performed by glibc/libc, not the browser or kernel, and that systemd runs a caching resolver at 127.0.0.53.
+Канал подає DNS як флагман своєї серії «Як працює інтернет». До появи DNS (1985 рік) відповідність імен IP-адресам жила у hosts.txt, який поширювали вручну; його слід зберігся у вигляді `/etc/hosts`, який автор редагує наживо, підмінюючи rozetka на IP Google, — і показує і власний DNS-кеш браузера, і те, що *сервер* теж перевіряє домен у HTTP-запиті, тож самого лише збігу IP замало ([[how-dns-works-basics|основи DNS]]). Він проходить поширені типи записів (A/AAAA/MX/TXT/SPF/NS), подає DNS round-robin (кілька IP для одного імені) як найпростіше балансування навантаження і failover та розповідає про DNS-over-HTTPS (DoH) — браузери забирають резолвінг з операційної системи. Улюблена пастка: DNS працює поверх UDP на порту 53, але переходить на TCP, щойно відповідь перевищує ~512 байтів (прапорець truncated/TC стає 1), — продемонстровано на великому TXT-записі; лише 17% із 215 учасників опитування знали про це. Він також наголошує, що резолвінг виконує glibc/libc, а не браузер чи ядро, і що systemd тримає кешувальний резолвер на 127.0.0.53.
 
-The second episode answers "does every DNS server hold every domain?" — no ([[dns-recursive-resolution]]). Using a freshly bought itquiz.com plus a cloud server as the running example, he walks the hierarchy: root servers (zone `.`) → TLD servers (`.com`) → the authoritative server (Cloudflare) that holds the A record, with NS records returned at each hop and the resolver bootstrapping from ~13 root hints. He proves every hop by hand with `dig +norecurse` (the additional section carries glue IPs to save round-trips) and automates the whole walk with `dig +trace`. TTL gets a clear treatment: itquiz.com showed 300s, 24h is common; low TTL for frequently-changing IPs, high for stable ones — which is why IP changes propagate unevenly as caches expire.
+Другий випуск відповідає на питання «чи кожен DNS-сервер зберігає всі домени?» — ні ([[dns-recursive-resolution|рекурсивний резолвінг DNS]]). На наскрізному прикладі щойно купленого itquiz.com і хмарного сервера він проходить ієрархію: кореневі сервери (зона `.`) → сервери TLD (`.com`) → авторитетний сервер (Cloudflare), який зберігає A-запис; на кожному кроці повертаються NS-записи, а резолвер стартує з ~13 root hints. Кожен крок він доводить руками через `dig +norecurse` (секція additional несе glue-IP, щоб заощадити зайві звернення) і автоматизує весь ланцюжок через `dig +trace`. TTL пояснено чітко: в itquiz.com було 300 с, типові — 24 год; низький TTL для IP, що часто змінюються, високий — для стабільних, і саме тому зміна IP розповзається нерівномірно, поки спливають кеші.
 
-DNS is also the attack surface in the DHCP episode: a rogue DHCP-supplied DNS server poisons name resolution, and he overrides itquiz.com to a Google IP via [[dnsmasq]], producing a certificate mismatch on the victim tablet ([[dhcp-cafe-wifi]]).
+DNS — це ще й поверхня атаки у випуску про DHCP: підставний DNS-сервер, виданий через DHCP, отруює резолвінг імен, і автор перенаправляє itquiz.com на IP Google через [[dnsmasq]], отримуючи помилку невідповідності сертифіката на планшеті жертви ([[dhcp-cafe-wifi|DHCP у кафе]]).
 
-## Covered in
-- [[how-dns-works-basics]] — hosts.txt history, /etc/hosts spoof, record types, round-robin, DoH, UDP→TCP at 512 bytes, glibc does the lookup
-- [[dns-recursive-resolution]] — root→TLD→authoritative walk, dig +norecurse/+trace, glue records, TTL and cache propagation
-- [[dhcp-cafe-wifi]] — rogue DNS poisoning via DHCP, live dnsmasq override
-- [[speed-of-light-website-latency]] — DNS lookup as an uncounted extra latency component
-- [[vm-network-isolation]] — guest DNS set to 8.8.8.8 via pfSense DHCP
-- [[3-things-that-make-a-programmer-better]] — "who actually performs the DNS query?" as an example of hidden depth
+## Де розглядається
+- [[how-dns-works-basics]] — історія hosts.txt, підміна через /etc/hosts, типи записів, round-robin, DoH, перехід UDP→TCP на 512 байтах, запит виконує glibc
+- [[dns-recursive-resolution]] — шлях root→TLD→авторитетний сервер, dig +norecurse/+trace, glue-записи, TTL і розповсюдження кешів
+- [[dhcp-cafe-wifi]] — отруєння DNS через підставний DHCP, живий override у dnsmasq
+- [[speed-of-light-website-latency]] — DNS-запит як неврахована додаткова складова затримки
+- [[vm-network-isolation]] — гостьовий DNS виставлено на 8.8.8.8 через DHCP у pfSense
+- [[3-things-that-make-a-programmer-better]] — «хто насправді виконує DNS-запит?» як приклад прихованої глибини
 
-## Related
-[[dhcp]] — hands out the DNS server address; the rogue-DHCP attack hijacks DNS
-[[nat-and-networking]] — layered resolver caching (browser/OS/router/provider) and the internet series framing
-[[https-tls]] — the certificate check is what catches DNS spoofing
-[[latency-and-speed-of-light]] — each lookup is many round-trips, motivating caching
-[[dnsmasq]] — combined caching-DNS + DHCP server used in the demos
+## Повʼязане
+[[dhcp]] — роздає адресу DNS-сервера; атака через підставний DHCP перехоплює саме DNS
+[[nat-and-networking]] — багаторівневе кешування резолверів (браузер/ОС/роутер/провайдер) і рамка серії про інтернет
+[[https-tls]] — саме перевірка сертифіката ловить підміну DNS
+[[latency-and-speed-of-light]] — кожен запит — це багато round-trip-ів, звідси потреба в кешуванні
+[[dnsmasq]] — комбінований кешувальний DNS + DHCP-сервер із демонстрацій

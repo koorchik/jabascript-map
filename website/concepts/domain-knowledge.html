@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Знання предметної області — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / domain-knowledge</p>
+  <h1>Знання предметної області</h1>
+  <div class="topic-body"><p>Перша з трьох навичок у стартовому відео каналу: архітектуру диктує предметна область, а не патерни (<a href="../videos/3-things-that-make-a-programmer-better.html">3 речі, що роблять програміста кращим</a>). Його приклад із чатом робить це відчутним: той самий індикатор «користувач друкує» може вимагати long-polling (коментарі під замовленнями), звичайного polling на 100 запитів/с (корпоративний чат на 100 користувачів) або WebSockets — і лише розуміння домену підказує, що саме. Знання домену живить і мотивацію: його друзі із задоволенням будували e-commerce-частини проєкту й повністю втратили мотивацію на модулі логістики — доки не розібралися в бізнесі за ним, і робота знову стала цікавою.</p><p>На цьому концепті тримається його центральне архітектурне попередження: якість архітектури залежить від розуміння домену, а на старті проєкту ви майже ніколи не знаєте домен достатньо добре — саме тому нарізання меж мікросервісів у перший же день і є недооціненим вбивцею цієї архітектури (<a href="../videos/microservices-main-problem.html">головна проблема мікросервісів</a>), і саме тому він любить принцип, що хороша архітектура <em>відкладає</em> рішення, доки ви не зрозумієте домен краще.</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/3-things-that-make-a-programmer-better.html">3 речі, які роблять програміста кращим</a>
+  <span class="meta mono">20:13</span>
+  <p class="step-note">домен диктує архітектуру (приклад з індикатором набору тексту) і живить мотивацію (історія з логістикою)</p></li><li><a href="../videos/microservices-main-problem.html">Головна проблема мікросервісів, яку часто недооцінюють</a>
+  <span class="meta mono">08:55</span>
+  <p class="step-note">у перший день ніколи не знаєш домен достатньо добре, щоб правильно нарізати межі сервісів</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/software-design.html">Проєктування програмного забезпечення</a> — домен як головний вхідний параметр проєктування <a href="../concepts/microservices.html">Мікросервіси</a> — архітектура, яку поверхневе розуміння домену карає найсильніше <a href="../concepts/abstractions.html">Абстракції</a> — хороші межі — це межі домену <a href="../books.html#domain-driven-design">Domain-Driven Design</a>, <a href="../books.html#implementing-domain-driven-design">Implementing Domain-Driven Design</a> — книги, які він радить саме для цього</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

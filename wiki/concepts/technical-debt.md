@@ -2,19 +2,19 @@
 type: concept
 tags: [engineering-craft, architecture, maintenance]
 ---
-# Technical debt
+# Технічний борг
 
-The framing that stuck with Viktor is a quote he passes on: **"if you just write code, you accumulate technical debt"** ([[code-review-how-google-does-it]]). His example: a system was designed for 10 modules and now has 300. Every new module is written exactly like the previous ones, reviewed like the previous ones, and looks great in the diff — yet the architecture as a whole no longer works. That is the essence of the channel's view: debt is not sloppy code slipping past review; it is *consistent* code accumulating against a design that has silently expired, which makes it invisible to pre-submit [[code-review]].
+Формулювання, що запало Віктору, — цитата, яку він переказує далі: **«якщо ти просто пишеш код — ти накопичуєш технічний борг»** ([[code-review-how-google-does-it|випуск про код-ревʼю в Google]]). Його приклад: систему спроєктували під 10 модулів, а тепер їх 300. Кожен новий модуль написано точно так само, як попередні, поревʼюєно, як попередні, і в диффі він виглядає чудово — але архітектура в цілому вже не працює. У цьому суть погляду каналу: борг — це не неохайний код, що прослизнув повз ревʼю; це *консистентний* код, який накопичується всупереч дизайну, що тихо втратив актуальність, — і саме тому він невидимий для пре-сабміт [[code-review|код-ревʼю]].
 
-The same mechanism shows up in his abstraction war stories: a ~100-line proof-of-concept widget grows into one 5000-line file precisely because every change stayed consistent with the surrounding structure — "that's how YOU showed us," the team told him ([[voice-3-scary-abstractions]]). The remedies he describes are structural, not diff-level: Google's post-launch walkthroughs of merged code and WebbyLab's periodic architectural reviews with checklists, a C4 diagram, and an action plan re-checked after ~2 months ([[code-review-how-google-does-it]]). Microservices make this debt uniquely expensive: a wrong boundary in a monolith is a cheap refactor, across services in different languages and teams it is incredibly hard to fix ([[microservices-main-problem]]).
+Той самий механізм — у його історіях про абстракції: віджет-прототип на ~100 рядків виростає в один файл на 5000 рядків саме тому, що кожна зміна лишалася консистентною з навколишньою структурою — «нас же ТИ так навчив», сказала йому команда ([[voice-3-scary-abstractions|голосове про страшні абстракції]]). Ліки, які він описує, — структурні, а не на рівні диффа: у Google — post-launch проходи по вже змердженому коду, у WebbyLab — періодичні архітектурні ревʼю з чеклістами, C4-діаграмою та планом дій, який повторно перевіряють за ~2 місяці ([[code-review-how-google-does-it|випуск про код-ревʼю в Google]]). Мікросервіси роблять цей борг унікально дорогим: хибна межа в моноліті — дешевий рефакторинг, а між сервісами різними мовами й у різних командах її виправити неймовірно важко ([[microservices-main-problem|головна проблема мікросервісів]]).
 
-## Covered in
-- [[code-review-how-google-does-it]] — the "just writing code accumulates debt" thesis, the 10→300 modules example, and the review formats that catch architecture-level rot
-- [[voice-3-scary-abstractions]] — how debt grows through consistency with a stale structure (the 5000-line file)
-- [[microservices-main-problem]] — wrong service boundaries as the hardest-to-repay form of debt
+## Де розглядається
+- [[code-review-how-google-does-it]] — теза «просто писати код = накопичувати борг», приклад 10→300 модулів і формати ревʼю, які ловлять гниття на рівні архітектури
+- [[voice-3-scary-abstractions]] — як борг росте через консистентність зі застарілою структурою (файл на 5000 рядків)
+- [[microservices-main-problem]] — хибні межі сервісів як найважча для повернення форма боргу
 
-## Related
-[[code-review]] — per-PR review cannot see this class of debt; architectural review can
-[[code-quality]] — quality as code that keeps letting you extend it
-[[abstractions]] — failing to extract new abstractions as responsibilities grow is how debt compounds
-[[microservices]] — distributed systems freeze bad decisions in place
+## Повʼязане
+[[code-review]] — ревʼю окремих PR не бачить цей клас боргу; архітектурне ревʼю — бачить
+[[code-quality]] — якість як код, що й далі дозволяє себе розширювати
+[[abstractions]] — не виділяти нові абстракції, коли відповідальності ростуть, — саме так борг і накопичується
+[[microservices]] — розподілені системи заморожують погані рішення намертво

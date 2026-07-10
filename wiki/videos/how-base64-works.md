@@ -2,23 +2,41 @@
 type: video
 title_uk: "Як працює Base64 й навіщо він потрібен？"
 youtube_id: QCL0EOKDqKY
+level: beginner
 tags: [base64, encoding, jwt, security, hands-on]
 date_ingested: 2026-07-09
 ---
-# How Base64 Works and Why You Need It
+# Як працює Base64 і навіщо він потрібен
 
-> Original: "Як працює Base64 й навіщо він потрібен？" — https://youtu.be/QCL0EOKDqKY
+> Оригінал: "Як працює Base64 й навіщо він потрібен？" — https://youtu.be/QCL0EOKDqKY
 
-A hands-on follow-up to the hashing/encoding/encryption video ([[hashing-encoding-encryption-difference]]): the author demonstrates [[base64]] in three real places you meet it daily — a [[jwt]] token, an HTTP Basic Auth header, and an image inlined into HTML as a data URI — then derives the encoding from first principles on the tablet and decodes everything live in the terminal with `base64 --decode`. His framing: Base64 is simply binary data represented as text, invented so email (originally text-only) could carry attachments; from the same logic you get Base32 and Base16 (which is just hex). All examples are in a GitHub repo linked in the description, and he notes Base64 will resurface in the upcoming inverted-index videos.
+Практичне продовження відео про хешування/кодування/шифрування ([[hashing-encoding-encryption-difference|у чому різниця]]): автор демонструє [[base64|Base64]] у трьох реальних місцях, де ви щодня його зустрічаєте — токен [[jwt|JWT]], заголовок HTTP Basic Auth і зображення, вбудоване в HTML як data URI — а тоді виводить кодування з перших принципів на планшеті й наживо декодує все в терміналі через `base64 --decode`. Його рамка: Base64 — це просто бінарні дані, подані як текст, придумані, щоб email (спершу лише текстовий) міг нести вкладення; за тією самою логікою отримуєте Base32 і Base16 (який і є просто hex). Усі приклади лежать у GitHub-репозиторії, посилання в описі, і він зазначає, що Base64 знову з’явиться у майбутніх відео про інвертований індекс.
 
-## Key takeaways
-- The core construction: you can't find 256 (or even 128) characters that survive every [[encoding]] and system, but 64 you can — `A–Z`, `a–z`, `0–9`, `+`, `/`. So take the binary stream 6 bits at a time: 3 bytes (24 bits) become 4 characters. Since each character is then sent as an 8-bit byte, data grows by 8/6 ≈ 33%.
-- Demo 1, [[jwt]]: he generates a token and shows the client absolutely CAN read it without the secret — the header (signing algorithm metadata) and payload (`user: Viktor`) are plain Base64-decodable JSON. JWT is signed, not encrypted. It actually uses **base64url**: `+` and `/` are swapped for `-` and `_` so tokens fit in URLs, `=` is padding, and `.` is a safe separator because it's not in the alphabet.
-- Demo 2, HTTP Basic Auth: the `Authorization: Basic …` header is just `login:password` in Base64 — decodable even with the browser's built-in `atob`/`btoa`. It is effectively plaintext sent with every request; "the only thing protecting me is [[https-tls|HTTPS]] — Basic Auth itself adds nothing."
-- Demo 3, data URIs: an image embedded straight into HTML as `data:<mime-type>;base64,…` — he base64-encodes a frog picture and swaps it in, keeping the HTML file purely textual.
-- Base32 (5 bits/char, +60% size) has a real niche: its usual alphabet is case-insensitive and slash-free, so it's safe for file and directory names even on case-insensitive filesystems; `0` and `1` are excluded because they look like `O` and `l`.
-- Base16 IS hex: 4 bits per character, 2× size. You've seen it forever in CSS colors — `#FFFFFF` is bytes encoded two characters each.
-- Practical payoff tying back to the [[database-indexes]] video (UUID vs auto-increment): a 32-hex-character UUID is Base16 — decode it and the same value is 16 raw bytes, half the size, which he proves with files on disk.
+## Головне
+- Основна конструкція: не можна знайти 256 (чи навіть 128) символів, які переживуть будь-яке [[encoding|кодування]] і будь-яку систему, а 64 — можна: `A–Z`, `a–z`, `0–9`, `+`, `/`. Тож беремо бінарний потік по 6 бітів за раз: 3 байти (24 біти) стають 4 символами. Оскільки кожен символ потім передається як 8-бітний байт, дані ростуть на 8/6 ≈ 33%.
+- Демо 1, [[jwt|JWT]]: він генерує токен і показує, що клієнт абсолютно ТАКИ може прочитати його без секрету — заголовок (метадані алгоритму підпису) і payload (`user: Viktor`) — це звичайний JSON, який декодується з Base64. JWT підписаний, а не зашифрований. Насправді він використовує **base64url**: `+` і `/` замінені на `-` і `_`, щоб токени влазили в URL, `=` — це padding, а `.` — безпечний роздільник, бо його немає в алфавіті.
+- Демо 2, HTTP Basic Auth: заголовок `Authorization: Basic …` — це просто `login:password` у Base64 — декодується навіть вбудованими в браузер `atob`/`btoa`. Це фактично plaintext, надісланий із кожним запитом; «єдине, що мене захищає — це [[https-tls|HTTPS]] — сам Basic Auth не додає нічого».
+- Демо 3, data URI: зображення, вбудоване прямо в HTML як `data:<mime-type>;base64,…` — він кодує в base64 картинку жабки й підставляє її, лишаючи HTML-файл суто текстовим.
+- Base32 (5 бітів/символ, +60% розміру) має реальну нішу: його звичайний алфавіт нечутливий до регістру і без слешів, тож він безпечний для імен файлів і директорій навіть на регістронечутливих файлових системах; `0` і `1` виключено, бо вони схожі на `O` і `l`.
+- Base16 — ЦЕ hex: 4 біти на символ, 2× розмір. Ви завжди бачили його в CSS-кольорах — `#FFFFFF` — це байти, закодовані по два символи кожен.
+- Практичний висновок, що повертає до відео про [[database-indexes|індекси]] (UUID проти auto-increment): 32-символьний hex UUID — це Base16 — декодуй його, і те саме значення — це 16 сирих байтів, удвічі менше, що він доводить файлами на диску.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: план — приклади, теорія, потім практика
+- 00:43 — Приклад 1: генеруємо [[jwt|JWT]] — чи може клієнт прочитати його без секрету?
+- 01:25 — Приклад 2: Basic Auth — що в заголовку Authorization на дроті
+- 02:30 — Приклад 3: зображення, вбудоване в HTML як [[base64|Base64]]
+- 03:35 — Що таке Base64: бінарник як текст, придуманий для вкладень email
+- 03:55 — Бінарні дані проти текстових; чому сирі байти не можна просто надіслати як текст
+- 06:06 — Пошук алфавіту, що працює всюди: 256? 128? 64 працює
+- 07:10 — Конструкція: A–Z, a–z, 0–9, +, / — 3 байти стають 4 шестибітними символами
+- 09:01 — Ціна: 8/6 означає, що дані ростуть на 33%
+- 09:44 — Base32: 5 бітів на символ, +60%, нечутливий до регістру і безпечний для імен файлів
+- 11:49 — Base16 — це просто hex: CSS #FFFFFF — це байти, по два символи кожен
+- 12:53 — Декодуємо JWT у терміналі: підписаний, не зашифрований; base64url і padding
+- 15:03 — Декодуємо Basic Auth через `atob`: login:password фактично plaintext
+- 16:34 — Вбудовуємо жабку: будуємо `data:...;base64,` URI руками
+- 17:42 — UUID — це Base16: 32 hex-символи декодуються в 16 сирих байтів на диску
+
+## Теми
 [[base64]], [[encoding]], [[jwt]], [[https-tls]], [[security-practices]], [[database-indexes]]

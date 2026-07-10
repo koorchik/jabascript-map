@@ -2,24 +2,35 @@
 type: video
 title_uk: "3 речі, що псують програміста"
 youtube_id: _j8ACibMJ0s
+level: beginner
 tags: [career, code-quality, dogmatism, teamwork]
 date_ingested: 2026-07-09
 ---
-# 3 Things That Ruin a Programmer
+# 3 речі, що псують програміста
 
-> Original: "3 речі, що псують програміста" — https://youtu.be/_j8ACibMJ0s
+> Оригінал: "3 речі, що псують програміста" — https://youtu.be/_j8ACibMJ0s
 
-Companion to [[3-things-that-make-a-programmer-better]]: three things that turn a good programmer into a worse one. They may sound banal, but his angle is unusual — he explains why each one damages *you personally*, not just the project: (1) writing crappy code destroys the "code smell" intuition you need to become a senior; (2) **dogmatism** — believing in programming instead of understanding it; (3) a dismissive attitude toward colleagues, which caps your growth and your impact ([[career-and-growth]], [[code-quality]]).
+Пара до відео [[3-things-that-make-a-programmer-better|«3 речі, які роблять програміста кращим»]]: три речі, які перетворюють доброго програміста на гіршого. Вони можуть звучати банально, але кут погляду незвичний — він пояснює, чому кожна з них шкодить *особисто вам*, а не лише проєкту: (1) писання поганого коду руйнує інтуїцію «запаху коду», без якої не стати сеньйором; (2) **догматизм** — віра в програмування замість його розуміння; (3) зневажливе ставлення до колег, яке обмежує і ваше зростання, і ваш вплив ([[career-and-growth|кар'єрне зростання]], [[code-quality|якість коду]]).
 
-## Key takeaways
-- **Everyone accepts the "fast / quality / cheap — pick two" triangle axiomatically, but he questions it**: maybe you *can* have all three — quality code is often both cheaper and faster to develop (scale-dependent; separate video promised).
-- **Why bad code hurts the programmer, not just the business**: senior developers have an intuition — they open unfamiliar code and, before really reading it, ask the right questions and predict where the problems are, just from seeing the abstractions. That "code smell" nose is built over years of writing good code. If you keep writing garbage, you stop smelling it and never develop the intuition that makes a higher-level developer ([[code-quality]], [[career-and-growth]]).
-- His definition of quality here is explicitly *not* perfectionism or load-proof, fully-tested code: quality code is code that **doesn't stop you from extending it** — you write a little now, add more later, add tests, and the [[abstractions]] keep working instead of having to be thrown away.
-- **Dogmatism examples he collected**: a Ukrainian frontend chat claimed "using props in `getInitialState` is an antipattern" as an absolute — the React docs said it's an antipattern *under certain conditions*, and the reasons, not the syntax, are what matter ([[deep-learning-of-fundamentals]]).
-- The [[test-driven-development|TDD]] mock dogma: people decided TDD means unit tests and unit tests mean mocking everything in isolation. He points to the "Is TDD Dead?" conversations (Kent Beck, Martin Fowler, DHH — link under the video), where Kent Beck — who basically invented TDD and wrote the book — says he almost never mocks and mocks as little as possible. "People just decided it must be that way."
-- Same story with Greg Young and event sourcing: Young himself says he showed *an example* at a conference and everyone canonized it as *the* way — events don't have to be handled exactly like that (he also notes Redux is a related idea). And design patterns (GoF, Fowler): a pattern is not sacred knowledge — it's a classified name for something that worked for many people; the point is the problem it solves, not the reference implementation. Best practices exist to stop you writing *terribly bad* code, not to produce the best code — if you understand the reasons behind a practice, you may deliberately break it ([[software-design]]).
-- His formula for the whole disease: **people read something and believe it instead of understanding it — faith in programming instead of understanding of programming**. Weigh everything (including his own videos) against your own experience.
-- **Contempt for colleagues** kicks in exactly when you start feeling like a hot-shot: always be ready to hear out less-experienced colleagues — they often propose a better solution than yours. A brilliant lone-wolf who helps the people around him produces far more than he ever could alone, and that leadership unlocks bigger projects. At Google (where he works) this is a core value — people are extremely qualified yet always open to your opinion, and in such a team "you can build things you could never build alone."
+## Головне
+- **Трикутник «швидко / якісно / дешево — обери два» всі приймають як аксіому, а він ставить його під сумнів**: можливо, *можна* мати всі три — якісний код часто і дешевший, і швидший у розробці (залежить від масштабу; обіцяє окреме відео).
+- **Чому поганий код шкодить програмісту, а не лише бізнесу**: у сеньйорів є інтуїція — вони відкривають незнайомий код і, ще по-справжньому не читаючи його, ставлять правильні запитання й передбачають, де будуть проблеми, просто побачивши абстракції. Цей «нюх» на запах коду виробляється роками написання доброго коду. Якщо постійно писати сміття, перестаєш його відчувати і ніколи не розвинеш інтуїцію, яка й робить розробника вищого рівня ([[code-quality|якість коду]], [[career-and-growth|кар'єрне зростання]]).
+- Його означення якості тут — явно *не* перфекціонізм і не стійкий до навантажень, повністю покритий тестами код: якісний код — це код, **який не заважає себе розширювати**: пишеш трохи зараз, додаєш ще потім, додаєш тести — і [[abstractions|абстракції]] продовжують працювати, а не летять на смітник.
+- **Приклади догматизму, які він назбирав**: в українському фронтенд-чаті твердили як абсолют, що «використовувати props у `getInitialState` — антипатерн», — тоді як документація React казала, що це антипатерн *за певних умов*, і важать саме причини, а не синтаксис ([[deep-learning-of-fundamentals|глибоке вивчення основ]]).
+- Догма моків у [[test-driven-development|TDD]]: люди вирішили, що TDD означає юніт-тести, а юніт-тести означають мокати все в ізоляції. Він відсилає до розмов "Is TDD Dead?" (Кент Бек, Мартін Фаулер, DHH — посилання під відео), де Кент Бек — який, власне, і винайшов TDD та написав книгу — каже, що майже ніколи не мокає і мокає якнайменше. «Люди просто вирішили, що має бути так».
+- Та сама історія з Ґреґом Янґом та event sourcing: Янґ сам каже, що показав на конференції *приклад*, а всі канонізували його як *єдиний* спосіб — події не обов'язково обробляти саме так (він також зауважує, що Redux — споріднена ідея). І патерни проектування (GoF, Фаулер): патерн — не сакральне знання, а класифікована назва того, що спрацювало в багатьох людей; суть — у проблемі, яку він розв'язує, а не в еталонній реалізації. Best practices існують, щоб ви не писали *жахливо поганий* код, а не щоб вийшов найкращий — якщо розумієш причини, що стоять за практикою, можеш свідомо її порушити ([[software-design|проектування ПЗ]]).
+- Його формула всієї цієї хвороби: **люди читають щось і вірять у це замість розуміти — віра в програмування замість розуміння програмування**. Зважуйте все (включно з його власними відео) на власному досвіді.
+- **Зневага до колег** вмикається саме тоді, коли починаєш почуватися крутим: завжди будьте готові вислухати менш досвідчених колег — вони нерідко пропонують краще рішення, ніж ваше. Геніальний одинак, який допомагає людям навколо, створює значно більше, ніж будь-коли зміг би сам, і саме таке лідерство відкриває більші проєкти. У Google (де він працює) це базова цінність — люди надзвичайно кваліфіковані, але завжди відкриті до вашої думки, і в такій команді «можна будувати те, чого ніколи не збудуєш сам».
 
-## Covered
+## Розділи
+- 00:00 — Вступ: зворотний бік відео про «3 речі, які роблять кращим»
+- 00:24 — Річ 1: поганий код — сумнів у трикутнику «швидко, якісно, дешево: обери два»
+- 01:31 — Чому сміттєвий код шкодить *вам*: втрата «нюху» на запах коду, на якому працюють сеньйори
+- 01:54 — Якість — не перфекціонізм: код, який не заважає себе розширювати
+- 03:01 — Річ 2: догматизм — абсолютизм «антипатерну» getInitialState у React
+- 04:52 — "Is TDD Dead?": Кент Бек мокає якнайменше, а люди канонізували протилежне
+- 05:53 — Ґреґ Янґ про event sourcing: він показав приклад, а не канон; патерни й best practices не священні
+- 08:24 — Річ 3: зневага до колег — і культура Google «вислухай кожного»
+
+## Теми
 [[code-quality]], [[career-and-growth]], [[deep-learning-of-fundamentals]], [[software-design]], [[abstractions]], [[test-driven-development]]

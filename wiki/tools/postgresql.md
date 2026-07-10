@@ -4,15 +4,15 @@ tags: [databases, sql, relational]
 ---
 # PostgreSQL
 
-On the channel, Postgres is the architectural counterpoint to [[mysql]]: no clustered indexes at all. Tables are unordered heaps, indexes store physical row addresses (visible via `ctid`), and secondary indexes don't embed the primary key — which is why random UUID primary keys cost Postgres little while devastating MySQL ([[database-indexes-mysql-vs-postgres]], [[uuid-vs-auto-increment]]). The trade-off runs the other way under [[mvcc]]: because updated row versions land at new physical addresses, updating one indexed column forces a rebuild of ALL indexes on the table (the HOT optimization only helps within one 8 KB block) — internals Viktor connects to Uber's famous Postgres → MySQL → Postgres migrations.
+На каналі Postgres — архітектурна протилежність [[mysql|MySQL]]: кластерних індексів немає взагалі. Таблиці — це невпорядковані heap-и, індекси зберігають фізичні адреси рядків (їх видно через `ctid`), а вторинні індекси не містять первинного ключа — саме тому випадкові UUID як первинні ключі майже нічого не коштують Postgres, але спустошують MySQL ([[database-indexes-mysql-vs-postgres|індекси в MySQL проти Postgres]], [[uuid-vs-auto-increment|UUID проти автоінкременту]]). Компроміс працює в інший бік через [[mvcc|MVCC]]: оскільки оновлені версії рядків опиняються за новими фізичними адресами, оновлення однієї проіндексованої колонки змушує перебудувати ВСІ індекси таблиці (оптимізація HOT допомагає лише в межах одного блоку 8 КБ) — нутрощі, які Віктор повʼязує зі знаменитими міграціями Uber: Postgres → MySQL → Postgres.
 
-Elsewhere it appears as the same-but-different sibling: `EXPLAIN` exists there too ([[why-database-indexes]]), its 8 KB block size determines B+ tree fan-out (~200–2000 children per node) and thus tree depth ([[trees-search-algorithms-databases]]), and knowing what an UPDATE actually does in Postgres vs MySQL is his example of the internals knowledge that lets you predict behavior at scale ([[3-things-that-make-a-programmer-better]]).
+В інших відео він зʼявляється як «такий самий, але інший» родич: `EXPLAIN` є й тут ([[why-database-indexes|навіщо індекси в базах даних]]), його розмір блоку 8 КБ визначає fan-out B+-дерева (~200–2000 дітей на вузол), а отже й глибину дерева ([[trees-search-algorithms-databases|дерева, алгоритми пошуку та бази даних]]), а розуміння того, що насправді робить UPDATE у Postgres проти MySQL, — його приклад знання нутрощів, яке дозволяє передбачати поведінку на масштабі ([[3-things-that-make-a-programmer-better|3 речі, що роблять програміста кращим]]).
 
-## Covered in
-- [[database-indexes-mysql-vs-postgres]] — heap tables, ctid, MVCC index rebuilds, UUID immunity
-- [[why-database-indexes]] — contrast mention: no clustered indexes, deep dive promised
-- [[trees-search-algorithms-databases]] — 8 KB blocks sizing B+ tree nodes
-- [[3-things-that-make-a-programmer-better]] — internals knowledge as what separates good from great
+## Де розглядається
+- [[database-indexes-mysql-vs-postgres]] — heap-таблиці, ctid, перебудова індексів через MVCC, невразливість до UUID
+- [[why-database-indexes]] — згадка для контрасту: кластерних індексів немає, обіцяний глибокий розбір
+- [[trees-search-algorithms-databases]] — блоки 8 КБ визначають розмір вузлів B+-дерева
+- [[3-things-that-make-a-programmer-better]] — знання нутрощів як те, що відрізняє хорошого від видатного
 
-## Related
+## Повʼязане
 [[mysql]], [[database-indexes]], [[mvcc]], [[uuid-vs-auto-increment]], [[b-tree]]

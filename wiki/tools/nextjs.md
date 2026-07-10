@@ -4,13 +4,13 @@ tags: [react, ssr, framework, frontend]
 ---
 # Next.js
 
-Next.js is the React framework for server-side rendering and static generation. Viktor's verdict is love with a caveat ([[qa-and-plans-for-2024]]): his mytalks project runs on it, and he values exactly what it delivers — isomorphic SSR, SEO and fast page loads. Coming from someone who wrote an award-winning production-SSR article back when you had to build it yourself, that endorsement carries weight. The criticism targets its internal architecture: it isn't parametrizable enough — he couldn't configure the static-page cache to live on S3, the kind of extension point he expects a framework to expose.
+Next.js — React-фреймворк для серверного рендерингу та статичної генерації. Вердикт Віктора — любов із застереженням ([[qa-and-plans-for-2024]]): його проєкт mytalks працює на ньому, і він цінує саме те, що фреймворк дає — ізоморфний SSR, SEO і швидке завантаження сторінок. Від людини, яка написала відзначену нагородою статтю про продакшен-SSR ще тоді, коли його доводилося будувати власноруч, така рекомендація важить чимало. Критика — на внутрішню архітектуру: фреймворк недостатньо параметризований — він не зміг налаштувати кеш статичних сторінок так, щоб той жив на S3, а саме такі точки розширення він очікує від фреймворку.
 
-## Covered in
-- [[qa-and-plans-for-2024]] — loves it for SSR/SEO/speed (mytalks runs on it); criticizes the non-parametrizable static-page cache (no S3 option).
+## Де розглядається
+- [[qa-and-plans-for-2024]] — любить за SSR/SEO/швидкість (mytalks працює на ньому); критикує непараметризований кеш статичних сторінок (немає опції S3).
 
-## Related
-[[react]] — the library underneath, and his hand-rolled-SSR prehistory.
-[[nodejs]] — the runtime Next.js servers run on.
-[[web-performance]] — SSR and fast loads as the reason to use it.
-[[software-design]] — the missing cache extension point as a design critique.
+## Повʼязане
+[[react]] — бібліотека під капотом і його передісторія з власноруч написаним SSR.
+[[nodejs]] — рантайм, на якому працюють сервери Next.js.
+[[web-performance]] — SSR і швидке завантаження як причина його використовувати.
+[[software-design]] — відсутня точка розширення кешу як критика дизайну.

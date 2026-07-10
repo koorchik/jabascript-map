@@ -2,19 +2,19 @@
 type: concept
 tags: [engineering-craft, code-review, process, google]
 ---
-# Code review
+# Код-ревʼю
 
-The channel's take is first-hand: Viktor draws on review practice at both WebbyLab and Google and insists there is no single right way — but there are moves that make any review better ([[code-review-how-google-does-it]]). Standardize your guidelines (when two approaches are both fine, just pick one so reviews stop relitigating taste) and automate style away entirely, so senior time is never spent on formatting comments. Google's system he describes from the inside: peer review where a junior can review a senior, plus a separate per-language "readability" certification (~6 months to earn for TypeScript, years for C++) — code cannot merge without approval from a readability holder, so on his team a junior with readability approved his code while his own approval alone was insufficient. The author's side matters just as much: one concern per MR, real descriptions, before/after screenshots and screencasts — make the review effortless for the reviewer.
+Погляд каналу — з перших рук: Віктор спирається на практику ревʼю і у WebbyLab, і в Google та наполягає, що єдиного правильного способу не існує — але є прийоми, які роблять кращим будь-яке ревʼю ([[code-review-how-google-does-it|як код-ревʼю робить Google]]). Стандартизуйте гайдлайни (коли обидва підходи однаково прийнятні — просто оберіть один, щоб на ревʼю перестали пересперечуватися про смак) і повністю автоматизуйте стиль, щоб час сеньйорів ніколи не витрачався на коментарі про форматування. Систему Google він описує зсередини: пір-ревʼю, де джуніор може ревʼюїти сеньйора, плюс окрема сертифікація «readability» для кожної мови (~6 місяців на TypeScript, роки на C++) — код не може змерджитися без апруву власника readability, тож у його команді джуніор з readability апрувив його код, тоді як його власного апруву було недостатньо. Сторона автора важить не менше: один концерн на MR, справжні описи, скриншоти і скрінкасти «до/після» — зробіть ревʼю максимально легким для ревʼюера.
 
-His sharpest point is that per-PR review alone is never enough: every diff can look great while the architecture quietly stops working — which is why Google also runs post-launch reviews where the feature author walks the team through the merged code, and WebbyLab runs periodic architectural reviews (see [[technical-debt]] and [[software-design]]). In the AI era the practice extends to machine output: AI-written code must be read line by line like a human PR — he watches Claude's edits stream in the terminal and hits Escape the moment it goes wrong, or reviews the full diff for big one-shot changes — and notes that AI already reviews more PRs than it writes, with a human still reviewing what's left ([[vibe-coding-part-2]]).
+Найгостріша його теза — що самого лише ревʼю на рівні PR ніколи не досить: кожен дифф може виглядати чудово, поки архітектура тихо перестає працювати, — саме тому Google додатково проводить post-launch-ревʼю, де автор фічі проводить команду по вже змердженому коду, а WebbyLab — періодичні архітектурні ревʼю (див. [[technical-debt|технічний борг]] і [[software-design|проєктування ПЗ]]). В епоху AI практика поширюється і на машинний код: написаний AI код треба читати рядок за рядком, як людський PR, — він дивиться, як правки Claude стрімляться в терміналі, і тисне Escape, щойно щось іде не так, або ревʼюїть повний дифф для великих one-shot змін — і зауважує, що AI вже ревʼюїть більше PR-ів, ніж пише, а решту все одно ревʼюїть людина ([[vibe-coding-part-2|вайб-кодинг, частина 2]]).
 
-## Covered in
-- [[code-review-how-google-does-it]] — the core video: automate style, standardize guidelines, Google's peer review + readability certification, author-side etiquette, post-launch reviews
-- [[vibe-coding-part-2]] — reviewing AI output like a human PR: streaming-diff supervision, Escape-key interventions, AI as reviewer
+## Де розглядається
+- [[code-review-how-google-does-it]] — базове відео: автоматизуйте стиль, стандартизуйте гайдлайни, пір-ревʼю Google + сертифікація readability, етикет автора, post-launch-ревʼю
+- [[vibe-coding-part-2]] — ревʼю AI-коду як людського PR: нагляд за стрімом діффів, втручання клавішею Escape, AI в ролі ревʼюера
 
-## Related
-[[technical-debt]] — the failure mode per-PR review can't see: every diff looks fine, the architecture rots
-[[code-quality]] — what review is ultimately protecting
-[[software-design]] — WebbyLab's periodic architectural review complements per-PR review
-[[vibe-coding]] — supervising AI-generated code is review work
-[[software-engineering-at-google]] — the book behind much of Google's process
+## Повʼязане
+[[technical-debt]] — режим відмови, якого не бачить ревʼю окремих PR: кожен дифф виглядає добре, а архітектура гниє
+[[code-quality]] — те, що ревʼю зрештою захищає
+[[software-design]] — періодичне архітектурне ревʼю у WebbyLab доповнює ревʼю окремих PR
+[[vibe-coding]] — нагляд за AI-згенерованим кодом — це теж робота ревʼюера
+[[software-engineering-at-google]] — книжка, що стоїть за значною частиною процесів Google

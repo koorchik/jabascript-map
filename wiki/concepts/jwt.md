@@ -4,20 +4,20 @@ tags: [security, authentication, web, tokens]
 ---
 # JWT
 
-The channel's favorite trick-question subject: a JWT *looks* encrypted but is just base64url-encoded and **signed** — the frontend can read the whole payload without any key ([[hashing-encoding-encryption-difference]]). In [[how-base64-works]] Viktor proves it live: header (algorithm metadata) and payload decode with a plain `base64 --decode`; only verifying the signature needs the secret. Believing JWT encrypts its payload and using it as a hidden session store is his go-to example of the shallow-knowledge trap ([[3-things-that-make-a-programmer-better]]) — the cure is understanding what a [[digital-signatures|signature]] actually is.
+Улюблена тема каналу для питань із підступом: JWT *виглядає* зашифрованим, але це просто base64url-кодування плюс **підпис** — фронтенд може прочитати весь payload без жодного ключа ([[hashing-encoding-encryption-difference|різниця між хешуванням, кодуванням і шифруванням]]). У [[how-base64-works|відео про Base64]] Віктор доводить це наживо: header (метадані про алгоритм) і payload розкодовуються звичайним `base64 --decode`; секрет потрібен лише для перевірки підпису. Віра в те, що JWT шифрує свій payload, і використання його як прихованого сховища сесії — його дефолтний приклад пастки поверхневих знань ([[3-things-that-make-a-programmer-better|3 речі, що роблять програміста кращим]]); ліки — розуміти, що таке [[digital-signatures|підпис]] насправді.
 
-Used correctly, though, JWT is powerful: the token carries the whole signed session, so it's stateless and need *not* be stored in a database — that's the point ([[qa-1-will-https-protect-you]]). The signature can be symmetric (HMAC over a shared secret, where issuer = verifier) or asymmetric — and the asymmetric variant shines in microservices: the auth service signs with its private key, and every other service verifies with only the public key, so the secret never leaves the issuer ([[asymmetric-encryption-digital-signatures]]).
+Утім, при правильному використанні JWT потужний: токен несе всю підписану сесію, тож він stateless і його *не потрібно* зберігати в базі — у цьому й сенс ([[qa-1-will-https-protect-you|Q&A №1]]). Підпис може бути симетричним (HMAC на спільному секреті, де емітент = перевіряльник) або асиметричним — і асиметричний варіант сяє в мікросервісах: сервіс авторизації підписує своїм приватним ключем, а всі інші сервіси перевіряють лише публічним, тож секрет ніколи не покидає емітента ([[asymmetric-encryption-digital-signatures|асиметричне шифрування і цифрові підписи]]).
 
-## Covered in
-- [[hashing-encoding-encryption-difference]] — the opening trick question: JWT looks encrypted, is Base64 + signature; readable without any key
-- [[how-base64-works]] — live demo: header and payload decode with plain `base64 --decode`; base64url; signed, not encrypted
-- [[asymmetric-encryption-digital-signatures]] — HMAC vs asymmetric signing; the microservices pattern of verify-with-public-key-only
-- [[qa-1-will-https-protect-you]] — stateless by design: the signed token carries the session, no DB storage needed; public key lets any service verify
-- [[3-things-that-make-a-programmer-better]] — the shallow-knowledge trap: using JWT as a hidden session store because "it's encrypted"
+## Де розглядається
+- [[hashing-encoding-encryption-difference]] — вступне питання з підступом: JWT виглядає зашифрованим, а це Base64 + підпис; читається без жодного ключа
+- [[how-base64-works]] — живе демо: header і payload розкодовуються звичайним `base64 --decode`; base64url; підписаний, а не зашифрований
+- [[asymmetric-encryption-digital-signatures]] — HMAC vs асиметричний підпис; мікросервісний патерн «перевіряй лише публічним ключем»
+- [[qa-1-will-https-protect-you]] — stateless за задумом: підписаний токен несе сесію, зберігання в базі не потрібне; публічний ключ дає змогу перевіряти будь-якому сервісу
+- [[3-things-that-make-a-programmer-better]] — пастка поверхневих знань: JWT як приховане сховище сесії, бо «воно ж зашифроване»
 
-## Related
-[[digital-signatures]] — what a JWT actually is.
-[[base64]] — how a JWT is packaged (base64url).
-[[encryption]] — what a JWT is not.
-[[asymmetric-encryption]] — why microservices can verify without sharing secrets.
-[[microservices]] — the architecture where asymmetric JWT signing pays off.
+## Повʼязане
+[[digital-signatures]] — те, чим JWT є насправді.
+[[base64]] — те, як JWT запакований (base64url).
+[[encryption]] — те, чим JWT не є.
+[[asymmetric-encryption]] — чому мікросервіси можуть перевіряти без спільних секретів.
+[[microservices]] — архітектура, де асиметричний підпис JWT окупається.

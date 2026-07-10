@@ -5,10 +5,10 @@ tags: [book, networking, web-performance]
 ---
 # High Performance Browser Networking
 
-Ilya Grigorik's book on how browsers really talk to the network — latency, TCP/TLS, HTTP/2, WebRTC — free to read online. Viktor's top recommendation for frontend/web engineers on networking: written by a Google(-alumnus) engineer, "super powerful", and it covers the speed-of-light latency material from his own videos and much more.
+Книга Іллі Григорика про те, як браузери насправді спілкуються з мережею — затримки, TCP/TLS, HTTP/2, WebRTC — безкоштовно доступна онлайн. Головна рекомендація Віктора з мереж для frontend/web-інженерів: написана інженером Google (колишнім), «супер потужна», і вона покриває матеріал про швидкість світла й затримки з його власних відео — і значно більше.
 
-## Covered in
-- [[qa-and-plans-for-2024]] — his top networking recommendation for frontend/web engineers; free online
+## Де розглядається
+- [[qa-and-plans-for-2024]] — його головна рекомендація з мереж для frontend/web-інженерів; безкоштовна онлайн
 
-## Related
-[[latency-and-speed-of-light]] — the book expands the channel's own speed-of-light video; [[nat-and-networking]], [[deep-learning-of-fundamentals]].
+## Повʼязане
+[[latency-and-speed-of-light|Затримки і швидкість світла]] — книга розширює власне відео каналу про швидкість світла; [[nat-and-networking|NAT і мережі]], [[deep-learning-of-fundamentals|глибоке вивчення основ]].

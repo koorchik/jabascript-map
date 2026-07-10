@@ -8,11 +8,11 @@ from pathlib import Path
 
 WIKI = Path(__file__).resolve().parent.parent / "wiki"
 SECTIONS = [
-    ("Clusters", "clusters"),
-    ("Concepts", "concepts"),
-    ("Videos", "videos"),
-    ("Tools", "tools"),
-    ("Books", "books"),
+    ("Кластери", "clusters"),
+    ("Концепції", "concepts"),
+    ("Відео", "videos"),
+    ("Інструменти", "tools"),
+    ("Книги", "books"),
 ]
 LINK_RE = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]*))?\]\]")
 
@@ -33,9 +33,9 @@ def first_sentence(path: Path) -> str:
     return ""
 
 
-lines = ["# Index", "",
-         "Catalog of every wiki page. Regenerate with "
-         "`python3 scripts/build_index.py` after ingests.", ""]
+lines = ["# Індекс", "",
+         "Каталог усіх сторінок вікі. Перегенеровуйте командою "
+         "`python3 scripts/build_index.py` після кожного інджесту.", ""]
 for title, folder in SECTIONS:
     pages = sorted((WIKI / folder).glob("*.md"))
     lines.append(f"## {title} ({len(pages)})")

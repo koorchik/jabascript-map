@@ -5,10 +5,10 @@ tags: [book, business, process-optimization]
 ---
 # The Goal
 
-Eliyahu Goldratt's theory of constraints packaged as a novel about saving a failing factory. A classic and a quick read, says Viktor — and a must-read for anyone into business or process optimization. He even knows people in Ukraine who built a successful manufacturing business on Goldratt's books.
+Теорія обмежень Еліягу Ґолдратта, запакована в роман про порятунок заводу на межі краху. Класика, яка читається швидко, каже Віктор, — і must-read для всіх, кому цікавий бізнес чи оптимізація процесів. Він навіть знає людей в Україні, які побудували успішний виробничий бізнес на книжках Ґолдратта.
 
-## Covered in
-- [[five-star-books]] — must-read business classic; theory of constraints as a novel
+## Де розглядається
+- [[five-star-books]] — must-read бізнес-класика; теорія обмежень у формі роману
 
-## Related
-Sequel: [[its-not-luck]] — read The Goal first, then decide. Business shelf: [[good-strategy-bad-strategy]], [[spin-selling]], [[who-the-a-method-for-hiring]].
+## Повʼязане
+Продовження: [[its-not-luck|It's Not Luck]] — спершу прочитайте The Goal, потім вирішуйте. Бізнес-полиця: [[good-strategy-bad-strategy|Good Strategy Bad Strategy]], [[spin-selling|SPIN Selling]], [[who-the-a-method-for-hiring|Who: The A Method for Hiring]].

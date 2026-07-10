@@ -4,13 +4,13 @@ tags: [containers, infrastructure, isolation]
 ---
 # Docker
 
-Docker is the standard containerization tool, and on the channel it serves as the flagship example of why deep understanding beats surface knowledge. Viktor's take on the perennial complaint that "Docker is 2x slower on macOS" ([[3-things-that-make-a-programmer-better]]): it's not a bug but a feature of the architecture. Containers don't actually exist even in Linux — they are an abstraction over kernel isolation subsystems — and on macOS there is a Linux VM running underneath Docker, so every syscall crosses two kernels. Once you understand how things really work, the "mystery" performance penalty is obvious and expected.
+Docker — стандартний інструмент контейнеризації, а на каналі він слугує головним прикладом того, чому глибоке розуміння б'є поверхневі знання. Погляд Віктора на вічну скаргу «Docker на macOS удвічі повільніший» ([[3-things-that-make-a-programmer-better]]): це не баг, а особливість архітектури. Контейнерів насправді не існує навіть у Linux — це абстракція над підсистемами ізоляції ядра, — а на macOS під Docker працює віртуальна машина з Linux, тож кожен syscall перетинає два ядра. Щойно розумієш, як усе працює насправді, «загадкова» просадка продуктивності стає очевидною та очікуваною.
 
-## Covered in
-- [[3-things-that-make-a-programmer-better]] — the macOS 2x slowdown explained: containers as a kernel-isolation abstraction, plus a VM layer on macOS.
+## Де розглядається
+- [[3-things-that-make-a-programmer-better]] — пояснення дворазового сповільнення на macOS: контейнери як абстракція над ізоляцією ядра, плюс шар VM на macOS.
 
-## Related
-[[deep-learning-of-fundamentals]] — the Docker story is the channel's canonical "know how it works underneath" example.
-[[sandboxing-and-isolation]] — the kernel mechanisms containers are built from.
-[[abstractions]] — "container" as an abstraction with a leaky performance cost.
-[[google-cloud-run]] — where his containers actually run in production.
+## Повʼязане
+[[deep-learning-of-fundamentals|глибоке вивчення основ]] — історія з Docker — канонічний для каналу приклад «знай, як воно працює всередині».
+[[sandboxing-and-isolation|пісочниці та ізоляція]] — механізми ядра, з яких побудовані контейнери.
+[[abstractions|абстракції]] — «контейнер» як абстракція з дірявою ціною продуктивності.
+[[google-cloud-run|Google Cloud Run]] — де його контейнери реально працюють у продакшені.

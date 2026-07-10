@@ -5,10 +5,10 @@ tags: [book, racing, hobby, telemetry]
 ---
 # Making Sense of Squiggly Lines
 
-Christopher Brown's guide to reading racing telemetry — turning the squiggly speed/throttle/brake traces into driving improvements. Viktor rates it very good (and notes its high ratings generally); it's so niche that no ebook exists, so he ordered a paper copy from the US.
+Посібник Крістофера Брауна з читання гоночної телеметрії — як перетворити «кривульки» графіків швидкості/газу/гальма на покращення у водінні. Віктор оцінює її як дуже добру (і зауважує її загалом високі рейтинги); книга настільки нішева, що електронної версії не існує, тож він замовив паперовий примірник зі США.
 
-## Covered in
-- [[five-star-books]] — very good telemetry-analysis book; paper-only, shipped from the US
+## Де розглядається
+- [[five-star-books]] — дуже добра книга з аналізу телеметрії; лише паперова, доставлена зі США
 
-## Related
-Racing shelf: [[ultimate-speed-secrets]], [[karting-book]] — the driving-technique books this one's data analysis complements.
+## Повʼязане
+Гоночна полиця: [[ultimate-speed-secrets|Ultimate Speed Secrets]], [[karting-book|книга про картинг]] — книги про техніку водіння, які цей аналіз даних доповнює.

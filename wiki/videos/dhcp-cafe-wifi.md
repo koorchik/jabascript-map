@@ -2,22 +2,45 @@
 type: video
 title_uk: "Що не так з Інтернетом в кафе? Розбираємо DHCP"
 youtube_id: 1-VHB-dn4NM
+level: intermediate
 tags: [networking, dhcp, security, internet, protocols]
 date_ingested: 2026-07-09
 ---
-# What's Wrong with Café Wi-Fi? Breaking Down DHCP
+# Що не так з Інтернетом в кафе? Розбираємо DHCP
 
-> Original: "Що не так з Інтернетом в кафе? Розбираємо DHCP" — https://youtu.be/1-VHB-dn4NM
+> Оригінал: "Що не так з Інтернетом в кафе? Розбираємо DHCP" — https://youtu.be/1-VHB-dn4NM
 
-Another episode in the "how the internet works" series, framed around a security-flavored scenario: you sit down in a café, connect to the Wi-Fi, and your laptop has zero network settings. The common assumption is that it asks the router for settings — but the author's point is that it's "worse than that": your device has no IP, no MAC of the router, nothing, so it can't ask anyone *specific*. It shouts a broadcast to everyone: "anybody, give me network settings." The answer can come from the router **or from any machine on the network** — someone at the next table running a rogue DHCP server on their phone/laptop can hand you a malicious [[dns]] server (feeding fake IPs) or a malicious default gateway (routing all your unencrypted traffic through their box). This is **[[dhcp]]** — Dynamic Host Configuration Protocol — and he then builds the attack live.
+Ще один епізод серії «як працює інтернет», побудований навколо сценарію з присмаком безпеки: ви сідаєте в кафе, підключаєтеся до Wi-Fi, і ваш ноутбук не має жодних мережевих налаштувань. Поширене припущення — що він запитує налаштування в роутера, але автор наголошує, що «все ще гірше»: у вашого пристрою немає ні IP, ні MAC-адреси роутера, нічого, тож він не може запитати когось *конкретного*. Він кричить broadcast для всіх: «хто-небудь, дайте мені мережеві налаштування». Відповідь може прийти від роутера **або від будь-якої машини в мережі** — хтось за сусіднім столиком, запустивши підставний DHCP-сервер на телефоні чи ноутбуці, може підсунути вам зловмисний [[dns|DNS]]-сервер (який видає фейкові IP) або зловмисний шлюз за замовчуванням (через який маршрутизується весь ваш незашифрований трафік). Це і є **[[dhcp|DHCP]]** — Dynamic Host Configuration Protocol — і далі він будує цю атаку наживо.
 
-## Key takeaways
-- Because the client has no settings yet, it can't use TCP (which needs a handshake to a known peer). **DHCP rides on UDP broadcast**: destination IP `255.255.255.255` (all bits 1) and MAC `FF:FF:FF:FF:FF:FF`. Broadcasts reach every host in the LAN but do not cross the router (not routed).
-- Ports identify DHCP traffic: server listens on UDP **67**, client on **68**. That port is how a host tells a DHCP broadcast apart from, say, IPTV multicast.
-- The DORA exchange: client broadcasts **Discover**, servers reply **Offer**, client picks one (usually whichever arrives first) and broadcasts a **Request** naming the chosen server, server records the MAC→IP binding with a **lease time** and confirms.
-- **Lease renewal timers:** at ~50% of the lease (T1) the client tries to renew directly with the same server; if that fails, at ~87.5% (T2) it broadcasts to everyone again. These come from the RFC and are configurable.
-- **The rogue-server race and how to win it:** with both a legit and a rogue server present it's a coin toss whose offer arrives first. The attacker doesn't even need to disable the router's DHCP — he just exhausts its pool. He set his server's range to only 10 addresses; an attacker sends ~10 Discover requests with different fake MACs, the server reserves all 10 for nonexistent machines, and the 11th real client gets "no addresses left" — so only the rogue server can answer.
-- **Live demo:** he uses **dnsmasq** — a tiny combined caching-DNS + DHCP server — with ~5 config lines: upstream `server=8.8.8.8`, an override making `itquiz.com` resolve to a Google IP, a `dhcp-range`, plus `option:router` and `option:dns-server` pointing at his own machine. He disables his router's DHCP, sets a static IP on his PC, then on a tablet toggles Wi-Fi and watches in Wireshark (filtered on `dhcp`): the tablet issues a Request for its old IP but is refused because he changed its MAC, then goes through the full Discover/Offer/Request/Ack, receiving his poisoned DNS server. Opening `itquiz.com` on the tablet lands on Google with a certificate mismatch (red warning), proving the DNS spoof worked.
+## Головне
+- Оскільки клієнт іще не має налаштувань, він не може використати TCP (який потребує handshake до відомого учасника). **DHCP їздить поверх UDP broadcast**: IP призначення `255.255.255.255` (усі біти 1) і MAC `FF:FF:FF:FF:FF:FF`. Broadcast досягає кожного хоста в LAN, але не перетинає роутер (не маршрутизується).
+- DHCP-трафік розрізняють за портами: сервер слухає на UDP **67**, клієнт на **68**. Саме порт дозволяє хосту відрізнити DHCP-broadcast від, скажімо, IPTV-multicast.
+- Обмін DORA: клієнт розсилає broadcast **Discover**, сервери відповідають **Offer**, клієнт обирає один (зазвичай той, чия відповідь прийшла першою) і розсилає broadcast **Request** із назвою обраного сервера, сервер фіксує прив’язку MAC→IP із **часом оренди (lease time)** й підтверджує.
+- **Таймери оновлення оренди:** приблизно на 50% оренди (T1) клієнт намагається оновити її напряму з тим самим сервером; якщо не вдалося, на ~87.5% (T2) він знову розсилає broadcast для всіх. Ці значення беруться з RFC і налаштовуються.
+- **Перегони з підставним сервером і як їх виграти:** коли присутні і легітимний, і підставний сервер, чия відповідь прийде першою — питання випадковості. Атакувальнику навіть не потрібно вимикати DHCP на роутері — він просто вичерпує його пул адрес. Він виставив діапазон свого сервера лише на 10 адрес; атакувальник шле ~10 Discover-запитів із різними фейковими MAC, сервер резервує всі 10 для неіснуючих машин, і 11-й реальний клієнт отримує «немає вільних адрес» — тож відповісти може лише підставний сервер.
+- **Демо наживо:** він використовує **dnsmasq** — крихітний комбінований кешувальний DNS + DHCP-сервер — приблизно з 5 рядками конфігу: upstream `server=8.8.8.8`, перевизначення, щоб `itquiz.com` резолвився на IP Google, `dhcp-range`, плюс `option:router` та `option:dns-server`, які вказують на його власну машину. Він вимикає DHCP на роутері, задає статичний IP на своєму ПК, потім на планшеті перемикає Wi-Fi і спостерігає у Wireshark (з фільтром `dhcp`): планшет надсилає Request на свій старий IP, але отримує відмову, бо він змінив його MAC, потім проходить повний цикл Discover/Offer/Request/Ack і отримує його отруєний DNS-сервер. Відкриття `itquiz.com` на планшеті приводить на Google із помилкою невідповідності сертифіката (червоне попередження), що доводить: DNS-підміна спрацювала.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: серія «як працює інтернет» триває
+- 00:20 — Сценарій у кафе: ваш ноутбук підключається без жодних мережевих налаштувань
+- 01:24 — Ви розсилаєте «хто-небудь, дайте мені налаштування» — і відповісти може атакувальник
+- 02:08 — Підставні відповіді: отруєний [[dns|DNS]]-сервер або зловмисний шлюз за замовчуванням
+- 03:10 — Що таке [[dhcp|DHCP]] і що ми будуватимемо наживо
+- 03:53 — Перегони між двома DHCP-серверами
+- 04:15 — Малюємо схему: DHCP-сервер, клієнт і атакувальник у LAN
+- 05:17 — Чому не TCP: UDP broadcast на 255.255.255.255 і FF:FF:FF:FF:FF:FF
+- 07:27 — Порти 67/68: як відрізнити DHCP-запит від IPTV-multicast
+- 08:10 — Обмін DORA: Discover, Offer, Request, Ack і оренда
+- 09:16 — Таймери оновлення оренди T1 (~50%) і T2 (~87.5%)
+- 10:20 — План демо наживо: ставимо dnsmasq як комбінований DHCP + DNS
+- 11:45 — Налаштування dnsmasq: upstream 8.8.8.8 і перевизначення itquiz.com
+- 12:51 — Перевіряємо перевизначення DNS через dig
+- 13:34 — Додаємо DHCP: dhcp-range, option:router і option:dns-server
+- 15:18 — Тест на планшеті з Wireshark, що ловить DHCP-трафік
+- 16:01 — Читаємо пакети: чому Request прийшов раніше за Discover
+- 17:28 — Зміна MAC змушує пройти повний цикл Discover/Offer/Request/Ack
+- 18:54 — Підтверджуємо отруєну оренду і невідповідність сертифіката itquiz.com
+- 20:17 — Вичерпуємо пул DHCP роутера, щоб виграти перегони
+
+## Теми
 [[dhcp]], [[dns]], [[nat-and-networking]], [[security-practices]], [[https-tls]]

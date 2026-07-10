@@ -2,55 +2,73 @@
 type: video
 title_uk: "Книги, які я прочитав й поставив п'ять зірок"
 youtube_id: ij0y4qVLSF0
+level: beginner
 tags: [books, recommendations, career, software-design, sponsors-video]
 date_ingested: 2026-07-09
 ---
-# Books I Read and Rated Five Stars
+# Книги, які я прочитав і поставив п'ять зірок
 
-> Original: "Книги, які я прочитав й поставив п'ять зірок" — https://youtu.be/ij0y4qVLSF0
+> Оригінал: "Книги, які я прочитав й поставив п'ять зірок" — https://youtu.be/ij0y4qVLSF0
 
-A sponsors video born from a GeekOps meetup question ("what books do you read?") that wasn't recorded: the author walks top-to-bottom through his Goodreads list and comments on every book he gave five stars. Almost all are technical, none are fiction, and his rule of thumb is: five stars means "read it *if the topic interests you*; if not, skip." Along the way he shares his personal history with the books — reading [[code-complete|Code Complete]] 14 years ago and learning there is no ideal third solution, discovering at Mail.ua that his team had independently re-invented 8 of the 24 GoF patterns before he ever read the book, and using [[cracking-the-coding-interview|Cracking the Coding Interview]] to prepare for his Google interviews. The list ranges across [[software-design]], time management, Linux, B2B sales, manufacturing theory, motor racing, and game-industry war stories.
+Спонсорське відео, що народилося з питання на мітапі GeekOps («які книги ти читаєш?»), яке не записалося: автор проходить згори вниз своїм списком у Goodreads і коментує кожну книгу, якій поставив п’ять зірок. Майже всі — технічні, жодної художньої, а його правило таке: п’ять зірок означає «читай, *якщо тема тобі цікава*; якщо ні — пропусти». Дорогою він ділиться особистою історією з книгами — як читав [[code-complete|Code Complete]] 14 років тому і зрозумів, що ідеального третього рішення не існує, як у Mail.ua виявив, що його команда самостійно перевинайшла 8 із 24 патернів GoF ще до того, як він прочитав книгу, і як використовував [[cracking-the-coding-interview|Cracking the Coding Interview]] для підготовки до співбесід у Google. Список охоплює [[software-design|дизайн ПЗ]], тайм-менеджмент, Linux, B2B-продажі, теорію виробництва, автоспорт і воєнні історії ігрової індустрії.
 
-## Key takeaways
-- **Code Complete** answered the question that haunted him as a beginner: "is there a third solution that improves *this* aspect without hurting *that* one?" The book convinced him such a solution usually doesn't exist — engineering is trade-offs — and he "was convinced of it many times since." It's from 1993, so the code examples are dated, but conceptually it still holds.
-- **His theory of design patterns** ([[design-patterns|GoF]]): patterns are not sacred secret knowledge — they're the *most widespread* solutions everyone already uses. Proof from his own career: working at Mail.ua before reading the book, his team's architecture already contained eight of the book's patterns, because they were simply the most logical choices. The real value of learning them is a shared vocabulary with other developers ("I want a facade here", "let's use a strategy for the log transport").
-- **[[patterns-of-enterprise-application-architecture|Fowler's PoEAA]]** is the pattern book he recommends to everyone over GoF: high-level *strategic* patterns. You'll never implement ~70% of them yourself, but you'll *lean on* them daily because they're already inside your ORM and web framework.
-- **[[domain-driven-design|DDD]]**: read both Evans and Vernon. Evans can feel too abstract (concepts, not code); Vernon shows exactly how to structure the code — but people who only read Vernon mistake code structure for DDD, when the conceptual idea is the point. One of the best design books he knows; first of all for backenders, useful for frontenders too — it's about fighting complexity ([[software-design]]).
-- **[[mythical-man-month|The Mythical Man-Month]]**: read it to see that between 1975 (paper stacks instead of Jira, IBM mainframe OS development) and 2024 essentially nothing changed — the same constraints remain, including essential vs accidental complexity, concepts you meet every day.
-- **[[c-programming-language|K&R C]]** is thin — a couple of evenings — but afterwards you understand what actually happens beneath JavaScript or Python: a string is an array of characters, copying it means a loop, null-terminated strings, plus a great hand-rolled hash table implementation ([[deep-learning-of-fundamentals]]).
-- **[[cracking-the-coding-interview|Cracking the Coding Interview]]**: the tasks themselves you can grind on LeetCode/AlgoExpert; the underrated gold is the two intros — what interviewers actually expect from you, and a very good primer on [[algorithmic-complexity]] analysis.
-- Non-programming five-stars he vouches for: [[the-goal|The Goal]] (theory of constraints as a novel — he knows people in Ukraine who built a working manufacturing business from Goldratt's books), [[good-strategy-bad-strategy|Good Strategy Bad Strategy]] (mostly valuable for saying what is *not* a strategy), [[the-checklist-manifesto|The Checklist Manifesto]] (changed his view of checklists), [[spin-selling|SPIN Selling]] (the B2B sales classic), and Lem's [[summa-technologiae|Summa Technologiae]] (1960s pure-logic futurology in which he recognized the plots of The Matrix and The Thirteenth Floor).
+## Головне
+- **Code Complete** відповіла на питання, що переслідувало його новачком: «чи існує третє рішення, яке покращує *цей* аспект, не шкодячи *тому*?» Книга переконала його, що такого рішення зазвичай немає — інженерія — це компроміси — і він «переконувався в цьому багато разів відтоді». Вона з 1993 року, тож приклади коду застарілі, але концептуально досі актуальна.
+- **Його теорія патернів проєктування** ([[design-patterns|GoF]]): патерни — не сакральне таємне знання, а *найпоширеніші* рішення, які всі й так уже використовують. Доказ із власної кар’єри: працюючи в Mail.ua до прочитання книги, архітектура його команди вже містила вісім патернів із книги, бо вони були просто найлогічнішими виборами. Справжня цінність їхнього вивчення — спільний словник з іншими розробниками («хочу тут фасад», «зробімо стратегію для транспорту логів»).
+- **[[patterns-of-enterprise-application-architecture|PoEAA Фаулера]]** — це книга про патерни, яку він рекомендує всім замість GoF: високорівневі *стратегічні* патерни. Приблизно 70% з них ви ніколи не реалізуєте самі, але *спиратиметеся* на них щодня, бо вони вже всередині вашого ORM і веб-фреймворку.
+- **[[domain-driven-design|DDD]]**: читайте і Еванса, і Вернона. Еванс може здаватися занадто абстрактним (концепції, не код); Вернон показує саме те, як структурувати код — але люди, що читали лише Вернона, плутають структуру коду з DDD, тоді як суть у концептуальній ідеї. Одна з найкращих книг про дизайн, які він знає; передусім для бекендерів, корисна й для фронтендерів — вона про боротьбу зі складністю ([[software-design]]).
+- **[[mythical-man-month|The Mythical Man-Month]]**: читайте, щоб побачити, що між 1975 роком (стоси паперу замість Jira, розробка ОС на мейнфреймі IBM) і 2024-м по суті нічого не змінилося — ті самі обмеження лишаються, включно з essential проти accidental complexity, поняттями, які ви зустрічаєте щодня.
+- **[[c-programming-language|K&R C]]** тонка — на пару вечорів — але після неї ви розумієте, що насправді відбувається під JavaScript чи Python: рядок — це масив символів, копіювання його — це цикл, null-термінатовані рядки, плюс чудова власноруч написана реалізація хеш-таблиці ([[deep-learning-of-fundamentals]]).
+- **[[cracking-the-coding-interview|Cracking the Coding Interview]]**: самі задачі можна перемолоти на LeetCode/AlgoExpert; недооцінене золото — це два вступи: що інтерв’юери насправді від вас очікують і дуже гарний вступ до аналізу [[algorithmic-complexity|складності алгоритмів]].
+- Непрограмістські п’ятизіркові, за які він ручається: [[the-goal|The Goal]] (теорія обмежень у формі роману — він знає людей в Україні, що побудували працюючий виробничий бізнес із книг Голдратта), [[good-strategy-bad-strategy|Good Strategy Bad Strategy]] (найцінніша тим, що каже, що *не є* стратегією), [[the-checklist-manifesto|The Checklist Manifesto]] (змінила його погляд на чеклісти), [[spin-selling|SPIN Selling]] (класика B2B-продажів) і [[summa-technologiae|Summa Technologiae]] Лема (чиста логічна футурологія 1960-х, у якій він упізнав сюжети «Матриці» й «Тринадцятого поверху»).
 
-## Full book list with verdicts
-- **Getting Things Done** (David Allen) — read back in university; he still uses its idea of separate lists per context: when he lands in a context, he walks that context's list. Recommended, but it's time management, not programming.
-- **The 7 Habits of Highly Effective People** (Stephen Covey) — "класика класика" of time management and personal development; very recommended.
-- **Code Complete** (Steve McConnell) — thick, many start and never finish it; see takeaway above. Strongly recommended: naming, structuring code, optimization, profiling — "по полочкам."
-- **Patterns of Enterprise Application Architecture** (Martin Fowler) — his universal patterns recommendation; explains how the systems you use are built.
-- **Higher-Order Perl** (functional programming in Perl) — great book, but if you don't write Perl it probably won't interest you.
-- **Domain-Driven Design** (Eric Evans) + **Implementing Domain-Driven Design** (Vaughn Vernon) — recommends both; order is debated; Evans worked great for him personally.
-- **A 2001 Linux security book** (title not stated) — read it several times, the book itself was great, but **don't read it**: it's simply outdated; if new editions existed he'd recommend it.
-- **Summa Technologiae** (Stanisław Lem) — pure emotionless reasoning about the world ~1000 years out; will click for some, not for others.
-- **The Goal** (Eliyahu Goldratt) — theory of constraints written as a novel; small, reads easily, "класика класика"; a must if you run a business or optimize processes.
-- **How Linux Works** (Brian Ward) — practical-theoretical tour of Linux subsystems, network stack, administration; readable in a week; great book (check for a newer edition).
-- **Speed Secrets / Ultimate Speed Secrets** (Ross Bentley) — he read the whole series; the books largely repeat each other, so read the latest, *Ultimate Speed Secrets*. It was his starting point as a driver and made him faster on track/karting.
-- **SPIN Selling** (Neil Rackham) — the rare classic on B2B (vs B2C) sales; worth knowing even if you don't build your process exactly by it.
-- **It's Not Luck** (Eliyahu Goldratt) — read The Goal first, then decide whether to continue with Goldratt.
-- **Design Patterns** (GoF — Gamma et al.) — see the Mail.ua story above; read it for the shared lexicon, not for revelations.
-- **The Mythical Man-Month** (Frederick Brooks) — see takeaway above; also an excursion into pre-internet development.
-- **The C Programming Language** (Kernighan & Ritchie) — see takeaway above.
-- **Clean Code** (Robert Martin) — skipped in the video: "everyone has heard of it."
-- **Who: The A Method for Hiring** — decent, many good ideas about building a recruiting process, but for him it wasn't the revelation others claim; much of it you could reach on your own.
-- **The Checklist Manifesto** (Atul Gawande) — a list of stories about when and why checklists worked; gives you one more process-improvement tool.
-- **Good Strategy Bad Strategy** (Richard Rumelt) — what a strategy is (its three building blocks) and, most importantly, what is NOT a strategy; strongly recommended if you take part in strategic planning.
-- **Cracking the Coding Interview** (Gayle Laakmann McDowell) — used for his own Google prep; see takeaway above.
-- **A Docker internals book** (title not stated; regularly updated, 2023 edition — matches Docker Deep Dive) — quick, easy read on how Docker works inside: subsystems, overlay networks, practical usage.
-- **A karting-specific racing book** (title not stated) — ~70% overlaps with Ultimate Speed Secrets, 30% different perspective; the two together are more useful than either alone.
-- **Sandworm** (Andy Greenberg) — cybersecurity; mentioned but skipped without a verdict.
-- **The Staff Engineer's Path** (Tanya Reilly) — explains what a staff engineer even does, how to become one and what to do next; the start gripped him, but it got less interesting toward the end and he finished it slowly. Still useful.
-- **Blood, Sweat, and Pixels** (Jason Schreier) — game-industry stories from Stardew Valley to AAA; "прям топ": if the book covers even one game you know, buy it.
-- **Software Engineering at Google** — currently (almost) finished; the entire Google development process from A to Z in 600 pages; free PDF available.
-- **Making Sense of Squiggly Lines** — racing telemetry analysis; no ebook exists, he ordered a paper copy from the US; very good if you race.
-- **Designing Data-Intensive Applications** (Martin Kleppmann) — famous, but honestly admits it has been hanging unfinished for a long time.
+## Повний список книг із вердиктами
+- **Getting Things Done** (David Allen) — читав ще в університеті; досі користується його ідеєю окремих списків під контекст: потрапляючи в контекст, проходить список цього контексту. Рекомендує, але це тайм-менеджмент, а не програмування.
+- **The 7 Habits of Highly Effective People** (Stephen Covey) — «класика класика» тайм-менеджменту й особистого розвитку; дуже рекомендує.
+- **Code Complete** (Steve McConnell) — товста, багато хто починає і не дочитує; див. головне вище. Наполегливо рекомендує: іменування, структурування коду, оптимізація, профілювання — «по полочках».
+- **Patterns of Enterprise Application Architecture** (Martin Fowler) — його універсальна рекомендація про патерни; пояснює, як побудовані системи, якими ви користуєтесь.
+- **Higher-Order Perl** (функціональне програмування на Perl) — чудова книга, але якщо ви не пишете на Perl, вона вас навряд чи зацікавить.
+- **Domain-Driven Design** (Eric Evans) + **Implementing Domain-Driven Design** (Vaughn Vernon) — рекомендує обидві; порядок дискусійний; Еванс особисто йому чудово зайшов.
+- **Книга про безпеку Linux 2001 року** (назву не названо) — читав кілька разів, сама книга була чудова, але **не читайте її**: вона просто застаріла; якби були нові видання, він би рекомендував.
+- **Summa Technologiae** (Stanisław Lem) — чисті, беземоційні міркування про світ на ~1000 років уперед; комусь зайде, комусь ні.
+- **The Goal** (Eliyahu Goldratt) — теорія обмежень, написана як роман; невелика, читається легко, «класика класика»; must, якщо ви ведете бізнес чи оптимізуєте процеси.
+- **How Linux Works** (Brian Ward) — практично-теоретичний тур по підсистемах Linux, мережевому стеку, адмініструванню; читається за тиждень; чудова книга (шукайте новіше видання).
+- **Speed Secrets / Ultimate Speed Secrets** (Ross Bentley) — читав усю серію; книги здебільшого повторюють одна одну, тож читайте найновішу — *Ultimate Speed Secrets*. Це була його відправна точка як пілота і зробила його швидшим на треку/картингу.
+- **SPIN Selling** (Neil Rackham) — рідкісна класика про B2B (на противагу B2C) продажі; варто знати, навіть якщо будуєте свій процес не точно за нею.
+- **It's Not Luck** (Eliyahu Goldratt) — спершу прочитайте The Goal, а тоді вирішуйте, чи продовжувати з Голдраттом.
+- **Design Patterns** (GoF — Gamma та ін.) — див. історію з Mail.ua вище; читайте заради спільного лексикону, а не заради одкровень.
+- **The Mythical Man-Month** (Frederick Brooks) — див. головне вище; ще й екскурс у розробку доінтернетної епохи.
+- **The C Programming Language** (Kernighan & Ritchie) — див. головне вище.
+- **Clean Code** (Robert Martin) — пропущена у відео: «про неї всі чули».
+- **Who: The A Method for Hiring** — пристойна, багато гарних ідей про побудову процесу рекрутингу, але для нього не була тим одкровенням, яким її називають інші; багато до чого можна дійти самому.
+- **The Checklist Manifesto** (Atul Gawande) — список історій про те, коли і чому спрацьовували чеклісти; дає ще один інструмент покращення процесів.
+- **Good Strategy Bad Strategy** (Richard Rumelt) — що таке стратегія (її три складові) і, найголовніше, що НЕ є стратегією; наполегливо рекомендує, якщо ви берете участь у стратегічному плануванні.
+- **Cracking the Coding Interview** (Gayle Laakmann McDowell) — використовував для власної підготовки до Google; див. головне вище.
+- **Книга про внутрішнє влаштування Docker** (назву не названо; регулярно оновлюється, видання 2023 — відповідає Docker Deep Dive) — швидке, легке читання про те, як Docker влаштований зсередини: підсистеми, overlay-мережі, практичне використання.
+- **Книга про картинг** (назву не названо) — приблизно на 70% перетинається з Ultimate Speed Secrets, 30% — інший погляд; разом вони корисніші, ніж кожна окремо.
+- **Sandworm** (Andy Greenberg) — кібербезпека; згадана, але пропущена без вердикту.
+- **The Staff Engineer's Path** (Tanya Reilly) — пояснює, що взагалі робить staff engineer, як ним стати і що робити далі; початок захопив його, але ближче до кінця стало менш цікаво, і він дочитував повільно. Все одно корисна.
+- **Blood, Sweat, and Pixels** (Jason Schreier) — історії ігрової індустрії від Stardew Valley до AAA; «прям топ»: якщо книга охоплює хоч одну знайому вам гру — беріть.
+- **Software Engineering at Google** — наразі (майже) дочитана; увесь процес розробки в Google від А до Я на 600 сторінках; є безкоштовний PDF.
+- **Making Sense of Squiggly Lines** — аналіз гоночної телеметрії; електронної версії немає, він замовив паперову зі США; дуже гарна, якщо ви гоняєте.
+- **Designing Data-Intensive Applications** (Martin Kleppmann) — знаменита, але чесно визнає, що вона давно висить недочитаною.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: питання на GeekOps і правило п’яти зірок
+- 00:42 — Тайм-менеджмент: Getting Things Done і 7 Habits
+- 01:47 — [[code-complete|Code Complete]]: ідеального третього рішення немає
+- 02:54 — [[patterns-of-enterprise-application-architecture|PoEAA Фаулера]]: патерни вже всередині вашого фреймворку
+- 04:00 — [[domain-driven-design|Domain-Driven Design]]: Еванс проти Вернона
+- 05:23 — Застаріла безпека Linux і [[summa-technologiae|Summa Technologiae]] Лема
+- 06:49 — [[the-goal|The Goal]] Голдратта: теорія обмежень у формі роману
+- 07:32 — How Linux Works і гоночна серія Ultimate Speed Secrets
+- 08:57 — [[spin-selling|SPIN Selling]]: чому B2B — це не B2C
+- 09:41 — [[design-patterns|GoF Design Patterns]]: спільний словник, а не таємниці
+- 11:49 — [[mythical-man-month|The Mythical Man-Month]] і [[c-programming-language|K&R C]]
+- 13:41 — Clean Code, Who і [[the-checklist-manifesto|The Checklist Manifesto]]
+- 14:47 — [[good-strategy-bad-strategy|Good Strategy Bad Strategy]] і [[cracking-the-coding-interview|Cracking the Coding Interview]]
+- 16:14 — Внутрішнє влаштування Docker, Sandworm, The Staff Engineer's Path
+- 17:39 — Blood, Sweat, and Pixels плюс бонус про те, що читає зараз
+
+## Теми
 [[software-design]], [[design-patterns]], [[algorithmic-complexity]], [[deep-learning-of-fundamentals]], [[career-and-growth]], [[clean-architecture]], [[domain-driven-design]], [[patterns-of-enterprise-application-architecture]], [[code-complete]], [[mythical-man-month]], [[c-programming-language]], [[cracking-the-coding-interview]], [[the-goal]], [[good-strategy-bad-strategy]], [[the-checklist-manifesto]], [[spin-selling]], [[summa-technologiae]]

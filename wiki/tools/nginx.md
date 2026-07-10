@@ -4,11 +4,11 @@ tags: [networking, web-server, tooling]
 ---
 # nginx
 
-Web server. On the channel it plays a supporting role in the latency episode: he stood up a bare nginx server in Los Angeles serving both HTTP and HTTPS as the real-world test target, with ping confirming a ~192ms round-trip — the concrete endpoint used to measure how TCP and TLS handshakes stack up against the speed-of-light floor ([[speed-of-light-website-latency]]).
+Вебсервер. На каналі грає допоміжну роль в епізоді про затримки: він підняв голий nginx-сервер у Лос-Анджелесі, що віддавав і HTTP, і HTTPS, як реальну тестову мішень, а ping підтвердив round-trip ~192 мс — конкретна кінцева точка, на якій вимірювалося, як TCP- і TLS-хендшейки накладаються на межу швидкості світла ([[speed-of-light-website-latency]]).
 
-## Covered in
-- [[speed-of-light-website-latency]] — the LA HTTP/HTTPS test server used to measure real request latency
+## Де розглядається
+- [[speed-of-light-website-latency]] — тестовий HTTP/HTTPS-сервер у Лос-Анджелесі для вимірювання реальної затримки запитів
 
-## Related
-[[latency-and-speed-of-light]] — the measurements it made possible
-[[https-tls]] — served the HTTPS endpoint whose handshake was timed
+## Повʼязане
+[[latency-and-speed-of-light]] — вимірювання, які він уможливив
+[[https-tls]] — віддавав HTTPS-ендпоінт, чий хендшейк хронометрували

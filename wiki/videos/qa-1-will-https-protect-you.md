@@ -2,24 +2,42 @@
 type: video
 title_uk: "Питання та відповіді №1. Чи захистить HTTPS？"
 youtube_id: IMDvIyC4Oes
+level: intermediate
 tags: [security, https-tls, dhcp, dns, jwt, base64, full-text-search, database-indexes, qa]
 date_ingested: 2026-07-09
 ---
-# Q&A #1: Will HTTPS Protect You?
+# Питання та відповіді №1: чи захистить HTTPS?
 
-> Original: "Питання та відповіді №1. Чи захистить HTTPS？" — https://youtu.be/IMDvIyC4Oes
+> Оригінал: "Питання та відповіді №1. Чи захистить HTTPS？" — https://youtu.be/IMDvIyC4Oes
 
-The channel's first Q&A episode, answering comments left under earlier videos — mainly the popular [[dhcp|DHCP]] video plus questions on full-text search, database indexes, and Base64. The headline question: if an attacker spoofs the network but the site uses [[https-tls|HTTPS]], is there still a threat? His answer is yes, and he enumerates concrete attacks. He also cheerfully reads out and rebuts several dismissive "hater" comments (people who watched the first three minutes and declared the whole thing fake without watching the live demo), noting the DHCP video hit 70,000 views and 400+ comments that were 99% positive, so the Q&A format will continue.
+Перший випуск Q&A на каналі — відповіді на коментарі під попередніми відео, головно під популярним відео про [[dhcp|DHCP]], плюс питання про повнотекстовий пошук, індекси баз даних і Base64. Головне питання: якщо зловмисник підмінив мережу, але сайт працює через [[https-tls|HTTPS]], чи є ще загроза? Його відповідь — так, і він перелічує конкретні атаки. Також він весело зачитує й спростовує кілька зневажливих коментарів «хейтерів» (людей, які подивилися перші три хвилини й оголосили все фейком, не додивившись до живого демо), зазначаючи, що відео про DHCP набрало 70 000 переглядів і 400+ коментарів, на 99% позитивних, тож формат Q&A триватиме.
 
-## Key takeaways
-- HTTPS does not save you when the attacker controls the network: (1) return the page over plain HTTP so it looks identical but you type your login or card data into a fake site; (2) redirect you to a look-alike domain (rozetka.com.ua → rozetka.com.ui) that has its own valid HTTPS and proxies your requests while harvesting card data; (3) block all traffic and tell you "the cafe internet needs this certificate — double-click to install," after which they can MITM all your HTTPS by issuing certs trusted by the cert you just installed; (4) exploit browser 0-days (he cites Spectre/Meltdown, exploitable from JavaScript to read process memory and scan for private keys).
-- HSTS headers would block the HTTP-downgrade/redirect tricks, but many large sites (Rozetka included) don't set them, so the attack works in practice.
-- On plain HTTP the attacker can watch all traffic and swap a file you download (a zip/xz) for a malformed or malware-carrying one on the fly. A VPN defeats all of this — the encrypted tunnel to the VPN server can't be inspected.
-- DHCP starvation is trivial — a ~100-line script looping DHCP requests with random MAC addresses can exhaust 100 or 1000+ addresses; manually setting DNS to 8.8.8.8 doesn't help because the attacker can still hand you a malicious default gateway and route all traffic through himself.
-- Storing UUID primary keys as `BINARY(16)` in [[mysql|MySQL]] instead of 32-char text helps but not dramatically — the 16-byte key still often exceeds half the index size (e.g. ~55% vs 70%), and binary is harder to work with (you must convert to read/display it); he'd rather keep the UUID as a separate column.
-- On [[inverted-index|inverted indexes]]: the inverted index *is* the efficient data structure — you don't rewrite it into "something better," you only change the serialization format. Delta compression matters because it shrinks large IDs to small ints (enabling further compression like VByte encoding from the referenced paper), speeds reads from the filesystem, and lets a larger index fit in RAM.
-- [[base64|Base64]] earns its ~33% size increase whenever binary data must ride inside a text format: HTTP headers (no newlines allowed in a value), Basic auth, logs you want to open in a text editor, JSON/XML payloads, CSV without escaping, SMTP attachments, and SSH PEM key files.
-- [[jwt|JWT]] value: it carries the whole signed session (stateless) rather than a session ID, so it need NOT be stored in the DB to be invalidated-by-design; with asymmetric signing you hand the public key to anyone so any service can verify a token came from you. He notes Express rate-limiter is unrelated to sessions — it's just a rate limiter.
+## Головне
+- HTTPS не рятує, коли зловмисник контролює мережу: (1) віддати сторінку по звичайному HTTP — вона виглядає ідентично, але логін чи дані картки ви вводите на фейковому сайті; (2) перенаправити вас на схожий домен (rozetka.com.ua → rozetka.com.ui) з власним валідним HTTPS, який проксіює ваші запити й збирає дані карток; (3) заблокувати весь трафік і сказати «для інтернету в кафе потрібен цей сертифікат — двічі клацніть, щоб встановити», після чого можна проводити MITM усього вашого HTTPS, випускаючи сертифікати, яким довіряє щойно встановлений; (4) експлуатувати 0-day у браузері (він згадує Spectre/Meltdown, які експлуатувалися з JavaScript для читання пам'яті процесу й пошуку приватних ключів).
+- Заголовки HSTS заблокували б трюки з HTTP-даунгрейдом/перенаправленням, але багато великих сайтів (включно з Rozetka) їх не ставлять, тож атака працює на практиці.
+- На звичайному HTTP зловмисник бачить увесь трафік і може на льоту підмінити файл, який ви завантажуєте (zip/xz), на пошкоджений або зі шкідливим кодом. VPN перемагає все це — зашифрований тунель до VPN-сервера не проінспектуєш.
+- DHCP starvation — тривіальна річ: скрипт на ~100 рядків, що ганяє DHCP-запити з випадковими MAC-адресами, вичерпує 100 чи 1000+ адрес; вручну прописати DNS 8.8.8.8 не допомагає, бо зловмисник усе одно може видати вам шкідливий default gateway і пустити весь трафік через себе.
+- Зберігання UUID первинних ключів як `BINARY(16)` у [[mysql|MySQL]] замість 32-символьного тексту допомагає, але не драматично — 16-байтний ключ усе одно часто перевищує половину розміру індексу (наприклад, ~55% проти 70%), а з binary незручно працювати (для читання/показу треба конвертувати); він радше тримав би UUID окремою колонкою.
+- Про [[inverted-index|інвертовані індекси]]: інвертований індекс *і є* ефективною структурою даних — його не переписують у «щось краще», змінюють лише формат серіалізації. Дельта-компресія важлива, бо стискає великі ID до маленьких чисел (що вмикає подальше стиснення на кшталт VByte-кодування зі згаданої статті), пришвидшує читання з файлової системи й дозволяє більшому індексу поміститися в RAM.
+- [[base64|Base64]] відпрацьовує свої ~33% збільшення розміру всюди, де бінарні дані мають їхати всередині текстового формату: HTTP-заголовки (у значенні не можна переносити рядки), Basic auth, логи, які хочеться відкривати текстовим редактором, JSON/XML-пейлоади, CSV без екранування, вкладення SMTP і PEM-файли SSH-ключів.
+- Цінність [[jwt|JWT]]: він несе всю підписану сесію (stateless), а не ID сесії, тож його за задумом НЕ потрібно зберігати в БД; з асиметричним підписом ви роздаєте публічний ключ будь-кому — і будь-який сервіс може перевірити, що токен від вас. Він зауважує, що rate-limiter в Express не стосується сесій — це просто обмежувач частоти запитів.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: запуск формату Q&A з коментарями з відео про [[dhcp|DHCP]]
+- 00:44 — Атака 1: фейковий сайт по звичайному HTTP — сертифікат підробляти не треба
+- 01:04 — Атака 2: перенаправлення на схожий домен із власним валідним [[https-tls|HTTPS]]
+- 01:26 — Атака 3: «встановіть цей сертифікат, щоб запрацював Wi-Fi у кафе» — і повний MITM
+- 02:08 — Атака 4: 0-day у браузері — Spectre/Meltdown експлуатувалися з JavaScript
+- 02:50 — HSTS заблокував би даунгрейд, але Rozetka й багато великих сайтів його не шлють
+- 03:11 — Сніфінг трафіку по HTTP, підміна завантажень — і чому VPN зупиняє все це
+- 04:16 — DHCP starvation на 100+ IP: скрипт на ~100 рядків із випадковими MAC-адресами
+- 05:24 — Хардкод DNS 8.8.8.8 не рятує: підставний default gateway усе одно маршрутизує все
+- 06:07 — Читання коментарів хейтерів: «подивився три хвилини — все це маячня»
+- 08:37 — [[inverted-index|Інвертовані індекси]]: чому дельта-компресія справді важлива
+- 10:22 — UUID первинні ключі як BINARY(16) у [[mysql|MySQL]]: допомагає, але недостатньо
+- 12:12 — Зачитування довгого питання про [[base64|Base64]]/[[jwt|JWT]]
+- 13:17 — Де Base64 відпрацьовує свої ~33% накладних витрат: HTTP-заголовки, логи, JSON, CSV, SMTP, PEM-ключі
+- 15:46 — JWT: подорожує вся підписана сесія, без запиту в БД; rate-limiter в Express — не про це
+
+## Теми
 [[https-tls]], [[dhcp]], [[dns]], [[nat-and-networking]], [[security-practices]], [[social-engineering]], [[jwt]], [[base64]], [[inverted-index]], [[full-text-search]], [[database-indexes]], [[mysql]]

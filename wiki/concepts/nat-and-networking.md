@@ -2,24 +2,24 @@
 type: concept
 tags: [networking, internet, nat, tcp-udp]
 ---
-# NAT and Networking Fundamentals
+# NAT і основи мереж
 
-This is the connective tissue of the channel's "How the Internet works" series — the plumbing that the DNS, DHCP and latency episodes all sit on top of. The opening episode contrasts TCP and UDP: the TCP handshake (SYN / SYN-ACK / ACK) and its recurring ACKs are the price of reliability, while UDP skips them ([[speed-of-light-website-latency]]). The DHCP episode explains why a device with no settings *must* use UDP broadcast rather than TCP — you can't complete a handshake before you have an address — and why broadcasts stay inside the LAN ([[dhcp-cafe-wifi]]).
+Це сполучна тканина серії каналу «Як працює інтернет» — та «сантехніка», поверх якої стоять випуски про DNS, DHCP і затримки. Перший випуск протиставляє TCP і UDP: TCP handshake (SYN / SYN-ACK / ACK) і регулярні ACK — це ціна надійності, а UDP їх пропускає ([[speed-of-light-website-latency|швидкість світла і затримки сайтів]]). Випуск про DHCP пояснює, чому пристрій без жодних налаштувань *мусить* використовувати UDP broadcast, а не TCP — не можна завершити handshake, поки не маєш адреси, — і чому broadcast’и не виходять за межі LAN ([[dhcp-cafe-wifi|DHCP і Wi-Fi в кафе]]).
 
-On addressing and resolution, he stresses that the resolver you actually query (your provider, your home router's cache, or 8.8.8.8) is almost never the authoritative server where you added the record ([[dns-recursive-resolution]]), and that caching is layered across the browser, OS, router and provider. He mentions Dynamic DNS as the trick for reaching a home machine on a changing IP ([[how-dns-works-basics]]). NAT itself gets a hands-on treatment in the VM-isolation build: he contrasts VirtualBox's bridged vs NAT vs internal-network adapter modes and constructs a two-interface WAN/LAN router topology that NATs the guest out to the home network ([[vm-network-isolation]]). The same NAT-traversal idea explains VS Code tunnels — both the browser and the dev server connect *outward* to a proxy (he believes over WebSockets) that stitches them together, so both ends can sit behind NAT and firewalls and it still works ([[vscode-in-the-browser]]).
+Щодо адресації та резолвінгу він наголошує, що резолвер, до якого ви реально звертаєтеся (ваш провайдер, кеш домашнього роутера чи 8.8.8.8), майже ніколи не є авторитативним сервером, куди ви додали запис ([[dns-recursive-resolution|рекурсивний резолвінг DNS]]), і що кешування нашароване у браузері, ОС, роутері та у провайдера. Він згадує Dynamic DNS як трюк для доступу до домашньої машини зі змінним IP ([[how-dns-works-basics|основи DNS]]). Сам NAT отримує практичний розбір у білді про ізоляцію VM: він порівнює режими адаптерів VirtualBox — bridged, NAT та internal network — і збирає роутерну топологію з двома інтерфейсами WAN/LAN, яка NAT’ить гостьову систему назовні в домашню мережу ([[vm-network-isolation|мережева ізоляція VM]]). Та сама ідея обходу NAT пояснює тунелі VS Code: і браузер, і dev-сервер з’єднуються *назовні* з проксі (він припускає, що через WebSockets), який зшиває їх докупи, тож обидва кінці можуть сидіти за NAT і фаєрволами — і все одно працює ([[vscode-in-the-browser|VS Code у браузері]]).
 
-## Covered in
-- [[speed-of-light-website-latency]] — TCP handshake vs UDP, ACKs as the reliability cost
-- [[how-dns-works-basics]] — where the resolver address comes from, layered caching, Dynamic DNS
-- [[dns-recursive-resolution]] — the resolver you query vs the authoritative server
-- [[dhcp-cafe-wifi]] — why bootstrapping needs UDP broadcast, broadcasts stay in the LAN
-- [[vm-network-isolation]] — VirtualBox bridged/NAT/internal modes, WAN/LAN router with NAT
-- [[vscode-in-the-browser]] — outbound-proxy tunnels traversing NAT and firewalls
+## Де розглядається
+- [[speed-of-light-website-latency]] — TCP handshake проти UDP, ACK як ціна надійності
+- [[how-dns-works-basics]] — звідки береться адреса резолвера, багатошарове кешування, Dynamic DNS
+- [[dns-recursive-resolution]] — резолвер, до якого звертаєшся, проти авторитативного сервера
+- [[dhcp-cafe-wifi]] — чому бутстрап потребує UDP broadcast; broadcast’и лишаються в LAN
+- [[vm-network-isolation]] — режими VirtualBox bridged/NAT/internal, WAN/LAN-роутер з NAT
+- [[vscode-in-the-browser]] — тунелі через вихідне проксі, що обходять NAT і фаєрволи
 
-## Related
-[[dns]] — name resolution layered over this plumbing
-[[dhcp]] — how a device bootstraps onto the network
-[[latency-and-speed-of-light]] — round-trips are what the handshakes cost you
-[[https-tls]] — another handshake stacked on top of TCP
-[[virtualbox]] — provides the adapter modes demonstrated
-[[pfsense]] — the virtual router doing the NAT
+## Повʼязане
+[[dns]] — резолвінг імен, нашарований поверх цієї «сантехніки»
+[[dhcp]] — як пристрій бутстрапиться в мережу
+[[latency-and-speed-of-light]] — round-trip’и — саме те, чим handshake’и вам коштують
+[[https-tls]] — ще один handshake поверх TCP
+[[virtualbox]] — надає продемонстровані режими адаптерів
+[[pfsense]] — віртуальний роутер, який робить NAT

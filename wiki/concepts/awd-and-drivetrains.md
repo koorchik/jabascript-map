@@ -2,16 +2,16 @@
 type: concept
 tags: [channel-meta, off-topic, cars, awd]
 ---
-# AWD and Drivetrains
+# Повний привід і трансмісії
 
-An off-topic sponsors video subject ([[awd-systems-compared]]), sparked by a real puzzle: his Subaru Outback exits a snowy yard effortlessly while his Porsche Macan struggles on identical tires. The answer is architecture, not tires.
+Тема з офтопного відео для спонсорів ([[awd-systems-compared|порівняння систем повного приводу]]), народжена з реальної загадки: його Subaru Outback без зусиль виїжджає із засніженого двору, а його Porsche Macan буксує на ідентичних шинах. Відповідь — в архітектурі, а не в шинах.
 
-Subaru runs an **always-on symmetric AWD** with a torque converter — his analogy: torque accumulates like "a mixer in a bowl of dough" — cooled by a shared 12-liter oil volume. The Macan's rear-biased 20:80 system engages the front axle through a clutch sitting in a half-liter oil box that simply **overheats** under sustained slip. Other threads from the video: e-CVT loses torque multiplication (his explanation for why the hybrid Forester flopped); the boxer engine gives a low center of gravity and equal-length half-shafts — no torque steer, unlike his old Focus ST; Audi's quattro is really several different systems sold under one marketing badge. And an economics layer: EU CO2 fines push manufacturers toward disconnecting AWD, with Subaru saved by Toyota's 20% stake and hybrid quota — plus the Tesla emission-credit side story ([[awd-systems-compared]]).
+Subaru має **постійний симетричний повний привід** із гідротрансформатором — його аналогія: крутний момент передається як «міксер у мисці з тістом» — охолоджуваний спільним обʼємом оливи на 12 літрів. Задньозміщена система Macan 20:80 підключає передню вісь через муфту, що сидить у півлітровій оливній коробці, яка під тривалим буксуванням просто **перегрівається**. Інші нитки з відео: e-CVT втрачає множення моменту (його пояснення, чому гібридний Forester провалився); опозитний двигун дає низький центр ваги і піввісі однакової довжини — жодного torque steer, на відміну від його старого Focus ST; quattro від Audi — насправді кілька різних систем під одним маркетинговим шильдиком. І економічний шар: штрафи ЄС за CO2 штовхають виробників до відключуваного повного приводу, а Subaru рятують 20-відсоткова частка Toyota і гібридна квота — плюс побічна історія з емісійними кредитами Tesla ([[awd-systems-compared|порівняння систем повного приводу]]).
 
-## Covered in
+## Де розглядається
 
-- [[awd-systems-compared]] — the full Subaru vs Porsche vs Audi vs Toyota deep dive: torque splits, torque converters vs dual-clutch, coupling overheating, quattro tiers, e-CVT, EU CO2 rules.
+- [[awd-systems-compared]] — повне занурення Subaru проти Porsche, Audi й Toyota: розподіли моменту, гідротрансформатори проти подвійного зчеплення, перегрів муфти, рівні quattro, e-CVT, правила ЄС щодо CO2.
 
-## Related
+## Повʼязане
 
-- [[channel-and-author]] — unedited off-topic videos like this one are a sponsor-tier perk.
+- [[channel-and-author]] — немонтовані офтопні відео на кшталт цього — перк спонсорського рівня.

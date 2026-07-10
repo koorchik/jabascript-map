@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Технічний борг — jabascript · навігатор</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+<script>(function(){var t=localStorage.getItem("jsnav-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;})();</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="../index.html"><span class="brand-mark">▶</span> jabascript <span class="brand-dim">/ навігатор</span></a>
+  <nav><a href="../index.html">Треки</a><a href="../concepts.html" class="active">Теми</a><a href="../books.html">Книги</a></nav>
+  <button id="theme-toggle" type="button" aria-label="Перемкнути тему">◐</button>
+</header>
+<main>
+<article class="topic-page">
+  <p class="eyebrow mono"><a href="../concepts.html">концепції</a> / technical-debt</p>
+  <h1>Технічний борг</h1>
+  <div class="topic-body"><p>Формулювання, що запало Віктору, — цитата, яку він переказує далі: <strong>«якщо ти просто пишеш код — ти накопичуєш технічний борг»</strong> (<a href="../videos/code-review-how-google-does-it.html">випуск про код-ревʼю в Google</a>). Його приклад: систему спроєктували під 10 модулів, а тепер їх 300. Кожен новий модуль написано точно так само, як попередні, поревʼюєно, як попередні, і в диффі він виглядає чудово — але архітектура в цілому вже не працює. У цьому суть погляду каналу: борг — це не неохайний код, що прослизнув повз ревʼю; це <em>консистентний</em> код, який накопичується всупереч дизайну, що тихо втратив актуальність, — і саме тому він невидимий для пре-сабміт <a href="../concepts/code-review.html">код-ревʼю</a>.</p><p>Той самий механізм — у його історіях про абстракції: віджет-прототип на ~100 рядків виростає в один файл на 5000 рядків саме тому, що кожна зміна лишалася консистентною з навколишньою структурою — «нас же ТИ так навчив», сказала йому команда (<a href="../videos/voice-3-scary-abstractions.html">голосове про страшні абстракції</a>). Ліки, які він описує, — структурні, а не на рівні диффа: у Google — post-launch проходи по вже змердженому коду, у WebbyLab — періодичні архітектурні ревʼю з чеклістами, C4-діаграмою та планом дій, який повторно перевіряють за ~2 місяці (<a href="../videos/code-review-how-google-does-it.html">випуск про код-ревʼю в Google</a>). Мікросервіси роблять цей борг унікально дорогим: хибна межа в моноліті — дешевий рефакторинг, а між сервісами різними мовами й у різних командах її виправити неймовірно важко (<a href="../videos/microservices-main-problem.html">головна проблема мікросервісів</a>).</p></div>
+  <h2>Розібрано у відео</h2>
+  <ul class="covered-list"><li><a href="../videos/code-review-how-google-does-it.html">Як покращити Code Review? Як це робить Google?</a>
+  <span class="meta mono">15:16</span>
+  <p class="step-note">теза «просто писати код = накопичувати борг», приклад 10→300 модулів і формати ревʼю, які ловлять гниття на рівні архітектури</p></li><li><a href="../videos/voice-3-scary-abstractions.html">Голосове №3 — страшні абстракції</a>
+  <span class="meta mono">08:44</span>
+  <p class="step-note">як борг росте через консистентність зі застарілою структурою (файл на 5000 рядків)</p></li><li><a href="../videos/microservices-main-problem.html">Головна проблема мікросервісів, яку часто недооцінюють</a>
+  <span class="meta mono">08:55</span>
+  <p class="step-note">хибні межі сервісів як найважча для повернення форма боргу</p></li></ul>
+  <h2>Повʼязане</h2><p><a href="../concepts/code-review.html">Код-ревʼю</a> — ревʼю окремих PR не бачить цей клас боргу; архітектурне ревʼю — бачить <a href="../concepts/code-quality.html">Якість коду</a> — якість як код, що й далі дозволяє себе розширювати <a href="../concepts/abstractions.html">Абстракції</a> — не виділяти нові абстракції, коли відповідальності ростуть, — саме так борг і накопичується <a href="../concepts/microservices.html">Мікросервіси</a> — розподілені системи заморожують погані рішення намертво</p>
+</article>
+
+</main>
+<footer class="site-foot">
+  <p>Неофіційна навчальна мапа YouTube-каналу <a href="https://www.youtube.com/@jabascript">jabascript</a>.
+  Зібрано з транскриптів відео — таймкоди ведуть на точну хвилину на YouTube.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

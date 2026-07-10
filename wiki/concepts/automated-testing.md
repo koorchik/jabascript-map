@@ -2,17 +2,17 @@
 type: concept
 tags: [engineering-craft, testing, ai]
 ---
-# Automated testing
+# Автоматизоване тестування
 
-The channel's testing strategy is laid out most concretely in the AI-era context of the vibe-coding streams ([[vibe-coding-part-2]]). Structure: unit tests live next to the files they test, integration/API tests live separately. For parallel DB tests he uses one container holding 10–20 databases mapped to test-worker IDs, so workers never collide. The economics have shifted: tests are now cheap because AI writes them — and the dependency runs both ways, since the AI *needs* tests plus TypeScript as its feedback loop to check its own work.
+Стратегію тестування каналу найконкретніше викладено в ШІ-контексті стримів про вайб-кодинг ([[vibe-coding-part-2|вайб-кодинг, частина 2]]). Структура: unit-тести живуть поруч із файлами, які вони тестують, інтеграційні/API-тести — окремо. Для паралельних тестів із базою він тримає один контейнер із 10–20 базами даних, змапленими на ID тест-воркерів, тож воркери ніколи не стикаються. Економіка змінилася: тести тепер дешеві, бо їх пише ШІ, — і залежність двобічна, бо ШІ сам *потребує* тестів плюс TypeScript як петлі зворотного звʼязку, щоб перевіряти власну роботу.
 
-On frontend tests his answer is a firm "it depends," backed by two extremes he's seen first-hand: in Google's monorepo they're mandatory, because shared Angular code updates under you and only tests catch the breakage; meanwhile Instagram shipped its React web app with zero frontend tests ([[vibe-coding-part-2]]). His broader testing philosophy — tests after code, minimal mocking, design for injectable implementations — lives under [[test-driven-development]], where he argues against the purist loop.
+Щодо фронтенд-тестів його відповідь — тверде «залежить», підкріплене двома крайнощами, які він бачив на власні очі: у монорепозиторії Google вони обовʼязкові, бо спільний Angular-код оновлюється під тобою і лише тести ловлять поломку; тим часом Instagram відвантажував свій React-вебзастосунок узагалі без фронтенд-тестів ([[vibe-coding-part-2|вайб-кодинг, частина 2]]). Його ширша філософія тестування — тести після коду, мінімум моків, дизайн під підмінювані реалізації — живе в [[test-driven-development|TDD]], де він сперечається з пуристським циклом.
 
-## Covered in
-- [[vibe-coding-part-2]] — test layout, parallel DB-container trick, tests as the AI's feedback loop, Google-vs-Instagram frontend-testing extremes
+## Де розглядається
+- [[vibe-coding-part-2]] — розкладка тестів, трюк із паралельними базами в одному контейнері, тести як петля зворотного звʼязку для ШІ, крайнощі фронтенд-тестування Google проти Instagram
 
-## Related
-[[test-driven-development]] — the ritual he rejects while embracing tests themselves
-[[vibe-coding]] — tests and types as the safety net for AI-written code
-[[ai-coding-agents]] — the agent needs a feedback loop to self-correct
-[[code-quality]] — tests as one guardrail among several
+## Повʼязане
+[[test-driven-development]] — ритуал, який він відкидає, приймаючи самі тести
+[[vibe-coding]] — тести й типи як страхувальна сітка для коду, написаного ШІ
+[[ai-coding-agents]] — агентові потрібна петля зворотного звʼязку для самокорекції
+[[code-quality]] — тести як один із кількох запобіжників

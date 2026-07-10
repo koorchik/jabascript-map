@@ -2,16 +2,16 @@
 type: concept
 tags: [tooling, development, remote, vscode]
 ---
-# Remote Development
+# Віддалена розробка
 
-The channel's take, inspired by Google's "open a URL and you have a dev environment" setups, is that VS Code's process architecture makes remote development almost free ([[vscode-in-the-browser]]). He proves that Remote-SSH secretly installs a `vscode-server` on the target machine (comparing the process list before and after), that extensions split into local vs remote halves (Prettier gets installed on the *server*), that ports auto-forward (a remote `:3000` shows up on `127.0.0.1:3000` locally), and that the debugger works exactly as if it were local. The browser-only variant uses `vscode.dev` plus the standalone `code tunnel` CLI with GitHub device authentication — full development, extensions, port forwarding and debugger, from a bare browser tab. He also maps the wider option space: WSL, Codespaces (the same mechanism, he reckons), and dev containers as "zero-click setup." The reason it all works over NAT and firewalls is that both the browser and the dev server dial *outward* to a proxy that stitches them together, which is why tunnels need a GitHub sign-in.
+Позиція каналу, натхнена гугловими сетапами «відкрив URL — і маєш середовище розробки»: процесна архітектура VS Code робить віддалену розробку майже безкоштовною ([[vscode-in-the-browser|VS Code у браузері]]). Він доводить, що Remote-SSH потайки встановлює `vscode-server` на цільову машину (порівнюючи список процесів до і після), що розширення діляться на локальну і віддалену половини (Prettier ставиться на *сервер*), що порти прокидаються автоматично (віддалений `:3000` з’являється локально на `127.0.0.1:3000`) і що дебагер працює точно так, ніби все локально. Суто браузерний варіант — це `vscode.dev` плюс окремий CLI `code tunnel` з device-автентифікацією через GitHub: повноцінна розробка, розширення, прокидання портів і дебагер — з голої вкладки браузера. Він також окреслює ширший простір опцій: WSL, Codespaces (той самий механізм, на його думку) і dev-контейнери як «сетап у нуль кліків». Причина, чому все це працює через NAT і фаєрволи: і браузер, і dev-сервер з’єднуються *назовні* з проксі, який зшиває їх докупи, — саме тому тунелі вимагають входу через GitHub.
 
-## Covered in
-- [[vscode-in-the-browser]] — Remote-SSH's hidden vscode-server, local/remote extension split, port auto-forwarding, vscode.dev tunnels, WSL/Codespaces/dev containers
+## Де розглядається
+- [[vscode-in-the-browser]] — прихований vscode-server у Remote-SSH, поділ розширень на локальні/віддалені, автопрокидання портів, тунелі vscode.dev, WSL/Codespaces/dev-контейнери
 
-## Related
-[[language-server-protocol]] — the per-language-process design that made remote agents cheap
-[[nat-and-networking]] — outbound-proxy tunnels traversing NAT/firewalls
-[[vs-code]] — the editor whose architecture enables all of this
-[[ssh-key-authentication]] — how the Remote-SSH connection authenticates
-[[sandboxing-and-isolation]] — dev containers as isolated environments
+## Повʼязане
+[[language-server-protocol]] — дизайн «окремий процес на кожну мову», який зробив віддалених агентів дешевими
+[[nat-and-networking]] — тунелі через вихідне проксі, що обходять NAT/фаєрволи
+[[vs-code]] — редактор, чия архітектура все це уможливлює
+[[ssh-key-authentication]] — як автентифікується з’єднання Remote-SSH
+[[sandboxing-and-isolation]] — dev-контейнери як ізольовані середовища

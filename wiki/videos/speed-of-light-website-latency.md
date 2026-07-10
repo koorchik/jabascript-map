@@ -2,22 +2,33 @@
 type: video
 title_uk: "Як швидкість світла обмежує швидкість твого веб-сайту? Розбираємо на реальному прикладі"
 youtube_id: dRnAeHeLRS8
+level: beginner
 tags: [networking, performance, latency, internet, protocols]
 date_ingested: 2026-07-09
 ---
-# How the Speed of Light Limits Your Website's Speed
+# Як швидкість світла обмежує швидкість твого веб-сайту
 
-> Original: "Як швидкість світла обмежує швидкість твого веб-сайту? Розбираємо на реальному прикладі" — https://youtu.be/dRnAeHeLRS8
+> Оригінал: "Як швидкість світла обмежує швидкість твого веб-сайту? Розбираємо на реальному прикладі" — https://youtu.be/dRnAeHeLRS8
 
-The opening video of the "how the internet works" series. Its thesis: when people talk about web performance they focus on frontend, backend, First Meaningful Paint — but there's a huge limiter they ignore, and it's **the speed of light** (more precisely, latency). The author builds a running back-of-the-envelope calculation and then verifies it against a real server, showing that a request whose backend takes 20 ms can easily take 400–800 ms in practice, dominated entirely by round-trips.
+Перше відео серії «як працює інтернет». Теза: коли говорять про веб-продуктивність, фокусуються на фронтенді, бекенді, First Meaningful Paint — але є величезний обмежувач, який ігнорують, і це **швидкість світла** (точніше, затримка). Автор крок за кроком будує розрахунок «на серветці», а потім перевіряє його на реальному сервері, показуючи, що запит із бекендом на 20 мс на практиці легко займає 400–800 мс — і майже все це round-trip-и.
 
-## Key takeaways
-- **The setup:** backend in LA/San Francisco processing in 20 ms, client in Kyiv, ~10,000 km apart. Even under absurdly optimistic assumptions — a single straight fiber cable, no Wi-Fi, no routing, no providers — physics sets a floor.
-- **The math:** light in vacuum is 300,000 km/s but in fiber ~200,000 km/s (a third slower). 10,000 km one way = 50 ms, so ping round-trip = 100 ms *at best*. His concrete conclusion: you'll never play CS:GO on US servers from Kyiv under 100 ms ping — the speed of light won't let you.
-- **Stacking the round-trips:** request (50 ms) + backend (20 ms) + response (50 ms) = 120 ms, already 6× the backend time. Add the **TCP handshake** (SYN / SYN-ACK / ACK) — the ACK can carry the request data so it's ~one extra round-trip → 220 ms (11× the backend). Add **TLS handshake** (Hello, certificate, key exchange, each direction) → ~420 ms, 21× the 20 ms of actual work. And he notes this still ignores the DNS lookup and TCP slow-start (can't blast 50 KB at full speed immediately).
-- This is *why* CDNs matter — not raw speed but reducing latency by putting static files/images closer to the user.
-- **Real-world verification:** he stood up an nginx server in LA, made a subdomain, and captured plain HTTP and HTTPS requests in Wireshark. TCP handshake alone measured ~190–192 ms per round-trip; the plain-HTTP request/response was ~400 ms; the full HTTPS request came to ~800 ms — roughly 2× his theoretical 420 ms. A raw `ping` confirmed ~192 ms round-trip, worse than ideal because of real Wi-Fi, providers, and indirect routing.
-- He points out ACKs recurring through the capture: TCP must acknowledge received data (UDP doesn't), which is the core reliability trade-off and part of the cost.
+## Головне
+- **Умови задачі:** бекенд у Лос-Анджелесі/Сан-Франциско обробляє запит за 20 мс, клієнт у Києві, між ними ~10 000 км. Навіть за абсурдно оптимістичних припущень — один прямий оптоволоконний кабель, без Wi-Fi, без маршрутизації, без провайдерів — фізика задає нижню межу.
+- **Математика:** світло у вакуумі — 300 000 км/с, а в оптоволокні ~200 000 км/с (на третину повільніше). 10 000 км в один бік = 50 мс, тож ping туди-назад = 100 мс *у найкращому разі*. Його конкретний висновок: з Києва ви ніколи не гратимете в CS:GO на американських серверах із пінгом менше 100 мс — швидкість світла не дозволить.
+- **Складаємо round-trip-и:** запит (50 мс) + бекенд (20 мс) + відповідь (50 мс) = 120 мс, уже 6× часу бекенда. Додаємо **TCP handshake** (SYN / SYN-ACK / ACK) — ACK може нести дані запиту, тож це ~один додатковий round-trip → 220 мс (11× бекенда). Додаємо **TLS handshake** (Hello, сертифікат, обмін ключами, в обидва боки) → ~420 мс, 21× від 20 мс реальної роботи. І він зауважує, що це ще без DNS-запиту й TCP slow start (не можна одразу вистрелити 50 KB на повній швидкості).
+- Саме *тому* важливі CDN — не через «сиру» швидкість, а через зменшення затримки: статичні файли/зображення розміщуються ближче до користувача.
+- **Перевірка на практиці:** він підняв nginx-сервер у Лос-Анджелесі, зробив субдомен і зняв у Wireshark звичайний HTTP- та HTTPS-запити. Сам TCP handshake показав ~190–192 мс на round-trip; запит/відповідь по звичайному HTTP — ~400 мс; повний HTTPS-запит вийшов ~800 мс — приблизно 2× від його теоретичних 420 мс. Звичайний `ping` підтвердив ~192 мс туди-назад — гірше за ідеал через реальний Wi-Fi, провайдерів і непрямі маршрути.
+- Він звертає увагу на ACK-и, що повторюються по всьому дампу: TCP мусить підтверджувати отримані дані (UDP — ні), і це базовий компроміс надійності та частина ціни.
 
-## Covered
+## Розділи
+- 00:00 — Вступ: обмежувач веб-продуктивності, про який ніхто не говорить, — швидкість світла
+- 00:22 — Уявний експеримент: бекенд 20 мс у Лос-Анджелесі, клієнт у Києві, одне пряме оптоволокно на 10 000 км
+- 02:10 — Математика: світло в оптоволокні дає підлогу пінга 100 мс; перша діаграма — 120 мс проти бекенда на 20 мс
+- 03:42 — Додаємо TCP handshake (SYN / SYN-ACK / ACK): 220 мс, 11x часу бекенда
+- 05:13 — Додаємо TLS handshake: ~420 мс, 21x — а DNS і TCP slow start ще проігноровані
+- 07:01 — Навіщо існують CDN: справа в затримці, а не в пропускній здатності
+- 07:23 — Практика: nginx-сервер у Лос-Анджелесі, Wireshark-дамп звичайного HTTP-запиту (~400 мс)
+- 09:32 — Дамп HTTPS: ~800 мс реально проти 420 мс у теорії — і звичайний ping підтверджує 192 мс туди-назад
+
+## Теми
 [[latency-and-speed-of-light]], [[nat-and-networking]], [[dns]], [[https-tls]], [[deep-learning-of-fundamentals]]

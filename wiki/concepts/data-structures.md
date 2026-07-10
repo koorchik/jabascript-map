@@ -2,21 +2,21 @@
 type: concept
 tags: [data-structures, algorithms, fundamentals]
 ---
-# Data structures
+# Структури даних
 
-The channel's stance: what matters in practice is knowing each structure's properties and time/memory complexity, not memorizing implementations — though Viktor has implemented topological sort and full-text search himself when the problem demanded it ([[qa-2-answering-questions]]). The tree family gets the hands-on walkthrough: binary search trees ("left smaller, right bigger"), their degenerate case (insert 1..5 in order and the tree collapses into a linked list with O(N) search), AVL-style self-balancing rotations keeping subtree heights within 1, and the jump to disk-friendly [[b-tree|B-trees]] — with the aside that ext4 filesystems use an H-tree, a simplified B-tree analog ([[trees-search-algorithms-databases]]).
+Позиція каналу: на практиці важливо знати властивості кожної структури та її складність за часом і памʼяттю, а не завчати реалізації — хоча Віктор і сам реалізовував топологічне сортування та повнотекстовий пошук, коли цього вимагала задача ([[qa-2-answering-questions|друге Q&A]]). Сімейство дерев дістає практичний розбір: бінарні дерева пошуку («менше — ліворуч, більше — праворуч»), їхній вироджений випадок (вставте 1..5 по порядку — і дерево схлопується у звʼязний список з пошуком за O(N)), самобалансувальні повороти в стилі AVL, що тримають різницю висот піддерев у межах 1, і стрибок до дискодружніх [[b-tree|B-дерев]] — з ремаркою, що файлова система ext4 використовує H-tree, спрощений аналог B-дерева ([[trees-search-algorithms-databases|дерева, алгоритми пошуку і бази даних]]).
 
-Beyond trees: the hash map as the fix for nested-loop merges (build a map keyed by user id once, then O(1) lookups), contrasted with sorted arrays — binary-searchable but expensive to sort, worth it only if you sort once and search a hundred times ([[why-algorithms-matter]]). And the probabilistic branch: [[bloom-filter|Bloom filters]], implemented as a bit array packed into a Uint32Array with div/mod-32 bit addressing. His argument that none of this is theoretical: Firefox ships a Bloom-filter cascade in production since 2025, Silpo runs one in its CRM, and no npm library even exists for the cascade variant — sometimes you must build the structure yourself ([[bloom-filter-and-firefox]]).
+Поза деревами: хеш-мапа як ліки від злиття вкладеними циклами (один раз будуєш мапу з ключем user id, далі — лукапи за O(1)), у контрасті з відсортованими масивами — по них працює бінарний пошук, але сортування дороге, тож воно виправдане, лише якщо сортуєш один раз, а шукаєш сотню разів ([[why-algorithms-matter|навіщо потрібні алгоритми]]). І ймовірнісна гілка: [[bloom-filter|фільтри Блума]], реалізовані як бітовий масив, запакований в Uint32Array з адресацією бітів через ділення/остачу на 32. Його аргумент, що все це не теорія: Firefox з 2025 року возить каскад фільтрів Блума в продакшені, «Сільпо» ганяє фільтр у своїй CRM, а npm-бібліотеки для каскадного варіанта взагалі не існує — інколи структуру доводиться будувати самому ([[bloom-filter-and-firefox|фільтр Блума і Firefox]]).
 
-## Covered in
-- [[trees-search-algorithms-databases]] — the tree family hands-on: BSTs, the degenerate linked-list case, AVL rotations, ext4's H-tree
-- [[why-algorithms-matter]] — hash maps vs sorted arrays: which structure for which access pattern
-- [[bloom-filter-and-firefox]] — probabilistic structures; bit-array implementation details; "these aren't theoretical"
-- [[qa-2-answering-questions]] — know properties and complexity, not memorized code; his own hand-implementations
+## Де розглядається
+- [[trees-search-algorithms-databases]] — сімейство дерев на практиці: BST, вироджений випадок звʼязного списку, AVL-повороти, H-tree в ext4
+- [[why-algorithms-matter]] — хеш-мапи проти відсортованих масивів: яка структура під який патерн доступу
+- [[bloom-filter-and-firefox]] — ймовірнісні структури; деталі реалізації на бітовому масиві; «це не теорія»
+- [[qa-2-answering-questions]] — знати властивості і складність, а не завчений код; його власні реалізації руками
 
-## Related
-[[algorithmic-complexity]] — the yardstick structures are measured by
-[[b-tree]] — the tree that databases actually use
-[[bloom-filter]] — the probabilistic star of the cluster
-[[database-indexes]] — data structures at industrial scale
-[[deep-learning-of-fundamentals]] — why properties, not implementations, are the durable knowledge
+## Повʼязане
+[[algorithmic-complexity]] — мірило, яким вимірюють структури
+[[b-tree]] — дерево, яке насправді використовують бази даних
+[[bloom-filter]] — ймовірнісна зірка кластера
+[[database-indexes]] — структури даних в індустріальному масштабі
+[[deep-learning-of-fundamentals]] — чому довговічне знання — це властивості, а не реалізації

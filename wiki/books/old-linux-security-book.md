@@ -3,12 +3,12 @@ type: book
 author: unknown
 tags: [book, linux, security]
 ---
-# Linux security book, 2001 (title not stated)
+# Книжка з безпеки Linux, 2001 (назва не прозвучала)
 
-A Linux security book from 2001 whose title Viktor didn't state in the video. He read it several times and it was great in its day — but his verdict now is an explicit *don't read it*: it's outdated, and he'd only recommend it if newer editions existed.
+Книжка з безпеки Linux 2001 року, назву якої Віктор у відео так і не назвав. Він перечитував її кілька разів, і свого часу вона була чудовою — але теперішній вердикт однозначний: *не читати*. Вона застаріла, і він порадив би її лише за умови, що існували б новіші видання.
 
-## Covered in
-- [[five-star-books]] — loved it then, explicitly not recommended now; hopelessly outdated
+## Де розглядається
+- [[five-star-books]] — колись дуже любив, тепер прямо не рекомендує; безнадійно застаріла
 
-## Related
-[[security-practices]], [[how-linux-works]] (the still-current Linux book on his list).
+## Повʼязане
+[[security-practices|Практики безпеки]], [[how-linux-works|How Linux Works]] (книжка про Linux з його списку, яка досі актуальна).
