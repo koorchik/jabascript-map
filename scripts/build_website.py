@@ -492,13 +492,38 @@ def track_meta_line(track, videos):
     return f"{n} відео · {fmt_dur(total)}"
 
 
+def render_books_banner(n_books, pages):
+    # A teaser that names a couple of well-known titles in a sentence — not a list.
+    teaser_slugs = ["a-philosophy-of-software-design", "clean-architecture",
+                    "designing-data-intensive-applications", "the-goal"]
+    names = []
+    for slug in teaser_slugs:
+        p = pages.get(slug)
+        if p:
+            names.append(f'«<a href="books.html#{slug}">{html.escape(p["title"])}</a>»')
+        if len(names) == 2:
+            break
+    teaser = (f"Від {names[0]} до {names[1]} — " if len(names) == 2 else "")
+    return f"""<section class="books-banner">
+  <div class="books-banner-glyph" aria-hidden="true">📚</div>
+  <div class="books-banner-body">
+    <h2>{n_books} {uk_plural(n_books, "книга", "книги", "книг")}, які радить Віктор</h2>
+    <p>{teaser}з чесними вердиктами Віктора: що читати, що погортати, а до чого й не братися.</p>
+  </div>
+  <a class="cta" href="books.html">Відкрити полицю →</a>
+</section>"""
+
+
 def render_index(videos, tracks, pages):
     n_chapters = sum(len(v["chapters"]) for v in videos.values())
     total_sec = sum(v["duration"] or 0 for v in videos.values())
+    n_books = sum(1 for p in pages.values() if p["kind"] == "books")
     first_track = tracks[TRACKS[0][0]]
     first_video = first_track["path"][0][0] if first_track["path"] else None
     cta = (f'<a class="cta" href="videos/{first_video}.html">Почати перегляд → '
            f'{html.escape(videos[first_video]["title"])}</a>') if first_video else ""
+    books_cta = (f'<a class="cta cta-books" href="books.html">📚 {n_books} '
+                 f'{uk_plural(n_books, "книга", "книги", "книг")}, які радить Віктор →</a>')
 
     cards = []
     for i, (slug, name, tagline, hue) in enumerate(TRACKS, 1):
@@ -519,15 +544,17 @@ def render_index(videos, tracks, pages):
   <h1>Компʼютерні науки —<br>у правильному порядку.</h1>
   <p class="lede">jabascript — україномовний канал Віктора про те, як усе працює насправді:
   бази даних, мережі, криптографія, ШІ та інженерна майстерність.
-  Цей навігатор вибудовує {len(videos)} відео у шість навчальних треків
-  і веде до потрібної хвилини кожного відео на YouTube.</p>
+  Цей навігатор вибудовує {len(videos)} відео у шість навчальних треків,
+  веде до потрібної хвилини кожного відео на YouTube — а ще збирає полицю
+  з {n_books} {uk_plural(n_books, "книги", "книг", "книг")}, які радить Віктор.</p>
   <div class="stats mono">
     <span><b>{len(videos)}</b> відео</span>
     <span><b>{len(tracks)}</b> {uk_plural(len(tracks), "трек", "треки", "треків")}</span>
     <span><b>{n_chapters}</b> {uk_plural(n_chapters, "розділ", "розділи", "розділів")}</span>
+    <span><b>{n_books}</b> {uk_plural(n_books, "книга", "книги", "книг")}</span>
     <span><b>{fmt_dur(total_sec)}</b> матеріалу</span>
   </div>
-  {cta}
+  <div class="cta-row">{cta}{books_cta}</div>
 </section>
 <section class="how">
   <h2>Як цим користуватися</h2>
@@ -544,6 +571,7 @@ def render_index(videos, tracks, pages):
   {"".join(cards)}
   </div>
 </section>
+{render_books_banner(n_books, pages)}
 {render_concept_map(pages, videos, tracks)}
 """
     return page_shell(title=f"{SITE_NAME} — компʼютерні науки у правильному порядку",
@@ -848,6 +876,27 @@ main { max-width: 1060px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
   background: var(--accent-bg); color: var(--text); font-weight: 550;
 }
 .cta:hover { text-decoration: none; border-color: var(--accent); }
+.cta-row { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; }
+/* books accent — warm "paper" hue, distinct from every track colour */
+.cta-books {
+  --h: 34; --acc-s: 60%;
+  border-color: hsl(34 55% 50% / .5); background: hsl(34 60% 50% / .13);
+}
+.cta-books:hover { border-color: hsl(34 60% 55%); }
+
+/* books banner */
+.books-banner {
+  --h: 34; --acc-s: 60%;
+  display: flex; align-items: center; gap: 1.3rem; flex-wrap: wrap;
+  margin: 3.2rem 0 1rem; padding: 1.5rem 1.7rem;
+  background: hsl(34 55% 50% / .10); border: 1px solid hsl(34 50% 50% / .32);
+  border-left: 4px solid hsl(34 60% 52%); border-radius: 12px;
+}
+.books-banner-glyph { font-size: 2.6rem; line-height: 1; }
+.books-banner-body { flex: 1; min-width: 15rem; }
+.books-banner-body h2 { margin: 0 0 .3rem; font-size: 1.4rem; }
+.books-banner-body p { margin: 0; color: var(--muted); max-width: 42rem; }
+.books-banner .cta { margin-top: 0; white-space: nowrap; }
 
 /* how-to */
 .how-list { max-width: 46rem; padding-left: 1.2rem; color: var(--muted); }

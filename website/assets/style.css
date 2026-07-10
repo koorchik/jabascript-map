@@ -79,6 +79,27 @@ main { max-width: 1060px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
   background: var(--accent-bg); color: var(--text); font-weight: 550;
 }
 .cta:hover { text-decoration: none; border-color: var(--accent); }
+.cta-row { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; }
+/* books accent — warm "paper" hue, distinct from every track colour */
+.cta-books {
+  --h: 34; --acc-s: 60%;
+  border-color: hsl(34 55% 50% / .5); background: hsl(34 60% 50% / .13);
+}
+.cta-books:hover { border-color: hsl(34 60% 55%); }
+
+/* books banner */
+.books-banner {
+  --h: 34; --acc-s: 60%;
+  display: flex; align-items: center; gap: 1.3rem; flex-wrap: wrap;
+  margin: 3.2rem 0 1rem; padding: 1.5rem 1.7rem;
+  background: hsl(34 55% 50% / .10); border: 1px solid hsl(34 50% 50% / .32);
+  border-left: 4px solid hsl(34 60% 52%); border-radius: 12px;
+}
+.books-banner-glyph { font-size: 2.6rem; line-height: 1; }
+.books-banner-body { flex: 1; min-width: 15rem; }
+.books-banner-body h2 { margin: 0 0 .3rem; font-size: 1.4rem; }
+.books-banner-body p { margin: 0; color: var(--muted); max-width: 42rem; }
+.books-banner .cta { margin-top: 0; white-space: nowrap; }
 
 /* how-to */
 .how-list { max-width: 46rem; padding-left: 1.2rem; color: var(--muted); }
