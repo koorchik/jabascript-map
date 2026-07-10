@@ -19,7 +19,7 @@ TIMED = ROOT / "transcripts" / "timed"
 OUT = ROOT / "website"
 
 SITE_NAME = "jabascript · навігатор"
-CHANNEL_URL = "https://www.youtube.com/@jabascript"
+CHANNEL_URL = "https://www.youtube.com/@AboutProgramming"
 
 # Streams whose content is time-bound and stale — kept in the wiki, hidden on the site.
 EXCLUDED = {"google-io-2023-watch-party", "qa-and-plans-for-2024"}
